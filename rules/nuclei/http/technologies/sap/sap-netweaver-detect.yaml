@@ -16,5 +16,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: sap-server:Sap-Server:SAP NetWeaver Application Server
     body: ''

@@ -22,5 +22,6 @@ traps:
     body: null
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: Util.*%2(f|F)episerver%2(f|F)cms
     body: ''

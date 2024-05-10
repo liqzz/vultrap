@@ -65,5 +65,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/htmlYesWiki
     body: '><img src=x onerror=console.log(123);>'

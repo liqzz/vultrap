@@ -25,5 +25,6 @@ traps:
     body: null
   response:
     status_code: 400
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: seeing this error because you have <code>DEBUG = True</code>SuspiciousOperationDisallowedHostDisallowedModelAdminLookupDisallowedModelAdminToFieldDisallowedRedirectInvalidSessionKeyRequestDataTooBigSuspiciousFileOperationSuspiciousMultipartFormSuspiciousSessionTooManyFieldsSentPermissionDenied

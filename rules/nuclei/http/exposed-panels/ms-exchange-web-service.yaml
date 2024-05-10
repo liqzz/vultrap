@@ -26,5 +26,6 @@ traps:
     body: null
   response:
     status_code: 401
-    headers: {}
+    headers:
+      VulTrap: (?i)(X-Owa-Version:)
     body: ''

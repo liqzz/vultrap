@@ -25,5 +25,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: 'item: <script>alert(document.domain)</script>Saved on'

@@ -17,5 +17,6 @@ traps:
     body: null
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: offline.ghost.org
     body: ''

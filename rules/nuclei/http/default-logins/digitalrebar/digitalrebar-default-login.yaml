@@ -23,5 +23,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: (?i)(X-Drp-)
     body: NameSecret

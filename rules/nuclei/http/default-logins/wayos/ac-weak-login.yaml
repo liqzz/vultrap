@@ -25,5 +25,6 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: ac_userid=adminac_passwd=
     body: window.opentext/javascript

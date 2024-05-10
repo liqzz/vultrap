@@ -21,7 +21,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: '''>"<svg/onload=confirm(''q'')>''>"<svg/onload=confirm(''s'')>''>"<svg/onload=confirm(''search'')>''>"<svg/onload=confirm(''id'')>''>"<svg/onload=confirm(''action'')>''>"<svg/onload=confirm(''keyword'')>''>"<svg/onload=confirm(''query'')>''>"<svg/onload=confirm(''page'')>''>"<svg/onload=confirm(''keywords'')>''>"<svg/onload=confirm(''url'')>''>"<svg/onload=confirm(''view'')>''>"<svg/onload=confirm(''cat'')>''>"<svg/onload=confirm(''name'')>''>"<svg/onload=confirm(''key'')>''>"<svg/onload=confirm(''p'')>''>"<svg/onload=confirm(''month'')>''>"<svg/onload=confirm(''page_id'')>''>"<svg/onload=confirm(''password'')>''>"<svg/onload=confirm(''terms'')>''>"<svg/onload=confirm(''token'')>''>"<svg/onload=confirm(''type'')>''>"<svg/onload=confirm(''unsubscribe_token'')>''>"<svg/onload=confirm(''api'')>''>"<svg/onload=confirm(''api_key'')>''>"<svg/onload=confirm(''begindate'')>''>"<svg/onload=confirm(''callback'')>''>"<svg/onload=confirm(''categoryid'')>''>"<svg/onload=confirm(''csrf_token'')>''>"<svg/onload=confirm(''email'')>''>"<svg/onload=confirm(''emailto'')>''>"<svg/onload=confirm(''enddate'')>''>"<svg/onload=confirm(''immagine'')>''>"<svg/onload=confirm(''item'')>''>"<svg/onload=confirm(''jsonp'')>''>"<svg/onload=confirm(''l'')>''>"<svg/onload=confirm(''lang'')>''>"<svg/onload=confirm(''list_type'')>''>"<svg/onload=confirm(''year'')><title>Access
       Denied</title>You don''t have permission to access'
 - request:

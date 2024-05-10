@@ -38,5 +38,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: phpMyAdmin=pmaUser-1=index.php?collation_connection=utf8mb4_unicode_ci/index.php?route=/&route=%2F
     body: ''

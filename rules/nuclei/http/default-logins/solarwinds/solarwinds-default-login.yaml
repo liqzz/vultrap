@@ -22,7 +22,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Content-Type: application/json'
     body: (totalRow|result|swi)s(:\/\/)?(Orion\.|Poller(ID)?)s?
 - request:
     method: GET

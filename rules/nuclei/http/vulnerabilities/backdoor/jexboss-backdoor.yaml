@@ -21,7 +21,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'X-Powered-By: Servlet'
     body: root:.*:0:0:\[(font|extension|file)s\]
 - request:
     method: GET

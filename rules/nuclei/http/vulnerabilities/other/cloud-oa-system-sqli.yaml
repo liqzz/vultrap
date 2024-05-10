@@ -32,5 +32,6 @@ traps:
       </soap:Envelope>
   response:
     status_code: 500
-    headers: {}
+    headers:
+      VulTrap: text/xml
     body: System.Data.SqlClient.SqlExceptionc8c605999f3d8352d7bb792cf3fdb25b

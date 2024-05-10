@@ -26,5 +26,6 @@ traps:
       </buffalo-call>
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/xml
     body: ''

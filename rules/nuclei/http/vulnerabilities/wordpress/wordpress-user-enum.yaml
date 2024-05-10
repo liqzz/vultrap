@@ -15,5 +15,6 @@ traps:
     body: null
   response:
     status_code: 301
-    headers: {}
+    headers:
+      VulTrap: '(?i)Location: http(s|):\/\/[\w\.\-]+\/author\/\w+'
     body: ''

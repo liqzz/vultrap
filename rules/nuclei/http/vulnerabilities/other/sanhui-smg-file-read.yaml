@@ -36,5 +36,6 @@ traps:
       ------WebKitFormBoundaryfA9vzLuw6Gmtnmv2--
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/octet-streamfilename=passwd
     body: 'root:.*:0:0:'

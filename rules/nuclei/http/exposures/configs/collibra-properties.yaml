@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/plainbytestext/html
     body: collibra.urlcollibra.portcollibra.usercollibra.password
 - request:
     method: GET

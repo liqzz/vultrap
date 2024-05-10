@@ -28,5 +28,6 @@ traps:
     body: null
   response:
     status_code: 500
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: 'Undefined index: --><svg onload=alert(document.domain)> in file'

@@ -23,7 +23,8 @@ traps:
     body: null
   response:
     status_code: 401
-    headers: {}
+    headers:
+      VulTrap: Nagios Access
     body: ''
 - request:
     method: GET

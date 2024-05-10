@@ -21,5 +21,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
-    body: c17f225f082e4fdebd02c3c455b03f59
+    headers:
+      VulTrap: cfidcftoken
+    body: e91a6e69ff0e443382f045bcb7f1cb2c

@@ -21,5 +21,6 @@ traps:
     body: null
   response:
     status_code: 308
-    headers: {}
+    headers:
+      VulTrap: (?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\|\/\)(?:[a-zA-Z0-9\-_\.@]*)evil\.com\/?(\/|[^.].*)?$
     body: ''

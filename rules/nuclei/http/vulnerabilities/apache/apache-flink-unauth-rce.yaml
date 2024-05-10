@@ -29,5 +29,6 @@ traps:
       --8ce4b16b22b58894aa86c421e8759df3--
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: success_poc.jar

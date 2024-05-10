@@ -22,5 +22,6 @@ traps:
     body: email='+or+2>1+--+&password=&login=
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <script>window.location.href='home.php'</script>

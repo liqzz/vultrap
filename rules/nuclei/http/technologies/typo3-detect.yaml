@@ -16,5 +16,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'X-TYPO3-Parsetime:'
     body: <meta name="generator" content="TYPO3

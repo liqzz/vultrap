@@ -22,7 +22,7 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: 2e47f08290434a0fb5c1163517938af9
+    body: d23d37936baf4b4b8411a6238229d684
 - request:
     method: GET
     path: /?=1
@@ -33,4 +33,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: 2e47f08290434a0fb5c1163517938af9
+    body: d23d37936baf4b4b8411a6238229d684

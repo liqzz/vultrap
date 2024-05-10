@@ -17,5 +17,6 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: https://6c313f95fe7f47f3bcf9ff5e709ab8e2.tld/__session_start__/openvpn_sess
     body: ''

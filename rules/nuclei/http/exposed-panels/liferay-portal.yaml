@@ -26,7 +26,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: Liferay-Portal
     body: <title>json-web-services-api</title>There are no services matching that
       phrase.Unable to deserialize object
 - request:

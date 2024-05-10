@@ -27,7 +27,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: wordpress_logged_in_[a-z0-9]{32}
     body: Your account has been activated!From your account dashboard you can view
       your
 - request:

@@ -24,5 +24,6 @@ traps:
     body: null
   response:
     status_code: 501
-    headers: {}
+    headers:
+      VulTrap: text/xml
     body: <serialNumber><deviceType><modelNumber>

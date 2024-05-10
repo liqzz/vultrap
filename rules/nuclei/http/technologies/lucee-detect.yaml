@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: '(?i)X-Lucee-Version(?i)X-CB-Server: LUCEE(?i)X-IDG-Appserver: Lucee'
     body: Lucee Function Reference
 - request:
     method: GET

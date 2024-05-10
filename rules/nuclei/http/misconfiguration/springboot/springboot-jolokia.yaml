@@ -19,7 +19,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/jsonapplication/vnd.spring-boot.actuatorapplication/vnd.spring-boot.actuator.v1+jsonapplication/vnd.spring-boot.actuator.v2+jsonapplication/vnd.spring-boot.actuator.v3+jsontext/plain
     body: '"config":{"agentId":"'
 - request:
     method: GET

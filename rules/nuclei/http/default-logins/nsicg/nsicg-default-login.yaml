@@ -29,7 +29,8 @@ traps:
     body: usrname={{username}}&pass={{password}}&signinfo=&ukey_user_flag=0&SlotSerialNumber=&agree=
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: /user/main/
     body: ''
 - request:
     method: GET

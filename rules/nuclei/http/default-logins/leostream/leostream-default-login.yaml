@@ -25,5 +25,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: lld=%21index.plserver.plstatus.pl'
     body: ''

@@ -20,4 +20,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: 'File not found: 221a4580f27e4fc798bd1eac3ed8f6f2.txt.'
+    body: 'File not found: 02dff1ab46f1499e8430929799bc7bc7.txt.'

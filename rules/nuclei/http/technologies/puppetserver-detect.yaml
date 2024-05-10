@@ -17,5 +17,6 @@ traps:
     body: null
   response:
     status_code: 404
-    headers: {}
-    body: 5522d4c494344fe886ade1c5b187223d
+    headers:
+      VulTrap: x-puppet-version
+    body: c6d68a97ae1643e184c52d522633d640

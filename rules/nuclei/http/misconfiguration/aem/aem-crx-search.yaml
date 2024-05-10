@@ -20,7 +20,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <title>Search</title>"/crx/explorer/ui/";
 - request:
     method: GET

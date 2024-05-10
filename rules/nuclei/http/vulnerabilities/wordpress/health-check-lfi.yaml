@@ -28,7 +28,8 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: 'root:.*:0:0:'
 - request:
     method: POST

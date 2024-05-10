@@ -23,6 +23,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: titleHeading>iLO 5titleFwver>Firmware2002-2018 Hewlett Packard Enterprise
       Development LP

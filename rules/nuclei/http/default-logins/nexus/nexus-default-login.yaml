@@ -23,5 +23,6 @@ traps:
       '
   response:
     status_code: 204
-    headers: {}
+    headers:
+      VulTrap: 'Server: NexusNXSESSIONID'
     body: ''

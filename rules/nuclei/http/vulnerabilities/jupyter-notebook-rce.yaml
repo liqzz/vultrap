@@ -27,5 +27,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: '"name":"last_activity":'

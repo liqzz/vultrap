@@ -18,5 +18,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: isopen=
     body: lui_login_input_usernamelui_login_input_password

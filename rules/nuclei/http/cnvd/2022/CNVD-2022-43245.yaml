@@ -26,5 +26,6 @@ traps:
       </value></param></params></methodCall>
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/xml
     body: <methodResponse><params><param><value><base64>

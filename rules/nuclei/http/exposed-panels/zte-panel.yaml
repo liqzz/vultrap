@@ -32,6 +32,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: Mini web server 1.0 ZTE corp 2005.
     body: ZTE Corporation. All rights reserved. </div><form name="fLogin" id="fLogin"
       method="post"  onsubmit="return false;" action="">

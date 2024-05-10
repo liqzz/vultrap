@@ -22,7 +22,8 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: /super/index.html
     body: ''
 - request:
     method: POST

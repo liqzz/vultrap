@@ -16,5 +16,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: Basic realm="WEB ADMIN"SAP NetWeaver Application Server
     body: SAP Web Dispatcher<title>Administration</title>

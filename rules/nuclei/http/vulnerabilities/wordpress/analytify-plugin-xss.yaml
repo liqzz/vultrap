@@ -27,5 +27,6 @@ traps:
     body: null
   response:
     status_code: 404
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: text/javascript">alert(/XSS/)</script>wp-analytify

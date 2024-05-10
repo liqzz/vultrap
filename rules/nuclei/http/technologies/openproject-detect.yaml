@@ -19,7 +19,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: _open_project_session
     body: .*OpenProject.Foundation.\(OPF\)<generator uri=.*openproject.org.*>OpenProjectinstanceName
 - request:
     method: GET

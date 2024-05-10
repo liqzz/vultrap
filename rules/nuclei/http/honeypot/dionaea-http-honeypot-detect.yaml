@@ -19,5 +19,6 @@ traps:
     body: ''
   response:
     status_code: 501
-    headers: {}
+    headers:
+      VulTrap: nginx
     body: <?xml version="1.0" encoding="ascii"?>

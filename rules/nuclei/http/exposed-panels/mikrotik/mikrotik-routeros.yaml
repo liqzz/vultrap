@@ -23,7 +23,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Server: mikrotik httpproxy'
     body: If this device is not in your possession, please contact your local network
       administrator.mikrotik.com<title>mikrotik routeros > administration</title><title>Mikrotik
       Router<img src="/webcfg/<title>MikroTik RouterOS Managing Webpage</title>Please

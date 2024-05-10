@@ -23,5 +23,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
-    body: 5423ca385413411eae2830f968838cf9<form action="javascript:alert
+    headers:
+      VulTrap: text/html
+    body: 601e1a7f58cf4fc9a91613754485fee0<form action="javascript:alert

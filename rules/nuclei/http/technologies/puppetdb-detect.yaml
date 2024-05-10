@@ -17,5 +17,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: '"version"\s:\s"([0-9.]+)"'

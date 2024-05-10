@@ -17,5 +17,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/jsontext/html
     body: ./vagrant/config/vagrant-local.yml./vagrant/config/vagrant-local.example.yml

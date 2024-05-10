@@ -24,7 +24,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: status_main.cgi
 - request:
     method: GET

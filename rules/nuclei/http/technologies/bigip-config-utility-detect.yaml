@@ -33,5 +33,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Www-Authenticate: Basic realmEnterprise Manager'
     body: check your user-id and password and try again

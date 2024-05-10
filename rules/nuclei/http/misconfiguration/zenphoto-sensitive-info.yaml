@@ -16,7 +16,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: Welcome to Zenphoto! This page will set up Zenphoto
 - request:
     method: GET

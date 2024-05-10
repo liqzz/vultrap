@@ -18,6 +18,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <title>PrestaShop Installation Assistant</title><li>System configuration</li><li>Store
       installation</li>

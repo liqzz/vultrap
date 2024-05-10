@@ -19,5 +19,9 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'X-Amz-Content-Sha256:X-Amz-Date:X-Amz-Version-Id:X-Amz-Id-2:X-Amz-Delete-Marker:Server:
+        awselb/2.0Set-Cookie: AWSALB=Set-Cookie: AWSALBCORS=X-Amz-Cf-Id:X-Amz-Cf-Pop:arn:
+        arn:aws:codebuildX-Amz-Meta-Codebuild-Buildarn:X-Amz-Meta-Codebuild-Content-Sha256:X-Amz-Meta-Codebuild-Content-Md5:X-Amz-Apigw-Id:X-Amzn-Requestid:X-Amzn-Errortype:
+        MissingAuthenticationTokenExceptionX-Amzn-Remapped-Connection:X-Amzn-Remapped-Content-Length:X-Amzn-Remapped-Date:X-Amz-Server-Side-Encryption:X-Amzn-Trace-Id:X-Amzn-Waf-Action:X-Amz-Crc32:X-Amz-Target:'
     body: ''

@@ -62,4 +62,4 @@ traps:
   response:
     status_code: 302
     headers: {}
-    body: User 76ef52bcb0924017a1e54472ec01844d successfully added to Database
+    body: User 5c7c1ba530b24410bf4458b7b59890ee successfully added to Database

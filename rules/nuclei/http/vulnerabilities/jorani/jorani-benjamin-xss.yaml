@@ -25,7 +25,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <script>alert(document.domain)</script>_jorani
 - request:
     method: POST

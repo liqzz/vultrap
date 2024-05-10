@@ -33,7 +33,8 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: X-T0kenMTc5Njc2NTUwNg==
     body: ''
 - request:
     method: POST
@@ -48,5 +49,6 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: X-T0kenMTc5Njc2NTUwNQ==
     body: ''

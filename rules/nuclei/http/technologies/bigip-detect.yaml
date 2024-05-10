@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: BIGipServer~BigIP
     body: F5 Networks.
 - request:
     method: GET

@@ -26,5 +26,6 @@ traps:
     body: null
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: Set-Cookie=""Set-Cookie=
     body: /download/edr_installer_

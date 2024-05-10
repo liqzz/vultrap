@@ -24,7 +24,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: Kubernetes Web View</title>a href="https://codeberg.org/hjacobs/kube-web-view
 - request:
     method: GET

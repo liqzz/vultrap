@@ -22,7 +22,8 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: /console/index.jspADMINCONSOLESESSION
     body: ''
 - request:
     method: POST

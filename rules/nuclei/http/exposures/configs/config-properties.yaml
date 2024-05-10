@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/plainbytestext/html
     body: jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+((?i)password|pwd|pass|secretkey)=
 - request:
     method: GET

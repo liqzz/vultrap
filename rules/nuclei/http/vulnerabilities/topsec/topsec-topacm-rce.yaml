@@ -32,5 +32,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
-    body: e7137c56fd0e4befb3396215e8dbfa15
+    headers:
+      VulTrap: text/plain
+    body: 612925960cbd429492b2422c72d0c281

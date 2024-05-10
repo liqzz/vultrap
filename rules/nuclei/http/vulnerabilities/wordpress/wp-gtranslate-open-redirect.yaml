@@ -24,5 +24,6 @@ traps:
     body: null
   response:
     status_code: 301
-    headers: {}
+    headers:
+      VulTrap: 'Location: www.pluginvulnerabilities.com'
     body: ''

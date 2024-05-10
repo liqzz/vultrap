@@ -25,5 +25,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: pentaho/HomeJSESSIONID=
     body: ''

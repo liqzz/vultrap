@@ -23,5 +23,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: '%7B%20%22username%22%20%3A%20%22admin%22%2C%20%22result%22%3A%20%22OK%22'

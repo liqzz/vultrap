@@ -20,7 +20,8 @@ traps:
     body: null
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Location: /zdm/login_xdm_uc.jsp'
     body: ''
 - request:
     method: GET

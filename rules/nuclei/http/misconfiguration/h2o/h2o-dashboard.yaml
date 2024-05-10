@@ -20,5 +20,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: X-H2o-Build-Project-VersionX-H2o-Cluster-Id
     body: H2O Flow

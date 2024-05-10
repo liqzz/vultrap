@@ -39,5 +39,6 @@ traps:
       ------WebKitFormBoundaryAjZMsILtbrBp8VbC--
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: paonline_admin
     body: <META HTTP-EQUIV=REFRESH CONTENT="0;URL=/index.htm">urn:schemas-microsoft-com:vml

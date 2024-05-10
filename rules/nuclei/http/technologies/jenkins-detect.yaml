@@ -25,7 +25,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'x-jenkins:'
     body: Jenkins
 - request:
     method: GET

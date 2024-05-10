@@ -22,7 +22,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: PPSAUTH=
     body: <TITLE>Proofpoint Protection ServerProofpoint End User Application.Powered
       by Proofpoint
 - request:

@@ -22,5 +22,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: adminSet-Cookie: adminer_key'
     body: ''

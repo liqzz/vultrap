@@ -32,7 +32,8 @@ traps:
       ------WebKitFormBoundaryoZwyedGcQU4FrcFV--
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: access_token{"token":".*"}
 - request:
     method: POST

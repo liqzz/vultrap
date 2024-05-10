@@ -28,7 +28,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Ms-Author-Via: DAV'
     body: ''
 - request:
     method: OPTIONS

@@ -24,7 +24,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: OCSESSID=
     body: ''
 - request:
     method: GET

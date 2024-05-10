@@ -18,8 +18,9 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
-    body: <svg/onload=alert('b50e9d6290614d0a962d439a688ffecd')>
+    headers:
+      VulTrap: text/html
+    body: <svg/onload=alert('0da12529c7514e0d85e918b274496402')>
 - request:
     method: GET
     path: /OA_HTML/oksAutoRenewalHelp.jsp%3Fthanks%3D%27%22%3E%3Csvg%2Fonload%3Dalert('')%3E

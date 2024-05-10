@@ -16,7 +16,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/plain
     body: This files describes API changes in core libraries and APIs,information
       provided here is intended especially for developers.new my moodle and profiles
       API

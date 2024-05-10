@@ -27,7 +27,8 @@ traps:
     body: timezoneOffset=360&ptmode=f&ptlangcd=ENG&ptinstalledlang=ENG&userid={{username}}&pwd={{password}}&ptlangsel=ENG
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: PS_TOKEN='
     body: ''
 - request:
     method: POST

@@ -26,5 +26,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: filename=QH.aspxapplication/zip
     body: QH.aspx.csQiHang.Media.Web.QH

@@ -18,5 +18,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: Bamboo setup wizard - Atlassian BambooBamboo evaluation license

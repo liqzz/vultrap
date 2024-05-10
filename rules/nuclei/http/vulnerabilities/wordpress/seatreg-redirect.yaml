@@ -45,5 +45,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: http://interact.sh
     body: ''

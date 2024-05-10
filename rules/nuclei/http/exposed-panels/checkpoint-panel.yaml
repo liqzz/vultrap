@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: Check Point Software Technologies Ltd. All rights reserved./Login/images/CompanyLogo.png
 - request:
     method: GET

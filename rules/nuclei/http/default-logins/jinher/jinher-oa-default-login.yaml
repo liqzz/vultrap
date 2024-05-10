@@ -24,5 +24,6 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: SessionIDAdmin=
     body: ÏµÍ³¹ÜÀíÔ±|ÄúºÃ|||

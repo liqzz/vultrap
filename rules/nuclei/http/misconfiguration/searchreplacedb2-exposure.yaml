@@ -21,5 +21,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: Database detailsSafe Search Replace

@@ -24,5 +24,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Server: CrushFTP HTTP Server'
     body: <title>CrushFTP WebInterface</title><title>CrushFTP - Login</title>src="/WebInterface/Resources/js/crushftp.customize.js"

@@ -17,7 +17,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/hal+json
     body: _links/alps/profile
 - request:
     method: GET

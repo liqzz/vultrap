@@ -22,7 +22,8 @@ traps:
     body: null
   response:
     status_code: 403
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <script>alert(document.domain)</script>Tiki Wiki CMS
 - request:
     method: GET

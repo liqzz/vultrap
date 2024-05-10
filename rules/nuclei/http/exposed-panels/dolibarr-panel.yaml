@@ -19,6 +19,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: DOLSESSID_'
     body: <meta name="author" content="Dolibarr Development Team">authentication mode
       = dolibarrIncludes JS of Dolibarr<div class="login_table_title center" title="Dolibarr

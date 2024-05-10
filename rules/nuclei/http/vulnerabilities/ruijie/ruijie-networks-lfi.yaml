@@ -23,5 +23,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'filename="config.text"Content-Type: application/octet-stream'
     body: version S29_RGOS 11.4

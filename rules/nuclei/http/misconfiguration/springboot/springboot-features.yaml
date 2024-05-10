@@ -17,7 +17,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/jsonapplication/vnd.spring-boot.actuatorapplication/vnd.spring-boot.actuator.v1+json
     body: '"enabled":["disabled":['
 - request:
     method: GET

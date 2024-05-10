@@ -26,7 +26,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: R_SESS=token
     body: ''
 - request:
     method: POST

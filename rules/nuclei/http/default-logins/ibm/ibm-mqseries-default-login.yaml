@@ -29,5 +29,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: LtpaToken2_
     body: ''

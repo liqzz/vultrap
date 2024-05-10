@@ -20,5 +20,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: phpMyAdmin=text/html'
     body: server_sql.phpserver_status.phpserver_variables.phpserver_databases.php

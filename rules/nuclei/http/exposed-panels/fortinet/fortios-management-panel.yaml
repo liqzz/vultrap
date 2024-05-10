@@ -23,5 +23,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: APSCOOKIE_
     body: <html class="main-app"><f-icon class="fa-warning</f-icon>

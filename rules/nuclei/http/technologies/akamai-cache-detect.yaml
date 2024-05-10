@@ -23,5 +23,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: (?:TCP_HIT|TCP_MISS).*deploy\.akamaitechnologies\.com
     body: ''

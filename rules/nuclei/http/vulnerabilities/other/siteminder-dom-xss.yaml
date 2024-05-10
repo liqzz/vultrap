@@ -27,7 +27,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: ="confirm(document.domain)"></B> you cannot access your
 - request:
     method: GET

@@ -31,5 +31,6 @@ traps:
       </soap:Envelope>
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/xml
     body: 'Windows IProot:.*:0:0:'

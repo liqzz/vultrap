@@ -25,7 +25,8 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: PHPSESSID
     body: CustomInfo
 - request:
     method: GET

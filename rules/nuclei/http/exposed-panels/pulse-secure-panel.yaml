@@ -18,7 +18,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: /dana-na/auth/welcome.cgi
     body: (?i)/dana-na/css/ds(_[a-f0-9]{64})?.css
 - request:
     method: GET

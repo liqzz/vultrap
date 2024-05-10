@@ -30,5 +30,6 @@ traps:
     body: ''
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: XDEBUG_SESSION=362934c574ea42c082638d99b0d9765c'
     body: ''

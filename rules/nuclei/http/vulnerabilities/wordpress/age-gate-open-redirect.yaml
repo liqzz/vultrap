@@ -28,5 +28,6 @@ traps:
     body: age_gate%5Bd%5D=10&age_gate%5Bm%5D=10&age_gate%5By%5D=1990&age_gate%5Bremember%5D=1&age_gate%5Bage%5D=TVRnPQ%3D%3D&action=age_gate_submit&age_gate%5Bnonce%5D=48f2b89fed&_wp_http_referer=https://interact.sh
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: (?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\|\/\)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh\/?(\/|[^.].*)?$
     body: ''

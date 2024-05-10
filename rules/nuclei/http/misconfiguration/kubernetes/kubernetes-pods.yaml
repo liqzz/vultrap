@@ -19,7 +19,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: apiVersion
 - request:
     method: GET

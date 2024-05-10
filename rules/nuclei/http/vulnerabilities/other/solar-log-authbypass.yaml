@@ -22,5 +22,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: IPC@CHIP
     body: ' Solare Datensysteme GmbHmailto:info@solar-log.com'

@@ -21,7 +21,8 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: /fuel/dashboardfuel_(.*)=
     body: ''
 - request:
     method: POST

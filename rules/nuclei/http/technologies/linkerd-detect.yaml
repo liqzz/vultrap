@@ -18,5 +18,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: '(?mi)^Via\s*?:.*?linkerd.*$(?mi)^l5d-err:.*$(?mi)^l5d-success-class:
+        0.*$'
     body: expected but end of input found at

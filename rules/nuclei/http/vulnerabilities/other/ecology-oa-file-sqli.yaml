@@ -24,7 +24,8 @@ traps:
     body: isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:7'
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: ecology_JSessionid=
     body: ''
 - request:
     method: POST
@@ -33,5 +34,6 @@ traps:
     body: isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:15'
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: ecology_JSessionid=
     body: ''

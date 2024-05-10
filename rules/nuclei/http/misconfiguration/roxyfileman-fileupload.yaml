@@ -50,7 +50,8 @@ traps:
       ------WebKitFormBoundary6rbEqFAMRkE0RAB7--
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: 99acb46eabd01958e22fae1792e83ca9
 - request:
     method: POST

@@ -27,5 +27,6 @@ traps:
     body: ''
   response:
     status_code: 403
-    headers: {}
+    headers:
+      VulTrap: 'Server: xxxxxxxx-xxxxx'
     body: /remote/login

@@ -29,7 +29,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/octet-streamtext/plain
     body: '[config]1F 8B'
 - request:
     method: GET

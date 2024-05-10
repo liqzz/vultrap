@@ -25,5 +25,6 @@ traps:
     body: null
   response:
     status_code: 308
-    headers: {}
+    headers:
+      VulTrap: 'Location: /\/\/interact.sh'
     body: ''

@@ -22,6 +22,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
-    body: <svg/onload=alert`288d17764e3c4c8391b40ff75fbccd80`>PHP Timeclock Admin
+    headers:
+      VulTrap: text/html
+    body: <svg/onload=alert`e5f9ba637795403f97d43a68d651febe`>PHP Timeclock Admin
       Login

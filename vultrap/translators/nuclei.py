@@ -74,7 +74,9 @@ class NucleiTemplate(BaseModel):
         match_rules = []
         for http in self.http:
             macther_dsl = tran_matchers_to_dsl(matchers=http.matchers, matchers_condition=http.matchers_condition)
+            print(macther_dsl)
             py_expr = tran_nuclei_dsl_to_py_expr(macther_dsl)
+            print(py_expr)
             if "\u0000@\u0000" in py_expr:
                 raise TemplateParseError("not support null bytes")
             expr_visitor = ExprVisitor(variables=self.variables)
@@ -116,7 +118,7 @@ class NucleiTemplate(BaseModel):
                     raise TemplateParseError("not support {{interactsh-url}}")
                 match_request.path = re.sub(r'\{\{(.*?)}}', "", match_request.path )
                 idx = idx + 1
-                headers = _get_variable("headers",variables=variables,idx=idx)
+                headers = _get_variable("header",variables=variables,idx=idx)
                 trap_headers = {}
                 if headers:
                     trap_headers = {"VulTrap": headers}

@@ -23,5 +23,6 @@ traps:
     body: null
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: /autodiscover/autodiscover.json?Email=
     body: ''

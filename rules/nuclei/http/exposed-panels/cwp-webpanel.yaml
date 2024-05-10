@@ -20,5 +20,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: cwpsrv
     body: Login | CentOS WebPanelCWP |用户http://centos-webpanel.comCentOS WebPanel

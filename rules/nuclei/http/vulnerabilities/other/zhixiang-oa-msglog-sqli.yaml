@@ -21,5 +21,6 @@ traps:
     body: ''
   response:
     status_code: 500
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: 43f845fa0c8aef9104f8e1b07625ecf8

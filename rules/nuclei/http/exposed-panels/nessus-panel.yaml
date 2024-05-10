@@ -23,7 +23,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: NessusWWW
     body: <title>Nessus</title>window.location = '/unsupported6.html';
 - request:
     method: GET

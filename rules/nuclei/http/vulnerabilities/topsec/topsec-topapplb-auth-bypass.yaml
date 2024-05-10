@@ -25,7 +25,8 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: redirect.php
     body: ''
 - request:
     method: GET

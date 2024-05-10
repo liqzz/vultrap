@@ -24,5 +24,6 @@ traps:
       '
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: pyload_session=/dashboard'
     body: ''

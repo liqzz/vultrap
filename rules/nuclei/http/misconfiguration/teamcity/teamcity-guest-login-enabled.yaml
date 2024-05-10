@@ -27,5 +27,6 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Location: /overview.htmlTCSESSIONID='
     body: ''

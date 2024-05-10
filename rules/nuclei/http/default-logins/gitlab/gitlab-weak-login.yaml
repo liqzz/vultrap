@@ -26,5 +26,6 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: '"access_token":"token_type":"refresh_token":'

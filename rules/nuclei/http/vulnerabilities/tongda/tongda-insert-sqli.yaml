@@ -25,7 +25,8 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: PHPSESSID=register_for/?rid=
     body: ''
 - request:
     method: POST
@@ -37,5 +38,6 @@ traps:
       '
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: register_for/?rid=
     body: ''

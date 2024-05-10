@@ -24,6 +24,7 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: image/svg+xml
     body: Cloudflare<svgM16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-1475.5068-.0918.9707.1543
       1.3164.2256.3164.6055.498

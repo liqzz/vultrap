@@ -15,5 +15,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/rdf+xml
     body: <rdf:RDF<dc:creator>

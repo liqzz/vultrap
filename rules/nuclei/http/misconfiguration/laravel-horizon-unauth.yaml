@@ -29,7 +29,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: queueWithMaxRuntimerecentJobsstatus
 - request:
     method: GET

@@ -31,5 +31,6 @@ traps:
       join (select 2)a22 join (select 2)a23-- -
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: c8c605999f3d8352d7bb792cf3fdb25b

@@ -17,7 +17,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: text/html
     body: <legend>Create an <strong>admin account</strong>ownCloud
 - request:
     method: GET

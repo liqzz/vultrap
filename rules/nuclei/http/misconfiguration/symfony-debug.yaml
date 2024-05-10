@@ -20,7 +20,8 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: x-debug-token-link:/_profiler/
     body: debug mode</a> is enabled.id="sfWebDebugSymfony"
 - request:
     method: GET

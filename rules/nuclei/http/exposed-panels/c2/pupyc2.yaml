@@ -26,5 +26,6 @@ traps:
     body: null
   response:
     status_code: 200
-    headers: {}
+    headers:
+      VulTrap: 'Etag: "aa3939fc357723135870d5036b12a67097b03309"'
     body: ''

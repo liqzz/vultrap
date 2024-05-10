@@ -22,5 +22,6 @@ traps:
     body: null
   response:
     status_code: 502
-    headers: {}
+    headers:
+      VulTrap: application/json
     body: ''

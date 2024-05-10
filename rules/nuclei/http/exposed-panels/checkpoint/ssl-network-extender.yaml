@@ -1,0 +1,30 @@
+id: ssl-network-extender
+info:
+  name: CheckPoint SSL Network Extender Login Panel - Detect
+  author: idealphase
+  description: CheckPoint SSL Network Extender login panel was detected.
+  severity: info
+  reference:
+  - https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk65210
+  - https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_RemoteAccessVPN_AdminGuide/Topics-VPNRG/SSL-Network-Extender.htm?TocPath=SSL%20Network%20Extender%7C_____0
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:checkpoint:ssl_network_extender:*:*:*:*:-:*:*:*
+  metadata:
+    google-query: intitle:"SSL Network Extender Login"
+    max-request: 1
+    product: ssl_network_extender
+    shodan-query: http.title:"Check Point SSL Network Extender"
+    vendor: checkpoint
+  tags: panel,checkpoint,router
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>SSL Network Extender Login</TITLE>

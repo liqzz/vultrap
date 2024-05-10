@@ -1,0 +1,25 @@
+id: contacam
+info:
+  name: ContaCam Snapshot Images - Detect
+  author: dhiyaneshDk
+  description: ContaCam snapshot images were detected.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/6831
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: edb,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ContaCam</title>

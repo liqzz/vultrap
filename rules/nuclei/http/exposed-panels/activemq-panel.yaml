@@ -1,0 +1,26 @@
+id: activemq-panel
+info:
+  name: Apache ActiveMQ Exposure
+  author: pdteam
+  description: An Apache ActiveMQ implementation was discovered.
+  severity: info
+  reference:
+  - https://activemq.apache.org/
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: activemq
+    vendor: apache
+  tags: panel,activemq,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h2>Welcome to the Apache ActiveMQ!</h2><title>Apache ActiveMQ</title>

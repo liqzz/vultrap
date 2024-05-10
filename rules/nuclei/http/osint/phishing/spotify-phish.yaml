@@ -1,0 +1,23 @@
+id: spotify-phish
+info:
+  name: spotify phishing Detection
+  author: rxerium
+  description: 'A spotify phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://spotify.com
+  metadata:
+    max-request: 1
+  tags: phishing,spotify,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Spotify - Web Player: Music for everyone'

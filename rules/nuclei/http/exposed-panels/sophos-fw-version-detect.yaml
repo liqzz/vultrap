@@ -1,0 +1,36 @@
+id: sophos-fw-version-detect
+info:
+  name: Sophos Firewall Login Panel - Detect
+  author: organiccrap,daffainfo
+  description: Sophos Firewall login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:sophos:sfos:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: sfos
+    shodan-query: title:"Sophos"
+    vendor: sophos
+    verified: true
+  tags: panel,sophos
+traps:
+- request:
+    method: GET
+    path: /webconsole/webpages/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sophos</title>uiLangToHTMLLangAttributeValueMapping
+- request:
+    method: GET
+    path: /userportal/webpages/myaccount/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

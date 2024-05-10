@@ -1,0 +1,28 @@
+id: papercut-login-panel
+info:
+  name: PaperCut Panel - Detect
+  author: ritikchaddha
+  description: 'PaperCut is a print management system. Log in to manage your print
+    quotas, see your print history and configure your system.
+
+    '
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:papercut:papercut_ng:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: html:'content="PaperCut'
+    max-request: 1
+    product: papercut_ng
+    vendor: papercut
+    verified: true
+  tags: panel,papercut,detect
+traps:
+- request:
+    method: GET
+    path: /user
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="PaperCut<title>PaperCut Login

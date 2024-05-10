@@ -1,0 +1,26 @@
+id: phpstan-config
+info:
+  name: PHPStan Configuration Page - Detect
+  author: DhiyaneshDK
+  description: PHPStan configuration page was detected.
+  severity: info
+  reference: https://phpstan.org/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"phpstan.neon"
+  tags: devops,exposure
+traps:
+- request:
+    method: GET
+    path: /phpstan.neon
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'parameters:'

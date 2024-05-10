@@ -1,0 +1,28 @@
+id: exposed-docker-api
+info:
+  name: Exposed Docker API
+  author: furkansenan,dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: docker,unauth,devops,misconfig
+traps:
+- request:
+    method: GET
+    path: http:///version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: KernelVersionBuildTime
+- request:
+    method: GET
+    path: http:///v1.24/version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

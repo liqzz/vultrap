@@ -1,0 +1,22 @@
+id: api-exchangerateapi
+info:
+  name: ExchangeRate-API API Test
+  author: daffainfo
+  description: Free currency conversion
+  severity: info
+  reference:
+  - https://www.exchangerate-api.com/docs/overview
+  - https://github.com/daffainfo/all-about-apikey/tree/main/exchangerate-api
+  metadata:
+    max-request: 1
+  tags: token-spray,exchangerateapi
+traps:
+- request:
+    method: GET
+    path: https://v6.exchangerate-api.com/v6//latest/USD
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"time_next_update_utc""base_code""conversion_rates"'

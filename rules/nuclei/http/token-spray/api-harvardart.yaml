@@ -1,0 +1,22 @@
+id: api-harvardart
+info:
+  name: Harvard Art Museums API Test
+  author: daffainfo
+  description: Harvard Art
+  severity: info
+  reference:
+  - https://github.com/harvardartmuseums/api-docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/harvard-art-museums
+  metadata:
+    max-request: 1
+  tags: token-spray,harvardart
+traps:
+- request:
+    method: GET
+    path: https://api.harvardartmuseums.org/color/34838442?apikey=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"colorid""name""hex"'

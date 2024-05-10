@@ -1,0 +1,20 @@
+id: lvmeng-uts-disclosure
+info:
+  name: Lvmeng - UTS Disclosure
+  author: pikpikcu
+  description: Lvmeng UTS was discovered.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /webapi/v1/system/accountmanage/account
+    headers:
+      Content-Type: application/json
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: passwordnsfocus_utsMANAGER_IP

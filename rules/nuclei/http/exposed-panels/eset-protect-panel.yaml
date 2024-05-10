@@ -1,0 +1,24 @@
+id: eset-protect-panel
+info:
+  name: Eset Protect Login Panel - Detect
+  author: Charles D.
+  description: Login page for Eset Protect
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:751911084
+    verified: true
+  tags: login,eset,panel,detect
+traps:
+- request:
+    method: GET
+    path: /era/webconsole/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ESET PROTECTwindow.eset

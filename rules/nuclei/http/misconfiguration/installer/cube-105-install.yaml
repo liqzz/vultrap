@@ -1,0 +1,21 @@
+id: cube-105-install
+info:
+  name: Cube-105 - Exposed Installation
+  author: ritikchaddha
+  description: Cube-105 is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title="Cube-105 Setup Wizard"
+  tags: misconfig,cube,cube105,install
+traps:
+- request:
+    method: GET
+    path: /wizard/wizard.cs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Cube-105 Setup Wizardinitial setup

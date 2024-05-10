@@ -1,0 +1,23 @@
+id: webcomco-panel
+info:
+  name: WebcomCo - Panel
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://www.facebook.com/photo/?fbid=626548889515634&set=a.467014098802448
+  metadata:
+    max-request: 1
+    shodan-query: title:"WebcomCo"
+    verified: true
+  tags: panel,webcomco,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>WebcomCo</title>

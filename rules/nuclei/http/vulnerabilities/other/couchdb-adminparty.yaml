@@ -1,0 +1,25 @@
+id: couchdb-adminparty
+info:
+  name: CouchDB Admin Default - Detect
+  author: organiccrap
+  description: CouchDB is susceptible to requests in the context of an admin user.
+  severity: high
+  reference:
+  - https://docs.couchdb.org/en/stable/intro/security.html#authentication-database
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: couchdb
+traps:
+- request:
+    method: GET
+    path: /_users/_all_docs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: total_rowsoffset

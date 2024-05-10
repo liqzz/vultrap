@@ -1,0 +1,25 @@
+id: quantum-scalar-detect
+info:
+  name: Quantum Scalar i500 Login Panel - Detect
+  author: princechaddha
+  description: Quantum Scalar i500 login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:quantum:scalar_i500:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: scalar_i500
+    vendor: quantum
+  tags: panel,quantum,scalar
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>QUANTUM - Scalar (.*) Login Screen

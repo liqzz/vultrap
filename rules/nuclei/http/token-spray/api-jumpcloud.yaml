@@ -1,0 +1,22 @@
+id: api-jumpcloud
+info:
+  name: JumpCloud API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.jumpcloud.com/1.0/authentication-and-authorization/api-key
+  metadata:
+    max-request: 1
+  tags: token-spray,jumpcloud
+traps:
+- request:
+    method: GET
+    path: https://console.jumpcloud.com/api/systems
+    headers:
+      X-Api-Key: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"_id":"agentServer":'

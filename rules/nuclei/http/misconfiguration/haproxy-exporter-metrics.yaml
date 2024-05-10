@@ -1,0 +1,21 @@
+id: haproxy-exporter-metrics
+info:
+  name: Detect Haproxy Exporter
+  author: pussycat0x
+  description: Haproxy metrics is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"haproxy exporter"
+  tags: haproxy,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HELP haproxy_haproxy_exporterhaproxy_backend

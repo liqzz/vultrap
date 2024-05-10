@@ -1,0 +1,30 @@
+id: symfony-properties-ini
+info:
+  name: Symfony properties.ini File Disclosure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intitle:"index of" "properties.ini"
+  tags: symfony,exposure,files
+traps:
+- request:
+    method: GET
+    path: /properties.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: name=author=orm=
+- request:
+    method: GET
+    path: /config/properties.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

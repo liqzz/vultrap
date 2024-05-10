@@ -1,0 +1,21 @@
+id: alma-installer
+info:
+  name: Alma Installation Exposure
+  author: DhiyaneshDK
+  description: Alma is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Alma Installation"
+  tags: misconfig,alma,install,exposure
+traps:
+- request:
+    method: GET
+    path: /setup/start
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Setup wizard | Alma Installation</title>

@@ -1,0 +1,25 @@
+id: api-cloudconvert
+info:
+  name: CloudConvert API Test
+  author: daffainfo
+  description: Online file converter for audio, video, document, ebook, archive, image,
+    spreadsheet, presentation
+  severity: info
+  reference:
+  - https://cloudconvert.com/api/v2
+  - https://github.com/daffainfo/all-about-apikey/tree/main/cloudconvert
+  metadata:
+    max-request: 1
+  tags: token-spray,cloudconvert
+traps:
+- request:
+    method: GET
+    path: https://api.cloudconvert.com/v2/tasks
+    headers:
+      Host: api.cloudconvert.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"id":'

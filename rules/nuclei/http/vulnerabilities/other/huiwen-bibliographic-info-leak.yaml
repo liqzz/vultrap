@@ -1,0 +1,24 @@
+id: huiwen-bibliographic-info-leak
+info:
+  name: Huiwen library bibliographic Retrieval System - Information Exposure
+  author: SleepingBag945
+  description: 'Huiwen library bibliographic retrieval system /include/config.properties
+    file contains sensitive information, attackers can directly access to obtain information
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="汇文软件-书目检索系统"
+  tags: huiwen,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /include/config.properties
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: host=port=user=password=

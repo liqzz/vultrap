@@ -1,0 +1,22 @@
+id: apple-httpserver
+info:
+  name: Apple HttpServer Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: AppleHttpServer
+    fofa-query: app="Apple-HttpServer"
+  tags: tech,apple,httpserver
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,30 @@
+id: jolokia-heap-info-disclosure
+info:
+  name: Jolokia Java Heap Information Disclosure
+  author: milo2012
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: jolokia,disclosure,java
+traps:
+- request:
+    method: POST
+    path: /jolokia/
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: |2
+
+      {
+         "type":"EXEC",
+         "mbean":"com.sun.management:type=HotSpotDiagnostic",
+         "operation":"dumpHeap",
+         "arguments":[
+            "/tmp1234/test1.hprof",
+            0
+         ]
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: 'stacktrace":"java.io.IOException: No such file or directory'

@@ -1,0 +1,25 @@
+id: vbulletin-detect
+info:
+  name: vBulletin Detect
+  author: ricardomaia
+  description: vBulletin is a proprietary forum and community publishing software
+    written in PHP.
+  severity: info
+  reference:
+  - https://www.vbulletin.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Powered By vBulletin"
+    google-query: intext:"Powered By vBulletin"
+  tags: tech,vbulletin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered By vBulletincontent="vBulletinid="vbulletin_css

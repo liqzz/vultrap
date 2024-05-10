@@ -1,0 +1,23 @@
+id: trend-micro-phish
+info:
+  name: trend micro phishing Detection
+  author: rxerium
+  description: 'A trend micro phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://trendmicro.com
+  metadata:
+    max-request: 1
+  tags: phishing,trend-micro,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Trend Micro (UK) | Internet Security Antivirus - PC &amp; Mac

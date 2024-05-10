@@ -1,0 +1,23 @@
+id: pagekit-installer
+info:
+  name: Pagekit Installer Exposure
+  author: DhiyaneshDk
+  description: Pagekit is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  reference:
+  - https://github.com/pagekit/pagekit
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Pagekit Installer"
+  tags: misconfig,pagekit,install,exposure
+traps:
+- request:
+    method: GET
+    path: /installer
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Pagekit InstallerConnect database

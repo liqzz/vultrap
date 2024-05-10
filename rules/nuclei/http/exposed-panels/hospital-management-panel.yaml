@@ -1,0 +1,27 @@
+id: hospital-management-panel
+info:
+  name: Hospital Management System Login Panel - Detect
+  author: arafatansari
+  description: Hospital Management System login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:hospital_management_system_project:hospital_management_system:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: hospital_management_system
+    shodan-query: http.html:"Hospital Management System"
+    vendor: hospital_management_system_project
+    verified: true
+  tags: panel,hms,cms,hospital_management_system_project
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Hospital Management SystemDoctors LoginAdmin Login

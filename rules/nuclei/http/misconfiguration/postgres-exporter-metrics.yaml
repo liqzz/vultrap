@@ -1,0 +1,21 @@
+id: postgres-exporter-metrics
+info:
+  name: Postgres Exporter Metrics
+  author: DhiyaneshDk
+  description: Postgres Exporter Metrics is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Postgres exporter"
+  tags: postgres,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: postgres# HELP

@@ -1,0 +1,19 @@
+id: jolokia-detect
+info:
+  name: Jolokia Version Disclosure
+  author: mavericknerd,dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,jolokia
+traps:
+- request:
+    method: GET
+    path: /jolokia/version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"timestamp":"protocol":"agent":'

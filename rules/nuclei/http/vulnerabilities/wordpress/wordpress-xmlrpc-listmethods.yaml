@@ -1,0 +1,19 @@
+id: wordpress-xmlrpc-listmethods
+info:
+  name: Wordpress XML-RPC List System Methods
+  author: 0ut0fb4nd
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress
+traps:
+- request:
+    method: POST
+    path: /xmlrpc.php
+    headers: null
+    body: <?xml version="1.0" encoding="utf-8"?><methodCall><methodName>system.listMethods</methodName><params></params></methodCall>
+  response:
+    status_code: 200
+    headers: {}
+    body: system.multicallsystem.listMethodsdemo.sayHello

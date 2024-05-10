@@ -1,0 +1,34 @@
+id: bloofoxcms-login-panel
+info:
+  name: bloofoxCMS Login Panel - Detect
+  author: theamanrawat
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:bloofox:bloofoxcms:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: Powered by bloofoxCMS
+    max-request: 2
+    product: bloofoxcms
+    vendor: bloofox
+    verified: 'true'
+  tags: panel,bloofox,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: bloofoxCMS - HomeE-Mail / Username
+- request:
+    method: GET
+    path: /admin/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

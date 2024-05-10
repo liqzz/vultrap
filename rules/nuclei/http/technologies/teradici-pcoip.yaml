@@ -1,0 +1,23 @@
+id: teradici-pcoip
+info:
+  name: Teradici PCoIP Detection
+  author: pdteam
+  description: Teradici PColP was detected.
+  severity: info
+  reference:
+  - https://www.teradici.com/
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,pcoip
+traps:
+- request:
+    method: GET
+    path: /info/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PCoIP Connection Manager

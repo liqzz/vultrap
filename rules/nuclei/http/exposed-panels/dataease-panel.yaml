@@ -1,0 +1,29 @@
+id: dataease-panel
+info:
+  name: Dataease - Login Panel
+  author: DhiyaneshDK
+  description: 'Dataease Login Panel is discovered
+
+    '
+  severity: info
+  reference:
+  - https://github.com/dataease/dataease
+  classification:
+    cpe: cpe:2.3:a:dataease:dataease:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: dataease
+    shodan-query: html:"Dataease"
+    vendor: dataease
+    verified: true
+  tags: login,panel,dataease
+traps:
+- request:
+    method: GET
+    path: /#/login?redirect=%2F
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DataEase doesn't work

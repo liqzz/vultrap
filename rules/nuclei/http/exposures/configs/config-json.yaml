@@ -1,0 +1,52 @@
+id: config-json
+info:
+  name: Configuration File - Detect
+  author: geeknik
+  description: Multiple configuration files were detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 4
+    github-query: filename:config.json
+  tags: config,exposure,files
+traps:
+- request:
+    method: GET
+    path: /config/default.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"api_keys":"aws":"server":'
+- request:
+    method: GET
+    path: /config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /config/config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /credentials/config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

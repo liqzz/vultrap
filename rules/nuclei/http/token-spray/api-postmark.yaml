@@ -1,0 +1,23 @@
+id: api-postmark
+info:
+  name: PostMark API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://postmarkapp.com/developer/api/overview
+  metadata:
+    max-request: 1
+  tags: token-spray,postmark
+traps:
+- request:
+    method: GET
+    path: https://api.postmarkapp.com/server
+    headers:
+      Accept: application/json
+      X-Postmark-Server-Token: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"ID":"Name":"ApiTokens":'

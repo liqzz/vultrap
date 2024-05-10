@@ -1,0 +1,22 @@
+id: permissions-installer
+info:
+  name: Permissions Installer Exposure
+  author: pussycat0x
+  description: Permissions Installer is susceptible to the Installation page exposure
+    due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:" Permissions | Installer"
+  tags: misconfig,permissions,install,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title> Permissions | Installer

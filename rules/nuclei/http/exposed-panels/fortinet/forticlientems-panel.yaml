@@ -1,0 +1,21 @@
+id: forticlientems-panel
+info:
+  name: FortiClient Endpoint Management Server Panel - Detect
+  author: h4sh5
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-800551065
+    verified: true
+  tags: panel,fortinet,forticlient,ems,login,detect
+traps:
+- request:
+    method: GET
+    path: /signin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FortiClient Endpoint Management Server

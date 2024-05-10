@@ -1,0 +1,63 @@
+id: qmail-admin-login
+info:
+  name: QmailAdmin Login Panel - Detect
+  author: ritikchaddha
+  description: QmailAdmin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:qmail_project:qmail:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 5
+    product: qmail
+    shodan-query: title:"QmailAdmin"
+    vendor: qmail_project
+    verified: true
+  tags: qmail,panel,qmail_project
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: QmailAdmin
+- request:
+    method: GET
+    path: /qmailadmin/qmailadmin.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cgi-bin/qmailadmin/qmailadmin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cgi-bin/qmailadmin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cgi-ssl/qmailadmin/qmailadmin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

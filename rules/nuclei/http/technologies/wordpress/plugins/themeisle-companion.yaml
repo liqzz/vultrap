@@ -1,0 +1,23 @@
+id: wordpress-themeisle-companion
+info:
+  name: Orbit Fox by ThemeIsle Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/themeisle-companion/
+  metadata:
+    max-request: 1
+    plugin_namespace: themeisle-companion
+    wpscan: https://wpscan.com/plugin/themeisle-companion
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/themeisle-companion/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

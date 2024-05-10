@@ -1,0 +1,21 @@
+id: concrete-installer
+info:
+  name: Concrete Installer
+  author: pussycat0x
+  description: Concrete is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Install concrete"
+  tags: misconfig,exposure,install,concrete
+traps:
+- request:
+    method: GET
+    path: /index.php/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: install concretechoose language

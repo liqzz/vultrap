@@ -1,0 +1,23 @@
+id: cloud-run-default-page
+info:
+  name: Google Cloud Run Default Page
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  reference:
+  - https://cloud.google.com/run/docs/overview/what-is-cloud-run
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Congratulations | Cloud Run"
+  tags: tech,cloudrun,google
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Congratulations | Cloud Runalt="A group celebrating

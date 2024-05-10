@@ -1,0 +1,20 @@
+id: wso2-products-detect
+info:
+  name: WSO2 Products - Detect
+  author: righettod
+  description: Try to detect the presence of a WSO2 products instance via the version
+    endpoint
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,wso2
+traps:
+- request:
+    method: GET
+    path: /services/Version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: version.services.core.carbon.wso2.org

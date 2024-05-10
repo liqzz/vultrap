@@ -1,0 +1,21 @@
+id: adobe-connect-username-exposure
+info:
+  name: Adobe Connect Username Exposure
+  author: dhiyaneshDk
+  description: Adobe Connect Username is exposed.
+  severity: low
+  reference:
+  - https://packetstormsecurity.com/files/161345/Adobe-Connect-10-Username-Disclosure.html
+  metadata:
+    max-request: 1
+  tags: adobe,disclosure,packetstorm,misconfig
+traps:
+- request:
+    method: GET
+    path: /system/help/support
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Administrators name:Support Administrators email address:'

@@ -1,0 +1,26 @@
+id: xss-deprecated-header
+info:
+  name: XSS-Protection Header - Cross-Site Scripting
+  author: joshlarsen
+  description: Setting the XSS-Protection header is deprecated. Setting the header
+    to anything other than `0` can actually introduce an XSS vulnerability.
+  severity: info
+  reference:
+  - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+  - https://owasp.org/www-project-secure-headers/#x-xss-protection
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+  metadata:
+    max-request: 1
+  tags: xss,misconfig,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

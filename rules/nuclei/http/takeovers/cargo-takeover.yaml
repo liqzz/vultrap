@@ -1,0 +1,22 @@
+id: cargo-takeover
+info:
+  name: cargo takeover detection
+  author: pdteam
+  description: cargo takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: If you're moving your domain away from Cargo you must make this configuration
+      through your registrar's DNS control panel.

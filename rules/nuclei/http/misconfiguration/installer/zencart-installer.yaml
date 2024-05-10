@@ -1,0 +1,24 @@
+id: zencart-installer
+info:
+  name: Zen Cart Installer
+  author: DhiyaneshDk
+  description: Zen Cart is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  reference:
+  - https://www.zen-cart.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"shopping cart program by zen cart"
+    fofa-query: title="Installer" && icon_hash="899320116"
+  tags: misconfig,zencart,install,exposure
+traps:
+- request:
+    method: GET
+    path: /zc_install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Zen Cart&reg; Installer</title>

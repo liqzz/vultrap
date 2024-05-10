@@ -1,0 +1,22 @@
+id: fusionauth-admin-setup
+info:
+  name: FusionAuth Exposed Admin Setup
+  author: ritikchaddha
+  description: FusionAuth Admin Setup is exposed.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"FusionAuth Setup Wizard"
+    fofa-query: title="FusionAuth Setup Wizard"
+  tags: misconfig,fusionauth,admin,setup
+traps:
+- request:
+    method: GET
+    path: /admin/setup-wizard
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FusionAuth Setup WizardFusionAuth is now installed and running

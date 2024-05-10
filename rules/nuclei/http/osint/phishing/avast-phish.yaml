@@ -1,0 +1,23 @@
+id: avast-phish
+info:
+  name: avast phishing Detection
+  author: rxerium
+  description: 'An avast phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://avast.com
+  metadata:
+    max-request: 1
+  tags: phishing,avast,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Avast | Download Free Antivirus &amp; VPN | 100% Free &amp; Easy

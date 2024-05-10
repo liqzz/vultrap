@@ -1,0 +1,21 @@
+id: default-parallels-plesk
+info:
+  name: Default Parallels Plesk Panel Page
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Default Parallels Plesk Panel Page"
+  tags: tech,default-page,parallels,plesk
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Default Parallels Plesk Panel Page</title>

@@ -1,0 +1,24 @@
+id: deos-openview-panel
+info:
+  name: DEOS OPENview Admin Panel Unauthenticated Access
+  author: sullo
+  description: The DEOS OPENview administrative panel is accessible without authentication.
+  severity: high
+  reference: https://www.deos-ag.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    cvss-score: 8.6
+    cwe-id: CWE-284
+  metadata:
+    max-request: 1
+  tags: openview,disclosure,panel,misconfig
+traps:
+- request:
+    method: GET
+    path: /client/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>OPENview</title>

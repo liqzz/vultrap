@@ -1,0 +1,22 @@
+id: unauth-wavink-panel
+info:
+  name: Wavlink Panel - Unauthenticated Access
+  author: princechaddha
+  description: Wavlink Panel was able to be accessed with no authentication requirements
+    in place.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Wi-Fi APP Login"
+  tags: exposure,wavlink,unauth,misconfig,router
+traps:
+- request:
+    method: GET
+    path: /wifi_base.shtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>APP</title>var passphraseKey12="(.*)";var passphraseKey12="";

@@ -1,0 +1,23 @@
+id: api-abstract-phone-validation
+info:
+  name: Abstract Api Phone Validation Test
+  author: daffainfo
+  description: Improve your contact rate and clean your lists with Abstract's industry-leading
+    phone number validation API
+  severity: info
+  reference:
+  - https://www.abstractapi.com/api/phone-validation-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-phone-validation
+  metadata:
+    max-request: 1
+  tags: token-spray,abstractapi
+traps:
+- request:
+    method: GET
+    path: https://phonevalidation.abstractapi.com/v1/?api_key=&number=14154582468
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"number":"is_valid_number":"local_format":'

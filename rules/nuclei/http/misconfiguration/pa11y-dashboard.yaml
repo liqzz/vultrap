@@ -1,0 +1,21 @@
+id: pa11y-dashboard
+info:
+  name: Pa11y Dashboard Exposure
+  author: tess
+  description: Pa11y Dashboard is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Pa11y Dashboard"
+  tags: misconfig,exposure,pa11y
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Pa11y DashboardAdd new URL

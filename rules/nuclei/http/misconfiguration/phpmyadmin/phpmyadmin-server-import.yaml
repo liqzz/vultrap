@@ -1,0 +1,23 @@
+id: pma-server-import
+info:
+  name: PhpMyAdmin Server Import Page - Detect
+  author: Cristi vlad (@cristivlad25)
+  description: Multiple phpMyAdmin server import pages were detected.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 10
+  tags: phpmyadmin,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: File to importLocation of the text file

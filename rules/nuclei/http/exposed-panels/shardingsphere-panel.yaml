@@ -1,0 +1,26 @@
+id: shardingsphere-panel
+info:
+  name: ShardingSphere ElasticJob UI Panel
+  author: DhiyaneshDk
+  description: An ShardingSphere ElasticJob UI panel was detected.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:shardingsphere_elasticjob-ui:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: shardingsphere_elasticjob-ui
+    shodan-query: http.favicon.hash:816588900
+    vendor: apache
+    verified: true
+  tags: panel,shardingsphere,login,apache
+traps:
+- request:
+    method: GET
+    path: /#/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ShardingSphere ElasticJob UI</title>

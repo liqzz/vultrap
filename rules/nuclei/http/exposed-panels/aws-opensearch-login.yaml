@@ -1,0 +1,27 @@
+id: aws-opensearch-login
+info:
+  name: AWS OpenSearch Login - Detect
+  author: Higor Melgaço (eremit4)
+  description: AWS OpenSearch login page was detected.
+  severity: info
+  reference:
+  - https://aws.amazon.com/pt/blogs/opensource/introducing-opensearch/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:amazon:opensearch:*:*:*:*:maven:*:*:*
+  metadata:
+    max-request: 1
+    product: opensearch
+    vendor: amazon
+  tags: panel,opensearch,aws,amazon
+traps:
+- request:
+    method: GET
+    path: /_dashboards/app/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Please login to OpenSearch Dashboards

@@ -1,0 +1,25 @@
+id: api-jsonbin
+info:
+  name: JSONBin API Test
+  author: daffainfo
+  description: Free JSON storage service. Ideal for small scale Web apps, Websites
+    and Mobile apps
+  severity: info
+  reference:
+  - https://jsonbin.io/api-reference
+  - https://github.com/daffainfo/all-about-apikey/tree/main/jsonbin
+  metadata:
+    max-request: 1
+  tags: token-spray,jsonbin
+traps:
+- request:
+    method: GET
+    path: https://api.jsonbin.io/v3/c
+    headers:
+      Host: api.jsonbin.io
+      X-Master-key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"record""collectionMeta""schemaDocId"'

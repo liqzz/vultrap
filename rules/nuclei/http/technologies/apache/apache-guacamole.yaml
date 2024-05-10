@@ -1,0 +1,19 @@
+id: apache-guacamole
+info:
+  name: Apache Guacamole Login Page and version detection
+  author: r3dg33k
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: apache,guacamole,tech,login
+traps:
+- request:
+    method: GET
+    path: /translations/en.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Apache Guacamole

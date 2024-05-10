@@ -1,0 +1,24 @@
+id: mega-phish
+info:
+  name: mega phishing Detection
+  author: rxerium
+  description: 'A mega phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://mega.io
+  metadata:
+    max-request: 1
+  tags: phishing,mega,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Home - MEGASecure and private cloud storage for everyone. Store and share
+      files, chat, meet, back up, sync, and more.

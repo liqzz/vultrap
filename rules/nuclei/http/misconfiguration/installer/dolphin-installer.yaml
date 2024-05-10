@@ -1,0 +1,21 @@
+id: dolphin-installer
+info:
+  name: Dolphin Installer - Exposure
+  author: DhiyaneshDk
+  description: Dolphin is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: icon_hash="-945121295"
+  tags: misconfig,dolphin,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dolphin Installation

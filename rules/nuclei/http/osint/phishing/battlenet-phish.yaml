@@ -1,0 +1,23 @@
+id: battlenet-phish
+info:
+  name: battlenet phishing Detection
+  author: rxerium
+  description: 'A battlenet phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://eu.account.battle.net/login
+  metadata:
+    max-request: 1
+  tags: phishing,battlenet,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Battle.net Login

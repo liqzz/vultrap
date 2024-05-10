@@ -1,0 +1,25 @@
+id: phplist-detect
+info:
+  name: phpList - Detect
+  author: ricardomaia
+  description: 'phpList is an open source newsletter manager.
+
+    '
+  severity: info
+  reference:
+  - https://www.phplist.org/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"phplist"
+  tags: tech,phplist,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="phpListphpList LtdphpList</a>

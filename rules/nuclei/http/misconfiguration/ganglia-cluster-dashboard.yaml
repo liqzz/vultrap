@@ -1,0 +1,32 @@
+id: ganglia-cluster-dashboard
+info:
+  name: Ganglia Cluster Dashboard - Detect
+  author: ritikchaddha
+  description: 'Ganglia Cluster dashboard was detected.
+
+    '
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"ganglia_form.submit()"
+  tags: misconfig,ganglia,dashboard
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ganglia_form.submit()
+- request:
+    method: GET
+    path: /ganglia/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

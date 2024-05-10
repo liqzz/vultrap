@@ -1,0 +1,25 @@
+id: zentral-panel
+info:
+  name: Zentral Panel - Detect
+  author: Adam Crosser
+  description: Zentral panel was detected.
+  severity: info
+  reference:
+  - https://github.com/zentralopensource/zentral
+  - https://zentral.io
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,zentral,oss
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Zentral</title><div class="panel-footer btn-group btn-group-justified"

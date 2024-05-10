@@ -1,0 +1,23 @@
+id: api-google-drive
+info:
+  name: Google Drive API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://developers.google.com/drive/api/guides/about-sdk
+  metadata:
+    max-request: 1
+  tags: token-spray,google,drive,intrusive
+traps:
+- request:
+    method: GET
+    path: https://www.googleapis.com/drive/v3/files/.txt/%3fkey=&supportsAllDrives=true
+    headers:
+      Referer: '{{referer}}'
+      Content-Type: application/json
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'File not found: {{randstr}}.txt.'

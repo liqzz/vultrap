@@ -1,0 +1,41 @@
+id: magento-version-detect
+info:
+  name: Magento Version Detect
+  author: sullo,dogancanbakir
+  description: 'Magento version detection via version module and copyright text.
+
+    '
+  severity: info
+  reference:
+  - https://www.magento.com/
+  - https://magento.stackexchange.com/a/62966
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    verified: 'true'
+    max-request: 2
+    shodan-query: http.component:"Magento"
+  tags: tech,magento,cms
+traps:
+- request:
+    method: GET
+    path: /magento_version
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ^Magento/.*$Copyright (c) 2014 Magento Inc.Copyright (c) 2013 Magento Inc.Copyright
+      (c) 2012 Magento Inc.Copyright (c) 2011 Magento Inc.Copyright (c) 2010 Magento
+      Inc.Copyright (c) 2009 Irubin Consulting Inc.Copyright (c) 2008 Irubin Consulting
+      Inc.
+- request:
+    method: GET
+    path: /skin/frontend/default/default/css/styles.css
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

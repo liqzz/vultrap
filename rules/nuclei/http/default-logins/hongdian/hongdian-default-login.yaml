@@ -1,0 +1,40 @@
+id: hongdian-default-login
+info:
+  name: Hongdian Default Login
+  author: gy741
+  description: Hongdian default login information was detected.
+  severity: high
+  reference:
+  - https://ssd-disclosure.com/ssd-advisory-hongdian-h8922-multiple-vulnerabilities/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 4
+  tags: hongdian,default-login
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+      Accept-Encoding: gzip, deflate
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: status_main.cgi
+- request:
+    method: GET
+    path: /
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+      Accept-Encoding: gzip, deflate
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

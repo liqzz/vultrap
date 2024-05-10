@@ -1,0 +1,26 @@
+id: avideo-install
+info:
+  name: AVideo Installer - Detect
+  author: ritikchaddha
+  description: AVideo installer panel was detected.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L
+    cvss-score: 8.2
+    cwe-id: CWE-459
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"AVideo"
+    fofa-query: AVideo
+  tags: panel,install,avideo,misconfig
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Install AVideo</title>Your system is installed, remove the

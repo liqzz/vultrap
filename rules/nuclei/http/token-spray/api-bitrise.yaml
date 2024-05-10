@@ -1,0 +1,25 @@
+id: api-bitrise
+info:
+  name: Bitrise API Test
+  author: daffainfo
+  description: Build tool and processes integrations to create efficient development
+    pipelines
+  severity: info
+  reference:
+  - https://api-docs.bitrise.io/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/bitrise
+  metadata:
+    max-request: 1
+  tags: token-spray,bitrise
+traps:
+- request:
+    method: GET
+    path: https://api.bitrise.io/v0.1/me
+    headers:
+      Host: api.bitrise.io
+      Authorization: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username":"slug":"email":'

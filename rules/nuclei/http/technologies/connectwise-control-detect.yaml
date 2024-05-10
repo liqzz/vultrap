@@ -1,0 +1,21 @@
+id: connectwise-control-detect
+info:
+  name: ConnectWise Control  Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title="ConnectWise Control Remote Support Software"
+  tags: tech,connectwise
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ConnectWise Control Remote Support Software

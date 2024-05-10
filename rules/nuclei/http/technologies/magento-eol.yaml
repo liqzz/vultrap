@@ -1,0 +1,28 @@
+id: eol-magento
+info:
+  name: Magento End-of-life Detect
+  author: dogancanbakir
+  description: 'Magento end of life detection.
+
+    '
+  severity: info
+  reference:
+  - https://www.magento.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.component:"Magento"
+  tags: magento,tech,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Magento\/([0-9.]+) '

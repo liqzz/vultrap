@@ -1,0 +1,19 @@
+id: kube-api-nodes
+info:
+  name: Kube API Nodes
+  author: sharath,ritikchaddha
+  description: Scans for kube nodes
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kube
+traps:
+- request:
+    method: GET
+    path: /api/v1/nodes
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"NodeList":"items":"containerRuntimeVersion""kubeletVersion": "v'

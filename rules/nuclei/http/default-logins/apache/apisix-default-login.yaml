@@ -1,0 +1,33 @@
+id: apisix-default-login
+info:
+  name: Apache Apisix Default Admin Login
+  author: pdteam
+  description: An Apache Apisix default admin login was discovered.
+  severity: high
+  reference:
+  - https://apisix.apache.org/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+    product: https://apisix.apache.org
+    shodan-query: title:"Apache APISIX Dashboard"
+    fofa-query: title="Apache APISIX Dashboard"
+  tags: apisix,apache,default-login
+traps:
+- request:
+    method: POST
+    path: /apisix/admin/user/login
+    headers:
+      Accept: application/json
+      Authorization: ''
+      Content-Type: application/json;charset=UTF-8
+    body: '{"username":"{{user}}","password":"{{pass}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data""token""code":0'

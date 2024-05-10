@@ -1,0 +1,19 @@
+id: wordpress-db-repair
+info:
+  name: Wordpress DB Repair Exposed
+  author: _C0wb0y_
+  description: Discover enabled Wordpress repair page.
+  severity: low
+  metadata:
+    max-request: 1
+  tags: wordpress,config,fpd
+traps:
+- request:
+    method: GET
+    path: /wp-admin/maint/repair.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>WordPressdefineWP_ALLOW_REPAIRtrue

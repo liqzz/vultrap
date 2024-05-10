@@ -1,0 +1,35 @@
+id: phpsec-config
+info:
+  name: phpspec Config - Detect
+  author: DhiyaneshDK
+  description: phpspec configuration information was detected.
+  severity: info
+  reference: https://phpspec.net/en/stable/cookbook/configuration.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"phpspec.yml"
+  tags: exposure,phpsec,php,devops,cicd
+traps:
+- request:
+    method: GET
+    path: /.phpspec.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'suites:main:namespace:'
+- request:
+    method: GET
+    path: /phpspec.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

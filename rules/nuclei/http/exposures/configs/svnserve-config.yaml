@@ -1,0 +1,26 @@
+id: svnserve-config
+info:
+  name: Svnserve Configuration File - Detect
+  author: sheikhrishad
+  description: Svnserve configuration file was detected.
+  severity: info
+  reference: https://linux.die.net/man/8/svnserve
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intext:"configuration of the svnserve daemon"
+  tags: config,exposure,svnserve
+traps:
+- request:
+    method: GET
+    path: /svnserve.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This file controls the configuration of the svnserve daemon

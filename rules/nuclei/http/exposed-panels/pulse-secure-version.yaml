@@ -1,0 +1,32 @@
+id: pulse-secure-version
+info:
+  name: Pulse Secure Version
+  author: dadevel
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:pulsesecure:pulse_connect_secure:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: pulse_connect_secure
+    vendor: pulsesecure
+  tags: pulse,panel,pulsesecure
+traps:
+- request:
+    method: GET
+    path: /dana-na/nc/nc_gina_ver.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: NAME="ProductVersion"<key>version</key>
+- request:
+    method: GET
+    path: /dana-cached/hc/HostCheckerInstaller.osx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

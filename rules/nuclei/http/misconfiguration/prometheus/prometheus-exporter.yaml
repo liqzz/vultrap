@@ -1,0 +1,21 @@
+id: prometheus-exporter
+info:
+  name: Prometheus exporter detect
+  author: jarijaas
+  description: Prometheus exporter detector
+  severity: info
+  reference:
+  - https://github.com/prometheus/prometheus/wiki/Default-port-allocations
+  metadata:
+    max-request: 1
+  tags: prometheus,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Exporter<a href="/metrics">Metrics</a>

@@ -1,0 +1,29 @@
+id: deployment-ini
+info:
+  name: FTP Deployment Config File - Exposure
+  author: Michal Mikolas (nanuqcz)
+  description: 'Config file for "FTP deployment" utility usually contains server''s
+    FTP credentials in plain text.
+
+    '
+  severity: medium
+  remediation: 'Delete the config file from server & add it to `ignore` section of
+    the deployment file. Or block access to the file using `.htaccess` on the server.
+
+    '
+  reference:
+  - https://github.com/dg/ftp-deployment
+  metadata:
+    vendor: dg
+    product: ftp-deployment
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ^remote\s*=\s*^\[(.*?)\]$

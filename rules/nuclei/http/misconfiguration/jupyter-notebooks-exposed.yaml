@@ -1,0 +1,23 @@
+id: jupyter-notebooks-exposed
+info:
+  name: Jupyter notebooks exposed to reading and writing
+  author: johnk3r
+  description: Jupyter notebooks are exposed.
+  severity: high
+  reference:
+  - https://blog.aquasec.com/python-ransomware-jupyter-notebook
+  metadata:
+    max-request: 1
+    shodan-query: title:"Home Page - Select or create a notebook"
+  tags: jupyter,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Home Page - Select or create a notebook</title><div> There are no
+      notebooks running. </div>

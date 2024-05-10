@@ -1,0 +1,23 @@
+id: wordpress-wp-seopress
+info:
+  name: SEOPress – On-site SEO Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wp-seopress/
+  metadata:
+    max-request: 1
+    plugin_namespace: wp-seopress
+    wpscan: https://wpscan.com/plugin/wp-seopress
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wp-seopress/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

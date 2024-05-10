@@ -1,0 +1,24 @@
+id: payroll-management-system-panel
+info:
+  name: Payroll Management System Web Login Panel - Detect
+  author: idealphase
+  description: Payroll Management System Web login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Admin | Employee's Payroll Management System"
+    verified: true
+  tags: panel,payroll
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Admin | Employee's Payroll Management System</title>

@@ -1,0 +1,23 @@
+id: asus-aicloud-panel
+info:
+  name: ASUS AiCloud Panel - Detect
+  author: ritikchaddha
+  description: ASUS AiCloud Panel was detected.
+  severity: info
+  reference:
+  - https://www.asus.com/in/content/aicloud/
+  metadata:
+    max-request: 1
+    shodan-query: title:"AiCloud"
+    verified: 'true'
+  tags: panel,asus,aicloud,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: AiCloud</title>

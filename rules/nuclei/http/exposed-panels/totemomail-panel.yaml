@@ -1,0 +1,39 @@
+id: totemomail-panel
+info:
+  name: Totemomail Login Panel - Detect
+  author: johnk3r,daffainfo
+  description: Totemomail login panel was detected.
+  severity: info
+  reference:
+  - https://www.totemo.com/en/products/email-encryption
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:totemo:totemomail:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intext:"totemomail" inurl:responsiveUI
+    max-request: 2
+    product: totemomail
+    vendor: totemo
+    verified: true
+  tags: totemomail,panel,totemo
+traps:
+- request:
+    method: GET
+    path: /responsiveUI/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '/responsiveUI/javax.faces.resource/images/totemomail_logo.svg.xhtml/responsiveUI/javax.faces.resource/css/custom.css.xhtml?con=totemo<title>WebMail
+      login: totemomail® WebMail</title>'
+- request:
+    method: GET
+    path: /responsiveUI/webmail/folder.xhtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

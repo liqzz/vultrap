@@ -1,0 +1,22 @@
+id: pingdom-takeover
+info:
+  name: Pingdom Takeover Detection
+  author: pdteam
+  description: Pingdom takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/144
+  metadata:
+    max-request: 1
+  tags: takeover,pingdom
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Public Report Not ActivatedThis public report page has not been activated
+      by the user

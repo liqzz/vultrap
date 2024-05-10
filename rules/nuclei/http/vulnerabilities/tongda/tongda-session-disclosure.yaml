@@ -1,0 +1,21 @@
+id: tongda-session-disclosure
+info:
+  name: Tongda User Session Disclosure
+  author: ritikchaddha
+  description: Tongda User session exposed.
+  severity: medium
+  reference:
+  - https://mp.weixin.qq.com/s/llyGEBRo0t-C7xOLMDYfFQ
+  metadata:
+    max-request: 1
+  tags: tongda,disclosure
+traps:
+- request:
+    method: POST
+    path: /general/userinfo.php?UID=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"dept_name":""online_flag":'

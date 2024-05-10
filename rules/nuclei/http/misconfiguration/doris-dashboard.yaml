@@ -1,0 +1,21 @@
+id: doris-dashboard
+info:
+  name: Doris Dashboard - Exposed
+  author: ritikchaddha
+  description: Unauthorized access to the Doris Dashboard.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:24048806
+  tags: doris,exposure,unauth,logs
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Doris</title>CPU Profile</a>Heap Profile</a>

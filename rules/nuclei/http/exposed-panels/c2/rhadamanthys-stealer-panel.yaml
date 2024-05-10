@@ -1,0 +1,23 @@
+id: rhadamanthys-stealer-panel
+info:
+  name: Rhadamanthys Stealer C2 Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://twitter.com/0xperator/status/1677873700610162690
+  - https://github.com/alex14324/Rhadamanthys-Stealer
+  metadata:
+    max-request: 1
+    verified: true
+  tags: c2,rhadamanthys,stealer,panel
+traps:
+- request:
+    method: GET
+    path: /admin/console/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Rhadamanthys Admin

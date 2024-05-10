@@ -1,0 +1,24 @@
+id: versa-flexvnf-server
+info:
+  name: Versa FlexVNF Server
+  author: c-sh0
+  description: 'Versa FlexVNF Server Detection (magic request params exposes Server
+    signature/version)
+
+    '
+  severity: info
+  reference:
+  - https://versa-networks.com/products/components/
+  metadata:
+    max-request: 1
+  tags: tech,versa,flexvnf
+traps:
+- request:
+    method: GET
+    path: /&?=?
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

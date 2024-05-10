@@ -1,0 +1,25 @@
+id: identity-server-v3-detect
+info:
+  name: Identity Server V3 - Detect
+  author: righettod
+  description: 'Identity Server V3 technology was detected.
+
+    '
+  severity: info
+  reference:
+  - https://identityserver.github.io/Documentation/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"IdentityServer v3"
+  tags: tech,identityserver,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: IdentityServer v3identityserver.github.io

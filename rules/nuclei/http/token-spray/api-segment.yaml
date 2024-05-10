@@ -1,0 +1,24 @@
+id: api-segment
+info:
+  name: Segment API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://reference.segmentapis.com/
+  metadata:
+    max-request: 1
+  tags: token-spray,segment
+traps:
+- request:
+    method: GET
+    path: https://platform.segmentapis.com/v1beta/workspaces/myworkspace
+    headers:
+      Host: platform.segmentapis.com
+      Authorization: Bearer {{token}}
+      Content-Type: application/json
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"name":"id"'

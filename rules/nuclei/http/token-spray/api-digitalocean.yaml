@@ -1,0 +1,23 @@
+id: api-digitalocean
+info:
+  name: DigitalOcean API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://docs.digitalocean.com/reference/api/
+  metadata:
+    max-request: 1
+  tags: token-spray,digitalocean
+traps:
+- request:
+    method: GET
+    path: https://api.digitalocean.com/v2/droplets
+    headers:
+      Host: api.digitalocean.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"droplets":"meta":'

@@ -1,0 +1,21 @@
+id: craft-cms-detect
+info:
+  name: Craft CMS Detect
+  author: skeltavik
+  description: Detects Craft CMS
+  severity: info
+  reference:
+  - https://craftcms.com
+  metadata:
+    max-request: 1
+  tags: tech,craftcms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

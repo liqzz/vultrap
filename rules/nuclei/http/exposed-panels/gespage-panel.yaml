@@ -1,0 +1,24 @@
+id: gespage-panel
+info:
+  name: Gespage Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: Gespage login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: Path=/gespage
+  tags: panel,gespage
+traps:
+- request:
+    method: GET
+    path: /gespage/webapp/login.xhtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <link rel="stylesheet" href="css/gespage.css" /><link rel="stylesheet" href="css/menugrey.css"
+      />

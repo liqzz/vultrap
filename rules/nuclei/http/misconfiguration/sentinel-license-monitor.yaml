@@ -1,0 +1,21 @@
+id: sentinel-license-monitor
+info:
+  name: Sentinel License Monitor - Detect
+  author: DhiyaneshDk
+  description: null
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Sentinel License Monitor"
+  tags: misconfig,sentinel,license,monitor
+traps:
+- request:
+    method: GET
+    path: /keyinfo.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sentinel License MonitorLicenses-in-use

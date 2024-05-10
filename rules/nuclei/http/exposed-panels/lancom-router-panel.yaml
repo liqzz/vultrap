@@ -1,0 +1,24 @@
+id: lancom-router-panel
+info:
+  name: Lancom Router Login Panel - Detect
+  author: __Fazal,daffainfo
+  description: Lancom router login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"LANCOM Systems GmbH"
+    verified: true
+  tags: panel,lancom,router
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="LANCOM Systems GmbH"class="outside_device_string_common">LANCOM

@@ -1,0 +1,24 @@
+id: api-smartsheet
+info:
+  name: Smartsheet API Test
+  author: daffainfo
+  description: Allows you to programmatically access and Smartsheet data and account
+    information
+  severity: info
+  reference:
+  - https://smartsheet.redoc.ly/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/smartsheet
+  metadata:
+    max-request: 1
+  tags: token-spray,smartsheet
+traps:
+- request:
+    method: GET
+    path: https://api.smartsheet.com/2.0/home?include=source
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"sheets":"folders":'

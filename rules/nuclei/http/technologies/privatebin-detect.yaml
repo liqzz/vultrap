@@ -1,0 +1,25 @@
+id: privatebin-detect
+info:
+  name: PrivateBin - Detect
+  author: righettod
+  description: 'PrivateBin was detected.
+
+    '
+  severity: info
+  reference:
+  - https://privatebin.info/
+  metadata:
+    max-request: 1
+    verified: true
+    shodan-query: title:"PrivateBin"
+  tags: tech,privatebin,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

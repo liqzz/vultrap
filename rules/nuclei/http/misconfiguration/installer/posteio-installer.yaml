@@ -1,0 +1,21 @@
+id: posteio-installer
+info:
+  name: First Poste.io Configuration Installation Wizard
+  author: ritikchaddha
+  description: Poste.io is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Initial server configuration"
+  tags: misconfig,exposure,install,poste
+traps:
+- request:
+    method: GET
+    path: /admin/install/server
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Initial server configurationGenerate</button>

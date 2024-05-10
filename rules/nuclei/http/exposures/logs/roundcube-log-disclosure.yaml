@@ -1,0 +1,21 @@
+id: roundcube-log-disclosure
+info:
+  name: Roundcube Log Disclosure
+  author: dhiyaneshDk,kazet
+  description: Roundcube Log file was disclosed.
+  severity: medium
+  reference:
+  - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/roundcube-log-disclosure.json
+  metadata:
+    max-request: 16
+  tags: exposure,logs
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'IMAP Error:Message forDB Error:IMAP Error:PHP Error:PHP Warning:'

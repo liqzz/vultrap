@@ -1,0 +1,23 @@
+id: wordpress-yith-woocommerce-wishlist
+info:
+  name: YITH WooCommerce Wishlist Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/yith-woocommerce-wishlist/
+  metadata:
+    max-request: 1
+    plugin_namespace: yith-woocommerce-wishlist
+    wpscan: https://wpscan.com/plugin/yith-woocommerce-wishlist
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/yith-woocommerce-wishlist/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,23 @@
+id: wordpress-the-events-calendar
+info:
+  name: The Events Calendar Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/the-events-calendar/
+  metadata:
+    max-request: 1
+    plugin_namespace: the-events-calendar
+    wpscan: https://wpscan.com/plugin/the-events-calendar
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/the-events-calendar/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

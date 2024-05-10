@@ -1,0 +1,35 @@
+id: somansa-dlp-detect
+info:
+  name: Somansa DLP Login Panel - Detect
+  author: gy741,ritikchaddha
+  description: Somansa DLP login panel was detected.
+  severity: info
+  reference:
+  - https://www.somansa.com/solution/integrated_solution/dlp/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.html:"DLP system"
+    verified: true
+  tags: panel,somansa,dlp
+traps:
+- request:
+    method: GET
+    path: /DLPCenter/loginform.sms
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /DLPCenter/js/SOMANSA
+- request:
+    method: GET
+    path: /DLPCenter/images/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

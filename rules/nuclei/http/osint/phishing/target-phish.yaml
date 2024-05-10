@@ -1,0 +1,23 @@
+id: target-phish
+info:
+  name: target phishing Detection
+  author: rxerium
+  description: 'A target phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://target.com
+  metadata:
+    max-request: 1
+  tags: phishing,target,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Target : Expect More. Pay Less.'

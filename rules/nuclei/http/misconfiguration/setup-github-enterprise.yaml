@@ -1,0 +1,21 @@
+id: setup-github-enterprise
+info:
+  name: Setup GitHub Enterprise - Detect
+  author: tess
+  description: null
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-1373456171
+  tags: panel,exposure,setup,github,misconfig
+traps:
+- request:
+    method: GET
+    path: /setup/start
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Setup GitHub EnterpriseInstall GitHub Enterprise

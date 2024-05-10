@@ -1,0 +1,38 @@
+id: unauth-temporal-web-ui
+info:
+  name: Temporal Web UI - Unauthenticated Access
+  author: ggranjus
+  description: 'Temporal Web UI was able to be accessed because no authentication
+    was required
+
+    '
+  severity: high
+  reference:
+  - https://docs.temporal.io/web-ui
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    verified: 'true'
+    max-request: 2
+    shodan-query: http.favicon.hash:557327884
+  tags: misconfig,temporal,unauth
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /api/v1/namespaces/default/workflows?query=
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: nextPageTokenNamespace default is not found.

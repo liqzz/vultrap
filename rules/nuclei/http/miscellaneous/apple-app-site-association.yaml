@@ -1,0 +1,37 @@
+id: apple-app-site-association
+info:
+  name: Apple app site association for harvesting end points
+  author: panch0r3d
+  description: null
+  severity: info
+  metadata:
+    max-request: 3
+  tags: miscellaneous,misc,apple
+traps:
+- request:
+    method: GET
+    path: /.well-known/apple-app-site-association
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: applinksappIDpaths
+- request:
+    method: GET
+    path: /well-known/apple-app-site-association
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /apple-app-site-association
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

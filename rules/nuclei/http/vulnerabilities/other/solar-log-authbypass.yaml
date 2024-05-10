@@ -1,0 +1,26 @@
+id: solar-log-authbypass
+info:
+  name: Solar-Log 500 2.8.2 - Incorrect Access Control
+  author: geeknik
+  description: Solar-Log 500 2.8.2 is susceptible to incorrect access control because
+    the web administration server for Solar-Log 500 all versions prior to 2.8.2 Build
+    52 does not require authentication, which allows arbitrary remote attackers gain
+    administrative privileges by connecting to the server.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/49986
+  classification:
+    cwe-id: CWE-284
+  metadata:
+    max-request: 1
+  tags: solarlog,auth-bypass,edb
+traps:
+- request:
+    method: GET
+    path: /lan.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ' Solare Datensysteme GmbHmailto:info@solar-log.com'

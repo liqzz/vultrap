@@ -1,0 +1,19 @@
+id: kubelet-metrics
+info:
+  name: Kubelet Metrics
+  author: sharath
+  description: Scans for kubelet metrics
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kubelet
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '# HELP # TYPE '

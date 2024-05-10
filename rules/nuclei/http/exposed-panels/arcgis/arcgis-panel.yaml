@@ -1,0 +1,26 @@
+id: arcgis-panel
+info:
+  name: ArcGIS Enterprise Panel
+  author: Podalirius
+  description: An ArcGIS instance was discovered.
+  severity: info
+  reference:
+  - https://enterprise.arcgis.com/en/
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:esri:arcgis_enterprise:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: arcgis_enterprise
+    vendor: esri
+  tags: docs,arcgis,cms,panel,esri
+traps:
+- request:
+    method: GET
+    path: /portal/portalhelp/en/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ArcGIS EnterpriseInstallation and Deployment

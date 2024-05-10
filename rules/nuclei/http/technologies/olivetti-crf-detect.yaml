@@ -1,0 +1,20 @@
+id: olivetti-crf-detect
+info:
+  name: Olivetti CRF Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Olivetti CRF"
+  tags: tech,olivetti
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>Olivetti CRF</TITLE>

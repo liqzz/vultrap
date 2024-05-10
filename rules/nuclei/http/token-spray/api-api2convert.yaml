@@ -1,0 +1,34 @@
+id: api-api2convert
+info:
+  name: Api2Convert API Test
+  author: daffainfo
+  description: Online File Conversion API
+  severity: info
+  reference:
+  - https://www.api2convert.com/docs/index.html
+  - https://github.com/daffainfo/all-about-apikey/tree/main/api2convert
+  metadata:
+    max-request: 1
+  tags: token-spray,api2convert
+traps:
+- request:
+    method: POST
+    path: https://api.api2convert.com/v2/jobs
+    headers:
+      Host: api.api2convert.com
+      X-Oc-Api-Key: '{{token}}'
+      Content-Type: application/json
+    body: |
+      {
+          "input": [{
+              "type": "remote",
+              "source": "https://example-files.online-convert.com/raster%20image/jpg/example_small.jpg"
+          }],
+          "conversion": [{
+              "target": "png"
+          }]
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id""token""type"'

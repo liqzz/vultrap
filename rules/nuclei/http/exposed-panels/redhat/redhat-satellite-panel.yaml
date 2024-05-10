@@ -1,0 +1,24 @@
+id: redhat-satellite-panel
+info:
+  name: Red Hat Satellite Panel - Detect
+  author: princechaddha
+  description: null
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"redhat" "Satellite"
+    verified: true
+  tags: panel,redhat,satellite
+traps:
+- request:
+    method: GET
+    path: /users/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SatelliteredhatLoginPage

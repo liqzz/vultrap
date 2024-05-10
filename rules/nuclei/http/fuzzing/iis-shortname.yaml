@@ -1,0 +1,64 @@
+id: iis-shortname
+info:
+  name: IIS - Short Name Detect
+  author: nodauf
+  description: A website running via IIS on an old .net framework contains a get request
+    vulnerability. Using the the tilde character "~" in the request, an attacker can
+    locate short names of files and folders not normally visible.
+  severity: info
+  reference:
+  - https://github.com/lijiejie/IIS_shortname_Scanner
+  - https://www.exploit-db.com/exploits/19525
+  - http://soroush.secproject.com/blog/2012/06/microsoft-iis-tilde-character-vulnerabilityfeature-short-filefolder-name-disclosure/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+  tags: iis,edb
+traps:
+- request:
+    method: GET
+    path: /N0t4xist*~1*/a.aspx
+    headers:
+      Origin: '{{BaseURL}}'
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /*~1*/a.aspx'
+    headers:
+      Origin: '{{BaseURL}}'
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    body: ''
+  response:
+    status_code: 404
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: /N0t4xist*~1*/a.aspx
+    headers:
+      Origin: '{{BaseURL}}'
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: /*~1*/a.aspx'
+    headers:
+      Origin: '{{BaseURL}}'
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    body: ''
+  response:
+    status_code: 404
+    headers: {}
+    body: ''

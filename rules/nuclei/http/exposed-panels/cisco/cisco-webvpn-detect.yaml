@@ -1,0 +1,36 @@
+id: cisco-webvpn-detect
+info:
+  name: Cisco WebVPN Panel - Detect
+  author: ricardomaia
+  description: Cisco WebVPN panel was detected.
+  severity: info
+  reference:
+  - https://askanydifference.com/difference-between-cisco-clientless-ssl-vpn-and-anyconnect-with-table/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: fid="U1TP/SJklrT9VLIEpZkQNg=="
+    google-query: intitle:"SSLVPN Service"
+    max-request: 2
+    verified: true
+  tags: panel,cisco,vpn
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CISCOAnyConnectSSLVPN Service
+- request:
+    method: GET
+    path: /webvpn.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,25 @@
+id: clockwork-php-page
+info:
+  name: Clockwork PHP page exposure
+  author: organiccrap
+  description: 'Clockwork php page was exposed, which allows admins to profile and
+    debug the application, view database queries, HTTP requests, and other details
+    right from the browser''s developer tools.
+
+    '
+  severity: high
+  reference:
+  - https://twitter.com/damian_89_/status/1250721398747791360
+  metadata:
+    max-request: 1
+  tags: tech,clockwork,exposure
+traps:
+- request:
+    method: GET
+    path: /__clockwork/app
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Clockwork</title><html ng-app="Clockwork" ng-csp="">

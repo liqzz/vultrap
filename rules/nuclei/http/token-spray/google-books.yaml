@@ -1,0 +1,22 @@
+id: api-googlebooks
+info:
+  name: Google Books API Test
+  author: daffainfo
+  description: Google Books
+  severity: info
+  reference:
+  - https://developers.google.com/books/docs/overview
+  - https://github.com/daffainfo/all-about-apikey/tree/main/google-books
+  metadata:
+    max-request: 1
+  tags: token-spray,google,books
+traps:
+- request:
+    method: GET
+    path: https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: kindidetag

@@ -1,0 +1,71 @@
+id: sensitive-storage-data-expose
+info:
+  name: Sensitive Storage Data - Detect
+  author: pussycat0x
+  description: A generic search for 'storage' in sensitive key files, file names,
+    logs, etc., returned a match.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/6304
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 6
+  tags: expose,listing,config,logs,storage,edb,files,exposure
+traps:
+- request:
+    method: GET
+    path: /storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index ofoauth-private.keyoauth-private.key
+- request:
+    method: GET
+    path: /api_smartapp/storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /equipbid/storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /server/storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /intikal/storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /elocker_old/storage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: x-recruiting-header
+info:
+  name: X-Recruiting Header
+  author: geeknik
+  description: Websites that advertise jobs via HTTP headers
+  severity: info
+  reference:
+  - https://webtechsurvey.com/response-header/x-recruiting
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: 'X-Recruiting:'
+  tags: miscellaneous,misc,hiring,jobs,employment,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

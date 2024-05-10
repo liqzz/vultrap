@@ -1,0 +1,21 @@
+id: proposify-takeover
+info:
+  name: proposify takeover detection
+  author: pdteam
+  description: proposify takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: If you need immediate assistance, please contact <a href="mailto:support@proposify.biz

@@ -1,0 +1,38 @@
+id: jenkins-script
+info:
+  name: Jenkins - Remote Code Execution
+  author: philippedelteil,DhiyaneshDK
+  description: 'Jenkins is susceptible to a remote code execution vulnerability due
+    to accessible script functionality.
+
+    '
+  severity: critical
+  reference:
+  - https://hackerone.com/reports/403402
+  - https://medium.com/@gokulsspace/the-30000-bounty-affair-3f025ee6b834
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 2
+  tags: devops,hackerone,jenkins,rce
+traps:
+- request:
+    method: GET
+    path: /script/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: println(Jenkins.instance.pluginManager.plugins)Script ConsoleScriptconsole
+- request:
+    method: GET
+    path: /jenkins/script
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

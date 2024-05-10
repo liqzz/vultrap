@@ -1,0 +1,22 @@
+id: synnefo-admin-panel
+info:
+  name: Synnefo Admin Login Panel - Detect
+  author: impramodsargar
+  description: Synnefo Admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,synnefo
+traps:
+- request:
+    method: GET
+    path: /synnefoclient/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Synnefo Admin</title>

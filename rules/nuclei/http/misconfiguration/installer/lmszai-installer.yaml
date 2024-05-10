@@ -1,0 +1,21 @@
+id: lmszai-installer
+info:
+  name: LMSZAI Installer Exposure
+  author: DhiyaneshDk
+  description: LMSZAI is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"LMSZAI - Learning Management System"
+  tags: misconfig,blesta,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LMSZAI - Learning Management SystemConfiguaration

@@ -1,0 +1,29 @@
+id: sophos-mobile-panel
+info:
+  name: Sophos Mobile Panel - Detect
+  author: Adam Crosser,idealphase
+  description: Sophos Mobile panel was detected.
+  severity: info
+  reference:
+  - https://www.sophos.com/en-us/products/mobile-control
+  - https://www.sophos.com/en-us/support/downloads/sophos-mobile
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sophos:mobile:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: mobile
+    shodan-query: http.title:"Sophos Mobile"
+    vendor: sophos
+  tags: panel,sophos
+traps:
+- request:
+    method: GET
+    path: /login.xhtml?faces-redirect=true
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sophos Mobile</title>

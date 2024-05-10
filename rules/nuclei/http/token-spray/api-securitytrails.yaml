@@ -1,0 +1,24 @@
+id: api-securitytrails
+info:
+  name: SecurityTrails API Test
+  author: 0ri2N
+  description: null
+  severity: info
+  reference:
+  - https://securitytrails.com
+  - https://docs.securitytrails.com
+  - https://securitytrails.com/corp/api
+  metadata:
+    max-request: 1
+  tags: recon,securitytrails,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.securitytrails.com/v1/ping
+    headers:
+      APIKey: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: success

@@ -1,0 +1,28 @@
+id: springboot-beans
+info:
+  name: Detect Springboot Beans Actuator
+  author: ajaysenr
+  description: Displays a complete list of all the Spring beans in the application
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /beans
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"type""beans""dependencies""scope"'
+- request:
+    method: GET
+    path: /actuator/beans
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

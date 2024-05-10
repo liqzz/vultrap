@@ -1,0 +1,22 @@
+id: api-adafruit-io
+info:
+  name: Adafruit IO API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://io.adafruit.com/api/docs/
+  metadata:
+    max-request: 1
+  tags: token-spray,adafruit
+traps:
+- request:
+    method: GET
+    path: https://io.adafruit.com/api/v2/user
+    headers:
+      X-AIO-Key: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username":"id":'

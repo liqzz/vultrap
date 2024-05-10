@@ -1,0 +1,21 @@
+id: api-c99
+info:
+  name: C99 API Test
+  author: 0ri2N
+  description: null
+  severity: info
+  reference:
+  - https://api.c99.nl
+  metadata:
+    max-request: 1
+  tags: c99,api,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.c99.nl/ping?key=&host=1.1.1.1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PING 1.1.1.1

@@ -1,0 +1,21 @@
+id: pqube-power-analyzers
+info:
+  name: PQube 3 Power Analyzers
+  author: pussycat0x
+  description: PQube 3 Power Analyzer panel was detected.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"PQube 3"
+  tags: iot,exposure
+traps:
+- request:
+    method: GET
+    path: /status.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'PQube 3 InformationPower Configuration:'

@@ -1,0 +1,34 @@
+id: sysaid-panel
+info:
+  name: SysAid Login Panel - Detect
+  author: pdteam
+  description: SysAid login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sysaid:sysaid:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: sysaid
+    vendor: sysaid
+  tags: panel,sysaid,helpdesk
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /Login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

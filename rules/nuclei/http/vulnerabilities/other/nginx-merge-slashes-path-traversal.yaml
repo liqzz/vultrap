@@ -1,0 +1,44 @@
+id: nginx-merge-slashes-path-traversal
+info:
+  name: Nginx Server - Local File Inclusion
+  author: dhiyaneshDk
+  description: Nginx server is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/nginx-merge-slashes-path-traversal.json
+  - https://medium.com/appsflyer/nginx-may-be-protecting-your-applications-from-traversal-attacks-without-you-even-knowing-b08f882fd43d
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 3
+  tags: exposure,config,lfi,nginx
+traps:
+- request:
+    method: GET
+    path: ///////../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:.*:0:0:app.listen
+- request:
+    method: GET
+    path: /static///////../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: ///../app.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

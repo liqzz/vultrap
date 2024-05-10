@@ -1,0 +1,25 @@
+id: api-open-page-rank
+info:
+  name: Open Page Rank API Test
+  author: daffainfo
+  description: API for calculating and comparing metrics of different websites using
+    Page Rank algorithm
+  severity: info
+  reference:
+  - https://www.domcop.com/openpagerank/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/open-page-rank
+  metadata:
+    max-request: 1
+  tags: token-spray,openpagerank
+traps:
+- request:
+    method: GET
+    path: https://openpagerank.com/api/v1.0/getPageRank?domains[]=google.com
+    headers:
+      Host: openpagerank.com
+      API-OPR: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"page_rank_integer""page_rank_decimal""rank"'

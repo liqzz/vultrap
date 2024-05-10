@@ -1,0 +1,22 @@
+id: wordpress-emergency-script
+info:
+  name: WordPress Emergency Script
+  author: dwisiswant0
+  description: Exposed wordpress password reset emergency script.
+  severity: info
+  reference:
+  - https://wordpress.org/support/article/resetting-your-password/#using-the-emergency-password-reset-script
+  metadata:
+    max-request: 1
+  tags: wordpress
+traps:
+- request:
+    method: GET
+    path: /emergency.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Your use of this script is at your sole riskWordPress AdministratorUpdate
+      Options

@@ -1,0 +1,24 @@
+id: default-sql-dump
+info:
+  name: MySQL - Dump Files
+  author: geeknik,dwisiswant0,ELSFA7110,mastercho
+  description: A MySQL dump file was found
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 21
+  tags: exposure,backup,mysql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      Range: bytes=0-3000
+    body: null
+  response:
+    status_code: 206
+    headers: {}
+    body: (?m)(?:DROP|CREATE|(?:UN)?LOCK) TABLE|INSERT INTO

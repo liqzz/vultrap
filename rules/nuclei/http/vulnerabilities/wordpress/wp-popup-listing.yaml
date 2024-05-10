@@ -1,0 +1,19 @@
+id: wordpress-popup-listing
+info:
+  name: WordPress Popup Plugin Directory Listing
+  author: aashiq
+  description: Searches for sensitive directories present in the wordpress-popup plugin.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress,listing,plugin
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wordpress-popup/views/admin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins/wordpress-popup/views/admin

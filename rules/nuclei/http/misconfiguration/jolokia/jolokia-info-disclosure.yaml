@@ -1,0 +1,22 @@
+id: jolokia-info-disclosure
+info:
+  name: Jolokia - Information disclosure
+  author: pussycat0x
+  description: Jolokia - Information is exposed.
+  severity: medium
+  reference:
+  - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
+  - https://github.com/laluka/jolokia-exploitation-toolkit
+  metadata:
+    max-request: 16
+  tags: jolokia,springboot,mbean,tomcat,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"mbean":"java.lang:type=Memory""attribute":"ImplementationVendor""attribute":"ImplementationVersion""attribute":"ImplementationName""attribute":"SpecificationVendor""attribute":"MBeanServerId""attribute":"SpecificationName""attribute":"SpecificationVersion'

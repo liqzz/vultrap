@@ -1,0 +1,26 @@
+id: pure-storage-login
+info:
+  name: Pure Storage Login Panel - Detect
+  author: dhiyaneshDK
+  description: Pure Storage login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:purestorage:purity:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: purity
+    shodan-query: http.title:"Pure Storage Login"
+    vendor: purestorage
+  tags: panel,purestorage
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Pure Storage Login</title>

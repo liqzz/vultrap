@@ -1,0 +1,29 @@
+id: mysql-history
+info:
+  name: Mysql History - File Disclosure
+  author: kazet
+  description: 'The mysql_history file is a history file used by the MySQL command-line
+    client (mysql) to store a record of the SQL commands and statements entered by
+    a user during their interactive MySQL sessions. It serves as a command history
+    for the MySQL client, allowing users to recall and reuse previously executed SQL
+    commands.
+
+    '
+  severity: low
+  reference:
+  - http://doc.docs.sk/mysql-refman-5.5/mysql-history-file.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"mysql_history"
+  tags: misconfig,disclosure,config
+traps:
+- request:
+    method: GET
+    path: /.mysql_history
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: _HiStOrY_V2_show databases;

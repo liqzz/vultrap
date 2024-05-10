@@ -1,0 +1,21 @@
+id: unauthenticated-alert-manager
+info:
+  name: Alert Manager - Unauthenticated Access
+  author: dhiyaneshDK
+  description: Alert Manager was able to be accessed with no authentication requirements
+    in place.
+  severity: high
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Alertmanager"
+  tags: unauth,alertmanager,misconfig
+traps:
+- request:
+    method: GET
+    path: /#/alerts
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Alertmanager</title>

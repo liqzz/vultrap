@@ -1,0 +1,19 @@
+id: clientaccesspolicy
+info:
+  name: Silverlight cross-domain policy
+  author: emadshanab
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: miscellaneous,misc
+traps:
+- request:
+    method: GET
+    path: /clientaccesspolicy.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <access-policy><cross-domain-access>domain uri=

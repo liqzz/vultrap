@@ -1,0 +1,27 @@
+id: evilginx
+info:
+  name: EvilGinx - Detect
+  author: pussycat0x
+  description: 'Evilginx2 is a man-in-the-middle attack framework used for phishing
+    login credentials along with session cookies which in turn allows bypassing 2-factor
+    authentication protection.
+
+    '
+  severity: info
+  reference:
+  - https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-infrastructure/delivery/evilginx
+  metadata:
+    censys-query: b18d778b4e4b6bf1fd5b2d790c941270145a6a6d
+    max-request: 1
+    verified: 'true'
+  tags: tech,evilginx,c2,phishing,panel
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Evilginx

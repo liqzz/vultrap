@@ -1,0 +1,25 @@
+id: bynder-panel
+info:
+  name: Bynder Login Panel - Detect
+  author: righettod
+  description: 'Bynder login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.bynder.com/en/
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:1017650009
+    verified: true
+  tags: panel,bynder,login,detect
+traps:
+- request:
+    method: GET
+    path: /login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

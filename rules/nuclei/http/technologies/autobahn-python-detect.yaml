@@ -1,0 +1,20 @@
+id: autobahn-python-detect
+info:
+  name: Autobahn-Python Webserver Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: AutobahnPython
+  tags: tech,webserver
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>AutobahnPython([ 0-9.]+)<\/h1>

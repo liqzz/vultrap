@@ -1,0 +1,22 @@
+id: uberflip-takeover
+info:
+  name: Uberflip Takeover Detection
+  author: pdteam
+  description: Uberflip takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/150
+  - https://hackerone.com/reports/863551
+  metadata:
+    max-request: 1
+  tags: takeover,uberflip,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Non-hub domain, The URL you've accessed does not provide a hub.

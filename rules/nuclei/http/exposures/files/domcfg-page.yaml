@@ -1,0 +1,21 @@
+id: domcfg-page
+info:
+  name: Lotus Domino Configuration Page
+  author: gevakun
+  description: Lotus Domino configuration file is exposed.
+  severity: low
+  reference:
+  - https://twitter.com/Wh11teW0lf/status/1295594085445709824
+  metadata:
+    max-request: 1
+  tags: exposure,lotus,files
+traps:
+- request:
+    method: GET
+    path: /domcfg.nsf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Web Server ConfigurationMappingMappings

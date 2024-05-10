@@ -1,0 +1,24 @@
+id: webpack-config
+info:
+  name: Webpack Configuration File - Detect
+  author: ambassify
+  description: Webpack configuration file was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"webpack.config.js"
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /webpack.config.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: module.exportsconst

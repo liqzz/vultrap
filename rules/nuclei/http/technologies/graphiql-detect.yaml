@@ -1,0 +1,19 @@
+id: graphiql-detect
+info:
+  name: GraphiQL Detect
+  author: Adam Crosser
+  description: Detects the GraphiQL application
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,graphiql,graphql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>GraphiQL

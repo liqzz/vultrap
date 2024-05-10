@@ -1,0 +1,25 @@
+id: moodle-workplace-panel
+info:
+  name: Moodle Workplace Login Panel - Detect
+  author: righettod
+  description: 'Moodle workplace login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://moodle.com/solutions/workplace/
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"moodle"
+    verified: true
+  tags: panel,moodle,login,detect
+traps:
+- request:
+    method: GET
+    path: /login/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: workplace

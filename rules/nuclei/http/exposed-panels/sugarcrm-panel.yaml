@@ -1,0 +1,35 @@
+id: sugarcrm-panel
+info:
+  name: SugarCRM Login Panel - Detect
+  author: johnk3r
+  description: SugarCRM login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sugarcrm:sugarcrm:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: sugarcrm
+    shodan-query: http.title:sugarcrm
+    vendor: sugarcrm
+  tags: sugarcrm,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SugarCRM</title>
+- request:
+    method: GET
+    path: /index.php?action=Login&module=Users
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

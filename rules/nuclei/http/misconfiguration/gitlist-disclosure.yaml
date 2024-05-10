@@ -1,0 +1,20 @@
+id: gitlist-disclosure
+info:
+  name: GitList Disclosure
+  author: dhiyaneshDK
+  description: GitList is exposed.
+  severity: low
+  metadata:
+    max-request: 1
+    shodan-query: title:"GitList"
+  tags: gitlist,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GitList</title>

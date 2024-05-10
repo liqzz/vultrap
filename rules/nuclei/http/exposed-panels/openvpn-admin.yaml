@@ -1,0 +1,45 @@
+id: openvpn-admin
+info:
+  name: OpenVPN Admin Login Panel - Detect
+  author: ritikchaddha
+  description: OpenVPN Admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: openvpn
+    shodan-query: http.title:"OpenVPN-Admin"
+    vendor: openvpn
+    verified: true
+  tags: panel,openvpn,admin,config
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>OpenVPN-Admin<title>OpenVPN Admin
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

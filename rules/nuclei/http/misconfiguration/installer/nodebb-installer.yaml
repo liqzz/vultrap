@@ -1,0 +1,22 @@
+id: nodebb-installer
+info:
+  name: NodeBB Web Installer
+  author: DhiyaneshDk
+  description: NodeBB Web is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"NodeBB Web Installer"
+  tags: misconfig,nodebb,install,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: NodeBB Web InstallerCreate an Administrator account

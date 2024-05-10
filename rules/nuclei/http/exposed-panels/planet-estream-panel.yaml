@@ -1,0 +1,28 @@
+id: planet-estream-panel
+info:
+  name: Planet eStream Login Panel - Detect
+  author: arafatansari
+  description: Planet eStream login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:planetestream:planet_estream:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: planet_estream
+    shodan-query: title:"Login - Planet eStream"
+    vendor: planetestream
+    verified: true
+  tags: panel,planet,estream,planetestream
+traps:
+- request:
+    method: GET
+    path: /Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login - Planet eStreamPowered by Planet eStreamaria-label="Planet eStream
+      Website

@@ -1,0 +1,23 @@
+id: yarn-manager-exposure
+info:
+  name: Apache YARN ResourceManager Panel - Detect
+  author: pdteam
+  description: Apache YARN ResourceManager panel was detected.
+  severity: low
+  classification:
+    cpe: cpe:2.3:a:apache:hadoop:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: hadoop
+    vendor: apache
+  tags: panel,apache,yarn,exposure
+traps:
+- request:
+    method: GET
+    path: /cluster/cluster
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'hadoopresourcemanagerlogged in as: dr.who'

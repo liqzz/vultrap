@@ -1,0 +1,23 @@
+id: wordpress-really-simple-captcha
+info:
+  name: Really Simple CAPTCHA Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/really-simple-captcha/
+  metadata:
+    max-request: 1
+    plugin_namespace: really-simple-captcha
+    wpscan: https://wpscan.com/plugin/really-simple-captcha
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/really-simple-captcha/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

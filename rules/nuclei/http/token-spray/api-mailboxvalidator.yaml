@@ -1,0 +1,22 @@
+id: api-mailboxvalidator
+info:
+  name: MailboxValidator API Test
+  author: daffainfo
+  description: Validate email address to improve deliverability
+  severity: info
+  reference:
+  - https://www.mailboxvalidator.com/api-email-free
+  - https://github.com/daffainfo/all-about-apikey/tree/main/mailboxvalidator
+  metadata:
+    max-request: 1
+  tags: token-spray,mailboxvalidator
+traps:
+- request:
+    method: GET
+    path: https://api.mailboxvalidator.com/v1/email/free?email=test@test.com&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"email_address":"test@test.com""error_code":"""error_message":""'

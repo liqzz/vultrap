@@ -1,0 +1,22 @@
+id: api-fortitoken-cloud
+info:
+  name: FortiToken Cloud API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://docs.fortinet.com/document/fortitoken-cloud/latest/rest-api/456035/overview
+  metadata:
+    max-request: 1
+  tags: token-spray,fortinet,fortitoken
+traps:
+- request:
+    method: GET
+    path: https://ftc.fortinet.com:9696/api/v1/user
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error_(code|message|name)

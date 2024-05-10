@@ -1,0 +1,36 @@
+id: mobotix-default-credentials
+info:
+  name: Mobotix - Default Login
+  author: robotshell
+  description: Mobotix contains a default admin login vulnerability. An attacker can
+    obtain access to user accounts and access sensitive information, modify data,
+    and/or execute unauthorized operations.
+  severity: high
+  reference:
+  - https://www.mobotix.com/sites/default/files/2020-01/mx_RM_CameraSoftwareManual_en_200131.pdf
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    max-request: 2
+    shodan-query: title:"Mobotix"
+  tags: mobotix,default-login,webcam,iot
+traps:
+- request:
+    method: GET
+    path: /control/userimage.html
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /control/userimage.html
+    headers:
+      Authorization: Basic YWRtaW46bWVpbnNt
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Admin MenuSetup MenuAudio on

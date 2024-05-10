@@ -1,0 +1,22 @@
+id: nextcloud-install
+info:
+  name: Nextcloud Exposed Installation
+  author: skeltavik
+  description: Nextcloud installation is exposed.
+  severity: high
+  reference:
+  - https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
+  metadata:
+    max-request: 1
+  tags: tech,nextcloud,storage,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <fieldset id="adminaccount"><legend>Create an <strong>admin account</strong></legend><legend><a
+      id="showAdvanced" tabindex="0" href="#">Storage &amp; database

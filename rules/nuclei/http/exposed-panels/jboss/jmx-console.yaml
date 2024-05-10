@@ -1,0 +1,25 @@
+id: jmx-console
+info:
+  name: JBoss JMX Management Console Login Panel - Detect
+  author: yashanand155
+  description: JBoss JMX Management Console login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:redhat:jboss_keycloak:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: jboss_keycloak
+    vendor: redhat
+  tags: panel,jmx,jboss,redhat
+traps:
+- request:
+    method: GET
+    path: /jmx-console/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JBoss JMX Management Console

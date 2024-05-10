@@ -1,0 +1,32 @@
+id: unauthenticated-duplicator-disclosure
+info:
+  name: WordPress Duplicator Plugin - Information disclosure
+  author: tess
+  description: 'Unauthenticated Information disclosure of Duplicator WordPress plugin
+    sensitive files.
+
+    '
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+  tags: wordpress,wp,wp-plugin,misconfig,disclosure,unauth,exposure
+traps:
+- request:
+    method: GET
+    path: /wp-content/backups-dup-lite/tmp/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /wp-content/backups-dup-lite/
+- request:
+    method: GET
+    path: /wp-content/backups-dup-lite
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,26 @@
+id: locklizard-webviewer-panel
+info:
+  name: Locklizard Web Viewer Login Panel - Detect
+  author: righettod
+  description: Locklizard Web Viewer login panel was detected.
+  severity: info
+  reference:
+  - https://www.locklizard.com/pdf_security_webviewer/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"Locklizard Web Viewer"
+    verified: true
+  tags: panel,locklizard,webviewer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Locklizard Web ViewerDid you remember your password?

@@ -1,0 +1,32 @@
+id: kevinlab-device-detect
+info:
+  name: KevinLAB Devices Detection
+  author: gy741
+  description: KevinLab is a venture company specialized in IoT, Big Data, A.I based
+    energy management platform. KevinLAB's BEMS (Building Energy Management System)
+    enables efficient energy management in buildings by collecting and analyzing various
+    information of energy usage and facilities as well as efficiency and indoor environment
+    control.
+  severity: info
+  metadata:
+    max-request: 2
+  tags: iot,kevinlab
+traps:
+- request:
+    method: GET
+    path: /pages/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>BEMS</title>../http/index.php<title>HEMS</title>../dashboard/proc.php
+- request:
+    method: GET
+    path: /dashboard/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,37 @@
+id: digitalrebar-login
+info:
+  name: RackN Digital Rebar Login Panel - Detect
+  author: c-sh0
+  description: RackN Digital Rebar login panel was detected.
+  severity: info
+  reference:
+  - https://docs.rackn.io/
+  - https://docs.rackn.io/en/latest/doc/server.html#ports
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:rackn:digital_rebar:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: digital_rebar
+    vendor: rackn
+  tags: rackn,digitalrebar,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Digital Rebar
+- request:
+    method: GET
+    path: /ui
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

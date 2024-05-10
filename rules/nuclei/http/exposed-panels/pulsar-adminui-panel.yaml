@@ -1,0 +1,27 @@
+id: pulsar-adminui-panel
+info:
+  name: Pulsar Admin UI Panel - Detect
+  author: ritikchaddha
+  description: Pulsar admin UI panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:pulsar:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: pulsar
+    shodan-query: title:"Pulsar Admin UI"
+    vendor: apache
+    verified: true
+  tags: panel,pulsar,pulsarui,admin,apache
+traps:
+- request:
+    method: GET
+    path: /#/login?redirect=%2F
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Pulsar Admin UI

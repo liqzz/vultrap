@@ -1,0 +1,26 @@
+id: sql-monitor
+info:
+  name: SQL Monitor - Discovery
+  author: dhiyaneshDK
+  description: SQL Monitor was discovered.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:red-gate:sql_monitor:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: sql_monitor
+    shodan-query: html:"SQL Monitor"
+    vendor: red-gate
+  tags: panel,red-gate
+traps:
+- request:
+    method: GET
+    path: /Account/LogIn?returnUrl=%2F&hasAttemptedCookie=True
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <p>JavaScript needs to be enabled for SQL Monitor to work properly.</p>

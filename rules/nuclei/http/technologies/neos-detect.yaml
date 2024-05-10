@@ -1,0 +1,23 @@
+id: neos-detect
+info:
+  name: Neos CMS detection
+  author: k11h-de
+  description: Neos CMS was detected.
+  severity: info
+  reference:
+  - https://github.com/neos/
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,neos,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This website is powered by Neos

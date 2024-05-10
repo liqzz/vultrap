@@ -1,0 +1,27 @@
+id: nexus-default-login
+info:
+  name: Nexus Default Login
+  author: pikpikcu
+  description: Nexus default admin credentials were discovered.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: nexus,default-login
+traps:
+- request:
+    method: POST
+    path: /service/rapture/session
+    headers:
+      X-Nexus-UI: 'true'
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    body: 'username={{base64(username)}}&password={{base64(password)}}
+
+      '
+  response:
+    status_code: 204
+    headers: {}
+    body: ''

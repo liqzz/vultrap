@@ -1,0 +1,28 @@
+id: springboot-dump
+info:
+  name: Detect Springboot Dump Actuator
+  author: pussycat0x
+  description: Performs a thread dump
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /dump
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: threadNamethreadIdwaitedTimelockNamestackTracemethodName
+- request:
+    method: GET
+    path: /actuator/dump
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,33 @@
+id: opentouch-multimediaservices-panel
+info:
+  name: OpenTouch Multimedia Services - Detect
+  author: righettod
+  description: 'OpenTouch Multimedia Services Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.al-enterprise.com/-/media/assets/internet/documents/opentouch-multimedia-services-datasheet-en.pdf
+  metadata:
+    max-request: 2
+    verified: true
+  tags: panel,opentouch,login,detect
+traps:
+- request:
+    method: GET
+    path: /authenticationform/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OpenTouchMultimedia ServicesAlcatel-Lucent
+- request:
+    method: GET
+    path: /authenticationform/jsp/logonWeb.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

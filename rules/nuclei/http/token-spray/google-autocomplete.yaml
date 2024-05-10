@@ -1,0 +1,19 @@
+id: api-googleautocomplete
+info:
+  name: Google Autocomplete API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,autocomplete
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Bingh&types=%28cities%29&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error_message

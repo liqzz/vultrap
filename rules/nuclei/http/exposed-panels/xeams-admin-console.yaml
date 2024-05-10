@@ -1,0 +1,36 @@
+id: xeams-admin-console
+info:
+  name: Xeams Admin Console Login Panel - Detect
+  author: theamanrawat
+  description: Xeams Admin Console login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:synametrics:xeams:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: xeams
+    shodan-query: http.title:"Xeams Admin"
+    vendor: synametrics
+    verified: true
+  tags: panel,xeams,admin,console,synametrics
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Xeams Admin ConsoleeXtended Email And Messaging Server</span>
+- request:
+    method: GET
+    path: /FrontController
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

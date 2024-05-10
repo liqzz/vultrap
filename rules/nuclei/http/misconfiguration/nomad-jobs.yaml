@@ -1,0 +1,25 @@
+id: exposed-nomad
+info:
+  name: Nomad - Exposed Jobs
+  author: pdteam
+  description: Nomad jobs were discovered.
+  severity: medium
+  reference:
+  - https://www.nomadproject.io/docs/internals/security
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: nomad,devops,hashicorp,panel,misconfig
+traps:
+- request:
+    method: GET
+    path: /ui/jobs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Nomadnomad-ui

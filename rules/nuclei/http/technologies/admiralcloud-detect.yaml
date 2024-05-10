@@ -1,0 +1,25 @@
+id: admiralcloud-detect
+info:
+  name: AdmiralCloud - Detect
+  author: righettod
+  description: 'AdmiralCloud was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.admiralcloud.com/en/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"AdmiralCloud"
+  tags: tech,admiralcloud,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,21 @@
+id: xerox-workcentre-detect
+info:
+  name: Xerox Workcentre Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"XEROX WORKCENTRE"
+  tags: tech,xerox,workcentre
+traps:
+- request:
+    method: GET
+    path: /index.dhtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: XEROX WORKCENTRE/header.php?tab=status

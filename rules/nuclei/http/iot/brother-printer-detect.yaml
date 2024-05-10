@@ -1,0 +1,20 @@
+id: brother-printer-detect
+info:
+  name: Brother Printer
+  author: pussycat0x
+  description: Brother Printer panel was detected.
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/6889
+  metadata:
+    max-request: 1
+  tags: iot,printer,tech
+traps:
+- request:
+    method: GET
+    path: /general/status.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Brother Industries

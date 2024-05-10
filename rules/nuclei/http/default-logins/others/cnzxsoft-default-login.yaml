@@ -1,0 +1,28 @@
+id: cnzxsoft-default-login
+info:
+  name: Cnzxsoft System - Default Login
+  author: SleepingBag945
+  description: 'Cnzxsoft Golden Shield Information Security Management System has
+    a default weak password.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title=="中新金盾信息安全管理系统"
+  tags: default-login,cnzxsoft
+traps:
+- request:
+    method: POST
+    path: /?q=common/login
+    headers:
+      Cookie: check_code=ptbh
+      Content-Type: application/x-www-form-urlencoded
+    body: 'name={{username}}&password={{password}}&checkcode=ptbh&doLoginSubmit=1
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '1'

@@ -1,0 +1,37 @@
+id: glpi-status-domain-disclosure
+info:
+  name: GLPI Status Domain Disclosure
+  author: dogasantos
+  description: null
+  severity: info
+  metadata:
+    max-request: 3
+  tags: glpi,exposure,status,files
+traps:
+- request:
+    method: GET
+    path: /status.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GLPI_LDAP server
+- request:
+    method: GET
+    path: /glpi/status.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /glpi2/status.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

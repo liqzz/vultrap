@@ -1,0 +1,23 @@
+id: api-intercom
+info:
+  name: Intercom API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://developers.intercom.com/building-apps/docs/rest-api-reference
+  metadata:
+    max-request: 1
+  tags: token-spray,intercom
+traps:
+- request:
+    method: GET
+    path: https://api.intercom.io/users
+    headers:
+      Authorization: Bearer {{token}}
+      Accept: application/json
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Access Token Invalid

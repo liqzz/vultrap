@@ -1,0 +1,27 @@
+id: transmission-dashboard
+info:
+  name: Transmission Dashboard - Detect
+  author: fabaff
+  description: Transmission dashboard was detected.
+  severity: medium
+  reference:
+  - https://transmissionbt.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Transmission Web Interface"
+  tags: misconfig,transmission,exposure,dashboard
+traps:
+- request:
+    method: GET
+    path: /transmission/web/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: The Transmission ProjectTransmission Web Interface

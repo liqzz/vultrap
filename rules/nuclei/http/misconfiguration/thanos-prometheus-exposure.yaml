@@ -1,0 +1,22 @@
+id: thanos-prometheus-exposure
+info:
+  name: Thanos Prometheus Setup - Exposure
+  author: DhiyaneshDk
+  description: null
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Thanos | Highly available Prometheus setup"
+    fofa-query: icon_hash="29632872"
+  tags: thanos,prometheus,exposure,setup
+traps:
+- request:
+    method: GET
+    path: /graph
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: THANOS_COMPONENTTHANOS_QUERY_URL

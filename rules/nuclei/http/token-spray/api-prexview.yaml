@@ -1,0 +1,24 @@
+id: api-prexview
+info:
+  name: PrexView API Test
+  author: daffainfo
+  description: Data from XML or JSON to PDF, HTML or Image
+  severity: info
+  reference:
+  - https://prexview.com/docs/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/prexview
+  metadata:
+    max-request: 1
+  tags: token-spray,prexview
+traps:
+- request:
+    method: POST
+    path: https://api.prexview.com/v1/transform
+    headers:
+      Host: api.prexview.com
+      Authorization: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"output is a required argument""status":400'

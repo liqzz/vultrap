@@ -1,0 +1,20 @@
+id: abyss-web-server
+info:
+  name: Detect Abyss Web Server
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    fofa-query: app="Abyss-Web-Server"
+  tags: tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Abyss Web Server

@@ -1,0 +1,23 @@
+id: wordpress-wordpress-seo
+info:
+  name: Yoast SEO Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wordpress-seo/
+  metadata:
+    max-request: 1
+    plugin_namespace: wordpress-seo
+    wpscan: https://wpscan.com/plugin/wordpress-seo
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wordpress-seo/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

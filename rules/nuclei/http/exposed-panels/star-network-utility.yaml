@@ -1,0 +1,24 @@
+id: star-network-utility
+info:
+  name: Star Micronics Network Utility Panel - Detect
+  author: ritikchaddha
+  description: Star Micronics Network Utility panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"Network Utility"
+    verified: true
+  tags: panel,utility
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Star MicronicsNetwork Utility

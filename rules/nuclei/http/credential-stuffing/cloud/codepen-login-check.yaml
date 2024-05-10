@@ -1,0 +1,36 @@
+id: codepen-login-check
+info:
+  name: codepen.io Login Check
+  author: parthmalhotra,pdresearch
+  description: Checks for a valid codepen account.
+  severity: critical
+  reference:
+  - https://owasp.org/www-community/attacks/Credential_stuffing
+  metadata:
+    max-request: 2
+  tags: creds-stuffing,login-check,cloud,codepen
+traps:
+- request:
+    method: GET
+    path: https://codepen.io/login
+    headers:
+      Host: codepen.io
+    body: ''
+  response:
+    status_code: 302
+    headers: {}
+    body: The username or password you entered is incorrect, please try again.
+- request:
+    method: POST
+    path: https://codepen.io/login/login
+    headers:
+      Host: codepen.io
+      Content-Type: application/x-www-form-urlencoded
+      X-CSRF-Token: '{{token}}'
+    body: 'authenticity_token={{token}}&email={{username}}&password={{password}}&login-type=fullpage
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

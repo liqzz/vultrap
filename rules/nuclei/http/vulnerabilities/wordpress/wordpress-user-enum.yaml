@@ -1,0 +1,19 @@
+id: wordpress-user-enum
+info:
+  name: Wordpress User Enumeration
+  author: r3dg33k
+  description: This template detects user enumeration in wordpress.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress
+traps:
+- request:
+    method: GET
+    path: /?author=1
+    headers: null
+    body: null
+  response:
+    status_code: 301
+    headers: {}
+    body: ''

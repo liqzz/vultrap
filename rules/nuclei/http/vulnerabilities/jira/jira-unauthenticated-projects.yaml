@@ -1,0 +1,20 @@
+id: jira-unauthenticated-projects
+info:
+  name: Jira Unauthenticated Projects
+  author: TechbrunchFR
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Atlassian Jira"
+  tags: atlassian,jira
+traps:
+- request:
+    method: GET
+    path: /rest/api/2/project?maxResults=100
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: projectsstartAtmaxResults

@@ -1,0 +1,23 @@
+id: Chase-phish
+info:
+  name: Chase phishing Detection
+  author: rxerium
+  description: 'A Chase phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://chase.com
+  metadata:
+    max-request: 1
+  tags: phishing,Chase,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com

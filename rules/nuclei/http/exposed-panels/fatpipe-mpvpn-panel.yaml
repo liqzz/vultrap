@@ -1,0 +1,24 @@
+id: fatpipe-mpvpn-panel
+info:
+  name: FatPipe MPVPN - Panel Detect
+  author: princechaddha
+  description: The admin panel of the FatPipe MPVPN has been discovered.
+  severity: info
+  reference:
+  - https://www.fatpipeinc.com/products/mpvpn/index.php
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,fatpipe,panel
+traps:
+- request:
+    method: GET
+    path: /fpui/jsp/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FatPipe MPVPN&nbsp;| Log in</title>

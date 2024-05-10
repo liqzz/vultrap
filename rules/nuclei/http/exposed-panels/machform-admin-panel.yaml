@@ -1,0 +1,26 @@
+id: machform-admin-panel
+info:
+  name: MachForm Admin Panel - Detect
+  author: ritikchaddha
+  description: MachForm Admin panel was detected.
+  severity: info
+  reference:
+  - https://www.machform.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"MachForm Admin Panel"
+    verified: true
+  tags: panel,machform,admin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="MachForm"<title>MachForm Admin Panel</title>

@@ -1,0 +1,22 @@
+id: gitbook-takeover
+info:
+  name: gitbook takeover detection
+  author: philippedelteil
+  description: gitbook takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/259
+  - https://hackerone.com/reports/223625
+  metadata:
+    max-request: 1
+  tags: takeover,gitbook,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: If you need specifics, here's the errorDomain not found

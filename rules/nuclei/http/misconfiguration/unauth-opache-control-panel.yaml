@@ -1,0 +1,30 @@
+id: opache-control-panel
+info:
+  name: Opache control Panel - Unauthenticated Access
+  author: pussycat0x
+  description: Opache control Panel is exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"Opcache Control Panel"
+  tags: misconfig,opache,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /ocp.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

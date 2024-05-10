@@ -1,0 +1,20 @@
+id: wordpress-installer-log
+info:
+  name: WordPress Installer Log
+  author: dwisiswant0
+  description: This file is generated during the installation process of wordpress
+    and is exposed.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress,log
+traps:
+- request:
+    method: GET
+    path: /installer-log.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?mi)DUPLICATOR(-|\s)?(PRO|LITE)?:? INSTALL-LOG

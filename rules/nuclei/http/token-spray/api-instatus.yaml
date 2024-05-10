@@ -1,0 +1,24 @@
+id: api-instatus
+info:
+  name: Instatus API Test
+  author: daffainfo
+  description: Post to and update maintenance and incidents on your status page through
+    an HTTP REST API
+  severity: info
+  reference:
+  - https://instatus.com/help/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/instatus
+  metadata:
+    max-request: 1
+  tags: token-spray,instatus
+traps:
+- request:
+    method: GET
+    path: https://api.instatus.com/v1/pages
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"subdomain":"name":"logoUrl":'

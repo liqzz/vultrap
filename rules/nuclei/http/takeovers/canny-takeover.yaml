@@ -1,0 +1,21 @@
+id: canny-takeover
+info:
+  name: Canny Takeover Detection
+  author: pdteam
+  description: Canny takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/114
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Company Not FoundThere is no such company. Did you enter the right URL?

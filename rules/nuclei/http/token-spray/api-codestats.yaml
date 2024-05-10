@@ -1,0 +1,32 @@
+id: api-codestats
+info:
+  name: CodeStats API Test
+  author: daffainfo
+  description: Automatic time tracking for programmers
+  severity: info
+  reference:
+  - https://codestats.net/api-docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/codestats
+  metadata:
+    max-request: 1
+  tags: token-spray,codestats
+traps:
+- request:
+    method: POST
+    path: https://codestats.net/api/my/pulses
+    headers:
+      Host: codestats.net
+      X-API-Token: '{{token}}'
+    body: |
+      {
+        "coded_at": "2016-04-24T01:43:56+12:00",
+        "xps": [
+          {"language": "C++",    "xp": 15},
+          {"language": "Elixir", "xp": 30},
+          {"language": "EEx",    "xp": 3}
+        ]
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: '"Great success!"'

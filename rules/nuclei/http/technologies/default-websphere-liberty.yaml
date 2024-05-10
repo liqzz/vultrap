@@ -1,0 +1,21 @@
+id: default-websphere-liberty
+info:
+  name: WebSphere Liberty Default Page
+  author: oppsec
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"WebSphere Liberty"
+  tags: tech,websphere,liberty
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WebSphere Liberty

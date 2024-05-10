@@ -1,0 +1,21 @@
+id: pmm-installer
+info:
+  name: PMM Installation Wizard
+  author: pussycat0x
+  description: PMM is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"PMM Installation Wizard"
+  tags: misconfig,exposure,install,pmm
+traps:
+- request:
+    method: GET
+    path: /password-page/ovf/account-credentials-ovf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PMM Installation Wizard

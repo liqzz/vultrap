@@ -1,0 +1,46 @@
+id: rancher-default-login
+info:
+  name: Rancher Default Login
+  author: princechaddha
+  description: Rancher default admin credentials were discovered. Rancher is an open-source
+    multi-cluster orchestration platform that lets operations teams deploy, manage
+    and secure enterprise Kubernetes.
+  severity: high
+  reference:
+  - https://github.com/rancher/rancher
+  - https://rancher.com/docs/rancher/v2.5/en/admin-settings/authentication/local/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 2
+  tags: default-login,rancher,kubernetes,devops,cloud
+traps:
+- request:
+    method: GET
+    path: /v3/settings/first-login
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /v3-public/localProviders/local?action=login
+    headers:
+      Cookie: CSRF={{csrf}}
+      X-Api-Csrf: '{{csrf}}'
+      Connection: close
+      Content-Length: '136'
+    body: '{"username":"{{username}}","password":"{{password}}","description":"UI
+      Session","responseType":"cookie","labels":{"ui-session":"true"}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

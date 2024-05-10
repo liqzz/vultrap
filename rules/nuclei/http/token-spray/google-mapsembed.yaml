@@ -1,0 +1,19 @@
+id: api-googlemapsembed
+info:
+  name: Google Maps Embed API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,maps,embed
+traps:
+- request:
+    method: GET
+    path: https://www.google.com/maps/embed/v1/place?q=Seattle&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

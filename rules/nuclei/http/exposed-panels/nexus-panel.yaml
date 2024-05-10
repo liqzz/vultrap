@@ -1,0 +1,25 @@
+id: nexus-panel
+info:
+  name: Nexus Login Panel - Detect
+  author: righettod
+  description: 'Nexus login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.sonatype.com/products/sonatype-nexus-repository
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Sonatype Nexus Repository"
+    verified: true
+  tags: panel,nexus,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

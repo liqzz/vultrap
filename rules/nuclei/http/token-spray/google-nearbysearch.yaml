@@ -1,0 +1,19 @@
+id: api-googlenearbysearch
+info:
+  name: Google Nearby Search API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,search,nearby
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=100&types=food&name=harbour&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error_message

@@ -1,0 +1,32 @@
+id: filebrowser-unauth
+info:
+  name: File Browser Dashboard - Unauthenticated Access
+  author: ritikchaddha
+  description: File Browser dashboard is exposed.
+  severity: medium
+  reference:
+  - https://filebrowser.org/
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.favicon.hash:1052926265
+  tags: misconfig,filebrowser,unauth
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: File Browser</title>window.FileBrowserLoginPage":false"NoAuth":true
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

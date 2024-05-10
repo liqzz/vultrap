@@ -1,0 +1,35 @@
+id: strapi-documentation
+info:
+  name: Strapi CMS Documentation Login Panel - Detect
+  author: idealphase
+  description: Strapi CMS Documentation login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:strapi:strapi:*:*:*:*:node.js:*:*:*
+  metadata:
+    max-request: 2
+    product: strapi
+    vendor: strapi
+  tags: strapi,panel
+traps:
+- request:
+    method: GET
+    path: /documentation
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: x-strapi-confighttps://strapi.io/documentation/<title>Swagger UI</title><title>Login
+      - Documentation</title>
+- request:
+    method: GET
+    path: /documentation/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

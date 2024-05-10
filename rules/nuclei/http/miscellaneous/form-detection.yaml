@@ -1,0 +1,21 @@
+id: form-detection
+info:
+  name: Form Detection
+  author: pdteam
+  description: 'A template to detect HTML Forms in page response.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/dirtycoder0124/formcrawler
+  tags: form,misc
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <form</form><button

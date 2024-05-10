@@ -1,0 +1,24 @@
+id: ibm-decision-runner
+info:
+  name: IBM Decision Runner - Detect
+  author: DhiyaneshDK
+  description: 'IBM Decision Runner Service was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.ibm.com/docs/en/odm/8.8.1?topic=simulation-tuning-decision-runner-web-application
+  metadata:
+    verified: true
+    max-request: 1
+  tags: ibm,detect,tech,ibm-decision-runner
+traps:
+- request:
+    method: GET
+    path: /DecisionRunner/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Decision Runner</title>

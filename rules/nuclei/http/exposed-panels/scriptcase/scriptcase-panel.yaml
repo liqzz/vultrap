@@ -1,0 +1,33 @@
+id: scriptcase-panel
+info:
+  name: ScriptCase Panel Detect
+  author: Ricardo Maia (Brainfork)
+  description: null
+  severity: info
+  reference:
+  - https://www.scriptcase.com.br
+  - https://www.scriptcase.net
+  metadata:
+    max-request: 2
+    shodan-query: title:"ScriptCase"
+    verified: true
+  tags: panel,scriptcase
+traps:
+- request:
+    method: GET
+    path: /devel/iface/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)(ScriptCase)(?i)(NetMake)(?i)(Login)
+- request:
+    method: GET
+    path: /scriptcase/devel/iface/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

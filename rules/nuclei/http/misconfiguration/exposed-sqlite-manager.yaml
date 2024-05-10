@@ -1,0 +1,40 @@
+id: exposed-sqlite-manager
+info:
+  name: SQLiteManager - Text Display
+  author: dhiyaneshDK
+  description: SQLiteManager panel contains inconsistent text display in title and
+    text.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/5003
+  metadata:
+    max-request: 3
+  tags: misconfig,sqlite,edb,sqli
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SQLiteManager</title>
+- request:
+    method: GET
+    path: /sqlite/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sqlitemanager/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

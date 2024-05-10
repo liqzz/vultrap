@@ -1,0 +1,22 @@
+id: api-cooperhewitt
+info:
+  name: Cooper Hewitt API
+  author: daffainfo
+  description: Smithsonian Design Museum
+  severity: info
+  reference:
+  - https://collection.cooperhewitt.org/api/methods/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/cooper-hewitt
+  metadata:
+    max-request: 1
+  tags: token-spray,cooperhewitt
+traps:
+- request:
+    method: GET
+    path: https://api.collection.cooperhewitt.org/rest/?method=api.spec.formats&access_token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"stat":"formats":"default_format":'

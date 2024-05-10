@@ -1,0 +1,24 @@
+id: microsoft-phish
+info:
+  name: Microsoft phishing Detection
+  author: rxerium
+  description: 'A microsoft phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://office.com
+  - https://microsoft.com
+  metadata:
+    max-request: 1
+  tags: phishing,microsoft,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login | Microsoft 365

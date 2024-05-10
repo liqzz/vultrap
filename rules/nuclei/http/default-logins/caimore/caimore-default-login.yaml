@@ -1,0 +1,32 @@
+id: caimore-default-login
+info:
+  name: CAIMORE Gateway  Default Login - Detect
+  author: pussycat0x
+  description: 'The gateway of Xiamen Caimao Communication Technology Co., Ltd. is
+    designed with open software architecture. It is a metal shell design, with two
+    Ethernet RJ45 interfaces, and an industrial design wireless gateway using 3G/4G/5G
+    wide area network for Internet communication. There is a command execution vulnerability
+    in the formping file of the gateway of Xiamen Caimao Communication Technology
+    Co., Ltd. An attacker can use this vulnerability to arbitrarily execute code on
+    the server side, write to the back door, obtain server permissions, and then control
+    the entire web server.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="CAIMORE-Gateway"
+  tags: ciamore-gateway,default-login
+traps:
+- request:
+    method: GET
+    path: /index.asp
+    headers:
+      Accept-Encoding: gzip, deflate
+      Authorization: Basic {{base64(username + ':' + password)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: AR9344_GATEWAY

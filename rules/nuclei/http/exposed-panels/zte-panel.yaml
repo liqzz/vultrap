@@ -1,0 +1,37 @@
+id: zte-panel
+info:
+  name: ZTE Panel - Detect
+  author: its0x08,idealphase
+  description: 'ZTE panel was detected. ZTE Corporation is a global leader in telecommunications
+    and information technology. Founded in 1985 and listed on both the Hong Kong and
+    Shenzhen Stock Exchanges, the company has been committed to providing innovative
+    technologies and integrated solutions for global operators, government and enterprise,
+    and consumers from over 160 countries across the globe. ZTE Corporation is a global
+    leader in telecommunications and information technology. Founded in 1985 and listed
+    on both the Hong Kong and Shenzhen Stock Exchanges, the company has been committed
+    to providing innovative technologies and integrated solutions for global operators,
+    government and enterprise, and consumers from over 160 countries across the globe.
+
+    '
+  severity: info
+  reference:
+  - https://www.zte.com.cn/global/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"ZTE Corporation"
+    verified: true
+  tags: panel,zte
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ZTE Corporation. All rights reserved. </div><form name="fLogin" id="fLogin"
+      method="post"  onsubmit="return false;" action="">

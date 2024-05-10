@@ -1,0 +1,24 @@
+id: tomcat-stacktraces
+info:
+  name: Tomcat Stack Traces Enabled
+  author: lucky0x0d
+  description: 'Examine whether Tomcat stack traces are turned on by employing a designated
+    problematic pattern.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Apache Tomcat"
+  tags: misconfig,tech,tomcat,apache
+traps:
+- request:
+    method: GET
+    path: /?f=\[
+    headers: null
+    body: null
+  response:
+    status_code: 400
+    headers: {}
+    body: tomcatorg.apache

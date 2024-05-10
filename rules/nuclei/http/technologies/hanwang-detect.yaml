@@ -1,0 +1,20 @@
+id: hanwang-detect
+info:
+  name: hanwang-detect
+  author: ffffffff0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    fofa-query: 汉王人脸考勤管理系统
+  tags: hanwang,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 汉王人脸考勤管理系统

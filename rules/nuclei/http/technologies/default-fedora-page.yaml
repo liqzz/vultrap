@@ -1,0 +1,20 @@
+id: default-fedora-page
+info:
+  name: Fedora Default Test Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Test Page for the HTTP Server on Fedora"
+  tags: tech,fedora
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Test Page for the HTTP Server on Fedora</title>

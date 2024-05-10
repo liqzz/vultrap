@@ -1,0 +1,27 @@
+id: oracle-business-intelligence
+info:
+  name: Oracle Business Intelligence Login Panel - Detect
+  author: DhiyaneshDk
+  description: Oracle Business Intelligence login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:oracle:business_intelligence:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: business_intelligence
+    shodan-query: http.title:"Oracle Business Intelligence Sign In"
+    vendor: oracle
+    verified: true
+  tags: panel,oracle
+traps:
+- request:
+    method: GET
+    path: /saw.dll?bieehome&startPage=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Oracle Business Intelligence Sign In</title>

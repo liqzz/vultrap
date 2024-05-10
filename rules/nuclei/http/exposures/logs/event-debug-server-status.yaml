@@ -1,0 +1,21 @@
+id: event-debug-server-status
+info:
+  name: Event Debug Server Status
+  author: pussycat0x
+  description: Exposes server status,logs and internal information.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Event Debug Server"
+  tags: event,exposure,debug
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>Event Debug Server Status</h1>

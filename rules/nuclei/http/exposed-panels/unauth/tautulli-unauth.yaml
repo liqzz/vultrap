@@ -1,0 +1,25 @@
+id: tautulli-unauth
+info:
+  name: Tautulli Panel - Unauthenticated Access
+  author: ritikchaddha
+  description: null
+  severity: medium
+  classification:
+    cpe: cpe:2.3:a:tautulli:tautulli:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: tautulli
+    shodan-query: title:"Tautulli - Home"
+    vendor: tautulli
+    verified: true
+  tags: panel,misconfig,tautulli,unauth,exposure
+traps:
+- request:
+    method: GET
+    path: /home
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Tautulli - HomeLibraries</a>

@@ -1,0 +1,29 @@
+id: ibm-maximo-login
+info:
+  name: IBM Maximo Login Panel - Detect
+  author: ritikchaddha
+  description: IBM Maximo login panel was detected.
+  severity: info
+  reference:
+  - https://www.ibm.com/support/pages/what-default-username-and-password-websphere-application-server-community-edition-and-how-add-users-admin-group
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ibm:maximo_asset_management:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: maximo_asset_management
+    shodan-query: http.favicon.hash:-399298961
+    vendor: ibm
+    verified: true
+  tags: maximo,panel,ibm
+traps:
+- request:
+    method: GET
+    path: /maximo/webclient/login/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: maximo-icon.pngIBM

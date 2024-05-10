@@ -1,0 +1,27 @@
+id: ruckus-wireless-admin-login
+info:
+  name: Ruckus Wireless Admin Login Panel - Detect
+  author: pussycat0x
+  description: Ruckus Wireless admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:ruckuswireless:e510:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: e510
+    shodan-query: title:"ruckus"
+    vendor: ruckuswireless
+    verified: true
+  tags: panel,exposed,ruckus,ruckuswireless
+traps:
+- request:
+    method: GET
+    path: /login.asp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Ruckus Wireless Admin</title>

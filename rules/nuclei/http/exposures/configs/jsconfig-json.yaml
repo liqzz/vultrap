@@ -1,0 +1,23 @@
+id: jsconfig-json
+info:
+  name: Visual Studio Code jsconfig.json - Detect
+  author: DhiyaneshDk
+  description: Visual Studio Code jsconfig.json was detected.
+  severity: info
+  reference:
+  - https://code.visualstudio.com/docs/languages/jsconfig
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"jsconfig.json"
+  tags: devops,exposure,jsconfig,config
+traps:
+- request:
+    method: GET
+    path: /jsconfig.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"compilerOptions": {"typeAcquisition": {'

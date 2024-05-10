@@ -1,0 +1,23 @@
+id: hoobe
+info:
+  name: Hoo.be User Name Information - Detect
+  author: dwisiswant0
+  description: Hoo.be user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-business,hoobe
+traps:
+- request:
+    method: GET
+    path: https://hoo.be/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: --profile-name-color

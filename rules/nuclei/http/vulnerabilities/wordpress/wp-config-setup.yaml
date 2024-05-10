@@ -1,0 +1,21 @@
+id: wp-config-setup
+info:
+  name: WordPress Setup Configuration
+  author: princechaddha
+  description: Exposed Wordpress Setup Configuration.
+  severity: high
+  reference:
+  - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
+  metadata:
+    max-request: 1
+  tags: wordpress,setup
+traps:
+- request:
+    method: GET
+    path: /wp-admin/setup-config.php?step=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Below you should enter your database connection details.

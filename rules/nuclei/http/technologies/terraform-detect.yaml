@@ -1,0 +1,19 @@
+id: terraform-detect
+info:
+  name: Detect Terraform Provider
+  author: geeknik
+  description: Write Infrastructure as Code - https://www.terraform.io/
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,terraform
+traps:
+- request:
+    method: GET
+    path: /provider.tf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: access_keyterraform

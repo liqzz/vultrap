@@ -1,0 +1,26 @@
+id: total-web-solutions-panel
+info:
+  name: Total Web Solutions Panel - Detect
+  author: dhiyaneshDK
+  description: Total Web Solutions panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6811
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"Total Web Solutions" + "Meter Name"
+    max-request: 1
+    verified: true
+  tags: panel,edb
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Total Web Solutions</title>

@@ -1,0 +1,27 @@
+id: qBittorrent-panel
+info:
+  name: qBittorrent Web UI Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://www.qbittorrent.org/
+  classification:
+    cpe: cpe:2.3:a:qbittorrent:qbittorrent:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: qbittorrent
+    shodan-query: title:"qbittorrent"
+    vendor: qbittorrent
+    verified: true
+  tags: panel,qbittorrent,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: qBittorrent Web UIalt="qBittorrent

@@ -1,0 +1,24 @@
+id: api-coinmarketcap
+info:
+  name: CoinMarketCap API Test
+  author: daffainfo
+  description: Cryptocurrencies Prices
+  severity: info
+  reference:
+  - https://coinmarketcap.com/api/documentation/v1
+  - https://github.com/daffainfo/all-about-apikey/tree/main/coinmarketcap
+  metadata:
+    max-request: 1
+  tags: token-spray,coinmarketcap
+traps:
+- request:
+    method: GET
+    path: https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
+    headers:
+      Host: pro-api.coinmarketcap.com
+      X-CMC_PRO_API_KEY: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"name""symbol""cmc_rank"'

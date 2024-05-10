@@ -1,0 +1,22 @@
+id: api-proxykingdom
+info:
+  name: ProxyKingdom API Test
+  author: daffainfo
+  description: Rotating Proxy API that produces a working proxy on every request
+  severity: info
+  reference:
+  - https://proxykingdom.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/proxykingdom
+  metadata:
+    max-request: 1
+  tags: token-spray,proxykingdom
+traps:
+- request:
+    method: GET
+    path: https://api.proxykingdom.com/proxy?token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"address""port""protocol"'

@@ -1,0 +1,22 @@
+id: linkerd-badrule-detect
+info:
+  name: Linkerd detection via bad rule
+  author: dudez
+  description: null
+  severity: info
+  reference:
+  - https://linkerd.io
+  metadata:
+    max-request: 1
+  tags: tech,linkerd
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      l5d-dtab: /svc/*
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: expected but end of input found at

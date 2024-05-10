@@ -1,0 +1,22 @@
+id: api-proxycrawl
+info:
+  name: ProxyCrawl API Test
+  author: daffainfo
+  description: Scraping and crawling anticaptcha service
+  severity: info
+  reference:
+  - https://proxycrawl.com/docs/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/proxycrawl
+  metadata:
+    max-request: 1
+  tags: token-spray,proxycrawl
+traps:
+- request:
+    method: GET
+    path: https://api.proxycrawl.com/leads?token=&domain=www.amazon.com
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"remaining_requests""domain""leads"'

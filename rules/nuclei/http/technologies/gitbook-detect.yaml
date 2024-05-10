@@ -1,0 +1,26 @@
+id: gitbook-detect
+info:
+  name: GitBook Detect
+  author: ffffffff0x,daffainfo
+  description: GitBook is a collaborative documentation tool that allows anyone to
+    document anything—such as products and APIs—and share knowledge through a user-friendly
+    online platform.
+  severity: info
+  reference: https://www.gitbook.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"gitbook"
+    fofa: app="Introduction-GitBook"
+  tags: tech,gitbook
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: gitbook.page.hasChanged<meta name="generator" content="GitBook<title>.*[Gg]it[bB]ook</title><title>.*·
+      [Gg]it[bB]ook.*</title>

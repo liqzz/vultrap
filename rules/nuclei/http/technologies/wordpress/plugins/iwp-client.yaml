@@ -1,0 +1,23 @@
+id: wordpress-iwp-client
+info:
+  name: InfiniteWP Client Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/iwp-client/
+  metadata:
+    max-request: 1
+    plugin_namespace: iwp-client
+    wpscan: https://wpscan.com/plugin/iwp-client
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/iwp-client/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

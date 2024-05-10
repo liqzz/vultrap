@@ -1,0 +1,25 @@
+id: cryptobox-panel
+info:
+  name: Cryptobox Panel - Detect
+  author: righettod
+  description: 'Cryptobox was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.ercom.com/solutions/cryptobox-presentation
+  metadata:
+    max-request: 1
+    shodan-query: title:"Cryptobox"
+    verified: true
+  tags: panel,cryptobox,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Cryptobox</title>

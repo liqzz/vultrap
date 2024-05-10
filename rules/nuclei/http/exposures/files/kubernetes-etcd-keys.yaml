@@ -1,0 +1,23 @@
+id: kubernetes-etcd-keys
+info:
+  name: Kubernetes etcd Keys - Exposure
+  author: Hardik-Solanki
+  description: Kubernetes private etcd keys are exposed.
+  severity: medium
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 1
+    github-query: filename:apiserver-etcd-client.key
+  tags: files,exposure,kubernetes,k8s
+traps:
+- request:
+    method: GET
+    path: /apiserver-etcd-client.key
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?m)^-----BEGIN PRIVATE KEY-----

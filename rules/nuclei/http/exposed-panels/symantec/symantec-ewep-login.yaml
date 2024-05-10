@@ -1,0 +1,23 @@
+id: symantec-ewep-login
+info:
+  name: Symantec Encryption Server Login Panel - Detect
+  author: johnk3r
+  description: Symantec Encryption Server login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Symantec Encryption Server"
+  tags: panel,symantec,login
+traps:
+- request:
+    method: GET
+    path: /b/l.e
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<TITLE>Symantec Encryption Server: Web Email Protection - Login</TITLE>'

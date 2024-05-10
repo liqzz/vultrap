@@ -1,0 +1,32 @@
+id: oracle-opera-login
+info:
+  name: Oracle Opera Login - Detect
+  author: DhiyaneshDK,righettod
+  description: null
+  severity: info
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"Oracle Opera" && html:"/OperaLogin/Welcome.do"
+    verified: true
+  tags: panel,opera,oracle,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Oracle, OPERA</title><title>OPERA Login
+- request:
+    method: GET
+    path: /OperaLogin/Welcome.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,27 @@
+id: sitecore-cms
+info:
+  name: Sitecore CMS - Detect
+  author: RandomDhiraj
+  description: 'Detect Sitecore Content Management System (CMS) websites based on
+    a redirect from the sitecore media handler URL pattern to the notfound.aspx page.
+
+    '
+  severity: info
+  reference: 'https://www.sitecore.com
+
+    '
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"sitecore"
+  tags: cms,sitecore,tech
+traps:
+- request:
+    method: GET
+    path: /-/media/doo-doo.ashx
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

@@ -1,0 +1,22 @@
+id: pantheon-takeover
+info:
+  name: Pantheon Takeover Detection
+  author: pdteam
+  description: Pantheon takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/24
+  - https://medium.com/bug-bounty/how-i-took-over-several-stanford-subdomains-also-let-me-explain-you-the-pain-to-report-it-d84b08704be8
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: The gods are wise, but do not know of the site which you seek.

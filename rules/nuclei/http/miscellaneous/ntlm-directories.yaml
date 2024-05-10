@@ -1,0 +1,22 @@
+id: ntlm-directories
+info:
+  name: Discovering directories w/ NTLM
+  author: puzzlepeaches,incogbyte
+  description: null
+  severity: info
+  reference:
+  - https://medium.com/swlh/internal-information-disclosure-using-hidden-ntlm-authentication-18de17675666
+  metadata:
+    max-request: 47
+  tags: miscellaneous,misc,fuzz,windows
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      Authorization: NTLM TlRMTVNTUAABAAAAB4IIAAAAAAAAAAAAAAAAAAAAAAA=
+    body: ''
+  response:
+    status_code: 401
+    headers: {}
+    body: ''

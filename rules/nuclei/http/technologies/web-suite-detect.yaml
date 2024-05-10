@@ -1,0 +1,38 @@
+id: web-suite-detect
+info:
+  name: Web Suite Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 3
+    fofa-query: Web Suite 2021 Login
+  tags: tech,web-suite
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: www.bqe.com">BQE Software Inc.</a>Web Suite
+- request:
+    method: GET
+    path: /ws2020/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /ws2021/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

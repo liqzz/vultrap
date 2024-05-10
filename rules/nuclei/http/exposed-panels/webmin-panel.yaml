@@ -1,0 +1,34 @@
+id: webmin-panel
+info:
+  name: Webmin Admin Login Panel - Detect
+  author: PR3R00T
+  description: Webmin admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:webmin:webmin:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: webmin
+    vendor: webmin
+  tags: panel,webmin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login to Webmin</title>
+- request:
+    method: GET
+    path: /webmin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

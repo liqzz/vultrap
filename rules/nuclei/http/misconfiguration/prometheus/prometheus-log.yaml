@@ -1,0 +1,37 @@
+id: prometheus-log
+info:
+  name: Exposed Prometheus
+  author: dhiyaneshDK,thevillagehacker
+  description: Prometheus instance is exposed.
+  severity: low
+  metadata:
+    max-request: 3
+  tags: prometheus,misconfig
+traps:
+- request:
+    method: GET
+    path: /prometheus
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: gateway_request_totallogback_events_total
+- request:
+    method: GET
+    path: /actuator/prometheus
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /actuator/prometheus;%2f..%2f..%2f
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

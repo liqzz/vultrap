@@ -1,0 +1,22 @@
+id: api-lokalise
+info:
+  name: Lokalise API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://app.lokalise.com/api2docs/curl/#resource-projects
+  metadata:
+    max-request: 1
+  tags: token-spray,lokalise
+traps:
+- request:
+    method: GET
+    path: https://api.lokalise.com/api2/teams
+    headers:
+      x-api-Token: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"teams":"team_id":"name":'

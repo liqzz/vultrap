@@ -1,0 +1,26 @@
+id: metabase-panel
+info:
+  name: Metabase Login Panel - Detect
+  author: revblock,daffainfo
+  description: Metabase login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:metabase:metabase:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: metabase
+    shodan-query: http.title:"Metabase"
+    vendor: metabase
+  tags: panel,metabase,login
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Metabase</title>window.MetabaseBootstrapwindow.MetabaseRoot

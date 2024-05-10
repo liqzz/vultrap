@@ -1,0 +1,21 @@
+id: hugo-detect
+info:
+  name: Hugo Detect
+  author: daffainfo
+  description: Hugo is a fast and modern static site generator written in Go
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:'Hugo'
+  tags: tech,hugo
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta name=generator content="Hugo

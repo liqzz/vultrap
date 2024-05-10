@@ -1,0 +1,24 @@
+id: mlflow-unauth
+info:
+  name: Mlflow - Unauthenticated Access
+  author: pussycat0x
+  description: 'Unauthenticated Access to MLflow dashboard.
+
+    '
+  severity: high
+  remediation: Add User Authentication
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"mlflow"
+  tags: unauth,mlflow,oss,misconfig
+traps:
+- request:
+    method: GET
+    path: /ajax-api/2.0/preview/mlflow/experiments/get?experiment_id=0
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: experiment_idnameartifact_location

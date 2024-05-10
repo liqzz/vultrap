@@ -1,0 +1,27 @@
+id: aviatrix-panel
+info:
+  name: Aviatrix Cloud Controller Panel
+  author: pikpikcu,philippedelteil,daffainfo
+  description: An Aviatrix Cloud Controller login panel was detected.
+  severity: info
+  reference:
+  - https://docs.aviatrix.com/HowTos/controller_config.html
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:aviatrix:controller:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: controller
+    shodan-query: http.title:"Aviatrix Cloud Controller"
+    vendor: aviatrix
+  tags: panel,aviatrix
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AviatrixController</title>

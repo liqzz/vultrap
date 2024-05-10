@@ -1,0 +1,31 @@
+id: teamcity-guest-login-enabled
+info:
+  name: JetBrains TeamCity - Guest User Access Enabled
+  author: Ph33r
+  description: 'TeamCity provides the ability to turn on the guest login allowing
+    anonymous access to the TeamCity UI.
+
+    '
+  severity: high
+  reference:
+  - https://ph33r.medium.com/misconfig-in-teamcity-panel-lead-to-auth-bypass-in-apache-org-exploit-146f6a1a4e2b
+  - https://www.jetbrains.com/help/teamcity/guest-user.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 7.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.component:"TeamCity"
+  tags: misconfig,teamcity,jetbrains
+traps:
+- request:
+    method: GET
+    path: /guestLogin.html?guest=1
+    headers: {}
+    body: ''
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

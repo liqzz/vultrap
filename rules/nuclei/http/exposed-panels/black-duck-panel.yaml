@@ -1,0 +1,29 @@
+id: black-duck-panel
+info:
+  name: Black Duck Login Panel - Detect
+  author: idealphase,ritikchaddha
+  description: 'Black Duck login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.blackducksoftware.com/
+  - https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Black Duck"
+    verified: true
+  tags: panel,blackduck,synopsys
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?m)<title>Black Duck(.*)<\/title>ProtexLoginPageCCLoginPage

@@ -1,0 +1,29 @@
+id: springboot-autoconfig
+info:
+  name: Detect Springboot autoconfig Actuator
+  author: pussycat0x
+  description: Displays an auto-configuration report showing all auto-configuration
+    candidates and the reason why they 'were' or 'were not' applied.
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /autoconfig
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: positiveMatchesAuditAutoConfiguration#auditListenerEndpointAutoConfiguration#beansEndpoint
+- request:
+    method: GET
+    path: /actuator/autoconfig
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

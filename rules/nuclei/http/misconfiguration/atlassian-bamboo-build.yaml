@@ -1,0 +1,21 @@
+id: atlassian-bamboo-build
+info:
+  name: Atlassian Bamboo Build Dashboard
+  author: DhiyaneshDK
+  description: null
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Build Dashboard - Atlassian Bamboo"
+  tags: misconfig,atlassian,bamboo
+traps:
+- request:
+    method: GET
+    path: /allPlans.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <th>Project</th><th>Plan</th><th>Build</th>

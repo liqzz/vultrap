@@ -1,0 +1,23 @@
+id: wordpress-redux-framework
+info:
+  name: Redux Framework Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/redux-framework/
+  metadata:
+    max-request: 1
+    plugin_namespace: redux-framework
+    wpscan: https://wpscan.com/plugin/redux-framework
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/redux-framework/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

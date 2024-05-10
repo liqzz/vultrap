@@ -1,0 +1,292 @@
+id: open-proxy-internal
+info:
+  name: Open Proxy To Internal Network
+  author: sullo
+  description: The host is configured as a proxy which allows access to other hosts
+    on the internal network.
+  severity: high
+  remediation: Disable the proxy or restrict configuration to only allow access to
+    approved hosts/ports.
+  reference:
+  - https://blog.projectdiscovery.io/abusing-reverse-proxies-internal-access/
+  - https://en.wikipedia.org/wiki/Open_proxy
+  - https://www.acunetix.com/vulnerabilities/web/apache-configured-to-run-as-proxy/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    cvss-score: 8.6
+    cwe-id: CWE-441
+  metadata:
+    max-request: 25
+  tags: exposure,config,proxy,misconfig,fuzz
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: http://192.168.0.1/
+    headers:
+      Host: 192.168.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://192.168.0.1/
+    headers:
+      Host: 192.168.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://192.168.0.1:22/
+    headers:
+      Host: 192.168.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://192.168.1.1/
+    headers:
+      Host: 192.168.1.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://192.168.1.1/
+    headers:
+      Host: 192.168.1.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://192.168.1.1:22/
+    headers:
+      Host: 192.168.1.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://192.168.2.1/
+    headers:
+      Host: 192.168.2.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://192.168.2.1/
+    headers:
+      Host: 192.168.2.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://192.168.2.1:22/
+    headers:
+      Host: 192.168.2.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http:/10.0.0.1/
+    headers:
+      Host: 10.0.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://10.0.0.1/
+    headers:
+      Host: 10.0.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://10.0.0.1:22/
+    headers:
+      Host: 10.0.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http:/172.16.0.1/
+    headers:
+      Host: 172.16.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://172.16.0.1/
+    headers:
+      Host: 172.16.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://172.16.0.1:22/
+    headers:
+      Host: 172.16.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http:/intranet/
+    headers:
+      Host: intranet
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://intranet/
+    headers:
+      Host: intranet
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://intranet:22/
+    headers:
+      Host: intranet
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http:/mail/
+    headers:
+      Host: mail
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://mail/
+    headers:
+      Host: mail
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http://mail:22/
+    headers:
+      Host: mail
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: http:/ntp/
+    headers:
+      Host: ntp
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: It worksIIS Windows Server<title>IIS7</title>Welcome to WindowsWelcome to
+      Microsoft WindowsWelcome to IISdefault welcome pageMicrosoft Azure AppsshSSH
+- request:
+    method: GET
+    path: https://ntp/
+    headers:
+      Host: ntp
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ssh
+- request:
+    method: GET
+    path: http://ntp:22/
+    headers:
+      Host: ntp
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

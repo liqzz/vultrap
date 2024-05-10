@@ -1,0 +1,42 @@
+id: xxljob-default-login
+info:
+  name: XXL-JOB Default Login
+  author: pdteam,ritikchaddha
+  description: XXL-JOB default admin credentials were discovered.
+  severity: high
+  reference:
+  - https://github.com/xuxueli/xxl-job
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.favicon.hash:1691956220
+  tags: default-login,xxljob
+traps:
+- request:
+    method: POST
+    path: /xxl-job-admin/login
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    body: 'userName={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"code":200"msg""content"'
+- request:
+    method: POST
+    path: /login
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    body: 'userName={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

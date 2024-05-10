@@ -1,0 +1,23 @@
+id: ixbusweb-panel
+info:
+  name: iXBus Login Panel - Detect
+  author: Podalirius
+  description: iXBus login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"iXBus"
+  tags: panel,ixbusweb,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>iXBus</title>

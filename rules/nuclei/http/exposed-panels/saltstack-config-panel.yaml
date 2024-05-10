@@ -1,0 +1,26 @@
+id: saltstack-config-panel
+info:
+  name: SaltStack Config Panel - Detect
+  author: pussycat0x
+  description: 'SaltStack config panel was detected.
+
+    '
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"SaltStack Config"
+    verified: true
+  tags: panel,vmware,login,saltstack
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SaltStack Config

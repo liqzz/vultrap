@@ -1,0 +1,27 @@
+id: aerohive-netconfig-ui
+info:
+  name: Aerohive NetConfig UI
+  author: pussycat0x
+  description: An Aerohive NetConfig user interface was detected. The NetConfig UI
+    provides a fundamental set of configurations for configuring basic network and
+    HiveManager connectivity settings, and uploading new IQ Engine images to Extreme
+    Networks APs.
+  severity: info
+  reference:
+  - https://docs.aerohive.com/330000/docs/help/english/ng/Content/reference/docs/online-help-systems.htm
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Aerohive NetConfig UI"
+  tags: panel,tech,hiveos,aerohive
+traps:
+- request:
+    method: GET
+    path: /index.php5
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Aerohive NetConfig UI</title>

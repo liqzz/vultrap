@@ -1,0 +1,45 @@
+id: jira-detect
+info:
+  name: Jira Detect
+  author: pdteam,philippedelteil,AdamCrosser
+  description: Jira login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    vendor: atlassian
+    product: jira
+    category: productivity
+  tags: tech,panel,jira,atlassian
+traps:
+- request:
+    method: GET
+    path: /secure/Dashboard.jspa
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Project Management Software
+- request:
+    method: GET
+    path: /jira/secure/Dashboard.jspa
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

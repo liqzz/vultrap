@@ -1,0 +1,28 @@
+id: bedita-panel
+info:
+  name: BEdita Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: BEdita login panel was detected.
+  severity: info
+  reference:
+  - https://www.bedita.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:bedita:bedita:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: bedita
+    shodan-query: http.title:"BEdita"
+    vendor: bedita
+  tags: panel,bedita
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BEdita(.*)</a><br>

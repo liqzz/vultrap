@@ -1,0 +1,31 @@
+id: springboot-flyway
+info:
+  name: Springboot Flyway API
+  author: ELSFA7110
+  description: This endpoint to retrieve the migrations
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#flyway
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure,flyway
+traps:
+- request:
+    method: GET
+    path: /flyway
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: flywayBeans
+- request:
+    method: GET
+    path: /actuator/flyway
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

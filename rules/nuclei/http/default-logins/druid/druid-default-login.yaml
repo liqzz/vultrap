@@ -1,0 +1,33 @@
+id: druid-default-login
+info:
+  name: Alibaba Druid Monitor Default Login
+  author: pikpikcu,j4vaovo
+  description: Alibaba Druid Monitor default login information (admin/admin) was discovered.
+  severity: high
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    max-request: 2
+    fofa-query: title="druid monitor"
+  tags: druid,alibaba,default-login
+traps:
+- request:
+    method: GET
+    path: /druid/submitLogin
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: error
+- request:
+    method: POST
+    path: /druid/submitLogin
+    headers: {}
+    body: 'loginUsername={{username}}&loginPassword={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ^success$

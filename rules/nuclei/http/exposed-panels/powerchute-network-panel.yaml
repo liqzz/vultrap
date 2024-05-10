@@ -1,0 +1,21 @@
+id: powerchute-network-panel
+info:
+  name: PowerChute Network Shutdown Panel - Detect
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"PowerChute Network Shutdown"
+  tags: panel,login,powerchute,detect
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>PowerChute Network Shutdown</title>

@@ -1,0 +1,24 @@
+id: signal-phish
+info:
+  name: signal phishing Detection
+  author: rxerium
+  description: 'A signal phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://signal.org
+  metadata:
+    max-request: 1
+  tags: phishing,signal,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Say &quot;hello&quot; to a different messaging experience. An unexpected
+      focus on privacy, combined with all of the features you expect.

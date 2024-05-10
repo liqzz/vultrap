@@ -1,0 +1,22 @@
+id: laravel-log-file
+info:
+  name: Laravel log file publicly accessible
+  author: sheikhrishad,geeknik
+  description: The log file of this Laravel web app might reveal details on the inner
+    workings of the app, possibly even tokens, credentials or personal information.
+  severity: high
+  reference:
+  - https://laravel.com/docs/master/logging
+  metadata:
+    max-request: 1
+  tags: laravel,logs,exposure
+traps:
+- request:
+    method: GET
+    path: /storage/logs/laravel.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: InvalidArgumentExceptionlocal.ERRORErrorExceptionsyntax error

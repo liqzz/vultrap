@@ -1,0 +1,25 @@
+id: web-viewer-panel
+info:
+  name: Web Viewer for Samsung DVR - Detect
+  author: JustaAcat
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:h:samsung:dvr:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: dvr
+    shodan-query: title:"Web Viewer for Samsung DVR"
+    vendor: samsung
+    verified: true
+  tags: panel,web-viewer,detect,samsung
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Web Viewer for Samsung DVR</title>

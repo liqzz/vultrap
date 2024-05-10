@@ -1,0 +1,21 @@
+id: testrail-install
+info:
+  name: TestRail Installation Wizard
+  author: DhiyaneshDk
+  description: TestRail is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"TestRail Installation Wizard"
+  tags: misconfig,testrail,install,exposure
+traps:
+- request:
+    method: GET
+    path: /index.php?/installer
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: TestRail Installation Wizard

@@ -1,0 +1,19 @@
+id: pega-detect
+info:
+  name: Pega Infinity Detection
+  author: sshell
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,pega
+traps:
+- request:
+    method: GET
+    path: /prweb/PRRestService/unauthenticatedAPI/v1/docs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"description" :"The Pega API'

@@ -1,0 +1,29 @@
+id: nextjs-redirect
+info:
+  name: Next.js <1.2.3 - Open Redirect
+  author: DhiyaneshDk
+  description: Next.js contains an open redirect via “_next/image” due to improper
+    path parsing.
+  severity: medium
+  remediation: Upgrade to Next.js version 1.2.3 or higher.
+  reference:
+  - https://github.com/netlify/netlify-ipx/security/advisories/GHSA-9jjv-524m-jm98
+  - https://samcurry.net/universal-xss-on-netlifys-next-js-library/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-601
+  metadata:
+    max-request: 1
+    shodan-query: html:"/_next/static"
+  tags: redirect,nextjs,xss
+traps:
+- request:
+    method: GET
+    path: /_next/image?url=/\/\interact.sh/&q=100&w=128&h=128
+    headers: null
+    body: null
+  response:
+    status_code: 308
+    headers: {}
+    body: ''

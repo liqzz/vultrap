@@ -1,0 +1,28 @@
+id: cobbler-exposed-directory
+info:
+  name: Exposed Cobbler Directories
+  author: c-sh0
+  description: Searches for exposed Cobbler Directories
+  severity: medium
+  metadata:
+    max-request: 2
+  tags: cobbler,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /cobbler/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /cobblerIndex of /cblr
+- request:
+    method: GET
+    path: /cblr/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

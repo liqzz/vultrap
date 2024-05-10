@@ -1,0 +1,21 @@
+id: cargocollective-takeover
+info:
+  name: CargoCollective Takeover Detection
+  author: pdteam
+  description: CargoCollective takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/152
+  metadata:
+    max-request: 1
+  tags: takeover,cargocollective
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <div class="notfound">404 Not Found<br>

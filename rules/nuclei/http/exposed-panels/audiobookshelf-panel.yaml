@@ -1,0 +1,32 @@
+id: audiobookshelf-panel
+info:
+  name: Audiobookshelf Login Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/advplyr/audiobookshelf
+  metadata:
+    max-request: 2
+    shodan-query: title:"Audiobookshelf"
+    verified: true
+  tags: panel,audiobookshelf,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Audiobookshelfcontent="Audiobookshelf
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

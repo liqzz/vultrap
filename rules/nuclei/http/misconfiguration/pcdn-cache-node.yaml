@@ -1,0 +1,21 @@
+id: pcdn-cache-node
+info:
+  name: PCDN Cache Node Dataset
+  author: DhiyaneshDk
+  description: PCDN Cache Node dataset is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"PCDN Cache Node Dataset"
+  tags: node,pcdn,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BandwidthReportEventIDReadDiskDuration

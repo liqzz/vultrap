@@ -1,0 +1,25 @@
+id: 4D-detect
+info:
+  name: 4D Detection
+  author: righettod
+  description: 4D technology was detected.
+  severity: info
+  reference:
+  - https://us.4d.com/
+  - https://doc.4d.com/4Dv18/4D/18.4/URLs-and-Form-Actions.300-5232844.en.html
+  - https://doc.4d.com/4Dv18/4D/18.4/Information-about-the-Web-Site.300-5232828.en.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"4DACTION/"
+  tags: 4D,detect,tech
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /4DACTION//4DSTATS/4DHTMLSTATS/4DCACHECLEAR/4DWEBTEST

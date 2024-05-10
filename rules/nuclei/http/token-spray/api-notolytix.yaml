@@ -1,0 +1,22 @@
+id: api-notolytix
+info:
+  name: Notolytix API Test
+  author: 0xPugazh
+  description: null
+  severity: info
+  reference:
+  - https://notolytix.com/
+  metadata:
+    max-request: 1
+  tags: notolytix,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.notolytix.com/1.0/deviceid
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'realIp":route":deviceId":personaId":'

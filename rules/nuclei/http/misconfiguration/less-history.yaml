@@ -1,0 +1,25 @@
+id: lesshst-history
+info:
+  name: Less History - File Disclosure
+  author: kazet
+  description: 'LESSHST file is a Less History File. LESSHST file is a Less History
+    File. Less is a terminal pager program on Unix, Windows, and Unix-like systems
+    used to view (but not change) the contents of a text file one screen at a time.
+
+    '
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"lesshst"
+  tags: misconfig,disclosure,config,files
+traps:
+- request:
+    method: GET
+    path: /.lesshst
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '.less-history-file:'

@@ -1,0 +1,25 @@
+id: api-iconfinder
+info:
+  name: IconFinder API Test
+  author: daffainfo
+  description: Web Icons
+  severity: info
+  reference:
+  - https://developer.iconfinder.com/reference/overview-1
+  - https://github.com/daffainfo/all-about-apikey/tree/main/iconfinder
+  metadata:
+    max-request: 1
+  tags: token-spray,iconfinder
+traps:
+- request:
+    method: GET
+    path: https://api.iconfinder.com/v4/icons/search?query=arrow&count=10
+    headers:
+      Host: api.iconfinder.com
+      Accept: application/json
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"icons":"is_icon_glyph":"download_url":'

@@ -1,0 +1,23 @@
+id: duckduckgo-phish
+info:
+  name: duckduckgo phishing Detection
+  author: rxerium
+  description: 'A duckduckgo phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://duckduckgo.com
+  metadata:
+    max-request: 1
+  tags: phishing,duckduckgo,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DuckDuckGo — Privacy, simplified.

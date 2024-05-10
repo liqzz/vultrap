@@ -1,0 +1,53 @@
+id: nextcloud-detect
+info:
+  name: Nextcloud Detect
+  author: skeltavik
+  description: 'Nextcloud is a suite of client-server software for creating and using
+    file hosting services
+
+    '
+  severity: info
+  reference:
+  - https://nextcloud.com
+  metadata:
+    verified: true
+    max-request: 4
+    shodan-query: http.title:"Nextcloud"
+  tags: tech,nextcloud,storage
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: var nc_lastLoginvar nc_pageLoad
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /nextcloud/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /nextcloud/index.php/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,52 @@
+id: tibco-spotfire-services-detect
+info:
+  name: TIBCO Spotfire Statistics Services - Detect
+  author: righettod
+  description: 'TIBCO Spotfire Statistics Services was detected.
+
+    '
+  severity: info
+  reference:
+  - https://docs.tibco.com/products/tibco-spotfire-statistics-services
+  metadata:
+    max-request: 4
+    verified: true
+    shodan-query: TIBCO Spotfire Server
+  tags: tech,tibco,detect
+traps:
+- request:
+    method: GET
+    path: /SplusServer/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /RServer/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /TERR/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

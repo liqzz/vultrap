@@ -1,0 +1,36 @@
+id: portainer-panel
+info:
+  name: Portainer Login Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/portainer/portainer
+  classification:
+    cpe: cpe:2.3:a:portainer:portainer:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: portainer
+    shodan-query: title:"Portainer"
+    vendor: portainer
+    verified: true
+  tags: panel,portainer,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Portainerng-app="portainercontent="Portaineralt="Portainerportainer.auth
+- request:
+    method: GET
+    path: /#!/auth
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

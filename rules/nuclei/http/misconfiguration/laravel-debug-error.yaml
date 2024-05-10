@@ -1,0 +1,19 @@
+id: laravel-debug-error
+info:
+  name: Larvel Debug Method Enabled
+  author: dhiyaneshDK
+  description: Larvel Debug method is enabled.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: debug,laravel,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: Whoops! There was an error

@@ -1,0 +1,23 @@
+id: winscp-phish
+info:
+  name: winscp phishing Detection
+  author: rxerium
+  description: 'A winscp phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://winscp.net
+  metadata:
+    max-request: 1
+  tags: phishing,winscp,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'WinSCP :: Official Site :: Free SFTP and FTP client for Windows'

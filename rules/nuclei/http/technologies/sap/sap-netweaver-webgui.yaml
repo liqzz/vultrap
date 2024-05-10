@@ -1,0 +1,19 @@
+id: sap-nw-webgui
+info:
+  name: SAP NetWeaver WebGUI Detection
+  author: randomstr1ng
+  description: Detection of SAP NetWeaver ABAP Webserver WebGUI
+  severity: info
+  metadata:
+    max-request: 1
+  tags: sap,webserver,tech
+traps:
+- request:
+    method: GET
+    path: /sap/bc/gui/sap/its/webgui
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: sap-system-login<title>Logon</title>

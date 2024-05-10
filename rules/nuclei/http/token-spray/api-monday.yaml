@@ -1,0 +1,27 @@
+id: api-monday
+info:
+  name: Monday API Test
+  author: daffainfo
+  description: Programmatically access and update data inside a monday.com account
+  severity: info
+  reference:
+  - https://api.developer.monday.com/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/monday
+  metadata:
+    max-request: 1
+  tags: token-spray,monday
+traps:
+- request:
+    method: POST
+    path: https://api.monday.com/v2
+    headers:
+      Host: api.monday.com
+      Authorization: '{{token}}'
+      Content-Type: application/json
+    body: '{"query": "query { me { is_guest created_at name id}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"me""name""account_id"'

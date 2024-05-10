@@ -1,0 +1,23 @@
+id: adhoc-transfer-panel
+info:
+  name: WS-FTP Ad Hoc Transfer Panel - Detect
+  author: johnk3r
+  description: WS_FTP Ad Hoc panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+    product: ws_ftp
+    shodan-query: http.title:"Ad Hoc Transfer"
+    vendor: progress
+    verified: true
+  tags: panel,wsftp,ad-hoc,detect,login,progress
+traps:
+- request:
+    method: GET
+    path: /AHT/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Ad Hoc Transfer

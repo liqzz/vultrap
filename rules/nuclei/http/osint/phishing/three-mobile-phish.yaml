@@ -1,0 +1,23 @@
+id: three-mobile-phish
+info:
+  name: three phishing Detection
+  author: rxerium
+  description: 'A three phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://three.co.uk
+  metadata:
+    max-request: 1
+  tags: phishing,three,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Three | Phones, Broadband &amp; SIM Only deals

@@ -1,0 +1,20 @@
+id: empirecms-detect
+info:
+  name: EmpireCMS Detect
+  author: princechaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.html:EmpireCMS
+  tags: tech,empirecms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta (.*)EmpireCMS(.*)>

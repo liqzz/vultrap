@@ -1,0 +1,26 @@
+id: fatpipe-auth-bypass
+info:
+  name: FatPipe WARP 10.2.2  - Authorization Bypass
+  author: gy741
+  description: FatPipe WARP 10.2.2 contains an authorization bypass vulnerability.
+    Improper access control occurs when the application provides direct access to
+    objects based on user-supplied input. As a result, an attacker can bypass proper
+    authorization and access resources behind protected pages.
+  severity: high
+  reference:
+  - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5682.php
+  - https://www.fatpipeinc.com/support/advisories.php
+  metadata:
+    max-request: 1
+  tags: fatpipe,auth-bypass,router
+traps:
+- request:
+    method: GET
+    path: /fpui/jsp/index.jsp
+    headers:
+      Accept: '*/*'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: productTypetype:version:<title>FatPipe Networks</title>

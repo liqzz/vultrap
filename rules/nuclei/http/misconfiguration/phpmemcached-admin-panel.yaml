@@ -1,0 +1,21 @@
+id: phpmemcached-admin-panel
+info:
+  name: phpMemcachedAdmin Panel
+  author: tess
+  description: phpMemcachedAdmin Panel is exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"phpMemcachedAdmin"
+  tags: phpmemcached,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: phpMemcachedAdminExecute Commands on Servers

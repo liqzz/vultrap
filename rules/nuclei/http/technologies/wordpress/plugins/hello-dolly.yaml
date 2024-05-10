@@ -1,0 +1,23 @@
+id: wordpress-hello-dolly
+info:
+  name: Hello Dolly Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/hello-dolly/
+  metadata:
+    max-request: 1
+    plugin_namespace: hello-dolly
+    wpscan: https://wpscan.com/plugin/hello-dolly
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/hello-dolly/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

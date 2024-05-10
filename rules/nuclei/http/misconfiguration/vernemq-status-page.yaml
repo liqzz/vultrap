@@ -1,0 +1,21 @@
+id: vernemq-status-page
+info:
+  name: VerneMQ Status Page
+  author: geeknik
+  description: VerneMQ Status Page is exposed.
+  severity: low
+  reference:
+  - https://github.com/vernemq/vernemq
+  metadata:
+    max-request: 1
+  tags: misconfig,vernemq,status
+traps:
+- request:
+    method: GET
+    path: /status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: VerneMQIssuesCluster OverviewNode Status

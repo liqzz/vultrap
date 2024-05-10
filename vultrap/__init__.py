@@ -1,0 +1,1 @@
+from .translator import parse_nuclei_tempaltes

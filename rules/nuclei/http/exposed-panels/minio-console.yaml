@@ -1,0 +1,24 @@
+id: minio-console
+info:
+  name: MinIO Console Login Panel - Detect
+  author: pussycat0x
+  description: MinIO Console login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: app="MinIO-Console"
+    max-request: 1
+    shodan-query: title:"MinIO Console"
+  tags: panel,minio
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,36 @@
+id: api-square
+info:
+  name: Square API Test
+  author: zzeitlin
+  description: Easy way to take payments, manage refunds, and help customers checkout
+    online
+  severity: info
+  reference:
+  - https://developer.squareup.com/explorer/square/locations-api/list-locations
+  - https://github.com/daffainfo/all-about-apikey/tree/main/square
+  metadata:
+    max-request: 2
+  tags: token-spray,square
+traps:
+- request:
+    method: GET
+    path: https://connect.squareup.com/v2/locations
+    headers:
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: errors
+- request:
+    method: GET
+    path: https://connect.squareupsandbox.com/v2/locations
+    headers:
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

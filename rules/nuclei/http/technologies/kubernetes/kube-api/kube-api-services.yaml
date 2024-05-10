@@ -1,0 +1,19 @@
+id: kube-api-services
+info:
+  name: Kube API Services
+  author: sharath
+  description: Scans for kube services
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kube
+traps:
+- request:
+    method: GET
+    path: /api/v1/namespaces/default/services
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"ServiceList":"items":'

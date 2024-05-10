@@ -1,0 +1,19 @@
+id: joomla-config-dist-file
+info:
+  name: Joomla! Configuration File - Detect
+  author: oppsec
+  description: Joomla! configuration.php-dist file was detected.
+  severity: low
+  metadata:
+    max-request: 1
+  tags: config,exposure,joomla
+traps:
+- request:
+    method: GET
+    path: /configuration.php-dist
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JoomlaJConfig@package

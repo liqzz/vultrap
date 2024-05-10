@@ -1,0 +1,31 @@
+id: kkfileview-ssrf
+info:
+  name: kkFileView 4.0.0 - Server-Side Request Forgery
+  author: Arm!tage
+  description: 'kkFileView 4.0.0 is susceptible to server-side request forgery
+
+    '
+  severity: high
+  reference:
+  - https://github.com/kekingcn/kkFileView/issues/296
+  classification:
+    cwe-id: CWE-918
+    cpe: cpe:2.3:a:keking:kkfileview:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: keking
+    product: kkfileview
+    shodan-query: http.html:"kkFileView"
+    fofa-query: app="kkFileView"
+  tags: ssrf,kkfileview,keking
+traps:
+- request:
+    method: GET
+    path: /onlinePreview?url=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

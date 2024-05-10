@@ -1,0 +1,23 @@
+id: xds-amr-status
+info:
+  name: XDS-AMR Status Login Panel - Detect
+  author: pussycat0x
+  description: XDS-AMR Status login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"XDS-AMR - status"
+  tags: panel,tech,xamr,xds
+traps:
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>XDS-AMR - Status</title>

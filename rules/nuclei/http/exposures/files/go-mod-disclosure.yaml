@@ -1,0 +1,21 @@
+id: go-mod-disclosure
+info:
+  name: Go.mod Disclosure
+  author: DhiyaneshDk
+  description: go.mod internal file is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"go.mod"
+  tags: exposure,files,go
+traps:
+- request:
+    method: GET
+    path: /go.mod
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: modulegorequire (

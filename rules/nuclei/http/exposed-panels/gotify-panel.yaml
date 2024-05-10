@@ -1,0 +1,27 @@
+id: gotify-panel
+info:
+  name: Gotify Login Panel - Detect
+  author: righettod
+  description: Gotify login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/gotify/server
+  classification:
+    cpe: cpe:2.3:a:gotify:server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: server
+    shodan-query: http.title:"Gotify"
+    vendor: gotify
+    verified: true
+  tags: panel,gotify,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

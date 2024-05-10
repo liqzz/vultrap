@@ -1,0 +1,20 @@
+id: skycaiji-install
+info:
+  name: SkyCaiji - Exposed Installation
+  author: pikpikcu
+  description: SkyCaiji was discovered.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: tech,skycaiji,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /index.php?s=/install/index/index
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>蓝天采集器 SkyCaiji 安装</title>https://www.skycaiji.com<a href="/index.php?s=/Install/Index/step1"
+      class="btn btn-lg btn-success">

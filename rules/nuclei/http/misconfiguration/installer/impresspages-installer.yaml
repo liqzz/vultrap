@@ -1,0 +1,22 @@
+id: impresspages-installer
+info:
+  name: ImpressPages Installer
+  author: pussycat0x
+  description: ImpressPages is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"ImpressPages installation wizard"
+  tags: misconfig,exposure,install,impresspages
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ImpressPages installation wizardConfiguration

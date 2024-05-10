@@ -1,0 +1,26 @@
+id: ruijie-information-disclosure
+info:
+  name: Ruijie Login Panel - Detect
+  author: pikpikcu
+  description: Ruijie login panel was detected and leaks authentication credentials.
+  severity: high
+  reference:
+  - https://www.ruijienetworks.com/
+  - https://www.cnblogs.com/cHr1s/p/14499858.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: ruijie,config,exposure
+traps:
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"role":"super_admin","name":"(.*)","password":"(.*)"'

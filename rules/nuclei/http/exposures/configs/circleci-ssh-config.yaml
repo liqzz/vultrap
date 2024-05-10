@@ -1,0 +1,23 @@
+id: circleci-ssh-config
+info:
+  name: CircleCI SSH Configuration - Detect
+  author: geeknik
+  description: CircleCI ssh-config file was detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: config,exposure,circleci
+traps:
+- request:
+    method: GET
+    path: /.circleci/ssh-config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HostHostNameIdentityFile

@@ -1,0 +1,19 @@
+id: hashicorp-vault-detect
+info:
+  name: HashiCorp Vault Detect
+  author: Adam Crosser
+  description: Detects HashiCorp Vault
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,hashicorp
+traps:
+- request:
+    method: GET
+    path: /ui/vault/auth
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta name="vault/config/environment"

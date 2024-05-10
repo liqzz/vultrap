@@ -1,0 +1,23 @@
+id: wordpress-ninja-forms
+info:
+  name: Ninja Forms Contact Form – The Drag and Drop Form Builder for WordPress Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/ninja-forms/
+  metadata:
+    max-request: 1
+    plugin_namespace: ninja-forms
+    wpscan: https://wpscan.com/plugin/ninja-forms
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/ninja-forms/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

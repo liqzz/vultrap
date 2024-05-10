@@ -1,0 +1,23 @@
+id: api-abstract-ip-geolocation
+info:
+  name: Abstract Api IP Geolocation Test
+  author: daffainfo
+  description: Get the location of any IP with a world-class APIserving city, region,
+    country and lat/long data.
+  severity: info
+  reference:
+  - https://www.abstractapi.com/api/ip-geolocation-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-ip-geolocation
+  metadata:
+    max-request: 1
+  tags: token-spray,abstractapi
+traps:
+- request:
+    method: GET
+    path: https://ipgeolocation.abstractapi.com/v1/?api_key=&ip_address=92.184.105.98
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"ip":"city":"city_geoname_id":'

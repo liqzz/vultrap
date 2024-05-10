@@ -1,0 +1,36 @@
+id: open-stack-dashboard-login
+info:
+  name: OpenStack Dashboard Login Panel - Detect
+  author: dhiyaneshDK,hackergautam
+  description: OpenStack Dashboard login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6464
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:openstack:horizon:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: horizon
+    vendor: openstack
+  tags: panel,openstack,edb
+traps:
+- request:
+    method: GET
+    path: /dashboard/auth/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - OpenStack Dashboard</title>
+- request:
+    method: GET
+    path: /horizon/auth/login/?next=/horizon/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

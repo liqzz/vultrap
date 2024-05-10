@@ -1,0 +1,23 @@
+id: wordpress-webp-express
+info:
+  name: WebP Express Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/webp-express/
+  metadata:
+    max-request: 1
+    plugin_namespace: webp-express
+    wpscan: https://wpscan.com/plugin/webp-express
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/webp-express/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

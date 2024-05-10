@@ -1,0 +1,21 @@
+id: samsung-smarttv-debug
+info:
+  name: Samsung SmartTV Debug Config
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Debug Config"
+  tags: samsung,tech,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Debug Config</title>MultiScreen Service

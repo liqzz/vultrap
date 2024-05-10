@@ -1,0 +1,25 @@
+id: wuzhicms-detect
+info:
+  name: Wuzhicms Detected
+  author: pikpikcu
+  description: Wuzhicms was detected.
+  severity: info
+  remediation: Ensure you are using the latest version and that all security patches
+    have been applied.
+  reference:
+  - https://www.cvedetails.com/vendor/17848/Wuzhicms.html
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,wuzhicms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by wuzhicms五指CMS

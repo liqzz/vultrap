@@ -1,0 +1,34 @@
+id: openstack-config
+info:
+  name: Openstack - Infomation Disclosure
+  author: MayankPandey01
+  description: 'Openstack exposing Configuration or settings related to the Swift
+    object storage system.
+
+    '
+  severity: low
+  reference:
+  - https://docs.openstack.org/python-cloudkittyclient/stein/api_reference/info.html
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:786533217
+  tags: exposure,misconfig,openstack
+traps:
+- request:
+    method: GET
+    path: /info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{"formpost""bulk_'
+- request:
+    method: GET
+    path: /v1/info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

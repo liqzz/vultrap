@@ -1,0 +1,25 @@
+id: uipath-orchestrator-panel
+info:
+  name: UiPath Orchestrator Login Panel - Detect
+  author: righettod
+  description: 'UiPath Orchestrator login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.uipath.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"UiPath Orchestrator"
+  tags: panel,uipath,login,detect
+traps:
+- request:
+    method: GET
+    path: /Account/Login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

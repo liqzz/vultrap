@@ -1,0 +1,27 @@
+id: dockge-panel
+info:
+  name: Dockge Panel - Detect
+  author: rxerium
+  description: 'A fancy, easy-to-use and reactive self-hosted docker compose.yaml
+    stack-oriented manager
+
+    '
+  severity: info
+  reference:
+  - https://github.com/louislam/dockge
+  - https://dockge.kuma.pet/
+  metadata:
+    max-request: 1
+    shodan-query: title:"Dockge"
+    verified: true
+  tags: panel,dockge,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Dockge</title>

@@ -1,0 +1,23 @@
+id: wordpress-loginpress
+info:
+  name: LoginPress | wp-login Custom Login Page Customizer Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/loginpress/
+  metadata:
+    max-request: 1
+    plugin_namespace: loginpress
+    wpscan: https://wpscan.com/plugin/loginpress
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/loginpress/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

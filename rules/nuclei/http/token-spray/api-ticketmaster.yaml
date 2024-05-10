@@ -1,0 +1,22 @@
+id: api-ticketmaster
+info:
+  name: Ticket Master API Test
+  author: 0xpugazh
+  description: null
+  severity: info
+  reference:
+  - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,ticketmaster
+traps:
+- request:
+    method: GET
+    path: https://app.ticketmaster.com/discovery/v2/events.json?apikey=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id""name""type""images"'

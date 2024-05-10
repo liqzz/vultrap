@@ -1,0 +1,35 @@
+id: room-alert-detect
+info:
+  name: AVTECH Room Alert Login Panel - Detect
+  author: gy741
+  description: AVTECH Room Alert login panel was detected.
+  severity: info
+  reference:
+  - https://avtech.com/articles/166/how-to-access-a-room-alert-monitors-settings-pages-2/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"Room Alert"
+    verified: true
+  tags: panel,room-alert,avtech
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Room Alert - Account Log InAVTECH Software, Inc. - Room Alertalt="Room Alert"
+- request:
+    method: GET
+    path: /gateway
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

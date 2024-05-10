@@ -1,0 +1,27 @@
+id: netscaler-aaa-login
+info:
+  name: NetScaler AAA Login Panel - Detect
+  author: dhiyaneshDk
+  description: NetScaler AAA login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6898
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:citrix:netscaler:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: netscaler
+    vendor: citrix
+  tags: panel,netscaler,login,edb,citrix
+traps:
+- request:
+    method: GET
+    path: /logon/LogonPoint/tmindex.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: NetScaler AAA</title>

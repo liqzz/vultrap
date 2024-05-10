@@ -1,0 +1,27 @@
+id: api-scrapingant
+info:
+  name: ScrapingAnt API Test
+  author: daffainfo
+  description: Headless Chrome scraping with a simple API
+  severity: info
+  reference:
+  - https://docs.scrapingant.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scrapingant
+  metadata:
+    max-request: 1
+  tags: token-spray,scrapingant
+traps:
+- request:
+    method: POST
+    path: https://api.scrapingant.com/v1/general
+    headers:
+      Host: api.scrapingant.com
+      x-api-key: '{{token}}'
+      Content-Type: application/json
+    body: '{"url": "https://example.com"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"content""cookies""status_code"'

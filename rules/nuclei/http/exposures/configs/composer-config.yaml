@@ -1,0 +1,51 @@
+id: composer-config
+info:
+  name: Composer Config - Detect
+  author: Mahendra Purbia (Mah3Sec_)
+  description: Composer configuration file detected.
+  severity: info
+  reference: https://getcomposer.org/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /composer.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: packagesrequire
+- request:
+    method: GET
+    path: /composer.lock
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.composer/composer.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /vendor/composer/installed.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,27 @@
+id: contao-login-panel
+info:
+  name: Contao Login Panel - Detect
+  author: princechaddha
+  description: Contao login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:contao:contao:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: contao
+    shodan-query: http.html:"Contao Open Source CMS"
+    vendor: contao
+    verified: true
+  tags: panel,contao
+traps:
+- request:
+    method: GET
+    path: /contao/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Contao Open Source CMS<h1>Login</h1>

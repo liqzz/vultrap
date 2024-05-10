@@ -1,0 +1,21 @@
+id: contentify-installer
+info:
+  name: Contentify Installer Exposure
+  author: ritikchaddha
+  description: Contentify is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+  tags: misconfig,contentify,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Contentify - Step 1start the installation

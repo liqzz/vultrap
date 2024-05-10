@@ -1,0 +1,19 @@
+id: druid-monitor
+info:
+  name: Alibaba Druid Monitor Unauthorized Access
+  author: ohlinge
+  description: Alibaba Druid Monitor is exposed.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: druid,alibaba,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /druid/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Druid Stat Index</title>

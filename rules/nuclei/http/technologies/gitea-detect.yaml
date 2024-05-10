@@ -1,0 +1,28 @@
+id: gitea-detect
+info:
+  name: Gitea Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: tech,gitea
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by Gitea
+- request:
+    method: GET
+    path: /user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

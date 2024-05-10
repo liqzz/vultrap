@@ -1,0 +1,24 @@
+id: netflix-phish
+info:
+  name: netflix phishing Detection
+  author: rxerium
+  description: 'A netflix phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://netflix.com
+  metadata:
+    max-request: 1
+  tags: phishing,netflix,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Watch Netflix films &amp; TV programmes online or stream right to your smart
+      TV, game console, PC, Mac, mobile, tablet and more.

@@ -1,0 +1,22 @@
+id: api-ddownload
+info:
+  name: ddownload API Test
+  author: daffainfo
+  description: File Sharing and Storage
+  severity: info
+  reference:
+  - https://ddownload.com/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/ddownload
+  metadata:
+    max-request: 1
+  tags: token-spray,ddownload
+traps:
+- request:
+    method: GET
+    path: https://api-v2.ddownload.com/api/account/info?key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"storage_left""premium_traffic_left""email"'

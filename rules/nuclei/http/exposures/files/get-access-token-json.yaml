@@ -1,0 +1,30 @@
+id: get-access-token-json
+info:
+  name: Get Access Token Json
+  author: DhiyaneshDK
+  description: Internal file is exposed in Constant Contact Forms wordpress plugin.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intitle:"index of" "get_access_token.json"
+  tags: exposure,files
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/constant-contact-forms/vendor/constantcontact/constantcontact/test/Json/Auth/get_access_token.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"access_token":"token_type":'
+- request:
+    method: GET
+    path: /wp-content/plugins/constant-contact-api-old/vendor/constantcontact/constantcontact/test/Json/Auth/get_access_token.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

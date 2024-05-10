@@ -1,0 +1,33 @@
+id: nuget-package-config
+info:
+  name: NuGet Package.config File Disclosure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  reference:
+  - https://learn.microsoft.com/en-us/nuget/reference/packages-config
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"packages.config"
+  tags: exposure,sass,devops,cicd,nuget,files
+traps:
+- request:
+    method: GET
+    path: /packages.config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <?xml version="1.0" encoding="utf-8"?><packages></packages>
+- request:
+    method: GET
+    path: /.nuget/packages.config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

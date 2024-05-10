@@ -1,0 +1,28 @@
+id: api-abstract-image-processing
+info:
+  name: Abstract Api Image Processing Test
+  author: daffainfo
+  description: Manage your images programmatically with this powerful API compress,
+    convert, crop, resize, and more.
+  severity: info
+  reference:
+  - https://www.abstractapi.com/api/image-processing-optimization-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-image-processing
+  metadata:
+    max-request: 1
+  tags: token-spray,abstractapi
+traps:
+- request:
+    method: POST
+    path: https://images.abstractapi.com/v1/url/
+    headers:
+      Host: images.abstractapi.com
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"api_key": "{{token}}", "lossy": true, "url": "https://s3.amazonaws.com/static.abstractapi.com/test-images/dog.jpg"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"original_size":"original_height":"original_width":'

@@ -1,0 +1,23 @@
+id: apdisk-disclosure
+info:
+  name: Apdisk - File Disclosure
+  author: DhiyaneshDk
+  description: Apdisk internal file is exposed.
+  severity: low
+  reference:
+  - https://discussions.apple.com/thread/250354761
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Apdisk"
+  tags: exposure,files,apdisk
+traps:
+- request:
+    method: GET
+    path: /.apdisk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <plist version=<key><string>

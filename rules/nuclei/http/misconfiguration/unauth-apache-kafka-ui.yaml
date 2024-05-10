@@ -1,0 +1,33 @@
+id: unauth-apache-kafka-ui
+info:
+  name: Apache Kafka - Unauthorized UI Exposure
+  author: theamanrawat
+  description: Unauthorized access to apache kakfa UI.
+  severity: medium
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/apache-kafka-unauthorized-access-vulnerability
+  - https://github.com/provectus/kafka-ui
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"UI for Apache Kafka"
+  tags: misconfig,apache,kafka,unauth,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>UI for Apache Kafka</title>
+- request:
+    method: GET
+    path: /ui/clusters/kafka-ui/brokers
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,24 @@
+id: zhiyuan-file-upload
+info:
+  name: Zhiyuan OA Arbitrary File Upload Vulnerability
+  author: gy741
+  description: A vulnerability in Zhiyuan OA allows remote unauthenticated attackers
+    to upload arbitrary files to the remote server and cause execute arbitrary code
+    to be executed.
+  severity: critical
+  remediation: Apply the appropriate patch.
+  reference:
+  - https://www.programmersought.com/article/92658169875/
+  metadata:
+    max-request: 1
+  tags: zhiyuan,rce,fileupload,seeyon,intrusive
+traps:
+- request:
+    method: GET
+    path: /seeyon/thirdpartyController.do.css/..;/ajax.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: java.lang.NullPointerException:null

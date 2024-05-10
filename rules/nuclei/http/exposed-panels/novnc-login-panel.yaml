@@ -1,0 +1,33 @@
+id: novnc-login-panel
+info:
+  name: noVNC Login Panel - Detect
+  author: tess
+  description: noVNC login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"noVNC"
+    verified: true
+  tags: panel,novnc
+traps:
+- request:
+    method: GET
+    path: /vnc.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>noVNC</title>
+- request:
+    method: GET
+    path: :6080/vnc.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

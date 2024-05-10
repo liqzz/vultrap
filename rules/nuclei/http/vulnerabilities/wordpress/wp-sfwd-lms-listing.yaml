@@ -1,0 +1,21 @@
+id: wp-sfwd-lms-listing
+info:
+  name: WordPress Plugin Sfwd-lms Listing
+  author: pussycat0x
+  description: Searches for sensitive directories present in the sfwd-lms plugin.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6426
+  metadata:
+    max-request: 1
+  tags: wordpress,listing,plugin,edb
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/sfwd-lms/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index ofwp-content/plugins/sfwd-lms

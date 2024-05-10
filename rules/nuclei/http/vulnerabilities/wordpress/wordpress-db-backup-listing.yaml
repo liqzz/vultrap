@@ -1,0 +1,19 @@
+id: wordpress-db-backup-listing
+info:
+  name: WordPress DB Backup
+  author: Suman_Kar
+  description: WordPress DB Backup plugin exposes db file along with directory listing.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: wordpress,backup
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/database-backups/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /wp-content/uploads/database-backups.sql

@@ -1,0 +1,22 @@
+id: evlink-panel
+info:
+  name: EVlink Local Controller - Detection
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    fofa-query: title="EVlink Local Controller"
+    max-request: 1
+    shodan-query: title:"EVlink Local Controller"
+    verified: true
+  tags: panel,evlink,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: EVlink Local Controller</title>

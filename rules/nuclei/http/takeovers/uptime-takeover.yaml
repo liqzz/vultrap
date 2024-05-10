@@ -1,0 +1,21 @@
+id: uptime-takeover
+info:
+  name: Uptime Takeover Detection
+  author: philippedelteil
+  description: null
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/368
+  metadata:
+    max-request: 1
+  tags: takeover,uptime
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: <html><body>You are being <a href="https://uptime.betterstack.com">redirected</a>.</body></html>

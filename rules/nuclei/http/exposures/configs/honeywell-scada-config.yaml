@@ -1,0 +1,23 @@
+id: honeywell-scada-config
+info:
+  name: Honeywell Scada Configuration File - Detect
+  author: alperenkesk
+  description: Honeywell Scada configuration file was detected. The downloaded file
+    opens with the file name and contains critical information about the destination
+    address.
+  severity: low
+  reference:
+  - https://www.exploit-db.com/exploits/44734
+  metadata:
+    max-request: 1
+  tags: scada,config,exposure,edb
+traps:
+- request:
+    method: GET
+    path: /web_caps/webCapsConfig
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DeviceSubClassIPAddress

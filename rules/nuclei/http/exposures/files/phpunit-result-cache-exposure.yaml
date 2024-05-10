@@ -1,0 +1,21 @@
+id: phpunit-result-cache-exposure
+info:
+  name: PHPUnit Result Cache File Exposure
+  author: DhiyaneshDk
+  description: PHPUnit cache file is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: .phpunit.result.cache
+  tags: config,exposure,devops,files
+traps:
+- request:
+    method: GET
+    path: /.phpunit.result.cache
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"defects"'

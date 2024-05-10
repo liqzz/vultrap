@@ -1,0 +1,21 @@
+id: nagiosxi-installer
+info:
+  name: Nagios XI Installer
+  author: ritikchaddha
+  description: Nagios XI is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Nagios XI"
+  tags: misconfig,exposure,install,nagiosxi
+traps:
+- request:
+    method: GET
+    path: /nagiosxi/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Nagios XI Installation

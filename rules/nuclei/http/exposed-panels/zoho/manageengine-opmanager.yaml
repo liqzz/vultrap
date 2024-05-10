@@ -1,0 +1,28 @@
+id: manageengine-opmanager
+info:
+  name: ZOHO ManageEngine OpManager Panel - Detect
+  author: dhiyaneshDK,daffainfo
+  description: ZOHO ManageEngine OpManager panel was detected.
+  severity: info
+  reference:
+  - https://www.manageengine.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:zohocorp:manageengine_opmanager:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: manageengine_opmanager
+    shodan-query: http.title:"OpManager Plus"
+    vendor: zohocorp
+  tags: panel,zoho,manageengine,zohocorp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <div class='opmIconsHolder'><div class='opmLoginFieldHolder'><div class='opmIconsRight'>

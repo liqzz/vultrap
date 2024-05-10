@@ -1,0 +1,23 @@
+id: prestashop-installer
+info:
+  name: Prestashop Installer Exposure
+  author: tess
+  description: Prestashop is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"PrestaShop Installation Assistant"
+  tags: misconfig,prestashop,exposure,install
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>PrestaShop Installation Assistant</title><li>System configuration</li><li>Store
+      installation</li>

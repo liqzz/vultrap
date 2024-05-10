@@ -1,0 +1,28 @@
+id: shopizer-detect
+info:
+  name: Shopizer Detection
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: tech,shopizer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by <a href="http://www.shopizer.com"
+- request:
+    method: GET
+    path: /shop/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

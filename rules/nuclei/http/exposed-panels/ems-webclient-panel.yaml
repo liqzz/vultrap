@@ -1,0 +1,32 @@
+id: ems-webclient-panel
+info:
+  name: EMS Web Client Login Panel - Detect
+  author: pussycat0x,daffainfo
+  description: EMS Web Client login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: inurl:EMSWebClient/
+    max-request: 2
+  tags: panel,ems
+traps:
+- request:
+    method: GET
+    path: /emswebclient/Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: EMS Web Client - Login
+- request:
+    method: GET
+    path: /Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,27 @@
+id: microsoft-exchange-panel
+info:
+  name: Microsoft Exchange Admin Center Login Panel - Detect
+  author: r3dg33k
+  description: Microsoft Exchange Admin Center login panel was detected.
+  severity: info
+  reference:
+  - https://docs.microsoft.com/en-us/answers/questions/58814/block-microsoft-exchange-server-2016-exchange-admi.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: exchange_server
+    vendor: microsoft
+  tags: microsoft,panel,exchange
+traps:
+- request:
+    method: GET
+    path: /owa/auth/logon.aspx?replaceCurrent=1&url=/ecp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Exchange Admin Center

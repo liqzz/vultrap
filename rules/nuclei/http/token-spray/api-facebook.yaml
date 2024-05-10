@@ -1,0 +1,21 @@
+id: api-facebook
+info:
+  name: Facebook API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://developers.facebook.com/tools/explorer/
+  metadata:
+    max-request: 1
+  tags: token-spray,facebook
+traps:
+- request:
+    method: GET
+    path: https://graph.facebook.com/me?access_token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

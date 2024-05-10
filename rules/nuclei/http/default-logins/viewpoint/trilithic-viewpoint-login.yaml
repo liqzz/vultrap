@@ -1,0 +1,28 @@
+id: trilithic-viewpoint-default
+info:
+  name: Trilithic Viewpoint Default Login
+  author: davidmckennirey
+  description: Trilithic Viewpoint application default admin credentials were discovered.
+    Note this product has been discontinued.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: default-login,trilithic,viewpoint
+traps:
+- request:
+    method: POST
+    path: /ViewPoint/admin/Site/ViewPointLogin
+    headers:
+      Content-Type: application/json
+      Cookie: trilithic_win_auth=false
+    body: '{u:"{{username}}", t:"undefined", p:"{{password}}", d:"", r:false, w:false}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"authorized":trueredirectUrl'

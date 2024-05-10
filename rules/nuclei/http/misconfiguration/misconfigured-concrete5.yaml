@@ -1,0 +1,19 @@
+id: misconfigured-concrete5
+info:
+  name: Misconfigured Concrete5
+  author: pdteam
+  description: Concrete5 CMS is misconfigured.
+  severity: low
+  metadata:
+    max-request: 1
+  tags: misconfig,concrete,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: concrete5 has encountered an issue

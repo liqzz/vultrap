@@ -1,0 +1,24 @@
+id: akhq-panel
+info:
+  name: AKHQ Panel - Detect
+  author: DhiyaneshDK
+  description: 'AKHQ Panel was discovered.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:855432563
+    fofa-query: body="AKHQ_PREFIX_UI"
+  tags: akhq,panel,login,detect
+traps:
+- request:
+    method: GET
+    path: /ui/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AKHQ</title>AKHQ_PREFIX_UI

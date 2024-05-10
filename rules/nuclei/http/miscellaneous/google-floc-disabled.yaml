@@ -1,0 +1,22 @@
+id: google-floc-disabled
+info:
+  name: Google FLoC Disabled
+  author: geeknik
+  description: The detected website has decided to explicitly exclude itself from
+    Google FLoC tracking.
+  severity: info
+  reference:
+  - https://www.bleepingcomputer.com/news/security/github-disables-google-floc-user-tracking-on-its-website/
+  metadata:
+    max-request: 1
+  tags: miscellaneous,google,floc,misc
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

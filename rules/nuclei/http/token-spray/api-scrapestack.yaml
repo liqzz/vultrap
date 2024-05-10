@@ -1,0 +1,22 @@
+id: api-scrapestack
+info:
+  name: Scrapestack API Test
+  author: daffainfo
+  description: Real-time, Scalable Proxy & Web Scraping REST API
+  severity: info
+  reference:
+  - https://scrapestack.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scrapestack
+  metadata:
+    max-request: 1
+  tags: token-spray,scrapestack
+traps:
+- request:
+    method: GET
+    path: https://api.scrapestack.com/scrape?access_key=&url=https://example.com
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Example Domain</title>

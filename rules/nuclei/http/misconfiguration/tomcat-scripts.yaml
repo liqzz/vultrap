@@ -1,0 +1,89 @@
+id: tomcat-scripts
+info:
+  name: Apache Tomcat Example Scripts - Detect
+  author: Co0nan,Higor Melgaço
+  description: Multiple Apache Tomcat example scripts were detected.
+  severity: info
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/apache-tomcat-examples-directory-vulnerabilities/
+  - https://www.rapid7.com/db/vulnerabilities/apache-tomcat-example-leaks/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 8
+  tags: apache,tomcat,misconfig
+traps:
+- request:
+    method: GET
+    path: /examples/servlets/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JSP ExamplesJSP SamplesServlets ExamplesWebSocket ExamplesGET based form
+- request:
+    method: GET
+    path: /examples/jsp/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /examples/websocket/index.xhtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /examples/servlets/servlet/SessionExample
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /..;/examples/servlets/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /..;/examples/jsp/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /..;/examples/websocket/index.xhtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /..;/examples/servlets/servlet/SessionExample
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

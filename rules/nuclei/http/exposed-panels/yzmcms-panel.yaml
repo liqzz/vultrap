@@ -1,0 +1,26 @@
+id: yzmcms-panel
+info:
+  name: YzmCMS Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: YzmCMS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:yzmcms:yzmcms:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: yzmcms
+    shodan-query: http.title:"YzmCMS"
+    vendor: yzmcms
+  tags: panel,yzmcms,login
+traps:
+- request:
+    method: GET
+    path: /admin/index/login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered By <a href="http://www.yzmcms.com"Powered By YzmCMS

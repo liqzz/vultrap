@@ -1,0 +1,22 @@
+id: api-pagecdn
+info:
+  name: PageCDN API Test
+  author: daffainfo
+  description: Public API for javascript, css and font libraries on PageCDN
+  severity: info
+  reference:
+  - https://pagecdn.com/docs/public-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/pagecdn
+  metadata:
+    max-request: 1
+  tags: token-spray,pagecdn
+traps:
+- request:
+    method: GET
+    path: https://pagecdn.com/api/v2/private/account/info?apikey=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username""email"'

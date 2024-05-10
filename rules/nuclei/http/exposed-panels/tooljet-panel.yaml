@@ -1,0 +1,33 @@
+id: tooljet-panel
+info:
+  name: ToolJet Login Panel - Detect
+  author: DhiyaneshDk
+  description: ToolJet login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"ToolJet - Dashboard"
+    verified: true
+  tags: panel,tooljet
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ToolJet - Dashboard
+- request:
+    method: GET
+    path: /login?redirectTo=/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

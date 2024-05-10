@@ -1,0 +1,32 @@
+id: netflix-conductor-version
+info:
+  name: Netflix Conductor Version Detection
+  author: c-sh0
+  description: Obtain netflix conductor version information
+  severity: info
+  reference:
+  - https://github.com/Netflix/conductor/blob/v1.6.0-rc1/ui/src/server.js#L17
+  - https://github.com/Netflix/conductor/blob/v3.1.0/rest/src/main/java/com/netflix/conductor/rest/controllers/AdminResource.java#L42
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"Conductor UI", http.title:"Workflow UI"
+  tags: miscellaneous,tech,netflix,conductor,api,misc
+traps:
+- request:
+    method: GET
+    path: /api/admin/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CONDUCTOR_
+- request:
+    method: GET
+    path: /api/sys
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

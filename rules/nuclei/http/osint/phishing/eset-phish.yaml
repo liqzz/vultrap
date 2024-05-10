@@ -1,0 +1,23 @@
+id: eset-phish
+info:
+  name: eset phishing Detection
+  author: rxerium
+  description: 'A eset phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://eset.com
+  metadata:
+    max-request: 1
+  tags: phishing,eset,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Malware Protection & Internet Security &#124; ESET

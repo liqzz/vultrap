@@ -1,0 +1,30 @@
+id: cloudfoundry-detect
+info:
+  name: Cloudfoundry Detect
+  author: uomogrande
+  description: Detects cloudfoundry based on response headers
+  severity: info
+  reference: https://docs.cloudfoundry.org/concepts/cf-routing-architecture.html
+  metadata:
+    max-request: 2
+  tags: cloudfoundry,tech
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /
+    headers:
+      Host: '{{randstr}}.com'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

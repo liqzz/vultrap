@@ -1,0 +1,26 @@
+id: blazor-webassembly-detect
+info:
+  name: Blazor WebAssembly - Detect
+  author: righettod
+  description: 'Blazor WebAssembly application was detected.
+
+    '
+  severity: info
+  reference:
+  - https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
+  - https://github.com/righettod/burp-piper-custom-scripts/issues/1
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"blazor.boot.json"
+  tags: blazor,webassembly,detect
+traps:
+- request:
+    method: GET
+    path: /_framework/blazor.boot.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: dotnet.wasm"entryAssembly""Microsoft.JSInterop.WebAssembly.dll"

@@ -1,0 +1,25 @@
+id: dlink-wireless
+info:
+  name: D-Link Wireless Router Panel - Detect
+  author: dhiyaneshDK
+  description: D-Link Wireless Router panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6784
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: dlink,router,edb,panel
+traps:
+- request:
+    method: GET
+    path: /status.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>D-LINK SYSTEMS, INC. | WIRELESS ROUTER | HOME</title><title>D-LINK
+      SYSTEMS, INC. | WIRELESS ACCESS POINT | HOME</title>

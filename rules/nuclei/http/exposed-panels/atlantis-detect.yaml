@@ -1,0 +1,29 @@
+id: atlantis-detect
+info:
+  name: Atlantis Panel - Detect
+  author: jonathanwalker
+  description: Atlantis panel was detected.
+  severity: info
+  reference:
+  - https://github.com/runatlantis/atlantis
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:runatlantis:atlantis:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: atlantis
+    shodan-query: http.favicon.hash:-1706783005
+    vendor: runatlantis
+    verified: true
+  tags: panel,atlantis,runatlantis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: title="atlantisLock

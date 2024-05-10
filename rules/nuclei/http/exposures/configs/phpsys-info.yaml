@@ -1,0 +1,25 @@
+id: phpsys-info
+info:
+  name: phpSysInfo Exposure
+  author: fpatrik
+  description: 'phpSysInfo: a customizable PHP script that displays information about
+    your system nicely
+
+    '
+  severity: low
+  reference: https://phpsysinfo.github.io/phpsysinfo/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"phpSysInfo"
+  tags: config,exposure,phpsysinfo
+traps:
+- request:
+    method: GET
+    path: /phpsysinfo/index.php?disp=bootstrap
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: phpSysInfoHardware Information

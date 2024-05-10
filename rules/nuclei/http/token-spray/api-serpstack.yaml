@@ -1,0 +1,22 @@
+id: api-serpstack
+info:
+  name: serpstack API Test
+  author: daffainfo
+  description: Real-Time & Accurate Google Search Results API
+  severity: info
+  reference:
+  - https://serpstack.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/serpstack
+  metadata:
+    max-request: 1
+  tags: token-spray,serpstack
+traps:
+- request:
+    method: GET
+    path: http://api.serpstack.com/search?access_key=&query=mcdonalds
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"total_time_taken""processed_timestamp""search_url"'

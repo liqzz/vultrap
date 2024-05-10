@@ -1,0 +1,24 @@
+id: api-coinranking
+info:
+  name: Coinranking API Test
+  author: daffainfo
+  description: Live Cryptocurrency data
+  severity: info
+  reference:
+  - https://developers.coinranking.com/api/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/coinranking
+  metadata:
+    max-request: 1
+  tags: token-spray,coinranking
+traps:
+- request:
+    method: GET
+    path: https://api.coinranking.com/v2/exchanges
+    headers:
+      Host: api.coinranking.com
+      x-access-token: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"exchanges""coinrankingUrl""uuid"'

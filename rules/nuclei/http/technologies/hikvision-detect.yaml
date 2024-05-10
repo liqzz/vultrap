@@ -1,0 +1,30 @@
+id: hikvision-detect
+info:
+  name: Hikvision Panel
+  author: pdteam,its0x08
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.favicon.hash:999357577
+  tags: tech,hikvision
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Hikvision Digital Technology
+- request:
+    method: GET
+    path: /doc/page/login.asp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

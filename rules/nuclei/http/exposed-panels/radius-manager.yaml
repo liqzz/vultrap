@@ -1,0 +1,51 @@
+id: radius-manager-login
+info:
+  name: Radius Manager Admininstration Control Panel Login Panel - Detect
+  author: dhiyaneshDK
+  description: Radius Manager Administration Control Panel login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6790
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+  tags: panel,radius,edb
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Radius Manager - User Control Panel</title>
+- request:
+    method: GET
+    path: /admin.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /radiusmanager/user.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /user.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

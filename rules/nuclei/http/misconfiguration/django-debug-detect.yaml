@@ -1,0 +1,20 @@
+id: django-debug
+info:
+  name: Django Debug Configuration Enabled
+  author: dhiyaneshDK,hackergautam
+  description: Django debug configuration is enabled, which allows an attacker to
+    obtain system configuration information such as paths or settings.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: django,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /NON_EXISTING_PATH/
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: URLconf definedPage not foundDjango tried these URL patterns, in this order

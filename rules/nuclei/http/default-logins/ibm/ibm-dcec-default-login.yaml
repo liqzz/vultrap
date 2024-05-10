@@ -1,0 +1,26 @@
+id: ibm-dcec-default-login
+info:
+  name: IBM Decision Center Enterprise Console - Default Login
+  author: DhiyaneshDK
+  description: null
+  severity: high
+  reference:
+  - https://www.ibm.com/docs/en/odm/8.5.1?topic=console-tutorial-getting-started-decision-center-enterprise
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html="Decision Center Enterprise console"
+  tags: ibm,default-login,decision-center
+traps:
+- request:
+    method: POST
+    path: /teamserver/j_security_check
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'j_username={{username}}&j_password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Current action:Sign Out

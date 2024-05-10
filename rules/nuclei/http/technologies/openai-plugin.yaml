@@ -1,0 +1,26 @@
+id: openai-plugin
+info:
+  name: OpenAI Plugin Detection
+  author: pdteam
+  description: 'OpenAI plugins connect ChatGPT to third-party applications. These
+    plugins enable ChatGPT to interact with APIs defined by developers, enhancing
+    ChatGPT''s capabilities and allowing it to perform a wide range of actions.
+
+    '
+  severity: info
+  reference:
+  - https://platform.openai.com/docs/plugins/introduction
+  metadata:
+    verified: true
+    max-request: 1
+  tags: tech,openai,plugin
+traps:
+- request:
+    method: GET
+    path: /.well-known/ai-plugin.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"schema_version":"name_for_model":'

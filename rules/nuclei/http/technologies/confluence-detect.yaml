@@ -1,0 +1,64 @@
+id: confluence-detect
+info:
+  name: Confluence Detection
+  author: philippedelteil,AdamCrosser,6mile
+  description: 'This nuclei template is used to detect the presence of Confluence,
+    a popular collaboration software.
+
+    '
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:atlassian:confluence_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 5
+    vendor: atlassian
+    product: confluence_server
+    shodan-query: http.component:"Atlassian Confluence"
+    category: productivity
+  tags: tech,confluence,atlassian,detect
+traps:
+- request:
+    method: GET
+    path: /dologin.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /pages
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /confluence
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wiki
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

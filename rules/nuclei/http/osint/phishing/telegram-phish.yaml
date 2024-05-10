@@ -1,0 +1,24 @@
+id: telegram-phish
+info:
+  name: telegram phishing Detection
+  author: rxerium
+  description: 'A telegram phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://telegram.org
+  metadata:
+    max-request: 1
+  tags: phishing,telegram,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Telegram is a cloud-based mobile and desktop messaging app with a focus
+      on security and speed.

@@ -1,0 +1,20 @@
+id: sap-web-dispatcher-admin-portal
+info:
+  name: SAP Web Dispatcher admin portal detection
+  author: randomstr1ng
+  description: Detection of SAP Web Dispatcher Admin Portal
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-266008933
+  tags: sap,webserver,proxy,tech
+traps:
+- request:
+    method: GET
+    path: /sap/wdisp/admin/public/default.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SAP Web Dispatcher<title>Administration</title>

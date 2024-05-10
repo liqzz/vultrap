@@ -1,0 +1,33 @@
+id: horde-webmail-login
+info:
+  name: Horde Webmail Login Panel - Detect
+  author: ritikchaddha
+  description: Horde Webmail login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:2104916232
+    verified: true
+  tags: horde,webmail,panel
+traps:
+- request:
+    method: GET
+    path: /horde/imp/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Horde
+- request:
+    method: GET
+    path: /imp/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

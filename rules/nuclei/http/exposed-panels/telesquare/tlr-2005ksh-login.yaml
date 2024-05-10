@@ -1,0 +1,27 @@
+id: tlr-2005ksh-login
+info:
+  name: Telesquare TLR-2005KSH Login Panel - Detect
+  author: princechaddha
+  description: Telesquare TLR-2005KSH login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:telesquare:tlr-2005ksh_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: tlr-2005ksh_firmware
+    shodan-query: http.html:"TLR-2005KSH"
+    vendor: telesquare
+    verified: true
+  tags: panel,router,telesquare
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login to TLR-2005KSH</title>

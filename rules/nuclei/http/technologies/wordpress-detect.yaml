@@ -1,0 +1,55 @@
+id: wordpress-detect
+info:
+  name: WordPress Detect
+  author: pdteam,daffainfo,ricardomaia,topscoder,AdamCrosser
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 4
+    vendor: wordpress
+    product: wordpress
+    shodan-query: http.component:"WordPress"
+    category: cms
+  tags: tech,wordpress,cms,wp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <generator>https?:\/\/wordpress\.org.*</generator>wp-login.php\/wp-content/themes\/\/wp-includes\/name="generator"
+      content="wordpress<link[^>]+s\d+\.wp\.com<!-- This site is optimized with the
+      Yoast (?:WordPress )?SEO plugin v([\d.]+) -<!--[^>]+WP-Super-Cache
+- request:
+    method: GET
+    path: /wp-admin/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /feed/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /?feed=rss2
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

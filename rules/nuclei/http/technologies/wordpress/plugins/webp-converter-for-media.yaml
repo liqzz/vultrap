@@ -1,0 +1,23 @@
+id: wordpress-webp-converter-for-media
+info:
+  name: Converter for Media – Optimize images | Convert WebP & AVIF Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/webp-converter-for-media/
+  metadata:
+    max-request: 1
+    plugin_namespace: webp-converter-for-media
+    wpscan: https://wpscan.com/plugin/webp-converter-for-media
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/webp-converter-for-media/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

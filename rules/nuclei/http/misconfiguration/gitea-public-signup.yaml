@@ -1,0 +1,28 @@
+id: gitea-public-signup
+info:
+  name: Gitea Public Registration Enabled
+  author: edoardottt
+  description: 'A misconfiguration in Gitea allows arbitrary users to sign up and
+    read code hosted on the service.
+
+    '
+  severity: high
+  reference:
+  - https://www.youtube.com/watch?v=oHhofSj9lEM&t=157s
+  - https://gitea.io/en-us/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Powered by Gitea"
+  tags: misconfig,gitea
+traps:
+- request:
+    method: GET
+    path: /user/sign_up
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by GiteaRegister -Registration is disabled. Please contact your
+      site administrator.

@@ -1,0 +1,29 @@
+id: appsmith-web-login
+info:
+  name: Appsmith User Login - Panel Detect
+  author: powerexploit
+  description: Appsmith user login panel was detected.
+  severity: info
+  reference:
+  - https://www.appsmith.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:appsmith:appsmith:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: appsmith
+    shodan-query: http.title:"appsmith"
+    vendor: appsmith
+    verified: true
+  tags: panel,appsmith
+traps:
+- request:
+    method: GET
+    path: /user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Appsmith</title>

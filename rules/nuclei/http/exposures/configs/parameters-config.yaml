@@ -1,0 +1,49 @@
+id: parameters-config
+info:
+  name: Parameters.yml - File Discovery
+  author: DhiyaneshDK
+  description: Parameters.yml was discovered.
+  severity: high
+  reference: https://www.exploit-db.com/ghdb/5986
+  metadata:
+    verified: true
+    max-request: 4
+    shodan-query: html:"parameters.yml"
+  tags: exposure,cloud,devops
+traps:
+- request:
+    method: GET
+    path: /parameters.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: parameters:database_userdatabase_password
+- request:
+    method: GET
+    path: /app/config/parameters.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /parameters.yml.dist
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /app/config/parameters.yml.dist
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

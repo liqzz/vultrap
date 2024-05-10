@@ -1,0 +1,19 @@
+id: wordpress-xmlrpc-file
+info:
+  name: WordPress xmlrpc
+  author: udit_thakkur
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress
+traps:
+- request:
+    method: GET
+    path: /xmlrpc.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: XML-RPC server accepts POST requests only.

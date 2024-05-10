@@ -1,0 +1,25 @@
+id: zyxel-vmg1312b10d-login
+info:
+  name: Zyxel VMG1312-B10D - Login Detection
+  author: princechaddha
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:o:zyxel:vmg1312-b10d_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: vmg1312-b10d_firmware
+    shodan-query: http.html:"VMG1312-B10D"
+    vendor: zyxel
+    verified: true
+  tags: tech,zyxel,modem,router,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: VMG1312-B10DWelcome to the Web-Based Configurator

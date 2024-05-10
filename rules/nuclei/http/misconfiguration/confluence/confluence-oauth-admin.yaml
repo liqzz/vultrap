@@ -1,0 +1,30 @@
+id: confluence-oauth-admin
+info:
+  name: Confluence OAuth Administration Endpoint
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.component:"Atlassian Confluence"
+  tags: misconfig,jira,confluence,atlassian
+traps:
+- request:
+    method: GET
+    path: /plugins/servlet/oauth/view-consumer-info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>OAuth Consumer InformationOAuth Administration
+- request:
+    method: GET
+    path: /confluence/plugins/servlet/oauth/view-consumer-info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

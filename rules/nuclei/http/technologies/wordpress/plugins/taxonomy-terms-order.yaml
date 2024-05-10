@@ -1,0 +1,23 @@
+id: wordpress-taxonomy-terms-order
+info:
+  name: Category Order and Taxonomy Terms Order Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/taxonomy-terms-order/
+  metadata:
+    max-request: 1
+    plugin_namespace: taxonomy-terms-order
+    wpscan: https://wpscan.com/plugin/taxonomy-terms-order
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/taxonomy-terms-order/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

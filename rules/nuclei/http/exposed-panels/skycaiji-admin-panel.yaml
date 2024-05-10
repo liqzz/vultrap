@@ -1,0 +1,25 @@
+id: skycaiji-admin-panel
+info:
+  name: SkyCaiji Admin Panel - Detect
+  author: princechaddha
+  description: SkyCaiji admin panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:skycaiji:skycaiji:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: skycaiji
+    vendor: skycaiji
+  tags: panel,tech,skycaiji
+traps:
+- request:
+    method: GET
+    path: /index.php?s=/admin/Index/index
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <p>Powered by <a href="https://www.skycaiji.com" target="_blank"><a href="/index.php?s=/Admin/Index/find_password">

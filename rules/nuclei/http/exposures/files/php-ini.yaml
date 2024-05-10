@@ -1,0 +1,22 @@
+id: php-ini
+info:
+  name: Php.ini File Disclosure
+  author: geeknik,DhiyaneshDK
+  description: php.ini file is exposed.
+  severity: low
+  reference: https://www.php.net/manual/en/configuration.file.php
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: php.ini
+  tags: config,exposure,files
+traps:
+- request:
+    method: GET
+    path: /php.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[PHP]short_open_tagsafe_modeexpose_php'

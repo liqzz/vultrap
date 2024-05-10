@@ -1,0 +1,25 @@
+id: api-pinata
+info:
+  name: Pinata API Test
+  author: daffainfo
+  description: IPFS Pinning Services API
+  severity: info
+  reference:
+  - https://docs.pinata.cloud/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/pinata
+  metadata:
+    max-request: 1
+  tags: token-spray,pinata
+traps:
+- request:
+    method: GET
+    path: https://api.pinata.cloud/data/pinList?status=pinned
+    headers:
+      Host: api.pinata.cloud
+      pinata_api_key: '{{token}}'
+      pinata_secret_api_key: '{{secret}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id""ipfs_pin_hash"'

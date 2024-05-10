@@ -1,0 +1,22 @@
+id: api-calendly
+info:
+  name: Calendly API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://calendly.stoplight.io/docs/api-docs-v1/b3A6MTg3MDczNg-about-me
+  metadata:
+    max-request: 1
+  tags: token-spray,calendly
+traps:
+- request:
+    method: GET
+    path: https://calendly.com/api/v1/users/me
+    headers:
+      X-Token: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"id":"email":'

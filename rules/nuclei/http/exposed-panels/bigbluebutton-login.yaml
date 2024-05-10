@@ -1,0 +1,26 @@
+id: bigbluebutton-login
+info:
+  name: BigBlueButton Login Panel
+  author: myztique
+  description: A BigBlueButton login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/bigbluebutton/greenlight
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:bigbluebutton:greenlight:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: greenlight
+    vendor: bigbluebutton
+  tags: panel,bigbluebutton
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="BigBlueButton

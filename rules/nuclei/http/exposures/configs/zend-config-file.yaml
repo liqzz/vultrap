@@ -1,0 +1,19 @@
+id: zend-config-file
+info:
+  name: Zend Configuration File
+  author: pdteam,geeknik,Akokonunes
+  description: Zend configuration file was exposed.
+  severity: high
+  metadata:
+    max-request: 13
+  tags: config,exposure,zend,php
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: db.*(.password).*=db.*(.username).*=

@@ -1,0 +1,32 @@
+id: api-onelogin
+info:
+  name: OneLogin API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  metadata:
+    max-request: 2
+  tags: token-spray,onelogin
+traps:
+- request:
+    method: GET
+    path: https://api.us.onelogin.com/api/2/apps
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"connector_id":"auth_method":'
+- request:
+    method: GET
+    path: https://api.eu.onelogin.com/api/2/apps
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

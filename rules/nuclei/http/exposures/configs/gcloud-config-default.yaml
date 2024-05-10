@@ -1,0 +1,35 @@
+id: gcloud-config-default
+info:
+  name: Google Cloud Default Config - Detect
+  author: DhiyaneshDK
+  description: Google Cloud default configuration was detected.
+  severity: info
+  reference: https://cloud.google.com
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"access_tokens.db"
+  tags: google,cloud,devops,exposure
+traps:
+- request:
+    method: GET
+    path: /configurations/config_default
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[core]account'
+- request:
+    method: GET
+    path: /.config/gcloud/configurations/config_default
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

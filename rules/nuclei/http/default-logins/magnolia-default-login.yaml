@@ -1,0 +1,52 @@
+id: magnolia-default-login
+info:
+  name: Magnolia CMS Default Login - Detect
+  author: pussycat0x
+  description: Magnolia CMS default login credentials were detected.
+  severity: high
+  reference:
+  - https://www.magnolia-cms.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: html:"Magnolia is a registered trademark"
+  tags: magnolia,default-login
+traps:
+- request:
+    method: GET
+    path: /.magnolia/admincentral
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /.magnolia/admincentral
+    headers:
+      Cookie: csrf={{csrf}};JSESSIONID={{session}}
+      Content-Type: application/x-www-form-urlencoded
+      Origin: '{{BaseURL}}'
+      Referer: '{{BaseURL}}/.magnolia/admincentral'
+    body: 'mgnlUserId={{username}}&mgnlUserPSWD={{password}}&csrf={{csrf}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.magnolia/admincentral/PUSH?v-uiId=1
+    headers:
+      Cookie: csrf={{csrf}}; JSESSIONID={{session}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"changes":"resources":'

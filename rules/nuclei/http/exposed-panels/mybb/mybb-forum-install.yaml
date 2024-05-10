@@ -1,0 +1,28 @@
+id: mybb-forum-install
+info:
+  name: MyBB Installation Panel - Detect
+  author: ritikchaddha
+  description: MyBB installation panel was detected.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    cvss-score: 8.6
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mybb:mybb:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: mybb
+    shodan-query: http.title:"MyBB"
+    vendor: mybb
+    verified: true
+  tags: panel,mybb,forum
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: MyBBInstallation Wizardcurrently locked

@@ -1,0 +1,50 @@
+id: angular-json
+info:
+  name: Angular JSON File Exposure
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 4
+    shodan-query:
+    - html:"angular.json"
+    - html:"angular-cli.json"
+  tags: exposure,angularjs,files
+traps:
+- request:
+    method: GET
+    path: /.angular-cli.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"root":"config":'
+- request:
+    method: GET
+    path: /angular-cli.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /angular.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.angular.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

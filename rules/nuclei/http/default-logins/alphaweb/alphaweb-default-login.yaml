@@ -1,0 +1,27 @@
+id: alphaweb-default-login
+info:
+  name: AlphaWeb XE Default Login
+  author: Lark Lab
+  description: An AlphaWeb XE default login was discovered.
+  severity: medium
+  reference:
+  - https://wiki.zenitel.com/wiki/AlphaWeb
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
+    cvss-score: 5.8
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: default-login,AlphaWeb
+traps:
+- request:
+    method: GET
+    path: /php/node_info.php
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+      Referer: '{{BaseURL}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: HW ConfigurationSW Configuration

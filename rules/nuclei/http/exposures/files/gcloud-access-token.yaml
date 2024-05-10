@@ -1,0 +1,30 @@
+id: gcloud-access-token
+info:
+  name: Google Cloud Access Token
+  author: DhiyaneshDK
+  description: Internal Google Cloud access tokens are exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"access_tokens.db"
+  tags: google,cloud,devops,exposure,files
+traps:
+- request:
+    method: GET
+    path: /access_tokens.db
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SQLiteaccess_token
+- request:
+    method: GET
+    path: /.config/gcloud/access_tokens.db
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: kerio-connect-client
+info:
+  name: Kerio Connect Login Panel - Detect
+  author: dhiyaneshDk
+  description: Kerio Connect login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Kerio Connect Client"
+  tags: panel,kerio
+traps:
+- request:
+    method: GET
+    path: /webmail/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Kerio Connect Client</title>

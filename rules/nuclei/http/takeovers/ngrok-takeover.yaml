@@ -1,0 +1,21 @@
+id: ngrok-takeover
+info:
+  name: Ngrok Takeover Detection
+  author: pdteam
+  description: Ngrok takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/92
+  metadata:
+    max-request: 1
+  tags: takeover,ngrok
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ngrok.io not foundTunnel *.ngrok.io not found

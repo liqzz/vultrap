@@ -1,0 +1,21 @@
+id: metatag-cms
+info:
+  name: Metatag CMS Detection
+  author: dadevel
+  description: Generic CMS Detection using html meta generator tag
+  severity: info
+  reference:
+  - https://www.w3schools.com/tags/att_meta_name.asp
+  metadata:
+    max-request: 1
+  tags: tech,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)<meta\s+?name="?generator"?\s+?content="[^"]+?"

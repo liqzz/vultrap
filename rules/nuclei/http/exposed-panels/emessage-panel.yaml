@@ -1,0 +1,23 @@
+id: emessage-panel
+info:
+  name: eMessage Login Panel - Detect
+  author: ffffffff0x
+  description: eMessage login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: title="emessage"
+    max-request: 1
+  tags: panel,emessage
+traps:
+- request:
+    method: GET
+    path: /login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)<title>emessage.*</title>

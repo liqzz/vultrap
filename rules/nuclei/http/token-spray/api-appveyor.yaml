@@ -1,0 +1,23 @@
+id: api-appveyor
+info:
+  name: AppVeyor API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://www.appveyor.com/docs/api/
+  metadata:
+    max-request: 1
+  tags: token-spray,appveyor
+traps:
+- request:
+    method: GET
+    path: https://ci.appveyor.com/api/roles
+    headers:
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"roleId":"created":'

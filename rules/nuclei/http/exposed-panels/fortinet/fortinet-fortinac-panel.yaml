@@ -1,0 +1,27 @@
+id: fortinet-fortinac-panel
+info:
+  name: Fortinet FortiNAC Login Panel - Detect
+  author: johnk3r
+  description: Fortinet FortiNAC login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortinac:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fortinac
+    shodan-query: http.title:"Fortinac"
+    vendor: fortinet
+    verified: true
+  tags: panel,fortinet,fortinac,login
+traps:
+- request:
+    method: GET
+    path: /WelcomeActions.jsp?action=ajaxGetWelcomeViewInfo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'FortiNAC"product":'

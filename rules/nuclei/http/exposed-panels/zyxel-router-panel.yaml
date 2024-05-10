@@ -1,0 +1,36 @@
+id: zyxel-router-panel
+info:
+  name: ZyXel Router Login Panel - Detect
+  author: arafatansari
+  description: ZyXel Router login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:zyxel:nr5101:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: nr5101
+    shodan-query: title:"Web-Based Configurator" html:"zyxel"
+    vendor: zyxel
+    verified: true
+  tags: panel,zyxel,router,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to the Web-Based Configuratorzyxel
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

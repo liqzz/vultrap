@@ -1,0 +1,21 @@
+id: styleci-yml-disclosure
+info:
+  name: StyleCi Yaml File Disclosure
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: .styleci.yml
+  tags: config,exposure,devops,files
+traps:
+- request:
+    method: GET
+    path: /.styleci.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: phppresetdisabled

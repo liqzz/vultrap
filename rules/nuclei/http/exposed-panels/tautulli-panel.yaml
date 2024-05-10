@@ -1,0 +1,39 @@
+id: tautulli-panel
+info:
+  name: Tautulli Panel - Detect
+  author: rxerium
+  description: 'A Python based monitoring and tracking tool for Plex Media Server.
+
+    '
+  severity: info
+  reference:
+  - https://tautulli.com/
+  - https://github.com/Tautulli/Tautulli
+  classification:
+    cpe: cpe:2.3:a:tautulli:tautulli:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: tautulli
+    shodan-query: title:"TAUTULLI"
+    vendor: tautulli
+    verified: true
+  tags: panel,tautulli,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tautulli - Logincontent="Tautullialt="TautulliSign In with Tautulli
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: silverback-detect
+info:
+  name: Silverback MDM - Detection
+  author: nodauf
+  description: null
+  severity: info
+  reference:
+  - https://help.matrix42.com/010_SUEM/020_UEM/30Enterprise_Mobility_Management/010Installation_and_Update/10_Silverback
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:635899646
+  tags: favicon,tech,silverback,mdm
+traps:
+- request:
+    method: GET
+    path: /sts/Content/Images/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

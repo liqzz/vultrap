@@ -1,0 +1,28 @@
+id: exacqvision-default-login
+info:
+  name: ExacqVision Default Login
+  author: ELSFA7110
+  description: ExacqVision Web Service default login credentials (admin/admin256)
+    were discovered.
+  severity: high
+  reference:
+  - https://cdn.exacq.com/auto/manspec/files_2/exacqvision_user_manuals/web_service/exacqVision_Web_Service_Configuration_User_Manual_(version%208.8).pdf
+  classification:
+    cwe-id: cwe-798
+  metadata:
+    max-request: 1
+  tags: exacqvision,default-login
+traps:
+- request:
+    method: POST
+    path: /service.web
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      Connection: close
+    body: 'action=login&u={{username}}&p={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"auth":"success": true'

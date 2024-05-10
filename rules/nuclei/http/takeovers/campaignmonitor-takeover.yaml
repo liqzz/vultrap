@@ -1,0 +1,21 @@
+id: campaignmonitor-takeover
+info:
+  name: CampaignMonitor Takeover Detection
+  author: pdteam
+  description: CampaignMonitor takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/275
+  metadata:
+    max-request: 1
+  tags: takeover,campaignmonitor
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <strong>Trying to access your account?</strong>or <a href="mailto:help@createsend.com

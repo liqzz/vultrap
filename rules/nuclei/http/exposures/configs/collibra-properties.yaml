@@ -1,0 +1,40 @@
+id: collibra-properties
+info:
+  name: Collibra Properties Exposure
+  author: 0xPugazh
+  description: Detected exposed Collibra Properties.
+  severity: high
+  reference:
+  - https://twitter.com/shaybt12/status/1662431219223605254
+  metadata:
+    verified: true
+    max-request: 3
+  tags: exposure,config,collibra-properties,collibra
+traps:
+- request:
+    method: GET
+    path: /collibra.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: collibra.urlcollibra.portcollibra.usercollibra.password
+- request:
+    method: GET
+    path: /app/collibra.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /src/collibra.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

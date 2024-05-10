@@ -1,0 +1,60 @@
+id: cvent-panel-detect
+info:
+  name: Cvent Login Panel - Detect
+  author: tess
+  description: Cvent login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 5
+    shodan-query: http.html:"Cvent Inc"
+    verified: true
+  tags: panel,cvent
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Cvent IncCvent, Inc.
+- request:
+    method: GET
+    path: /Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /manager/login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /GDSHost/Default.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /events/EventRsvp.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

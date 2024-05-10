@@ -1,0 +1,32 @@
+id: dell-openmanager-login
+info:
+  name: Dell OpenManage Switch Administrator Login Panel - Detect
+  author: dhiyaneshDK
+  description: Dell OpenManage Switch Administrator login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: html:"Dell OpenManage Switch Administrator"
+  tags: panel,dell
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Dell OpenManage Switch Administrator</title><TITLE>Log In</TITLE>device/logOff_up_menu1.htm
+- request:
+    method: GET
+    path: /config/authentication_page.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

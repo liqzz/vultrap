@@ -1,0 +1,22 @@
+id: server-monitor-installer
+info:
+  name: Server Monitor Installer
+  author: tess
+  description: Server Monitor is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"SERVER MONITOR - Install"
+  tags: misconfig,monitor,exposure,install
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SERVER MONITOR - Install</title>PHP Server Monitor - Installinstall.php?action=config

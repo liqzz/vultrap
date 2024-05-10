@@ -1,0 +1,27 @@
+id: seeyon-a8-default-login
+info:
+  name: Seeyon OA A8 - Default Login
+  author: SleepingBag945
+  description: 'Seeyon (seeyon) OA A8+ Enterprise Edition has a weak password vulnerability,
+    which can be used to log in to the background
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="致远互联-OA"
+  tags: seeyon,oa,default-login
+traps:
+- request:
+    method: POST
+    path: /seeyon/rest/authentication/ucpcLogin
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'UserAgentFrom=iphone&login_username={{username}}&login_password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"LoginOK":"ok"audit-admin'

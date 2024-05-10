@@ -1,0 +1,22 @@
+id: discuz-panel
+info:
+  name: Discuz Panel - Detection
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    fofa-query: title="Discuz!"
+    max-request: 1
+    shodan-query: title:"Discuz!"
+    verified: true
+  tags: panel,discuz,detect,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: discuz_uid =discuz</a>Powered by Discuz!content="Discuz

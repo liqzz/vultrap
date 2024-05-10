@@ -1,0 +1,29 @@
+id: ventrilo-config
+info:
+  name: Ventrilo Configuration File - Detect
+  author: geeknik
+  description: 'Ventrilo configuration file was detected, The file discloses the application''s
+    Adminpassword and Password.
+
+    '
+  severity: high
+  reference:
+  - https://www.ventrilo.com/setup.php
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+  tags: ventrilo,config,exposure
+traps:
+- request:
+    method: GET
+    path: /ventrilo_srv.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[Server]NamePhonetic'

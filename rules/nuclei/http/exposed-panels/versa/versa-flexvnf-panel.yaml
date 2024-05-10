@@ -1,0 +1,26 @@
+id: versa-flexvnf-panel
+info:
+  name: Versa FlexVNF Panel - Detect
+  author: c-sh0
+  description: Versa FlexVNF panel was detected.
+  severity: info
+  reference:
+  - https://versa-networks.com/products/components/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Flex VNF Web-UI"
+    verified: true
+  tags: panel,versa,flexvnf
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Flex VNF Web-UI

@@ -1,0 +1,25 @@
+id: hp-laserjet-detect
+info:
+  name: HP LaserJet Professional Panel - Detect
+  author: dhiyaneshDk
+  description: HP LaserJet Professional panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6459
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: iot,edb
+traps:
+- request:
+    method: GET
+    path: /SSI/index.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HP LaserJet Professional

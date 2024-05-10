@@ -1,0 +1,30 @@
+id: ibm-websphere-admin-panel
+info:
+  name: IBM WebSphere Application Server Community Edition Admin Login Panel - Detect
+  author: ritikchaddha
+  description: IBM WebSphere Application Server Community Edition admin login panel
+    was detected.
+  severity: info
+  reference:
+  - https://www.ibm.com/support/pages/what-default-username-and-password-websphere-application-server-community-edition-and-how-add-users-admin-group
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:z\/os:*:*:*
+  metadata:
+    max-request: 1
+    product: websphere_application_server
+    shodan-query: http.favicon.hash:1337147129
+    vendor: ibm
+    verified: true
+  tags: websphere,panel,ibm
+traps:
+- request:
+    method: GET
+    path: /console
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Administrative Console LoginLog in to the Administrative Console

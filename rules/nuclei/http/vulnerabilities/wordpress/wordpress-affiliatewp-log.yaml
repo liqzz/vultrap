@@ -1,0 +1,19 @@
+id: wordpress-affiliatewp-log
+info:
+  name: WordPress Plugin "AffiliateWP -- Allowed Products" Log Disclosure
+  author: dhiyaneshDK
+  description: Exposed debug log in AffiliateWP Wordpress Plugin
+  severity: low
+  metadata:
+    max-request: 1
+  tags: wordpress,log,plugin
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/affwp-debug.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Referral could not be retrievedAffiliate CSV

@@ -1,0 +1,24 @@
+id: normhost-backup-server-manager
+info:
+  name: Normhost Backup Server Manager Panel - Detect
+  author: pussycat0x
+  description: Normhost Backup server manager panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Normhost Backup server manager"
+    verified: true
+  tags: panel,normhost
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: content="Normhost Backup server manager

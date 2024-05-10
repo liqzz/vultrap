@@ -1,0 +1,21 @@
+id: apache-drill-exposure
+info:
+  name: Apache Drill Exposure
+  author: DhiyaneshDK
+  description: Apache Drill is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Apache Drill"
+  tags: misconfig,exposure,apache,drill
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Apache Drill</title>

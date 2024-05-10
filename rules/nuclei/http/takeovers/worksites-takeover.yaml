@@ -1,0 +1,22 @@
+id: worksites-takeover
+info:
+  name: Worksites Takeover Detection
+  author: melbadry9,dogasantos
+  description: Worksites takeover was detected.
+  severity: high
+  reference:
+  - https://melbadry9.gitbook.io/blog/dangling-dns/xyz-services/ddns-worksites
+  metadata:
+    verified: true
+    max-request: 2
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Company Not Foundworksites.net

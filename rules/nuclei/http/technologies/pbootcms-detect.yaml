@@ -1,0 +1,23 @@
+id: pbootcms-detect
+info:
+  name: PbootCMS Detect
+  author: princechaddha,daffainfo
+  description: null
+  severity: info
+  reference:
+  - https://www.pbootcms.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"PbootCMS"
+  tags: tech,pbootcms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="PbootCMS<title>PbootCMS(.*)</title>

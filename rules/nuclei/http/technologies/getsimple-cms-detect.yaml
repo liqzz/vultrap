@@ -1,0 +1,28 @@
+id: getsimple-cms-detect
+info:
+  name: GetSimple CMS Detection
+  author: pikpikcu,philippedelteil
+  description: Template to detect a running GetSimple CMS instance
+  severity: info
+  metadata:
+    max-request: 2
+  tags: tech,getsimple
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by  GetSimpleGetSimple CMS is a flatfile CMS
+- request:
+    method: GET
+    path: /readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

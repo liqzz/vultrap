@@ -1,0 +1,28 @@
+id: unauthenticated-jenkins
+info:
+  name: Unauthenticated Jenkins Dashboard
+  author: dhiyaneshDK
+  description: Jenkins Dashboard is exposed to external users.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: jenkins
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dashboard [Jenkins]
+- request:
+    method: GET
+    path: /jenkins/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,21 @@
+id: confluence-dashboard
+info:
+  name: Confluence Dashboard Exposed
+  author: tess
+  description: Confluence Dashboard is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Dashboard - Confluence"
+  tags: misconfig,exposure,confluence,atlassian
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dashboard - Confluencetitle="Spaces">Atlassian Confluence

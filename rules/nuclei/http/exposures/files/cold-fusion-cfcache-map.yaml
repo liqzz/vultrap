@@ -1,0 +1,22 @@
+id: cold-fusion-cfcache-map
+info:
+  name: Discover Cold Fusion cfcache.map Files
+  author: geeknik
+  description: Adobe Cold Fusion cfcache.map file is exposed.
+  severity: low
+  reference:
+  - https://securiteam.com/windowsntfocus/5bp081f0ac/
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Adobe ColdFusion"
+  tags: exposure,coldfusion,adobe,files
+traps:
+- request:
+    method: GET
+    path: /cfcache.map
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Mapping=SourceTimeStamp=

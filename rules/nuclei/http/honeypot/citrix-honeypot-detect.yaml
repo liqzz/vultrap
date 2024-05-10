@@ -1,0 +1,26 @@
+id: citrix-honeypot-detect
+info:
+  name: Citrix Honeypot - Detect
+  author: UnaPibaGeek
+  description: |
+    A Citrix honeypot has been identified.
+    The HTTP response reveals a possible setup of the Citrix web application honeypot.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: citrix
+    product: citrix
+    shodan-query: http.title:“Citrix Login”
+  tags: citrix,honeypot,ir,cti
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Citrix Login</title>In order to use our services, you must agree
+      to Citrix's Terms of Service.

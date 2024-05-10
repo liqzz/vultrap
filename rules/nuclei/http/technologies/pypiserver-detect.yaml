@@ -1,0 +1,21 @@
+id: pypiserver-detect
+info:
+  name: PyPI Server Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"pypiserver"
+  tags: tech,pypiserver
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to pypiserver

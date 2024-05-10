@@ -1,0 +1,24 @@
+id: veeam-backup-gcp
+info:
+  name: Veeam Backup for Google Cloud Platform Panel - Detect
+  author: DhiyaneshDK
+  description: Veeam Backup for Google Cloud Platform panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Veeam Backup for GCP"
+    verified: true
+  tags: panel,google,cloud
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Veeam Backup for GCP</title>

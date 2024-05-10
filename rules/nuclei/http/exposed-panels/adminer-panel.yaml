@@ -1,0 +1,99 @@
+id: adminer-panel
+info:
+  name: Adminer Login Panel - Detect
+  author: random_robbie,meme-lord,ritikchaddha
+  description: An Adminer login panel was detected.
+  severity: info
+  reference:
+  - https://blog.sorcery.ie/posts/adminer/
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 8
+    product: adminer
+    shodan-query: title:"Login - Adminer"
+    vendor: adminer
+    verified: true
+  tags: panel,adminer
+traps:
+- request:
+    method: GET
+    path: /adminer.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Adminer</title>Adminer</a>
+- request:
+    method: GET
+    path: /_adminer.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /adminer/
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /editor.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /mysql.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sql.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wp-content/plugins/adminer/adminer.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /admin.php
+    headers:
+      Accept-Language: en-US,en;q=0.5
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

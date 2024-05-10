@@ -1,0 +1,26 @@
+id: speedtest-panel
+info:
+  name: Speedtest Panel - Detection
+  author: rxerium
+  description: 'Speedtest panel was discovered
+
+    '
+  severity: info
+  reference:
+  - https://github.com/alexjustesen/speedtest-tracker
+  - https://docs.speedtest-tracker.dev/
+  metadata:
+    max-request: 1
+    shodan-query: title:"Speedtest Tracker"
+    verified: true
+  tags: speedtest,tracker,panel,login
+traps:
+- request:
+    method: GET
+    path: /admin/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login -  Speedtest Tracker

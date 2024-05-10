@@ -1,0 +1,23 @@
+id: adobe-phish
+info:
+  name: adobe phishing Detection
+  author: rxerium
+  description: 'An adobe phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://adobe.com
+  metadata:
+    max-request: 1
+  tags: phishing,adobe,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Adobe: Creative, marketing and document management solutions'

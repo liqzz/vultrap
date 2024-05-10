@@ -1,0 +1,19 @@
+id: graylog-api-browser
+info:
+  name: Detect Graylog REST API
+  author: PR3R00T
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,graylog
+traps:
+- request:
+    method: GET
+    path: /api/api-browser/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GraylogREST API browserswagger

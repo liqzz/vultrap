@@ -1,0 +1,62 @@
+id: salesforce-aura
+info:
+  name: Salesforce Lightning - API Detection
+  author: aaron_costello (@ConspiracyProof),Ph33rr
+  description: A Salesforce Lightning aura API was detected.
+  severity: info
+  reference:
+  - https://www.enumerated.de/index/salesforce
+  - https://github.com/Ph33rr/cirrusgo (test endpoint)
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 5
+  tags: aura,unauth,salesforce,exposure,misconfig
+traps:
+- request:
+    method: POST
+    path: /aura
+    headers: null
+    body: '{}'
+  response:
+    status_code: 200
+    headers: {}
+    body: aura:invalidSession
+- request:
+    method: POST
+    path: /s/sfsites/aura
+    headers: null
+    body: '{}'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /sfsites/aura
+    headers: null
+    body: '{}'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /s/aura
+    headers: null
+    body: '{}'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /s/fact
+    headers: null
+    body: '{}'
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

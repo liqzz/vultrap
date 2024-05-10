@@ -1,0 +1,22 @@
+id: sitecore-login-panel
+info:
+  name: Sitecore Admin Login Panel - Detect
+  author: b4uh0lz
+  description: Sitecore admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,sitecore,login
+traps:
+- request:
+    method: GET
+    path: /sitecore/admin/login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sitecore Login

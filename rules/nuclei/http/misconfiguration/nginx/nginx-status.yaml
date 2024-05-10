@@ -1,0 +1,28 @@
+id: nginx-status
+info:
+  name: Nginx Status Page
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: misconfig,nginx,status
+traps:
+- request:
+    method: GET
+    path: /nginx_status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Active connections:'
+- request:
+    method: GET
+    path: /nginx-status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

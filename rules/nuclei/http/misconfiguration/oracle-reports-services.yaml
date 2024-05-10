@@ -1,0 +1,39 @@
+id: oracle-reports-services
+info:
+  name: Oracle Reports Services - Servlet
+  author: dogasantos
+  description: Oracle Reports Services - Servlet Command dashboard
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: title:"Oracle Forms"
+  tags: exposure,oracle,misconfig
+traps:
+- request:
+    method: GET
+    path: /reports/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Valid Reports Servlet Commandsrwservletkillengine
+- request:
+    method: GET
+    path: /ora/reports/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /oracle/reports/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

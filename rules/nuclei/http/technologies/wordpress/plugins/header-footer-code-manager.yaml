@@ -1,0 +1,23 @@
+id: wordpress-header-footer-code-manager
+info:
+  name: Header Footer Code Manager Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/header-footer-code-manager/
+  metadata:
+    max-request: 1
+    plugin_namespace: header-footer-code-manager
+    wpscan: https://wpscan.com/plugin/header-footer-code-manager
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/header-footer-code-manager/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,38 @@
+id: development-logs
+info:
+  name: Discover development log files
+  author: geeknik
+  description: Development log file was exposed.
+  severity: info
+  metadata:
+    max-request: 3
+  tags: logs,exposure,rails
+traps:
+- request:
+    method: GET
+    path: /log/development.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Connecting to database specified by database.ymlStarted GETDEPRECATION WARNINGCREATE
+      TABLE
+- request:
+    method: GET
+    path: /logs/development.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /development.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

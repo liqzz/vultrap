@@ -1,0 +1,24 @@
+id: joomla-panel
+info:
+  name: Joomla! Panel
+  author: its0x08
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:joomla:joomla\!:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: joomla\!
+    vendor: joomla
+  tags: panel,joomla
+traps:
+- request:
+    method: GET
+    path: /administrator/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta name="generator" content="Joomla! - Open Source Content Management"
+      />/administrator/templates/isis/images/joomla.png

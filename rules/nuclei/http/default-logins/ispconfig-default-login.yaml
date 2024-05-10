@@ -1,0 +1,50 @@
+id: ispconfig-default-login
+info:
+  name: ISPConfig - Default Password
+  author: pussycat0x
+  description: 'ISPConfig Default Password Vulnerability exposes systems to unauthorized
+    access, compromising data integrity and security.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 9
+    shodan-query: http.title:"ispconfig"
+  tags: default-login,ispconfig
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /login/index.php
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+      Origin: '{{BaseURL}}'
+      Connection: close
+      Referer: '{{RootURL}}/login/'
+    body: 'username={{username}}&password={{password}}&s_mod=login&s_pg=index
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sites/web_vhost_domain_list.php
+    headers:
+      X-Requested-With: XMLHttpRequest
+      Referer: '{{RootURL}}/index.php'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ToolsWebsites

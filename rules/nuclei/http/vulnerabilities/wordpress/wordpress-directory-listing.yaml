@@ -1,0 +1,46 @@
+id: wordpress-directory-listing
+info:
+  name: Wordpress directory listing
+  author: Manas_Harsh
+  description: Directory listing enabled in wordpress.
+  severity: info
+  metadata:
+    max-request: 4
+  tags: wordpress
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /
+- request:
+    method: GET
+    path: /wp-content/themes/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wp-content/plugins/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wp-includes/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

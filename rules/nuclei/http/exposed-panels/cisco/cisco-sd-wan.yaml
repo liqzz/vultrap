@@ -1,0 +1,27 @@
+id: cisco-sd-wan
+info:
+  name: Cisco SD-WAN Login Panel - Detect
+  author: z3bd
+  description: Cisco SD-WAN login panel was detected.
+  severity: info
+  reference:
+  - https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-bufovulns-B5NrSHbj
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:cisco:sd-wan:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: sd-wan
+    vendor: cisco
+  tags: panel,cisco
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SD-Wan Center

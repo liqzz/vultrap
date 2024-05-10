@@ -1,0 +1,25 @@
+id: ares-rat-c2
+info:
+  name: Area Rat C2 - Detect
+  author: pussycat0x
+  description: 'Ares is a Python Remote Access Tool.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
+  metadata:
+    max-request: 1
+    shodan-query: product:'Ares RAT C2'
+    verified: true
+  tags: c2,ir,osint,ares,panel,rat
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Ares</title>Passphrase:'

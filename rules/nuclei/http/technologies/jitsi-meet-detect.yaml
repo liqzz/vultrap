@@ -1,0 +1,20 @@
+id: jitsi-meet-detect
+info:
+  name: Jitsi Meet Page Detect
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Jitsi Meet"
+  tags: tech,jitsi
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Jitsi Meet</title>

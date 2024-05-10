@@ -1,0 +1,28 @@
+id: rdap-whois
+info:
+  name: RDAP WHOIS
+  author: ricardomaia,sttlr
+  description: |
+    RDAP (Registration Data Access Protocol) is a standard defined by the IETF to replace the whois protocol
+    in queries for information about Internet resource records such as domain names, IP addresses, and ASNs.
+  severity: info
+  reference:
+  - https://about.rdap.org/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+  tags: miscellaneous,whois,rdap,osint,misc
+traps:
+- request:
+    method: GET
+    path: https://www.rdap.net/domain/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

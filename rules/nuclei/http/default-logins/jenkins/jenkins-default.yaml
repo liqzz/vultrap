@@ -1,0 +1,44 @@
+id: jenkins-weak-password
+info:
+  name: Jenkins Default Login
+  author: Zandros0
+  description: Jenkins default admin login information was discovered.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 3
+  tags: jenkins,default-login
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /j_spring_security_check
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'j_username=admin&j_password=admin&from=%2F&Submit=Sign+in
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: /logoutDashboard [Jenkins]

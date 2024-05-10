@@ -1,0 +1,21 @@
+id: vagrantfile-exposure
+info:
+  name: Vagrantfile Exposure
+  author: DhiyaneshDk
+  description: Vagrantfile is exposed to external users.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Vagrantfile"
+  tags: config,exposure,vagrant,oss,files
+traps:
+- request:
+    method: GET
+    path: /Vagrantfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ./vagrant/config/vagrant-local.yml./vagrant/config/vagrant-local.example.yml

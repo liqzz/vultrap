@@ -1,0 +1,23 @@
+id: wordpress-child-theme-configurator
+info:
+  name: Child Theme Configurator Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/child-theme-configurator/
+  metadata:
+    max-request: 1
+    plugin_namespace: child-theme-configurator
+    wpscan: https://wpscan.com/plugin/child-theme-configurator
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/child-theme-configurator/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

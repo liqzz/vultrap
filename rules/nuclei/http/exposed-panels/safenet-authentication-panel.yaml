@@ -1,0 +1,25 @@
+id: safenet-authentication-panel
+info:
+  name: SafeNet Authentication Login Panel - Detect
+  author: righettod
+  description: 'SafeNet Authentication Service Self Enrollment login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://cpl.thalesgroup.com/access-management/safenet-trusted-access
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Self Enrollment"
+    verified: true
+  tags: panel,safenet,thales,login,detect
+traps:
+- request:
+    method: GET
+    path: /selfenrollment/Enrollment.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

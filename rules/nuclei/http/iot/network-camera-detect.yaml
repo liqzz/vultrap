@@ -1,0 +1,19 @@
+id: network-camera-detect
+info:
+  name: Various Online Devices Detection (Network Camera)
+  author: iamthefrogy
+  description: Network camera panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: iot
+traps:
+- request:
+    method: GET
+    path: /CgiStart?page=Single
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>Network Camera</TITLE>

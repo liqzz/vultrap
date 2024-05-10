@@ -1,0 +1,21 @@
+id: dokuwiki-installer
+info:
+  name: DokuWiki Install Exposure
+  author: DhiyaneshDk
+  description: DokuWiki is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"DokuWiki"
+  tags: misconfig,dokuwiki,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DokuWiki InstallerSuperuser

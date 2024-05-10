@@ -1,0 +1,22 @@
+id: api-covalent
+info:
+  name: Covalent API Test
+  author: daffainfo
+  description: https://github.com/daffainfo/all-about-apikey/tree/main/covalent
+  severity: info
+  reference:
+  - https://www.covalenthq.com/docs/api/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/covalent
+  metadata:
+    max-request: 1
+  tags: token-spray,covalent
+traps:
+- request:
+    method: GET
+    path: https://api.covalenthq.com/v1/3/address/balances_v2/?&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"address":"updated_at":"next_update_at":'

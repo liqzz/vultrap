@@ -1,0 +1,28 @@
+id: cisco-ucs-kvm-login
+info:
+  name: Cisco UCS Manager KVM Login Panel - Detect
+  author: idealphase
+  description: Cisco UCS Manager KVM login panel was detected.
+  severity: info
+  reference:
+  - https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/ucs-manager/GUI-User-Guides/Admin-Management/3-1/b_Cisco_UCS_Admin_Mgmt_Guide_3_1/b_Cisco_UCSM_GUI_Admin_Mgmt_Guide_3_1_chapter_01111.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:cisco:unified_computing_system:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: unified_computing_system
+    shodan-query: http.title:"Cisco UCS KVM Direct"
+    vendor: cisco
+  tags: panel,cisco,ucs,kvm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Cisco UCS KVM Direct</title>

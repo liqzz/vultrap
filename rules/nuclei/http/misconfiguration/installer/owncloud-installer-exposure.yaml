@@ -1,0 +1,30 @@
+id: owncloud-installer-exposure
+info:
+  name: OwnCloud Installer Exposure
+  author: DhiyaneshDk
+  description: OwnCloud is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"owncloud"
+  tags: misconfig,owncloud,exposure,install
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <legend>Create an <strong>admin account</strong>ownCloud
+- request:
+    method: GET
+    path: /owncloud/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

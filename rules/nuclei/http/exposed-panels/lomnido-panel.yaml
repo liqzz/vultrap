@@ -1,0 +1,25 @@
+id: lomnido-panel
+info:
+  name: Lomnido Panel - Detect
+  author: righettod
+  description: 'Lomnido was detected.
+
+    '
+  severity: info
+  reference:
+  - https://lomnido.com/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Lomnido Login"
+    verified: true
+  tags: lomnido,panel,login,detect
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Lomnido Login</title>/lomnido/saml

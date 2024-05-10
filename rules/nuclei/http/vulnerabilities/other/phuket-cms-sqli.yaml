@@ -1,0 +1,36 @@
+id: phuket-cms-sqli
+info:
+  name: Phuket Solution CMS - SQL Injection
+  author: r3Y3r53
+  description: 'Phuket Solutions CMS is vulnerable to sql injection in which an attacker
+    is able to manipulate an SQL query through user input, causing the application
+    to execute unintended SQL code.
+
+    '
+  severity: high
+  reference:
+  - https://www.exploitalert.com/view-details.html?id=36234
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intext:"Developed by Phuket Solution"
+  tags: phuket,sqli,phuket-cms
+traps:
+- request:
+    method: GET
+    path: /properties-list.php
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Phuket Solution
+- request:
+    method: GET
+    path: /properties-list.php?property-types=%27
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: You have an error in your SQL syntax

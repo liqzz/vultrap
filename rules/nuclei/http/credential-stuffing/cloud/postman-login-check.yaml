@@ -1,0 +1,39 @@
+id: postman-login-check
+info:
+  name: Postman Login Check
+  author: parthmalhotra,pdresearch
+  description: Checks for a valid postman account.
+  severity: critical
+  reference:
+  - https://owasp.org/www-community/attacks/Credential_stuffing
+  metadata:
+    max-request: 2
+  tags: cloud,creds-stuffing,login-check,postman
+traps:
+- request:
+    method: GET
+    path: https://identity.getpostman.com/login
+    headers:
+      Host: identity.getpostman.com
+      Referer: https://identity.getpostman.com/accounts
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: https://identity.getpostman.com/login
+    headers:
+      Host: identity.getpostman.com
+      Content-Type: application/json;charset=UTF-8
+      X-Csrf-Token: '{{csrfToken}}'
+      Origin: https://identity.getpostman.com
+      Referer: https://identity.getpostman.com/login
+    body: '{"username":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,21 @@
+id: unauthenticated-zipkin
+info:
+  name: Zipkin Discovery
+  author: dhiyaneshDk
+  description: Unauthenticated access to Zipkin was discovered.
+  severity: high
+  reference:
+  - https://zipkin.io/
+  metadata:
+    max-request: 1
+  tags: unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: environmentdefaultLookback

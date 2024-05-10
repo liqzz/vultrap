@@ -1,0 +1,19 @@
+id: oidc-detect
+info:
+  name: Detect OpenID Connect provider
+  author: jarijaas
+  description: Detects OpenID Connect providers. See https://en.wikipedia.org/wiki/OpenID_Connect
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,oidc
+traps:
+- request:
+    method: GET
+    path: /.well-known/openid-configuration
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: issuerauthorization_endpoint

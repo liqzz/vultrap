@@ -1,0 +1,23 @@
+id: wordpress-pinterest-for-woocommerce
+info:
+  name: Pinterest for WooCommerce Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/pinterest-for-woocommerce/
+  metadata:
+    max-request: 1
+    plugin_namespace: pinterest-for-woocommerce
+    wpscan: https://wpscan.com/plugin/pinterest-for-woocommerce
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/pinterest-for-woocommerce/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

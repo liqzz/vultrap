@@ -1,0 +1,37 @@
+id: bigip-config-utility
+info:
+  name: BIG-IP Configuration Utility detected
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 3
+  tags: tech,bigip
+traps:
+- request:
+    method: GET
+    path: /tmui/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to the BIG-IPConfiguration Utility
+- request:
+    method: GET
+    path: /tmui/tmui/login/welcome.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /mgmt/tm/sys/management-ip
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: check your user-id and password and try again

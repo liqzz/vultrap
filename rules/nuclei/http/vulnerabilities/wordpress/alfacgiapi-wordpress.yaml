@@ -1,0 +1,47 @@
+id: alfacgiapi-wordpress
+info:
+  name: alfacgiapi
+  author: pussycat0x
+  description: Searches for sensitive directories present in the alfacgiapi plugin.
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/6999
+  metadata:
+    max-request: 4
+  tags: wordpress,listing
+traps:
+- request:
+    method: GET
+    path: /wp-includes/ALFA_DATA/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins//wp-includes/ALFA_DATA//ALFA_DATA/alfacgiapi//cgi-bin/ALFA_DATA/alfacgiapi/
+- request:
+    method: GET
+    path: /wp-content/uploads/alm_templates/ALFA_DATA/alfacgiapi/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /ALFA_DATA/alfacgiapi/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cgi-bin/ALFA_DATA/alfacgiapi/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

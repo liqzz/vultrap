@@ -1,0 +1,30 @@
+id: lucy-admin-panel
+info:
+  name: Lucy Security Admin Panel
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:'title="Lucy'
+  tags: tech,lucy
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: title="Lucy"aria-label="Lucy
+- request:
+    method: GET
+    path: /admin/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

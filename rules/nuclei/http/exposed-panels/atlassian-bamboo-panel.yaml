@@ -1,0 +1,26 @@
+id: atlassian-bamboo-panel
+info:
+  name: Atlassian Bamboo Login Panel - Detect
+  author: righettod
+  description: 'Atlassian Bamboo login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.atlassian.com/software/bamboo
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Bamboo"
+    verified: true
+  tags: panel,bamboo,login,detect
+traps:
+- request:
+    method: GET
+    path: /userlogin!doDefault.action?os_destination=%2Fstart.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Log in as a Bamboo usercontent="Bambooatlassian.bamboo.pluginsAtlassian
+      Bamboo</a>

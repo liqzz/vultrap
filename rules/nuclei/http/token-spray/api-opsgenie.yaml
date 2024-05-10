@@ -1,0 +1,22 @@
+id: api-opsgenie
+info:
+  name: OpsGenie API Test
+  author: 0xpugazh
+  description: Forex currency market data
+  severity: info
+  reference:
+  - https://docs.opsgenie.com/docs/api-overview
+  metadata:
+    max-request: 1
+  tags: token-spray,opsgenie
+traps:
+- request:
+    method: GET
+    path: https://api.opsgenie.com/v2/alerts
+    headers:
+      Authorization: GenieKey {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"paging":"took":'

@@ -1,0 +1,23 @@
+id: wordpress-akismet
+info:
+  name: Akismet Anti-spam' Spam Protection Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/akismet/
+  metadata:
+    max-request: 1
+    plugin_namespace: akismet
+    wpscan: https://wpscan.com/plugin/akismet
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/akismet/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

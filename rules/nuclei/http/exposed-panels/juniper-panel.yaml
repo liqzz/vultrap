@@ -1,0 +1,28 @@
+id: juniper-panel
+info:
+  name: Juniper J-Web Panel - Detect
+  author: bhutch
+  description: 'Juniper J-Web panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.juniper.net/documentation/us/en/software/jweb-ex/jweb-ex-application-package/topics/concept/ex-series-j-web-interface-overview.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Juniper Web Device Manager"
+    verified: true
+  tags: panel,juniper,vpn,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (i?)<title>(Log In - )?Juniper Web Device Manager</title>

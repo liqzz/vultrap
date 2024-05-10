@@ -1,0 +1,29 @@
+id: dzzoffice-install
+info:
+  name: DzzOffice Installation Panel - Detect
+  author: ritikchaddha
+  description: DzzOffice installation panel was detected.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:dzzoffice:dzzoffice:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: title="dzzoffice"
+    max-request: 1
+    product: dzzoffice
+    shodan-query: http.favicon.hash:-1961736892
+    vendor: dzzoffice
+    verified: true
+  tags: panel,dzzoffice,install
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DzzOffice简体中文 UTF8 版Simplified Chinese UTF8 version

@@ -1,0 +1,26 @@
+id: i-mscp-panel
+info:
+  name: Internet Multi Server Control Panel - Detect
+  author: JustaAcat
+  description: Internet Multi Server Control Panel was detected.
+  severity: info
+  reference:
+  - https://i-mscp.net/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"i-MSCP - Multi Server Control Panel"
+    verified: true
+  tags: panel,i-mscp,detect
+traps:
+- request:
+    method: GET
+    path: /index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>i-MSCP - Multi Server Control Panel

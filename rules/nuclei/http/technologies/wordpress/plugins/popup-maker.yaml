@@ -1,0 +1,23 @@
+id: wordpress-popup-maker
+info:
+  name: Popup Maker – Popup for opt-ins, lead gen, & more Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/popup-maker/
+  metadata:
+    max-request: 1
+    plugin_namespace: popup-maker
+    wpscan: https://wpscan.com/plugin/popup-maker
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/popup-maker/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

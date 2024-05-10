@@ -1,0 +1,26 @@
+id: anaqua-login-panel
+info:
+  name: Anaqua Login - Panel
+  author: Ep1cSage
+  description: 'Checks for the presence of Anaqua login page
+
+    '
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Anaqua User Sign On""
+    verified: true
+  tags: anaqua,login,panel
+traps:
+- request:
+    method: GET
+    path: /anaqua/Public/Login.aspx?ReturnUrl=%2fanaqua%2f
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Anaqua User Sign On

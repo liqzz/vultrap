@@ -1,0 +1,20 @@
+id: private-key-exposure
+info:
+  name: Private key exposure via helper detector
+  author: aashiq
+  description: Searches for private key exposure by attempting to query the helper
+    endpoint on node_modules
+  severity: high
+  metadata:
+    max-request: 1
+  tags: exposure,node,misconfig
+traps:
+- request:
+    method: GET
+    path: /node_modules/mqtt/test/helpers/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /node_modules/mqtt/test/helpersParent Directory

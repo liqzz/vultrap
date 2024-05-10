@@ -1,0 +1,31 @@
+id: gpc-json
+info:
+  name: Global Privacy Control (GPC) File Disclosure
+  author: MihhailSokolov
+  description: 'The website defines a Global Privacy Control policy.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+  tags: miscellaneous,misc,generic,gpc
+traps:
+- request:
+    method: GET
+    path: /.well-known/gpc.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"gpc"'
+- request:
+    method: GET
+    path: /gpc.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

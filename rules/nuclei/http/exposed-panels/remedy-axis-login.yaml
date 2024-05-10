@@ -1,0 +1,43 @@
+id: remedy-axis-login
+info:
+  name: Remedy Axis Login Panel - Detect
+  author: tess
+  description: null
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+    shodan-query: http.html:"BMC Remedy"
+    verified: true
+  tags: panel,remedy,bmc
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BMC&nbsp;Remedy&nbsp;Mid&nbsp;Tier&nbsp;Remedy Login PageBMC RemedyBMC Smart
+      Reporting
+- request:
+    method: GET
+    path: /arsys/shared/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /rsso/admin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,21 @@
+id: hetzner-cloud-detect
+info:
+  name: Hetzner Cloud Detect
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Hetzner Cloud"
+  tags: tech,hetzner
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Hetzner CloudHetzner Logo

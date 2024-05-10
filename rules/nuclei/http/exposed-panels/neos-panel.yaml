@@ -1,0 +1,24 @@
+id: neos-panel
+info:
+  name: Neos CMS Login Panel - Detect
+  author: k11h-de
+  description: Neos CMS login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/neos/neos/blob/master/Configuration/Routes.yaml
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,neos,cms,login
+traps:
+- request:
+    method: GET
+    path: /neos/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Neos comes with ABSOLUTELY NO WARRANTY

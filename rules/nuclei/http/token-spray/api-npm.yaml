@@ -1,0 +1,22 @@
+id: api-npm
+info:
+  name: NPM API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.npmjs.com/creating-and-viewing-access-tokens
+  metadata:
+    max-request: 1
+  tags: token-spray,node,npm
+traps:
+- request:
+    method: GET
+    path: https://registry.npmjs.org/-/whoami
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 403
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: dionaea-http-honeypot-detect
+info:
+  name: Dionaea HTTP Honeypot - Detect
+  author: UnaPibaGeek
+  description: |
+    Dionaea HTTP honeypot has been identified.
+    The response to an incorrect HTTP method reveals a possible setup of the Dioanea web application honeypot.
+  severity: info
+  metadata:
+    max-request: 1
+    vendor: dionaea
+    product: http
+  tags: dionaea,honeypot,ir,cti
+traps:
+- request:
+    method: AAAA
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 501
+    headers: {}
+    body: <?xml version="1.0" encoding="ascii"?>

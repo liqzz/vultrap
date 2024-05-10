@@ -1,0 +1,31 @@
+id: nginx-shards
+info:
+  name: NGINX Shards Disclosure
+  author: DhiyaneshDK
+  description: NGINX internal information, shards page exposed.
+  severity: medium
+  reference:
+  - https://infosecwriteups.com/how-i-got-rce-in-the-world-largest-russian-company-8e6e8288bc4e
+  metadata:
+    max-request: 2
+    shodan-query: html:"Welcome to Nginx"
+  tags: exposure,shards,nginx
+traps:
+- request:
+    method: GET
+    path: /static/shards.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LogsDatabaseonline shards only
+- request:
+    method: GET
+    path: /static/shards/html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,29 @@
+id: kiteworks-pcn-panel
+info:
+  name: Kiteworks PCN Panel - Detect
+  author: righettod
+  description: 'Kiteworks PCN Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.kiteworks.com/platform/private-content-network/
+  classification:
+    cpe: cpe:2.3:a:accellion:kiteworks:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: kiteworks
+    shodan-query: http.favicon.hash:-1215318992
+    vendor: accellion
+    verified: true
+  tags: panel,kiteworks,login,detect,accellion
+traps:
+- request:
+    method: GET
+    path: /login/locales/login_en.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Secured by KiteworksReturn to sign in

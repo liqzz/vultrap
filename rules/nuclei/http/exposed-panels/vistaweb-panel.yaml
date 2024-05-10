@@ -1,0 +1,24 @@
+id: vistaweb-panel
+info:
+  name: Vista Web Login Panel
+  author: righettod
+  description: 'Vista Web login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://resa.aero/solutions-operations-facturation/vista-web/
+  metadata:
+    max-request: 1
+    verified: true
+  tags: panel,vistaweb,login
+traps:
+- request:
+    method: GET
+    path: /account/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: login/lib/@resa/identityserver/resa.aero

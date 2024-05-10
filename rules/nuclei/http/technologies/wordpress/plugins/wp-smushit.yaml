@@ -1,0 +1,23 @@
+id: wordpress-wp-smushit
+info:
+  name: Smush – Optimize, Compress and Lazy Load Images Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wp-smushit/
+  metadata:
+    max-request: 1
+    plugin_namespace: wp-smushit
+    wpscan: https://wpscan.com/plugin/wp-smushit
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wp-smushit/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

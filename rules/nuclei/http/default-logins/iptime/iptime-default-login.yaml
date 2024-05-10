@@ -1,0 +1,28 @@
+id: iptime-default-login
+info:
+  name: ipTIME Default Login
+  author: gy741
+  description: ipTIME default admin credentials were discovered.
+  severity: high
+  reference:
+  - https://www.freewebtools.com/IPTIME/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: iptime,default-login
+traps:
+- request:
+    method: POST
+    path: /sess-bin/login_handler.cgi
+    headers:
+      Referer: '{{BaseURL}}/sess-bin/login_session.cgi'
+    body: 'username={{username}}&passwd={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: setCookieefm_session_idlogin.cgi

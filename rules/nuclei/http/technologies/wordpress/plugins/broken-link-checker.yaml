@@ -1,0 +1,23 @@
+id: wordpress-broken-link-checker
+info:
+  name: Broken Link Checker Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/broken-link-checker/
+  metadata:
+    max-request: 1
+    plugin_namespace: broken-link-checker
+    wpscan: https://wpscan.com/plugin/broken-link-checker
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/broken-link-checker/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

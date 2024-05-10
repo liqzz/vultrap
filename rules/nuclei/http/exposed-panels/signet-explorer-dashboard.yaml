@@ -1,0 +1,26 @@
+id: signet-explorer-dashboard
+info:
+  name: Signet Explorer Dashboard - Detect
+  author: ritikchaddha
+  description: Signet Explorer Dashboard was detected.
+  severity: info
+  reference:
+  - https://github.com/mempool/mempool
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"mempool-space" || title:"Signet Explorer"
+    verified: true
+  tags: panel,signet,bitcoin,dashboard
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Signet Explorer</mempool-summarymempool-space

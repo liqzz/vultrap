@@ -1,0 +1,21 @@
+id: landesk-ma
+info:
+  name: LANDESK(R) Management Agent Detect
+  author: 0xNirvana
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"LANDESK(R)"
+  tags: tech,landesk
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LANDesk(R)Management Agent

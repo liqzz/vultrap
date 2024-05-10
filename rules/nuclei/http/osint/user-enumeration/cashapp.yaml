@@ -1,0 +1,23 @@
+id: cashapp
+info:
+  name: Cash.app User Name Information - Detect
+  author: dwisiswant0
+  description: Cash.app user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-finance,cashapp
+traps:
+- request:
+    method: GET
+    path: https://cash.app/$
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ' on Cash App</title>'

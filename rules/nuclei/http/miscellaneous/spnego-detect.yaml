@@ -1,0 +1,29 @@
+id: spnego-detect
+info:
+  name: SPNEGO - Detect
+  author: lady_bug,ruppde
+  description: 'SPNEGO stands for Simple and Protected GSSAPI Negotiation Mechanism.
+    It is a protocol used for secure authentication and negotiation between client
+    and server applications in a network environment. SPNEGO is based on the Generic
+    Security Services Application Programming Interface (GSSAPI) framework.
+
+    '
+  severity: info
+  reference:
+  - https://www.ibm.com/docs/en/was-liberty/core?topic=authentication-single-sign-http-requests-using-spnego-web
+  - https://arstechnica.com/information-technology/2022/12/critical-windows-code-execution-vulnerability-went-undetected-until-now/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: 'www-authenticate: negotiate'
+  tags: miscellaneous,misc,windows,spnego
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

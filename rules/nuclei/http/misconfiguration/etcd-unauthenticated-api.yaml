@@ -1,0 +1,21 @@
+id: http-etcd-unauthenticated-api-data-leak
+info:
+  name: etcd Unauthenticated HTTP API Leak
+  author: dhiyaneshDk
+  description: etcd HTTP API is exposed.
+  severity: high
+  reference:
+  - https://hackerone.com/reports/1088429
+  metadata:
+    max-request: 1
+  tags: misconfig,hackerone,unauth,etcd
+traps:
+- request:
+    method: GET
+    path: /v2/auth/roles
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"roles""permissions""role""kv"'

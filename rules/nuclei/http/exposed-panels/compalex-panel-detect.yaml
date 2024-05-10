@@ -1,0 +1,41 @@
+id: compalex-panel-detect
+info:
+  name: Compalex Panel - Detect
+  author: MaStErCho
+  description: null
+  severity: medium
+  reference:
+  - http://compalex.net/
+  metadata:
+    max-request: 15
+    shodan-query: title:"COMPALEX"
+    verified: true
+  tags: tech,php,compalex,sql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>COMPALEX<h1>Compalex
+- request:
+    method: GET
+    path: //
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: ./
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

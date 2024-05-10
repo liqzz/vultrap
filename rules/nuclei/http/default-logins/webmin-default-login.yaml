@@ -1,0 +1,47 @@
+id: webmin-default-login
+info:
+  name: Webmin - Default Login
+  author: pussycat0x
+  description: 'Webmin default login credentials were discovered.
+
+    '
+  severity: high
+  reference:
+  - https://webmin.com/
+  - https://doxfer.webmin.com/Webmin/Installing_Webmin
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Webmin"
+  tags: webmin,default-login
+traps:
+- request:
+    method: POST
+    path: /session_login.cgi
+    headers:
+      Cookie: redirect=1; testing=1
+      Origin: '{{RootURL}}'
+      Content-Type: application/x-www-form-urlencoded
+      Referer: '{{RootURL}}'
+      Accept-Encoding: gzip, deflate
+    body: 'user={{username}}&pass={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: WebminBackup Configuration FilesWebmin Actions Log
+- request:
+    method: GET
+    path: /sysinfo.cgi
+    headers:
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+      Referer: '{{RootURL}}'
+      Accept-Encoding: gzip, deflate
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

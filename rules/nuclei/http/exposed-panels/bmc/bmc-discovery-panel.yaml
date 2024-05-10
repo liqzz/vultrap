@@ -1,0 +1,26 @@
+id: bmc-discovery-panel
+info:
+  name: BMC Discovery Login Panel - Detect
+  author: daffainfo
+  description: BMC Discovery login panel was detected.
+  severity: info
+  reference:
+  - https://docs.bmc.com/docs/discovery/documentation-home-1098837931.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"BMC Software"
+    verified: true
+  tags: panel,bmc
+traps:
+- request:
+    method: GET
+    path: /ui/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BMC Discovery:<span class="logo-product">Discovery</span>

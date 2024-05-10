@@ -1,0 +1,24 @@
+id: api-tatum
+info:
+  name: Tatum API Test
+  author: 0ri2N
+  description: null
+  severity: info
+  reference:
+  - https://apidoc.tatum.io/#tag/Node-RPC
+  - https://docs.tatum.io
+  metadata:
+    max-request: 1
+  tags: defi,dapp,token-spray,blockchain
+traps:
+- request:
+    method: GET
+    path: https://api.tatum.io/v3/tatum/version
+    headers:
+      Host: api.tatum.io
+      x-api-key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"baseCommit":"planName":"creditLimit":'

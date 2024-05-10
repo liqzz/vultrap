@@ -1,0 +1,22 @@
+id: netgear-version-detect
+info:
+  name: NETGEAR Router Panel - Detect
+  author: dwisiswant0
+  description: NETGEAR router panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,router,netgear
+traps:
+- request:
+    method: GET
+    path: /currentsetting.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ^((((Re(adyShareSupportedLevel|gionTag)|InternetConnectionStatus|SOAPVersion|Firmware|Model)|Region)|LoginMethod)|ParentalControlSupported)=

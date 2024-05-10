@@ -1,0 +1,36 @@
+id: wagtail-login
+info:
+  name: Wagtail Login - Detect
+  author: kishore-hariram
+  description: The Wagtail panel has been detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: wagtail
+    shodan-query: title:"Wagtail - Sign in"
+    vendor: torchbox
+    verified: true
+  tags: panel,wagtail,torchbox
+traps:
+- request:
+    method: GET
+    path: /login/?next=/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Wagtail - Sign in
+- request:
+    method: GET
+    path: /admin/login/?next=/admin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

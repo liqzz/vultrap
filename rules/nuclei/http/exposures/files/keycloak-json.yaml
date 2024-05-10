@@ -1,0 +1,19 @@
+id: keycloak-json
+info:
+  name: Keycloak JSON File
+  author: oppsec
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: exposure,keycloak,config,files
+traps:
+- request:
+    method: GET
+    path: /keycloak.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: realmresourceauth-server-url

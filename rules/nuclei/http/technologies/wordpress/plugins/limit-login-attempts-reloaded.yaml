@@ -1,0 +1,23 @@
+id: wordpress-limit-login-attempts-reloaded
+info:
+  name: Limit Login Attempts Reloaded Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/limit-login-attempts-reloaded/
+  metadata:
+    max-request: 1
+    plugin_namespace: limit-login-attempts-reloaded
+    wpscan: https://wpscan.com/plugin/limit-login-attempts-reloaded
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/limit-login-attempts-reloaded/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

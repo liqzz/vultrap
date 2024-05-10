@@ -1,0 +1,19 @@
+id: phalcon-framework-source
+info:
+  name: Phalcon Framework - Source Code Leakage
+  author: philippedelteil
+  description: Phalcon Framework source code was discovered.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: exposure,debug,phalcon
+traps:
+- request:
+    method: GET
+    path: /anything_here
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Phalcon FrameworkAnythingHereController

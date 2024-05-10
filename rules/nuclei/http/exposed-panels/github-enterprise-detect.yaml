@@ -1,0 +1,27 @@
+id: github-enterprise-detect
+info:
+  name: Github Enterprise Login Panel - Detect
+  author: ehsahil
+  description: Github Enterprise login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:github:enterprise_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: enterprise_server
+    shodan-query: title:"Setup GitHub Enterprise"
+    vendor: github
+    verified: true
+  tags: panel,github
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GitHub · Enterprise

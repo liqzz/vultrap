@@ -1,0 +1,21 @@
+id: blesta-installer
+info:
+  name: Blesta Installer Exposure
+  author: DhiyaneshDk
+  description: Blesta is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Blesta installer"
+  tags: misconfig,blesta,install,exposure
+traps:
+- request:
+    method: GET
+    path: /index.php/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Blesta InstallerInstall via Web Browser

@@ -1,0 +1,22 @@
+id: jeecg-boot-swagger
+info:
+  name: Jeecg Boot Swagger Bootstrap UI - Detect
+  author: ritikchaddha
+  description: Jeecg Swagger Bootstrap UI exposed.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Jeecg-Boot"
+    fofa-query: title="JeecgBoot 企业级低代码平台"
+  tags: jeecg,swagger,detect,exposure
+traps:
+- request:
+    method: GET
+    path: /jeecg-boot/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Swagger-Bootstrap-UI</title>

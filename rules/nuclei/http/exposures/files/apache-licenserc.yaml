@@ -1,0 +1,20 @@
+id: apache-licenserc
+info:
+  name: Apache License File
+  author: DhiyaneshDk
+  description: Apache License file is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+  tags: exposure,file,apache
+traps:
+- request:
+    method: GET
+    path: /.licenserc.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'header:license:copyright-owner:'

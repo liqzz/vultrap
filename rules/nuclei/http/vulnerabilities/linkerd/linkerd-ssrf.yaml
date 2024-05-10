@@ -1,0 +1,23 @@
+id: linkerd-service-detect
+info:
+  name: Linkerd Service detection
+  author: dudez
+  description: null
+  severity: info
+  reference:
+  - https://twitter.com/nirvana_msu/status/1084144955034165248
+  metadata:
+    max-request: 1
+  tags: tech,linkerd,service
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      l5d-dtab: /svc/* => /$/inet/interact.sh/443
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?mi)Exceeded .*? binding timeout while resolving name(?mi)exceeded .*?
+      to unspecified while dyn binding

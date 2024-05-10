@@ -1,0 +1,43 @@
+id: sitemap-detect
+info:
+  name: Sitemap Detection
+  author: houdinis
+  description: 'A sitemap is a file where you provide information about the pages,
+    videos, and other files on your site, and the relationships between them.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    google-query: intext:"sitemap" filetype:txt,filetype:xml inurl:sitemap,inurl:"/sitemap.xsd"
+      ext:xsd
+  tags: miscellaneous,misc,generic,sitemap
+traps:
+- request:
+    method: GET
+    path: /sitemap.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: sitemap>
+- request:
+    method: GET
+    path: /sitemap.xsl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sitemap.xsd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

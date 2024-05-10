@@ -1,0 +1,31 @@
+id: laravel-debug-infoleak
+info:
+  name: Laravel Debug Info Leak
+  author: pwnhxl
+  description: 'This template can be used to detect a Laravel debug information leak
+    by making a POST-based request.
+
+    '
+  severity: medium
+  reference:
+  - https://github.com/dem0ns/improper/blob/master/laravel/5_debug/1.png
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    cvss-score: 6.5
+    cwe-id: CWE-215
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: Laravel-Framework
+    fofa-query: app="Laravel-Framework"
+  tags: misconfig,laravel,debug,infoleak
+traps:
+- request:
+    method: POST
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 405
+    headers: {}
+    body: vendor/laravel/framework/src/Illuminate/MethodNotAllowedHttpExceptionDB_PASSWORDREDIS_PASSWORDMAIL_PASSWORDALIYUN_ACCESSKEYSECRETALIYUN_ACCESSKEYIDSMS_AUTH_TOKENAPP_KEY

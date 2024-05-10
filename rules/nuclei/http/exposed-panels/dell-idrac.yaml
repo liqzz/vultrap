@@ -1,0 +1,33 @@
+id: dell-idrac
+info:
+  name: Dell IDRAC Panel - Detect
+  author: kazet
+  description: Dell IDRAC panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: html:"thisIDRACText"
+    verified: true
+  tags: panel,idrac,dell,detect
+traps:
+- request:
+    method: GET
+    path: /restgui/start.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <idrac-start-screenthisIDRACText
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

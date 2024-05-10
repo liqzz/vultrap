@@ -1,0 +1,21 @@
+id: elastic-hd-dashboard
+info:
+  name: Elastic HD Dashboard Exposure
+  author: tess
+  description: Elastic HD Dashboard is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Elastic HD Dashboard"
+  tags: misconfig,exposure,elastic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Elastic HD Dashboardelasticsearch go Edition head plugin

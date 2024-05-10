@@ -1,0 +1,21 @@
+id: tianqing-info-leak
+info:
+  name: Tianqing Info Leak
+  author: ritikchaddha
+  description: Information exposed in Tianqing.
+  severity: medium
+  reference:
+  - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
+  metadata:
+    max-request: 1
+  tags: tianqing,exposure
+traps:
+- request:
+    method: GET
+    path: /api/dbstat/gettablessize
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: schema_nametable_nametable_size

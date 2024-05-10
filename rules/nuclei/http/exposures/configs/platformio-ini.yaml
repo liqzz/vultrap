@@ -1,0 +1,24 @@
+id: platformio-ini
+info:
+  name: Platformio Config File Disclosure
+  author: DhiyaneshDK
+  description: “platformio.ini” (Project Configuration File) was detected.
+  severity: low
+  reference:
+  - https://docs.platformio.org/en/stable/projectconf/index.html
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: inurl:"/platformio.ini"
+    github-query: '[platformio] language:INI'
+  tags: config,exposure,platformio
+traps:
+- request:
+    method: GET
+    path: /platformio.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[platformio]platform =board ='

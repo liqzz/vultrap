@@ -1,0 +1,20 @@
+id: joomla-htaccess-file
+info:
+  name: Joomla! htaccess file disclosure
+  author: oppsec
+  description: Joomla!  has an htaccess file to store configurations about HTTP config,
+    directory listing, etc.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: miscellaneous,misc,joomla
+traps:
+- request:
+    method: GET
+    path: /htaccess.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JoomlaOpen Source Matters. All rights reserved

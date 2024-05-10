@@ -1,0 +1,23 @@
+id: wordpress-google-site-kit
+info:
+  name: Site Kit by Google – Analytics, Search Console, AdSense, Speed Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/google-site-kit/
+  metadata:
+    max-request: 1
+    plugin_namespace: google-site-kit
+    wpscan: https://wpscan.com/plugin/google-site-kit
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/google-site-kit/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

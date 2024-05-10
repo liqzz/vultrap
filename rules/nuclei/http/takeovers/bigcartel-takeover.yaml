@@ -1,0 +1,21 @@
+id: bigcartel-takeover
+info:
+  name: Bigcartel Takeover Detection
+  author: pdteam
+  description: Bigcartel takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>Oops! We couldn&#8217;t find that page.</h1>

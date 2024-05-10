@@ -1,0 +1,23 @@
+id: wildfly-default-login
+info:
+  name: Wildfly - Default Admin Login
+  author: s0obi
+  description: 'Wildfly default admin login credentials were successful.
+
+    '
+  severity: high
+  reference:
+  - https://docs.wildfly.org/26.1/#administrator-guides
+  metadata:
+    max-request: 1
+  tags: wildfly,default-login
+traps:
+- request:
+    method: GET
+    path: /management
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: management-major-versionproduct-version

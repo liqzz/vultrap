@@ -1,0 +1,21 @@
+id: ws-ftp-ini
+info:
+  name: WS FTP File Disclosure
+  author: DhiyaneshDK
+  description: WS FTP file is disclosed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intitle:"Index of" ws_ftp.ini
+  tags: exposure,ftp,files
+traps:
+- request:
+    method: GET
+    path: /ws_ftp.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HOST=UID=DIR=

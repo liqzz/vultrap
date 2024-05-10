@@ -1,0 +1,23 @@
+id: graphql-playground
+info:
+  name: GraphQL Playground
+  author: DhiyaneshDk
+  description: null
+  severity: unknown
+  reference:
+  - https://github.com/graphql/graphql-playground
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"GraphQL Playground"
+  tags: misconfig,graphql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>GraphQL playground</title>

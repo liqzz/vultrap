@@ -1,0 +1,23 @@
+id: wordpress-takeover
+info:
+  name: WordPress takeover detection
+  author: pdteam,geeknik
+  description: Bigcartel takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/pull/176
+  - https://hackerone.com/reports/274336
+  metadata:
+    max-request: 1
+  tags: takeover,wordpress,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Do you want to register.wordpress.com</em> doesn&#8217;t&nbsp;existcannot
+      be registered

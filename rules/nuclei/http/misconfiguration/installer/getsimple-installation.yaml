@@ -1,0 +1,25 @@
+id: getsimple-installation
+info:
+  name: GetSimple CMS - Installer
+  author: princechaddha
+  description: GetSimple CMS installer was found.
+  severity: critical
+  reference:
+  - http://get-simple.info/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+  metadata:
+    max-request: 1
+  tags: getsimple,exposure,installer,misconfig
+traps:
+- request:
+    method: GET
+    path: /admin/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>GetSimple &raquo; Installation</title>PHP Version

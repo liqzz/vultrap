@@ -1,0 +1,27 @@
+id: icewarp-panel-detect
+info:
+  name: IceWarp Login Panel - Detect
+  author: ritikchaddha
+  description: IceWarp login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:icewarp:icewarp_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: icewarp_server
+    shodan-query: title:"icewarp"
+    vendor: icewarp
+    verified: true
+  tags: icewarp,panel
+traps:
+- request:
+    method: GET
+    path: /webmail/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

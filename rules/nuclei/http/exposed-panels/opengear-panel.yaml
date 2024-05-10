@@ -1,0 +1,27 @@
+id: opengear-panel
+info:
+  name: Opengear Management Console Login Panel - Detect
+  author: ffffffff0x,daffainfo
+  description: The Opengear Management Console admin panel has been discovered.
+  severity: info
+  reference: https://opengear.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: app="opengear-Management-Console"
+    google-query: intitle:"Opengear Management Console"
+    max-request: 1
+    verified: true
+  tags: panel,opengear
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <a href="http://www.Opengear.com" build="_new">&copy; OpengearOpengear Management
+      Console</title>

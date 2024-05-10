@@ -1,0 +1,63 @@
+id: aem-debugging-libraries
+info:
+  name: Adobe AEM Debugging Client Libraries
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://aem4beginner.blogspot.com/debugging-client-libraries
+  - https://adobe-consulting-services.github.io/acs-aem-tools/features/dumplibs/index.html
+  metadata:
+    verified: true
+    max-request: 5
+    shodan-query:
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  tags: misconfig,aem,adobe
+traps:
+- request:
+    method: GET
+    path: /libs/cq/ui/content/dumplibs.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Client Libraries</title><title>Rebuild Client Libraries</title><title>Client
+      Libraries Test Output</title>
+- request:
+    method: GET
+    path: /libs/granite/ui/content/dumplibs.validate.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /libs/granite/ui/content/dumplibs.rebuild.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /libs/granite/ui/content/dumplibs.test.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /libs/granite/ui/content/dumplibs.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,22 @@
+id: sumowebtools-installer
+info:
+  name: SumoWebTools Installer Exposure
+  author: DhiyaneshDk
+  description: SumoWebTools is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"SumoWebTools Installer"
+  tags: misconfig,sumowebtools,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SumoWebTools Installerconfigure

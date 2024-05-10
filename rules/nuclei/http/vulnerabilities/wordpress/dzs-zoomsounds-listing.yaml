@@ -1,0 +1,19 @@
+id: dzs-zoomsounds-listing
+info:
+  name: WordPress Plugin dzs zoomsounds
+  author: pussycat0x
+  description: Searches for sensitive directories present in the dzs-zoomsounds plugin.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress,listing,wp-plugin,wp
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/dzs-zoomsounds/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins/dzs-zoomsounds

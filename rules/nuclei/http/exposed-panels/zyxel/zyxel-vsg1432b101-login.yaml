@@ -1,0 +1,21 @@
+id: zyxel-vsg1432b101-login
+info:
+  name: Zyxel VSG1432-B101 - Login Detection
+  author: princechaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"VSG1432-B101"
+    verified: true
+  tags: tech,zyxel,modem,router,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Welcome to ZyXEL VSG1432-B101::'

@@ -1,0 +1,22 @@
+id: tumblr-takeover
+info:
+  name: tumblr takeover detection
+  author: pdteam,philippedelteil
+  description: tumblr takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/240
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Whatever you were looking for doesn't currently exist at this address.There's
+      nothing here.

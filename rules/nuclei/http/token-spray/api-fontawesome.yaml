@@ -1,0 +1,22 @@
+id: api-fontawesome
+info:
+  name: FontAwesome API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://fontawesome.com/v6.0/docs/apis/graphql/get-started
+  metadata:
+    max-request: 1
+  tags: token-spray,fontawesome
+traps:
+- request:
+    method: GET
+    path: https://api.fontawesome.com/token
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"access_token":"scopes":'

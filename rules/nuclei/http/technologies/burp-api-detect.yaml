@@ -1,0 +1,21 @@
+id: burp-rest-api-detect
+info:
+  name: Burp Rest API Server Running
+  author: joanbono
+  description: null
+  severity: info
+  reference:
+  - https://portswigger.net/burp/documentation/enterprise/api-reference
+  metadata:
+    max-request: 1
+  tags: burp,tech
+traps:
+- request:
+    method: GET
+    path: /v0.1/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Burp API</title>

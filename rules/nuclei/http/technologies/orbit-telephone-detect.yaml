@@ -1,0 +1,26 @@
+id: orbit-telephone-detect
+info:
+  name: Orbit Telephone System - Detect
+  author: HeeresS
+  description: 'Orbit Telephone System was detected.
+
+    '
+  severity: info
+  reference:
+  - https://kb.orbitgt.com/214/technology/platforms/index
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Orbit Telephone System"
+    fofa-query: body="Orbit Telephone System"
+  tags: tech,detect
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Orbit Telephone System: Administration</title>'

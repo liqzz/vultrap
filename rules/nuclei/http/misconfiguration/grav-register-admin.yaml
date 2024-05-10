@@ -1,0 +1,21 @@
+id: grav-register-admin
+info:
+  name: Grav Register Admin User - Detect
+  author: DhiyaneshDk
+  description: Exposed Grav admin user register page.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Grav Register Admin User"
+  tags: grav,register,admin,misconfig
+traps:
+- request:
+    method: GET
+    path: /admin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Grav Register Admin User | Gravadmin accounts

@@ -1,0 +1,22 @@
+id: tiny-rss-installer
+info:
+  name: Tiny Tiny RSS Installer Exposure
+  author: DhiyaneshDk
+  description: Tiny Tiny RSS is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Tiny Tiny RSS - Installer"
+  tags: misconfig,tiny,install
+traps:
+- request:
+    method: GET
+    path: /install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Tiny Tiny RSS - InstallerTest configuration

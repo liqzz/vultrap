@@ -1,0 +1,21 @@
+id: zhiyuan-oa-unauthorized
+info:
+  name: Zhiyuan Oa Unauthorized
+  author: pikpikcu
+  description: Zhiyuan Oa is exposed.
+  severity: low
+  reference:
+  - https://buaq.net/go-53721.html
+  metadata:
+    max-request: 1
+  tags: seeyon,unauth,zhiyuan,misconfig
+traps:
+- request:
+    method: GET
+    path: /seeyon/personalBind.do.jpg/..;/ajax.do?method=ajaxAction&managerName=mMOneProfileManager&managerMethod=getOAProfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: serverIdentifiercompanyName

@@ -1,0 +1,36 @@
+id: solarwinds-default-admin
+info:
+  name: SolarWinds Orion Default Login
+  author: dwisiswant0
+  description: SolarWinds Orion default admin credentials were discovered.
+  severity: high
+  reference:
+  - https://github.com/solarwinds/OrionSDK/wiki/REST
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 2
+  tags: solarwinds,default-login
+traps:
+- request:
+    method: GET
+    path: /SolarWinds/InformationService/v3/Json/Query?query=SELECT+Uri+FROM+Orion.Pollers+ORDER+BY+PollerID+WITH+ROWS+1+TO+3+WITH+TOTALROWS
+    headers:
+      Authorization: Basic {{base64(username)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: (totalRow|result|swi)s(:\/\/)?(Orion\.|Poller(ID)?)s?
+- request:
+    method: GET
+    path: /InformationService/v3/Json/Query?query=SELECT+Uri+FROM+Orion.Pollers+ORDER+BY+PollerID+WITH+ROWS+1+TO+3+WITH+TOTALROWS
+    headers:
+      Authorization: Basic {{base64(username)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

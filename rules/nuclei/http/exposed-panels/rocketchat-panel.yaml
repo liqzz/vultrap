@@ -1,0 +1,23 @@
+id: rocketchat-panel
+info:
+  name: RocketChat Login Panel - Detect
+  author: righettod
+  description: RocketChat login panel was detected.
+  severity: info
+  reference:
+  - https://www.rocket.chat/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Rocket.Chat"
+    verified: true
+  tags: panel,rocketchat,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

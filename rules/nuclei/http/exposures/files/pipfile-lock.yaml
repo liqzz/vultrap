@@ -1,0 +1,21 @@
+id: pipfile-lock
+info:
+  name: Pipfile.lock Disclosure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Pipfile"
+  tags: exposure,pip,devops,cicd,files
+traps:
+- request:
+    method: GET
+    path: /Pipfile.lock
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"pipfile-spec":"requires"'

@@ -1,0 +1,22 @@
+id: untangle-admin-setup
+info:
+  name: Untangle Exposed Admin Signup
+  author: ritikchaddha
+  description: Untangle Exposed Admin Signup is exposed publicly.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Setup Wizard" html:"untangle"
+    fofa-query: title="Setup Wizard" && "untangle"
+  tags: misconfig,untangle,admin,setup
+traps:
+- request:
+    method: GET
+    path: /setup/setup.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Setup Wizard</title>java.untangle.com

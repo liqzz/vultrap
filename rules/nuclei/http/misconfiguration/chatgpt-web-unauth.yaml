@@ -1,0 +1,24 @@
+id: chatgpt-web-unauth
+info:
+  name: ChatGPT Web - Unauthorized Access
+  author: SleepingBag945
+  description: ChatGPT Web is exposed.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="Chatgpt-web"
+  tags: chatgpt,unauth,misconfig
+traps:
+- request:
+    method: POST
+    path: /api/session
+    headers:
+      Content-Type: application/json
+    body: '{}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"status":"Success""auth":falseChatGPTAPI'

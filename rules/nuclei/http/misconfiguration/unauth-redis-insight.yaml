@@ -1,0 +1,26 @@
+id: unauth-redis-insight
+info:
+  name: RedisInsight - Unauthenticated Access
+  author: ggranjus
+  description: 'RedisInsight was able to be accessed because no authentication was
+    required.
+
+    '
+  severity: high
+  reference:
+  - https://redis.com/redis-enterprise/redis-insight/
+  metadata:
+    verified: 'true'
+    max-request: 1
+    shodan-query: title:"RedisInsight"
+  tags: redis,redisinsight,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>RedisInsight</title>

@@ -1,0 +1,23 @@
+id: wordpress-leadin
+info:
+  name: HubSpot – CRM, Email Marketing, Live Chat, Forms & Analytics Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/leadin/
+  metadata:
+    max-request: 1
+    plugin_namespace: leadin
+    wpscan: https://wpscan.com/plugin/leadin
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/leadin/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

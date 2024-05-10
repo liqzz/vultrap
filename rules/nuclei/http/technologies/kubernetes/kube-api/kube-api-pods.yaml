@@ -1,0 +1,19 @@
+id: kube-api-pods
+info:
+  name: Kube API Pods
+  author: sharath
+  description: Scans for kube pods
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kube
+traps:
+- request:
+    method: GET
+    path: /api/v1/namespaces/default/pods
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"PodList":"items":'

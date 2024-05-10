@@ -1,0 +1,36 @@
+id: mitel-panel-detect
+info:
+  name: Mitel Login Panel - Detect
+  author: ritikchaddha
+  description: Mitel login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mitel:cmg_suite:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: cmg_suite
+    shodan-query: http.html:"Mitel Networks"
+    vendor: mitel
+    verified: true
+  tags: panel,mitel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Mitel Networks Corporation
+- request:
+    method: GET
+    path: /server-common/cgi-bin/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

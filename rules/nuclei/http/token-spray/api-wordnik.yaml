@@ -1,0 +1,22 @@
+id: api-wordnik
+info:
+  name: Wordnik API Test
+  author: daffainfo
+  description: Dictionary Data
+  severity: info
+  reference:
+  - https://developer.wordnik.com/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/wordnik
+  metadata:
+    max-request: 1
+  tags: token-spray,wordnik
+traps:
+- request:
+    method: GET
+    path: https://api.wordnik.com/v4/word.json/hedgehog/topExample?useCanonical=false&api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"provider""year""rating"'

@@ -1,0 +1,43 @@
+id: firebase-config-exposure
+info:
+  name: Firebase Configuration File - Detect
+  author: geeknik
+  description: Firebase configuration file was detected.
+  severity: medium
+  reference:
+  - https://github.com/firebase/firebaseui-web/blob/master/demo/public/sample-config.js
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+  tags: firebase,exposure,config
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'apiKey:authDomain:databaseURL:storageBucket:'
+- request:
+    method: GET
+    path: /public/config.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /config.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

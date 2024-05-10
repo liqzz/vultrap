@@ -1,0 +1,22 @@
+id: api-trello
+info:
+  name: Trello API Test
+  author: daffainfo
+  description: Boards, lists and cards to help you organize and prioritize your projects
+  severity: info
+  reference:
+  - https://developers.trello.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/trello
+  metadata:
+    max-request: 1
+  tags: token-spray,trello
+traps:
+- request:
+    method: GET
+    path: https://api.trello.com/1/members/me?key=&token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: invalid key

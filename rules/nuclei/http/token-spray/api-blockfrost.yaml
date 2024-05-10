@@ -1,0 +1,24 @@
+id: api-blockfrost
+info:
+  name: Blockfrost API Test
+  author: daffainfo
+  description: Interaction with the Cardano mainnet and several testnets
+  severity: info
+  reference:
+  - https://docs.blockfrost.io/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/blockfrost
+  metadata:
+    max-request: 1
+  tags: token-spray,blockfrost
+traps:
+- request:
+    method: GET
+    path: https://cardano-mainnet.blockfrost.io/api/v0/
+    headers:
+      Host: cardano-mainnet.blockfrost.io
+      project_id: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"url":"version":'

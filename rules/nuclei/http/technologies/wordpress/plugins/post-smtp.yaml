@@ -1,0 +1,24 @@
+id: wordpress-post-smtp
+info:
+  name: POST SMTP Mailer – Email log, Delivery Failure Notifications and Best Mail
+    SMTP for WordPress Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/post-smtp/
+  metadata:
+    max-request: 1
+    plugin_namespace: post-smtp
+    wpscan: https://wpscan.com/plugin/post-smtp
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/post-smtp/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,19 @@
+id: unauthenticated-lansweeper
+info:
+  name: Unauthenticated Lansweeper Instance
+  author: divya_mudgal
+  description: Lansweeper Instance is exposed.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: lansweeper,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /Default.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Main page - Lansweeper

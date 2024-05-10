@@ -1,0 +1,21 @@
+id: aha-takeover
+info:
+  name: Aha - Subdomain Takeover Detection
+  author: pdteam
+  description: An Aha subdomain takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: There is no portal here ... sending you back to Aha!

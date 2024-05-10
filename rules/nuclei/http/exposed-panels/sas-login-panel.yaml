@@ -1,0 +1,27 @@
+id: sas-login-panel
+info:
+  name: SAS Login Panel - Detect
+  author: ritikchaddha
+  description: SAS login panel has been detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sas:base_sas:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: base_sas
+    shodan-query: http.favicon.hash:957255151
+    vendor: sas
+    verified: true
+  tags: sas,panel
+traps:
+- request:
+    method: GET
+    path: /SASLogon/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SAS&reg; Logon Manager

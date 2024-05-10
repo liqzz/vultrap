@@ -1,0 +1,23 @@
+id: wordpress-elementor
+info:
+  name: Elementor Website Builder – More than Just a Page Builder Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/elementor/
+  metadata:
+    max-request: 1
+    plugin_namespace: elementor
+    wpscan: https://wpscan.com/plugin/elementor
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/elementor/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

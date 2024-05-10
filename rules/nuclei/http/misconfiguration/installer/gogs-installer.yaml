@@ -1,0 +1,25 @@
+id: gogs-installer
+info:
+  name: Gogs (Go Git Service) - Installer
+  author: dhiyaneshDk
+  description: Go Git Service installer panel was detected.
+  severity: critical
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Installation - Gogs"
+  tags: misconfig,exposure,gogs,install
+traps:
+- request:
+    method: GET
+    path: /install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: General SettingsDatabase Settings

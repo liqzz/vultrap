@@ -1,0 +1,41 @@
+id: openproject-detect
+info:
+  name: OpenProject - Detect
+  author: ricardomaia
+  description: OpenProject is an open source web-based project management software.
+  severity: info
+  reference:
+  - https://www.openproject.org/
+  metadata:
+    verified: 'true'
+    max-request: 3
+    shodan-query: title:"openproject"
+  tags: tech,openproject,api,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .*OpenProject.Foundation.\(OPF\)<generator uri=.*openproject.org.*>OpenProjectinstanceName
+- request:
+    method: GET
+    path: /api/v3
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /activity.atom
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

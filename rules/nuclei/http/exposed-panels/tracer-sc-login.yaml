@@ -1,0 +1,27 @@
+id: tracer-sc-login
+info:
+  name: Tracer SC Login Panel - Detect
+  author: geeknik
+  description: Tracer SC login panel was detected.
+  severity: info
+  reference:
+  - https://www.trane.com/commercial/north-america/us/en/products-systems/building-management---automation/building-automation-systems/tracer-sc-plus.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:trane:tracer_sc:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: tracer_sc
+    vendor: trane
+  tags: tracer,trane,iot,panel,login
+traps:
+- request:
+    method: GET
+    path: /hui/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tracer SC</title>

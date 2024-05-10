@@ -1,0 +1,30 @@
+id: ampache-debug
+info:
+  name: Ampache Debug Page
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"Ampache -- Debug Page"
+  tags: misconfig,ampache,debug
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Ampache Debug
+- request:
+    method: GET
+    path: /test.php?action=config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

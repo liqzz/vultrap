@@ -1,0 +1,25 @@
+id: sphinxonline-panel
+info:
+  name: SphinxOnline Panel - Detect
+  author: righettod
+  description: 'SphinxOnline Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.lesphinx-developpement.fr/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Connection - SphinxOnline"
+    verified: true
+  tags: panel,sphinxonline,login,detect
+traps:
+- request:
+    method: GET
+    path: /SphinxAuth/Account/Login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Connection - SphinxOnline</title>SphinxOnline</span>

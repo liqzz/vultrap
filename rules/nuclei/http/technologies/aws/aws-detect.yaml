@@ -1,0 +1,23 @@
+id: aws-detect
+info:
+  name: AWS Service - Detect
+  author: 6mile
+  description: Detect if AWS is being used in the application.
+  severity: info
+  reference:
+  - https://github.com/6mile/cloud-headers
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,xray,captcha,dynamodb,kms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

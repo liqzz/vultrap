@@ -1,0 +1,23 @@
+id: royal-mail-phish
+info:
+  name: royal-mail phishing Detection
+  author: rxerium
+  description: 'A royal-mail phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://royalmail.com
+  metadata:
+    max-request: 1
+  tags: phishing,royal-mail,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Log in | Royal Mail Group Ltd

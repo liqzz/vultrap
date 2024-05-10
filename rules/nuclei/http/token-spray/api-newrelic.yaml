@@ -1,0 +1,24 @@
+id: api-newrelic
+info:
+  name: New Relic Rest API
+  author: 0xpugazh
+  description: null
+  severity: info
+  reference:
+  - https://docs.newrelic.com/docs/apis/rest-api-v2/application-examples-v2/list-your-app-id-metric-timeslice-data-v2
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,newrelic
+traps:
+- request:
+    method: GET
+    path: https://api.newrelic.com/v2/applications.json
+    headers:
+      Host: api.newrelic.com
+      Api-Key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"applications":"application.servers":"application.application_hosts":'

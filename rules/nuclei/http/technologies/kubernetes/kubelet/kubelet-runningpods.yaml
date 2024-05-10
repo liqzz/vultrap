@@ -1,0 +1,19 @@
+id: kubelet-scan
+info:
+  name: Kubelet Running Pods
+  author: sharath
+  description: Scans for kubelet running pods
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kubelet
+traps:
+- request:
+    method: GET
+    path: /runningpods/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"PodList":"items":'

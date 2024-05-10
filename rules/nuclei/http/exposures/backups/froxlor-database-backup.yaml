@@ -1,0 +1,25 @@
+id: froxlor-database-backup
+info:
+  name: Froxlor Server Management Backup File - Detect
+  author: tess
+  description: Froxlor Server Management backup file was detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Froxlor Server Management Panel"
+  tags: froxlor,backup,exposure,disclosure
+traps:
+- request:
+    method: GET
+    path: /install/froxlor.sql
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DROP TABLE IF EXISTSCREATE TABLEPRIMARY KEY

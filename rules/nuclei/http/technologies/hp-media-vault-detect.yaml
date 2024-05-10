@@ -1,0 +1,20 @@
+id: hp-media-vault-detect
+info:
+  name: HP Media Vault Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    fofa-query: app="HP-Media-Vault-Media-Server"
+  tags: tech,hp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>HP Media Vault

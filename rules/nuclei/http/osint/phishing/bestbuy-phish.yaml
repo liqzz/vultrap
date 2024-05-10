@@ -1,0 +1,23 @@
+id: best-buy-phish
+info:
+  name: best buy phishing Detection
+  author: rxerium
+  description: 'A best buy phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://bestbuy.com
+  metadata:
+    max-request: 1
+  tags: phishing,bestbuy,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Best Buy | Official Online Store | Shop Now &amp; Save

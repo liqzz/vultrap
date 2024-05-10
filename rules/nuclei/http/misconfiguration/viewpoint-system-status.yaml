@@ -1,0 +1,20 @@
+id: viewpoint-system-status
+info:
+  name: ViewPoint System Status
+  author: dhiyaneshDK
+  description: ViewPoint System status page is exposed.
+  severity: low
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"ViewPoint System Status"
+  tags: status,exposure,viewpoint,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ViewPoint System Status</title>

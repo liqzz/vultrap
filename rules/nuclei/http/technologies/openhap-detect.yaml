@@ -1,0 +1,23 @@
+id: opnhap-detect
+info:
+  name: OpenHAP Detection
+  author: fabaff
+  description: null
+  severity: info
+  reference:
+  - https://www.openhab.org/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"openHAB"
+  tags: tech,iot,openhab
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: openHAB

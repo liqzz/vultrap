@@ -1,0 +1,33 @@
+id: wordpress-wp-cron
+info:
+  name: Wordpress wp-cron.php DOS
+  author: pathtaga
+  description: When this file is accessed a heavy MySQL query is performed, so it
+    could be used by attackers to cause a DoS.
+  severity: info
+  reference:
+  - https://book.hacktricks.xyz/pentesting/pentesting-web/wordpress
+  - https://medium.com/@thecpanelguy/the-nightmare-that-is-wpcron-php-ae31c1d3ae30
+  metadata:
+    max-request: 2
+  tags: wordpress,cron,wp,dos
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /wp-content/themes//wp-includes/name="generator" content="wordpress<!--
+      performance optimized by w3 total cache.
+- request:
+    method: GET
+    path: /wp-cron.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

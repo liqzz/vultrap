@@ -1,0 +1,47 @@
+id: cisco-implant-detect
+info:
+  name: Cisco IOS XE - Impant Detection
+  author: DhiyaneshDK,rxerium
+  description: 'Cisco is aware of active exploitation of a previously unknown vulnerability
+    in the web UI feature of Cisco IOS XE Software when exposed to the internet or
+    to untrusted networks. This vulnerability allows a remote, unauthenticated attacker
+    to create an account on an affected system with privilege level 15 access. The
+    attacker can then use that account to gain control of the affected system.
+
+    '
+  severity: critical
+  remediation: 'Disable the HTTP server feature on internet-facing systems by running
+    one of the following commands in global configuration mode: ''no ip http server''
+    or ''no ip http secure-server''.
+
+    '
+  reference:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z
+  - https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-ios-xe-zero-day-actively-exploited-in-attacks/
+  - https://socradar.io/cisco-warns-of-exploitation-of-a-maximum-severity-zero-day-vulnerability-in-ios-xe-cve-2023-20198
+  - https://github.com/vulncheck-oss/cisco-ios-xe-implant-scanner/blob/main/implant-scanner.go
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.html_hash:1076109428
+  tags: backdoor,cisco,ios,kev
+traps:
+- request:
+    method: GET
+    path: /webui
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: webui-centerpanel-title
+- request:
+    method: POST
+    path: /webui/logoutconfirm.html?logon_hash=1
+    headers:
+      Authorization: 0ff4fbf0ecffa77ce8d3852a29263e263838e9bb
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ^([a-f0-9]{18})\s*$

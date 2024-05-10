@@ -1,0 +1,33 @@
+id: internal-ip-disclosure
+info:
+  name: Internal IP Disclosure
+  author: WillD96
+  description: null
+  severity: info
+  reference:
+  - https://support.kemptechnologies.com/hc/en-us/articles/203522429-How-to-Mitigate-Against-Internal-IP-Address-Domain-Name-Disclosure-In-Real-Server-Redirect
+  metadata:
+    max-request: 2
+  tags: misconfig,disclosure
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Accept: '*/*'
+    body: ''
+  response:
+    status_code: 302
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /
+    headers:
+      Host: ''
+      Accept: '*/*'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: calendy
+info:
+  name: Calendy User Name Information - Detect
+  author: dwisiswant0
+  description: Calendy user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-misc,calendy
+traps:
+- request:
+    method: GET
+    path: https://calendly.com/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: og:author

@@ -1,0 +1,21 @@
+id: global-traffic-statistics
+info:
+  name: Global Traffic Statistics Exposure
+  author: tess
+  description: Global Traffic Statistics page is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Global Traffic Statistics"
+  tags: misconfig,global,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Global Traffic StatisticsListening on

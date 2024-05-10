@@ -1,0 +1,19 @@
+id: kubelet-stats
+info:
+  name: Kubelet Stats
+  author: sharath
+  description: Scans for kubelet stats
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kubelet
+traps:
+- request:
+    method: GET
+    path: /stats/summary
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"node":"nodeName":'

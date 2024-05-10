@@ -1,0 +1,29 @@
+id: eventum-panel
+info:
+  name: Eventum Login Panel - Detect
+  author: princechaddha
+  description: Eventum login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mysql:eventum:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: eventum
+    shodan-query: http.favicon.hash:305412257
+    vendor: mysql
+    verified: true
+  tags: panel,eventum,mysql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Eventum</title>title="Eventum Issues search"Database Error:There
+      seems to be a problem connecting to the database server specified in your configuration
+      file

@@ -1,0 +1,33 @@
+id: o2oa-default-login
+info:
+  name: O2OA - Default Login
+  author: SleepingBag945
+  description: 'O2OA is an open source and free enterprise and team office platform.
+    It provides four major platforms portal management, process management, information
+    management, and data management. It integrates many functions such as work reporting,
+    project collaboration, mobile OA, document sharing, process approval, and data
+    collaboration. Meet various management and collaboration needs of enterprises.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title=="O2OA"
+  tags: o2oa,default-login
+traps:
+- request:
+    method: POST
+    path: /x_organization_assemble_authentication/jaxrs/authentication/captcha
+    headers:
+      Cookie: x-token=anonymous
+      Authorization: anonymous
+      Accept: text/html,application/json,*/*
+      Content-Type: application/json; charset=UTF-8
+    body: '{"credential":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"type": "success"distinguishedName'

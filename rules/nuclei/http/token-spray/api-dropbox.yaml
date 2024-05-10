@@ -1,0 +1,22 @@
+id: api-dropbox
+info:
+  name: Dropbox API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://www.dropbox.com/developers/documentation/http/documentation
+  metadata:
+    max-request: 1
+  tags: token-spray,dropbox
+traps:
+- request:
+    method: POST
+    path: https://api.dropboxapi.com/2/users/get_current_account
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"account_id":"email":'

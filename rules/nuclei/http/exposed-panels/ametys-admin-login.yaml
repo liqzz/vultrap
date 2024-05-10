@@ -1,0 +1,24 @@
+id: ametys-admin-login
+info:
+  name: Ametys Admin Login Panel
+  author: pathtaga
+  description: An Ametys admin login panel was discovered.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ametys:ametys:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: ametys
+    vendor: ametys
+  tags: panel,ametys,cms
+traps:
+- request:
+    method: GET
+    path: /_admin/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Ametys - Log in<span class="ametys-version">

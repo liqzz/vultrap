@@ -1,0 +1,44 @@
+id: exposed-gitignore
+info:
+  name: Gitignore Config - Detect
+  author: TheZakMan,geeknik
+  description: Gitignore configuration information was detected.
+  severity: info
+  reference:
+  - https://twitter.com/pratiky9967/status/1230001391701086208
+  - https://www.tenable.com/plugins/was/98595
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+  tags: exposure,tenable,config,git
+traps:
+- request:
+    method: GET
+    path: /.gitignore
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /assets/.gitignore
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /includes/.gitignore
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,24 @@
+id: xoops-installation-wizard
+info:
+  name: XOOPS Installation Wizard Panel - Detect
+  author: princechaddha
+  description: XOOPS Installation Wizard panel was detected.
+  severity: low
+  classification:
+    cpe: cpe:2.3:a:xoops:xoops:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: xoops
+    vendor: xoops
+  tags: panel,xoops
+traps:
+- request:
+    method: GET
+    path: /install/page_start.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)(<title>(.*)XOOPS Installation Wizard(.*)</title>)(?i)(<title>(.*)XOOPS
+      安裝精靈(.*)</title>)

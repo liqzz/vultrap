@@ -1,0 +1,26 @@
+id: redfish-api
+info:
+  name: Redfish API - Detect
+  author: righettod
+  description: 'Redfish API was detected.
+
+    '
+  severity: info
+  reference:
+  - https://en.wikipedia.org/wiki/Redfish_(specification)
+  - https://www.dmtf.org/standards/redfish
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"/redfish/v1"
+  tags: config,exposure,redfish,api
+traps:
+- request:
+    method: GET
+    path: /redfish/v1/
+    headers: null
+    body: null
+  response:
+    status_code: 502
+    headers: {}
+    body: ''

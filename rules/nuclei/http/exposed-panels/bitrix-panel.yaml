@@ -1,0 +1,25 @@
+id: bitrix-login
+info:
+  name: Bitrix Login Panel
+  author: juicypotato1
+  description: Bitrix24 is a unified work space that places a complete set of business
+    tools into a single, intuitive interface.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:bitrix:bitrix24:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: bitrix24
+    vendor: bitrix
+  tags: panel,bitrix,login
+traps:
+- request:
+    method: GET
+    path: /bitrix/admin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: USER_LOGIN/bitrix/js/main/

@@ -1,0 +1,22 @@
+id: ruckus-unleashed-install
+info:
+  name: Ruckus Unleashed Exposed Installation
+  author: ritikchaddha
+  description: Ruckus Unleashed is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Setup Wizard" html:"/ruckus"
+  tags: misconfig,ruckus,unleashed,install
+traps:
+- request:
+    method: GET
+    path: /admin/wizard.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Setup Wizard/ruckus

@@ -1,0 +1,38 @@
+id: openx-panel
+info:
+  name: OpenX/Revive Adserver Login Panel - Detect
+  author: pikpikcu,righettod
+  description: OpenX login panel was detected. Note that OpenX is now a Revive Adserver.
+  severity: info
+  reference:
+  - https://www.revive-adserver.com/download/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:revive-adserver:revive_adserver:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: revive_adserver
+    shodan-query: title:"Revive Adserver"
+    vendor: revive-adserver
+    verified: true
+  tags: panel,openx,revive,adserver,login,revive-adserver
+traps:
+- request:
+    method: GET
+    path: /www/admin/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>OpenX</title><title>Revive Adserver</title>
+- request:
+    method: GET
+    path: /admin/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

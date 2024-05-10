@@ -1,0 +1,25 @@
+id: dokuwiki-panel
+info:
+  name: Dokuwiki Login Panel - Detect
+  author: righettod
+  description: 'Dokuwiki login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.dokuwiki.org/dokuwiki
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"/dokuwiki/"
+    verified: true
+  tags: panel,dokuwiki,login
+traps:
+- request:
+    method: GET
+    path: /doku.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

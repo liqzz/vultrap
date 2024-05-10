@@ -1,0 +1,23 @@
+id: gopher-server
+info:
+  name: Gopher Server - Exposure
+  author: DhiyaneshDk
+  description: Gopher Server is exposed.
+  severity: medium
+  reference:
+  - https://www.facebook.com/photo/?fbid=627579942745862&set=a.467014098802448
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Gopher Server"
+  tags: misconfig,gopher,server
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Gopher ServerEnvironment Variables

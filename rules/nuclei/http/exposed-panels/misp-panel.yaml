@@ -1,0 +1,25 @@
+id: misp-panel
+info:
+  name: MISP Threat Intelligence Sharing Platform Panel - Detect
+  author: johnk3r
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:misp:misp:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: misp
+    shodan-query: http.title:"Users - MISP"
+    vendor: misp
+    verified: 'true'
+  tags: panel,misp
+traps:
+- request:
+    method: GET
+    path: /users/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Users - MISP</title>

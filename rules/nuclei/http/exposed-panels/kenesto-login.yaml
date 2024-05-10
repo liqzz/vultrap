@@ -1,0 +1,25 @@
+id: kenesto-login
+info:
+  name: Kenesto - Login Detect
+  author: pussycat0x
+  description: Kenesto login panel was discovered.
+  severity: info
+  reference:
+  - https://www.kenesto.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: app="kenesto"
+    max-request: 1
+  tags: login,tech,kenesto,panel
+traps:
+- request:
+    method: GET
+    path: /Kenesto/Account/LogOn?ReturnUrl=%2fkenesto
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome To Kenesto&reg;</title>

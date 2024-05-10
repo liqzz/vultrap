@@ -1,0 +1,23 @@
+id: softr-takeover
+info:
+  name: Softr.io Takeover Detection
+  author: philippedelteil
+  description: null
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/352
+  - https://docs.softr.io/custom-domain-and-publishing/9qTmU2Lj8Gnpr1Ue6dEAkX/add-a-custom-domain-to-your-app/93K5bLJN3n91MRo9uRGdAf
+  metadata:
+    max-request: 1
+  tags: takeover,softr
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: The application you were looking for was built on SoftrGet started with
+      Softr

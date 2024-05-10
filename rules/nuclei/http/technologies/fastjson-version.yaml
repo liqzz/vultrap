@@ -1,0 +1,25 @@
+id: fastjson-version
+info:
+  name: Fastjson Version Detection
+  author: yuansec
+  description: If the server returns an exception to the client,The fastjson version
+    will be retrieved,Fastjson versions greater than 1.2.41,Contains the latest version(1.2.76).
+  severity: info
+  reference:
+  - https://blog.csdn.net/caiqiiqi/article/details/107907489
+  metadata:
+    max-request: 1
+  tags: fastjson,tech
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/json
+    body: '{"@type":"java.lang.AutoCloseable"
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: fastjson-version

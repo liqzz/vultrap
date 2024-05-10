@@ -1,0 +1,30 @@
+id: jhipster-detect
+info:
+  name: JHipster Detect
+  author: righettod
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.html:"JHipster"
+  tags: tech,jhipster
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JHipster@jhipsterWelcome, Java Hipster!jhipster-error
+- request:
+    method: GET
+    path: /i18n/en.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,19 @@
+id: kube-api-namespaces
+info:
+  name: Kube API Namespaces
+  author: sharath
+  description: Scans for kube namespaces
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,k8s,kubernetes,devops,kube
+traps:
+- request:
+    method: GET
+    path: /api/v1/namespaces
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"NamespaceList":"items":'

@@ -1,0 +1,19 @@
+id: wordpress-db-backup
+info:
+  name: WordPress DB Backup
+  author: dwisiswant0
+  description: This template checks for exposed database in wordpress.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: wordpress,backups
+traps:
+- request:
+    method: GET
+    path: /wp-content/backup-db/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /.sql">

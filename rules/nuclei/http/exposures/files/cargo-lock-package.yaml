@@ -1,0 +1,23 @@
+id: cargo-lock-package
+info:
+  name: Cargo Lock Packages Disclosure
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Cargo.lock"
+  tags: exposure,files,cargo
+traps:
+- request:
+    method: GET
+    path: /Cargo.lock
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[[package]]dependencies = ['

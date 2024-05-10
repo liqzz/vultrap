@@ -1,0 +1,25 @@
+id: api-clickup
+info:
+  name: ClickUp API Test
+  author: daffainfo
+  description: ClickUp is a robust, cloud-based project management tool for boosting
+    productivity
+  severity: info
+  reference:
+  - https://clickup.com/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/clickup
+  metadata:
+    max-request: 1
+  tags: token-spray,clickup
+traps:
+- request:
+    method: GET
+    path: https://api.clickup.com/api/v2/user
+    headers:
+      Host: api.clickup.com
+      Authorization: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"username":"email":'

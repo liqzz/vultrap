@@ -1,0 +1,30 @@
+id: sidekiq-dashboard
+info:
+  name: Sidekiq Dashboard Panel - Detect
+  author: dhiyaneshDK,AmirMSafari
+  description: Sidekiq Dashboard panel was detected.
+  severity: medium
+  reference:
+  - https://sidekiq.org
+  - https://github.com/mperham/sidekiq
+  - https://github.com/mperham/sidekiq/wiki/Monitoring
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:contribsys:sidekiq:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: sidekiq
+    vendor: contribsys
+  tags: unauth,panel,sidekiq,contribsys
+traps:
+- request:
+    method: GET
+    path: /sidekiq
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sidekiq</title><title>Sidekiq Enterprise</title>

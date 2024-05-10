@@ -1,0 +1,19 @@
+id: zerof-webserver-detect
+info:
+  name: ZEROF Web Server Detect
+  author: princechaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,zerof
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ZEROF Web Server</title>

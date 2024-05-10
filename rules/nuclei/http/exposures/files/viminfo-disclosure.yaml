@@ -1,0 +1,25 @@
+id: viminfo-disclosure
+info:
+  name: Viminfo - File Disclosure
+  author: DhiyaneshDK
+  description: 'Viminfo file was detected.
+
+    '
+  severity: low
+  reference:
+  - https://renenyffenegger.ch/notes/development/vim/editing/viminfo/index
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Viminfo"
+  tags: devops,exposure,viminfo,config
+traps:
+- request:
+    method: GET
+    path: /.viminfo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Viminfo versionCommand Line History

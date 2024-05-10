@@ -1,0 +1,37 @@
+id: production-logs
+info:
+  name: Discover production log files
+  author: geeknik
+  description: Production log file was exposed.
+  severity: info
+  metadata:
+    max-request: 3
+  tags: exposure,logs,rails
+traps:
+- request:
+    method: GET
+    path: /log/production.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Connecting to database specified by database.ymlStarted GET
+- request:
+    method: GET
+    path: /logs/production.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /production.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

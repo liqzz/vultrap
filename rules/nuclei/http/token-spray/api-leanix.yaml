@@ -1,0 +1,32 @@
+id: api-leanix
+info:
+  name: LeanIX API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://docs.leanix.net/docs/rest-api
+  metadata:
+    max-request: 2
+  tags: token-spray,leanix
+traps:
+- request:
+    method: GET
+    path: https://us.leanix.net/services/integration-api/v1/examples/starterExample
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"input":"connectorType":'
+- request:
+    method: GET
+    path: https://eu.leanix.net/services/integration-api/v1/examples/starterExample
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

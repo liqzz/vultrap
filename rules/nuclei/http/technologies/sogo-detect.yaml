@@ -1,0 +1,32 @@
+id: sogo-detect
+info:
+  name: SOGo Detect
+  author: righettod
+  description: This template will detect a running SOGo instance
+  severity: info
+  reference:
+  - https://www.sogo.nu/
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"SOGo"
+  tags: sogo,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="SOGo Web Interface"sg-default="SOGo
+- request:
+    method: GET
+    path: /SOGo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

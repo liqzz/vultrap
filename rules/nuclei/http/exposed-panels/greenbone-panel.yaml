@@ -1,0 +1,28 @@
+id: greenbone-panel
+info:
+  name: Greenbone Security Assistant Panel  - Detect
+  author: pbuff07
+  description: 'Greenbone Security Assistant Web Panel is detected
+
+    '
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:greenbone:greenbone_security_assistant:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: greenbone_security_assistant
+    shodan-query: http.title:"Greenbone Security Assistant"
+    vendor: greenbone
+    verified: true
+    zoomeye-query: title:"Greenbone Security Assistant"
+  tags: panel,greenbone,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Greenbone Security Assistant</title>

@@ -1,0 +1,21 @@
+id: dash-panel-detect
+info:
+  name: Dash Panel Detect
+  author: tess
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"DashRenderer"
+  tags: tech,dash
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: _dash-configDashRenderer

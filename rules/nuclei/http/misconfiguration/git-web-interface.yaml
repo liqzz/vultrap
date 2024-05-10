@@ -1,0 +1,20 @@
+id: git-web-interface
+info:
+  name: Git web interface
+  author: dhiyaneshDK
+  description: Git Web Interface is exposed.
+  severity: low
+  metadata:
+    max-request: 1
+    shodan-query: html:"git web interface version"
+  tags: git,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: git web interface version

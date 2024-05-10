@@ -1,0 +1,22 @@
+id: dell-dpi-panel
+info:
+  name: Dell DPI Remote Power Management - Detect
+  author: megamansec
+  description: 'The Dell Metered Rack Power Distribution Unit distributes power to
+    a server rack and are installed at the rear of a rack enclosure.
+
+    '
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,dell,dpi,rpm
+traps:
+- request:
+    method: GET
+    path: /index2.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: title="DELL DPI Remote Power Management<TITLE>DELL DPI Remote Power Management

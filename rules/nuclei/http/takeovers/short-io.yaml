@@ -1,0 +1,21 @@
+id: short-io-takeover
+info:
+  name: Short.io takeover detection
+  author: philippedelteil
+  description: Short.io takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/260
+  metadata:
+    max-request: 1
+  tags: takeover,short.io
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Link does not existThis domain is not configured on Short.io

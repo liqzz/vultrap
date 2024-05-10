@@ -1,0 +1,53 @@
+id: securenvoy-panel
+info:
+  name: SecurEnvoy Login Panel - Detect
+  author: 0xrod,righettod
+  description: SecurEnvoy login panel was detected.
+  severity: info
+  reference:
+  - https://securenvoy.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+    shodan-query: http.title:"securenvoy"
+  tags: panel,securenvoy
+traps:
+- request:
+    method: GET
+    path: /secadmin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<base href="/secadmin/">SecurEnvoy PortalSecurEnvoy Tokenless AuthenticationManage
+      My Token : Authentication'
+- request:
+    method: GET
+    path: /securenvoy/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /secenrol/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /RDWeb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

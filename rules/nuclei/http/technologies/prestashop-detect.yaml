@@ -1,0 +1,21 @@
+id: prestashop-detect
+info:
+  name: PrestaShop Tech Detection
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"PrestaShop"
+  tags: tech,cms,prestashop
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by <a\s+[^>]+>PrestaShop<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\s?--><!--
+      /Module Block [a-z ]+ -->

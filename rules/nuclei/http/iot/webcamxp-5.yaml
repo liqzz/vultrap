@@ -1,0 +1,26 @@
+id: webcamxp-5
+info:
+  name: WebcamXP 5 Login Panel - Detect
+  author: dhiyaneshDK
+  description: WebcamXP 5 login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7448
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"webcamXP 5"
+  tags: iot,edb
+traps:
+- request:
+    method: GET
+    path: /home.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>webcamXP 5</title>

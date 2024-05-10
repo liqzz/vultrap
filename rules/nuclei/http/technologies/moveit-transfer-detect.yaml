@@ -1,0 +1,30 @@
+id: moveit-transfer-detect
+info:
+  name: Moveit File Transfer - Detect
+  author: tess
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"human.aspx"
+  tags: tech,moveit
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: stylesheet_MOVEitmoveit.transferMOVEitPopUpMOVEit Automation
+- request:
+    method: GET
+    path: /human.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,25 @@
+id: leadpages-takeover
+info:
+  name: Leadpages takeover detection
+  author: philippedelteil
+  description: Leadpages takeover was detected.
+  severity: high
+  reference:
+  - https://www.youtube.com/watch?v=HRFplefT46U
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/166
+  - https://github.com/PushpenderIndia/subdover/issues/2
+  metadata:
+    max-request: 1
+  tags: takeover,leadpages
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>We couldn't find that page</h1>The page you’re looking for may have
+      been movedDouble-check that you have the right web address and give it another
+      go!

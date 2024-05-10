@@ -1,0 +1,26 @@
+id: api-vercel
+info:
+  name: Vercel - API Detection
+  author: dwisiswant0
+  description: Vercel API was detected.
+  severity: info
+  reference:
+  - https://vercel.com/docs/rest-api
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: token-spray,vercel
+traps:
+- request:
+    method: GET
+    path: https://api.vercel.com/www/user
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"user":"username":"email":'

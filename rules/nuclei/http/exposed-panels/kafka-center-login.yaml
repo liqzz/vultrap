@@ -1,0 +1,26 @@
+id: kafka-center-login
+info:
+  name: Apache Kafka Control Center Login Panel - Detect
+  author: dhiyaneshDK
+  description: Apache Kafka Control Center login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:kafka:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: kafka
+    shodan-query: http.title:"Kafka Center"
+    vendor: apache
+  tags: panel,kafka,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Kafka Center</title>

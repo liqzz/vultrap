@@ -1,0 +1,28 @@
+id: unauth-jupyter-lab
+info:
+  name: Jupyter Lab - Unauthenticated Access
+  author: j4vaovo
+  description: 'JupyterLab was able to be accessed without authentication.
+
+    '
+  severity: critical
+  reference:
+  - https://paper.seebug.org/2058/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-288
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:450899026
+  tags: unauth,jupyter,jupyterlab,misconfig
+traps:
+- request:
+    method: GET
+    path: /lab/api/settings/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"settings""schema":'

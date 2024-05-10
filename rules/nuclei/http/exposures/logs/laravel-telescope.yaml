@@ -1,0 +1,23 @@
+id: laravel-telescope
+info:
+  name: Laravel Telescope Disclosure
+  author: geeknik
+  description: Telescope provides insight into the requests coming into your application,
+    exceptions, log entries, database queries, queued jobs, mail, notifications, cache
+    operations, scheduled tasks, variable dumps, and more.
+  severity: medium
+  reference:
+  - https://laravel.com/docs/8.x/telescope
+  metadata:
+    max-request: 1
+  tags: laravel,disclosure,logs,exposure
+traps:
+- request:
+    method: GET
+    path: /telescope/requests
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Telescope</title>RequestsCommandsSchedule

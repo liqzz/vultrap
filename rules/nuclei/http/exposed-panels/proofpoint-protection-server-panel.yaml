@@ -1,0 +1,36 @@
+id: proofpoint-protection-server-panel
+info:
+  name: Proofpoint Protection Server Panel - Detect
+  author: johnk3r
+  description: Proofpoint Protection Server panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    product: proofpoint protection server
+    shodan-query: http.favicon.hash:942678640
+    vendor: proofpoint
+    verified: true
+  tags: panel,proofpoint,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>Proofpoint Protection ServerProofpoint End User Application.Powered
+      by Proofpoint
+- request:
+    method: GET
+    path: /euweb/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

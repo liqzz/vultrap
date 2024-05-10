@@ -1,0 +1,24 @@
+id: api-bitquery
+info:
+  name: Bitquery API Test
+  author: daffainfo
+  description: Onchain GraphQL APIs & DEX APIs
+  severity: info
+  reference:
+  - https://graphql.bitquery.io/ide
+  - https://github.com/daffainfo/all-about-apikey/tree/main/bitquery
+  metadata:
+    max-request: 1
+  tags: token-spray,bitquery
+traps:
+- request:
+    method: POST
+    path: https://graphql.bitquery.io
+    headers:
+      Host: graphql.bitquery.io
+      X-API-KEY: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"message": "No query string was present"'

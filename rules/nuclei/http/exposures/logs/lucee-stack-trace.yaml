@@ -1,0 +1,20 @@
+id: lucee-stack-trace
+info:
+  name: Lucee Stack Trace Error
+  author: dhiyaneshDK
+  description: Lucee Stack Trace error exposed.
+  severity: low
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Lucee"
+  tags: lucee,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: lucee.runtime

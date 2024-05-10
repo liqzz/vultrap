@@ -1,0 +1,21 @@
+id: lighttpd-placeholder-page
+info:
+  name: Lighttpd Placeholder Page
+  author: idealphase
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: If you find a bug in this Lighttpd package, or in Lighttpd itself
+  tags: tech,lighttpd
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: If you find a bug in this Lighttpd package, or in Lighttpd itself<h1> Placeholder
+      page </h1>

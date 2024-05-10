@@ -1,0 +1,25 @@
+id: sonarqube-login
+info:
+  name: SonarQube Panel - Detect
+  author: dhiyaneshDk
+  description: SonarQube panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sonarsource:sonarqube:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: sonarqube
+    vendor: sonarsource
+  tags: panel,sonarqube,sonarsource
+traps:
+- request:
+    method: GET
+    path: /sessions/new
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SonarQube

@@ -1,0 +1,26 @@
+id: dradis-pro-panel
+info:
+  name: Dradis Professional Edition Login Panel - Detect
+  author: righettod
+  description: Dradis Professional Edition login panel was detected.
+  severity: info
+  reference:
+  - https://dradisframework.com/ce/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Dradis Professional Edition"
+    verified: true
+  tags: panel,dradis
+traps:
+- request:
+    method: GET
+    path: /pro/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dradis Professional Edition

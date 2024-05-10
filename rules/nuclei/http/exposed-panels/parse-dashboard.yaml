@@ -1,0 +1,27 @@
+id: parse-dashboard
+info:
+  name: Parse Dashboard Login Panel - Detect
+  author: tess
+  description: Parse Dashboard login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:parseplatform:parse-server:*:*:*:*:node.js:*:*:*
+  metadata:
+    max-request: 1
+    product: parse-server
+    shodan-query: title:"Parse Dashboard"
+    vendor: parseplatform
+    verified: true
+  tags: panel,parse,exposure,parseplatform
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Parse DashboardPARSE_DASHBOARD_PATH

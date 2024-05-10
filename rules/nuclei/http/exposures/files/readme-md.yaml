@@ -1,0 +1,21 @@
+id: readme-md
+info:
+  name: README.md file disclosure
+  author: ambassify
+  description: Internal documentation file often used in projects which can contain
+    sensitive information.
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: html:"README.MD"
+  tags: exposure,markdown,files
+traps:
+- request:
+    method: GET
+    path: /README.md
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '###'

@@ -1,0 +1,20 @@
+id: hue-personal-wireless-panel
+info:
+  name: HUE Personal Wireless Lighting Panel
+  author: Hardik-Solanki
+  description: HUE personal wireless lighting panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"hue personal wireless lighting"
+  tags: hue,iot,wireless
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: hue personal wireless lightingOpen Source

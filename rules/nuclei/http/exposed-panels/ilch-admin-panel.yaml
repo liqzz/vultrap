@@ -1,0 +1,27 @@
+id: ilch-admin-panel
+info:
+  name: Ilch CMS Admin Login Panel - Detect
+  author: ritikchaddha
+  description: Ilch CMS admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ilch:cms:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: cms
+    shodan-query: http.title:"Ilch"
+    vendor: ilch
+    verified: true
+  tags: panel,ilch,cms
+traps:
+- request:
+    method: GET
+    path: /index.php/admin/admin/login/index/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ilch_token

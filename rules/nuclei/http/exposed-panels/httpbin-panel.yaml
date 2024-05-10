@@ -1,0 +1,25 @@
+id: httpbin-panel
+info:
+  name: HTTPBin Login Panel - Detect
+  author: Adam Crosser
+  description: HTTPBin login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/postmanlabs/httpbin
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"httpbin.org"
+  tags: panel,httpbin,oss
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>httpbin.org</title>

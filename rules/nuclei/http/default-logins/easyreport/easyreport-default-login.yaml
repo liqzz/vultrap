@@ -1,0 +1,28 @@
+id: easyreport-default-login
+info:
+  name: EasyReport - Default Login
+  author: SleepingBag945
+  description: null
+  severity: high
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: body="EasyReport-A Sample and Easy to Use Web Reporting System"
+  tags: easyreport,default-login
+traps:
+- request:
+    method: POST
+    path: /member/authenticate
+    headers:
+      Accept: application/json, text/javascript, */*; q=0.01
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      X-Requested-With: XMLHttpRequest
+    body: 'account={{username}}&password={{password}}&rememberMe=false
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"code":"detailMsg":"data":true'

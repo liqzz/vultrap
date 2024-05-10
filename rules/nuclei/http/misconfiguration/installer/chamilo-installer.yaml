@@ -1,0 +1,30 @@
+id: chamilo-installer
+info:
+  name: Chamilo Installer Exposure
+  author: DhiyaneshDk
+  description: Chamilo is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Chamilo has not been installed"
+  tags: misconfig,chamilo,install,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Chamilo installationInstallation Language<title>Chamilo has not been installed</title>
+- request:
+    method: GET
+    path: /main/install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

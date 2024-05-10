@@ -1,0 +1,21 @@
+id: unibox-panel
+info:
+  name: Unibox Panel - Detect
+  author: theamanrawat
+  description: Unibox Administrator panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:176427349
+    verified: true
+  tags: panel,unibox,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Unibox Administration</title>Please Login to continue

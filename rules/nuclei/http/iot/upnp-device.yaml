@@ -1,0 +1,21 @@
+id: upnp-device-detect
+info:
+  name: Detect Basic uPNP Device
+  author: geeknik
+  description: uPNP Device was detected.
+  severity: info
+  reference:
+  - https://www.upnp.org/specs/basic/UPnP-basic-Basic-v1-Device.pdf
+  metadata:
+    max-request: 1
+  tags: upnp,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: urn:schemas-upnp-org:device-1-0<deviceType><modelName>

@@ -1,0 +1,22 @@
+id: api-buildkite
+info:
+  name: Buildkite API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://buildkite.com/docs/apis/rest-api/user
+  metadata:
+    max-request: 1
+  tags: token-spray,buildkite
+traps:
+- request:
+    method: GET
+    path: https://api.buildkite.com/v2/user
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"graphql_id":"email":'

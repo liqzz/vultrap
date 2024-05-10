@@ -1,0 +1,30 @@
+id: http-trace
+info:
+  name: HTTP TRACE method enabled
+  author: nodauf
+  description: null
+  severity: info
+  reference:
+  - https://www.blackhillsinfosec.com/three-minutes-with-the-http-trace-method/
+  metadata:
+    max-request: 2
+  tags: miscellaneous,misc,generic
+traps:
+- request:
+    method: TRACE
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: TRACE / HTTP
+- request:
+    method: OPTIONS
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

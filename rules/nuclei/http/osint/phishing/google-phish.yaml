@@ -1,0 +1,23 @@
+id: google-phish
+info:
+  name: Google phishing Detection
+  author: rxerium
+  description: 'A google phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://google.com
+  metadata:
+    max-request: 1
+  tags: phishing,google,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sign in - Google Accounts

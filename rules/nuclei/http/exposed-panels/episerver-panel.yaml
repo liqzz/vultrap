@@ -1,0 +1,26 @@
+id: episerver-panel
+info:
+  name: Episerver Login Panel
+  author: William Söderberg @ WithSecure
+  description: Episerver login panel was detected.
+  severity: info
+  reference:
+  - https://docs.developers.optimizely.com/content-cloud/v12.0.0-content-cloud/docs/changing-edit-and-admin-view-urls
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"epihash"
+    verified: true
+  tags: panel,optimizely,episerver
+traps:
+- request:
+    method: GET
+    path: /episerver/cms
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

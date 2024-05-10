@@ -1,0 +1,21 @@
+id: mantisbt-installer
+info:
+  name: MantisBT Installation Exposure
+  author: DhiyaneshDK
+  description: MantisBT is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Administration - Installation - MantisBT"
+  tags: misconfig,mantisbt,install,exposure
+traps:
+- request:
+    method: GET
+    path: /admin/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Administration - Installation - MantisBT

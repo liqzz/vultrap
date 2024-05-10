@@ -1,0 +1,59 @@
+id: generic-db
+info:
+  name: Generic Database File - Exposure
+  author: Michal Mikolas (nanuqcz)
+  description: 'This is collection of some web frameworks recommendation or default
+    configuration for SQLite database file location. If this file is publicly accessible
+    due to server misconfiguration, it could result in application data leak including
+    users sensitive data, password hashes etc.
+
+    '
+  severity: high
+  reference:
+  - https://laravel.com/docs/11.x/database#sqlite-configuration
+  - https://laravel.com/docs/5.2/database
+  - https://github.com/laracasts/larabook/blob/master/app/config/database.php#L51
+  - https://forum.codeigniter.com/post-389846.html
+  - https://github.com/codeigniter4projects/playground/blob/develop/.env.example#L33
+  - https://symfony.com/doc/current/doctrine.html#configuring-the-database
+  - https://symfony.com/doc/4.x/doctrine.html#configuring-the-database
+  - https://symfony.com/doc/3.x/doctrine.html
+  - https://symfony.com/doc/2.x/doctrine.html
+  - https://openclassrooms.com/forum/sujet/symfony3-sqlite-could-not-create-database
+  - https://symfony.com/doc/current/reference/configuration/doctrine.html#doctrine-dbal-configuration
+  - https://stackoverflow.com/questions/31762878/sqlite-3-database-with-django
+  - https://medium.com/@codewithbushra/using-sqlite-as-a-database-backend-in-django-projects-code-with-bushra-d23e3100686e
+  - https://gist.github.com/jwo/4512764?permalink_comment_id=2235763#gistcomment-2235763
+  - https://stackoverflow.com/a/30345819/1632572
+  - https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/
+  - https://sqldocs.org/sqlite/sqlite-nodejs/
+  - https://stackoverflow.com/questions/41620788/error-database-connection-sqlite-is-missing-or-could-not-be-created-cakephp
+  - https://stackoverflow.com/questions/2722383/using-sqlite3-with-cakephp
+  - https://levelup.gitconnected.com/how-to-connect-and-use-the-sqlite-database-in-codeigniter-3-48cd50d3e78d
+  - https://turmanauli.medium.com/how-to-connect-codeigniter-to-sqlite3-database-like-a-pro-2177497a6d30
+  - https://forum.codeigniter.com/thread-74522.html
+  - https://stackoverflow.com/a/37088960/1632572
+  - https://docs.laminas.dev/tutorials/getting-started/database-and-models/
+  - https://phalcon-nucleon.github.io/#!database/getting-started.html
+  - https://www.yiiframework.com/doc/blog/1.1/en/prototype.database
+  - https://pusher.com/tutorials/rest-api-slim-part-1/
+  - https://www.digitalocean.com/community/tutorials/how-to-use-the-fat-free-php-framework
+  - https://doc.nette.org/en/database/configuration#toc-single-connection
+  - https://www.sqlite.org/fileformat.html
+  - https://en.wikipedia.org/wiki/List_of_file_signatures
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 89
+  tags: files,database,exposure,sqlite,sqlite3,fuzz
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CREATE TABLE

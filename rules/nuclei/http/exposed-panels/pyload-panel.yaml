@@ -1,0 +1,38 @@
+id: pyload-panel
+info:
+  name: PyLoad Login - Panel
+  author: DhiyaneshDk
+  description: 'A Pyload Login was detected.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/pyload/pyload
+  classification:
+    cpe: cpe:2.3:a:pyload:pyload:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: pyload
+    shodan-query: title:"Login - pyLoad"
+    vendor: pyload
+    verified: true
+  tags: panel,pyload,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login - pyLoadalt="Pyload
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

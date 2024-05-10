@@ -1,0 +1,27 @@
+id: sitecore-xml-xss
+info:
+  name: SiteCore XML Control Script Insertion
+  author: DhiyaneshDK
+  description: 'Sitecores “special way” of displaying XML Controls directly allows
+    for a Cross Site Scripting Attack – more can be achieved with these XML Controls
+
+    '
+  severity: medium
+  reference: |
+    - https://vulners.com/securityvulns/SECURITYVULNS:DOC:30273
+    - https://web.archive.org/web/20151016072340/http://www.securityfocus.com/archive/1/530901/100/0/threaded
+  metadata:
+    verified: 'true'
+    max-request: 1
+    shodan-query: html:"Sitecore"
+  tags: xss,sitecore,cms
+traps:
+- request:
+    method: GET
+    path: /?xmlcontrol=body%20onload=alert(document.domain)
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <body onload=alert(document.domain) />

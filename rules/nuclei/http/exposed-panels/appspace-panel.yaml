@@ -1,0 +1,48 @@
+id: appspace-panel
+info:
+  name: Appspace Login Panel - Detect
+  author: ritikchaddha
+  description: Appspace is the workplace experience platform for your whole team that
+    lets you manage it all – from employee communications to your physical office
+    spaces.
+  severity: info
+  reference:
+  - https://www.appspace.com/
+  classification:
+    cpe: cpe:2.3:a:appspace:appspace:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: appspace
+    shodan-query: title:"Appspace"
+    vendor: appspace
+    verified: true
+  tags: appspace,panel,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .appspace-uiappspace-logo<title>Appspace</title>class="btnSSOAppspaceSign
+      in to Appspace Core
+- request:
+    method: GET
+    path: /app/login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /signin/#!/login?returnUrl=%2Fapp%2Fdefault.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

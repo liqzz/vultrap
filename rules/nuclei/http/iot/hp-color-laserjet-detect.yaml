@@ -1,0 +1,35 @@
+id: hp-color-laserjet-detect
+info:
+  name: HP Color LaserJet Detection
+  author: idealphase,gy741
+  description: HP color laserJet panel was detected.
+  severity: info
+  reference:
+  - http://www.hp.com/
+  - https://www.hp.com/us-en/shop/cv/printers
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"HP Color LaserJet"
+    google-query: intitle:"HP Color LaserJet"
+  tags: iot,hp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HP Color LaserJet<td class="mastheadTitle"><h1>HP Color LaserJet<strong
+      class="product">HP Color LaserJet<a href="info_deviceStatus.html?
+- request:
+    method: GET
+    path: /hp/device/this.LCDispatcher
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

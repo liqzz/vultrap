@@ -1,0 +1,27 @@
+id: seafile-api
+info:
+  name: Seafile API - Detect
+  author: righettod
+  description: 'Seafile API was detected.
+
+    '
+  severity: info
+  reference:
+  - https://download.seafile.com/published/web-api/home.md
+  - https://manual.seafile.com/
+  - https://www.seafile.com/en/home/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"seafile"
+  tags: exposure,api,detect
+traps:
+- request:
+    method: GET
+    path: /api2/server-info/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: seafile-basicseafile-pro

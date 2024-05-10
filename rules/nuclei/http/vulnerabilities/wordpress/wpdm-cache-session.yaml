@@ -1,0 +1,21 @@
+id: wpdm-cache-session
+info:
+  name: Wpdm-Cache Session
+  author: dhiyaneshDk
+  description: Leaked session of Wpdm Cache wordpress plugin.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/7004
+  metadata:
+    max-request: 1
+  tags: wordpress,edb
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/wpdm-cache/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /.txtwpdm-cache

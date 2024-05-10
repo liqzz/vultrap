@@ -1,0 +1,24 @@
+id: mautic-crm-panel
+info:
+  name: Mautic CRM Login Panel - Detect
+  author: cyllective,daffainfo
+  description: Mautic CRM login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/mautic/mautic
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,mautic,crm,panel
+traps:
+- request:
+    method: GET
+    path: /s/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Mautic</title>var mauticBasePath

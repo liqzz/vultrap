@@ -1,0 +1,40 @@
+id: opencart-panel
+info:
+  name: OpenCart Login Panel - Detect
+  author: ricardomaia
+  description: 'OpenCart login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.opencart.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:opencart:opencart:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: opencart
+    shodan-query: html:"OpenCart"
+    vendor: opencart
+    verified: true
+  tags: panel,opencart
+traps:
+- request:
+    method: GET
+    path: /admin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)footer\s.*OpenCart.*All.Rights.Reserved|img\s.*logo.*\salt=.*OpenCart(?i)Powered.By.*http.*OpenCart
+- request:
+    method: GET
+    path: /index.php?route=account/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

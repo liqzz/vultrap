@@ -1,0 +1,20 @@
+id: espeasy-installer
+info:
+  name: ESPEasy Installation Exposure
+  author: ritikchaddha
+  description: ESPEasy is susceptible to the Installation page exposure due to misconfiguration.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+  tags: misconfig,espeasy,install,exposure
+traps:
+- request:
+    method: GET
+    path: /ESPEasy
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Install ESPEasy

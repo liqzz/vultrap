@@ -1,0 +1,42 @@
+id: opcache-status-exposure
+info:
+  name: OPcache Status Page - Detect
+  author: pdteam
+  description: OPcache status page was detected.
+  severity: medium
+  reference: https://www.php.net/manual/en/book.opcache.php
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+  tags: config,exposure,status
+traps:
+- request:
+    method: GET
+    path: /opcache-status/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <th>opcache_enabled</th><th>opcache_hit_rate</th>
+- request:
+    method: GET
+    path: /php-opcache-status/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /opcache-status/opcache.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

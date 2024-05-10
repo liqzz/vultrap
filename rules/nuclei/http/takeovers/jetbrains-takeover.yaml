@@ -1,0 +1,21 @@
+id: jetbrains-takeover
+info:
+  name: Jetbrains Takeover Detection
+  author: pdteam
+  description: Jetbrains takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/pull/107
+  metadata:
+    max-request: 1
+  tags: takeover,jetbrains
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: is not a registered InCloud YouTrack.

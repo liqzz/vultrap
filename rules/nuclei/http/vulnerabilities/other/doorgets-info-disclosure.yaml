@@ -1,0 +1,28 @@
+id: doorgets-info-disclosure
+info:
+  name: DoorGets CMS v7.0 - Information Disclosure
+  author: r3Y3r53
+  description: 'doorGets 7.0 has a sensitive information disclosure vulnerability
+    in /setup/temp/admin.php. A remote unauthenticated attacker could exploit this
+    vulnerability to obtain administrator''s password.
+
+    '
+  severity: high
+  reference:
+  - https://packetstormsecurity.com/files/174236/DoorGets-CMS-7.0-Information-Disclosure.html
+  - https://sourceforge.net/projects/doorgets-cms/files/latest/download?source=directory
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: Powered with doorGets ™
+  tags: doorgets,cms,packetstorm,disclosure
+traps:
+- request:
+    method: GET
+    path: /v12/setup/temp/admin.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: :"email";:"password";

@@ -1,0 +1,34 @@
+id: ssh-authorized-keys
+info:
+  name: SSH Authorized Keys File - Detect
+  author: geeknik
+  description: SSH authorized keys file was detected.
+  severity: medium
+  reference:
+  - https://www.ssh.com/academy/ssh/authorized-key
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: config,exposure,ssh
+traps:
+- request:
+    method: GET
+    path: /.ssh/authorized_keys
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ssh-dssssh-ed25519ssh-rsaecdsa-sha2-nistp256
+- request:
+    method: GET
+    path: /_/.ssh/authorized_keys
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

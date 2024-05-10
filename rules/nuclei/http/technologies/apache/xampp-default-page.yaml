@@ -1,0 +1,20 @@
+id: xampp-default-page
+info:
+  name: XAMPP Default Page
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"XAMPP"
+  tags: tech,php,xampp,apache
+traps:
+- request:
+    method: GET
+    path: /dashboard/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome to XAMPP</title>

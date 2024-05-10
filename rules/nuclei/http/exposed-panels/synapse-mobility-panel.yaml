@@ -1,0 +1,26 @@
+id: synapse-mobility-panel
+info:
+  name: Synapse Mobility Login Panel - Detect
+  author: idealphase
+  description: Synapse Mobility login panel was detected.
+  severity: info
+  reference:
+  - https://synapse.fujifilm.eu/synapse-mobility.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"Synapse Mobility Login"
+    max-request: 1
+    shodan-query: http.title:"Synapse Mobility Login"
+  tags: panel,synapse
+traps:
+- request:
+    method: GET
+    path: /pureweb/server/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Synapse Mobility Login</title>

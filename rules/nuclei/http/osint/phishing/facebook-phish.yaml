@@ -1,0 +1,23 @@
+id: facebook-phish
+info:
+  name: Facebook phishing Detection
+  author: rxerium
+  description: 'A Facebook phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://facebook.com
+  metadata:
+    max-request: 1
+  tags: phishing,facebook,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Facebook – log in or sign up

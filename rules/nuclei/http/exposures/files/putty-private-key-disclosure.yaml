@@ -1,0 +1,86 @@
+id: putty-private-key-disclosure
+info:
+  name: Putty Private Key Disclosure
+  author: DhiyaneshDk,geeknik
+  description: Putty internal user key file is exposed.
+  severity: medium
+  reference:
+  - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/putty-private-key-disclosure.json
+  metadata:
+    verified: true
+    max-request: 8
+    github-query: filename:putty.ppk
+  tags: exposure,files
+traps:
+- request:
+    method: GET
+    path: /my.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'PuTTY-User-Key-FileEncryption:'
+- request:
+    method: GET
+    path: /putty.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.ssh/putty.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.ssh/.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.putty/my.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.putty/putty.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.putty/.ppk
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

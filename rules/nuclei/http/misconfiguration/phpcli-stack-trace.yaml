@@ -1,0 +1,21 @@
+id: phpcli-stack-trace
+info:
+  name: PHP CLI Server Stack Trace
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: The requested resource <code class="url">
+  tags: misconfig,phpcli,intrusive
+traps:
+- request:
+    method: GET
+    path: /.php
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: <code.*>/{{randstr}}.php.* this server.404 Not Found<h1>Not Found</h1>

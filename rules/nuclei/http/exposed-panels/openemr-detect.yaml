@@ -1,0 +1,27 @@
+id: openemr-detect
+info:
+  name: OpenEMR Product Registration Panel - Detect
+  author: pussycat0x
+  description: OpenEMR Product Registration panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:open-emr:openemr:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: app="OpenEMR"
+    max-request: 1
+    product: openemr
+    shodan-query: http.html:"OpenEMR"
+    vendor: open-emr
+  tags: panel,openemr,open-emr
+traps:
+- request:
+    method: GET
+    path: /interface/login/login.php?site=default
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"title":"OpenEMR Product Registration"'

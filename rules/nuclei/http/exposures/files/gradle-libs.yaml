@@ -1,0 +1,30 @@
+id: gradle-libs
+info:
+  name: Gradle Library Version Disclosure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    github-query: filename:libs.versions.toml
+  tags: file,gradle,exposure
+traps:
+- request:
+    method: GET
+    path: /gradle/libs.versions.toml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[versions][libraries][bundles]'
+- request:
+    method: GET
+    path: /libs.versions.toml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

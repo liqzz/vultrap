@@ -1,0 +1,26 @@
+id: f-secure-policy-manager
+info:
+  name: F-Secure Policy Manager Server Login Panel - Detect
+  author: dhiyaneshDK
+  description: F-Secure Policy Manager Server login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:withsecure:f-secure_policy_manager:*:*:*:*:windows:*:*:*
+  metadata:
+    max-request: 1
+    product: f-secure_policy_manager
+    shodan-query: http.title:"F-Secure Policy Manager Server"
+    vendor: withsecure
+  tags: login,panel,withsecure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>F-Secure Policy Manager Server</title>

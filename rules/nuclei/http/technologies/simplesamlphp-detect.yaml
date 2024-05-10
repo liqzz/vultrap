@@ -1,0 +1,34 @@
+id: simplesamlphp-detect
+info:
+  name: SimpleSAMLphp - Detect
+  author: righettod
+  description: 'SimpleSAMLphp was detected.
+
+    '
+  severity: info
+  reference:
+  - https://simplesamlphp.org/
+  metadata:
+    max-request: 1
+    verified: true
+    shodan-query: http.title:"SimpleSAMLphp installation page"
+  tags: tech,simplesamlphp,detect
+traps:
+- request:
+    method: GET
+    path: /simplesaml/module.php/core/frontpage_welcome.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /module.php/core/frontpage_welcome.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

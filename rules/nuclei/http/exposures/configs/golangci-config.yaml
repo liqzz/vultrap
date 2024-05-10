@@ -1,0 +1,55 @@
+id: golangci-config
+info:
+  name: GolangCI-Lint Configuration File - Detect
+  author: Hardik-Solanki
+  description: GolangCI-Lint configuration file was detected.
+  severity: info
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  - https://golangci-lint.run/usage/configuration/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 4
+    github-query: filename:golangci.yml
+  tags: exposure,golang,devops,cicd
+traps:
+- request:
+    method: GET
+    path: /.golangci.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'linters:linters-settings:'
+- request:
+    method: GET
+    path: /.golangci.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.golangci.toml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.golangci.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

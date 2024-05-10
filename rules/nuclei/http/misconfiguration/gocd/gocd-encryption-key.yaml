@@ -1,0 +1,24 @@
+id: gocd-encryption-key
+info:
+  name: GoCd Encryption Key
+  author: dhiyaneshDk
+  description: GoCd Encryption Key is exposed.
+  severity: low
+  reference:
+  - https://attackerkb.com/assessments/9101a539-4c6e-4638-a2ec-12080b7e3b50
+  - https://blog.sonarsource.com/gocd-pre-auth-pipeline-takeover
+  - https://twitter.com/wvuuuuuuuuuuuuu/status/1456316586831323140
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Create a pipeline - Go",html:"GoCD Version"
+  tags: go,gocd,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /go/add-on/business-continuity/api/cipher.aes
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ([a-z0-9]){32}

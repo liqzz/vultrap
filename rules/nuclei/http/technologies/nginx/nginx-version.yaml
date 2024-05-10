@@ -1,0 +1,20 @@
+id: nginx-version
+info:
+  name: Nginx version detect
+  author: philippedelteil,daffainfo
+  description: Some nginx servers have the version on the response header. Useful
+    when you need to find specific CVEs on your targets.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,nginx
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

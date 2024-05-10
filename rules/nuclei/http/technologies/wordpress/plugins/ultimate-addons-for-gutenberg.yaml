@@ -1,0 +1,23 @@
+id: wordpress-ultimate-addons-for-gutenberg
+info:
+  name: Spectra – WordPress Gutenberg Blocks Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/ultimate-addons-for-gutenberg/
+  metadata:
+    max-request: 1
+    plugin_namespace: ultimate-addons-for-gutenberg
+    wpscan: https://wpscan.com/plugin/ultimate-addons-for-gutenberg
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/ultimate-addons-for-gutenberg/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,36 @@
+id: structurizr-panel
+info:
+  name: Structurizr Panel - Detect
+  author: DhiyaneshDk
+  description: Structurizr login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:structurizr:on-premises_installation:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: on-premises_installation
+    shodan-query: http.favicon.hash:1199592666
+    vendor: structurizr
+    verified: true
+  tags: panel,structurizr,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Structurizralt="StructurizrstructurizrBackground
+- request:
+    method: GET
+    path: /signin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

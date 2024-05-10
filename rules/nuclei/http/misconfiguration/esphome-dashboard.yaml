@@ -1,0 +1,24 @@
+id: esphome-dashboard
+info:
+  name: ESPHome Dashboard Exposure
+  author: ritikchaddha
+  description: 'ESPHome Dashboard exposes the secrets like wifi password,api keys
+    and internal logs, it also allows users to make changes through the dashboard.
+
+    '
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Dashboard - ESPHome"
+  tags: misconfig,esphome,exposure,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dashboard - ESPHome

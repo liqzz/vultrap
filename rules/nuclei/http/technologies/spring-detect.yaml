@@ -1,0 +1,21 @@
+id: spring-detect
+info:
+  name: Java Spring Detection
+  author: Adam Crosser
+  description: null
+  severity: info
+  reference:
+  - https://mkyong.com/spring-boot/spring-rest-error-handling-example/
+  metadata:
+    max-request: 1
+  tags: tech,java,spring
+traps:
+- request:
+    method: GET
+    path: /error
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: '"status":999'

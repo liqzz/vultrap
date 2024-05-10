@@ -1,0 +1,30 @@
+id: dedecms-detect
+info:
+  name: DedeCMS Detect
+  author: ritikchaddha,pphuahua
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"dedecms" || http.html:"power by dedecms"
+  tags: dedecms,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Power by DedeCmsDedeCMS演示站DedeCMS
+- request:
+    method: GET
+    path: /robots.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /plus/search.php

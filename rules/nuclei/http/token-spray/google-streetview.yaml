@@ -1,0 +1,19 @@
+id: api-googlestreetview
+info:
+  name: Google Static Streetview API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,streetview
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

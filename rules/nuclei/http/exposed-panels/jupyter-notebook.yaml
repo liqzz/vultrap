@@ -1,0 +1,55 @@
+id: jupyter-notebook
+info:
+  name: Jupyter Notebook Login Panel - Detect
+  author: hakimkt,arafatansari
+  description: 'Jupyter Notebook login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7970
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+    shodan-query: http.html:"JupyterHub"
+  tags: edb,panel,jupyter,notebook,exposure
+traps:
+- request:
+    method: GET
+    path: /jupyter/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /jupyter/static/base/images/logo.png/jupyter/hub/logoSelect items to perform
+      actions on them.JupyterHub
+- request:
+    method: GET
+    path: /jupyter/lab
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jupyter/hub/lti/launch
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /hub/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

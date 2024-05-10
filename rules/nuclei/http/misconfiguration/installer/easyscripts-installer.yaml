@@ -1,0 +1,22 @@
+id: easyscripts-installer
+info:
+  name: Easyscripts Installer
+  author: theamanrawat
+  description: Easyscripts is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Installer - Easyscripts"
+  tags: misconfig,easyscripts,installer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Installer - Easyscripts

@@ -1,0 +1,37 @@
+id: osticket-install
+info:
+  name: osTicket Installer Panel - Detect
+  author: ritikchaddha
+  description: osTicket installer panel was detected.
+  severity: critical
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+    cpe: cpe:2.3:a:osticket:osticket:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: osticket
+    shodan-query: http.title:"osTicket Installer"
+    vendor: osticket
+    verified: true
+  tags: panel,osticket,install
+traps:
+- request:
+    method: GET
+    path: /upload/setup/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>osTicket Installeralready installed
+- request:
+    method: GET
+    path: /setup/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

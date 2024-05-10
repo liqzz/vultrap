@@ -1,0 +1,19 @@
+id: awstats-listing
+info:
+  name: AWStats Listing
+  author: tess
+  description: Searches for exposed awstats Internal Information.
+  severity: low
+  metadata:
+    max-request: 1
+  tags: misconfig,aws,exposure,amazon,awstats,oss
+traps:
+- request:
+    method: GET
+    path: /awstats/data
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /awstats/data/">awstats

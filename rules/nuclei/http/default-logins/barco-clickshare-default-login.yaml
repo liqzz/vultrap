@@ -1,0 +1,44 @@
+id: barco-clickshare-default-login
+info:
+  name: Barco ClickShare - Default Login
+  author: ritikchaddha
+  description: 'Barco ClickShare contains a default login vulnerability. Default login
+    password ''admin'' was found.
+
+    '
+  severity: high
+  metadata:
+    max-request: 3
+    shodan-query: ClickShareSession
+  tags: default-login,barco,clickshare
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /login/log_me_in
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'csrf_protection_token={{token}}&username={{username}}&password={{password}}&eula_accepted=true
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /configuration_wizard
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ClickShare Configuration Wizard

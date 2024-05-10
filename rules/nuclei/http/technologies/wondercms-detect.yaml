@@ -1,0 +1,19 @@
+id: wondercms-detect
+info:
+  name: WonderCMS Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,wondercms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Powered by WonderCMShttps://www.wondercms.com

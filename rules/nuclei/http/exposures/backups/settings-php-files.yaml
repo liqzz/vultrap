@@ -1,0 +1,77 @@
+id: settings-php-files
+info:
+  name: settings.php - Information Disclosure
+  author: sheikhrishad
+  description: settings.php source code was detected via backup files.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 7
+  tags: exposure,backup
+traps:
+- request:
+    method: GET
+    path: /settings.php.bak
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DB_NAMEDB
+- request:
+    method: GET
+    path: /settings.php.dist
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /settings.php.old
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /settings.php.save
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /settings.php.swp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /settings.php.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: config/settings.old.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

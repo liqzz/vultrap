@@ -1,0 +1,22 @@
+id: api-nytimes
+info:
+  name: NYTimes API Test
+  author: daffainfo
+  description: NYTimes API Test
+  severity: info
+  reference:
+  - https://developer.nytimes.com/apis
+  metadata:
+    max-request: 1
+  tags: token-spray,nytimes
+traps:
+- request:
+    method: GET
+    path: https://api.nytimes.com/svc/mostpopular/v2/shared/1.json?api-key=
+    headers:
+      Host: api.nytimes.com
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"status":"copyright":"num_results":'

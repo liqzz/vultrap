@@ -1,0 +1,29 @@
+id: vue-pacs-panel
+info:
+  name: Vue PACS - Panel
+  author: righettod
+  description: 'Vue PACS was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.usa.philips.com/healthcare/solutions/diagnostic-informatics/enterprise-imaging-pacs
+  classification:
+    cpe: cpe:2.3:a:philips:vue_pacs:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: vue_pacs
+    shodan-query: http.title:"Vue PACS"
+    vendor: philips
+    verified: true
+  tags: vue,pacs,panel,login,philips
+traps:
+- request:
+    method: GET
+    path: /portal/WebLogin.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Vue PACS</title>loginUsernameHiddenloginPasswordHidden

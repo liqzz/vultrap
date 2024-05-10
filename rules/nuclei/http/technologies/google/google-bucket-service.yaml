@@ -1,0 +1,19 @@
+id: google-bucket-service
+info:
+  name: Detect websites using Google bucket storage
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: google,tech,bucket
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

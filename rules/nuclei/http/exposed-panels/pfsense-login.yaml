@@ -1,0 +1,30 @@
+id: pfsense-login
+info:
+  name: pfSense Login Panel - Detect
+  author: idealphase
+  description: pfSense login panel was detected.
+  severity: info
+  reference:
+  - https://www.pfsense.org/download/
+  - https://www.pfsense.org/getting-started/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:pfsense:pfsense:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"pfSense - Login"
+    max-request: 1
+    product: pfsense
+    shodan-query: http.title:"pfSense - Login"
+    vendor: pfsense
+  tags: panel,pfsense
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>pfSense - Login</title>

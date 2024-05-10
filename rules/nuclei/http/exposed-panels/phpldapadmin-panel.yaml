@@ -1,0 +1,39 @@
+id: phpldapadmin-panel
+info:
+  name: PHP LDAP Admin Panel - Detect
+  author: ritikchaddha,DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 3
+    shodan-query: title:"phpLDAPadmin"
+    verified: true
+  tags: php,phpldapadmin,panel,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: phpLDAPadmin (/projects/phpldapadminalt="phpLDAPadmin logo
+- request:
+    method: GET
+    path: /phpldapadmin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /htdocs/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

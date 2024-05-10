@@ -1,0 +1,36 @@
+id: concrete5-install
+info:
+  name: Concrete5 Install Panel
+  author: osamahamad,princechaddha
+  description: A Concrete5 installation panel was discovered.
+  severity: critical
+  reference:
+  - https://documentation.concretecms.org/developers/introduction/installing-concrete-cms
+  classification:
+    cpe: cpe:2.3:a:concrete5:concrete5:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: concrete5
+    shodan-query: http.title:"Install concrete5"
+    vendor: concrete5
+    verified: true
+  tags: panel,install,concrete,cms,concrete5
+traps:
+- request:
+    method: GET
+    path: /index.php/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Install concrete5</title>
+- request:
+    method: GET
+    path: /concrete5/index.php/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

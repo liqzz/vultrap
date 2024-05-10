@@ -1,0 +1,114 @@
+id: vbulletin-path-disclosure
+info:
+  name: vBulletin - Full Path Disclosure
+  author: MaStErChO
+  description: null
+  severity: info
+  reference:
+  - https://github.com/OWASP/vbscan/blob/master/modules/pathdisclure.pl
+  metadata:
+    verified: true
+    max-request: 11
+    shodan-query: title:"vBulletin"
+  tags: config,exposure,fpd,vbulletin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: vBulletin
+- request:
+    method: GET
+    path: /forumdisplay.php?do[]=[test.dll]
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <strong>Warning</strong>:Cannot modify header information/strong> on linetrim()
+      expects parameterclass_core.phpheader already sentFatal error
+- request:
+    method: GET
+    path: /calendar.php?do[]=[test.dll]
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /search.php?do[]=[test.dll]
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /forumrunner/include/album.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /core/vb5/route/channel.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /core/vb5/route/conversation.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /includes/api/interface/noncollapsed.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /includes/api/interface/collapsed.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /vbseo_sitemap/addons/vbseo_sm_vba.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /vbseo_sitemap/addons/vbseo_sm_vba_links.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

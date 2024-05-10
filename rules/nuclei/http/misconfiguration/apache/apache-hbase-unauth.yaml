@@ -1,0 +1,19 @@
+id: apache-hbase-unauth
+info:
+  name: Apache Hbase Unauth
+  author: pikpikcu
+  description: Apache Hbase is exposed.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: apache,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <name>hbase.defaults.for.version</name><source>hbase-default.xml</source>

@@ -1,0 +1,23 @@
+id: api-thedogapi
+info:
+  name: TheDogApi API Test
+  author: daffainfo
+  description: Pictures of dogs from Tumblr
+  severity: info
+  reference:
+  - https://docs.thedogapi.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/thedogapi
+  metadata:
+    max-request: 1
+  tags: token-spray,thedogapi
+traps:
+- request:
+    method: GET
+    path: https://api.thedogapi.com/v1/votes
+    headers:
+      x-api-key: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'id":image_id":sub_id":'

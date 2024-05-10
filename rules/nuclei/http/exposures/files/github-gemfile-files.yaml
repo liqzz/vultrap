@@ -1,0 +1,28 @@
+id: github-gemfile-files
+info:
+  name: Github Gemfiles
+  author: hahwul
+  description: Find github page files(Gemfile / Gemfile.lock)
+  severity: info
+  metadata:
+    max-request: 2
+  tags: github,exposure,files
+traps:
+- request:
+    method: GET
+    path: /Gemfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: https://rubygems.orgsourcegemhttps://rubygems.orgremotespecs
+- request:
+    method: GET
+    path: /Gemfile.lock
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

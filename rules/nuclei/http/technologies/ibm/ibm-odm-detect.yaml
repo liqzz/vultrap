@@ -1,0 +1,25 @@
+id: ibm-odm-detect
+info:
+  name: IBM Operational Decision Manager - Detect
+  author: DhiyaneshDK
+  description: 'IBM Operational Decision Manager was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.ibm.com/products/operational-decision-manager
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: icon_hash="707491698"
+  tags: ibm,decision-center,tech,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>IBM ODM</title>

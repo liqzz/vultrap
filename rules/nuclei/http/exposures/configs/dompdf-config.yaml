@@ -1,0 +1,71 @@
+id: dompdf-config
+info:
+  name: DomPDF - Configuration Page
+  author: kazet
+  description: 'DOMPDF Configuration page was detected, which contains paths, library
+    versions and other potentially sensitive information
+
+    '
+  severity: low
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 6
+    fofa-query: title="dompdf - The PHP 5 HTML to PDF Converter"
+  tags: config,exposure,dompdf
+traps:
+- request:
+    method: GET
+    path: /www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HTML to PDF Converter</title><td class="title">DOMPDF_PDF_BACKEND</td>
+- request:
+    method: GET
+    path: /dompdf/dompdf/www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /js/dompdf/www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /portal/application/libraries/dompdf/www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sites/all/libraries/dompdf/www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /vendor/dompdf/dompdf/www/setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

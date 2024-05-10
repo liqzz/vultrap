@@ -1,0 +1,28 @@
+id: axiom-digitalocean-key-exposure
+info:
+  name: DigitalOcean Key Exposure via Axiom
+  author: geeknik
+  description: Axiom is a dynamic infrastructure framework to efficiently work with
+    multi-cloud environments.
+  severity: critical
+  remediation: Restrict access to the do.json file or upgrade to a newer version of
+    Axiom
+  reference:
+  - https://github.com/pry0cc/axiom
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-425
+  metadata:
+    max-request: 1
+  tags: axiom,digitalocean,key,exposure
+traps:
+- request:
+    method: GET
+    path: /.axiom/accounts/do.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"do_key""region""provider"'

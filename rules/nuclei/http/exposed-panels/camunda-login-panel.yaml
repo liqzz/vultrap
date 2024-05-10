@@ -1,0 +1,33 @@
+id: camunda-login-panel
+info:
+  name: Camunda Login Panel - Detect
+  author: alifathi-h1
+  description: Camunda login panel was detected.
+  severity: info
+  reference:
+  - https://docs.camunda.org/manual/7.15/webapps/admin/user-management/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: camunda,panel,login
+traps:
+- request:
+    method: GET
+    path: /app/welcome/default/#!/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Camunda Welcome
+- request:
+    method: GET
+    path: /camunda/app/welcome/default/#!/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

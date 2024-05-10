@@ -1,0 +1,20 @@
+id: smtp2go-detect
+info:
+  name: SMTP2GO Detect
+  author: pikpikcu,righettod
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"smtp2go"
+  tags: tech,smtp2go
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SMTP2GO</title>2022 &copy; SMTP2GO.mailto:ticket@smtp2go.comhref="https://www.smtp2go.com/"

@@ -1,0 +1,21 @@
+id: codemeter-webadmin
+info:
+  name: CodeMeter Webadmin Dashboard
+  author: DhiyaneshDk
+  description: CodeMeter Webadmin Dashboard is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"CodeMeter"
+  tags: misconfig,exposure,codemeter
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WebAdmin | DashboardCodeMeter

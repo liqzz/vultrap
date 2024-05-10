@@ -1,0 +1,21 @@
+id: unauth-mercurial
+info:
+  name: Unauthenticated Mercurial Detect
+  author: pussycat0x
+  description: Mercurial repositories index is disclosed.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Mercurial repositories index"
+  tags: misconfig,unauth,mercurial
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Mercurial RepositoriesLast modified

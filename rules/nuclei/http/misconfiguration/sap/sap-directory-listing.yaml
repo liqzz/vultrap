@@ -1,0 +1,19 @@
+id: sap-directory-listing
+info:
+  name: SAP Directory Listing
+  author: dhiyaneshDK
+  description: SAP Directory Listing is enabled.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: sap,listing,misconfig
+traps:
+- request:
+    method: GET
+    path: /irj/go/km/navigation/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: title="~system"NetWeaver

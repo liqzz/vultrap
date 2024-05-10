@@ -1,0 +1,24 @@
+id: tuxedo-connected-controller
+info:
+  name: Tuxedo Connected Controller Login Panel - Detect
+  author: dhiyaneshDk
+  description: Tuxedo Connected Controller login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6486
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,tuxedo,edb
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tuxedo Connected Controller</title>

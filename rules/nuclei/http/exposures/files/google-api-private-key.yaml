@@ -1,0 +1,40 @@
+id: google-api-private-key
+info:
+  name: Google Api Private Key
+  author: DhiyaneshDK
+  description: Google API private keys are exposed in files.
+  severity: medium
+  reference: https://www.exploit-db.com/ghdb/6037
+  metadata:
+    verified: true
+    max-request: 3
+    google-query: intitle:"index of" "google-api-private-key.json"
+  tags: exposure,cloud,google,devops,files
+traps:
+- request:
+    method: GET
+    path: /google-api-private-key.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: private_key_idprivate_key
+- request:
+    method: GET
+    path: /app/config/pimcore/google-api-private-key.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /pimcore/app/config/pimcore/google-api-private-key.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

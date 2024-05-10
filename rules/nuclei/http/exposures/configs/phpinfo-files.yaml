@@ -1,0 +1,26 @@
+id: phpinfo-files
+info:
+  name: PHPinfo Page - Detect
+  author: pdteam,daffainfo,meme-lord,dhiyaneshDK,wabafet,mastercho
+  description: 'PHPinfo page was detected. The output of the phpinfo() command can
+    reveal sensitive and detailed PHP environment information.
+
+    '
+  severity: low
+  remediation: Remove PHP Info pages from publicly accessible sites, or restrict access
+    to authorized users only.
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 25
+  tags: config,exposure,phpinfo
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PHP ExtensionPHP Version

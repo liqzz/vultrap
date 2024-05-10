@@ -1,0 +1,24 @@
+id: api-mojoauth
+info:
+  name: MojoAuth API Test
+  author: daffainfo
+  description: Secure and modern passwordless authentication platform
+  severity: info
+  reference:
+  - https://mojoauth.com/docs/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/mojoauth
+  metadata:
+    max-request: 1
+  tags: token-spray,mojoauth
+traps:
+- request:
+    method: POST
+    path: https://api.mojoauth.com/token/jwks
+    headers:
+      Host: api.mojoauth.com
+      X-API-Key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"keys""kty""kid"'

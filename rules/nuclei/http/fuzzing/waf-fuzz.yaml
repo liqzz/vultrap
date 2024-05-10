@@ -1,0 +1,35 @@
+id: waf-fuzz
+info:
+  name: WAF Fuzzing
+  author: dwisiswant0,lu4nx,Myst7ic
+  description: A web application firewall was detected.
+  severity: info
+  reference:
+  - https://github.com/Ekultek/WhatWaf
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 58
+  tags: waf,fuzz
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: '_={{whatwaf-payloads}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)instartrequestid
+- request:
+    method: GET
+    path: /?_=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

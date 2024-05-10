@@ -1,0 +1,21 @@
+id: lvm-exporter-metrics
+info:
+  name: LVM Exporter Metrics
+  author: DhiyaneshDk
+  description: LVM Exporter Metrics is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"LVM Exporter"
+  tags: lvm,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '# HELPlvm_'

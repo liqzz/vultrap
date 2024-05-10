@@ -1,0 +1,24 @@
+id: api-airtable
+info:
+  name: Airtable API Test
+  author: daffainfo
+  description: Integrate with Airtable
+  severity: info
+  reference:
+  - https://airtable.com/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/airtable
+  metadata:
+    max-request: 1
+  tags: token-spray,airtable
+traps:
+- request:
+    method: GET
+    path: https://api.airtable.com/v0/meta/bases
+    headers:
+      Host: api.airtable.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"bases""id""name"'

@@ -1,0 +1,26 @@
+id: shopify-takeover
+info:
+  name: shopify takeover detection
+  author: pdteam,philippedelteil,Imjust0
+  description: shopify takeover was detected.
+  severity: high
+  reference:
+  - https://medium.com/@thebuckhacker/how-to-do-55-000-subdomain-takeover-in-a-blink-of-an-eye-a94954c3fc75
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/32
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/46
+  - https://hackerone.com/reports/1711890
+  metadata:
+    max-request: 1
+  tags: takeover,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: To finish setting up your new web address, go to your domain settings, click
+      "Connect existing domain"Sorry, this shop is currently unavailable.Sorry, this
+      store is currently unavailable.shop-not-found

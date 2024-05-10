@@ -1,0 +1,23 @@
+id: reddit-phish
+info:
+  name: reddit phishing Detection
+  author: rxerium
+  description: 'A reddit phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://reddit.com
+  metadata:
+    max-request: 1
+  tags: phishing,reddit,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Reddit - Dive into anything

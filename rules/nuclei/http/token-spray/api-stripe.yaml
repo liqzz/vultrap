@@ -1,0 +1,22 @@
+id: api-stripe
+info:
+  name: Stripe API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://stripe.com/docs/api/authentication
+  metadata:
+    max-request: 1
+  tags: token-spray,stripe
+traps:
+- request:
+    method: GET
+    path: https://api.stripe.com/v1/charges
+    headers:
+      Authorization: Basic {{base64(token + ':')}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"object":"url":"data":'

@@ -1,0 +1,20 @@
+id: web-ftp-detect
+info:
+  name: Web FTP Detection
+  author: pussycat0x
+  description: null
+  severity: info
+  reference: https://www.exploit-db.com/ghdb/7013
+  metadata:
+    max-request: 1
+  tags: webftp,tech,ftp
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/upload/web-ftp.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Web-FTPsquare login

@@ -1,0 +1,21 @@
+id: owncloud-status-page
+info:
+  name: Owncloud StatusPage detection
+  author: myztique,invisiblethreat
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"owncloud"
+  tags: tech,owncloud,status
+traps:
+- request:
+    method: GET
+    path: /status.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"versionstring":"installed":"edition":'

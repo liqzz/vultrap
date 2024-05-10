@@ -1,0 +1,29 @@
+id: feiyuxing-default-login
+info:
+  name: Feiyuxing Enterprise-Level Management System - Default Login
+  author: SleepingBag945
+  description: 'Attackers can log in through admin:admin, check the system status,
+    and configure the device.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/wushigudan/poc/blob/main/%E9%A3%9E%E9%B1%BC%E6%98%9F%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81.py
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title="飞鱼星企业级智能上网行为管理系统"
+  tags: feiyuxing,default-login,iot
+traps:
+- request:
+    method: POST
+    path: /send_order.cgi?parameter=login
+    headers:
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    body: '{"username":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"msg":"ok""type":'

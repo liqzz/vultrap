@@ -1,0 +1,21 @@
+id: umbraco-installer
+info:
+  name: Umbraco Install Exposure
+  author: DhiyaneshDk
+  description: Umbraco is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Install Umbraco"
+  tags: misconfig,umbraco,install,oss
+traps:
+- request:
+    method: GET
+    path: /install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Install UmbracoumbracoInstallPageBody

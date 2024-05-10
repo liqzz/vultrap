@@ -1,0 +1,27 @@
+id: microfocus-filr-panel
+info:
+  name: Micro Focus Filr Login Panel - Detect
+  author: ritikchaddha
+  description: Micro Focus Filr login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:microfocus:filr:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: filr
+    shodan-query: http.html:"Micro Focus Filr"
+    vendor: microfocus
+    verified: true
+  tags: panel,microfocus,filr
+traps:
+- request:
+    method: GET
+    path: /filr/login
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Micro Focus Filr

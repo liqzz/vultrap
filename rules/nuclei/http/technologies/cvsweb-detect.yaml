@@ -1,0 +1,29 @@
+id: cvsweb-detect
+info:
+  name: CVSweb - Detect
+  author: lu4nx
+  description: 'CVSweb is a WWW interface for CVS repositories with which you can
+    browse a file hierarchy on your browser to view each file''s revision history
+    in a very handy manner.
+
+    '
+  severity: info
+  reference:
+  - https://cvsweb.openbsd.org/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"cvsweb"
+    fofa-query: title="cvsweb"
+    zoomeye-query: title:cvsweb
+  tags: tech,cvsweb,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content=".*CVSweb.*"

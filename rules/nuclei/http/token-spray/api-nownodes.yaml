@@ -1,0 +1,26 @@
+id: api-nownodes
+info:
+  name: Nownodes API Test
+  author: daffainfo
+  description: Blockchain-as-a-service solution that provides high-quality connection
+    via API
+  severity: info
+  reference:
+  - https://nownodes.io/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/nownodes
+  metadata:
+    max-request: 1
+  tags: token-spray,nownodes
+traps:
+- request:
+    method: GET
+    path: https://bsc-blockbook.nownodes.io/api
+    headers:
+      Host: bsc-blockbook.nownodes.io
+      api-key: '{{token}}'
+      Content-Type: application/json
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"coin":"host":"version":'

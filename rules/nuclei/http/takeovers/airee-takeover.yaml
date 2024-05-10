@@ -1,0 +1,21 @@
+id: airee-takeover
+info:
+  name: Airee Takeover Detection
+  author: pdteam
+  description: Airee takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/104
+  metadata:
+    max-request: 1
+  tags: takeover,airee
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Ошибка 402. Сервис Айри.рф не оплачен

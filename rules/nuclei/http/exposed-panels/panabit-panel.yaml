@@ -1,0 +1,25 @@
+id: panabit-panel
+info:
+  name: Panabit Login Panel - Detect
+  author: ffffffff0x
+  description: Panabit login panel was detected.
+  severity: info
+  reference:
+  - https://www.panabit.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: app="Panabit-智能网关"
+    max-request: 1
+  tags: panabit,panel
+traps:
+- request:
+    method: GET
+    path: /login/login.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Panabit</title>

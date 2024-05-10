@@ -1,0 +1,33 @@
+id: wp-security-open-redirect
+info:
+  name: WordPress All-in-One Security <=4.4.1 - Open Redirect
+  author: akincibor
+  description: 'WordPress All-in-One Security plugin through 4.4.1 contains an open
+    redirect vulnerability which can expose the actual URL of the hidden login page
+    feature. An attacker can redirect a user to a malicious site and possibly obtain
+    sensitive information, modify data, and/or execute unauthorized operations.
+
+    '
+  severity: medium
+  remediation: Upgrade to 4.4.2 or later.
+  reference:
+  - https://wpscan.com/vulnerability/9898
+  - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-all-in-one-wp-security-firewall-open-redirect-4-4-1
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-601
+  metadata:
+    verified: true
+    max-request: 1
+  tags: wp-plugin,redirect,wordpress,wp,wpscan
+traps:
+- request:
+    method: GET
+    path: /?aiowpsec_do_log_out=1&after_logout=https://interact.sh
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

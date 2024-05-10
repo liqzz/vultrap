@@ -1,0 +1,25 @@
+id: aspnet-soap-webservices-asmx
+info:
+  name: SOAP-based ASP.NET web services ASMX - Detect
+  author: righettod
+  description: 'SOAP-based ASP.NET web services collection was detected.
+
+    '
+  severity: info
+  reference:
+  - https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/write-web-service
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:".asmx?WSDL"
+  tags: config,exposure,asmx,soap
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .asmx?op=.asmx?WSDL.asmx?disco

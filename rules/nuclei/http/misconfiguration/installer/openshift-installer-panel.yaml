@@ -1,0 +1,25 @@
+id: openshift-installer-panel
+info:
+  name: OpenShift Assisted Installer Panel - Detect
+  author: DhiyaneshDk
+  description: OpenShift Assisted Installer panel was detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:L
+    cvss-score: 4.6
+    cwe-id: CWE-284
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"OpenShift Assisted Installer"
+  tags: panel,openshift,cluster,misconfig
+traps:
+- request:
+    method: GET
+    path: /clusters
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OpenShift Assisted Installer

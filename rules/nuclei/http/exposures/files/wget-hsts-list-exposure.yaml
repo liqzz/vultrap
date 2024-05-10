@@ -1,0 +1,21 @@
+id: wget-hsts-list-exposure
+info:
+  name: WGET HSTS List Exposure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:".wget-hsts"
+  tags: devops,exposure,wget,files
+traps:
+- request:
+    method: GET
+    path: /.wget-hsts
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HSTS 1.0 Known Hosts database for GNU Wget

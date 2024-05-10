@@ -1,0 +1,25 @@
+id: easyjob-panel
+info:
+  name: EasyJOB Login Panel - Detect
+  author: righettod
+  description: 'EasyJOB login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.en.because-software.com/software/easyjob/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Log in - easyJOB"
+    verified: true
+  tags: panel,easyjob,login
+traps:
+- request:
+    method: GET
+    path: /easy/app/Account/Login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: easyJOB/easy/app/because-software.com

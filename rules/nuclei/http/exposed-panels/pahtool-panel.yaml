@@ -1,0 +1,25 @@
+id: pahtool-panel
+info:
+  name: PAHTool Login Panel - Detect
+  author: righettod
+  description: 'PAHTool login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - http://www.inovultus.com/index.html
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"PAHTool"
+    verified: true
+  tags: panel,pahtool,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '>PAHTool'

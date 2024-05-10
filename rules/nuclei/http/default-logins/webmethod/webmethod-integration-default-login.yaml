@@ -1,0 +1,35 @@
+id: webmethod-integration-default-login
+info:
+  name: WebMethod Integration Server Default Login
+  author: ChristianPoeschl,OleWagner,usdAG
+  description: null
+  severity: high
+  reference:
+  - https://documentation.softwareag.com/
+  metadata:
+    verified: true
+    max-request: 5
+    shodan-query: http.favicon.hash:-234335289
+  tags: default-login,webmethod
+traps:
+- request:
+    method: GET
+    path: /invoke/pub.file/getFile
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /invoke/pub.file/getFile
+    headers:
+      Authorization: '{{base64(username + '':'' + password)}}'
+      Cookie: ssnid=
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: com.wm.app.b2b.serverNo filename suppliedcom.wm.app.b2b.server.AccessExceptionInvalid
+      credentials

@@ -1,0 +1,26 @@
+id: internet-service
+info:
+  name: Fuji Xerox Internet Services Panel - Detect
+  author: dhiyaneshDK
+  description: Fuji Xerox Internet Services panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/5948
+  - https://www.support.xerox.com/en-us/article/en/1852141
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: iot,edb,panel
+traps:
+- request:
+    method: GET
+    path: /default.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Internet Services</title>

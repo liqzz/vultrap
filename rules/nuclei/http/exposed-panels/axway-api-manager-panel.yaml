@@ -1,0 +1,21 @@
+id: axway-api-manager-panel
+info:
+  name: Axway API Manager Panel - Detect
+  author: johnk3r
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Axway API Manager Login"
+    verified: true
+  tags: panel,axway,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Axway API Manager Login</title>

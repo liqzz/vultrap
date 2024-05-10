@@ -1,0 +1,24 @@
+id: adobe-coldfusion-error-detect
+info:
+  name: Adobe ColdFusion Detector
+  author: philippedelteil
+  description: With this template we can detect a running ColdFusion instance due
+    to an error page.
+  severity: info
+  reference:
+  - https://twitter.com/PhilippeDelteil/status/1418622775829348358
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.component:"Adobe ColdFusion"
+  tags: adobe,coldfusion,tech
+traps:
+- request:
+    method: GET
+    path: /_something_.cfm
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: ColdFusion documentation

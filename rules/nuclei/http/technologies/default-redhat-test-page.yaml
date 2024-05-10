@@ -1,0 +1,21 @@
+id: default-redhat-test-page
+info:
+  name: Red Hat Enterprise Linux Test Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Test Page for the Apache HTTP Server on Red Hat Enterprise
+      Linux"
+  tags: tech,redhat
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Test Page for the Apache HTTP Server on Red Hat Enterprise Linux</title>

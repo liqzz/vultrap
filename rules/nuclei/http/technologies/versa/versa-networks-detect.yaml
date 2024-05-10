@@ -1,0 +1,77 @@
+id: versa-networks-detect
+info:
+  name: Versa Networks Detection
+  author: c-sh0
+  description: null
+  severity: info
+  reference:
+  - https://versa-networks.com/products/components/
+  metadata:
+    verified: true
+    max-request: 7
+    shodan-query: html:"Versa Networks"
+  tags: tech,versa
+traps:
+- request:
+    method: GET
+    path: /favicon.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /images/versalogo.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /images/versalogo2.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /common/images/Logo.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /versa/dist/images/versa-logo.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /versa/styles/img/versa-logo.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /versa/app/img/versa-logo.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

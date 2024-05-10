@@ -1,0 +1,24 @@
+id: api-bitcoinaverage
+info:
+  name: BitcoinAverage API Test
+  author: daffainfo
+  description: Digital Asset Price Data for the blockchain industry
+  severity: info
+  reference:
+  - https://apiv2.bitcoinaverage.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/bitcoinaverage
+  metadata:
+    max-request: 1
+  tags: token-spray,bitcoinaverage
+traps:
+- request:
+    method: GET
+    path: https://apiv2.bitcoinaverage.com/exchanges/ticker/bitstamp
+    headers:
+      Host: apiv2.bitcoinaverage.com
+      x-ba-key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"name""display_name""url"'

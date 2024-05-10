@@ -1,0 +1,19 @@
+id: hashicorp-boundary-detect
+info:
+  name: HashiCorp Boundary Detect
+  author: codexlynx
+  description: Detects HashiCorp Boundary
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,hashicorp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HashiCorp Boundary

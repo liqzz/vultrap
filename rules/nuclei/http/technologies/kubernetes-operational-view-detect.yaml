@@ -1,0 +1,24 @@
+id: kubernetes-operational-view-detect
+info:
+  name: Kubernetes Operational View Detect
+  author: idealphase
+  description: null
+  severity: info
+  reference:
+  - https://github.com/hjacobs/kube-ops-view
+  - https://codeberg.org/hjacobs/kube-ops-view
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Kubernetes Operational View"
+  tags: tech,k8s,kubernetes,devops,kube
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Kubernetes Operational View

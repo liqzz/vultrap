@@ -1,0 +1,19 @@
+id: codeigniter-env
+info:
+  name: Codeigniter - .env File Discovery
+  author: emenalf
+  description: Codeigniter .env file was discovered.
+  severity: high
+  metadata:
+    max-request: 12
+  tags: config,exposure,codeigniter
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)(?m)^DB_(HOST|PASSWORD|DATABASE)

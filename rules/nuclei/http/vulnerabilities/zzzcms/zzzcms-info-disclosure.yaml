@@ -1,0 +1,29 @@
+id: zzzcms-info-disclosure
+info:
+  name: Zzzcms 1.75 - Information Disclosure
+  author: ritikchaddha
+  description: 'There is a rather strange file that directly echoes some content belonging
+    to the inaccessible zzz_config.php. The information leakage file is located in
+    plugins\webuploader\js\webconfig.php, and the management path name of the management
+    background can be obtained directly. No need to blast admin and add 3 digits anymore
+
+    '
+  severity: low
+  reference:
+  - https://xz.aliyun.com/t/7414
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"ZzzCMS"
+    fofa-query: title="ZzzCMS"
+  tags: zzzcms,info,disclosure
+traps:
+- request:
+    method: GET
+    path: /plugins/webuploader/js/webconfig.php
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: var adminpathvar imageMaxSize=

@@ -1,0 +1,67 @@
+id: adobe-coldfusion-detect
+info:
+  name: Adobe ColdFusion Detector
+  author: philippedelteil
+  description: With this template we can detect the version number of Coldfusion instances
+    based on their logos.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 6
+    shodan-query: http.component:"Adobe ColdFusion"
+  tags: adobe,coldfusion,tech
+traps:
+- request:
+    method: GET
+    path: /CFIDE/administrator/images/mx_login.gif
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cfide/administrator/images/mx_login.gif
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /CFIDE/administrator/images/background.jpg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cfide/administrator/images/background.jpg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /CFIDE/administrator/images/componentutilslogin.jpg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /cfide/administrator/images/componentutilslogin.jpg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

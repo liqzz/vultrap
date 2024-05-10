@@ -1,0 +1,19 @@
+id: emqx-detect
+info:
+  name: Emqx Detection
+  author: For3stCo1d
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,emqx
+traps:
+- request:
+    method: GET
+    path: /static/emq.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

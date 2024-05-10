@@ -1,0 +1,38 @@
+id: jalios-jcms-panel
+info:
+  name: Jalios JCMS Login Panel - Detect
+  author: righettod
+  description: Jalios JCMS login panel was detected.
+  severity: info
+  reference:
+  - https://www.jalios.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:jalios:jcms:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: jcms
+    shodan-query: html:"Jalios JCMS"
+    vendor: jalios
+    verified: true
+  tags: panel,jalios,jcms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="Jalios JCMSjalios-loginJCMS_login/jcms/
+- request:
+    method: GET
+    path: /front/privateLogin.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

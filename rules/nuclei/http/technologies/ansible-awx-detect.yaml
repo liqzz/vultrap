@@ -1,0 +1,23 @@
+id: ansible-awx-detect
+info:
+  name: Ansible AWX Detection
+  author: Adam Crosser
+  description: Detects Ansible AWX Instance
+  severity: info
+  reference:
+  - https://github.com/ansible/awx
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:'Select a frequency for snapshot retention'
+  tags: tech,ansible,awx
+traps:
+- request:
+    method: GET
+    path: /api/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"description":"AWX REST API"'

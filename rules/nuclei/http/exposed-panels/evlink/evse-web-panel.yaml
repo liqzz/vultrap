@@ -1,0 +1,35 @@
+id: evse-web-panel
+info:
+  name: EVSE Web Interface Panel - Detection
+  author: ritikchaddha
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:o:schneider-electric:evlink_charging_station_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: title="EVSE Web Interface"
+    max-request: 2
+    product: evlink_charging_station_firmware
+    shodan-query: title:"EVSE Web Interface"
+    vendor: schneider-electric
+    verified: true
+  tags: panel,evlink,evse,login,detect,schneider-electric
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: EVSE Web Interface</title>Charging station</title>
+- request:
+    method: GET
+    path: /cgi-bin/cgiServer?worker=LoginForm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

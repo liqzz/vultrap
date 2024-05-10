@@ -1,0 +1,21 @@
+id: ffserver-status
+info:
+  name: FFserver Status Detect
+  author: notnotnotveg,tess
+  description: FFserver status panel exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"ffserver Status"
+  tags: exposure,exposures,logs,ffserver
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ffserver StatusAvailable StreamsConnection Status

@@ -1,0 +1,22 @@
+id: api-pivotaltracker
+info:
+  name: PivotalTracker API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://www.pivotaltracker.com/help/api
+  metadata:
+    max-request: 1
+  tags: token-spray,pivotaltracker
+traps:
+- request:
+    method: GET
+    path: https://www.pivotaltracker.com/services/v5/me
+    headers:
+      X-TrackerToken: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: invalid_authenticationunauthenticated

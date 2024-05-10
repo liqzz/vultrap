@@ -1,0 +1,22 @@
+id: api-twitter
+info:
+  name: Twitter API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developer.twitter.com/en/docs/twitter-api/api-reference-index
+  metadata:
+    max-request: 1
+  tags: token-spray,twitter
+traps:
+- request:
+    method: GET
+    path: https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"account_name":"subscriptions_count_all":'

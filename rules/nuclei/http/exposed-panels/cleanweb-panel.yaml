@@ -1,0 +1,25 @@
+id: cleanweb-panel
+info:
+  name: CleanWeb Login Panel - Detect
+  author: righettod
+  description: 'CleanWeb login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://tentelemed.com/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"CleanWeb"
+    verified: true
+  tags: panel,cleanweb,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

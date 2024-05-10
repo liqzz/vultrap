@@ -1,0 +1,27 @@
+id: pandora-fms-console
+info:
+  name: Pandora FMS Mobile Console Login Panel - Detect
+  author: dhiyaneshDk
+  description: Pandora FMS Mobile Console login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6827
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:pandorafms:pandora_fms:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: pandora_fms
+    vendor: pandorafms
+  tags: panel,edb,pandorafms
+traps:
+- request:
+    method: GET
+    path: /pandora_console/mobile/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Pandora FMS mobile</title>

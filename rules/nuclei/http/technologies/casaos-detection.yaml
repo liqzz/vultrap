@@ -1,0 +1,23 @@
+id: casaos-detection
+info:
+  name: CasaOS Detection
+  author: pdteam
+  description: null
+  severity: info
+  reference:
+  - https://github.com/IceWhaleTech/CasaOS
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"/CasaOS-UI/public/index.html"
+    fofa-query: body="/CasaOS-UI/public/index.html"
+  tags: casaos,tech,oss
+traps:
+- request:
+    method: GET
+    path: /v1/sys/debug
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

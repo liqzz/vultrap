@@ -1,0 +1,19 @@
+id: aws-cloudfront-service
+info:
+  name: AWS Cloudfront service detection
+  author: jiheon-dev
+  description: Detect websites using AWS cloudfront service
+  severity: info
+  metadata:
+    max-request: 1
+  tags: aws,tech,service
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

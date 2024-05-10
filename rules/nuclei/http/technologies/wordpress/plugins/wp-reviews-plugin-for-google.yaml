@@ -1,0 +1,23 @@
+id: wordpress-wp-reviews-plugin-for-google
+info:
+  name: Widgets for Google Reviews Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wp-reviews-plugin-for-google/
+  metadata:
+    max-request: 1
+    plugin_namespace: wp-reviews-plugin-for-google
+    wpscan: https://wpscan.com/plugin/wp-reviews-plugin-for-google
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wp-reviews-plugin-for-google/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

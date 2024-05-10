@@ -1,0 +1,22 @@
+id: launchrock-takeover
+info:
+  name: Launchrock Takeover Detection
+  author: pdteam
+  description: Launchrock takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/74
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: It looks like you may have taken a wrong turn somewhere. Don't worry...it
+      happens to all of us.

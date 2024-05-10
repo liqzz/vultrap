@@ -1,0 +1,31 @@
+id: springboot-liquidbase
+info:
+  name: Springboot Liquidbase API
+  author: ELSFA7110
+  description: This liquibase endpoint provides information about database changes
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#liquibase
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure,liquibase
+traps:
+- request:
+    method: GET
+    path: /liquibase
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: liquibase"FILENAME":"
+- request:
+    method: GET
+    path: /actuator/liquibase
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

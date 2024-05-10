@@ -1,0 +1,39 @@
+id: apache-server-status
+info:
+  name: Apache Server Status Disclosure
+  author: thabisocn
+  description: 'Apache /server-status displays information about your Apache status.
+    If you are not using this feature, disable it.
+
+    '
+  severity: low
+  reference:
+  - https://www.exploit-db.com/ghdb/5548
+  - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/apache-server-status-detected/
+  - https://www.acunetix.com/vulnerabilities/web/apache-server-status-detected/
+  metadata:
+    verified: true
+    max-request: 2
+    google-query:
+    - site:*/server-status intext:"Apache server status for"
+    - site:*/server-info intext:"Apache server Information"
+  tags: misconfig,exposure,apache,debug
+traps:
+- request:
+    method: GET
+    path: /server-info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Server Version
+- request:
+    method: GET
+    path: /server-status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

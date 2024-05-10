@@ -1,0 +1,75 @@
+id: error-based-sql-injection
+info:
+  name: Error based SQL injection
+  author: geeknik
+  description: A SQL injection vulnerability was identified based on an error message
+    returned by the server.
+  severity: critical
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-89
+  metadata:
+    max-request: 1
+  tags: sqli,generic,error
+traps:
+- request:
+    method: GET
+    path: /'
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: "AdminerSQL syntax.{0,200}?MySQLWarning.{0,200}?\\Wmysqli?_MySQLSyntaxErrorExceptionvalid\
+      \ MySQL resultcheck the manual that (corresponds to|fits) your MySQL server\
+      \ versionUnknown column '[^ ]+' in 'field list'MySqlClient\\.com\\.mysql\\.jdbcZend_Db_(Adapter|Statement)_Mysqli_ExceptionPdo[./_\\\
+      ]MysqlMySqlExceptionSQLSTATE\\[\\d+\\]: Syntax error or access violationcheck\
+      \ the manual that (corresponds to|fits) your MariaDB server versioncheck the\
+      \ manual that (corresponds to|fits) your Drizzle server versionMemSQL does not\
+      \ support this type of queryis not supported by MemSQLunsupported nested scalar\
+      \ subselectPostgreSQL.{0,200}?ERRORWarning.{0,200}?\\Wpg_valid PostgreSQL resultNpgsql\\\
+      .PG::SyntaxError:org\\.postgresql\\.util\\.PSQLExceptionERROR:\\s\\ssyntax error\
+      \ at or nearERROR: parser: parse error at or nearPostgreSQL query failedorg\\\
+      .postgresql\\.jdbcPdo[./_\\]PgsqlPSQLExceptionDriver.{0,200}? SQL[\\-\\_\\ ]*ServerOLE\
+      \ DB.{0,200}? SQL Server\bSQL Server[^&lt;&quot;]+DriverWarning.{0,200}?\\W(mssql|sqlsrv)_\b\
+      SQL Server[^&lt;&quot;]+[0-9a-fA-F]{8}System\\.Data\\.SqlClient\\.SqlException\\\
+      .(SqlException|SqlConnection\\.OnError)(?s)Exception.{0,200}?\bRoadhouse\\.Cms\\\
+      .Microsoft SQL Native Client error '[0-9a-fA-F]{8}\\[SQL Server\\]ODBC SQL Server\
+      \ DriverODBC Driver \\d+ for SQL ServerSQLServer JDBC Drivercom\\.jnetdirect\\\
+      .jsqlmacromedia\\.jdbc\\.sqlserverZend_Db_(Adapter|Statement)_Sqlsrv_Exceptioncom\\\
+      .microsoft\\.sqlserver\\.jdbcPdo[./_\\](Mssql|SqlSrv)SQL(Srv|Server)ExceptionUnclosed\
+      \ quotation mark after the character stringMicrosoft Access (\\d+ )?DriverJET\
+      \ Database EngineAccess Database EngineODBC Microsoft AccessSyntax error \\\
+      (missing operator\\) in query expression\bORA-\\d{5}Oracle errorOracle.{0,200}?DriverWarning.{0,200}?\\\
+      W(oci|ora)_quoted string not properly terminatedSQL command not properly endedmacromedia\\\
+      .jdbc\\.oracleoracle\\.jdbcZend_Db_(Adapter|Statement)_Oracle_ExceptionPdo[./_\\\
+      ](Oracle|OCI)OracleExceptionCLI Driver.{0,200}?DB2DB2 SQL error\bdb2_\\w+\\\
+      (SQLCODE[=:\\d, -]+SQLSTATEcom\\.ibm\\.db2\\.jccZend_Db_(Adapter|Statement)_Db2_ExceptionPdo[./_\\\
+      ]IbmDB2Exceptionibm_db_dbi\\.ProgrammingErrorWarning.{0,200}?\\Wifx_Exception.{0,200}?InformixInformix\
+      \ ODBC DriverODBC Informix drivercom\\.informix\\.jdbcweblogic\\.jdbc\\.informixPdo[./_\\\
+      ]InformixIfxExceptionDynamic SQL ErrorWarning.{0,200}?\\Wibase_org\\.firebirdsql\\\
+      .jdbcPdo[./_\\]FirebirdSQLite/JDBCDriverSQLite\\.Exception(Microsoft|System)\\\
+      .Data\\.SQLite\\.SQLiteExceptionWarning.{0,200}?\\W(sqlite_|SQLite3::)\\[SQLITE_ERROR\\\
+      ]SQLite error \\d+:sqlite3.OperationalError:SQLite3::SQLExceptionorg\\.sqlite\\\
+      .JDBCPdo[./_\\]SqliteSQLiteExceptionSQL error.{0,200}?POS([0-9]+)Warning.{0,200}?\\\
+      Wmaxdb_DriverSapDB-3014.{0,200}?Invalid end of SQL statementcom\\.sap\\.dbtech\\\
+      .jdbc\\[-3008\\].{0,200}?: Invalid keyword or missing delimiterWarning.{0,200}?\\\
+      Wsybase_Sybase messageSybase.{0,200}?Server messageSybSQLExceptionSybase\\.Data\\\
+      .AseClientcom\\.sybase\\.jdbcWarning.{0,200}?\\Wingres_Ingres SQLSTATEIngres\\\
+      W.{0,200}?Drivercom\\.ingres\\.gcf\\.jdbcException (condition )?\\d+\\. Transaction\
+      \ rollbackcom\\.frontbase\\.jdbcSyntax error 1. Missing(Semantic|Syntax) error\
+      \ [1-4]\\d{2}\\.Unexpected end of command in statement \\[Unexpected token.{0,200}?in\
+      \ statement \\[org\\.hsqldb\\.jdbcorg\\.h2\\.jdbc\\[42000-192\\]![0-9]{5}![^\n\
+      ]+(failed|unexpected|error|syntax|expected|violation|exception)\\[MonetDB\\\
+      ]\\[ODBC Drivernl\\.cwi\\.monetdb\\.jdbcSyntax error: Encounteredorg\\.apache\\\
+      .derbyERROR 42X01, Sqlstate: (3F|42).{3}, (Routine|Hint|Position):/vertica/Parser/scancom\\\
+      .vertica\\.jdbcorg\\.jkiss\\.dbeaver\\.ext\\.verticacom\\.vertica\\.dsi\\.dataenginecom\\\
+      .mckoi\\.JDBCDrivercom\\.mckoi\\.database\\.jdbc&lt;REGEX_LITERAL&gt;com\\.facebook\\\
+      .presto\\.jdbcio\\.prestosql\\.jdbccom\\.simba\\.presto\\.jdbcUNION query has\
+      \ different number of fields: \\d+, \\d+Altibase\\.jdbc\\.drivercom\\.mimer\\\
+      .jdbcSyntax error,[^\n]+assumed to meanio\\.crate\\.client\\.jdbcencountered\
+      \ after end of queryA comparison operator is required here-10048: Syntax errorrdmStmtPrepare\\\
+      (.+?\\) returnedSQ074: Line \\d+:SR185: Undefined procedureSQ200: No table Virtuoso\
+      \ S0002 Error\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\\
+      ]"

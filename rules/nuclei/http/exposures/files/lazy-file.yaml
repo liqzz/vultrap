@@ -1,0 +1,19 @@
+id: lazy-file-manager
+info:
+  name: Lazy File Manager
+  author: amsda
+  description: lfm.php file in exposed in Lazy File Manager.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: exposure
+traps:
+- request:
+    method: GET
+    path: /lfm.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Lazy File Manager

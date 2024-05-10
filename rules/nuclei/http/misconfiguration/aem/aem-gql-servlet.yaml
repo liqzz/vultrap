@@ -1,0 +1,22 @@
+id: aem-gql-servlet
+info:
+  name: AEM GQLServlet
+  author: dhiyaneshDk,prettyboyaaditya
+  description: AEM GQLServlet is exposed.
+  severity: low
+  reference:
+  - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/index.html?org/apache/jackrabbit/commons/query/GQL.html
+  metadata:
+    max-request: 29
+    shodan-query: http.component:"Adobe Experience Manager"
+  tags: aem,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: excerptpathhits

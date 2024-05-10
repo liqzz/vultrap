@@ -1,0 +1,21 @@
+id: rsshub-detect
+info:
+  name: RSSHub Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-1893514038
+  tags: tech,rsshub
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

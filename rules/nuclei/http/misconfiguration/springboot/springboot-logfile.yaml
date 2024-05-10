@@ -1,0 +1,41 @@
+id: springboot-logfile
+info:
+  name: Detects Springboot Logfile Actuator
+  author: DhiyaneshDK
+  description: Springboot Logfile Actuator is exposed.
+  severity: low
+  reference:
+  - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: title:"Eureka"
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /logfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: springframework.web.HttpRequestMethodNotSupportedExceptionINFO
+- request:
+    method: GET
+    path: /actuator/logfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /actuators/logfile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

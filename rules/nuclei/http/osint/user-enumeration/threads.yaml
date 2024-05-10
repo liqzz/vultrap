@@ -1,0 +1,24 @@
+id: threads
+info:
+  name: Threads User Name Information - Detect
+  author: olearycrew
+  description: Threads user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+  tags: osint,osint-social,threads
+traps:
+- request:
+    method: GET
+    path: https://www.threads.net/@
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: user?username=Threads

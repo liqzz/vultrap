@@ -1,0 +1,22 @@
+id: aem-wcm-suggestions-servlet
+info:
+  name: AEM WCM Suggestions Servlet
+  author: DhiyaneshDk
+  description: AEM WCM Suggestions Servlet is exposed.
+  severity: low
+  reference:
+  - https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=96
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Adobe Experience Manager"
+  tags: aem,misconfig,intrusive
+traps:
+- request:
+    method: GET
+    path: /bin/wcm/contentfinder/connector/suggestions.json;%0aOJh.css?query_term=path%3a/&pre=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{randstr}}"results":"suggestions":'

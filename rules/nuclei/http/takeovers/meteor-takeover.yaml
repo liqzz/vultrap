@@ -1,0 +1,22 @@
+id: meteor-takeover
+info:
+  name: Meteor subdomain takeover
+  author: rivalsec
+  description: Meteor takeover was detected.
+  severity: high
+  reference:
+  - https://rivalsec.github.io/blog/2022/12/02/meteor.html
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/321
+  metadata:
+    max-request: 1
+  tags: takeover,meteor
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '404 Not Found: No applications registered for host '''

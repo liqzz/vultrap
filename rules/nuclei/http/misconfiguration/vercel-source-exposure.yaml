@@ -1,0 +1,26 @@
+id: vercel-source-exposure
+info:
+  name: Vercel Source Code Exposure
+  author: hlop
+  description: 'The Vercel Source Code Exposure misconfiguration allows an attacker
+    to access sensitive source code files on the Vercel platform.
+
+    '
+  severity: medium
+  reference:
+  - https://vercel.com/docs/projects/overview#logs-and-source-protection
+  metadata:
+    max-request: 1
+    fofa-query: cname_domain="vercel.app" || icon_hash="-2070047203"
+  tags: vercel,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /_src
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Deployment Source</title>Deployment Source – Dashboard – Vercel<title>Login
+      – Vercel</title>

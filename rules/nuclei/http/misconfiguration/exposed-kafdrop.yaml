@@ -1,0 +1,19 @@
+id: exposed-kafdrop
+info:
+  name: Publicly exposed Kafdrop Interface
+  author: dhiyaneshDk
+  description: Publicly Kafdrop Interface is exposed.
+  severity: low
+  metadata:
+    max-request: 1
+  tags: exposure,misconfig,kafdrop
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Kafdrop: Broker List</title>Kafka Cluster Overview'

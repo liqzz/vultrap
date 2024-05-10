@@ -1,0 +1,21 @@
+id: aws-object-listing
+info:
+  name: AWS bucket with Object listing
+  author: pdteam
+  description: Object listing is enabled in AWS bucket.
+  severity: low
+  reference:
+  - https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
+  metadata:
+    max-request: 1
+  tags: aws,misconfig,bucket
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <ListBucketResult xmlns=

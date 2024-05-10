@@ -1,0 +1,25 @@
+id: api-supportivekoala
+info:
+  name: Supportivekoala API Test
+  author: daffainfo
+  description: Autogenerate images with template
+  severity: info
+  reference:
+  - https://developers.supportivekoala.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/supportivekoala
+  metadata:
+    max-request: 1
+  tags: token-spray,supportivekoala
+traps:
+- request:
+    method: GET
+    path: https://api.supportivekoala.com/v1/images
+    headers:
+      Host: api.supportivekoala.com
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"_id""template""imageUrl"'

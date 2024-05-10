@@ -1,0 +1,29 @@
+id: ruckus-unleashed-panel
+info:
+  name: Ruckus Wireless Unleashed Login Panel - Detect
+  author: idealphase
+  description: Ruckus Wireless Unleashed login panel was detected.
+  severity: info
+  reference:
+  - https://www.commscope.com/ruckus/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:ruckuswireless:unleashed_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"Unleashed Login"
+    max-request: 1
+    product: unleashed_firmware
+    shodan-query: http.title:"Unleashed Login"
+    vendor: ruckuswireless
+  tags: panel,ruckus,ruckuswireless
+traps:
+- request:
+    method: GET
+    path: /admin/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Unleashed Login</title>

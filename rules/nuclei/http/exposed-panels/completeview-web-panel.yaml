@@ -1,0 +1,24 @@
+id: completeview-web-panel
+info:
+  name: CompleteView Panel - Detect
+  author: tess
+  description: CompleteView panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"CompleteView Web Client"
+    verified: true
+  tags: panel,completeview
+traps:
+- request:
+    method: GET
+    path: /en-US/login?return=/live-view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CompleteView Web Client

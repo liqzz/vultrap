@@ -1,0 +1,21 @@
+id: github-workflows-disclosure
+info:
+  name: Github Workflow Disclosure
+  author: dhiyaneshDk,geeknik
+  description: Github Workflow was exposed.
+  severity: medium
+  reference:
+  - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/github-workflows-disclosure.json
+  metadata:
+    max-request: 27
+  tags: exposure,config
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '(?m)^\s*"?on"?:(?m)^\s*"?jobs"?:(?m)^\s*"?steps"?:(?m)^\s*- "?uses"?:'

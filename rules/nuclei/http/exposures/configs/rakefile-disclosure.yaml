@@ -1,0 +1,25 @@
+id: rakefile-disclosure
+info:
+  name: Rakefile - File Disclosure
+  author: DhiyaneshDK
+  description: 'Rakefile configuration file was detected.
+
+    '
+  severity: info
+  reference:
+  - https://ruby.github.io/rake/doc/rakefile_rdoc.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Rakefile"
+  tags: devops,exposure,rakefile,config,ruby,rails
+traps:
+- request:
+    method: GET
+    path: /Rakefile
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'application.load_tasksconfig/applicationrequiredesctask :'

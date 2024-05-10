@@ -1,0 +1,24 @@
+id: wordpress-all-in-one-seo-pack
+info:
+  name: All in One SEO – Best WordPress SEO Plugin – Easily Improve SEO Rankings &
+    Increase Traffic Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/all-in-one-seo-pack/
+  metadata:
+    max-request: 1
+    plugin_namespace: all-in-one-seo-pack
+    wpscan: https://wpscan.com/plugin/all-in-one-seo-pack
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/all-in-one-seo-pack/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

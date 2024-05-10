@@ -1,0 +1,21 @@
+id: payara-micro-detect
+info:
+  name: Payara Micro Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: 'title:"Payara Micro #badassfish - Error report"'
+  tags: tech,payara
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: 'Payara Micro #badassfish - Error report'

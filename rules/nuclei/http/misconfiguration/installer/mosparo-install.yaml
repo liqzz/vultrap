@@ -1,0 +1,21 @@
+id: mosparo-install
+info:
+  name: mosparo Exposed Installation
+  author: DhiyaneshDK
+  description: mosparo is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Setup - mosparo"
+  tags: misconfig,mosparo,install
+traps:
+- request:
+    method: GET
+    path: /setup/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Setup - mosparo

@@ -1,0 +1,25 @@
+id: ibm-odm-panel
+info:
+  name: IBM Operational Decision Manager Panel - Detect
+  author: DhiyaneshDK
+  description: 'IBM Operational Decision Manager panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.ibm.com/docs/en/odm/8.12.0
+  metadata:
+    fofa-query: title="Decision Center | Business Console"
+    max-request: 1
+    verified: true
+  tags: panel,ibm,login,detect,decision-center
+traps:
+- request:
+    method: GET
+    path: /decisioncenter/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Decision Center | Business Console</title>

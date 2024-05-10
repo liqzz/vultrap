@@ -1,0 +1,23 @@
+id: softether-vpn-panel
+info:
+  name: SoftEther VPN Panel - Detect
+  author: bhutch
+  description: 'SoftEther VPN panel was detected.
+
+    '
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"SoftEther VPN Server"
+    verified: true
+  tags: panel,vpn,softether
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 202
+    headers: {}
+    body: <title>SoftEther VPN Server</title>

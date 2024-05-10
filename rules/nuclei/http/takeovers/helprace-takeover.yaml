@@ -1,0 +1,22 @@
+id: helprace-takeover
+info:
+  name: Helprace Takeover Detection
+  author: pdteam
+  description: Helprace takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/115
+  metadata:
+    max-request: 1
+  tags: takeover,helprace
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Alias not configured!Admin of this Helprace account needs to set up domain
+      alias

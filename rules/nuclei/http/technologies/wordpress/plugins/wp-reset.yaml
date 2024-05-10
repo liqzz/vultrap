@@ -1,0 +1,23 @@
+id: wordpress-wp-reset
+info:
+  name: WP Reset – Most Advanced WordPress Reset Tool Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wp-reset/
+  metadata:
+    max-request: 1
+    plugin_namespace: wp-reset
+    wpscan: https://wpscan.com/plugin/wp-reset
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wp-reset/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

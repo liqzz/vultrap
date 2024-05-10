@@ -1,0 +1,23 @@
+id: api-travisci
+info:
+  name: Travis CI API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developer.travis-ci.com/
+  tags: token-spray,travis
+  metadata:
+    max-request: 1
+traps:
+- request:
+    method: GET
+    path: https://api.travis-ci.com/user
+    headers:
+      Travis-API-Version: 3
+      Authorization: token {{token}}
+    body: null
+  response:
+    status_code: 403
+    headers: {}
+    body: ''

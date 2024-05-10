@@ -1,0 +1,22 @@
+id: api-europeana
+info:
+  name: Europeana API Test
+  author: daffainfo
+  description: European Museum and Galleries content
+  severity: info
+  reference:
+  - https://pro.europeana.eu/page/search
+  - https://github.com/daffainfo/all-about-apikey/tree/main/europeana
+  metadata:
+    max-request: 1
+  tags: token-spray,europeana
+traps:
+- request:
+    method: GET
+    path: https://api.europeana.eu/record/v2/search.json?wskey=&query=*&rows=0&profile=facets
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: successapikeyaction

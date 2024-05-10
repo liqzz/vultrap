@@ -1,0 +1,23 @@
+id: unauthenticated-varnish-cache-purge
+info:
+  name: Varnish Unauthenticated Cache Purge
+  author: 0xelkomy
+  description: As per guideline one should protect purges with ACLs from unauthorized
+    hosts.
+  severity: low
+  reference:
+  - https://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
+  - https://hackerone.com/reports/154278
+  metadata:
+    max-request: 1
+  tags: misconfig,cache,hackerone,varnish
+traps:
+- request:
+    method: PURGE
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>200 Purged</title>"status": "ok"'

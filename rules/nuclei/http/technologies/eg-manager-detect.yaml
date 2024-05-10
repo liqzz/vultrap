@@ -1,0 +1,19 @@
+id: eg-manager-detect
+info:
+  name: eG Manager Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,eg
+traps:
+- request:
+    method: GET
+    path: /final/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title> eG Innovations, Inc.</title>eG Innovations, Inc. All Rights Reserved

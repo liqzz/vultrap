@@ -1,0 +1,22 @@
+id: http-missing-security-headers
+info:
+  name: HTTP Missing Security Headers
+  author: socketz,geeknik,G4L1T0,convisoappsec,kurohost,dawid-czarnecki,forgedhallpass,jub0bs
+  description: 'This template searches for missing HTTP security headers. The impact
+    of these missing headers can vary.
+
+    '
+  severity: info
+  metadata:
+    max-request: 1
+  tags: misconfig,headers,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

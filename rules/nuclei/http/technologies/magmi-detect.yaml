@@ -1,0 +1,21 @@
+id: magmi-detect
+info:
+  name: MAGMI (Magento Mass Importer) Plugin Detect
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.component:"Magento"
+  tags: magento,magmi,plugin,tech
+traps:
+- request:
+    method: GET
+    path: /magmi/web/js/magmi_utils.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: magmi_multifield

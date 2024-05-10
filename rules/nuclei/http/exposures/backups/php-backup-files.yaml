@@ -1,0 +1,19 @@
+id: php-backup-files
+info:
+  name: PHP Source - Backup File Information Disclosure
+  author: StreetOfHackerR007,pwnhxl,mastercho,0xpugazh
+  description: PHP Source File is disclosed to external users.
+  severity: medium
+  metadata:
+    max-request: 1512
+  tags: exposure,backup,php,disclosure,fuzz
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <?php<?=?>($$_GET[$_POST[$_REQUEST[$_SERVER['DB_PASSWORD''DBPASS'database_typedefine('DB

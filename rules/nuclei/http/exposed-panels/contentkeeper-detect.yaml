@@ -1,0 +1,24 @@
+id: contentkeeper-detect
+info:
+  name: ContentKeeper Cloud Panel - Detect
+  author: geeknik
+  description: ContentKeeper Cloud panel was detected.
+  severity: info
+  reference:
+  - https://www.contentkeeper.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: contentkeeper,panel
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/ck/domenu.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ContentKeeper Technologies</div>ContentKeeper</span>.com

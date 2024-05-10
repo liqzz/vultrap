@@ -1,0 +1,33 @@
+id: woodwing-panel
+info:
+  name: Woodwing Studio Server Panel - Detect
+  author: pdteam,righettod
+  description: null
+  severity: info
+  reference:
+  - https://twitter.com/ynsmroztas/status/1680961398011047936
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"WoodWing Studio Server"
+    fofa-query: title=="WoodWing Studio Server"
+  tags: woodwing,panel
+traps:
+- request:
+    method: GET
+    path: /StudioServer/server/apps/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /server/apps/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

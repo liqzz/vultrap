@@ -1,0 +1,26 @@
+id: tomcat-default-login
+info:
+  name: Apache Tomcat Manager Default Login
+  author: pdteam,sinKettu,nybble04
+  description: Apache Tomcat Manager default login credentials were discovered. This
+    template checks for multiple variations.
+  severity: high
+  reference:
+  - https://www.rapid7.com/db/vulnerabilities/apache-tomcat-default-ovwebusr-password/
+  - https://github.com/danielmiessler/SecLists/blob/master/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt
+  metadata:
+    max-request: 405
+    shodan-query: title:"Apache Tomcat"
+  tags: tomcat,apache,default-login
+traps:
+- request:
+    method: GET
+    path: /manager/html
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Apache TomcatServer InformationTomcat VersionJVM VersionJVM VendorOS NameOS
+      VersionOS ArchitectureHostnameIP Address

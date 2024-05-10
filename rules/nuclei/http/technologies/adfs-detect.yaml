@@ -1,0 +1,19 @@
+id: adfs-detect
+info:
+  name: ADFS Detect
+  author: Adam Crosser
+  description: Detects ADFS with forms-based authentication enabled.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,adfs
+traps:
+- request:
+    method: GET
+    path: /adfs/ls/idpinitiatedsignon.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /adfs/portal/css/style.css

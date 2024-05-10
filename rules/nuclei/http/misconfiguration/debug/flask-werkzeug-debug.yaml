@@ -1,0 +1,21 @@
+id: flask-werkzeug-debug
+info:
+  name: Flask Werkzeug Debugger Exposure
+  author: DhiyaneshDk
+  description: Flask Werkzeug Debugger is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Werkzeug powered traceback interpreter"
+  tags: werkzeug,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: Werkzeug powered traceback interpreter

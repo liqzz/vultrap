@@ -1,0 +1,26 @@
+id: visionhub-default-login
+info:
+  name: VisionHub Default Login
+  author: Techryptic (@Tech)
+  description: VisionHub application default admin credentials were accepted.
+  severity: high
+  reference:
+  - https://www.qognify.com/products/visionhub/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: visionhub,default-login
+traps:
+- request:
+    method: POST
+    path: /VisionHubWebApi/api/Login
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

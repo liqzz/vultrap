@@ -1,0 +1,19 @@
+id: azure-kubernetes-service
+info:
+  name: Detect Azure Kubernetes Service
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,azure,k8s,kubernetes
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome to Azure Kubernetes Service (AKS)</title>

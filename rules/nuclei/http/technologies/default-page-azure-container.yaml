@@ -1,0 +1,21 @@
+id: default-page-azure-container
+info:
+  name: Azure Container Instance Default Page
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Welcome to Azure Container Instances!"
+  tags: tech,azure,cloud
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome to Azure Container Instances!</title>

@@ -1,0 +1,29 @@
+id: roundcube-webmail-portal
+info:
+  name: Roundcube webmail
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+    shodan-query: http.component:"RoundCube"
+  tags: roundcube,portal,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Roundcube Webmail
+- request:
+    method: GET
+    path: /webmail/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

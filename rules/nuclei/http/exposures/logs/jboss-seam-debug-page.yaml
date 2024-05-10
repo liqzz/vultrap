@@ -1,0 +1,21 @@
+id: jboss-seam-debug-page
+info:
+  name: Jboss Seam Debug Page Enabled
+  author: dhiyaneshDK
+  description: Jboss Seam Debug Page was exposed.
+  severity: medium
+  reference:
+  - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jboss-seam-debug-page.yaml
+  metadata:
+    max-request: 1
+  tags: jboss,logs,exposure
+traps:
+- request:
+    method: GET
+    path: /debug.seam
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SeamDebugPageorg.jboss.seam

@@ -1,0 +1,21 @@
+id: interactsh-server
+info:
+  name: Interactsh Server
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Interactsh Server"
+  tags: tech,interactsh
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Interactsh Server

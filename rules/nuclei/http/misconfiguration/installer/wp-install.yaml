@@ -1,0 +1,26 @@
+id: wp-install
+info:
+  name: WordPress Exposed Installation
+  author: princechaddha,0xpugazh
+  description: Wordpress installation files have been detected
+  severity: critical
+  reference:
+  - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
+  - https://twitter.com/0xPugazh/status/1610315762392268802
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+  metadata:
+    max-request: 1
+  tags: misconfig,panel,wordpress
+traps:
+- request:
+    method: GET
+    path: /wp-admin/install.php?step=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>WordPress &rsaquo; Installation</title>Site Title

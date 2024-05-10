@@ -1,0 +1,22 @@
+id: api-adoptapet
+info:
+  name: AdoptAPet API Test
+  author: daffainfo
+  description: Resource to help get pets adopted
+  severity: info
+  reference:
+  - https://www.adoptapet.com/public/apis/pet_list.html
+  - https://github.com/daffainfo/all-about-apikey/tree/main/adoptapet
+  metadata:
+    max-request: 1
+  tags: token-spray,adoptapet
+traps:
+- request:
+    method: GET
+    path: https://api.adoptapet.com/search/pets_at_shelter?key=&v=2&output=json&shelter_id=79570&start_number=1&end_number=500
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'returned_pets":total_pets":'

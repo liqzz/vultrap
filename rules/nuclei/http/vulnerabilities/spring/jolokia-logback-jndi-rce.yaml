@@ -1,0 +1,32 @@
+id: jolokia-logback-jndi-rce
+info:
+  name: Jolokia Logback JNDI - Remote Code Execution
+  author: SleepingBag945
+  description: Jolokia Logback is vulnerable to RCE.
+  severity: high
+  reference:
+  - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
+  - https://github.com/laluka/jolokia-exploitation-toolkit
+  - https://github.com/LandGrey/SpringBootVulExploit#0x04jolokia-logback-jndi-rce
+  metadata:
+    max-request: 2
+  tags: jolokia,springboot,tomcat,rce
+traps:
+- request:
+    method: GET
+    path: /jolokia/list
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ch.qos.logback.classic.jmx.JMXConfiguratorreloadByURL
+- request:
+    method: GET
+    path: /actuator/jolokia/list
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

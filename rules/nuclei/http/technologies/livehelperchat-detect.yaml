@@ -1,0 +1,39 @@
+id: livehelperchat-detect
+info:
+  name: Live Helper Chat Detect
+  author: pikpikcu,ricardomaia
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    fofa-query: title="Live Helper Chat"
+  tags: livehelperchat,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Live.Helper.Chat(?i)Copyright.\(c\).2019.Remigijus.Kiminas
+- request:
+    method: GET
+    path: /doc/CHANGELOG.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /doc/README.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

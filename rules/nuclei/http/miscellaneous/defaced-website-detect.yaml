@@ -1,0 +1,21 @@
+id: defaced-website-detect
+info:
+  name: Defaced Website - Detection
+  author: ggranjus
+  description: The detected website is defaced.
+  severity: info
+  metadata:
+    verified: 'true'
+    max-request: 1
+    shodan-query: http.title:"Hacked By"
+  tags: miscellaneous,defacement,misc
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)<title>.*Hacked( By .+)?<\/title>

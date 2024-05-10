@@ -1,0 +1,24 @@
+id: api-cloudflare
+info:
+  name: Cloudflare API Test
+  author: ffffffff0x
+  description: null
+  severity: info
+  reference:
+  - https://dash.cloudflare.com/profile/api-tokens
+  metadata:
+    max-request: 1
+  tags: token-spray,cloudflare
+traps:
+- request:
+    method: GET
+    path: https://api.cloudflare.com/client/v4/user/tokens/verify
+    headers:
+      Host: api.cloudflare.com
+      Authorization: Bearer {{token}}
+      Content-Type: application/json
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: This API Token is valid and active

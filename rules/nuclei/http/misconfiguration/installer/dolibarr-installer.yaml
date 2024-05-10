@@ -1,0 +1,21 @@
+id: dolibarr-installer
+info:
+  name: Dolibarr Installer
+  author: pussycat0x
+  description: Dolibarr is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Dolibarr install or upgrade"
+  tags: misconfig,exposure,install
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Dolibarr install or upgradebrowser language

@@ -1,0 +1,35 @@
+id: opensis-detect
+info:
+  name: OpenSIS Login Panel - Detect
+  author: pikpikcu
+  description: OpenSIS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:os4ed:opensis:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: opensis
+    shodan-query: http.title:"openSIS"
+    vendor: os4ed
+  tags: panel,opensis,login,os4ed
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>openSIS Student Information System</title>
+- request:
+    method: GET
+    path: /opensis/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

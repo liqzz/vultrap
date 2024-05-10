@@ -1,0 +1,98 @@
+id: jkstatus-manager
+info:
+  name: JK Status Manager - Detect
+  author: pdteam,DhiyaneshDk
+  description: 'Exposed JKStatus manager which is a web-based tool that allows administrators
+    to monitor and manage the connections between the Apache HTTP Server and the Tomcat
+    application server.
+
+    '
+  severity: low
+  reference:
+  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JKStatus.java
+  metadata:
+    verified: true
+    max-request: 8
+    shodan-query: html:"JK Status Manager"
+  tags: config,jk,status,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JK Status Manager
+- request:
+    method: GET
+    path: /status
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jkstatus
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jkstatus-auth
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jk-status
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jkmanager
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jkmanager-auth
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jdkstatus
+    headers:
+      X-Forwarded-For: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

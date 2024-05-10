@@ -1,0 +1,23 @@
+id: wordpress-post-types-order
+info:
+  name: Post Types Order Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/post-types-order/
+  metadata:
+    max-request: 1
+    plugin_namespace: post-types-order
+    wpscan: https://wpscan.com/plugin/post-types-order
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/post-types-order/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

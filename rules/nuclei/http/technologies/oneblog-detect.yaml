@@ -1,0 +1,19 @@
+id: oneblog-detect
+info:
+  name: OneBlog Detect
+  author: pikpikcu,daffainfo
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,oneblog
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>OneBlog开源博客后台管理系统</title><meta name="keywords" content="OneBlog

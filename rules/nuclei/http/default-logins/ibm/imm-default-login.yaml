@@ -1,0 +1,29 @@
+id: imm-default-login
+info:
+  name: Integrated Management Module - Default Login
+  author: jpg0mez
+  description: 'Integrated Management Module default login credentials were discovered.
+
+    '
+  severity: high
+  reference:
+  - https://pubs.lenovo.com/x3650-m4/t_logging_web_interface
+  - https://www.ibm.com/docs/en/tcs-service?topic=oip-logging-imm-web-interface
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"ibmdojo"
+    fofa-query: integrated management module
+  tags: imm,ibm,default-login
+traps:
+- request:
+    method: POST
+    path: /data/login
+    headers: null
+    body: user=USERID&password=PASSW0RD
+  response:
+    status_code: 200
+    headers: {}
+    body: <authResult>0</authResult>authResult":"0index-console.phphome.php

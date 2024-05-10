@@ -1,0 +1,24 @@
+id: laravel-debug-enabled
+info:
+  name: Laravel Debug Enabled
+  author: notsoevilweasel
+  description: 'Laravel with APP_DEBUG set to true is prone to show verbose errors.
+
+    '
+  severity: medium
+  remediation: 'Disable Laravel''s debug mode by setting APP_DEBUG to false.
+
+    '
+  metadata:
+    max-request: 1
+  tags: debug,laravel,misconfig
+traps:
+- request:
+    method: GET
+    path: /_ignition/health-check
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: can_execute_commands

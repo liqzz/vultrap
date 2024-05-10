@@ -1,0 +1,19 @@
+id: teamwork-takeover
+info:
+  name: Teamwork Takeover Detection
+  author: pdteam
+  description: Teamwork takeover was detected.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: takeover,teamwork
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Oops - We didn't find your site.

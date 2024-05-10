@@ -1,0 +1,23 @@
+id: symantec-phishing-panel
+info:
+  name: Symantec Phishing Readiness Platform Console
+  author: andreluna
+  description: Management Console for Symantec Phishing Readiness Platform
+  severity: info
+  reference:
+  - https://www.broadcom.com/products/cybersecurity/email/phishing-readiness
+  metadata:
+    max-request: 1
+    verified: true
+  tags: symantec,panel,login
+traps:
+- request:
+    method: GET
+    path: /users/sign_in
+    headers:
+      Host: '{{company}}.securitytraining.io'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Symantec Phishing Readiness Platform</title>

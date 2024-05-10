@@ -1,0 +1,24 @@
+id: adminset-panel
+info:
+  name: Adminset Login Panel
+  author: ffffffff0x
+  description: An Adminset login panel was detected.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: app="AdminSet"
+    max-request: 1
+    reference:
+    - https://github.com/guhongze/adminset/
+  tags: adminset,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AdminSet Login</title>

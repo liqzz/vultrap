@@ -1,0 +1,28 @@
+id: viper-c2
+info:
+  name: Viper C2 - Detect
+  author: pussycat0x
+  description: 'Viper is a graphical intranet penetration tool, which modularizes
+    and weaponizes the tactics and technologies commonly used in the process of Intranet
+    penetration.
+
+    '
+  severity: info
+  reference:
+  - https://twitter.com/MichalKoczwara/status/1635724410274414596
+  metadata:
+    censys-query: 057f3b5488605b4d224d038e340866e2cdfed4a3
+    max-request: 1
+    shodan-query: http.html_hash:1015055567
+    verified: 'true'
+  tags: tech,viper,c2,malware,ir,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: ''

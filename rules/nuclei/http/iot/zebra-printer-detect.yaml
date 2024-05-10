@@ -1,0 +1,23 @@
+id: zebra-printer-detect
+info:
+  name: Zebra Printer Detect
+  author: gy741
+  description: Zebra Printer panel was detected.
+  severity: info
+  reference:
+  - https://www.zebra.com/kr/ko/products/printers.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Zebra Technologies"
+  tags: iot,zebra,printer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Zebra TechnologiesPrintServer

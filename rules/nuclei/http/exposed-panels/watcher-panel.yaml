@@ -1,0 +1,21 @@
+id: watcher-panel
+info:
+  name: Watcher Panel - Detect
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: html:"/vsaas/v2/static/"
+    verified: true
+  tags: panel,watcher,login
+traps:
+- request:
+    method: GET
+    path: /vsaas/v2/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Watcher</title>

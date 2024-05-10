@@ -1,0 +1,21 @@
+id: api-mapbox
+info:
+  name: Mapbox API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.mapbox.com/api/search/geocoding/
+  metadata:
+    max-request: 1
+  tags: token-spray,mapbox
+traps:
+- request:
+    method: GET
+    path: https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: typequeryfeatures

@@ -1,0 +1,36 @@
+id: thinkphp-detect
+info:
+  name: ThinkPHP - Detect
+  author: pwnhxl
+  description: ThinkPHP was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"ThinkPHP"
+    fofa-query: app="ThinkPHP"
+  tags: thinkphp,tech,detect,intrusive
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /Library/Think/{ Fast & Simple OOP PHP Framework } -- [ WE CAN DO IT JUST
+      THINK ]/thinkphp/library/think/
+- request:
+    method: GET
+    path: /?s=&c=&a=&m=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

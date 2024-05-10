@@ -1,0 +1,24 @@
+id: elasticpot-honeypot-detect
+info:
+  name: ElasticPot Honeypot - Detect
+  author: UnaPibaGeek
+  description: |
+    A ElasticPot (ElasticSearch) honeypot has been identified.
+    The response to a '_cluster/settings' request differs from real installations, signaling a possible deceptive setup.
+  severity: info
+  metadata:
+    max-request: 1
+    vendor: elasticpot
+    product: elasticsearch
+    fofa-query: index_not_found_exception
+  tags: elasticpot,elasticsearch,honeypot,ir,cti
+traps:
+- request:
+    method: GET
+    path: /_cluster/settings
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: index_not_found_exception

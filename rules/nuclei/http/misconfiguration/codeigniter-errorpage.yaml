@@ -1,0 +1,22 @@
+id: codeigniter-errorpage
+info:
+  name: CodeIgniter - Error Page
+  author: j4vaovo
+  description: CodeIgniter error debug are enabled.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Error" html:"CodeIgniter"
+    fofa-query: title="ErrorException"
+  tags: codeigniter,misconfig,error
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: <title>Error</title><title>ErrorException</title><title>Database Error</title>CodeIgniter

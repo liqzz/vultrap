@@ -1,0 +1,21 @@
+id: ampache-update-exposure
+info:
+  name: Ampache Update Page Exposure
+  author: ritikchaddha
+  description: Ampache update page is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Ampache Update"
+  tags: misconfig,ampache,exposure
+traps:
+- request:
+    method: GET
+    path: /update.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Ampache UpdateNo Update NeededNo updates needed

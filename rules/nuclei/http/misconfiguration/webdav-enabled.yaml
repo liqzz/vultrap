@@ -1,0 +1,51 @@
+id: webdav-enabled
+info:
+  name: WebDAV Protocol - Detect
+  author: tess
+  description: 'WebDAV protocol was detected.
+
+    '
+  severity: info
+  remediation: 'Recommended disabling if not currently in use.
+
+    '
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/webdav-enabled/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: 'Ms-Author-Via: DAV'
+  tags: webdav,misconfig,exposure
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: /
+    headers:
+      Authorization: Basic YW5vbnltb3VzOmFub255bW91cw==
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

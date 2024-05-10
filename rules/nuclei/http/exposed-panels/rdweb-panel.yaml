@@ -1,0 +1,29 @@
+id: rdweb-panel
+info:
+  name: RD Web Access - Panel Detect
+  author: rxerium,sorrowx3
+  description: 'RD web access panel was discovered.
+
+    '
+  severity: info
+  reference:
+  - https://rdweb.wvd.microsoft.com/webclient
+  classification:
+    cpe: cpe:2.3:a:microsoft:remote_desktop:*:*:*:*:android:*:*:*
+  metadata:
+    max-request: 1
+    product: remote_desktop
+    shodan-query: html:"RD Web Access"
+    vendor: microsoft
+    verified: true
+  tags: panel,login,rdp,web-access,microsoft
+traps:
+- request:
+    method: GET
+    path: /RDWeb/
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

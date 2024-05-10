@@ -1,0 +1,51 @@
+id: splunk-default-login
+info:
+  name: Splunk - Default Password
+  author: pussycat0x
+  description: 'Splunk Default Password Vulnerability exposes systems to unauthorized
+    access, compromising data integrity and security.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 9
+    shodan-query: http.title:"Splunk"
+  tags: default-login,splunk
+traps:
+- request:
+    method: GET
+    path: /en-US/account/login?return_to=%2Fen-US%2Faccount%2F
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /en-US/account/login
+    headers:
+      Accept-Encoding: gzip, deflate, br
+      Referer: '{{BaseURL}}'
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      X-Requested-With: XMLHttpRequest
+      Origin: '{{BaseURL}}'
+    body: '{{cval}}&username={{username}}&password={{password}}&return_to=%2Fen-US%2F&set_has_logged_in=false
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /en-US/splunkd/__raw/services/server/health/splunkd?output_mode=json&_=
+    headers:
+      Accept-Encoding: gzip, deflate, br
+      Referer: '{{BaseURL}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: splunkdupdated

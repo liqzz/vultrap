@@ -1,0 +1,22 @@
+id: api-zerobounce
+info:
+  name: Zerobounce API Test
+  author: 0xpugazh
+  description: null
+  severity: info
+  reference:
+  - https://www.zerobounce.net/docs/email-validation-api-quickstart
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,zerobounce
+traps:
+- request:
+    method: GET
+    path: https://api.zerobounce.net/v2/getapiusage?api_key=&start_date=2018-01-01&end_date=2019-12-12
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"total":"start_date":"end_date":'

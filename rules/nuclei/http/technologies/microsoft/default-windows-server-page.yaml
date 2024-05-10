@@ -1,0 +1,20 @@
+id: default-windows-server-page
+info:
+  name: IIS Windows Server Default Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"IIS Windows Server"
+  tags: tech,windows,iis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>IIS Windows Server</title>

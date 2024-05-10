@@ -1,0 +1,23 @@
+id: booking-phish
+info:
+  name: booking phishing Detection
+  author: rxerium
+  description: 'A booking phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://booking.com
+  metadata:
+    max-request: 1
+  tags: phishing,booking,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Booking.com | Official site | The best hotels, flights, car rentals & accommodations

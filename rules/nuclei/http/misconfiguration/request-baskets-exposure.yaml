@@ -1,0 +1,24 @@
+id: request-baskets-exposure
+info:
+  name: Request Baskets - Exposure
+  author: DhiyaneshDk
+  description: Request Baskets is exposed.
+  severity: low
+  reference:
+  - https://notes.sjtu.edu.cn/s/MUUhEymt7#
+  - https://github.com/entr0pie/CVE-2023-27163
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"request-baskets"
+  tags: misconfig,requests-baskets,exposure
+traps:
+- request:
+    method: GET
+    path: /web
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Request Baskets</title>

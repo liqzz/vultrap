@@ -1,0 +1,39 @@
+id: apache-axis-detect
+info:
+  name: apache-axis-detect
+  author: dogasantos
+  description: Axis and Axis2 detection
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.html:"Apache Axis"
+  tags: tech,axis2,middleware,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ValidateWelcomeAxisdeployedinstallationAdmin
+- request:
+    method: GET
+    path: /axis2/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /axis/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

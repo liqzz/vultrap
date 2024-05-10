@@ -1,0 +1,22 @@
+id: api-alchemy
+info:
+  name: Alchemy API Test
+  author: daffainfo
+  description: Ethereum Node-as-a-Service Provider
+  severity: info
+  reference:
+  - https://docs.alchemy.com/alchemy/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/alchemy
+  metadata:
+    max-request: 1
+  tags: token-spray,alchemy
+traps:
+- request:
+    method: POST
+    path: https://eth-mainnet.alchemyapi.io/v2/
+    headers: null
+    body: '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":0}'
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"result":'

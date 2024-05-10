@@ -1,0 +1,28 @@
+id: scrutinizer-config
+info:
+  name: Scrutinizer Config - Detect
+  author: DhiyaneshDK
+  description: Scrutinizer configuration information was detected.
+  severity: info
+  reference:
+  - https://scrutinizer-ci.com/docs/configuration
+  - https://scrutinizer-ci.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"scrutinizer.yml"
+  tags: exposure,scrutinizer,config
+traps:
+- request:
+    method: GET
+    path: /.scrutinizer.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'build:filter:tools:'

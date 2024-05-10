@@ -1,0 +1,24 @@
+id: kakao-login-phish
+info:
+  name: kakao login phishing Detection
+  author: hahwul
+  description: 'A kakao login phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://accounts.kakao.com
+  - https://www.kakaocorp.com
+  metadata:
+    max-request: 1
+  tags: phishing,kakao,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 카카오계정로그인계정 찾기비밀번호 찾기

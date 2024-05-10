@@ -1,0 +1,25 @@
+id: aem-misc-admin
+info:
+  name: Adobe AEM Misc Admin Dashboard Exposure
+  author: dhiyaneshDk
+  description: Adobe AEM Misc Admin Dashboard is exposed.
+  severity: high
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  metadata:
+    verified: true
+    max-request: 9
+    shodan-query:
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  tags: misconfig,aem,adobe,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AEM Tools</title><title>AEM MCM</title>

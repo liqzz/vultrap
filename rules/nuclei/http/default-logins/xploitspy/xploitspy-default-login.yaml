@@ -1,0 +1,29 @@
+id: xploitspy-default-login
+info:
+  name: XploitSPY - Default Login
+  author: andreluna
+  description: 'Default login and password to access administrator panel
+
+    '
+  severity: high
+  reference:
+  - https://github.com/XploitWizer-Community/XploitSPY
+  metadata:
+    max-request: 1
+    shodan-query: html:XploitSPY
+  tags: xploitspy,default-login
+traps:
+- request:
+    method: POST
+    path: /login
+    headers:
+      Origin: '{{RootURL}}'
+      Content-Type: application/x-www-form-urlencoded
+      Referer: '{{RootURL}}/login'
+    body: 'username={{user}}&password={{pass}}&hostname={{Hostname}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Change PasswordLogoutXploitSPY

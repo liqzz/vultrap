@@ -1,0 +1,19 @@
+id: fanruanoa2012-detect
+info:
+  name: FanRuanOA2012-detect
+  author: YanYun
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: oa,java,fanruan,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: down.download?FM_SYS_ID

@@ -1,0 +1,24 @@
+id: api-box
+info:
+  name: Box API Test
+  author: daffainfo
+  description: File Sharing and Storage Service
+  severity: info
+  reference:
+  - https://developer.box.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/box
+  metadata:
+    max-request: 1
+  tags: token-spray,box
+traps:
+- request:
+    method: GET
+    path: https://api.box.com/2.0/collections
+    headers:
+      Host: api.box.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'total_count":limit":'

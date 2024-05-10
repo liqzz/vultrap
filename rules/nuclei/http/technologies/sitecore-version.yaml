@@ -1,0 +1,21 @@
+id: sitecore-version
+info:
+  name: Sitecore version detection
+  author: bernardofsr
+  description: null
+  severity: info
+  reference:
+  - https://www.cvedetails.com/vulnerability-list/vendor_id-9609/Sitecore.html
+  metadata:
+    max-request: 1
+  tags: sitecore,tech
+traps:
+- request:
+    method: GET
+    path: /sitecore/shell/sitecore.version.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sitecore Corporation

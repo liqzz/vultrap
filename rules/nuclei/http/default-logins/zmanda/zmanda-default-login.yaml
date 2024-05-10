@@ -1,0 +1,29 @@
+id: zmanda-default-login
+info:
+  name: Zmanda Default Login
+  author: Techryptic (@Tech)
+  description: Zmanda default admin credentials admin:admin were discovered.
+  severity: high
+  reference:
+  - https://www.zmanda.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: zmanda,default-login
+traps:
+- request:
+    method: POST
+    path: /ZMC_Admin_Login
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: zmc_cookies_enabled=true
+    body: 'login=AEE&last_page=&username={{username}}&password={{password}}&submit=Login&JS_SWITCH=JS_ON
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ZMC - Backup Set Management

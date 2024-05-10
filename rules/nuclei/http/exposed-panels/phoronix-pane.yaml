@@ -1,0 +1,26 @@
+id: phoronix-panel
+info:
+  name: Phoronix Test Suite Panel - Detect
+  author: pikpikcu
+  description: Phoronix Test Suite panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:phoronix-media:phoronix_test_suite:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: phoronix_test_suite
+    shodan-query: http.title:"phoronix-test-suite"
+    vendor: phoronix-media
+  tags: panel,phoronix,phoronix-media
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Phoronix Test Suite (.*) - Phoromatic - Welcome</title>

@@ -1,0 +1,21 @@
+id: rabbitmq-exporter-metrics
+info:
+  name: RabbitMQ Exporter
+  author: DhiyaneshDk
+  description: RabbitMQ Exporter is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"RabbitMQ Exporter"
+  tags: rabbitmq,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: rabbitmq_uprabbitmq_exporter_build_info

@@ -1,0 +1,23 @@
+id: tasmota-config-webui
+info:
+  name: Tasmota Configuration Exposure
+  author: ritikchaddha
+  description: Tasmota configuration is exposed.
+  severity: medium
+  reference:
+  - https://github.com/arendst/Tasmota
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Tasmota"
+  tags: misconfig,tasmota,exposure,config
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FirmwareTasmotaTheo Arends<h2>Tasmota</h2>

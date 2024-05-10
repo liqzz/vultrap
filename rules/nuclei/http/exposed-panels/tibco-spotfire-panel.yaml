@@ -1,0 +1,34 @@
+id: tibco-spotfire-panel
+info:
+  name: TIBCO Spotfire Login Panel - Detect
+  author: righettod
+  description: 'TIBCO Spotfire login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.tibco.com/products/tibco-spotfire
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: TIBCO Spotfire Server
+  tags: panel,tibco,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>TIBCO Spotfire Servercontent="TIBCO Spotfire/spotfire/ui/
+- request:
+    method: GET
+    path: /spotfire/login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

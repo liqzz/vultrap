@@ -1,0 +1,23 @@
+id: wp-sym404
+info:
+  name: Wordpress sym404 directory
+  author: pussycat0x
+  description: Searches for sensitive directories present in the sym404.
+  severity: high
+  reference:
+  - https://twitter.com/momika233/status/1540325055280070656
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: inurl:"/wp-includes/sym404/"
+  tags: wordpress,listing,wp,exposure
+traps:
+- request:
+    method: GET
+    path: /wp-includes/sym404/root/etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

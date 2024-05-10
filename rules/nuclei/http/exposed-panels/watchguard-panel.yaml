@@ -1,0 +1,27 @@
+id: watchguard-panel
+info:
+  name: Watchguard Login Panel - Detect
+  author: ahmetpergamum
+  description: Watchguard login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7008
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:watchguard:firebox_t15:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: firebox_t15
+    vendor: watchguard
+  tags: watchguard,edb,panel
+traps:
+- request:
+    method: GET
+    path: /sslvpn_logon.shtml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>User AuthenticationWatchGuard Technologies

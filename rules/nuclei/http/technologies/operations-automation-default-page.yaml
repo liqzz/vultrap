@@ -1,0 +1,20 @@
+id: operations-automation-default-page
+info:
+  name: Operations Automation Default Page
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Operations Automation Default Page"
+  tags: tech,default
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Operations Automation Default Page</title>

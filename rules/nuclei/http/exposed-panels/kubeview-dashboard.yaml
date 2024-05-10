@@ -1,0 +1,28 @@
+id: kubeview-dashboard
+info:
+  name: KubeView Dashboard - Detect
+  author: ja1sh
+  description: 'KubeView dashboard was detected.
+
+    '
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    product: kubeview
+    shodan-query: http.favicon.hash:-379154636
+    vendor: kubeview_project
+    verified: true
+  tags: exposure,k8s,kubernetes,kubeview,dashboard,panel,kubeview_project
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>KubeView</title>

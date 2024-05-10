@@ -1,0 +1,22 @@
+id: api-spotify
+info:
+  name: Spotify API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developer.spotify.com/documentation/general/guides/authorization-guide/
+  metadata:
+    max-request: 1
+  tags: token-spray,spotify
+traps:
+- request:
+    method: GET
+    path: https://api.spotify.com/v1/me/player/devices
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"devices":"id":"is_active":'

@@ -1,0 +1,33 @@
+id: horde-login-panel
+info:
+  name: Horde Login Panel - Detect
+  author: ritikchaddha
+  description: Horde login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:-741491222
+    verified: true
+  tags: horde,panel
+traps:
+- request:
+    method: GET
+    path: /horde/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HordeLogin.user
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

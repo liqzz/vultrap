@@ -1,0 +1,37 @@
+id: package-json
+info:
+  name: NPM package.json Disclosure
+  author: geeknik,afaq,noraj
+  description: 'All NodeJS packages contain a file, usually in the project root, called
+    package.json - this file holds various metadata relevant to the project generated
+    by package managers such as npm, yarn, pnpm.
+
+    '
+  severity: info
+  reference:
+  - https://docs.npmjs.com/cli/v9/configuring-npm/package-json
+  - https://classic.yarnpkg.com/lang/en/docs/package-json/
+  - https://pnpm.io/package_json
+  metadata:
+    verified: true
+    max-request: 2
+  tags: config,exposure,node,npm
+traps:
+- request:
+    method: GET
+    path: /package.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: nameversion
+- request:
+    method: GET
+    path: /package-lock.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

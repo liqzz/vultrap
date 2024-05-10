@@ -1,0 +1,29 @@
+id: ultimatemember-open-redirect
+info:
+  name: WordPress Ultimate Member <2.1.7 - Open Redirect
+  author: 0x_Akoko
+  description: WordPress Ultimate Member plugin before 2.1.7 contains an open redirect
+    vulnerability on the registration and login pages via the "redirect_to" GET parameter.
+    An attacker can redirect a user to a malicious site and possibly obtain sensitive
+    information, modify data, and/or execute unauthorized operations.
+  severity: medium
+  remediation: Fixed in 2.1.7.
+  reference:
+  - https://wpscan.com/vulnerability/97823f41-7614-420e-81b8-9e735e4c203f
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-601
+  metadata:
+    max-request: 1
+  tags: wp-plugin,redirect,wordpress,wpscan
+traps:
+- request:
+    method: GET
+    path: /register/?redirect_to=https://interact.sh/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,32 @@
+id: springboot-conditions
+info:
+  name: Detect Springboot Conditions Actuator
+  author: DhiyaneshDK
+  description: Springboot Conditions Actuator is exposed.
+  severity: low
+  reference:
+  - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Eureka"
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /conditions
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"positiveMatches":{"unconditionalClasses":['
+- request:
+    method: GET
+    path: /actuator/conditions
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

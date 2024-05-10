@@ -1,0 +1,23 @@
+id: wordpress-click-to-chat-for-whatsapp
+info:
+  name: Click to Chat – HoliThemes Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/click-to-chat-for-whatsapp/
+  metadata:
+    max-request: 1
+    plugin_namespace: click-to-chat-for-whatsapp
+    wpscan: https://wpscan.com/plugin/click-to-chat-for-whatsapp
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/click-to-chat-for-whatsapp/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

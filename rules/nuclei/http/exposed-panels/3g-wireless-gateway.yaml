@@ -1,0 +1,23 @@
+id: 3g-wireless-gateway
+info:
+  name: 3G Wireless Gateway Detection
+  author: pussycat0x
+  description: A 3G wireless gateway was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7050
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,router,edb
+traps:
+- request:
+    method: GET
+    path: /htmlcode/html/indexdefault.asp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: g_i3gStateg_sysinfo_sim_stateg_iUID

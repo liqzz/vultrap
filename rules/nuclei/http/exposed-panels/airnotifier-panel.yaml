@@ -1,0 +1,24 @@
+id: airnotifier-panel
+info:
+  name: AirNotifier Login Panel - Detect
+  author: tess
+  description: AirNotifier login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"AirNotifier"
+    verified: true
+  tags: panel,airnotifier
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: AirNotifierStatsServer Info

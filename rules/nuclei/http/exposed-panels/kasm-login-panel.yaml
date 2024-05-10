@@ -1,0 +1,41 @@
+id: kasm-login-panel
+info:
+  name: Kasm Login Panel - Detect
+  author: lum8rjack
+  description: 'Kasm workspaces login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://kasmweb.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:-2144699833
+    verified: true
+  tags: panel,kasm,login,detect
+traps:
+- request:
+    method: GET
+    path: /#/login
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Kasm</title>content="Kasm Servercontent="Kasm Technologies"html_title":
+      "Kasm'
+- request:
+    method: POST
+    path: /api/login_settings
+    headers:
+      Content-Type: application/json
+    body: '{"token":null,"username":null}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

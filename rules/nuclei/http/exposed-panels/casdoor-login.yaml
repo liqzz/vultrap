@@ -1,0 +1,28 @@
+id: casdoor-login
+info:
+  name: Casdoor Login Panel - Detect
+  author: princechaddha
+  description: Casdoor login panel was detected.
+  severity: info
+  reference:
+  - https://casdoor.org/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:casbin:casdoor:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: casdoor
+    shodan-query: http.title:"Casdoor"
+    vendor: casbin
+  tags: panel,casdoor,casbin
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Casdoor</title>

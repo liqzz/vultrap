@@ -1,0 +1,22 @@
+id: api-tink
+info:
+  name: Tink API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://docs.tink.com/api
+  metadata:
+    max-request: 1
+  tags: token-spray,tink
+traps:
+- request:
+    method: GET
+    path: https://api.tink.com/api/v1/user
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: appIdexternalUserIdusername

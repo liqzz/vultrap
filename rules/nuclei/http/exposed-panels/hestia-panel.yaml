@@ -1,0 +1,29 @@
+id: hestia-panel
+info:
+  name: Hestia Control Panel Login - Detect
+  author: JustaAcat
+  description: Hestia Control Panel login was detected.
+  severity: info
+  reference:
+  - https://hestiacp.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:hestiacp:control_panel:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: control_panel
+    shodan-query: title:"Hestia Control Panel"
+    vendor: hestiacp
+    verified: true
+  tags: panel,hestia,detect,hestiacp
+traps:
+- request:
+    method: GET
+    path: /login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Hestia Control PanelWelcome to Hestia Control

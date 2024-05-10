@@ -1,0 +1,21 @@
+id: express-stack-trace
+info:
+  name: Express Stack Trace
+  author: DhiyaneshDk
+  description: Express Stack trace is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Welcome to Express"
+  tags: misconfig,express,intrusive
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: 'NotFoundError: Not Foundat Function.handle'

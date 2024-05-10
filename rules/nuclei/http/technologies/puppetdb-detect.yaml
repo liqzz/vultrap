@@ -1,0 +1,21 @@
+id: puppetdb-detect
+info:
+  name: PuppetDB Detection
+  author: c-sh0
+  description: null
+  severity: info
+  reference:
+  - https://puppet.com/docs/puppetdb/7/api/meta/v1/version.html#pdbmetav1version
+  metadata:
+    max-request: 1
+  tags: puppet,tech,exposure
+traps:
+- request:
+    method: GET
+    path: /pdb/meta/v1/version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"version"\s:\s"([0-9.]+)"'

@@ -1,0 +1,29 @@
+id: truenas-panel
+info:
+  name: TrueNAS Panel - Detect
+  author: rxerium
+  description: 'TrueNAS scale is a free and open-source NAS solution
+
+    '
+  severity: info
+  reference:
+  - https://www.truenas.com
+  classification:
+    cpe: cpe:2.3:h:ixsystems:truenas:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: truenas
+    shodan-query: html:"TrueNAS"
+    vendor: ixsystems
+    verified: true
+  tags: login,panel,truenas,ixsystems
+traps:
+- request:
+    method: GET
+    path: /ui/sessions/signin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '''TrueNAS''assets/images/TrueNAS'

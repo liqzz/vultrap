@@ -1,0 +1,19 @@
+id: cockpit-detect
+info:
+  name: Detect Agentejo Cockpit
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,cockpit
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Authenticate Please!</title>

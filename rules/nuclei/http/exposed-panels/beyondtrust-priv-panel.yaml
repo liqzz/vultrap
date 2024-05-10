@@ -1,0 +1,34 @@
+id: beyondtrust-priv-panel
+info:
+  name: BeyondTrust Privileged Remote Access - Panel
+  author: righettod
+  description: 'BeyondTrust Privileged Remote Access login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.beyondtrust.com/products/privileged-remote-access
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"BeyondTrust Privileged Remote Access Login"
+    verified: true
+  tags: panel,beyondtrust,login,detect
+traps:
+- request:
+    method: GET
+    path: /login/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /login/pre_login_agreement
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

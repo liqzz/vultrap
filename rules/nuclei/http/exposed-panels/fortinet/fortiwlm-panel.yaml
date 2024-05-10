@@ -1,0 +1,30 @@
+id: fortiwlm-panel
+info:
+  name: Fortinet FortiWLM Login Panel - Detect
+  author: EgemenKochisarli
+  description: 'Fortinet FortiWLM login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://docs.fortinet.com/product/fortiwlm/8.6
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortiwlm:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fortiwlm
+    shodan-query: html:"fortiwlm"
+    vendor: fortinet
+  tags: panel,fortinet,fortiwlm,login
+traps:
+- request:
+    method: GET
+    path: /wlm/login?next=/wlm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FortiWLM Login</title>

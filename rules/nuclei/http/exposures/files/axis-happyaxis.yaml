@@ -1,0 +1,47 @@
+id: axis-happyaxis
+info:
+  name: Axis Happyaxis Exposure
+  author: dogasantos
+  description: null
+  severity: info
+  metadata:
+    max-request: 4
+  tags: axis,axis2,middleware,exposure,apache,files
+traps:
+- request:
+    method: GET
+    path: /axis2/axis2-web/HappyAxis.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Axis Happiness PageAxis2 Happiness PageExamining Application ServerExamining
+      Version ServiceExamining System Properties
+- request:
+    method: GET
+    path: /axis/happyaxis.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /axis2-web/HappyAxis.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /happyaxis.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

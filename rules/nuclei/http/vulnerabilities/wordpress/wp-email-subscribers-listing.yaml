@@ -1,0 +1,22 @@
+id: wp-email-subscribers-listing
+info:
+  name: WordPress Plugin Email Subscribers Listing
+  author: pussycat0x
+  description: Searches for sensitive directories present in the email-subscribers
+    plugin.
+  severity: low
+  reference:
+  - https://www.exploit-db.com/ghdb/6428
+  metadata:
+    max-request: 1
+  tags: wordpress,listing,plugin,edb
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/email-subscribers
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index ofwp-content/plugins/email-subscribers

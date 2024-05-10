@@ -1,0 +1,26 @@
+id: koel-panel
+info:
+  name: Koel Panel - Detect
+  author: rxerium
+  description: 'Personal audio streaming service that works.
+
+    '
+  severity: info
+  reference:
+  - https://koel.dev/
+  - https://github.com/koel/koel
+  metadata:
+    max-request: 1
+    shodan-query: title:"Koel"
+    verified: true
+  tags: panel,koel,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Koel</title>Personal audio streaming service that works.

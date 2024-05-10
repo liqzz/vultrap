@@ -1,0 +1,19 @@
+id: api-google-place-details
+info:
+  name: Google Place Details API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,place,details
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error_message

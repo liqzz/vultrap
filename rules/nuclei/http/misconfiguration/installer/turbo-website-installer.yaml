@@ -1,0 +1,22 @@
+id: turbo-website-installer
+info:
+  name: Turbo Website Reviewer Installer Panel
+  author: tess
+  description: Turbo Website Reviewer is susceptible to the Installation page exposure
+    due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Turbo Website Reviewer"
+  tags: turbo,misconfig,exposure,install
+traps:
+- request:
+    method: GET
+    path: /admin/install/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Turbo Website Reviewer | Installer panel>Admin!</a> </p>

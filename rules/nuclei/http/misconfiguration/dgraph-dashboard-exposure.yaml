@@ -1,0 +1,24 @@
+id: dgraph-dashboard-exposure
+info:
+  name: Dgraph Ratel Dashboard Exposure Panel - Detect
+  author: dhiyaneshDk
+  description: Dgraph Ratel Dashboard Exposure panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Dgraph Ratel Dashboard"
+  tags: exposure,unauth,panel,misconfig
+traps:
+- request:
+    method: GET
+    path: /?dev
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Choose a version of the Ratel interface<title>Dgraph Ratel Dashboard</title>

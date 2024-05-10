@@ -1,0 +1,32 @@
+id: magento-detect
+info:
+  name: Magento Detect
+  author: TechbrunchFR
+  description: Identify Magento
+  severity: info
+  reference:
+  - https://devdocs.magento.com/guides/v2.4/graphql/
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.component:"Magento"
+  tags: magento,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: graphql-authorizationThe current customer
+- request:
+    method: GET
+    path: /graphql?query=+{customerDownloadableProducts+{+items+{+date+download_url}}+}
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

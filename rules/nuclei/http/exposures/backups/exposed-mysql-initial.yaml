@@ -1,0 +1,25 @@
+id: exposed-mysql-initial
+info:
+  name: mysql.initial Config - Detect
+  author: ELSFA7110
+  description: mysql.initial configuration file was detected.
+  severity: info
+  reference:
+  - https://hackerone.com/reports/1081817
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: config,exposure,hackerone
+traps:
+- request:
+    method: GET
+    path: /mysql.initial.sql
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Roundcube Webmail initial database structure

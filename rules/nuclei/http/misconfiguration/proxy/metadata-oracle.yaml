@@ -1,0 +1,33 @@
+id: metadata-service-oracle
+info:
+  name: Oracle Cloud Metadata Service Check
+  author: sullo
+  description: The Oracle cloud host is configured as a proxy which allows access
+    to the instance metadata IMDSv1 service. This could allow significant access to
+    the host/infrastructure.
+  severity: critical
+  remediation: Disable the proxy or restrict configuration to only allow access to
+    approved hosts/ports. Upgrade to IMDSv2 if possible.
+  reference:
+  - https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/gettingmetadata.htm
+  - https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/
+  - https://www.mcafee.com/blogs/enterprise/cloud-security/how-an-attacker-could-use-instance-metadata-to-breach-your-app-in-aws/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
+    cvss-score: 9.3
+    cwe-id: CWE-441
+  metadata:
+    max-request: 2
+  tags: exposure,config,oracle,proxy,misconfig,metadata
+traps:
+- request:
+    method: GET
+    path: http:///opc/v1/instance
+    headers:
+      Host: '{{hostval}}'
+      Metadata: 'true'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: availabilityDomain

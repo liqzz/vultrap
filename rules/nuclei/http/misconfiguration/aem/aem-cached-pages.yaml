@@ -1,0 +1,24 @@
+id: aem-cached-pages
+info:
+  name: Invalidate / Flush Cached Pages on AEM
+  author: hetroublemakr
+  description: Cached Pages on AEM can be Flushed.
+  severity: low
+  reference:
+  - https://twitter.com/AEMSecurity/status/1244965623689609217
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Adobe Experience Manager"
+  tags: aem,misconfig
+traps:
+- request:
+    method: GET
+    path: /dispatcher/invalidate.cache
+    headers:
+      CQ-Handle: /content
+      CQ-Path: /content
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <H1>OK</H1>

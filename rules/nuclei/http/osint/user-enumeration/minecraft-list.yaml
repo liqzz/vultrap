@@ -1,0 +1,23 @@
+id: minecraft-list
+info:
+  name: Minecraft List User Name Information - Detect
+  author: dwisiswant0
+  description: Minecraft List user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-gaming,minecraft-list
+traps:
+- request:
+    method: GET
+    path: https://minecraftlist.com/players/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: -->was seen on<!--

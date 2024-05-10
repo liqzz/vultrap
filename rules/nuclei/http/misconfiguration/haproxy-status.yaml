@@ -1,0 +1,34 @@
+id: haproxy-status
+info:
+  name: HAProxy Statistics Page - Detect
+  author: dhiyaneshDK
+  description: HAProxy statistics page was detected.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/4191
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: logs,haproxy,edb,misconfig
+traps:
+- request:
+    method: GET
+    path: /haproxy-status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Statistics Report for HAProxy
+- request:
+    method: GET
+    path: /haproxy?stats
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

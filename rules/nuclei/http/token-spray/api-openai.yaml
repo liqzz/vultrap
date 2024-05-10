@@ -1,0 +1,31 @@
+id: api-openai
+info:
+  name: OpenAI API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://platform.openai.com/docs/api-reference
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,openai
+traps:
+- request:
+    method: POST
+    path: https://api.openai.com/v1/chat/completions
+    headers:
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: |
+      {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+          {"role": "system", "content": "You are a helpful assistant designed to output JSON."},
+          {"role": "user", "content": "Who won the world series in 2020?"}
+        ]
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: Los Angeles Dodgersinvalid_request_errorIncorrect API keyinvalid_api_key

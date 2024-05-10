@@ -1,0 +1,31 @@
+id: jeecg-boot-detect
+info:
+  name: Jeecg-Boot Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  reference:
+  - http://www.jeecg.com/
+  metadata:
+    max-request: 2
+    fofa-query: title="Jeecg-Boot"
+  tags: jeecg-boot,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Jeecg-Boot
+- request:
+    method: GET
+    path: /jeecg-boot/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

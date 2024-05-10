@@ -1,0 +1,22 @@
+id: sap-hana-xsengine-panel
+info:
+  name: SAP HANA XS Engine Admin Login Panel - Detect
+  author: PR3R00T
+  description: SAP HANA XS Engine admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,sap
+traps:
+- request:
+    method: GET
+    path: /sap/hana/xs/formLogin/login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /sap/hana/xs/formLogin/images/sap.png

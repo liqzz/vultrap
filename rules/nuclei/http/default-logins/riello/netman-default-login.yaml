@@ -1,0 +1,27 @@
+id: netman-default-login
+info:
+  name: Riello UPS NetMan 204 Network Card - Default Login
+  author: mabdullah22
+  description: 'Default logins on Riello UPS NetMan 204 is used. Attacker can access
+    to UPS and attacker can manipulate the UPS settings to disrupt the onsite systems.
+
+    '
+  severity: high
+  reference:
+  - https://www.riello-ups.com/
+  metadata:
+    verified: 'true'
+    max-request: 1
+    shodan-query: title:"Netman"
+    censys-query: services.http.response.body:"Netman204"
+  tags: default-login,netman
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/login.cgi?username=&password=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"response": "ok","message": "Welcome."'

@@ -1,0 +1,26 @@
+id: api-fullhunt
+info:
+  name: FullHunt API Test
+  author: 0ri2N
+  description: 'FullHunt holds one of the largest Databases for external attack surfaces
+    of the entire Internet.
+
+    '
+  severity: info
+  reference:
+  - https://fullhunt.io
+  - https://api-docs.fullhunt.io
+  metadata:
+    max-request: 1
+  tags: scan,recon,fullhunt,token-spray
+traps:
+- request:
+    method: GET
+    path: https://fullhunt.io/api/v1/domain/interact.sh/details
+    headers:
+      X-API-Key: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"dns""hosts""domain"'

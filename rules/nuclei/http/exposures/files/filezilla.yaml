@@ -1,0 +1,37 @@
+id: filezilla-exposed
+info:
+  name: Filezilla
+  author: amsda
+  description: Filezilla internal file is exposed.
+  severity: medium
+  metadata:
+    max-request: 3
+  tags: exposure,files
+traps:
+- request:
+    method: GET
+    path: /filezilla.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <FileZilla<Servers>
+- request:
+    method: GET
+    path: /sitemanager.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /FileZilla.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,28 @@
+id: jinher-oa-default-login
+info:
+  name: Jinher-OA C6 - Default Admin Discovery
+  author: ritikchaddha
+  description: Jinher-OA C6 default admin credentials were discovered.
+  severity: high
+  reference:
+  - https://github.com/nu0l/poc-wiki/blob/main/%E9%87%91%E5%92%8COA-C6-default-password.md
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: jinher,default-login
+traps:
+- request:
+    method: POST
+    path: /c6/Jhsoft.Web.login/AjaxForLogin.aspx
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'type=login&loginCode={{base64("{{username}}")}}&pwd={{base64("{{password}}")}}&
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ÏµÍ³¹ÜÀíÔ±|ÄúºÃ|||

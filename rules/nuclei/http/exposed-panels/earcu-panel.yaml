@@ -1,0 +1,23 @@
+id: earcu-panel
+info:
+  name: eArcu Panel - Detect
+  author: righettod
+  description: eArcu was detected.
+  severity: info
+  reference:
+  - https://www.earcu.com/products
+  metadata:
+    max-request: 1
+    shodan-query: html:'content="eArcu'
+    verified: 'true'
+  tags: panel,earcu,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="eArcu

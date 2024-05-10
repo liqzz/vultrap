@@ -1,0 +1,22 @@
+id: metaview-explorer-installer
+info:
+  name: MetaView Explorer Installer
+  author: theamanrawat
+  description: MetaView Explorer is susceptible to the Installation page exposure
+    due to misconfiguration.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"MetaView Explorer"
+  tags: misconfig,metaview,installer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: MetaView Explorer(InstallAnywhere Web Installer)

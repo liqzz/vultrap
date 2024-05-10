@@ -1,0 +1,34 @@
+id: docker-daemon-exposed
+info:
+  name: Docker Daemon Exposed
+  author: Arm!tage
+  description: 'Docker Daemon exposed on the network map can help remote attacker
+    to gain access to the Docker containers and potentially the host system.
+
+    '
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: port:2375 product:"docker"
+    fofa-query: app="docker-Daemon" && port="2375"
+  tags: docker,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /version
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ApiVersionGitCommitGoVersionKernelVersion
+- request:
+    method: GET
+    path: /v/containers/json
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: IdNamesImageCommandPrivatePortPublicPort[]

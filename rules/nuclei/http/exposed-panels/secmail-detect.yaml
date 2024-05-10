@@ -1,0 +1,23 @@
+id: secmail-detect
+info:
+  name: SecMail Login Panel - Detect
+  author: johnk3r
+  description: SecMail login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: secmail
+  tags: secmail,panel
+traps:
+- request:
+    method: GET
+    path: /SecMail/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

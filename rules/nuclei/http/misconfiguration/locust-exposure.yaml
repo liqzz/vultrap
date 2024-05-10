@@ -1,0 +1,21 @@
+id: locust-exposure
+info:
+  name: Locust Exposure
+  author: DhiyaneshDK,bhutch
+  description: Locust is exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Locust"
+  tags: exposure,locust,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Locust(?: for.+)?</title>locust.jsCharts</a>'

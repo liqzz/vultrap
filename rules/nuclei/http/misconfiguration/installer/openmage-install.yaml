@@ -1,0 +1,21 @@
+id: openmage-install
+info:
+  name: OpenMage Installation Wizard
+  author: DhiyaneshDk
+  description: OpenMage is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"OpenMage Installation Wizard"
+  tags: misconfig,openmage,install,exposure
+traps:
+- request:
+    method: GET
+    path: /index.php/install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OpenMage Installation Wizard

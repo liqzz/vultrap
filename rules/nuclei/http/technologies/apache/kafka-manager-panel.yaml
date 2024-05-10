@@ -1,0 +1,24 @@
+id: kafka-manager-panel
+info:
+  name: Kafka Manager Panel
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/yahoo/CMAK
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Kafka-Manager"
+    fofa-query: app="Kafka-Manager"
+  tags: tech,kafka,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Kafka Manager

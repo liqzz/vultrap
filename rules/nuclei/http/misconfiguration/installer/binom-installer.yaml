@@ -1,0 +1,30 @@
+id: binom-installer
+info:
+  name: Binom Installer Exposure
+  author: tess
+  description: Binom is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Install Binom"
+  tags: misconfig,binom,install,exposure
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Install Binom</title>System check
+- request:
+    method: GET
+    path: /?page=step_1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

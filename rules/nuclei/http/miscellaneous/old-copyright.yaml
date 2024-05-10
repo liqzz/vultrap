@@ -1,0 +1,21 @@
+id: old-copyright
+info:
+  name: Find Pages with Old Copyright Dates
+  author: geeknik
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+  tags: miscellaneous,misc,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 2024Copyright [1-9]\d* ?\-? ?[1-9]?\d*© [1-9]\d* ?\-? ?[1-9]?\d*&copy; [1-9]\d*
+      ?\-? ?[1-9]?\d*&#169; [1-9]\d* ?\-? ?[1-9]?\d*

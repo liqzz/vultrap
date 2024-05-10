@@ -1,0 +1,23 @@
+id: blender-phish
+info:
+  name: blender phishing Detection
+  author: rxerium
+  description: 'A blender phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://blender.org
+  metadata:
+    max-request: 1
+  tags: phishing,blender,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: blender.org - Home of the Blender project - Free and Open 3D Creation Software

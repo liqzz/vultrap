@@ -1,0 +1,22 @@
+id: orangescrum-install
+info:
+  name: Orangescrum Exposed Installation
+  author: ritikchaddha
+  description: Orangescrum is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Orangescrum Setup Wizard"
+  tags: misconfig,orangescrum,install
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Orangescrum Setup Wizard

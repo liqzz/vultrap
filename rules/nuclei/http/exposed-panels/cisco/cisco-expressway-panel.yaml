@@ -1,0 +1,25 @@
+id: cisco-expressway-panel
+info:
+  name: CISCO Expressway Login Panel - Detect
+  author: righettod
+  description: 'CISCO Expressway login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.cisco.com/c/en/us/products/unified-communications/expressway-series/index.html
+  metadata:
+    max-request: 1
+    shodan-query: html:"Cisco Expressway"
+    verified: true
+  tags: panel,cisco,login,detect
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

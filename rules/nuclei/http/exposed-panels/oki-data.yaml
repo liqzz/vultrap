@@ -1,0 +1,24 @@
+id: oki-data-corporation
+info:
+  name: OKI Data Panel - Detect
+  author: dhiyaneshDK
+  description: OKI Data panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/5937
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,oki,edb
+traps:
+- request:
+    method: GET
+    path: /status.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Oki Data Corporation

@@ -1,0 +1,66 @@
+id: joomla-detect
+info:
+  name: Joomla! Detect
+  author: ricardomaia
+  description: 'Joomla! is a free and open-source content management system (CMS)
+    for publishing content on websites.
+
+    '
+  severity: info
+  reference:
+  - https://www.joomla.org/
+  - https://github.com/joomla/joomla-cms
+  - https://www.itoctopus.com/how-to-quickly-know-the-version-of-any-joomla-website
+  - https://hackertarget.com/attacking-enumerating-joomla/
+  metadata:
+    verified: true
+    max-request: 5
+    google-query: Joomla! Administration Login inurl:"/index.php" || intitle:"Joomla
+      Web Installer"
+  tags: tech,joomla,cms,oss
+traps:
+- request:
+    method: GET
+    path: /administrator/manifests/files/joomla.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <version><creationDate></metafile>(?i)<meta.name="generator".content="(Joomla!).*/>(?i)Joomla_([\d.|\d]+)_version_historyFILES_JOOMLA_XML_DESCRIPTION
+- request:
+    method: GET
+    path: /language/en-GB/en-GB.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /README.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /modules/custom.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

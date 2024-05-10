@@ -1,0 +1,19 @@
+id: wordpress-tmm-db-migrate
+info:
+  name: WordPress ThemeMarkers DB Migration File
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress,wp-plugin,backup
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[a-z0-9_]+.dat'

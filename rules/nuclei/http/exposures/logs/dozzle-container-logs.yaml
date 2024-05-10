@@ -1,0 +1,26 @@
+id: dozzle-container-logs
+info:
+  name: Dozzle - Logs Exposure
+  author: theabhinavgaur
+  description: Dozzle is a small lightweight application with a web based interface
+    to monitor Docker logs. It doesn’t store any log files. It is for live monitoring
+    of your container logs only.
+  severity: medium
+  reference:
+  - https://github.com/amir20/dozzle
+  - https://dozzle.dev/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Dozzle"
+  tags: exposure,logs,dozzle,docker
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"authorizationNeeded": "false"Dozzle'

@@ -1,0 +1,30 @@
+id: tufin-securetrack-login
+info:
+  name: Tufin SecureTrack Login Panel - Detect
+  author: idealphase
+  description: Tufin SecureTrack login panel was detected.
+  severity: info
+  reference:
+  - https://www.tufin.com/tufin-orchestration-suite/securetrack
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tufin:securetrack:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"SecureTrack - Tufin Technologies"
+    max-request: 1
+    product: securetrack
+    shodan-query: http.title:"SecureTrack - Tufin Technologies"
+    vendor: tufin
+  tags: panel,tufin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SecureTrack - Tufin Technologies</title>document.title = 'SecureTrack
+      - Tufin Technologies';

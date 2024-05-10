@@ -1,0 +1,46 @@
+id: csrf-guard-detect
+info:
+  name: OWASP CSRFGuard 3.x/4.x - Detect
+  author: forgedhallpass
+  description: OWASP CSRFGuard 3.x and 4.x were checked for whether token-per-page
+    support is enabled based on default configuration.
+  severity: info
+  reference:
+  - https://github.com/OWASP/www-project-csrfguard
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+  tags: tech,csrfguard,owasp
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: FETCH-CSRF-TOKENmasterTokenValueToken-Per-Page functionality is disabled{"pageTokens
+- request:
+    method: GET
+    path: /JavaScriptServlet
+    headers:
+      Referer: '{{BaseURL}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /JavaScriptServlet
+    headers:
+      OWASP-CSRFTOKEN: '{{masterToken}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

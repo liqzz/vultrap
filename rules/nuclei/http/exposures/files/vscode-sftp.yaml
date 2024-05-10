@@ -1,0 +1,42 @@
+id: vscode-sftp
+info:
+  name: VSCode SFTP File Exposure
+  author: geeknik
+  description: 'It discloses sensitive files created by vscode-sftp for VSCode, contains
+    SFTP/SSH server details and credentials.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: html:"sftp.json"
+  tags: exposure,vscode,sftp,ssh,files
+traps:
+- request:
+    method: GET
+    path: /sftp.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"name":"host":"protocol":'
+- request:
+    method: GET
+    path: /.config/sftp.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.vscode/sftp.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

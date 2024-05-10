@@ -1,0 +1,26 @@
+id: xprober-service
+info:
+  name: X Prober Server - Information Disclosure
+  author: pdteam
+  description: X Prober Server information disclosure was detected.
+  severity: medium
+  reference:
+  - https://github.com/kmvan/x-prober
+  - https://twitter.com/bugbounty_tips/status/1339984643517423616
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /xprober.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"appName":"X Prober"<title>X Prober'

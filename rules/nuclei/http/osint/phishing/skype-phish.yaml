@@ -1,0 +1,23 @@
+id: skype-phish
+info:
+  name: skype phishing Detection
+  author: rxerium
+  description: 'A skype phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://skype.com
+  metadata:
+    max-request: 1
+  tags: phishing,skype,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Skype | Stay connected with free video calls worldwide

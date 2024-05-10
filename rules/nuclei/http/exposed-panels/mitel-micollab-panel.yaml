@@ -1,0 +1,25 @@
+id: mitel-micollab-panel
+info:
+  name: Mitel MiCollab Login Panel - Detect
+  author: righettod
+  description: 'Mitel MiCollab login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.mitel.com/products/micollab-miteam-meetings-collaboration-software
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"MiCollab End User Portal"
+    verified: true
+  tags: panel,mitel,login,detect
+traps:
+- request:
+    method: GET
+    path: /portal/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

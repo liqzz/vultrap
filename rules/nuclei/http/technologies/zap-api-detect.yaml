@@ -1,0 +1,21 @@
+id: zap-rest-api-detect
+info:
+  name: ZAP Rest API Server Running
+  author: hahwul
+  description: null
+  severity: info
+  reference:
+  - https://www.zaproxy.org/docs/api/
+  metadata:
+    max-request: 1
+  tags: zap,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,20 @@
+id: jira-unauthenticated-adminprojects
+info:
+  name: Jira Unauthenticated Admin Projects
+  author: TESS
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Atlassian Jira"
+  tags: atlassian,jira
+traps:
+- request:
+    method: GET
+    path: /rest/menu/latest/admin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: keylinklabelself

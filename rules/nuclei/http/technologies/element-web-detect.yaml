@@ -1,0 +1,31 @@
+id: element-web-detect
+info:
+  name: Element Web - Detect
+  author: davidegirardi
+  description: Identify if a web application is vanilla Element Web and return the
+    version
+  severity: info
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"manifest.json"
+  tags: tech,matrix,element,detect
+traps:
+- request:
+    method: GET
+    path: /manifest.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

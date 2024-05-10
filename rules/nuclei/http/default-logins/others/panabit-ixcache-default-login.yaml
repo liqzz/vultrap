@@ -1,0 +1,23 @@
+id: panabit-ixcache-default-login
+info:
+  name: Panabit iXCache - Default Admin Login
+  author: ritikchaddha
+  description: Panabit iXCache default admin login credentials were successful.
+  severity: high
+  reference:
+  - http://forum.panabit.com/thread-10830-1-1.html
+  metadata:
+    max-request: 1
+  tags: default-login,ixcache,panabit
+traps:
+- request:
+    method: POST
+    path: /login/userverify.cgi
+    headers: {}
+    body: 'username={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: URL=/cgi-bin/monitor.cgi

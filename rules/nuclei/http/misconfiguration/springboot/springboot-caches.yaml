@@ -1,0 +1,31 @@
+id: springboot-caches
+info:
+  name: Springboot Actuator Caches
+  author: ELSFA7110
+  description: The caches endpoint provides access to the application's caches.
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#caches
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /caches
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: cacheManagers
+- request:
+    method: GET
+    path: /actuator/caches
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,21 @@
+id: codis-dashboard
+info:
+  name: Codis Dashboard Exposure
+  author: tess
+  description: Codis Dashboard is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Codis • Dashboard"
+  tags: misconfig,exposure,codis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Codis • DashboardSessions

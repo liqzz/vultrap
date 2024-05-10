@@ -1,0 +1,19 @@
+id: shellscripts
+info:
+  name: Public shellscripts
+  author: panch0r3d
+  description: This template checks exposure of bash scripts.
+  severity: low
+  metadata:
+    max-request: 27
+  tags: bash,exposure,files
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .*?bin.*?sh.*?bin.*?bash

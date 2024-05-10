@@ -1,0 +1,37 @@
+id: ldap-account-manager-panel
+info:
+  name: LDAP Account Manager Login Panel - Detect
+  author: DhiyaneshDk
+  description: 'LDAP Account Manager login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.ldap-account-manager.org/lamcms/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"LDAP Account Manager"
+    verified: true
+  tags: panel,ldap
+traps:
+- request:
+    method: GET
+    path: /templates/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LDAP Account ManagerLAM configuration
+- request:
+    method: GET
+    path: /lam/templates/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

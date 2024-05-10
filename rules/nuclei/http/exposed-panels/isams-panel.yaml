@@ -1,0 +1,25 @@
+id: isams-panel
+info:
+  name: iSAMS Panel - Detect
+  author: righettod
+  description: 'iSAMS was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.isams.com/platform/the-platform
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-81573405
+    verified: true
+  tags: panel,isams,login
+traps:
+- request:
+    method: GET
+    path: /auth
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: iSAMS LtdiSAMS Authentication Server

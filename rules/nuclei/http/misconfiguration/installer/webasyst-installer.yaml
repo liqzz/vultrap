@@ -1,0 +1,21 @@
+id: webasyst-installer
+info:
+  name: Webasyst Installer Exposure
+  author: ritikchaddha
+  description: Webasyst is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Webasyst Installer"
+  tags: misconfig,webasyst,install,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Webasyst Installer

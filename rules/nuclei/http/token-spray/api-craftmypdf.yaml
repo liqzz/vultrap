@@ -1,0 +1,26 @@
+id: api-craftmypdf
+info:
+  name: CraftMyPDF API Test
+  author: daffainfo
+  description: Generate PDF documents from templates with a drop-and-drop editor and
+    a simple API
+  severity: info
+  reference:
+  - https://pdflayer.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/craftmypdf
+  metadata:
+    max-request: 1
+  tags: token-spray,craftmypdf
+traps:
+- request:
+    method: GET
+    path: https://api.craftmypdf.com/v1/list-templates?limit=300&offset=0
+    headers:
+      Host: api.craftmypdf.com
+      Content-Type: application/json
+      X-API-KEY: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"template_id":"name":'

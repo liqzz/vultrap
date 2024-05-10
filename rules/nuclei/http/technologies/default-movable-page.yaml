@@ -1,0 +1,20 @@
+id: default-movable-page
+info:
+  name: Movable Default Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"Welcome to Movable Type"
+  tags: tech,movable
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome to Movable Type</title>

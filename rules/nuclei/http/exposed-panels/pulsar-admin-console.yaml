@@ -1,0 +1,27 @@
+id: pulsar-admin-console
+info:
+  name: Pulsar Admin Console Panel - Detect
+  author: ritikchaddha
+  description: Pulsar admin console panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:pulsar:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: pulsar
+    shodan-query: title:"Pulsar Admin Console"
+    vendor: apache
+    verified: true
+  tags: panel,pulsar,console,admin,apache
+traps:
+- request:
+    method: GET
+    path: /#/admin/dashboard
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Pulsar Admin Console

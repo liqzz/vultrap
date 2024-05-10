@@ -1,0 +1,26 @@
+id: teltonika-login
+info:
+  name: Teltonika Login Panel - Detect
+  author: idealphase
+  description: Teltonika login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7819
+  - https://teltonika-iot-group.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"Teltonika -Web UI" | intitle:"Teltonika-RUT -Web UI" inurl:"/cgi-bin/luci"
+    max-request: 1
+  tags: panel,teltonika,edb
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/luci
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Teltonika(.*) - Web UI</title>

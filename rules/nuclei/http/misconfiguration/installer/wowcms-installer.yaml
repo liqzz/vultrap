@@ -1,0 +1,22 @@
+id: wowcms-installer
+info:
+  name: WoW CMS Installer Exposure
+  author: ritikchaddha
+  description: WoW CMS is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"WoW-CMS | Installation"
+    fofa-query: title="WoW-CMS | Installation"
+  tags: misconfig,wowcms,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>WoW-CMS | InstallationWoW-CMS installer page

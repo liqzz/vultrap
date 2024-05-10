@@ -1,0 +1,23 @@
+id: tiktok-phish
+info:
+  name: tiktok phishing Detection
+  author: rxerium
+  description: 'A tiktok phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://tiktok.com
+  metadata:
+    max-request: 1
+  tags: phishing,tiktok,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: TikTok - Make Your Day

@@ -1,0 +1,33 @@
+id: goodjob-dashboard
+info:
+  name: goodjob-dashboard
+  author: hahwul
+  description: 'Rails GoodJob Dashboard panel was detected.
+
+    '
+  severity: medium
+  reference:
+  - https://github.com/bensheldon/good_job
+  metadata:
+    max-request: 2
+    verified: true
+  tags: unauth,panel,goodjob
+traps:
+- request:
+    method: GET
+    path: /jobs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Good Job Dashboard</title>
+- request:
+    method: GET
+    path: /good_job/jobs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

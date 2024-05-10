@@ -1,0 +1,42 @@
+id: ht-deployment
+info:
+  name: .htdeployment - Files Tree Cache File
+  author: Michal-Mikolas
+  description: 'FTP Deployment cache file that contains whole files structure with
+    paths to potentially sensitive files.
+
+    '
+  severity: medium
+  remediation: Block access to the file using `.htaccess` on the server. The best-practise
+    is to block all the folders/files beginning with `.` except `.well-known` folder.
+  reference:
+  - https://github.com/dg/ftp-deployment/tree/master
+  - https://github.com/dg/ftp-deployment/blob/master/src/Deployment/Deployer.php#L206
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    verified: true
+    vendor: dg
+    product: ftp-deployment
+    max-request: 2
+  tags: files,exposure,php,deployment,cache
+traps:
+- request:
+    method: GET
+    path: /.htdeployment
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[config]1F 8B'
+- request:
+    method: GET
+    path: /.deployment
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

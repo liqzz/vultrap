@@ -1,0 +1,26 @@
+id: api-shodan
+info:
+  name: Shodan API Test
+  author: 0ri2N
+  description: 'Shodan is a search engine that lets users search for various types
+    of servers connected to the internet using a variety of filters.
+
+    '
+  severity: info
+  reference:
+  - https://shodan.io
+  - https://developer.shodan.io
+  - https://developer.shodan.io/api
+  metadata:
+    max-request: 1
+  tags: recon,shodan,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.shodan.io/api-info?key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"plan""unlocked""scan_credits"'

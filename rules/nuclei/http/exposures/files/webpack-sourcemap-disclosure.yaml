@@ -1,0 +1,28 @@
+id: webpack-sourcemap-disclosure
+info:
+  name: Webpack Sourcemap Disclosure
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: exposure,files
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"version":"file":"sources":'
+- request:
+    method: GET
+    path: //.js.map
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

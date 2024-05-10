@@ -1,0 +1,29 @@
+id: fortinet-fortimanager-panel
+info:
+  name: Fortinet FortiManager Panel - Detect
+  author: johnk3r
+  description: 'Fortinet FortiManager panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.fortinet.com/br/products/management/fortimanager
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortimanager:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fortimanager
+    vendor: fortinet
+  tags: panel,fortinet,fortios,fortimanager,detect
+traps:
+- request:
+    method: GET
+    path: /p/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FortiManager

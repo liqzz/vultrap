@@ -1,0 +1,25 @@
+id: cobbler-version
+info:
+  name: Cobbler Version Detection
+  author: c-sh0
+  description: Obtain cobbler version information
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,cobbler,api
+traps:
+- request:
+    method: POST
+    path: /cobbler_api
+    headers:
+      Content-Type: text/xml
+    body: |
+      <?xml version='1.0'?>
+      <methodCall>
+      <methodName>extended_version</methodName>
+      <params></params>
+      </methodCall>
+  response:
+    status_code: 200
+    headers: {}
+    body: <name>version</name>

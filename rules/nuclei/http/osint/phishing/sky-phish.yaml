@@ -1,0 +1,23 @@
+id: sky-phish
+info:
+  name: sky phishing Detection
+  author: rxerium
+  description: 'A sky phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://sky.com
+  metadata:
+    max-request: 1
+  tags: phishing,sky,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Discover TV, Broadband & Mobile Phone Packages with Sky

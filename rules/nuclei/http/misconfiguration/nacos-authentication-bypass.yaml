@@ -1,0 +1,38 @@
+id: nacos-authentication-bypass
+info:
+  name: Nacos < 2.2.0 - Authentication Bypass
+  author: Esonhugh
+  description: 'The authentication function of Nacos is can be bypass through default
+    JWT secret.
+
+    '
+  severity: critical
+  remediation: Change value of jwt secret in the configurations
+  reference:
+  - https://github.com/alibaba/nacos/issues/10060
+  - https://avd.aliyun.com/detail?id=AVD-2023-1655789
+  - https://nacos.io/zh-cn/docs/auth.html
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Nacos"
+  tags: auth-bypass,nacos,misconfig,jwt
+traps:
+- request:
+    method: GET
+    path: /nacos/v1/auth/users?pageNo=1&pageSize=10&accessToken=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username":"password":'
+- request:
+    method: GET
+    path: /v1/auth/users?pageNo=1&pageSize=10&accessToken=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

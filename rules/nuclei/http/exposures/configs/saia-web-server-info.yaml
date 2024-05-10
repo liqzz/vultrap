@@ -1,0 +1,25 @@
+id: saia-web-server
+info:
+  name: Saia PCD Web-Server Configuration Page - Detect
+  author: DhiyaneshDk
+  description: Saia PCD Web-Server configuration page was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6865
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: edb,config,exposure
+traps:
+- request:
+    method: GET
+    path: /loadtextfile.htm#programinfo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Saia PCD Web Server</title>

@@ -1,0 +1,35 @@
+id: prometheus-metrics
+info:
+  name: Prometheus Metrics - Detect
+  author: dhiyaneshDK,philippedelteil
+  description: Prometheus metrics page was detected.
+  severity: medium
+  reference:
+  - https://github.com/prometheus/prometheus
+  - https://hackerone.com/reports/1026196
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: exposure,prometheus,hackerone,config
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: cpu_seconds_totalhttp_request_duration_secondsprocess_virtual_memory_bytesprocess_start_time_secondslvm_
+- request:
+    method: GET
+    path: /api/metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

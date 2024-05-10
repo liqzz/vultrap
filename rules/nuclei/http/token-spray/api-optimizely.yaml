@@ -1,0 +1,22 @@
+id: api-optimizely
+info:
+  name: Optimizely API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://library.optimizely.com/docs/api/app/v2/index.html
+  metadata:
+    max-request: 1
+  tags: token-spray,optimizely
+traps:
+- request:
+    method: GET
+    path: https://api.optimizely.com/v2/projects
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"account_id":"confidence_threshold":'

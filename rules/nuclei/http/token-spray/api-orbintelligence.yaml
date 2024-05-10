@@ -1,0 +1,22 @@
+id: api-orbintelligence
+info:
+  name: ORB Intelligence API Test
+  author: daffainfo
+  description: Company lookup
+  severity: info
+  reference:
+  - https://api.orb-intelligence.com/docs/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/orb-intelligence
+  metadata:
+    max-request: 1
+  tags: token-spray,orbintelligence
+traps:
+- request:
+    method: GET
+    path: https://api.orb-intelligence.com/3/fetch/1/?api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"entity_type":"company_status":"orb_num":'

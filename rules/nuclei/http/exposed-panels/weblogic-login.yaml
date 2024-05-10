@@ -1,0 +1,26 @@
+id: weblogic-login
+info:
+  name: Oracle WebLogic Login Panel - Detect
+  author: bing0o,meme-lord
+  description: Oracle WebLogic login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:oracle:weblogic_server:*:*:*:*:-:*:*:*
+  metadata:
+    max-request: 1
+    product: weblogic_server
+    shodan-query: product:"Oracle Weblogic"
+    vendor: oracle
+  tags: panel,oracle,weblogic,login
+traps:
+- request:
+    method: GET
+    path: /console/login/LoginForm.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WebLogic

@@ -1,0 +1,23 @@
+id: gimp-phish
+info:
+  name: gimp phishing Detection
+  author: rxerium
+  description: 'A gimp phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://gimp.org
+  metadata:
+    max-request: 1
+  tags: phishing,gimp,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GIMP - GNU Image Manipulation Program

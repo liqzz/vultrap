@@ -1,0 +1,23 @@
+id: autoset-detect
+info:
+  name: AutoSet Page - Detect
+  author: MaStErCho
+  description: null
+  severity: info
+  reference:
+  - http://autoset.net/xe/
+  metadata:
+    max-request: 1
+    shodan-query: title:"AutoSet"
+    verified: true
+  tags: tech,php,autoset,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AutoSetalt">AutoSetlogo-map logo-autoset

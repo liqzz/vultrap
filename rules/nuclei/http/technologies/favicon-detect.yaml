@@ -1,0 +1,34 @@
+id: favicon-detect
+info:
+  name: favicon-detection
+  author: un-fmunozs,DhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://twitter.com/brsn76945860/status/1171233054951501824
+  - https://gist.github.com/yehgdotnet/b9dfc618108d2f05845c4d8e28c5fc6a
+  - https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
+  - https://github.com/devanshbatham/FavFreak
+  - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
+  metadata:
+    max-request: 2
+  tags: tech,favicon
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /images/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

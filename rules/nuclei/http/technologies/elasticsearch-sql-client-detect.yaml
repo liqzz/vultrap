@@ -1,0 +1,20 @@
+id: elasticsearch-sql-client-detect
+info:
+  name: Elasticsearch -  SQL Client Detection
+  author: pussycat0x
+  description: Elasticsearch detected SQL client.
+  severity: low
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Elasticsearch-sql client"
+  tags: elasticsearch,tech,sql
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Elasticsearch-sql client</title>

@@ -1,0 +1,23 @@
+id: wordpress-gdpr-cookie-compliance
+info:
+  name: GDPR Cookie Compliance (CCPA, DSGVO, Cookie Consent) Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/gdpr-cookie-compliance/
+  metadata:
+    max-request: 1
+    plugin_namespace: gdpr-cookie-compliance
+    wpscan: https://wpscan.com/plugin/gdpr-cookie-compliance
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/gdpr-cookie-compliance/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

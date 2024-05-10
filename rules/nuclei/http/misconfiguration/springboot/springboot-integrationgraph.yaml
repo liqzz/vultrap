@@ -1,0 +1,34 @@
+id: springboot-integrationgraph
+info:
+  name: Springboot Actuator integrationgraph
+  author: ELSFA7110
+  description: 'The integrationgraph endpoint exposes a graph containing all Spring
+    Integration components.
+
+    '
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /integrationgraph
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: providerintegrationPatternType
+- request:
+    method: GET
+    path: /actuator/integrationgraph
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

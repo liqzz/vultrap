@@ -1,0 +1,26 @@
+id: vite-config
+info:
+  name: Vite Configuration - File Exposure
+  author: DhiyaneshDk
+  description: 'The vite.config.js file is used to customize the behavior of Vite
+    and specify various settings for your project.
+
+    '
+  severity: low
+  reference:
+  - https://vitejs.dev/config/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"vite.config.js"
+  tags: devops,exposure,files,vite,config
+traps:
+- request:
+    method: GET
+    path: /vite.config.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: export default defineConfigplugins:laravel

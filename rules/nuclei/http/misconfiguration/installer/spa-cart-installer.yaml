@@ -1,0 +1,22 @@
+id: spa-cart-installer
+info:
+  name: SPA Cart - Installer
+  author: pussycat0x
+  description: SPA Cart  installer was found.
+  severity: high
+  reference:
+  - https://spa-cart.com/
+  metadata:
+    max-request: 1
+    fofa-query: title="SPA Cart Installation"
+  tags: spa-cart,exposure,installer,misconfig
+traps:
+- request:
+    method: GET
+    path: /install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SPA Cart Installation</title>PHP Version

@@ -1,0 +1,22 @@
+id: api-malshare
+info:
+  name: MalShare API Test
+  author: daffainfo
+  description: Malware Archive / file sourcing
+  severity: info
+  reference:
+  - https://malshare.com/doc.php
+  - https://github.com/daffainfo/all-about-apikey/tree/main/malshare
+  metadata:
+    max-request: 1
+  tags: token-spray,malshare
+traps:
+- request:
+    method: GET
+    path: https://api.malshare.com/api.php?api_key=&action=getlist
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"md5":"sha1":'

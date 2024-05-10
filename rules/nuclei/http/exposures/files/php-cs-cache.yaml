@@ -1,0 +1,23 @@
+id: php-cs-cache
+info:
+  name: PHP-CS-Fixer Cache - File Disclosure
+  author: DhiyaneshDk
+  description: PHP CS fixer cache internal file is disclosed.
+  severity: medium
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/php-cs-fixer-cache-file-publicly-accessible-php_cs-cache/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"php_cs.cache"
+  tags: exposure,files,php
+traps:
+- request:
+    method: GET
+    path: /.php_cs.cache
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{"php":"version":"indent":'

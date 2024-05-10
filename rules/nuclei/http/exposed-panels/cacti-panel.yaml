@@ -1,0 +1,36 @@
+id: cacti-panel
+info:
+  name: Cacti Login Panel - Detect
+  author: geeknik,daffainfo
+  description: Cacti login panel was detected.
+  severity: info
+  reference:
+  - https://www.cacti.net/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:cacti:cacti:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: cacti
+    vendor: cacti
+  tags: tech,cacti,login,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login to Cacti</title>The Cacti Group
+- request:
+    method: GET
+    path: /cacti/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

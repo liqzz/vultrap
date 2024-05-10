@@ -1,0 +1,26 @@
+id: api-blockchain
+info:
+  name: Blockchain API Test
+  author: daffainfo
+  description: Bitcoin Payment, Wallet & Transaction Data
+  severity: info
+  reference:
+  - https://api.blockchain.com/v3/#/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/blockchain
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: token-spray,blockchain
+traps:
+- request:
+    method: GET
+    path: https://api.blockchain.com/v3/exchange/accounts
+    headers:
+      Host: api.blockchain.com
+      X-API-Token: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"currency""balance""available"'

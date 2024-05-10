@@ -1,0 +1,26 @@
+id: bigfix-login
+info:
+  name: HCL BigFix Login Panel - Detect
+  author: idealphase
+  description: HCL BigFix login panel was detected.
+  severity: info
+  reference:
+  - https://www.hcltechsw.com/bigfix
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"BigFix"
+    max-request: 1
+    shodan-query: http.title:"BigFix"
+  tags: panel,bigfix
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title> BigFix </title><div class="bigfix-logo">

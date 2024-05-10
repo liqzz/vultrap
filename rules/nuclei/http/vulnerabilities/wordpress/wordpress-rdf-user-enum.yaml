@@ -1,0 +1,19 @@
+id: wordpress-rdf-user-enum
+info:
+  name: Wordpress RDF User Enumeration
+  author: r3dg33k
+  description: Leaked Wordpress RDF leads to User Emumeration.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress,enum
+traps:
+- request:
+    method: GET
+    path: /feed/rdf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <rdf:RDF<dc:creator>

@@ -1,0 +1,25 @@
+id: celebrus-detect
+info:
+  name: Celebrus - Detect
+  author: righettod
+  description: 'Celebrus was detected.
+
+    '
+  severity: info
+  reference:
+  - https://investors.celebrus.com/
+  metadata:
+    max-request: 1
+    verified: true
+    shodan-query: http.title:"Celebrus"
+  tags: tech,celebrus,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

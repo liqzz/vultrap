@@ -1,0 +1,21 @@
+id: libvirt-exporter-metrics
+info:
+  name: Libvirt Exporter Metrics
+  author: DhiyaneshDk
+  description: Libvirt Exporter is leaking metrics.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Libvirt"
+  tags: libvirt,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '# HELPlibvirt_'

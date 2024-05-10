@@ -1,0 +1,24 @@
+id: retool-login
+info:
+  name: Retool Login Panel - Detect
+  author: DhiyaneshDk
+  description: Retool login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Retool"
+    verified: true
+  tags: login,panel,retool
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Retool</title>

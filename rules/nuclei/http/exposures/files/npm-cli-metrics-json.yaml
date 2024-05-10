@@ -1,0 +1,30 @@
+id: npm-cli-metrics-json
+info:
+  name: NPM Anonymous CLI Metrics Json
+  author: DhiyaneshDK
+  description: anonymous-cli-metrics.json internal file in NPM is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"anonymous-cli-metrics.json"
+  tags: npm,devops,exposure,files
+traps:
+- request:
+    method: GET
+    path: /anonymous-cli-metrics.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"metricId""metrics"'
+- request:
+    method: GET
+    path: /.npm/anonymous-cli-metrics.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

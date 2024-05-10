@@ -1,0 +1,21 @@
+id: tasmota-install
+info:
+  name: Tasmota Installer Exposure
+  author: ritikchaddha
+  description: Tasmota is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Tasmota"
+  tags: misconfig,tasmota,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Install TasmotaTasmota Installer

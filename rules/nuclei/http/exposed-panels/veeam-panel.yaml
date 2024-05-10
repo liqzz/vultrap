@@ -1,0 +1,27 @@
+id: veeam-panel
+info:
+  name: Veeam Login Panel - Detect
+  author: DhiyaneshDK
+  description: Veeam login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:veeam:one_reporter:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: one_reporter
+    shodan-query: http.favicon.hash:-633512412
+    vendor: veeam
+    verified: true
+  tags: panel,veeam
+traps:
+- request:
+    method: GET
+    path: /login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login - Veeam ONE Reporter

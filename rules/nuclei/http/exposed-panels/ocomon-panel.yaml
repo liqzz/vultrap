@@ -1,0 +1,29 @@
+id: ocomon-panel
+info:
+  name: OcoMon Login Panel - Detect
+  author: dogasantos
+  description: a tiny helpdesk system written in php
+  severity: info
+  reference:
+  - https://sourceforge.net/projects/ocomonphp/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ocomon_project:ocomon:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: ocomon
+    shodan-query: http.html:"OcoMon"
+    vendor: ocomon_project
+    verified: true
+  tags: panel,ocomon,oss,ocomon_project
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)(OcoMon)open_form/ticket_form_open.php

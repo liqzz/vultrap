@@ -1,0 +1,21 @@
+id: webpack-mix-js
+info:
+  name: Webpack Mix File Disclosure
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"webpack.mix.js"
+  tags: config,exposure,devops,files
+traps:
+- request:
+    method: GET
+    path: /webpack.mix.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Mix Asset Managementconst mix

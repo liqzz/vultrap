@@ -1,0 +1,19 @@
+id: wp-app-log
+info:
+  name: Discover wp-app.log Files
+  author: geeknik
+  description: wp-app.log file is exposed.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: exposure,logs
+traps:
+- request:
+    method: GET
+    path: /wp-app.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LANGArray

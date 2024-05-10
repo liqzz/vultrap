@@ -1,0 +1,36 @@
+id: appwrite-panel
+info:
+  name: Appwrite Login Panel - Detect
+  author: ritikchaddha
+  description: Appwrite login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:appwrite:appwrite:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: appwrite
+    shodan-query: http.favicon.hash:-633108100
+    vendor: appwrite
+    verified: true
+  tags: panel,appwrite,detect
+traps:
+- request:
+    method: GET
+    path: /images/favicon.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /favicon.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

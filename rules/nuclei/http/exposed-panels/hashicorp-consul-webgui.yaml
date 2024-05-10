@@ -1,0 +1,26 @@
+id: hashicorp-consul-webgui
+info:
+  name: HashiCorp Consul Web UI Login Panel - Detect
+  author: c-sh0
+  description: HashiCorp Consul Web UI login panel was detected,
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:hashicorp:consul:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: consul
+    shodan-query: http.title:"Consul by HashiCorp"
+    vendor: hashicorp
+  tags: consul,webserver,panel,hashicorp
+traps:
+- request:
+    method: GET
+    path: /ui/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Consul by HashiCorp</title>%22%2C%22CONSUL_COPYRIGHT_URL%22%3A%22https%3A%2F%2Fwww.hashicorp.com%22

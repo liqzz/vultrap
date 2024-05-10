@@ -1,0 +1,48 @@
+id: drupal-user-enum-redirect
+info:
+  name: Drupal User Enumeration [Redirect]
+  author: 0w4ys
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 4
+    shodan-query: http.component:"Drupal"
+  tags: drupal,misconfig
+traps:
+- request:
+    method: GET
+    path: /user/0
+    headers: null
+    body: null
+  response:
+    status_code: 301
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /user/1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /user/2
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /user/3
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

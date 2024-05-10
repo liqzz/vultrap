@@ -1,0 +1,36 @@
+id: superset-login
+info:
+  name: Apache Superset Login Panel - Detect
+  author: DhiyaneshDk,righettod
+  description: Apache Superset login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:superset:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: superset
+    shodan-query: http.favicon.hash:1582430156
+    vendor: apache
+    verified: true
+  tags: panel,superset,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="Superset"<title>Superset</title>
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

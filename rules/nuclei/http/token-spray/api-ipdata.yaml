@@ -1,0 +1,22 @@
+id: api-ipdata
+info:
+  name: IP Data API Test
+  author: 0xpugazh
+  description: null
+  severity: info
+  reference:
+  - https://docs.ipdata.co/docs
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,ipdata
+traps:
+- request:
+    method: GET
+    path: https://api.ipdata.co/?api-key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"ip":"name":"asn":"route":"time_zone":'

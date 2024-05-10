@@ -1,0 +1,28 @@
+id: wpconfig-aws-keys
+info:
+  name: AWS S3 keys Leak
+  author: r12w4n
+  description: AWS S3 keys are exposed.
+  severity: high
+  metadata:
+    max-request: 2
+  tags: aws,s3,wordpress,disclosure,exposure
+traps:
+- request:
+    method: GET
+    path: /wp-config.php-backup
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: access-key-idsecret-access-keyDB_NAMEDB_PASSWORD
+- request:
+    method: GET
+    path: /%c0
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

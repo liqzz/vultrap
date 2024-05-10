@@ -1,0 +1,28 @@
+id: 3ware-default-login
+info:
+  name: 3ware Controller 3DM2 - Default Login
+  author: ritikchaddha
+  description: 'The default password for logging in to the 3DM2 web interface of a
+    3ware controller is "3ware" for both the Administrator and User accounts.
+
+    '
+  severity: high
+  reference:
+  - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
+  metadata:
+    max-request: 1
+    shodan-query: title:"3ware"
+  tags: default-login,3ware,3dm2
+traps:
+- request:
+    method: POST
+    path: /login.html
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'whopwd={{username}}&thepwd={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: now logged in

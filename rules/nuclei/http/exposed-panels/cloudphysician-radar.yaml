@@ -1,0 +1,25 @@
+id: cloudphysician-radar
+info:
+  name: Cloudphysician RADAR Login Panel - Detect
+  author: dhiyaneshDK
+  description: Cloudphysician RADAR login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7466
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Cloudphysician RADAR"
+  tags: panel,edb
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Cloudphysician RADAR</title>

@@ -1,0 +1,42 @@
+id: manageengine-adaudit
+info:
+  name: ZOHO ManageEngine ADAudit/ADManager Panel - Detect
+  author: dhiyaneshDK,PR3R00T,idealphase
+  description: 'ZOHO ManageEngine ADAudit/ADManager panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.manageengine.com/products/active-directory-audit/
+  - https://www.manageengine.com/products/ad-manager/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:zohocorp:manageengine_adaudit_plus:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: manageengine_adaudit_plus
+    shodan-query: http.title:"ADAudit Plus" || http.title:"ManageEngine - ADManager
+      Plus"
+    vendor: zohocorp
+    verified: true
+  tags: panel,zoho,manageengine,zohocorp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ManageEngine - ADManager PlusADAudit Plus
+- request:
+    method: GET
+    path: /authorization.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

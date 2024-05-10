@@ -1,0 +1,30 @@
+id: matrix-detect
+info:
+  name: Matrix Server Detect
+  author: erethon
+  description: Detects Matrix servers based on .well-known entries. See https://en.wikipedia.org/wiki/Matrix_(protocol)
+  severity: info
+  reference: https://spec.matrix.org/v1.3/server-server-api/#getwell-knownmatrixserver,
+    https://spec.matrix.org/v1.3/client-server-api/#getwell-knownmatrixclient
+  metadata:
+    max-request: 2
+  tags: tech,matrix
+traps:
+- request:
+    method: GET
+    path: /.well-known/matrix/server
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"m\.([a-z]+)":'
+- request:
+    method: GET
+    path: /.well-known/matrix/client
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

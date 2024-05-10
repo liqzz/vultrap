@@ -1,0 +1,21 @@
+id: connectwise-setup
+info:
+  name: ConnectWise Setup Wizard - Exposure
+  author: DhiyaneshDk
+  description: null
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"ContentPanel SetupWizard"
+  tags: misconfig,exposure,install,connectwise
+traps:
+- request:
+    method: GET
+    path: /SetupWizard.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SetupWizardPageContentPanel SetupWizard

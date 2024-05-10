@@ -1,0 +1,26 @@
+id: uptime-kuma-panel
+info:
+  name: Uptime Kuma - Panel
+  author: irshad ahamed
+  description: 'Realtime website and application monitoring tool
+
+    '
+  severity: info
+  reference:
+  - https://github.com/louislam/uptime-kuma
+  - https://uptime.kuma.pet/docs/
+  metadata:
+    max-request: 1
+    shodan-query: title:"Uptime Kuma"
+    verified: true
+  tags: uptime,kuma,panel,login
+traps:
+- request:
+    method: GET
+    path: /dashboard
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Uptime Kuma</title>

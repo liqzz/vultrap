@@ -1,0 +1,35 @@
+id: persis-panel
+info:
+  name: Persis Panel - Detect
+  author: righettod
+  description: Persis panel was detected,
+  severity: info
+  reference:
+  - https://www.persis.de/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"Persis"
+    verified: true
+  tags: panel,persis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: <title>Persis</title>/persis/persis.requirepersis.ui.progressimages_persis/
+- request:
+    method: GET
+    path: /main
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

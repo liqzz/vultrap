@@ -1,0 +1,24 @@
+id: node-ecstatic-listing
+info:
+  name: Node ecstatic Directory Listing
+  author: DhiyaneshDK
+  description: Directiory listing enabled in Node ecstatic.
+  severity: low
+  reference:
+  - https://tripla.dk/2020/03/26/multiple-vulnerabilities-in-nodejs-ecstatic-http-server-http-party/
+  metadata:
+    verified: true
+    shodan-query: 'server: "ecstatic"'
+    max-request: 1
+  tags: node,js,listing,ecstatic
+traps:
+- request:
+    method: GET
+    path: /img/
+    headers:
+      Range: 10000
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Index of /img/</title>

@@ -1,0 +1,22 @@
+id: api-taiga
+info:
+  name: Taiga API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://docs.taiga.io/api.html
+  metadata:
+    max-request: 1
+  tags: token-spray,taiga
+traps:
+- request:
+    method: GET
+    path: https://api.taiga.io/api/v1/application-tokens
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"auth_code":"state":'

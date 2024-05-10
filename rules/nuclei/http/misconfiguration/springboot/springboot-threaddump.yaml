@@ -1,0 +1,31 @@
+id: springboot-threaddump
+info:
+  name: Detect Springboot Thread Dump page
+  author: philippedelteil
+  description: The threaddump endpoint provides a thread dump from the application's
+    JVM.
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/2.4.11-SNAPSHOT/actuator-api/htmlsingle/#threaddump
+  metadata:
+    max-request: 2
+  tags: springboot,misconfig
+traps:
+- request:
+    method: GET
+    path: /threaddump
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"threads":"threadName":'
+- request:
+    method: GET
+    path: /actuator/threaddump
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

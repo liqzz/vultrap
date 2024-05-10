@@ -1,0 +1,22 @@
+id: imprivata-installer
+info:
+  name: Imprivata Appliance Installation Exposure
+  author: ritikchaddha
+  description: Imprivata Appliance is susceptible to the Installation page exposure
+    due to misconfiguration.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Appliance Setup Wizard"
+  tags: misconfig,imprivata,install,exposure
+traps:
+- request:
+    method: GET
+    path: /wizard/base.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Appliance Setup WizardImprivata

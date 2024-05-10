@@ -1,0 +1,23 @@
+id: bank-of-america-phish
+info:
+  name: Bank Of America phishing Detection
+  author: rxerium
+  description: 'A Bank Of America phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://bankofamerica.com
+  metadata:
+    max-request: 1
+  tags: phishing,BankOfAmerica,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Bank of America - Banking, Credit Cards, Loans and Merrill Investing

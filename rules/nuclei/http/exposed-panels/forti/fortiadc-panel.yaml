@@ -1,0 +1,29 @@
+id: fortiadc-panel
+info:
+  name: FortiADC Login Panel - Detect
+  author: DhiyaneshDk
+  description: FortiADC login panel was detected.
+  severity: info
+  reference:
+  - https://www.fortinet.com/products/application-delivery-controller/fortiadc
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortiadc:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fortiadc
+    shodan-query: title:"FortiADC"
+    vendor: fortinet
+    verified: true
+  tags: panel,fortinet
+traps:
+- request:
+    method: GET
+    path: /ui/#navigate/Login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FortiADC</title>

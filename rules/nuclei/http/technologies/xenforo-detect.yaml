@@ -1,0 +1,20 @@
+id: xenforo-detect
+info:
+  name: XenForo Forum Detection
+  author: dhiyaneshDk,daffainfo
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"XenForo"
+  tags: tech,xenforo
+traps:
+- request:
+    method: GET
+    path: /index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <html id="XenForo"<html id="XF"

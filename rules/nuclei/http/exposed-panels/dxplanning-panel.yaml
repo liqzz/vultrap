@@ -1,0 +1,24 @@
+id: dxplanning-panel
+info:
+  name: DXPlanning Panel - Detect
+  author: righettod
+  description: 'DXPlanning was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.dedalus.com/fr/wp-content/uploads/sites/13/2022/05/Catalogue-formations-DxCare-2022.pdf
+  metadata:
+    max-request: 1
+    verified: true
+  tags: panel,dxplanning,login,detect
+traps:
+- request:
+    method: GET
+    path: /DxPlanning/WebBooking/Version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Webbooking</title>

@@ -1,0 +1,26 @@
+id: apache-couchdb-unauth
+info:
+  name: Apache CouchDB - Unauthenticated Access
+  author: SleepingBag945
+  description: Apache CouchDB is exposed to external users.
+  severity: high
+  reference:
+  - https://github.com/ax1sX/SecurityList/blob/main/Database/CouchDB.md
+  - https://github.com/taomujian/linbing/blob/master/python/app/plugins/http/CouchDB/Couchdb_Unauthorized.py
+  - https://github.com/mubix/tools/blob/master/nmap/scripts/couchdb-stats.nse
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: product:"CouchDB"
+    fofa-query: app="APACHE-CouchDB"
+  tags: apache,couchdb,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /_config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: httpd_design_handlersexternal_manager

@@ -1,0 +1,30 @@
+id: php-user-ini-disclosure
+info:
+  name: Php User.ini Disclosure
+  author: dhiyaneshDk
+  description: PHP user.ini file is exposed.
+  severity: medium
+  reference:
+  - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/php-user-ini-disclosure.json
+  metadata:
+    max-request: 2
+  tags: exposure,config,files
+traps:
+- request:
+    method: GET
+    path: /user.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: asserthighlightopcachemssqloci8agent
+- request:
+    method: GET
+    path: /.user.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

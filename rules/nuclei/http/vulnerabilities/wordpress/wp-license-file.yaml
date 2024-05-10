@@ -1,0 +1,19 @@
+id: wp-license-file
+info:
+  name: WordPress license file disclosure
+  author: yashgoti
+  description: Leaked WordPress license file.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: wordpress
+traps:
+- request:
+    method: GET
+    path: /license.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WordPress - Web publishing software

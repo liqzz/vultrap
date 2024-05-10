@@ -1,0 +1,47 @@
+id: springboot-actuator
+info:
+  name: Detect Springboot Actuators
+  author: that_juan_,dwisiswant0,wdahlenb,dr0pd34d
+  description: null
+  severity: info
+  metadata:
+    max-request: 4
+    shodan-query: http.favicon.hash:116323821
+  tags: tech,springboot,actuator
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"_links":"self":"health"'
+- request:
+    method: GET
+    path: /actuator
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /actuator/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

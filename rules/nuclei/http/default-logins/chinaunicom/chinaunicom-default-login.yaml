@@ -1,0 +1,23 @@
+id: chinaunicom-default-login
+info:
+  name: China Unicom Modem Default Login
+  author: princechaddha
+  description: Default login credentials were discovered for a China Unicom modem.
+  severity: high
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    max-request: 1
+  tags: chinaunicom,default-login
+traps:
+- request:
+    method: POST
+    path: /cu.html
+    headers: {}
+    body: 'frashnum=&action=login&Frm_Logintoken=1&Username={{username}}&Password={{password}}&Username=&Password=
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

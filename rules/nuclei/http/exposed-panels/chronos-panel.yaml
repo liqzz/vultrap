@@ -1,0 +1,26 @@
+id: chronos-panel
+info:
+  name: Chronos Panel - Detect
+  author: righettod
+  description: 'Chronos Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.asys.fr/chronos
+  metadata:
+    fofa-query: body="chronoslogin.js"
+    max-request: 1
+    shodan-query: http.html:"chronoslogin.js"
+    verified: true
+  tags: panel,chronos,login,detect
+traps:
+- request:
+    method: GET
+    path: /chronos.wsc/asparamlogin.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: chronoslogin.htmlurlcliurl_portail

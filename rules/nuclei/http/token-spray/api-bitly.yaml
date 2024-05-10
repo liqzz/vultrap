@@ -1,0 +1,21 @@
+id: api-bitly
+info:
+  name: Bitly API Test
+  author: zzeitlin,geeknik
+  description: null
+  severity: info
+  reference:
+  - https://dev.bitly.com/api-reference
+  metadata:
+    max-request: 1
+  tags: token-spray,bitly
+traps:
+- request:
+    method: GET
+    path: https://api-ssl.bitly.com/v3/shorten?access_token=&longUrl=https://www.google.com
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"status_code":200,"status_txt":"OK"'

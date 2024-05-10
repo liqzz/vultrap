@@ -1,0 +1,40 @@
+id: google-services-json
+info:
+  name: Google Service Json
+  author: DhiyaneshDK
+  description: google-services.json internal file is exposed.
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/6886
+  metadata:
+    verified: true
+    max-request: 3
+    google-query: intitle:"index of" "google-services.json"
+  tags: google,cloud,exposure,files
+traps:
+- request:
+    method: GET
+    path: /google-services.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: storage_bucketoauth_client
+- request:
+    method: GET
+    path: /app/google-services.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /android/app/google-services.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

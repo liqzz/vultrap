@@ -1,0 +1,28 @@
+id: arcgis-api-service
+info:
+  name: ArcGIS REST Services Directory - Detect
+  author: HeeresS
+  description: Check for the existence of the "/arcgis/rest/services" path on an ArcGIS
+    server.
+  severity: info
+  reference:
+  - https://enterprise.arcgis.com/en/
+  classification:
+    cpe: cpe:2.3:a:esri:arcgis_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: arcgis_server
+    shodan-query: title:"ArcGIS"
+    vendor: esri
+    verified: true
+  tags: panel,arcgis,rest,api,detect,esri
+traps:
+- request:
+    method: GET
+    path: /arcgis/rest/services
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: REST Services DirectoryArcGIS

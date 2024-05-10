@@ -1,0 +1,23 @@
+id: kopano-webapp-panel
+info:
+  name: Kopano WebApp Login Panel - Detect
+  author: righettod
+  description: Kopano WebApp login panel was detected.
+  severity: info
+  reference:
+  - https://kopano.com/
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Kopano WebApp"
+    verified: true
+  tags: panel,kopano,login,detect
+traps:
+- request:
+    method: GET
+    path: /webapp/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

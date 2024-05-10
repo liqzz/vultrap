@@ -1,0 +1,24 @@
+id: api-quip
+info:
+  name: Quip API Test
+  author: daffainfo
+  description: File Sharing and Storage for groups
+  severity: info
+  reference:
+  - https://quip.com/dev/automation/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/quip
+  metadata:
+    max-request: 1
+  tags: token-spray,quip
+traps:
+- request:
+    method: GET
+    path: https://platform.quip.com/1/users/current
+    headers:
+      Host: platform.quip.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"name":'

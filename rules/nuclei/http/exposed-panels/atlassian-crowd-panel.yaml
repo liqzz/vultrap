@@ -1,0 +1,27 @@
+id: atlassian-crowd-panel
+info:
+  name: Atlassian Crowd Login Panel
+  author: organiccrap,AdamCrosser
+  description: An Atlassian Crowd login panel was discovered.
+  severity: info
+  reference:
+  - https://www.atlassian.com/
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:*
+  metadata:
+    category: sso
+    max-request: 1
+    product: crowd
+    vendor: atlassian
+  tags: panel,atlassian
+traps:
+- request:
+    method: GET
+    path: /crowd/console/login.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Atlassian Crowd - Login</title>

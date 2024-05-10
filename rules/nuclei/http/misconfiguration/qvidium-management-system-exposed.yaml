@@ -1,0 +1,21 @@
+id: qvidium-management-system-exposed
+info:
+  name: QVidium Management System Exposed
+  author: tess
+  description: QVidium Management System is Exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"QVidium Management"
+  tags: misconfig,qvidium
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: QVidium Managementsrc="/cgi-bin/banner.cgi

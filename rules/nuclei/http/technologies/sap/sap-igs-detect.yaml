@@ -1,0 +1,19 @@
+id: sap-igs-detect
+info:
+  name: SAP Internet Graphics Server (IGS) Detection
+  author: _generic_human_
+  description: Detection of SAP Internet Graphics Server (IGS)
+  severity: info
+  metadata:
+    max-request: 1
+  tags: sap,tech,igs
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SAP IGSis running

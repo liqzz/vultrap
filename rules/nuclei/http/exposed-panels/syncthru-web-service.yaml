@@ -1,0 +1,29 @@
+id: syncthru-web-service
+info:
+  name: SyncThru Web Service Panel - Detect
+  author: DhiyaneshDk
+  description: SyncThru Web Service panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7843
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:samsung:syncthru_web_service:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: syncthru_web_service
+    shodan-query: title:"SyncThru Web Service"
+    vendor: samsung
+    verified: true
+  tags: edb,panel,syncthru,printer,samsung
+traps:
+- request:
+    method: GET
+    path: /sws/index.sws
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SyncThru Web Service</title>

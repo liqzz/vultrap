@@ -1,0 +1,36 @@
+id: osticket-panel
+info:
+  name: osTicket Login Panel - Detect
+  author: ritikchaddha
+  description: osTicket login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:osticket:osticket:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: osticket
+    shodan-query: http.html:"powered by osTicket"
+    vendor: osticket
+    verified: true
+  tags: panel,osticket
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: powered by osTicketcontent="osTicket
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

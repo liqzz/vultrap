@@ -1,0 +1,24 @@
+id: badarg-log
+info:
+  name: Badarg Log File Exposure
+  author: Hardik-Solanki
+  description: Badarg log file was exposed.
+  severity: low
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  - https://www.erlang.org/doc/reference_manual/errors.html
+  metadata:
+    verified: true
+    max-request: 1
+    github-query: filename:badarg.log
+  tags: exposure,badarg,log,debug
+traps:
+- request:
+    method: GET
+    path: /.badarg.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Special kernel symbols:Kernel executable memory footprint:badarg

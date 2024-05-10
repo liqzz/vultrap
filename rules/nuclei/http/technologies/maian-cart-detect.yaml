@@ -1,0 +1,19 @@
+id: maian-cart-detect
+info:
+  name: Maian Cart Detection
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,maian
+traps:
+- request:
+    method: GET
+    path: /favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

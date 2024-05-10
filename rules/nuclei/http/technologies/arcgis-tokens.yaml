@@ -1,0 +1,27 @@
+id: arcgis-token-service
+info:
+  name: ArcGIS Token Service - Detect
+  author: HeeresS
+  description: Check for the existence of the ArcGIS Token Service on an ArcGIS server.
+  severity: info
+  reference:
+  - https://enterprise.arcgis.com/en/
+  classification:
+    cpe: cpe:2.3:a:esri:arcgis_server:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: esri
+    product: arcgis_server
+    shodan-query: title:"ArcGIS"
+  tags: tech,arcgis,tokens,detect
+traps:
+- request:
+    method: GET
+    path: /arcgis/tokens/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="ArcGIS Token Service

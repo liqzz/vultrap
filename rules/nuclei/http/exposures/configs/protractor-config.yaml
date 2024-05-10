@@ -1,0 +1,25 @@
+id: protractor-config
+info:
+  name: Protractor Configuration Exposure
+  author: DhiyaneshDK
+  description: 'Protractor configuration file was detected.
+
+    '
+  severity: low
+  reference:
+  - https://www.protractortest.org/#/api-overview
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"protractor.conf.js"
+  tags: devops,exposure,protractor,config
+traps:
+- request:
+    method: GET
+    path: /protractor.conf.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'exports.configcapabilities:'

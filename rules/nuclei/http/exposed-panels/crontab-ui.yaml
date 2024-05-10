@@ -1,0 +1,23 @@
+id: crontab-ui
+info:
+  name: Crontab UI - Dashboard Exposure
+  author: DhiyaneshDk
+  description: null
+  severity: high
+  reference:
+  - https://www.facebook.com/photo/?fbid=629288492575007&set=a.467014098802448
+  metadata:
+    max-request: 1
+    shodan-query: html:"Crontab UI"
+    verified: true
+  tags: exposure,crontab,ui,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Crontab UI</title>

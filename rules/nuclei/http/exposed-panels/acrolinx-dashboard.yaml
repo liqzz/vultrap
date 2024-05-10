@@ -1,0 +1,26 @@
+id: acrolinx-dashboard
+info:
+  name: Acrolinx Dashboard
+  author: ffffffff0x
+  description: An Acrolinx Analytics dashboard was detected.
+  severity: info
+  reference:
+  - https://docs.acrolinx.com/coreplatform/latest/en/analytics/acrolinx-analytics-dashboards
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    fofa-query: title=="Acrolinx Dashboard"
+    google-query: inurl:"Acrolinx Dashboard"
+    max-request: 1
+    shodan-query: http.title:"Acrolinx Dashboard"
+  tags: acrolinx,panel
+traps:
+- request:
+    method: GET
+    path: /dashboard.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Acrolinx Dashboard</title>Acrolinx</title>

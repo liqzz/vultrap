@@ -1,0 +1,26 @@
+id: connectwise-backup-manager
+info:
+  name: ConnectWise Server Backup Manager SE Panel - Detect
+  author: prajiteshsingh
+  description: ConnectWise Server Backup Manager SE login panel was detected.
+  severity: info
+  reference:
+  - https://www.connectwise.com/company/trust/security-bulletins/r1soft-and-recover-security-bulletin
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.component:zk http.title:"Server Backup Manager"
+    verified: true
+  tags: panel,connectwise,backup
+traps:
+- request:
+    method: GET
+    path: /login.zul
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Server Backup Manager SE

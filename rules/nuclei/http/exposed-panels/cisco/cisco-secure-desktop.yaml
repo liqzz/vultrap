@@ -1,0 +1,25 @@
+id: cisco-secure-desktop
+info:
+  name: Cisco Secure Desktop Installation Panel - Detect
+  author: pdteam
+  description: Cisco Secure Desktop installation panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:cisco:secure_desktop:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: secure_desktop
+    vendor: cisco
+  tags: cisco,panel
+traps:
+- request:
+    method: GET
+    path: /CACHE/sdesktop/install/start.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: InstallationWebLaunch

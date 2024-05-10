@@ -1,0 +1,21 @@
+id: firebase-detect
+info:
+  name: firebase detect
+  author: organiccrap
+  description: null
+  severity: low
+  reference:
+  - http://ghostlulz.com/google-exposed-firebase-database/
+  metadata:
+    max-request: 1
+  tags: tech,firebase
+traps:
+- request:
+    method: GET
+    path: /.settings/rules.json?auth=FIREBASE_SECRET
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Could not parse auth token

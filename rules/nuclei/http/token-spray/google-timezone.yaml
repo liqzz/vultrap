@@ -1,0 +1,19 @@
+id: api-googletimezone
+info:
+  name: Google Timezone API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,timezone
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: errorMessage

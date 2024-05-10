@@ -1,0 +1,46 @@
+id: nacos-create-user
+info:
+  name: Alibaba Nacos - Unauthorized Account Creation
+  author: SleepingBag945
+  description: 'Nacos uses a fixed JWT token key to authenticate users in the default
+    configuration. Since Nacos is an open source project, the key is publicly known,
+    so unauthorized attackers can use this fixed key to forge any user identity Log
+    in to Nacos to manage and operate background interface functions.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/nacos-token-create-user.yaml
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: title:"Nacos"
+  tags: misconfig,nacos,unauth,bypass,instrusive
+traps:
+- request:
+    method: POST
+    path: /nacos/v1/auth/users/?username=&password=&accessToken=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: create user ok!
+- request:
+    method: GET
+    path: /nacos/v1/auth/users?pageNo=1&pageSize=9&search=blur&accessToken=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: DELETE
+    path: /nacos/v1/auth/users/?username=&accessToken=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: delete user ok!

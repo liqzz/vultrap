@@ -1,0 +1,23 @@
+id: api-pagerduty
+info:
+  name: Pagerduty API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developer.pagerduty.com/api-reference
+  metadata:
+    max-request: 1
+  tags: token-spray,pagerduty
+traps:
+- request:
+    method: GET
+    path: https://api.pagerduty.com/schedules
+    headers:
+      Accept: application/vnd.pagerduty+json;version=2
+      Authorization: Token token={{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"schedules":"id":'

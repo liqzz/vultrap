@@ -1,0 +1,26 @@
+id: ibm-dcbc-default-login
+info:
+  name: IBM Decision Center Business Console - Default Login
+  author: DhiyaneshDK
+  description: null
+  severity: high
+  reference:
+  - https://www.ibm.com/docs/en/odm/8.0.1?topic=users-tutorial-getting-started-decision-center-business-console
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title="Decision Center | Business Console"
+  tags: ibm,default-login,decision-center
+traps:
+- request:
+    method: POST
+    path: /decisioncenter/j_security_check
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'j_username={{username}}&j_password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: 'userName: ''odmAdmin''Log out'

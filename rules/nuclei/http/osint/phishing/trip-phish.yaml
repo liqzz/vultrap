@@ -1,0 +1,23 @@
+id: trip-phish
+info:
+  name: trip phishing Detection
+  author: rxerium
+  description: 'A trip phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://trip.com
+  metadata:
+    max-request: 1
+  tags: phishing,trip,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Trip.com: Book cheap flights, hotels, car rentals, trains and more'

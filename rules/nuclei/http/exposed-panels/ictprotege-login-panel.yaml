@@ -1,0 +1,27 @@
+id: ictprotege-login-panel
+info:
+  name: ICT Protege WX Login Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:ict:protege_wx_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: protege_wx_firmware
+    shodan-query: title:"ICT Protege WX&reg;"
+    vendor: ict
+    verified: true
+  tags: panel,ictprotege,ict
+traps:
+- request:
+    method: GET
+    path: /login.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ICT Protege WX&reg;</title>

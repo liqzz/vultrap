@@ -1,0 +1,40 @@
+id: phppgadmin-panel
+info:
+  name: phpPgAdmin Login Panel - Detect
+  author: Ganofins,Nullfuzz
+  description: 'phpPgAdmin login ipanel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://docs.cpanel.net/cpanel/databases/phppgadmin/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:phppgadmin_project:phppgadmin:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: phppgadmin
+    shodan-query: http.title:phpPgAdmin
+    vendor: phppgadmin_project
+    verified: true
+  tags: panel,phppgadmin,phppgadmin_project
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: intro.phpbrowser.php<title>phpPgAdmin
+- request:
+    method: GET
+    path: /phppgadmin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

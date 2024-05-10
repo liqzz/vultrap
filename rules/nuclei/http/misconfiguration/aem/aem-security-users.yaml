@@ -1,0 +1,24 @@
+id: aem-security-users
+info:
+  name: Adobe AEM Security Users Exposure
+  author: dhiyaneshDk
+  description: Adobe AEM Security Users are exposed.
+  severity: medium
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  metadata:
+    max-request: 1
+    shodan-query:
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  tags: misconfig,aem,adobe,exposure
+traps:
+- request:
+    method: GET
+    path: /libs/granite/security/content/useradmin.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: AEM Security | Userstrackingelement="create user"

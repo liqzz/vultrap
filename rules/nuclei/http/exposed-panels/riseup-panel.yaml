@@ -1,0 +1,25 @@
+id: riseup-panel
+info:
+  name: Rise Up Login Panel - Detect
+  author: righettod
+  description: Rise Up login panel was detected.
+  severity: info
+  reference:
+  - https://www.riseup.ai/en/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    verified: true
+  tags: panel,riseup
+traps:
+- request:
+    method: GET
+    path: /Account/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: cfg.envRiseUpimgresize.riseup.aicontent.riseup.ailogin-page

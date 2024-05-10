@@ -1,0 +1,31 @@
+id: lucee-default-login
+info:
+  name: Lucee - Default Login
+  author: jpg0mez
+  description: 'Lucee admin panel using the default login password was discovered.
+
+    '
+  severity: high
+  reference:
+  - https://support.intranetconnections.com/hc/en-us/articles/115012060627-Lucee-Configuration
+  classification:
+    cwe-id: CWE-1392
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Lucee"
+    fofa-query: app="Lucee-Engine"
+  tags: lucee,default-login
+traps:
+- request:
+    method: POST
+    path: ''
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'login_passwordweb={{password}}&lang=en&rememberMe=s&submit=submit
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Overview - Lucee Web Administrator

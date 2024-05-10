@@ -1,0 +1,23 @@
+id: box-phish
+info:
+  name: box phishing Detection
+  author: rxerium
+  description: 'A box phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://box.com
+  metadata:
+    max-request: 1
+  tags: phishing,box-storage,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Secure File Sharing, Storage, and Collaboration | Box

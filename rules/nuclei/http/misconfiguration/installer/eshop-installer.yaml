@@ -1,0 +1,21 @@
+id: eshop-installer
+info:
+  name: EShop Installer Exposure
+  author: DhiyaneshDk
+  description: EShop is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"eShop Installer"
+  tags: misconfig,eshop,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: eShop InstallerWelcome to Installer

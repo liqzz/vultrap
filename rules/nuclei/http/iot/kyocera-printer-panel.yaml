@@ -1,0 +1,23 @@
+id: kyocera-printer-panel
+info:
+  name: Kyocera Printer Panel - Detect
+  author: gy741
+  description: 'Kyocera printer panel was detected.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-50306417
+  tags: iot,panel,kyocera,printer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /startwlm/Start_Wlm.htm

@@ -1,0 +1,24 @@
+id: beyondtrust-login-server
+info:
+  name: BeyondTrust Privileged Access Management Login - Detect
+  author: r3dg33k,nuk3s3c
+  description: BeyondTrust Privileged Access Management login panel was detected.
+  severity: info
+  reference:
+  - https://www.beyondtrust.com/brand
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: beyondtrust,pam,panel
+traps:
+- request:
+    method: GET
+    path: /WebConsole/api/security/auth/loginServers
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"DomainName":"(.*)""domains":'

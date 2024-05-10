@@ -1,0 +1,21 @@
+id: discourse-installer
+info:
+  name: Discourse Installer Exposure
+  author: DhiyaneshDk
+  description: Discourse is susceptible to the Installation page exposure due to misconfiguration.
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Discourse Setup"
+  tags: misconfig,discourse,install
+traps:
+- request:
+    method: GET
+    path: /finish-installation/register
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Discourse SetupRegister Admin Account

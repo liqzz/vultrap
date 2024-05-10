@@ -1,0 +1,30 @@
+id: netdata-panel
+info:
+  name: Netdata Panel - Detect
+  author: TechbrunchFR
+  description: 'Netdata panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/netdata/netdata
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:netdata:netdata:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: netdata
+    shodan-query: http.title:"netdata dashboard"
+    vendor: netdata
+  tags: panel,netdata
+traps:
+- request:
+    method: GET
+    path: /api/v1/info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: netdata

@@ -1,0 +1,25 @@
+id: apple-cups-exposure
+info:
+  name: Apple CUPS Sources - Exposure
+  author: DhiyaneshDK
+  description: 'Apple CUPS Sources was exposed.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/apple/cups
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Home - CUPS"
+  tags: apple,cups,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Home \- CUPS ([0-9.]+)<\/title>

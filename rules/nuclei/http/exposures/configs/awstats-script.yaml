@@ -1,0 +1,50 @@
+id: awstats-script
+info:
+  name: AWStats Script Config - Detect
+  author: sheikhrishad,msegoviag
+  description: AWStats configuration information was detected.
+  severity: info
+  reference: https://www.awstats.org/docs/awstats_setup.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 4
+  tags: config,exposure,awstats
+traps:
+- request:
+    method: GET
+    path: /awstats.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Do not remove this line
+- request:
+    method: GET
+    path: /cgi-bin/awstats.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /logs/awstats.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /webstats/awstats.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

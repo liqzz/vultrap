@@ -1,0 +1,19 @@
+id: springboot-trace
+info:
+  name: Detect Springboot Trace Actuator
+  author: that_juan_,dwisiswant0,wdahlenb
+  description: View recent HTTP requests and responses
+  severity: low
+  metadata:
+    max-request: 1
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /trace
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"timestamp""info""method""path"'

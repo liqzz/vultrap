@@ -1,0 +1,23 @@
+id: wordpress-official-facebook-pixel
+info:
+  name: Meta pixel for WordPress Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/official-facebook-pixel/
+  metadata:
+    max-request: 1
+    plugin_namespace: official-facebook-pixel
+    wpscan: https://wpscan.com/plugin/official-facebook-pixel
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/official-facebook-pixel/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

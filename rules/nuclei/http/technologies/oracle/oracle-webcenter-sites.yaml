@@ -1,0 +1,21 @@
+id: oracle-webcenter-sites
+info:
+  name: Oracle WebCenter Sites
+  author: leovalcante
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"WebCenter"
+  tags: tech,oracle,webcenter
+traps:
+- request:
+    method: GET
+    path: /welcome_webcenter.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FOR ORACLEWebCenter Framework

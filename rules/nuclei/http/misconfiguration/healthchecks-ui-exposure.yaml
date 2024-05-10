@@ -1,0 +1,21 @@
+id: healthchecks-ui-exposure
+info:
+  name: Healthchecks UI Exposure
+  author: tess
+  description: Healthchecks UI is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Health Checks UI"
+  tags: misconfig,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Health Checks UIvar webhookEndpoint

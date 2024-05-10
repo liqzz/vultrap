@@ -1,0 +1,36 @@
+id: freeipa-panel
+info:
+  name: FreeIPA Identity Management Login Panel - Detect
+  author: DhiyaneshDk
+  description: FreeIPA Identity Management login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:freeipa:freeipa:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: freeipa
+    shodan-query: html:"FreeIPA"
+    vendor: freeipa
+    verified: true
+  tags: panel,login,freeipa
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '''freeipa/'''
+- request:
+    method: GET
+    path: /ipa/ui/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

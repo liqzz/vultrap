@@ -1,0 +1,27 @@
+id: rocketmq-console-exposure
+info:
+  name: Apache RocketMQ Console Panel - Detect
+  author: pdteam
+  description: Apache RocketMQ Console panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:rocketmq:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: rocketmq
+    shodan-query: http.title:"RocketMq-console-ng"
+    vendor: apache
+    verified: true
+  tags: panel,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>RocketMq-console-ng</title>

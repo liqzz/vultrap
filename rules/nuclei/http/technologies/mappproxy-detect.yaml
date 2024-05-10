@@ -1,0 +1,37 @@
+id: mappproxy-detect
+info:
+  name: Mapproxy - Detect
+  author: philippedelteil
+  description: 'Checks for a running MapProxy instance and obtain version number.
+    Also checks if the demo page is enabled. MapProxy is an open source proxy for
+    geospatial data. It caches, accelerates and transforms data from existing map
+    services and serves any desktop or web GIS client.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/mapproxy/mapproxy
+  - https://mapproxy.org
+  metadata:
+    max-request: 2
+    shodan-query: http.html:"Welcome to MapProxy"
+  tags: tech,mapproxy,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to MapProxyMapProxy Demo
+- request:
+    method: GET
+    path: /demo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

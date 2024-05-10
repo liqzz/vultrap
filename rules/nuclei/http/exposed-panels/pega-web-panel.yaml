@@ -1,0 +1,41 @@
+id: pega-web-panel
+info:
+  name: Pega Infinity Login Panel - Detect
+  author: powerexploit,righettod
+  description: 'Pega Infinity login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.pega.com/infinity
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: inurl:"/prweb/PRAuth/app/default"
+    max-request: 2
+    product: platform
+    shodan-query: title:"Pega Platform"
+    vendor: pega
+    verified: true
+  tags: panel,pega
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="Pega Infinityalt="Pega Logoid = "pegaLoginPega Platform
+- request:
+    method: GET
+    path: /prweb/PRAuth/app/default/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

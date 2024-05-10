@@ -1,0 +1,26 @@
+id: cloudpanel-login
+info:
+  name: CloudPanel Login - Detect
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:mgt-commerce:cloudpanel:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: icon_hash="151132309"
+    max-request: 1
+    product: cloudpanel
+    shodan-query: http.favicon.hash:151132309
+    vendor: mgt-commerce
+    verified: true
+  tags: panel,login,cloudpanel,detect,mgt-commerce
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CloudPanel | Log InForgot password

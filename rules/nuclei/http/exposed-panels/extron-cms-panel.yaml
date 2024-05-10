@@ -1,0 +1,28 @@
+id: ektron-cms-panel
+info:
+  name: Ektron CMS Login Panel - Detect
+  author: pikpikcu
+  description: Ektron CMS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ektron:ektron_content_management_system:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: app="Ektron-CMS"
+    max-request: 1
+    product: ektron_content_management_system
+    shodan-query: http.html:"Ektron"
+    vendor: ektron
+    verified: true
+  tags: panel,ektron,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: EktronClientManagerektronThemeEktron.ready

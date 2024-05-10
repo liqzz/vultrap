@@ -1,0 +1,23 @@
+id: aws-ec2-status
+info:
+  name: Amazon EC2 Status
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://www.facebook.com/photo/?fbid=644887334348456&set=a.467014098802448
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Amazon EC2 Status"
+  tags: misconfig,ec2,aws,amazon
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Amazon EC2 Status</title>

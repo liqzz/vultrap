@@ -1,0 +1,23 @@
+id: microsoft-teams-phish
+info:
+  name: microsoft teams phishing Detection
+  author: rxerium
+  description: 'A microsoft teams phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://www.microsoft.com/en-gb/microsoft-teams/download-app
+  metadata:
+    max-request: 1
+  tags: phishing,microsoft-teams,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Download Microsoft Teams Desktop and Mobile Apps | Microsoft Teams

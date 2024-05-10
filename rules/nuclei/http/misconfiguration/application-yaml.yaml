@@ -1,0 +1,46 @@
+id: application-yaml
+info:
+  name: application.yaml detection
+  author: Cristi vlad (@cristivlad25)
+  description: Finds Application YAML files which often contain sensitive information.
+  severity: info
+  metadata:
+    max-request: 4
+  tags: misconfig
+traps:
+- request:
+    method: GET
+    path: /app.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'runtime:spring:datasource:platform:server:job:'
+- request:
+    method: GET
+    path: /app.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /application.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /application.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: api-heroku
+info:
+  name: Heroku API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://devcenter.heroku.com/articles/platform-api-quickstart#calling-the-api
+  metadata:
+    max-request: 1
+  tags: token-spray,heroku
+traps:
+- request:
+    method: POST
+    path: https://api.heroku.com/apps
+    headers:
+      Accept: application/vnd.heroku+json; version=3
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"created_at":"git_url":'

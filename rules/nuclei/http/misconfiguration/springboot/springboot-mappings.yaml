@@ -1,0 +1,28 @@
+id: springboot-mappings
+info:
+  name: Detect Springboot Mappings Actuator
+  author: that_juan_,dwisiswant0,wdahlenb
+  description: Additional routes may be displayed
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /mappings
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: mappingsmethodproduces
+- request:
+    method: GET
+    path: /actuator/mappings
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

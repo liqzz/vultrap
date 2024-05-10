@@ -1,0 +1,27 @@
+id: seagate-nas-login
+info:
+  name: Seagate NAS Login - Detect
+  author: JustaAcat
+  description: 'Seagate NAS - SEAGATE Login was detected.
+
+    '
+  severity: info
+  classification:
+    cpe: cpe:2.3:o:seagate:nas_os:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: nas_os
+    shodan-query: title:"Seagate NAS - SEAGATE"
+    vendor: seagate
+    verified: true
+  tags: panel,seagate,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Seagate NAS - SEAGATE

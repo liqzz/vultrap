@@ -1,0 +1,21 @@
+id: shoppable-token
+info:
+  name: Shoppable Service Auth Token
+  author: philippedelteil
+  description: null
+  severity: unknown
+  reference:
+  - https://ask.shoppable.com/knowledge/quick-start-api-guide
+  metadata:
+    max-request: 1
+  tags: exposure,shoppable,token,auth,service,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: data-shoppable-auth-token

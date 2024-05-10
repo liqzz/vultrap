@@ -1,0 +1,22 @@
+id: uservoice-takeover
+info:
+  name: Uservoice Takeover Detection
+  author: MiryangJung
+  description: Uservoice takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/163
+  - https://hackerone.com/reports/269109
+  metadata:
+    max-request: 1
+  tags: takeover,uservoice,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This UserVoice subdomain is currently available!

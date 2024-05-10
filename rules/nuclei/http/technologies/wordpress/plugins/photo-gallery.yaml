@@ -1,0 +1,23 @@
+id: wordpress-photo-gallery
+info:
+  name: Photo Gallery by 10Web – Mobile-Friendly Image Gallery Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/photo-gallery/
+  metadata:
+    max-request: 1
+    plugin_namespace: photo-gallery
+    wpscan: https://wpscan.com/plugin/photo-gallery
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/photo-gallery/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

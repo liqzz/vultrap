@@ -1,0 +1,20 @@
+id: glpi-directory-listing
+info:
+  name: GLPI Directory Listing
+  author: RedTeamBrasil,ImNightmaree
+  description: In certain cases, system administrators leave directory listing enabled
+    which can sometimes expose sensitive files.
+  severity: low
+  metadata:
+    max-request: 2
+  tags: glpi,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of /glpi/

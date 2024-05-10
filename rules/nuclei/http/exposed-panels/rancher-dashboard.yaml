@@ -1,0 +1,38 @@
+id: rancher-dashboard
+info:
+  name: Rancher Dashboard Panel - Detect
+  author: ritikchaddha,righettod
+  description: Rancher Dashboard was detected.
+  severity: info
+  reference:
+  - https://rancher.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:rancher:rancher:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: rancher
+    shodan-query: http.favicon.hash:-1324930554
+    vendor: rancher
+    verified: 'true'
+  tags: panel,rancher,dashboard,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="Rancher DashboardrancherEnv:<title>Rancher
+- request:
+    method: GET
+    path: /dashboard/auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

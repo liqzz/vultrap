@@ -1,0 +1,22 @@
+id: rsa-self-service
+info:
+  name: RSA Self-Service Login Panel - Detect
+  author: PR3R00T
+  description: RSA Self-Service login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,rsa
+traps:
+- request:
+    method: GET
+    path: /console-selfservice/SelfService.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Self-Service ConsoleRSAAM_Self_Service_Consoleconsole-selfservice

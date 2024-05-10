@@ -1,0 +1,21 @@
+id: loytec-device
+info:
+  name: Loytec Device Info Detection
+  author: pussycat0x
+  description: Loytec Device info panel was detected.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: loytec
+  tags: iot,loytec
+traps:
+- request:
+    method: GET
+    path: /webui/device_info/device_info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: device_infosyslog

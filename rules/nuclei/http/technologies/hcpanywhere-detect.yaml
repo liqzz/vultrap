@@ -1,0 +1,25 @@
+id: hcpanywhere-detect
+info:
+  name: HCP Anywhere - Detect
+  author: righettod
+  description: 'HCP Anywhere was detected.
+
+    '
+  severity: info
+  reference:
+  - https://hcpanywhere.hds.com/portal/public/help-complete/en/cp_hcpaw_what_is.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: icon_hash="915499123"
+  tags: tech,hcpanywhere
+traps:
+- request:
+    method: GET
+    path: /userportal/documentation/mapping.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: hcpaw

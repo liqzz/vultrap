@@ -1,0 +1,29 @@
+id: apollo-adminservice-unauth
+info:
+  name: Apollo Admin Service - Unauthenticated Access
+  author: j4vaovo
+  description: 'ApolloAdminservice was able to be accessed without authentication.
+
+    '
+  severity: medium
+  reference:
+  - https://landgrey.me/blog/20/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
+    cvss-score: 5.8
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"apollo-adminservice"
+  tags: misconfig,unauth,apollo,apolloadminservice
+traps:
+- request:
+    method: GET
+    path: /apps
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: appIdorgNameownerNamedataChangeCreatedBy

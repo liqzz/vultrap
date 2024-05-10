@@ -1,0 +1,22 @@
+id: avideo-detect
+info:
+  name: Avideo Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"AVideo"
+    fofa-query: AVideo
+  tags: tech,avideo
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>(.*)AVideo(.*)</title>AVideo Analytics

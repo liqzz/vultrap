@@ -1,0 +1,25 @@
+id: subrion-login
+info:
+  name: Subrion Admin Panel Login Panel - Detect
+  author: princechaddha
+  description: Subrion Admin Panel login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:intelliants:subrion:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: subrion
+    vendor: intelliants
+  tags: panel,subrion,intelliants
+traps:
+- request:
+    method: GET
+    path: /panel
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>Welcome to<br>Subrion Admin Panel</h1>

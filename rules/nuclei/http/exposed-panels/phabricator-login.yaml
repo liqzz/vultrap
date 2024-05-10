@@ -1,0 +1,26 @@
+id: phabricator-login
+info:
+  name: Phabricator Login Panel - Detect
+  author: dhiyaneshDK
+  description: Phabricator login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:phacility:phabricator:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: phabricator
+    shodan-query: html:"phabricator-standard-page"
+    vendor: phacility
+  tags: panel,phabricator,phacility
+traps:
+- request:
+    method: GET
+    path: /auth/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: phabricator-standard-page

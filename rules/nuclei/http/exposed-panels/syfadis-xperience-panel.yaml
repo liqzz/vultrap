@@ -1,0 +1,25 @@
+id: syfadis-xperience-panel
+info:
+  name: Syfadis Xperience Login Panel - Detect
+  author: righettod
+  description: 'Syfadis Xperience login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://syfadis.fr/xperience
+  metadata:
+    max-request: 1
+    verified: true
+    fofa-query: title="Syfadis Xperience"
+  tags: panel,syfadis,login,detect
+traps:
+- request:
+    method: GET
+    path: /Directory/Login/Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

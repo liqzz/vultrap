@@ -1,0 +1,22 @@
+id: cloud-metadata
+info:
+  name: GCP/AWS Metadata Disclosure
+  author: DhiyaneshDk
+  description: GCP/AWS Metadata is exposed.
+  severity: low
+  reference: https://www.facebook.com/ExWareLabs/photos/pcb.5605494709514357/5605493856181109/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"instance_metadata"
+  tags: misconfig,exposure,devops,cloud,aws,gcp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"instance_metadata":"cloud":'

@@ -1,0 +1,22 @@
+id: anima-takeover
+info:
+  name: Anima Takeover Detection
+  author: pdteam
+  description: Anima takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/126
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: If this is your website and you've just created it, try refreshing in a
+      minute

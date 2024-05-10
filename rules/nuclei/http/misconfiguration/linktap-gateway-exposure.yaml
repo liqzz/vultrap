@@ -1,0 +1,21 @@
+id: linktap-gateway-exposure
+info:
+  name: LinkTap Gateway Exposure
+  author: DhiyaneshDk
+  description: LinkTap Gateway is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"LinkTap Gateway"
+  tags: misconfig,linktap,iot,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Device infomationEthernet settings

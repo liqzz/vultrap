@@ -1,0 +1,22 @@
+id: zenml-dashboard-panel
+info:
+  name: ZenML Dashboard Panel - Detect
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-2028554187
+    fofa-query: body="ZenML"
+  tags: zenml,panel,login
+traps:
+- request:
+    method: GET
+    path: /login?route=%2Fworkspaces%2Fdefault%3F
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ZenML - Dashboard

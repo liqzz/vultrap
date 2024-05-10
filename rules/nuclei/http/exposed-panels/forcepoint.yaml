@@ -1,0 +1,27 @@
+id: forcepoint-login-panel
+info:
+  name: Forcepoint Login panel
+  author: husain
+  description: null
+  severity: info
+  reference:
+  - https://www.forcepoint.com/product/email-security
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:forcepoint:email_security:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: email_security
+    vendor: forcepoint
+  tags: forcepoint,panel,login
+traps:
+- request:
+    method: GET
+    path: /pem/login/pages/login.jsf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Forcepoint Email Security

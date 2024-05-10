@@ -1,0 +1,26 @@
+id: sage-panel
+info:
+  name: Sage X3 Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: Sage X3 login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sage:x3:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: x3
+    shodan-query: http.title:"Sage X3"
+    vendor: sage
+  tags: panel,sage,login
+traps:
+- request:
+    method: GET
+    path: /auth/login/page
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sage  X3</title>'/auth/sage-id/registerStart'

@@ -1,0 +1,22 @@
+id: api-1forge
+info:
+  name: 1Forge API Test
+  author: daffainfo
+  description: Forex currency market data
+  severity: info
+  reference:
+  - https://1forge.com/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/1forge
+  metadata:
+    max-request: 1
+  tags: token-spray,1forge
+traps:
+- request:
+    method: GET
+    path: https://api.1forge.com/quota?api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"quota_used":"quota_limit":"quota_remaining":'

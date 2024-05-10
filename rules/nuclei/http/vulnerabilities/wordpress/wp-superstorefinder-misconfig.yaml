@@ -1,0 +1,29 @@
+id: wp-superstorefinder-misconfig
+info:
+  name: Superstorefinder WP-plugin - Security Misconfigurations
+  author: r3Y3r53
+  description: 'Security misconfiguration is a common security issue that occurs when
+    a system, application, or network is not properly configured to protect against
+    threats and vulnerabilities.
+
+    '
+  severity: medium
+  reference:
+  - https://cxsecurity.com/issue/WLB-2021010145
+  - https://www.exploitalert.com/view-details.html?id=36983
+  metadata:
+    verified: true
+    max-request: 1
+    publicwww-query: /wp-content/plugins/superstorefinder-wp/
+    google-query: inurl:"wp-content/plugins/superstorefinder-wp/ssf-wp-admin/pages/exportAjax.php"
+  tags: wordpress,wp-plugin,superstorefinder-wp,wp,misconfig
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/superstorefinder-wp/ssf-wp-admin/pages/exportAjax.php
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: NameCategoriesTagsemail

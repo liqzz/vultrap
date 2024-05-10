@@ -1,0 +1,19 @@
+id: zimbra-detect
+info:
+  name: Zimbra Detect
+  author: UdinChan
+  description: Send a GET request to js file on Zimbra server to obtain version information
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,zimbra
+traps:
+- request:
+    method: GET
+    path: /js/zimbraMail/share/model/ZmSettings.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Zimbra Collaboration Suite Web Client

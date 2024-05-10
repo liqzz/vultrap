@@ -1,0 +1,24 @@
+id: angular-detect
+info:
+  name: Angular detect
+  author: TechbrunchFR
+  description: Angular is a development platform for building mobile and desktop web
+    applications using Typescript/JavaScript and other languages.
+  severity: info
+  reference:
+  - https://github.com/angular/angular
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"ng-version="
+  tags: tech,angular
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ng-version=

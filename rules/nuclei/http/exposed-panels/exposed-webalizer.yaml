@@ -1,0 +1,26 @@
+id: exposed-webalizer
+info:
+  name: Webalizer Panel - Detect
+  author: pdteam
+  description: Webalizer panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/197
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intext:"webalizer"  intext:"Usage Statistics for"
+    max-request: 1
+    verified: true
+  tags: panel,webalizer,edb
+traps:
+- request:
+    method: GET
+    path: /webalizer/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Webalizer VersionUsage statistics for

@@ -1,0 +1,21 @@
+id: tautulli-install
+info:
+  name: Tautulli - Exposed Installation
+  author: ritikchaddha
+  description: Tautulli is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Tautulli - Welcome"
+  tags: misconfig,tautulli,install
+traps:
+- request:
+    method: GET
+    path: /welcome
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tautulli - WelcomeTautulli Setup Wizard

@@ -1,0 +1,24 @@
+id: npmrc-authtoken
+info:
+  name: Hardcoded .npmrc AuthToken
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://docs.npmjs.com/cli/v8/configuring-npm/npmrc
+  - https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intitle:"index of" ".npmrc"
+  tags: npm,exposure
+traps:
+- request:
+    method: GET
+    path: /.npmrc
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: _authToken=_auth=

@@ -1,0 +1,27 @@
+id: dell-idrac-default-login
+info:
+  name: Dell iDRAC6/7/8 Default Login
+  author: kophjager007,megamansec
+  description: Dell iDRAC6/7/8 default login information was discovered. The default
+    iDRAC username and password are widely known, and any user with access to the
+    server could change the default password.
+  severity: high
+  reference:
+  - https://securityforeveryone.com/tools/dell-idrac6-7-8-default-login-scanner
+  classification:
+    cwe-id: CWE-798
+  metadata:
+    max-request: 2
+  tags: dell,idrac,default-login
+traps:
+- request:
+    method: POST
+    path: /data/login
+    headers: {}
+    body: 'user={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: <authResult>0</authResult>

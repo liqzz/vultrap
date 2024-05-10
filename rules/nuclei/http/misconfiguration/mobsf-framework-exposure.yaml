@@ -1,0 +1,21 @@
+id: mobsf-framework-exposure
+info:
+  name: MobSF Framework - Exposure
+  author: Shine
+  description: MobSF Framework is exposed.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"MobSF"
+  tags: misconfig,exposure,mobsf
+traps:
+- request:
+    method: GET
+    path: /recent_scans/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Recent ScansMobile Security Framework - MobSF

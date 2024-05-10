@@ -1,0 +1,19 @@
+id: api-googlespeedlimit
+info:
+  name: Google Speed Limit API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,speed,limit
+traps:
+- request:
+    method: GET
+    path: https://roads.googleapis.com/v1/speedLimits?path=38.75807927603043,-9.03741754643809&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error

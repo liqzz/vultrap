@@ -1,0 +1,25 @@
+id: checkmk-login
+info:
+  name: Checkmk Login Panel - Detect
+  author: princechaddha
+  description: Checkmk login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tribe29:checkmk:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: checkmk
+    vendor: tribe29
+  tags: login,tech,synology,rackstation,panel,tribe29
+traps:
+- request:
+    method: GET
+    path: /check_mk/login.py
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Check_MK Multisite Login</title><title>Checkmk ([A-Za-z_0-9 ]+)<\/title>

@@ -1,0 +1,21 @@
+id: api-giphy
+info:
+  name: Giphy API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://developers.giphy.com/branch/master/docs/api/
+  metadata:
+    max-request: 1
+  tags: token-spray,giphy
+traps:
+- request:
+    method: GET
+    path: https://api.giphy.com/v1/gifs/trending?api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"type":"gif"'

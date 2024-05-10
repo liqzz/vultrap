@@ -1,0 +1,19 @@
+id: dreambox-detect
+info:
+  name: DreamBox Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: dreambox,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Dreambox WebControl</title>

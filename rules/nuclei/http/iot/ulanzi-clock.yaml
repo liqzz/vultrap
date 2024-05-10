@@ -1,0 +1,19 @@
+id: ulanzi-clock
+info:
+  name: Ulanzi Clock Detect
+  author: fabaff
+  description: Ulanzi Clock panel was detected.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: panel,ulanzi,iot
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Ulanzi Clock</title>

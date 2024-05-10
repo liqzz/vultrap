@@ -1,0 +1,30 @@
+id: gitlab-public-signup
+info:
+  name: GitLab public signup
+  author: pdteam,axrk
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"GitLab"
+  tags: gitlab,misconfig
+traps:
+- request:
+    method: GET
+    path: /users/sign_in
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <a data-qa-selector="register_link" href="/users/sign_up">Register now</a>data-qa-selector="new_user_register_button"https://about.gitlab.com<meta
+      content="GitLab.com" property="og:description">
+- request:
+    method: GET
+    path: /users/sign_up
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

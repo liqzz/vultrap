@@ -1,0 +1,42 @@
+id: linshare-panel
+info:
+  name: LinShare Login Panel - Detect
+  author: righettod
+  description: LinShare login panel was detected.
+  severity: info
+  reference:
+  - https://www.linshare.org/
+  - https://github.com/linagora/linshare
+  metadata:
+    max-request: 3
+    shodan-query: http.title:"LinShare"
+    verified: true
+  tags: panel,linshare,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /new/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

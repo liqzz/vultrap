@@ -1,0 +1,29 @@
+id: leostream-default-login
+info:
+  name: Leostream Default Login
+  author: bhutch
+  description: 'Leostream default admin credentials were discovered.
+
+    '
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Leostream"
+  tags: leostream,default-login
+traps:
+- request:
+    method: POST
+    path: /
+    headers: {}
+    body: 'login_type=0&user={{username}}&password={{password}}&submit=SIGN+IN
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

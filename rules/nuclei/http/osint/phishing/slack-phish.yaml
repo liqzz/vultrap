@@ -1,0 +1,24 @@
+id: slack-phish
+info:
+  name: slack phishing Detection
+  author: rxerium
+  description: 'A slack phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://slack.com
+  metadata:
+    max-request: 1
+  tags: phishing,slack,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Slack is a new way to communicate with your team. It’s faster, better organised
+      and more secure than email.

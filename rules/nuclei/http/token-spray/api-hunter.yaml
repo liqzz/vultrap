@@ -1,0 +1,23 @@
+id: api-hunter
+info:
+  name: Hunter API Test
+  author: daffainfo
+  description: API for domain search, professional email finder, author finder and
+    email verifier
+  severity: info
+  reference:
+  - https://hunter.io/api-documentation/v2
+  - https://github.com/daffainfo/all-about-apikey/tree/main/hunter
+  metadata:
+    max-request: 1
+  tags: token-spray,hunter
+traps:
+- request:
+    method: GET
+    path: https://api.hunter.io/v2/domain-search?domain=stripe.com&api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"domain""disposable""webmail"'

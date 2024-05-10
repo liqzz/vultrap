@@ -1,0 +1,36 @@
+id: geoserver-login-panel
+info:
+  name: GeoServer Login Panel - Detect
+  author: ritikchaddha
+  description: GeoServer login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:osgeo:geoserver:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: geoserver
+    shodan-query: title:"GeoServer"
+    vendor: osgeo
+    verified: true
+  tags: panel,geoserver,osgeo
+traps:
+- request:
+    method: GET
+    path: /web
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>GeoServer: Welcome</title>'
+- request:
+    method: GET
+    path: /geoserver/web/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

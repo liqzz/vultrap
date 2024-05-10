@@ -1,0 +1,26 @@
+id: swagger-api
+info:
+  name: Public Swagger API - Detect
+  author: pdteam,c-sh0
+  description: Public Swagger API was detected.
+  severity: info
+  reference: https://swagger.io/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 59
+    shodan-query: http.title:"swagger"
+  tags: exposure,api,swagger
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      Accept: text/html
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: swagger:Swagger 2.0"swagger":Swagger UIloadSwaggerUI**token**:id="swagger-ui

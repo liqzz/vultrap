@@ -1,0 +1,24 @@
+id: aws-xray-application
+info:
+  name: AWS X-Ray Sample Application
+  author: DhiyaneshDk
+  description: AWS X-Ray is a service that helps developers analyze and debug distributed
+    applications.
+  severity: info
+  reference:
+  - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5566269380103557/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"AWS X-Ray Sample Application"
+  tags: misconfig,aws,x-ray,amazon
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>AWS X-Ray Sample Application</title>

@@ -1,0 +1,40 @@
+id: fastapi-docs
+info:
+  name: FastAPI Docs Panel - Detect
+  author: github.com/its0x08
+  description: FastAPI Docs panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 3
+  tags: fastapi,tech,panel
+traps:
+- request:
+    method: GET
+    path: /docs
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FastAPI - Swagger UI</title><title>FastAPI - ReDoc</title>{"title":"FastAPI"
+- request:
+    method: GET
+    path: /redoc
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /openapi.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,34 @@
+id: shopware-detect
+info:
+  name: Shopware CMS detect
+  author: cyllective,pascalheidmann
+  description: Detects Shopware CMS
+  severity: info
+  reference:
+  - https://github.com/shopware/shopware
+  - https://github.com/shopware/platform
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"shopware AG"
+  tags: tech,shopware,cms
+traps:
+- request:
+    method: GET
+    path: /admin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Realisiert mit ShopwareRealised with ShopwareShopware Administration (c)
+      shopware AG<title>Shopware 5 - Backend (c) shopware AG</title>Shopware.Application.start
+- request:
+    method: GET
+    path: /backend
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

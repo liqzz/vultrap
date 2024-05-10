@@ -1,0 +1,24 @@
+id: api-web3storage
+info:
+  name: Web3 Storage API Test
+  author: daffainfo
+  description: File Sharing and Storage for Free with 1TB Space
+  severity: info
+  reference:
+  - https://docs.web3.storage/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/web3-storage
+  metadata:
+    max-request: 1
+  tags: token-spray,web3storage,intrusive
+traps:
+- request:
+    method: GET
+    path: https://api.web3.storage/user/uploads
+    headers:
+      Host: api.web3.storage
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"created""cid"'

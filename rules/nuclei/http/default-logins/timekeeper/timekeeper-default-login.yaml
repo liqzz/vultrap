@@ -1,0 +1,27 @@
+id: timekeeper-default-login
+info:
+  name: TimeKeeper - Default Login
+  author: theamanrawat
+  description: 'TimeKeeper contains default credentials. An attacker can obtain access
+    to user accounts and access sensitive information, modify data, and/or execute
+    unauthorized operations.
+
+    '
+  severity: high
+  reference:
+  - https://fsmlabs.com
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:2134367771
+  tags: timekeeper,default-login
+traps:
+- request:
+    method: GET
+    path: /login?arg1=&arg2=
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '%7B%20%22username%22%20%3A%20%22admin%22%2C%20%22result%22%3A%20%22OK%22'

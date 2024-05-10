@@ -1,0 +1,23 @@
+id: moinmoin-detect
+info:
+  name: MoinMoin wiki detect
+  author: cyllective
+  description: Detects MoinMoin Wiki
+  severity: info
+  reference:
+  - https://github.com/moinwiki/moin-1.9
+  metadata:
+    max-request: 1
+  tags: tech,moin,moinmoin,wiki
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin
+      Powered</a><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python
+      Powered</a>

@@ -1,0 +1,24 @@
+id: unauthenticated-frp
+info:
+  name: FRPS Dashboard - Detect
+  author: pikpikcu
+  description: FRPS Dashboard panel was detected.
+  severity: info
+  reference:
+  - https://github.com/fatedier/frp/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: frp,unauth,panel
+traps:
+- request:
+    method: GET
+    path: /static/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>frps dashboard</title>

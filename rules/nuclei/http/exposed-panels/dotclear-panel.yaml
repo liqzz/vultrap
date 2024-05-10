@@ -1,0 +1,35 @@
+id: dotclear-panel
+info:
+  name: Dotclear Admin Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: Dotclear admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:dotclear:dotclear:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: dotclear
+    shodan-query: http.title:"Dotclear"
+    vendor: dotclear
+  tags: panel,dotclear
+traps:
+- request:
+    method: GET
+    path: /dc2/admin/auth.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <body id="dotclear-admin" class="auth"><title>Dotclear</title>
+- request:
+    method: GET
+    path: /auth.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

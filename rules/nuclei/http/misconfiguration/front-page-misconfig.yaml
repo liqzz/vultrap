@@ -1,0 +1,30 @@
+id: front-page-misconfig
+info:
+  name: FrontPage configuration information discloure
+  author: JTeles,pikpikcu
+  description: null
+  severity: info
+  reference:
+  - https://docs.microsoft.com/en-us/archive/blogs/fabdulwahab/security-protecting-sharepoint-server-applications
+  metadata:
+    max-request: 2
+  tags: misconfig,exposure,frontpage
+traps:
+- request:
+    method: GET
+    path: /_vti_inf.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: vti_extenderversion:FPVersion=
+- request:
+    method: GET
+    path: /_vti_pvt/service.cnf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

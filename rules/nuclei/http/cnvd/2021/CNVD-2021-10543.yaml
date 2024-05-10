@@ -1,0 +1,26 @@
+id: CNVD-2021-10543
+info:
+  name: EEA - Information Disclosure
+  author: pikpikcu
+  description: EEA is susceptible to information disclosure including the username
+    and password.
+  severity: high
+  reference:
+  - https://www.cnvd.org.cn/flaw/show/CNVD-2021-10543
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: cnvd,cnvd2021,config,exposure
+traps:
+- request:
+    method: GET
+    path: /authenticationserverservlet
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <username>(.*?)</username><password>(.*?)</password>

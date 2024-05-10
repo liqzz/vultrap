@@ -1,0 +1,37 @@
+id: db-schema
+info:
+  name: Discover db schema files
+  author: geeknik
+  description: This file is auto-generated from the current state of the database.
+  severity: info
+  metadata:
+    max-request: 3
+  tags: exposure,backup,files
+traps:
+- request:
+    method: GET
+    path: /db/schema.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This file is auto-generated from the current state of the database.ActiveRecord::Schema.define
+- request:
+    method: GET
+    path: /database/schema.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /schema.rb
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

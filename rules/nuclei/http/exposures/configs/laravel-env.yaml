@@ -1,0 +1,29 @@
+id: laravel-env
+info:
+  name: Laravel - Sensitive Information Disclosure
+  author: pxmme1337,dwisiswant0,geeknik,emenalf,adrianmf
+  description: 'A Laravel .env file was discovered, which stores sensitive information
+    like database credentials and tokens. It should not be publicly accessible.
+
+    '
+  severity: high
+  reference:
+  - https://laravel.com/docs/master/configuration#environment-configuration
+  - https://stackoverflow.com/questions/38331397/how-to-protect-env-file-in-laravel
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 22
+  tags: config,exposure,laravel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?mi)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)=(?mi)^DB_(HOST|PASSWORD|DATABASE)=

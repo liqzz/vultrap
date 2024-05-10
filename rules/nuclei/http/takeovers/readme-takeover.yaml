@@ -1,0 +1,21 @@
+id: readme-takeover
+info:
+  name: Readme.io Takeover Detection
+  author: pdteam
+  description: Readme.io takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/41
+  metadata:
+    max-request: 1
+  tags: takeover,readme
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Project doesnt exist... yet!

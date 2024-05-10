@@ -1,0 +1,23 @@
+id: instagram-phish
+info:
+  name: instagram phishing Detection
+  author: rxerium
+  description: 'A instagram phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://instagram.com
+  metadata:
+    max-request: 1
+  tags: phishing,instagram,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login • Instagram

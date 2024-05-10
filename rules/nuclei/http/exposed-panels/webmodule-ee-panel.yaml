@@ -1,0 +1,26 @@
+id: webmodule-ee-panel
+info:
+  name: Webmodule Login Panel - Detect
+  author: pussycat0x,daffainfo
+  description: Webmodule login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7001
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"Webmodule" inurl:"/webmodule-ee/login.seam" "Version"
+    max-request: 1
+    shodan-query: title:"Webmodule"
+  tags: edb,panel,webmodule-ee,login
+traps:
+- request:
+    method: GET
+    path: /webmodule-ee/login.seam
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Webmodule</title>

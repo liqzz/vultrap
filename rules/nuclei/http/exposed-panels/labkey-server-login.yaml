@@ -1,0 +1,36 @@
+id: labkey-server-login
+info:
+  name: LabKey Server Login Panel - Detect
+  author: tess
+  description: LabKey Server login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:labkey:labkey_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: labkey_server
+    shodan-query: 'title:"Sign In: /home"'
+    vendor: labkey
+    verified: true
+  tags: panel,labkey
+traps:
+- request:
+    method: GET
+    path: /labkey/home/login-login.view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'TCTU LabKey Server: /homePowered by LabKey'
+- request:
+    method: GET
+    path: /login/home/login.view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

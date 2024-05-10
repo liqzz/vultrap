@@ -1,0 +1,26 @@
+id: jeedom-panel
+info:
+  name: Jeedom Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: Jeedom login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:jeedom:jeedom:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: jeedom
+    shodan-query: http.title:"Jeedom"
+    vendor: jeedom
+  tags: panel,jeedom,login
+traps:
+- request:
+    method: GET
+    path: /index.php?v=d
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Jeedom</title>JEEDOM_PRODUCT_NAME

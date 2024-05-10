@@ -1,0 +1,25 @@
+id: roblox-phish
+info:
+  name: roblox phishing Detection
+  author: rxerium
+  description: 'A roblox phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://roblox.com
+  metadata:
+    max-request: 1
+  tags: phishing,roblox,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Roblox is ushering in the next generation of entertainment. Imagine, create,
+      and play together with millions of people across an infinite variety of immersive,
+      user-generated 3D worlds.

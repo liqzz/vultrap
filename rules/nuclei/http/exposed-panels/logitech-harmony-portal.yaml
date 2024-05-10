@@ -1,0 +1,24 @@
+id: logitech-harmony-portal
+info:
+  name: Logitech Harmony Pro Installer Portal Login Panel - Detect
+  author: ritikchaddha
+  description: Logitech Harmony Pro Installer Portal login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Logitech Harmony Pro Installer"
+    verified: true
+  tags: panel,logitech,harmony,exposure
+traps:
+- request:
+    method: GET
+    path: /portal/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Logitech Harmony Pro Installer Portal

@@ -1,0 +1,27 @@
+id: mixed-active-content
+info:
+  name: Mixed Active Content
+  author: Liwermor
+  description: 'This check detects if there are any active content loaded over HTTP
+    instead of HTTPS.
+
+    '
+  severity: info
+  reference:
+  - https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
+  - https://portswigger.net/kb/issues/01000400_mixed-content
+  - https://resources.infosecinstitute.com/topics/vulnerabilities/https-mixed-content-vulnerability/
+  - https://docs.gitlab.com/ee/user/application_security/dast/checks/319.1.html
+  metadata:
+    max-request: 1
+  tags: misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <script[^>]*src=['"]http://[^'">]+['"]<iframe[^>]*src=['"]http://[^'">]+['"]<object[^>]*data=['"]http://[^'">]+['"]

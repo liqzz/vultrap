@@ -1,0 +1,19 @@
+id: api-googleplayablelocations
+info:
+  name: Google Playable Locations API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,playable,locations
+traps:
+- request:
+    method: GET
+    path: https://playablelocations.googleapis.com/v3:samplePlayableLocations?key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error

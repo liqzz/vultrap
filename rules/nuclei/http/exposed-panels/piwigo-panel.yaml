@@ -1,0 +1,38 @@
+id: piwigo-panel
+info:
+  name: Piwigo Login Panel - Detect
+  author: daffainfo
+  description: Piwigo login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:piwigo:piwigo:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: title="piwigo"
+    google-query: Powered by Piwigo
+    max-request: 2
+    product: piwigo
+    shodan-query: http.favicon.hash:540706145
+    vendor: piwigo
+    verified: true
+  tags: panel,piwigo,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="Piwigo>Piwigo</a><body id=theIdentificationPage>
+- request:
+    method: GET
+    path: /identification.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

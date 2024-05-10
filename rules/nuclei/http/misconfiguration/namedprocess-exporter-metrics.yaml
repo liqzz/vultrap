@@ -1,0 +1,21 @@
+id: namedprocess-exporter-metrics
+info:
+  name: Named Process Exporter
+  author: DhiyaneshDk
+  description: Named process exporter is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Named Process Exporter"
+  tags: namedprocess,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: namedprocess# HELP

@@ -1,0 +1,26 @@
+id: opentsdb-status
+info:
+  name: OpenTSDB - Detect
+  author: pussycat0x
+  description: OpenTSDB stats exposed which is commonly used in monitoring and observability
+    scenarios where tracking and analyzing the performance of systems, applications,
+    and infrastructure over time is essential.
+  severity: low
+  reference: 'http://opentsdb.net/
+
+    '
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:407286339
+  tags: opentsdb,exposure,logs
+traps:
+- request:
+    method: GET
+    path: /stats?json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: tsd.connectionmgr.connectionstsd.httphost

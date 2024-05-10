@@ -1,0 +1,25 @@
+id: bamboo-detect
+info:
+  name: Bamboo - Detection
+  author: bhutch
+  description: 'Detect the presence of Bamboo, a CI/CD tool.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: atlassian
+    shodan-query: http.favicon.hash:-1379982221
+    category: devops
+  tags: tech,bamboo,atlassian,detect,cicd
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

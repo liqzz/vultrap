@@ -1,0 +1,20 @@
+id: default-oracle-application-page
+info:
+  name: Oracle Application Server Containers
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Oracle Application Server Containers"
+  tags: tech,oracle
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>Oracle Application Server Containers for J2EE 10g</TITLE>

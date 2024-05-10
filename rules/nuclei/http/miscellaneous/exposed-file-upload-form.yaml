@@ -1,0 +1,21 @@
+id: exposed-file-upload-form
+info:
+  name: Exposed File Upload Form
+  author: geeknik
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"multipart/form-data" html:"file"
+  tags: miscellaneous,exposure,upload,form,misc,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <form.*?method=("|')?post("|')?.*?><form.*?(?i)(?-i)enctype=("|')?multipart\/form-data("|')?.*?><input.*?type=("|')?file("|')?.*?>type=["'](file)["']id="file"

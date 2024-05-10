@@ -1,0 +1,32 @@
+id: cisco-unity-panel
+info:
+  name: Cisco Unity Connection Panel - Detect
+  author: HeeresS
+  description: 'A Cisco Unity Connection instance was detected.
+
+    '
+  severity: info
+  metadata:
+    max-request: 2
+    shodan-query: html:"Cisco Unity Connection"
+    verified: true
+  tags: panel,cisco,unity,login,detect
+traps:
+- request:
+    method: GET
+    path: /cuadmin/home.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Cisco Unity Connection Administration>Cisco Unity Connection</a>
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

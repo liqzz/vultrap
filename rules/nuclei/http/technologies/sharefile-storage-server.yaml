@@ -1,0 +1,21 @@
+id: sharefile-storage-server
+info:
+  name: ShareFile Storage Server - Detect
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"ShareFile Storage Server"
+  tags: tech,citrix,sharefile
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ShareFile Storage Server

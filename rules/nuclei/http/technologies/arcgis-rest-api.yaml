@@ -1,0 +1,26 @@
+id: arcgis-rest-api
+info:
+  name: ArcGIS Exposed REST API documentation
+  author: Podalirius
+  description: ArcGIS REST API documentation was discovered.
+  severity: info
+  reference:
+  - https://enterprise.arcgis.com/en/
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:esri:arcgis_engine:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    vendor: esri
+    product: arcgis_engine
+  tags: api,arcgis,cms,tech
+traps:
+- request:
+    method: GET
+    path: /server/sdk/rest/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ArcGIS REST API

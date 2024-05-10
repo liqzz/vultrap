@@ -1,0 +1,24 @@
+id: aspx-debug-mode
+info:
+  name: ASP.NET Debugging Enabled
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://portswigger.net/kb/issues/00100800_asp-net-debugging-enabled
+  metadata:
+    max-request: 1
+  tags: debug,misconfig
+traps:
+- request:
+    method: DEBUG
+    path: /Foobar-debug.aspx
+    headers:
+      Command: stop-debug
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+      Content-Length: '2'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: OK

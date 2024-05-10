@@ -1,0 +1,30 @@
+id: supershell-default-login
+info:
+  name: Supershell - Default Login
+  author: SleepingBag945
+  description: 'Supershell is a WEB management platform that integrates the reverse_ssh
+    service.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/tdragon6/Supershell
+  - https://www.ctfiot.com/129689.html
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title="supershell"
+  tags: supershell,default-login
+traps:
+- request:
+    method: POST
+    path: /supershell/login/auth
+    headers:
+      Content-Type: application/json
+    body: '{"username":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '{"result":"success'

@@ -1,0 +1,25 @@
+id: odoo-database-manager
+info:
+  name: Odoo - Database Manager Discovery
+  author: __Fazal,R3dg33k
+  description: Odoo database manager was discovered.
+  severity: low
+  classification:
+    cpe: cpe:2.3:a:odoo:odoo:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: odoo
+    shodan-query: title:"Odoo"
+    vendor: odoo
+    verified: true
+  tags: panel,odoo,backup
+traps:
+- request:
+    method: GET
+    path: /web/database/manager
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Odoo</title>.o_database_delete

@@ -1,0 +1,22 @@
+id: aerocms-detect
+info:
+  name: AeroCMS Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"AeroCMS"
+    fofa-query: AeroCMS
+  tags: tech,aerocms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="(.*)AeroCMS(.*)

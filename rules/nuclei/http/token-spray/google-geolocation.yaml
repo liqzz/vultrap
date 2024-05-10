@@ -1,0 +1,19 @@
+id: api-googlegeolocation
+info:
+  name: Google Geolocation API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,geolocation
+traps:
+- request:
+    method: GET
+    path: https://www.googleapis.com/geolocation/v1/geolocate?key=
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: error

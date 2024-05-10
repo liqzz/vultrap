@@ -1,0 +1,23 @@
+id: wordpress-shortpixel-image-optimiser
+info:
+  name: ShortPixel Image Optimizer – Optimize Images, Convert WebP & AVIF Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/shortpixel-image-optimiser/
+  metadata:
+    max-request: 1
+    plugin_namespace: shortpixel-image-optimiser
+    wpscan: https://wpscan.com/plugin/shortpixel-image-optimiser
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/shortpixel-image-optimiser/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

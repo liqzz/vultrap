@@ -1,0 +1,28 @@
+id: satis-repository
+info:
+  name: Satis Composer Repository - Detect
+  author: FlorianMaak
+  description: 'Satis composer repository was detected
+
+    '
+  severity: info
+  reference:
+  - https://github.com/composer/satis
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: html:"<a href=\"https://github.com/composer/satis\">Satis</a>"
+    verified: true
+  tags: panel,exposure,composer,satis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This is a private repositoryhttps://github.com/composer/satis

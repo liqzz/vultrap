@@ -1,0 +1,28 @@
+id: hp-ilo-5
+info:
+  name: Hewlett Packard Integrated Lights Out 5 Login Panel - Detect
+  author: geeknik
+  description: Hewlett Packard Integrated Lights Out 5 login panel was detected.
+  severity: info
+  reference:
+  - https://www.hpe.com/us/en/servers/integrated-lights-out-ilo.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:hpe:integrated_lights-out_5:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: integrated_lights-out_5
+    vendor: hpe
+  tags: hp,ilo,panel,hpe
+traps:
+- request:
+    method: GET
+    path: /html/login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: titleHeading>iLO 5titleFwver>Firmware2002-2018 Hewlett Packard Enterprise
+      Development LP

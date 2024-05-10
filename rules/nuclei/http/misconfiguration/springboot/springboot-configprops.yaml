@@ -1,0 +1,28 @@
+id: springboot-configprops
+info:
+  name: Detect Springboot Configprops Actuator
+  author: that_juan_,dwisiswant0,wdahlenb
+  description: Sensitive environment variables may not be masked
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /configprops
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: org.springframework.boot.actuatebeanscontexts
+- request:
+    method: GET
+    path: /actuator/configprops
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

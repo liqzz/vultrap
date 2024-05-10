@@ -1,0 +1,27 @@
+id: unauth-spark-api
+info:
+  name: Unauthenticated Spark REST API
+  author: princechaddha
+  description: The Spark product's REST API interface allows access to unauthenticated
+    users.
+  severity: critical
+  remediation: Restrict access the exposed API ports.
+  reference:
+  - https://xz.aliyun.com/t/2490
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  metadata:
+    max-request: 1
+  tags: spark,unauth
+traps:
+- request:
+    method: GET
+    path: /v1/submissions
+    headers: null
+    body: null
+  response:
+    status_code: 400
+    headers: {}
+    body: Missing an actionserverSparkVersion

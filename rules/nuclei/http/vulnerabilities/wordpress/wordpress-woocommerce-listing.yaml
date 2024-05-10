@@ -1,0 +1,21 @@
+id: wordpress-woocommerce-listing
+info:
+  name: WordPress WooCommerce - Directory Search
+  author: dhiyaneshDK
+  description: WordPress WooCommerce plugin sensitive directory searches were conducted.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6192
+  metadata:
+    max-request: 1
+  tags: edb,wordpress,listing,plugin,woocommerce
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/woocommerce/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins/woocommerce/

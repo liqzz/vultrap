@@ -1,0 +1,22 @@
+id: json-server
+info:
+  name: Json Server
+  author: DhiyaneshDK
+  description: null
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/4550
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"JSON Server"
+  tags: exposure,devops,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>JSON Server</title>

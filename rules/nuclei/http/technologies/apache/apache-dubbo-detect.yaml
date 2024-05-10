@@ -1,0 +1,20 @@
+id: apache-dubbo-detect
+info:
+  name: Apache dubbo detect
+  author: ffffffff0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    fofa-query: app="APACHE-dubbo"
+  tags: apache,dubbo,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

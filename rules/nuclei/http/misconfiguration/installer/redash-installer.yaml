@@ -1,0 +1,21 @@
+id: redash-installer
+info:
+  name: Redash Installer Exposure
+  author: DhiyaneshDk
+  description: Redash is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Redash Initial Setup"
+  tags: misconfig,redash,install
+traps:
+- request:
+    method: GET
+    path: /setup
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Redash Initial SetupAdmin User

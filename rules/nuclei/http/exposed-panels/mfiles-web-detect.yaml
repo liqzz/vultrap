@@ -1,0 +1,38 @@
+id: mfiles-web-detect
+info:
+  name: M-Files Web Login Panel - Detect
+  author: Nodauf
+  description: M-Files Web login panel was detected.
+  severity: info
+  reference:
+  - https://www.m-files.com/about/trust-center/security-advisories/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:m-files:m-files:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: m-files
+    shodan-query: http.html:"M-Files Web"
+    vendor: m-files
+    verified: true
+  tags: panel,m-files
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>(.*)M-Files Web(.*)</title>M-Files userM-Files authentication
+- request:
+    method: GET
+    path: /Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

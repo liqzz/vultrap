@@ -1,0 +1,34 @@
+id: sapfiori-panel
+info:
+  name: SAP Fiori Login Panel - Detect
+  author: righettod
+  description: SAP Fiori login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sap:fiori:*:*:*:*:erp_hcm:*:*:*
+  metadata:
+    max-request: 2
+    product: fiori
+    vendor: sap
+  tags: panel,sap,fiori
+traps:
+- request:
+    method: GET
+    path: /fiori
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: fioriLoginaction="/fiori"UIPPortalPath/irj/portal/fiori
+- request:
+    method: GET
+    path: /irj/portal/fiori
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

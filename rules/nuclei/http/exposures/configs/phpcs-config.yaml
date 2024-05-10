@@ -1,0 +1,29 @@
+id: phpcs-config
+info:
+  name: PHP_CodeSniffer Configuration Exposure - Detect
+  author: DhiyaneshDK
+  description: 'PHP_CodeSniffer configuration file was detected.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/squizlabs/PHP_CodeSniffer
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"phpcs.xml"
+  tags: devops,exposure,php,phpcs
+traps:
+- request:
+    method: GET
+    path: /phpcs.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ruleset namerule ref=<file>

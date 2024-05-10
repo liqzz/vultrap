@@ -1,0 +1,23 @@
+id: notion-phish
+info:
+  name: notion phishing Detection
+  author: rxerium
+  description: 'A notion phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://notion.so
+  metadata:
+    max-request: 1
+  tags: phishing,notion,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Your connected workspace for wiki, docs &amp; projects | Notion

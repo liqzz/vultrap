@@ -1,0 +1,31 @@
+id: openmediavault-default-login
+info:
+  name: OpenMediaVault - Default Login
+  author: DhiyaneshDK
+  description: null
+  severity: high
+  reference:
+  - https://forum.openmediavault.org/index.php?thread/7784-default-login/
+  - https://soltveit.org/openmediavault-default-password/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"OpenMediaVault"
+  tags: default-login,openmediavault
+traps:
+- request:
+    method: POST
+    path: /rpc.php
+    headers:
+      Content-Type: application/json
+    body: '{"service":"Session","method":"login","params":{"username":"{{username}}","password":"{{password}}"},"options":null}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"authenticated":true"permissions":'

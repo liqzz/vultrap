@@ -1,0 +1,24 @@
+id: php-fpm-config
+info:
+  name: PHP-FPM Configuration Page - Detect
+  author: sheikhrishad
+  description: PHP-FPM configuration page was detected.
+  severity: info
+  reference: https://www.php.net/manual/en/install.fpm.php
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: config,exposure,php
+traps:
+- request:
+    method: GET
+    path: /php-fpm.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FPM ConfigurationPool Definitions

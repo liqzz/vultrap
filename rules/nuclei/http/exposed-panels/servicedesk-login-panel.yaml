@@ -1,0 +1,35 @@
+id: servicedesk-login-panel
+info:
+  name: Jira Service Desk Login Panel - Detect
+  author: aashiq
+  description: Jira Service Desk login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:atlassian:confluence_data_center:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: confluence_data_center
+    shodan-query: http.component:"Atlassian Confluence"
+    vendor: atlassian
+  tags: servicedesk,confluence,jira,panel,login,atlassian
+traps:
+- request:
+    method: GET
+    path: /servicedesk/customer/user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: https://confluence.atlassian.com
+- request:
+    method: GET
+    path: /servicedesk/customer/portal/10/user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

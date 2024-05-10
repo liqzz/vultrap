@@ -1,0 +1,23 @@
+id: versa-director-api
+info:
+  name: Versa Director API Endpoint Detection
+  author: c-sh0
+  description: Versa Director API Endpoint (Unauthorized) Detection
+  severity: info
+  reference:
+  - https://versa-networks.com/products/components/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Versa Networks"
+  tags: api,versa,tech
+traps:
+- request:
+    method: GET
+    path: :9182
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: (?i)"more_info":"http://nms.versa.com/errors/4001"

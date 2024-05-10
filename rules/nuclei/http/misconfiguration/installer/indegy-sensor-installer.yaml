@@ -1,0 +1,22 @@
+id: indegy-sensor-installer
+info:
+  name: Indegy Sensor Setup - Installer
+  author: ritikchaddha
+  description: Indegy Sensor is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Setup Wizard" http.favicon.hash:-1851491385
+  tags: misconfig,indegy,sensor,installer
+traps:
+- request:
+    method: GET
+    path: /settings
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Setup Wizard</title>

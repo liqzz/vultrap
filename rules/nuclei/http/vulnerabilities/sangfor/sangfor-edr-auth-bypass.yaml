@@ -1,0 +1,30 @@
+id: sangfor-edr-auth-bypass
+info:
+  name: Sangfor EDR - Authentication Bypass
+  author: princechaddha
+  description: 'Sangfor EDR contains an authentication bypass vulnerability. An attacker
+    can access the system with admin privileges by accessing the login page directly
+    using a provided username rather than going through the login screen without providing
+    a username. This makes it possible to obtain sensitive information, modify data,
+    and/or execute unauthorized operations.
+
+    '
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.1
+    cwe-id: CWE-287
+  metadata:
+    max-request: 1
+    fofa-query: app="sangfor"
+  tags: sangfor,auth-bypass,login
+traps:
+- request:
+    method: GET
+    path: /ui/login.php?user=admin
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: /download/edr_installer_

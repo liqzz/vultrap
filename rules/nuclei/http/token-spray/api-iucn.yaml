@@ -1,0 +1,22 @@
+id: api-iucn
+info:
+  name: IUCN API Test
+  author: daffainfo
+  description: IUCN Red List of Threatened Species
+  severity: info
+  reference:
+  - http://apiv3.iucnredlist.org/api/v3/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/iucn
+  metadata:
+    max-request: 1
+  tags: token-spray,iucn
+traps:
+- request:
+    method: GET
+    path: http://apiv3.iucnredlist.org/api/v3/country/list?token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: taxonidscientific_namesubspecies

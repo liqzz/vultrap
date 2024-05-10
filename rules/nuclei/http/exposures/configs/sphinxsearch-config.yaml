@@ -1,0 +1,79 @@
+id: sphinxsearch-config
+info:
+  name: Sphinx Search Config - Exposure
+  author: gtrrnr
+  description: sphinx.conf file contains SQL credentials and is publicly accessible.
+  severity: high
+  impact: 'An attacker can use leaked credentials to gain access to database.
+
+    '
+  reference:
+  - https://github.com/manticorp/SphinxSearch/blob/master/sphinx.conf.example
+  metadata:
+    verified: true
+    max-request: 7
+  tags: sphinx,sphinxsearch,exposure,config
+traps:
+- request:
+    method: GET
+    path: /config/development.sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: sql_usersql_passindexer
+- request:
+    method: GET
+    path: /config/production.sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /configs/sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /search/configs/sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sphinx/sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sphinxsearch/sphinx.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

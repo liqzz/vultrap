@@ -1,0 +1,21 @@
+id: esmtprc-config
+info:
+  name: eSMTP - Config Discovery
+  author: geeknik
+  description: eSMTP configuration was discovered.
+  severity: high
+  reference:
+  - https://linux.die.net/man/5/esmtprc
+  metadata:
+    max-request: 1
+  tags: esmtp,config,exposure
+traps:
+- request:
+    method: GET
+    path: /.esmtprc
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: hostnameusernamepassword

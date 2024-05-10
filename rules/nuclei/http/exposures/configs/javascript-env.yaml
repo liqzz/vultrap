@@ -1,0 +1,65 @@
+id: javascript-env
+info:
+  name: JavaScript Environment Configuration - Detect
+  author: pdp,geeknik
+  description: Multiple common JavaScript environment configuration files were detected.
+  severity: low
+  metadata:
+    max-request: 6
+  tags: javascript,config,exposure
+traps:
+- request:
+    method: GET
+    path: /env.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: module.exportsconst audienceconst domainNODE_ENVLOG_LEVELTOKENKEYPASSWORDVERSIONBootstrapjQueryCSS
+      TRANSITION SUPPORT
+- request:
+    method: GET
+    path: /env.development.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /env.production.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /env.test.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /env.dev.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /env.prod.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

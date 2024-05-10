@@ -1,0 +1,29 @@
+id: sentry-panel
+info:
+  name: Sentry Login Panel
+  author: righettod
+  description: 'Sentry login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://sentry.io/
+  classification:
+    cpe: cpe:2.3:a:sentry:sentry:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: sentry
+    shodan-query: http.title:"Login | Sentry"
+    vendor: sentry
+    verified: true
+  tags: panel,sentry,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /sentry/Login

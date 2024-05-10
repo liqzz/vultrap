@@ -1,0 +1,23 @@
+id: wordpress-so-widgets-bundle
+info:
+  name: SiteOrigin Widgets Bundle Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/so-widgets-bundle/
+  metadata:
+    max-request: 1
+    plugin_namespace: so-widgets-bundle
+    wpscan: https://wpscan.com/plugin/so-widgets-bundle
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/so-widgets-bundle/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

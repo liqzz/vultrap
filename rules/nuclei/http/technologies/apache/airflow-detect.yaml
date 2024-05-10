@@ -1,0 +1,21 @@
+id: airflow-detect
+info:
+  name: Apache Airflow
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Apache Airflow"
+  tags: tech,apache,airflow,intrusive
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Airflow 404 = lots of circles

@@ -1,0 +1,23 @@
+id: phpnow-works
+info:
+  name: PHPnow works - Exposure
+  author: DhiyaneshDk
+  description: PHPnow works is exposed.
+  severity: low
+  reference:
+  - https://www.facebook.com/photo/?fbid=618545156982674&set=a.467014098802448
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: PHPnow works
+  tags: misconfig,phpnow,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>PHPnow Works!</title>Server Information

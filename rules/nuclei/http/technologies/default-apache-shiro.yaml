@@ -1,0 +1,21 @@
+id: default-apache-shiro
+info:
+  name: Apache Shiro Default Page
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Apache Shiro Quickstart"
+  tags: tech,apache,shiro
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Apache Shiro Quickstart</title>

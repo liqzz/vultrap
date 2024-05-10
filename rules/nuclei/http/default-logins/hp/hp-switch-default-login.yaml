@@ -1,0 +1,28 @@
+id: hp-switch-default-login
+info:
+  name: HP 1820-8G Switch J9979A Default Login
+  author: pussycat0x
+  description: HP 1820-8G Switch J9979A default admin login credentials were discovered.
+  severity: high
+  reference:
+  - https://support.hpe.com/hpesc/public/docDisplay?docId=a00077779en_us&docLocale=en_US
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+    fofa-query: HP 1820-8G Switch J9979A
+  tags: default-login,hp
+traps:
+- request:
+    method: POST
+    path: /htdocs/login/login.lua
+    headers: {}
+    body: 'username={{username}}&password=
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"redirect": "/htdocs/pages/main/main.lsp""error": ""'

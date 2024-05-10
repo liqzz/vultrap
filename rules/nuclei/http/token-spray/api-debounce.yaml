@@ -1,0 +1,22 @@
+id: api-debounce
+info:
+  name: DeBounce API Test
+  author: 0ri2N
+  description: null
+  severity: info
+  reference:
+  - https://developers.debounce.io/reference/api-key-authentication
+  - https://debounce.io
+  metadata:
+    max-request: 1
+  tags: debounce,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.debounce.io/v1/?api=&email=test@interact.sh
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"balance":"success":"debounce":'

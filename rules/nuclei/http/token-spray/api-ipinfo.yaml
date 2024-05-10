@@ -1,0 +1,22 @@
+id: api-ipinfo
+info:
+  name: IPinfo API Test
+  author: 0xpugazh
+  description: null
+  severity: info
+  reference:
+  - https://ipinfo.io/developers
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,ipinfo
+traps:
+- request:
+    method: GET
+    path: https://ipinfo.io/?token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"ip""city""org""postal""timezone"'

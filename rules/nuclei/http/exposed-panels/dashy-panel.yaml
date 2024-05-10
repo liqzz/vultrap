@@ -1,0 +1,27 @@
+id: dashy-panel
+info:
+  name: Dashy Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://dashy.to/
+  classification:
+    cpe: cpe:2.3:a:dashy:dashy:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: dashy
+    shodan-query: http.favicon.hash:-1013024216
+    vendor: dashy
+    verified: true
+  tags: panel,dashy,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Dashycontent="Dashy/css/dashy.web-icons/dashy-logo.png

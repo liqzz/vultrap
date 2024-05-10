@@ -1,0 +1,24 @@
+id: cisco-vmanage-login
+info:
+  name: Cisco vManage Login Panel - Detect
+  author: DhiyaneshDk
+  description: Cisco vManage login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Cisco vManage"
+    verified: true
+  tags: panel,cisco
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Cisco vManage</title>

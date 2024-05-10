@@ -1,0 +1,19 @@
+id: tableau-server-detect
+info:
+  name: Detect Tableau Server
+  author: TechbrunchFR,aringo
+  description: Detects Tableau Server and extracts the buildid
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,tableau
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: VizPortalRunvizportal

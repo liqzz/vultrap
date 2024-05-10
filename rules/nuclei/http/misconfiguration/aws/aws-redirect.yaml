@@ -1,0 +1,21 @@
+id: aws-redirect
+info:
+  name: Subdomain takeover AWS S3
+  author: manikanta a.k.a @secureitmania
+  description: null
+  severity: info
+  reference:
+  - https://link.medium.com/fgXKJHR9P7
+  metadata:
+    max-request: 1
+  tags: aws,takeover,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 307
+    headers: {}
+    body: ''

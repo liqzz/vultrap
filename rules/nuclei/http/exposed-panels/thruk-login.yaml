@@ -1,0 +1,26 @@
+id: thruk-login
+info:
+  name: Thruk Monitoring Panel - Detect
+  author: ffffffff0x
+  description: Thruk Monitoring panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:thruk:thruk:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: title=="Thruk Monitoring Webinterface"
+    max-request: 1
+    product: thruk
+    vendor: thruk
+  tags: thruk,panel
+traps:
+- request:
+    method: GET
+    path: /thruk/cgi-bin/login.cgi?thruk/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Thruk Monitoring Webinterface</title>

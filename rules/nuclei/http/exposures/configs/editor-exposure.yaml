@@ -1,0 +1,21 @@
+id: editor-exposure
+info:
+  name: Editor Configuration File - Detect
+  author: DhiyaneshDk,daffainfo
+  description: Editor configuration file was detected.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"editorconfig"
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /.editorconfig
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: = trueindent_style

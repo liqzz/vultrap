@@ -1,0 +1,35 @@
+id: ups-status
+info:
+  name: APC UPC Multimon Status Page - Detect
+  author: dhiyaneshDK
+  description: Multimon UPS status page was detected.
+  severity: info
+  reference:
+  - http://www.apcupsd.org/
+  - https://www.exploit-db.com/ghdb/752
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: logs,status,edb,misconfig
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/apcupsd/multimon.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Multimon: UPS Status Page'
+- request:
+    method: GET
+    path: /cgi-bin/multimon.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

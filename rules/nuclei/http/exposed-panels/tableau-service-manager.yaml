@@ -1,0 +1,29 @@
+id: tableau-service-manager
+info:
+  name: Tableau Services Manager Login Panel - Detect
+  author: DhiyaneshDk
+  description: Tableau Services Manager login panel was detected.
+  severity: info
+  reference:
+  - https://help.tableau.com/current/server/en-us/sign_in_tsm.htm
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tableausoftware:tableau_server:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: tableau_server
+    shodan-query: title:"Login - Tableau Services Manager"
+    vendor: tableausoftware
+    verified: true
+  tags: panel,tableau,tableausoftware
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Tableau Services Manager</title>

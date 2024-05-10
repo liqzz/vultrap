@@ -1,0 +1,21 @@
+id: puppetserver-detect
+info:
+  name: Puppetserver Detection
+  author: c-sh0
+  description: null
+  severity: info
+  reference:
+  - https://insinuator.net/2020/09/puppet-assessment-techniques/
+  metadata:
+    max-request: 1
+  tags: tech,puppet,exposure,intrusive
+traps:
+- request:
+    method: GET
+    path: /puppet-ca/v1/certificate_request/
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: '{{randstr}}'

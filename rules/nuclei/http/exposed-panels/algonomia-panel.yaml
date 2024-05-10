@@ -1,0 +1,24 @@
+id: algonomia-panel
+info:
+  name: Algonomia Leaf Platform Panel - Detect
+  author: righettod
+  description: 'Algonomia Leaf Platform login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://algonomia.com/
+  metadata:
+    max-request: 1
+    verified: true
+  tags: tech,algonomia,detect
+traps:
+- request:
+    method: GET
+    path: /assets/i18n/en.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

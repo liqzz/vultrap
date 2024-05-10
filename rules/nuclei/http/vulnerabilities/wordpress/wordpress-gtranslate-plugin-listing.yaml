@@ -1,0 +1,22 @@
+id: wordpress-gtranslate-plugin-listing
+info:
+  name: WordPress gtranslate Plugin Directory Listing
+  author: dhiyaneshDK
+  description: Searches for sensitive directories present in the gtranslate wordpress
+    plugin.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6160
+  metadata:
+    max-request: 1
+  tags: wordpress,listing,plugin,edb
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/gtranslate/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins/gtranslate/

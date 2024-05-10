@@ -1,0 +1,24 @@
+id: s3-torrent
+info:
+  name: Amazon S3 Torrent Download - Detect
+  author: ambassify
+  description: Amazon S3 Torrent download was detected, which can allow a malicious
+    user to download files.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: misconfig,aws,s3,bucket
+traps:
+- request:
+    method: GET
+    path: /?torrent
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: RequestTorrentOfBucketErrors3-tracker

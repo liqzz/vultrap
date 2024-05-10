@@ -1,0 +1,25 @@
+id: fuelcms-panel
+info:
+  name: Fuel CMS Login Panel - Detect
+  author: Adam Crosser
+  description: Fuel CMS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:daylightstudio:fuel_cms:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fuel_cms
+    vendor: daylightstudio
+  tags: panel,fuelcms,oss,daylightstudio
+traps:
+- request:
+    method: GET
+    path: /fuel/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FUEL CMS</title>

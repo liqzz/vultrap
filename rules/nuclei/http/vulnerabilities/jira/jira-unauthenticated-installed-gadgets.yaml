@@ -1,0 +1,21 @@
+id: jira-unauthenticated-installed-gadgets
+info:
+  name: Jira Unauthenticated Installed gadgets
+  author: philippedelteil
+  description: Some Jira instances allow to read the installed gadgets (sometimes
+    it's also possible to read config xml file for some gadgets)
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Atlassian Jira"
+  tags: atlassian,jira
+traps:
+- request:
+    method: GET
+    path: /rest/config/1.0/directory
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: jaxbDirectoryContents

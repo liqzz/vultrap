@@ -1,0 +1,30 @@
+id: bitbucket-public-repository
+info:
+  name: Atlassian Bitbucket Public Repository Exposure
+  author: DhiyaneshDk
+  description: Bitbucket Public Repository is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.component:"Bitbucket"
+  tags: misconfig,bitbucket
+traps:
+- request:
+    method: GET
+    path: /repos?visibility=public
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Public Repositories - Bitbucket
+- request:
+    method: GET
+    path: /bitbucket/repos?visibility=public
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: edge-phish
+info:
+  name: edge phishing Detection
+  author: rxerium
+  description: 'A edge phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://www.microsoft.com/en-us/edge/download?form=MA13FJ&ch=1
+  metadata:
+    max-request: 1
+  tags: phishing,edge,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sign in - edge Accounts

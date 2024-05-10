@@ -1,0 +1,36 @@
+id: efak-login-panel
+info:
+  name: Eagle For Apache Kakfa Login - Detect
+  author: irshad ahamed
+  description: 'EFAK is a visualization and management software that allows one to
+    query, visualize, alert on, and explore their metrics wherever they were stored.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/smartloli/efak
+  - https://www.kafka-eagle.org/
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:1693580324
+    verified: true
+  tags: panel,efak,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - EFAK</title>Eagle For Apache Kafka<h1>EFAK</h1>
+- request:
+    method: GET
+    path: /account/signin?/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

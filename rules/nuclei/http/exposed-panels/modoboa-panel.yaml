@@ -1,0 +1,39 @@
+id: modoboa-panel
+info:
+  name: Modoboa Login Panel - Detect
+  author: kh4sh3i
+  description: Modoboa login panel was detected.
+  severity: info
+  reference:
+  - https://modoboa.org
+  - https://github.com/modoboa/modoboa
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:modoboa:modoboa:*:*:*:*:modoboa:*:*:*
+  metadata:
+    max-request: 2
+    product: modoboa
+    shodan-query: http.favicon.hash:1949005079
+    vendor: modoboa
+    verified: true
+  tags: panel,modoboa,mail
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Modoboa
+- request:
+    method: GET
+    path: /accounts/login/?next=/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

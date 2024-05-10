@@ -1,0 +1,29 @@
+id: apcu-service
+info:
+  name: APCu service information leakage
+  author: koti2
+  description: APCu service is vulnerable to information leakage.
+  severity: low
+  metadata:
+    max-request: 2
+  tags: config,service,apcu,misconfig
+traps:
+- request:
+    method: GET
+    path: /apc/apc.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: APCu Version InformationGeneral Cache InformationDetailed Memory Usage and
+      Fragmentation
+- request:
+    method: GET
+    path: /apc.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

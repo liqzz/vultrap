@@ -1,0 +1,31 @@
+id: pagespeed-global-admin
+info:
+  name: Pagespeed Global Admin - Detect
+  author: geeknik
+  description: Pagespeed Global Admin panel was detected.
+  severity: info
+  reference:
+  - https://www.modpagespeed.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: pagespeed,panel
+traps:
+- request:
+    method: GET
+    path: /pagespeed-global-admin/
+    headers:
+      X-Client-IP: 127.0.0.1
+      X-Remote-IP: 127.0.0.1
+      X-Remote-Addr: 127.0.0.1
+      X-Forwarded-For: 127.0.0.1
+      X-Originating-IP: 127.0.0.1
+      X-Host: 127.0.0.1
+      X-Forwarded-Host: 127.0.0.1
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

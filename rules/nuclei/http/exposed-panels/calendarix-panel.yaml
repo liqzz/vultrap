@@ -1,0 +1,31 @@
+id: calendarix-panel
+info:
+  name: Calendarix Admin Login Panel - Detect
+  author: r3dg33k
+  description: Calendarix admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: panel,calendarix,login
+traps:
+- request:
+    method: GET
+    path: /calendarix/admin/cal_login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Calendarix Admin Login
+- request:
+    method: GET
+    path: /calendar/admin/cal_login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

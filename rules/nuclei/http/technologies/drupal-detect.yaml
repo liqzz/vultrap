@@ -1,0 +1,39 @@
+id: drupal-detect
+info:
+  name: Drupal Detection
+  author: 1nf1n7y
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.component:"Drupal"
+  tags: tech,drupal
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Initial releaseDrupal 1.0.0content="Drupal
+- request:
+    method: GET
+    path: /CHANGELOG.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /core/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

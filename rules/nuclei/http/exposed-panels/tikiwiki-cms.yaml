@@ -1,0 +1,34 @@
+id: tikiwiki-cms
+info:
+  name: Tiki Wiki CMS Groupware Login Panel - Detect
+  author: chron0x
+  description: Tiki Wiki CMS Groupware login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tiki:tikiwiki_cms\/groupware:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: tikiwiki_cms\/groupware
+    vendor: tiki
+  tags: panel,tikiwiki,tiki
+traps:
+- request:
+    method: GET
+    path: /tiki-login_scr.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Tiki Wiki CMS Groupware
+- request:
+    method: GET
+    path: /tiki-login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

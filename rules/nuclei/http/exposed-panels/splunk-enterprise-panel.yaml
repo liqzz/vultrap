@@ -1,0 +1,28 @@
+id: splunk-enterprise-panel
+info:
+  name: Splunk Enterprise Login Panel - Detect
+  author: praetorian-thendrickson
+  description: Splunk Enterprise login panel was detected.
+  severity: info
+  reference:
+  - https://www.splunk.com/en_us/software/splunk-enterprise.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:splunk:splunk:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: splunk
+    shodan-query: http.title:"Login - Splunk"
+    vendor: splunk
+  tags: panel,splunk
+traps:
+- request:
+    method: GET
+    path: /en-US/account/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Splunk Inc.

@@ -1,0 +1,37 @@
+id: genieacs-default-jwt
+info:
+  name: GenieACS - Authentication Bypass (Default JWT Secret)
+  author: DhiyaneshDK,pussycat0x
+  description: 'GenieACS, an Auto Configuration Server (ACS) for TR-069 enabled routers
+    and similar devices, is vulnerable to authentication bypass due to the use of
+    a default JWT secret. During installation, if the default JWT secret "secret"
+    is not changed, an attacker can create a JWT token, sign it, and use this token
+    to log into the GenieACS UI interface. The attack is carried out by setting a
+    cookie named "genieacs-ui-jwt" with its value being the JWT token.
+
+    '
+  severity: high
+  reference:
+  - https://0x00sec.org/t/genieacs-and-the-tale-of-default-jwt-secret/32738
+  classification:
+    cwe-id: CWE-798
+    cpe: cpe:2.3:a:genieacs:genieacs:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: genieacs
+    product: genieacs
+    shodan-query: http.html:"genieacs"
+  tags: misconfig,jwt,genieacs,default-jwt
+traps:
+- request:
+    method: GET
+    path: /api/presets/?filter=true
+    headers:
+      Accept: application/json, text/*
+      Cookie: '{{cookie_name}}={{default_jwt_secret}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"provision":"provisionArgs":'

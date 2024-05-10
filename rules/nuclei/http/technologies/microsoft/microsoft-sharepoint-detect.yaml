@@ -1,0 +1,19 @@
+id: microsoft-sharepoint-detect
+info:
+  name: Microsoft SharePoint Detect
+  author: p-l-
+  description: Check for SharePoint, using HTTP header MicrosoftSharePointTeamServices
+  severity: info
+  metadata:
+    max-request: 1
+  tags: sharepoint,iis,microsoft,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

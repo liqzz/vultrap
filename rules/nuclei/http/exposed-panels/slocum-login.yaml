@@ -1,0 +1,22 @@
+id: slocum-login
+info:
+  name: Slocum Fleet Mission Control Login Panel - Detect
+  author: pussycat0x
+  description: Slocum Fleet Mission Control login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,tech,slocum
+traps:
+- request:
+    method: GET
+    path: /sfmc/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Slocum Fleet Mission Control - Login</title>

@@ -1,0 +1,31 @@
+id: jira-setup
+info:
+  name: Atlassian JIRA Setup - Installer
+  author: ritikchaddha
+  description: Atlassian JIRA is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"JIRA - JIRA setup"
+  tags: misconfig,jira,atlassian,installer
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JIRA - JIRA setupjira.webresources:jira-setup"
+- request:
+    method: GET
+    path: /secure/SetupMode!default.jspa
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

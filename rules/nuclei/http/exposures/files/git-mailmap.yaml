@@ -1,0 +1,26 @@
+id: git-mailmap
+info:
+  name: Git Mailmap File Disclosure
+  author: geeknik,DhiyaneshDK
+  description: Git Mailmap file is exposed.
+  severity: low
+  reference: https://man7.org/linux/man-pages/man5/gitmailmap.5.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:mailmap
+  tags: config,exposure,git,mailmap,files
+traps:
+- request:
+    method: GET
+    path: /.mailmap
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"\
+      (?:[\x01-\b\v\f\x0E-\x1F!#-[]-\x7F]|\\[\x01-\t\v\f\x0E-\x7F])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\\
+      .)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\
+      .){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\b\v\
+      \f\x0E-\x1F!-ZS-\x7F]|\\[\x01-\t\v\f\x0E-\x7F])+)\\])# Theresa O'Connor:"

@@ -1,0 +1,27 @@
+id: siteomat-loader
+info:
+  name: Orpak SiteOmat Login Panel - Detect
+  author: dhiyaneshDK
+  description: Orpak SiteOmat login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6624
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:orpak:siteomat:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: siteomat
+    vendor: orpak
+  tags: siteomat,login,edb,panel,orpak
+traps:
+- request:
+    method: GET
+    path: /login.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SiteOmat Login</title>

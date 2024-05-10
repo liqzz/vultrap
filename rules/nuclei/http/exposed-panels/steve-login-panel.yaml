@@ -1,0 +1,38 @@
+id: steve-login-panel
+info:
+  name: SteVe Login Panel - Detect
+  author: clem9669
+  description: 'SteVe login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/steve-community/steve
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    google-query: intitle:"SteVe - Steckdosenverwaltung"
+    max-request: 2
+    shodan-query: http.title:"SteVe - Steckdosenverwaltung"
+    verified: true
+  tags: panel,steve
+traps:
+- request:
+    method: GET
+    path: /manager/signin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SteVe - Steckdosenverwaltung
+- request:
+    method: GET
+    path: /steve/manager/signin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

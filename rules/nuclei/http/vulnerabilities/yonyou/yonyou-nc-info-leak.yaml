@@ -1,0 +1,28 @@
+id: yonyou-nc-info-leak
+info:
+  name: Yonyou UFIDA NC - Information Exposure
+  author: SleepingBag945
+  description: 'After logging in and visiting the address where the information was
+    leaked, you will have permission to upload files. Then just go back to the homepage
+    and view the published content directly.
+
+    '
+  severity: medium
+  reference:
+  - https://mp.weixin.qq.com/s/Lu6Zd9LP3PQsb8uzTIcANQ
+  - https://github.com/zhangzhenfeng/AnyScan/blob/master/AnyScanUI/AnyPoc/data/poc/bugscan/exp%EF%BC%8D2311.py
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="用友-UFIDA-NC
+  tags: yonyou,nc,exposure
+traps:
+- request:
+    method: GET
+    path: /service/~iufo/com.ufida.web.action.ActionServlet?TableSelectedID&TreeSelectedID&action=nc.ui.iufo.release.InfoReleaseAction&method=createBBSRelease
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: iufo/web/images/usericon.gif/iufo/web/images/tree/tree_plus.gif

@@ -1,0 +1,23 @@
+id: webalizer-xtended-stats
+info:
+  name: Webalizer Xtended Statistics Exposed
+  author: ritikchaddha
+  description: Webalizer Xtended Statistics is exposed.
+  severity: low
+  reference:
+  - https://www.patrickfrei.ch/webalizer/
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: inurl:"/usage/error_202109.html"
+  tags: exposure,stats,webalizer
+traps:
+- request:
+    method: GET
+    path: /usage/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <TITLE>Webalizer</TITLE>SRC=menu.html

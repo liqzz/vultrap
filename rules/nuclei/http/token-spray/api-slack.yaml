@@ -1,0 +1,22 @@
+id: api-slack
+info:
+  name: Slack API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://api.slack.com/methods/auth.test
+  metadata:
+    max-request: 1
+  tags: token-spray,slack
+traps:
+- request:
+    method: POST
+    path: https://slack.com/api/auth.test
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"url":"team_id":"user_id":'

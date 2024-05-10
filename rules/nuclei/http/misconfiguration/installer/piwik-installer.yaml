@@ -1,0 +1,21 @@
+id: piwik-installer
+info:
+  name: Piwik Installer Exposure
+  author: DhiyaneshDk
+  description: Piwik is susceptible to the Installation page exposure due to misconfiguration.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Piwik &rsaquo; Installation"
+  tags: misconfig,piwik,install
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PiwikInstallation status

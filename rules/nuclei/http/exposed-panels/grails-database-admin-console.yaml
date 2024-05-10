@@ -1,0 +1,39 @@
+id: grails-database-admin-console
+info:
+  name: Grails Admin Console Panel - Detect
+  author: emadshanab
+  description: Grails Admin Console panel was detected.
+  severity: medium
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/grails-database-console/
+  - http://h2database.com/html/quickstart.html#h2_console
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:grails:grails:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: grails
+    vendor: grails
+  tags: grails,panel
+traps:
+- request:
+    method: GET
+    path: /dbconsole/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>H2 Console</title>Sorry, remote connections ('webAllowOthers') are
+      disabled on this server
+- request:
+    method: GET
+    path: /h2-console/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,20 @@
+id: unauthenticated-tensorboard
+info:
+  name: Tensorflow Tensorboard - Unauthenticated Access
+  author: dhiyaneshDk
+  description: Tensorflow Tensorboard was able to be accessed with no authentication
+    requirements in place.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: tensorflow,tensorboard,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /data/plugins_listing
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: scalarsloading_mechanismcustom_scalars

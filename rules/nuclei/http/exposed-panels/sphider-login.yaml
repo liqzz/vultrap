@@ -1,0 +1,45 @@
+id: sphider-login
+info:
+  name: Sphider Admin Login Panel - Detect
+  author: dhiyaneshDK
+  description: Sphider admin login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6641
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sphider:sphider:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: sphider
+    vendor: sphider
+  tags: edb,panel,sphider
+traps:
+- request:
+    method: GET
+    path: /admin/spider.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sphider Admin Login</title>
+- request:
+    method: GET
+    path: /sphider/admin/admin.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /search/admin/admin.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

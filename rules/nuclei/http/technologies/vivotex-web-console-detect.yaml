@@ -1,0 +1,21 @@
+id: vivotex-web-console-detect
+info:
+  name: VIVOTEK Web Console Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"VIVOTEK Web Console"
+    fofa-query: app="VIVOTEK-Web-Console"
+  tags: tech,vivotex,console
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>VIVOTEK Web Console</title>

@@ -1,0 +1,23 @@
+id: Wikipedia-phish
+info:
+  name: Wikipedia phishing Detection
+  author: rxerium
+  description: 'A Wikipedia phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://wikipedia.com
+  metadata:
+    max-request: 1
+  tags: phishing,wikipedia,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Log in - Wikipedia

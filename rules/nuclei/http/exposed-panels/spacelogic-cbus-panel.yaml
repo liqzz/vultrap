@@ -1,0 +1,23 @@
+id: spacelogic-cbus-panel
+info:
+  name: SpaceLogic C-Bus Home Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    product: spacelogic_c-bus_home_controller_firmware
+    shodan-query: html:"SpaceLogic C-Bus"
+    vendor: schneider-electric
+    verified: true
+  tags: panel,spacelogic,login,schneider-electric
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SpaceLogic C-Bus Home</title>content="SpaceLogic C-Bus Home

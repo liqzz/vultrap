@@ -1,0 +1,22 @@
+id: wix-takeover
+info:
+  name: Wix Takeover Detection
+  author: harshinsecurity,philippedelteil
+  description: This subdomain take over would only work on an edge case when the account
+    was deleted. You will need a premium account (~ US$7) to test the take over.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/231
+  metadata:
+    max-request: 1
+  tags: takeover,wix
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Error ConnectYourDomain occurredwixErrorPagesApp

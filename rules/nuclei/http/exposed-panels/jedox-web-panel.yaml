@@ -1,0 +1,41 @@
+id: jedox-web-panel
+info:
+  name: Jedox Web Login Panel - Detect
+  author: Team Syslifters / Christoph MAHRL,Aron MOLNAR,Patrick PIRKER,Michael WEDL
+  description: 'Jedox is an Enterprise Performance Management software which is used
+    for planning, analytics and reporting  in finance and other areas such as sales,
+    human resources and procurement.
+
+    '
+  severity: info
+  reference:
+  - https://www.jedox.com
+  classification:
+    cpe: cpe:2.3:a:jedox:jedox:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"Jedox Web Login"
+    max-request: 2
+    product: jedox
+    shodan-query: title:"Jedox Web - Login"
+    vendor: jedox
+    verified: true
+  tags: panel,jedox,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Jedox Web - Loginguide-jedox-software
+- request:
+    method: GET
+    path: /ui/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

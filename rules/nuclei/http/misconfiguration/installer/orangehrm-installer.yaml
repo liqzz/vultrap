@@ -1,0 +1,21 @@
+id: orangehrm-installer
+info:
+  name: OrangeHrm Installer
+  author: pussycat0x
+  description: OrangeHrm is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"OrangeHRM Web Installation Wizard"
+  tags: misconfig,exposure,install,orangehrm
+traps:
+- request:
+    method: GET
+    path: /installer/installerUI.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OrangeHRM Web Installation Wizardadmin user creation

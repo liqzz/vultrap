@@ -1,0 +1,41 @@
+id: airflow-default-login
+info:
+  name: Apache Airflow Default Login
+  author: pdteam
+  description: An Apache Airflow default login was discovered.
+  severity: high
+  reference:
+  - https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 2
+    shodan-query: title:"Sign In - Airflow"
+  tags: airflow,default-login,apache
+traps:
+- request:
+    method: GET
+    path: /login/
+    headers:
+      Origin: '{{BaseURL}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: 'You should be redirected automatically to target URL: <a href="/">'
+- request:
+    method: POST
+    path: /login/
+    headers:
+      Origin: '{{BaseURL}}'
+      Content-Type: application/x-www-form-urlencoded
+      Referer: '{{BaseURL}}/admin/airflow/login'
+    body: 'username={{username}}&password={{password}}&_csrf_token={{csrf_token}}
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

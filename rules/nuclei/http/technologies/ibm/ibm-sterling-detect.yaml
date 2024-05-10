@@ -1,0 +1,19 @@
+id: ibm-sterling-detect
+info:
+  name: IBM Sterling File Gateway Detect
+  author: princechaddha
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,sterling,ibm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Welcome to IBM Sterling File Gateway

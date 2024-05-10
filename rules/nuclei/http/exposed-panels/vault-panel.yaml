@@ -1,0 +1,36 @@
+id: vault-panel
+info:
+  name: Vault Login Panel - Detect
+  author: DhiyaneshDK
+  description: Vault login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:hashicorp:vault:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: vault
+    shodan-query: http.favicon.hash:-919788577
+    vendor: hashicorp
+    verified: true
+  tags: panel,vault,detect,hashicorp
+traps:
+- request:
+    method: GET
+    path: /v1/sys/health
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Vault</title>vault/
+- request:
+    method: GET
+    path: /ui/vault/auth?with=oidc%2F
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,48 @@
+id: structurizr-default-login
+info:
+  name: Structurizr - Default Login
+  author: DhiyaneshDK
+  description: 'Structurizr contains default credentials.
+
+    '
+  severity: high
+  reference:
+  - https://docs.structurizr.com/onpremises/quickstart
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.favicon.hash:1199592666
+  tags: structurizr,default-login
+traps:
+- request:
+    method: GET
+    path: /signin
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /login
+    headers:
+      Origin: '{{RootURL}}'
+      Content-Type: application/x-www-form-urlencoded
+    body: 'username={{username}}&password={{password}}&_csrf={{csrf}}&hash=
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /dashboard
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: <a href="/dashboard">Sign out

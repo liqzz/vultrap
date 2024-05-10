@@ -1,0 +1,21 @@
+id: helpdocs-takeover
+info:
+  name: HelpDocs Takeover Detection
+  author: philippedelteil
+  description: null
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/402
+  metadata:
+    max-request: 1
+  tags: takeover,helpdocs
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: You've tried to access an account/page that does not exist

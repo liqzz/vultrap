@@ -1,0 +1,26 @@
+id: tox-ini
+info:
+  name: Tox Configuration File - Detect
+  author: geeknik
+  description: Tox configuration file was detected.
+  severity: info
+  reference: https://tox.wiki/en/latest/config.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"tox.ini"
+  tags: exposure,config,tox
+traps:
+- request:
+    method: GET
+    path: /tox.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[tox][testenv]'

@@ -1,0 +1,23 @@
+id: phppgadmin-version
+info:
+  name: PhpPgAdmin Version Information - Detect
+  author: dr0pd34d
+  description: PhpPgAdmin version information was detected via the intro.php file.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,phppgadmin
+traps:
+- request:
+    method: GET
+    path: /phppgadmin/intro.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <span class="appname">phpPgAdmin</span> <span class="version">.*</span>

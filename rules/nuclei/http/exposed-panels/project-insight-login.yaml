@@ -1,0 +1,28 @@
+id: project-insight-login
+info:
+  name: Project Insight Login Panel - Detect
+  author: dhiyaneshDk
+  description: Project Insight login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7413
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:helpproject:help:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: help
+    shodan-query: http.title:"Project Insight - Login"
+    vendor: helpproject
+  tags: panel,edb,helpproject
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Project Insight - Login</title>

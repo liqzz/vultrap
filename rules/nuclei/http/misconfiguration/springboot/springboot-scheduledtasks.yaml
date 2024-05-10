@@ -1,0 +1,35 @@
+id: springboot-scheduledtasks
+info:
+  name: Spring Boot Scheduledtasks Actuator Panel - Detect
+  author: ELSFA7110
+  description: Spring Boot Scheduledtasks Actuator panel was detected.
+  severity: info
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#scheduled-tasks
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /scheduledtasks
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: cronfixedDelay
+- request:
+    method: GET
+    path: /actuator/scheduledtasks
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

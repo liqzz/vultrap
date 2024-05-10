@@ -1,0 +1,22 @@
+id: hubspot-takeover
+info:
+  name: hubspot takeover detection
+  author: pdteam
+  description: hubspot takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/59
+  - https://hackerone.com/reports/335330
+  metadata:
+    max-request: 1
+  tags: takeover,hubspot,hackerone
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Domain not founddoes not exist in our system

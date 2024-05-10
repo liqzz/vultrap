@@ -1,0 +1,21 @@
+id: api-wakatime
+info:
+  name: WakaTime CI API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://wakatime.com/developers
+  metadata:
+    max-request: 1
+  tags: token-spray,wakatime
+traps:
+- request:
+    method: GET
+    path: https://wakatime.com/api/v1/users/current/projects/?api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"seconds":"is_up_to_date":'

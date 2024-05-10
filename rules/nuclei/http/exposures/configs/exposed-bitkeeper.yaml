@@ -1,0 +1,21 @@
+id: exposed-bitkeeper
+info:
+  name: BitKeeper Configuration - Detect
+  author: daffainfo
+  description: BitKeeper configuration was detected.
+  severity: low
+  reference:
+  - https://www.bitkeeper.org/man/config-etc.html
+  metadata:
+    max-request: 1
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: /BitKeeper/etc/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BitKeeper configurationloggingemaildescription

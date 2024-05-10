@@ -1,0 +1,25 @@
+id: searchreplacedb2-exposure
+info:
+  name: Safe Search Replace Exposure
+  author: kazet
+  description: Safe Search Replace is exposed leaking internal info.
+  severity: high
+  reference:
+  - https://interconnectit.com/search-and-replace-for-wordpress-databases/
+  - https://github.com/interconnectit/Search-Replace-DB
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"searchreplacedb2.php"
+    fofa-query: body="searchreplacedb2.php"
+  tags: misconfig,searchreplacedb2,exposure
+traps:
+- request:
+    method: GET
+    path: /searchreplacedb2.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Database detailsSafe Search Replace

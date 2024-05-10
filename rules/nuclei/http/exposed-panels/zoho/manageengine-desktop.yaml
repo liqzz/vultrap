@@ -1,0 +1,26 @@
+id: manageengine-desktop
+info:
+  name: ZOHO ManageEngine Desktop Panel - Detect
+  author: dhiyaneshDK
+  description: ZOHO ManageEngine desktop panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:zohocorp:manageengine_desktop_central:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: manageengine_desktop_central
+    shodan-query: http.title:"ManageEngine Desktop Central 10"
+    vendor: zohocorp
+  tags: panel,zoho,manageengine,zohocorp
+traps:
+- request:
+    method: GET
+    path: /configurations
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ManageEngine Desktop Central 10</title>

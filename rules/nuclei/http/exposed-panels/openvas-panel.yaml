@@ -1,0 +1,25 @@
+id: openvas-panel
+info:
+  name: OpenVas Login Panel - Detect
+  author: rxerium
+  description: 'An OpenVas Admin login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://openvas.org/
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:1606029165
+    verified: true
+  tags: panel,openvas,admin,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Greenbone Security Assistant

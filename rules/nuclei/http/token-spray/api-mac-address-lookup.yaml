@@ -1,0 +1,23 @@
+id: api-mac-address-lookup
+info:
+  name: MAC Address Lookup API Test
+  author: daffainfo
+  description: Retrieve vendor details and other information regarding a given MAC
+    address or an OUI
+  severity: info
+  reference:
+  - https://macaddress.io/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/mac-address-lookup
+  metadata:
+    max-request: 1
+  tags: token-spray,macaddresslookup
+traps:
+- request:
+    method: GET
+    path: https://api.macaddress.io/v1?apiKey=&output=json&search=44:38:39:ff:ef:57
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"vendorDetails""companyName""companyAddress"'

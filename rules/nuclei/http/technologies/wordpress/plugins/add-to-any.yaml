@@ -1,0 +1,23 @@
+id: wordpress-add-to-any
+info:
+  name: AddToAny Share Buttons Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/add-to-any/
+  metadata:
+    max-request: 1
+    plugin_namespace: add-to-any
+    wpscan: https://wpscan.com/plugin/add-to-any
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/add-to-any/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,36 @@
+id: cookies-without-httponly-secure
+info:
+  name: Cookies without HttpOnly or Secure attribute - Detect
+  author: princechaddha,Mr.Bobo HP
+  description: 'Checks whether cookies in the HTTP response contain the HttpOnly attribute.
+    If the HttpOnly flag is set, it means that the cookie is HTTP-only
+
+    '
+  severity: info
+  impact: 'Lack of HttpOnly flag on cookies increases the risk of client-side attacks,
+    compromising user session security and data privacy.
+
+    '
+  remediation: 'Ensure that all cookies are set with the HttpOnly attribute to prevent
+    client-side access.
+
+    '
+  reference:
+  - https://owasp.org/www-community/HttpOnly
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+  metadata:
+    verified: true
+    max-request: 1
+  tags: misconfig,http,cookie,generic
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

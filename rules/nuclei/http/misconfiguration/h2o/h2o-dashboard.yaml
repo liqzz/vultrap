@@ -1,0 +1,24 @@
+id: h2o-dashboard
+info:
+  name: H2O Dashboard - Exposure
+  author: byt3bl33d3r
+  description: 'H2o dashboard by default has no authentication and can lead to RCE
+    on the host.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"H2O Flow"
+  tags: misconfig,exposure,h2o,ml,unauth
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: H2O Flow

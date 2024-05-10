@@ -1,0 +1,24 @@
+id: bazarr-login-detect
+info:
+  name: Bazarr Login - Detect
+  author: r3dg33k
+  description: Bazarr login page was detected.
+  severity: info
+  reference:
+  - https://www.bazarr.media/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,bazarr,login
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Bazarr</title>

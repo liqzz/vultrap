@@ -1,0 +1,33 @@
+id: manageengine-keymanagerplus
+info:
+  name: ZOHO ManageEngine KeyManagerPlus Panel - Detect
+  author: righettod
+  description: ZOHO ManageEngine KeyManagerPlus panel was detected.
+  severity: info
+  reference:
+  - https://www.manageengine.com/key-manager/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: panel,zoho,manageengine
+traps:
+- request:
+    method: GET
+    path: /apiclient/index.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /pki/images/keyManager_title.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

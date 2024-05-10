@@ -1,0 +1,33 @@
+id: awstats-config
+info:
+  name: AWStats Config - Detect
+  author: sheikhrishad
+  description: AWStats configuration information was detected.
+  severity: info
+  reference: https://www.awstats.org/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: config,exposure,awstats
+traps:
+- request:
+    method: GET
+    path: /awstats/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: AWSTATS CONFIGUREMAIN SETUP SECTIONIndex of /awstatsParent Directory
+- request:
+    method: GET
+    path: /awstats.conf
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: acunetix-panel-detect
+info:
+  name: Acunetix Login Panel
+  author: joanbono
+  description: An Acunetix login panel was detected.
+  severity: info
+  reference:
+  - https://www.acunetix.com/
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel
+traps:
+- request:
+    method: GET
+    path: /#/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Acunetix</title><acx-root></acx-root>

@@ -1,0 +1,21 @@
+id: blackbox-exporter-metrics
+info:
+  name: Blackbox Exporter Metrics Exposed
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Blackbox Exporter"
+  tags: blackbox,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Blackbox exporterblackbox_exporter_build_info

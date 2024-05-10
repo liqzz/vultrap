@@ -1,0 +1,22 @@
+id: tiny-file-manager-unauth
+info:
+  name: Tiny File Manager - Unauthorized Access
+  author: ritikchaddha,HuTa0
+  description: Unauthenticated Tiny File Manager panel was detected.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Tiny File Manager"
+    zoomeye-query: app:"Tiny File Manager"
+  tags: misconfig,filemanager,detect
+traps:
+- request:
+    method: GET
+    path: /index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Tiny File Manager<th>ActionsNew ItemUpload

@@ -1,0 +1,28 @@
+id: springboot-httptrace
+info:
+  name: Detect Springboot httptrace
+  author: that_juan_,dwisiswant0,wdahlenb
+  description: View recent HTTP requests and responses
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /httptrace
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"traces""timestamp""principal""session"'
+- request:
+    method: GET
+    path: /actuator/httptrace
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

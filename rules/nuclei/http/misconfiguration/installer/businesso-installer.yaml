@@ -1,0 +1,22 @@
+id: businesso-installer
+info:
+  name: Businesso Installer Exposure
+  author: ritikchaddha
+  description: Businesso is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Businesso Installer"
+    fofa-query: title="Businesso Installer"
+  tags: misconfig,businesso,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Businesso Installer</title>

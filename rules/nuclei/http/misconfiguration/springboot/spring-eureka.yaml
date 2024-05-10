@@ -1,0 +1,21 @@
+id: spring-eureka
+info:
+  name: Spring Eureka Exposure
+  author: tess
+  description: Spring Eureka is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Eureka"
+  tags: misconfig,springboot,exposure,eureka
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: EurekaToggle navigationLast 1000 since startup

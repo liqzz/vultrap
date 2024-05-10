@@ -1,0 +1,30 @@
+id: azure-pipelines-exposed
+info:
+  name: Azure Pipelines Configuration File Disclosure
+  author: DhiyaneshDk
+  description: Azure Pipelines internal critical file is disclosed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"azure-pipelines.yml"
+  tags: config,exposure,azure,microsoft,cloud,devops,files
+traps:
+- request:
+    method: GET
+    path: /.azure-pipelines.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'trigger:pool:variables:'
+- request:
+    method: GET
+    path: /azure-pipelines.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

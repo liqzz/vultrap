@@ -1,0 +1,33 @@
+id: fortinet-panel
+info:
+  name: Fortinet Login Panel - Detect
+  author: pikpikcu,daffainfo
+  description: Fortinet login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"FORTINET LOGIN"
+    verified: true
+  tags: panel,fortinet,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FORTINET LOGIN</title>
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

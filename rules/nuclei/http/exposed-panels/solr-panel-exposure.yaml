@@ -1,0 +1,36 @@
+id: solr-panel-exposure
+info:
+  name: Apache Solr Admin Panel - Detect
+  author: pdteam
+  description: Apache Solr admin panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: solr
+    shodan-query: http.title:"Solr Admin"
+    vendor: apache
+    verified: true
+  tags: panel,solr,apache,admin
+traps:
+- request:
+    method: GET
+    path: /solr/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Solr Admin</title>
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

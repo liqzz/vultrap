@@ -1,0 +1,21 @@
+id: hfs-exposure
+info:
+  name: HFS Exposure
+  author: tess
+  description: null
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"HFS /"
+  tags: misconfig,hfs,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HFS /Messages

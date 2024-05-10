@@ -1,0 +1,19 @@
+id: vmware-vrealize
+info:
+  name: VMware vRealize
+  author: milo2012
+  description: Version of VMware vRealize Operations Manager
+  severity: info
+  metadata:
+    max-request: 1
+  tags: vmware,vrealize,tech
+traps:
+- request:
+    method: GET
+    path: /ui/login.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>vRealize Operations Manager</title>

@@ -1,0 +1,22 @@
+id: ftpconfig
+info:
+  name: Atom remote-ssh ftpconfig Exposure
+  author: geeknik,DhiyaneshDK
+  description: Created by remote-ssh for Atom, contains SFTP/SSH server details and
+    credentials
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:ftpconfig
+  tags: atom,ftp,config,exposure,files
+traps:
+- request:
+    method: GET
+    path: /.ftpconfig
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"protocol":"host":"user":'

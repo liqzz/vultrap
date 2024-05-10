@@ -1,0 +1,19 @@
+id: wp-debug-log
+info:
+  name: WordPress Debug Log - Exposure
+  author: geraldino2,dwisiswant0,philippedelteil
+  description: Exposed Wordpress debug log.
+  severity: low
+  metadata:
+    max-request: 4
+  tags: wp,wordpress,log,exposure
+traps:
+- request:
+    method: GET
+    path: //debug.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[[0-9]{2}-[a-zA-Z]{3}-[0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} [A-Z]{3}] PHP'

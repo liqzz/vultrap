@@ -1,0 +1,26 @@
+id: v2924-admin-panel
+info:
+  name: V2924 Admin Login Panel - Detect
+  author: DhiyaneshDK
+  description: V2924 admin login panel was detected.
+  severity: info
+  reference:
+  - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5538760399521122
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"V2924"
+    verified: true
+  tags: panel,v2924
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>V2924</title>

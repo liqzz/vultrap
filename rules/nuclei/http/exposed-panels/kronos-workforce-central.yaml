@@ -1,0 +1,22 @@
+id: kronos-workforce-central
+info:
+  name: Kronos Workforce Central Login Panel - Detect
+  author: emadshanab
+  description: Kronos Workforce Central login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,kronos
+traps:
+- request:
+    method: GET
+    path: /wfc/portal
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Kronos Workforce Central

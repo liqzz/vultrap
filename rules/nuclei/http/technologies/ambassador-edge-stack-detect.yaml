@@ -1,0 +1,25 @@
+id: ambassador-edgestack-detect
+info:
+  name: Ambassador Edge Stack - Detect
+  author: ja1sh
+  description: 'Ambassador Edge Stack is a Kubernetes-native API Gateway that delivers
+    the scalability, security, and simplicity for some of the world''s largest Kubernetes
+    installations.
+
+    '
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Ambassador Edge Stack"
+  tags: tech,ambassador,gateway
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Ambassador Edge Stack</p>

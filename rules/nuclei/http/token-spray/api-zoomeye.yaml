@@ -1,0 +1,26 @@
+id: api-zoomeye
+info:
+  name: ZoomEye API Test
+  author: 0ri2N
+  description: 'ZoomEyeis a Cyberspace Search Engine recording information of devices,
+    websites, services and components etc.
+
+    '
+  severity: info
+  reference:
+  - https://zoomeye.org
+  - https://zoomeye.org/doc
+  metadata:
+    max-request: 1
+  tags: recon,zoomeye,token-spray
+traps:
+- request:
+    method: GET
+    path: https://api.zoomeye.org/resources-info
+    headers:
+      API-KEY: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"plan""stats""user_info"'

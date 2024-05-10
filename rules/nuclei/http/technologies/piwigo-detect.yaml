@@ -1,0 +1,20 @@
+id: piwigo-detect
+info:
+  name: Piwigo Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    fofa-query: title="piwigo"
+  tags: piwigo,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: piwigo.org">Piwigo</a>Piwigo (aka PWG), see piwigo.org

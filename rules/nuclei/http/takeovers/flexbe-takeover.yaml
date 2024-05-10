@@ -1,0 +1,22 @@
+id: flexbe-takeover
+info:
+  name: Flexbe Subdomain Takeover
+  author: 0x_Akoko
+  description: Flexbe takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/237
+  - https://help.flexbe.com/domains/
+  metadata:
+    max-request: 1
+  tags: takeover,flexbe
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Domain isn't configuredflexbe

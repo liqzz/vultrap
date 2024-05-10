@@ -1,0 +1,23 @@
+id: mobileiron-sentry
+info:
+  name: MobileIron Sentry Panel - Detect
+  author: pdteam
+  description: MobileIron Sentry panel was detected.
+  severity: info
+  reference:
+  - https://help.ivanti.com/mi/help/en_us/sntry/9.9.0/gdcl/Content/SentryGuide/MobileIron_Sentry_overvi.htm
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:967636089
+    verified: true
+  tags: panel,mobileiron
+traps:
+- request:
+    method: GET
+    path: /mics/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: MobileIron System Manager

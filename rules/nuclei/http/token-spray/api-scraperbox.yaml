@@ -1,0 +1,22 @@
+id: api-scraperbox
+info:
+  name: ScraperBox API Test
+  author: daffainfo
+  description: Undetectable web scraping API
+  severity: info
+  reference:
+  - https://scraperbox.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scraperbox
+  metadata:
+    max-request: 1
+  tags: token-spray,scraperbox
+traps:
+- request:
+    method: GET
+    path: https://api.scraperbox.com/scrape?token=&url=https://example.com
+    headers: null
+    body: null
+  response:
+    status_code: 304
+    headers: {}
+    body: <title>Example Domain</title>

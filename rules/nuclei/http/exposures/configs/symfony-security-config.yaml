@@ -1,0 +1,35 @@
+id: symfony-security-config
+info:
+  name: Symfony Security Configuration File - Detect
+  author: dahse89
+  description: Symfony security configuration file was detected.
+  severity: info
+  reference:
+  - https://symfony2-document.readthedocs.io/en/latest/book/security.html
+  - https://symfony.com/doc/current/reference/configuration/security.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: config,exposure,symfony
+traps:
+- request:
+    method: GET
+    path: /config/packages/security.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'security:firewalls:access_control:'
+- request:
+    method: GET
+    path: /app/config/security.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

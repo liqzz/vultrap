@@ -1,0 +1,23 @@
+id: wordpress-siteguard
+info:
+  name: SiteGuard WP Plugin Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/siteguard/
+  metadata:
+    max-request: 1
+    plugin_namespace: siteguard
+    wpscan: https://wpscan.com/plugin/siteguard
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/siteguard/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

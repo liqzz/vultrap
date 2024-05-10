@@ -1,0 +1,23 @@
+id: linkedin-phish
+info:
+  name: linkedin phishing Detection
+  author: rxerium
+  description: 'A linkedin phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://linkedin.com
+  metadata:
+    max-request: 1
+  tags: phishing,linkedin,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'LinkedIn: Log In or Sign Up'

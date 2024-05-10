@@ -1,0 +1,21 @@
+id: gemfury-takeover
+info:
+  name: Gemfury Takeover Detection
+  author: pdteam,daffainfo
+  description: Gemfury takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/154
+  metadata:
+    max-request: 1
+  tags: takeover,gemfury
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

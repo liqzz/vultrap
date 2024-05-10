@@ -1,0 +1,27 @@
+id: fiorilaunchpad-logon
+info:
+  name: Fiori Launchpad Login Panel - Detect
+  author: dhiyaneshDK
+  description: Fiori Launchpad login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6793
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:sap:fiori_launchpad:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fiori_launchpad
+    vendor: sap
+  tags: panel,edb,sap
+traps:
+- request:
+    method: GET
+    path: /sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?saml2=disabled
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Logon</title>fioriLogin

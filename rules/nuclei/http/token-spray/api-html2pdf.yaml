@@ -1,0 +1,22 @@
+id: api-html2pdf
+info:
+  name: Html2PDF API Test
+  author: daffainfo
+  description: HTML/URL to PDF
+  severity: info
+  reference:
+  - https://html2pdf.app/documentation/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/html2pdf
+  metadata:
+    max-request: 1
+  tags: token-spray,html2pdf
+traps:
+- request:
+    method: GET
+    path: https://api.html2pdf.app/v1/generate?url=https://test.test&apiKey=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"Provided url is not accessible"'

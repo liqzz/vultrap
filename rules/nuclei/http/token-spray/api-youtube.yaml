@@ -1,0 +1,21 @@
+id: api-youtube
+info:
+  name: YouTube API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developers.google.com/youtube/v3/docs
+  metadata:
+    max-request: 1
+  tags: token-spray,youtube
+traps:
+- request:
+    method: GET
+    path: https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"kind":"pageInfo":'

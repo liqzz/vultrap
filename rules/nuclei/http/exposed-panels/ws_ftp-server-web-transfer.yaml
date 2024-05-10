@@ -1,0 +1,27 @@
+id: ws_ftp-server-web-transfer
+info:
+  name: WS_FTP Server Web Transfer - Panel Detect
+  author: johnk3r
+  description: WS_FTP Server Web Transfer panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    censys-query: services.http.request.uri="*/ThinClient/WTM/public/index.html"
+    max-request: 1
+    product: ws_ftp
+    shodan-query: http.title:"WS_FTP Server Web Transfer"
+    vendor: progress
+    verified: true
+  tags: panel,ws_ftp,progress
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Web Transfer Client

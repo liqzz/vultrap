@@ -1,0 +1,34 @@
+id: svn-wc-db
+info:
+  name: SVN wc.db File Exposure
+  author: Hardik-Solanki,R12W4N
+  description: SVN wc.db file is exposed.
+  severity: medium
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  - https://github.com/rapid7/metasploit-framework/blob/master//modules/auxiliary/scanner/http/svn_wcdb_scanner.rb
+  - https://infosecwriteups.com/indias-aadhar-card-source-code-disclosure-via-exposed-svn-wc-db-c05519ea7761
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intitle:"index of" "wc.db"
+  tags: msf,exposure,svn,config,files
+traps:
+- request:
+    method: GET
+    path: /.svn/wc.db
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SQLite formatWCROOT
+- request:
+    method: GET
+    path: /wc.db
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

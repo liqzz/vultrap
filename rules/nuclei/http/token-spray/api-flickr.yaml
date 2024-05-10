@@ -1,0 +1,21 @@
+id: api-flickr
+info:
+  name: Flickr API Test
+  author: geeknik
+  description: null
+  severity: info
+  reference:
+  - https://www.flickr.com/services/developer/api/
+  metadata:
+    max-request: 1
+  tags: token-spray,flickr
+traps:
+- request:
+    method: GET
+    path: https://www.flickr.com/services/rest/?method=flickr.tags.getHotList&api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: secretownerusername

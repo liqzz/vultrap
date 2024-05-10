@@ -1,0 +1,19 @@
+id: api-googlenearestroads
+info:
+  name: Google Nearest Roads API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,roads
+traps:
+- request:
+    method: GET
+    path: https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795|60.170879,24.942796|60.170877,24.942796&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error

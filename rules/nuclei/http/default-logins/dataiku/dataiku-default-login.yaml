@@ -1,0 +1,33 @@
+id: dataiku-default-login
+info:
+  name: Dataiku - Default Login
+  author: random-robbie
+  description: Dataiku contains a default login vulnerability. An attacker can obtain
+    access to user accounts and access sensitive information, modify data, and/or
+    execute unauthorized operations. This vulnerability may also lead to server-side
+    request forgery and/or remote code execution.
+  severity: high
+  reference:
+  - https://www.dataiku.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"dataiku"
+  tags: default-login,dataiku
+traps:
+- request:
+    method: POST
+    path: /dip/api/login
+    headers:
+      Content-Type: application/x-www-form-urlencoded;charset=utf-8
+    body: 'login=admin&password=admin
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

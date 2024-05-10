@@ -1,0 +1,23 @@
+id: api-nerdgraph
+info:
+  name: New Relic NerdGraph API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/
+  metadata:
+    max-request: 1
+  tags: token-spray,newrelic,nerdgraph
+traps:
+- request:
+    method: POST
+    path: https://api.newrelic.com/graphql
+    headers:
+      Content-Type: application/json
+      API-Key: '{{token}}'
+    body: '{ "query":  "{ requestContext { userId apiKey }}" }'
+  response:
+    status_code: 200
+    headers: {}
+    body: errors

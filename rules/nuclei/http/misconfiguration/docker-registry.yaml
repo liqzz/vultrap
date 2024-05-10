@@ -1,0 +1,21 @@
+id: docker-registry
+info:
+  name: Docker Registry Listing
+  author: puzzlepeaches
+  description: Docker Registry Listing enabled.
+  severity: medium
+  reference:
+  - https://notsosecure.com/anatomy-of-a-hack-docker-registry
+  metadata:
+    max-request: 1
+  tags: misconfig,docker,devops
+traps:
+- request:
+    method: GET
+    path: /v2/_catalog
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"repositories":'

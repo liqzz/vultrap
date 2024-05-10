@@ -1,0 +1,23 @@
+id: wordpress-under-construction-page
+info:
+  name: Under Construction Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/under-construction-page/
+  metadata:
+    max-request: 1
+    plugin_namespace: under-construction-page
+    wpscan: https://wpscan.com/plugin/under-construction-page
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/under-construction-page/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

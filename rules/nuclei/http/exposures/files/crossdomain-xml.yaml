@@ -1,0 +1,21 @@
+id: insecure-crossdomain
+info:
+  name: Insecure cross-domain.xml file
+  author: Borna Nematzadeh,nadino
+  description: null
+  severity: info
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
+  metadata:
+    max-request: 1
+  tags: exposure,generic,files
+traps:
+- request:
+    method: GET
+    path: /crossdomain.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <allow-access-from domain="*"/>

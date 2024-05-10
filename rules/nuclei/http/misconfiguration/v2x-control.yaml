@@ -1,0 +1,23 @@
+id: v2x-control
+info:
+  name: V2X Control - Dashboard Exposure
+  author: DhiyaneshDk
+  description: V2X Control Dashboard is exposed.
+  severity: low
+  reference:
+  - https://www.facebook.com/photo/?fbid=606940284809828&set=a.467014098802448
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"V2X Control"
+  tags: misconfig,exposure,v2x,control
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>V2X control</title>Chemtronics

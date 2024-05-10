@@ -1,0 +1,24 @@
+id: messenger-phish
+info:
+  name: messenger phishing Detection
+  author: rxerium
+  description: 'A messenger phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://messenger.com
+  metadata:
+    max-request: 1
+  tags: phishing,messenger,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay
+      close to your favorite people

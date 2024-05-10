@@ -1,0 +1,20 @@
+id: error-logs
+info:
+  name: Common Error Log Files
+  author: geeknik,daffainfo,ELSFA7110,Hardik-Solanki
+  description: Error log files were exposed.
+  severity: low
+  metadata:
+    max-request: 29
+  tags: logs,exposure,error
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Segmentation Faultcoredumpscript headersBroken pipeArrayExceptionFatalFastCGI
+      sent in stderr

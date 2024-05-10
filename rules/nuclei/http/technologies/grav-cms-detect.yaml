@@ -1,0 +1,21 @@
+id: grav-cms-detect
+info:
+  name: Grav CMS Detect
+  author: cyllective
+  description: Detects Grav CMS
+  severity: info
+  reference:
+  - https://github.com/getgrav/grav
+  metadata:
+    max-request: 1
+  tags: tech,grav,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta name="generator" content="GravCMS" />

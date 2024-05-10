@@ -1,0 +1,19 @@
+id: rails-debug-mode
+info:
+  name: Rails Debug Mode
+  author: pdteam
+  description: Rails debug mode is enabled.
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: debug,rails,exposure,intrusive
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Rails.root:Action Controller: Exception caught'

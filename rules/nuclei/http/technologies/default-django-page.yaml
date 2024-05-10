@@ -1,0 +1,20 @@
+id: default-django-page
+info:
+  name: Django Default Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"The install worked successfully! Congratulations!"
+  tags: tech,django
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>The install worked successfully! Congratulations!</title>

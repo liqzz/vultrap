@@ -1,0 +1,25 @@
+id: spotweb-login-panel
+info:
+  name: SpotWeb Login Panel - Detect
+  author: theamanrawat
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:spotweb_project:spotweb:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: spotweb
+    shodan-query: title:"SpotWeb - overview"
+    vendor: spotweb_project
+    verified: true
+  tags: panel,spotweb,detect,spotweb_project
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SpotWeb - overviewinitSpotwebJs

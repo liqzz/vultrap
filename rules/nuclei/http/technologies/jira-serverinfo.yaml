@@ -1,0 +1,19 @@
+id: jira-serverinfo
+info:
+  name: Jira Rest API Server Information
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: jira,tech
+traps:
+- request:
+    method: GET
+    path: /rest/api/latest/serverInfo
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"baseUrl""deploymentType"'

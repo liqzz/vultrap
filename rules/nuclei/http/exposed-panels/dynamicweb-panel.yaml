@@ -1,0 +1,26 @@
+id: dynamicweb-panel
+info:
+  name: Dynamicweb Login Panel - Detect
+  author: pdteam
+  description: Dynamicweb login panel was detected.
+  severity: info
+  reference:
+  - https://www.dynamicweb.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Dynamicweb"
+  tags: panel,dynamicweb
+traps:
+- request:
+    method: GET
+    path: /Admin/Access/default.aspx
+    headers:
+      Accept-Encoding: gzip, deflate
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Dynamicweb

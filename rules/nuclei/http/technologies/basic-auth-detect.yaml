@@ -1,0 +1,20 @@
+id: basic-auth-detect
+info:
+  name: Basic Auth Detection
+  author: w4cky_,bhutch
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: 'www-authenticate:'
+  tags: tech,basic,auth
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 401
+    headers: {}
+    body: ''

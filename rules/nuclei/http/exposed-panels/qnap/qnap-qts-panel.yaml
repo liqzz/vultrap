@@ -1,0 +1,41 @@
+id: qnap-qts-panel
+info:
+  name: QNAP Turbo NAS Login Panel - Detect
+  author: idealphase,daffainfo
+  description: 'QNAP QTS login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.qnap.com/qts/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:qnap:qts:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"QNAP Turbo NAS" inurl:/cgi-bin
+    max-request: 2
+    product: qts
+    shodan-query: product:"QNAP"
+    vendor: qnap
+    verified: true
+  tags: panel,qnap,qts
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: QNAP Turbo NAS</title>
+- request:
+    method: GET
+    path: /cgi-bin/html/login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

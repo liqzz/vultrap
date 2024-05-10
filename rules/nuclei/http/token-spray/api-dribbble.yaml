@@ -1,0 +1,23 @@
+id: api-dribbble
+info:
+  name: Dribbble API Test
+  author: daffainfo
+  description: Dribbble is a self-promotion and social networking platform for digital
+    designers and creatives
+  severity: info
+  reference:
+  - https://developer.dribbble.com/v2/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/dribbble
+  metadata:
+    max-request: 1
+  tags: token-spray,dribbble
+traps:
+- request:
+    method: GET
+    path: https://api.dribbble.com/v2/user?access_token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

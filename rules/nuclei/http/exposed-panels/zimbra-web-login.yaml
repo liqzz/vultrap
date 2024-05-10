@@ -1,0 +1,34 @@
+id: zimbra-web-login
+info:
+  name: Zimbra Collaboration Suite Login Panel - Detect
+  author: powerexploit
+  description: 'Zimbra Collaboration Suite panel was detected. Zimbra Collaboration
+    Suite simplifies the communication environment, connects people over multiple
+    channels, and provides a single place to manage collaboration and communication.
+
+    '
+  severity: info
+  reference:
+  - https://www.zimbra.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:synacor:zimbra_collaboration_suite:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: zimbra_collaboration_suite
+    shodan-query: http.title:"Zimbra Collaboration Suite"
+    vendor: synacor
+    verified: true
+  tags: panel,zimbra,synacor
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Zimbra Collaboration Suite Log InZimbra Web Client Sign InZimbra Web Client
+      Log In

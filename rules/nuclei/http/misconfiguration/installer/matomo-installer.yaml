@@ -1,0 +1,21 @@
+id: matomo-installer
+info:
+  name: Matomo Installer Exposure
+  author: DhiyaneshDk
+  description: Matomo is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Matomo"
+  tags: misconfig,matomo,install
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: MatomoInstallation status

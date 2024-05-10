@@ -1,0 +1,36 @@
+id: ilias-panel
+info:
+  name: ILIAS Login Panel - Detect
+  author: arafatansari
+  description: ILIAS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ilias:ilias:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: ilias
+    shodan-query: http.html:"ILIAS"
+    vendor: ilias
+    verified: true
+  tags: panel,ilias
+traps:
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Login to ILIASalt="ILIASpowered by ILIAS
+- request:
+    method: GET
+    path: /ilias/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

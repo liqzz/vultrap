@@ -1,0 +1,21 @@
+id: suitecrm-installer
+info:
+  name: SuiteCRM Installer Exposure
+  author: DhiyaneshDk
+  description: SuiteCRM is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"SuiteCRM"
+  tags: misconfig,suitecrm,install
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SuiteCRM Setup Wizard:Checking Environment

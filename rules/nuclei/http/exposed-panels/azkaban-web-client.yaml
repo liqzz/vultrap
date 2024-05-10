@@ -1,0 +1,24 @@
+id: azkaban-web-client
+info:
+  name: Azkaban Web Client
+  author: dhiyaneshDK
+  description: An Azkaban web client panel was discovered.
+  severity: info
+  reference:
+  - https://azkaban.github.io/
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Azkaban Web Client"
+  tags: panel,azkaban
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Azkaban Web Client

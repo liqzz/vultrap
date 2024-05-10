@@ -1,0 +1,30 @@
+id: token-json
+info:
+  name: Token Json File Disclosure
+  author: DhiyaneshDK
+  description: Internal token.json file is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intitle:"index of" "token.json"
+  tags: exposure,cloud,google,devops,files
+traps:
+- request:
+    method: GET
+    path: /token.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"access_token":"token_type":'
+- request:
+    method: GET
+    path: /search/token.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

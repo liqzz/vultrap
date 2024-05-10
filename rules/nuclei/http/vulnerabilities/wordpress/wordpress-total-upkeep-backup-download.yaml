@@ -1,0 +1,22 @@
+id: wordpress-total-upkeep-backup-download
+info:
+  name: WordPress Total Upkeep Database and Files Backup Download
+  author: princechaddha
+  description: Exposed sensitive file in WordPress Total Upkeep wordpress plugin feature
+    used.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/49252
+  metadata:
+    max-request: 1
+  tags: wordpress,wp-plugin,edb
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/boldgrid-backup/cron/restore-info.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"filepath"/wp-content/boldgrid_backup_'

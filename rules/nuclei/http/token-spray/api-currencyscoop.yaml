@@ -1,0 +1,22 @@
+id: api-currencyscoop
+info:
+  name: CurrencyScoop API Test
+  author: daffainfo
+  description: Real-time and historical currency rates JSON API
+  severity: info
+  reference:
+  - https://currencyscoop.com/api-documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/currencyscoop
+  metadata:
+    max-request: 1
+  tags: token-spray,currencyscoop
+traps:
+- request:
+    method: GET
+    path: https://api.currencyscoop.com/v1/historical?api_key=&date=2022-01-01
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"date""base""rates"'

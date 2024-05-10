@@ -1,0 +1,22 @@
+id: thinkphp-errors
+info:
+  name: ThinkPHP Errors - Sensitive Information Exposure
+  author: j4vaovo
+  description: ThinkPHP error is leaking sensitive info.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="ThinkPHP" && title="System Error"
+  tags: thinkphp,misconfig,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: _DATABASE</td>_USERNAME</td>_PASSWORD</td><title>系统发生错误</title><title>System
+      Error</title>ExceptionREQUEST_TIME

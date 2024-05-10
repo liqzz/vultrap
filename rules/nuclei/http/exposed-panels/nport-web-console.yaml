@@ -1,0 +1,26 @@
+id: nport-web-console
+info:
+  name: NPort Web Console Login Panel - Detect
+  author: prajiteshsingh
+  description: NPort Web Console login panel was detected.
+  severity: info
+  reference:
+  - https://www.moxa.com/en/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"NPort Web Console"
+    verified: true
+  tags: panel,nport
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: NPort Web Console

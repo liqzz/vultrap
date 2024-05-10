@@ -1,0 +1,28 @@
+id: go-pprof-debug
+info:
+  name: Go pprof Debug Page
+  author: w8ay
+  description: go pprof debug page was exposed.
+  severity: low
+  metadata:
+    max-request: 2
+  tags: logs,exposure,go,pprof
+traps:
+- request:
+    method: GET
+    path: /debug/pprof/heap?debug=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: heap profile:Alloc
+- request:
+    method: GET
+    path: /pprof/heap?debug=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

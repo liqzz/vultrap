@@ -1,0 +1,21 @@
+id: zabbix-installer
+info:
+  name: Zabbix Installation Exposure
+  author: DhiyaneshDK
+  description: Zabbix is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:892542951
+  tags: misconfig,zabbix,install,exposure
+traps:
+- request:
+    method: GET
+    path: /setup.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Installation</title>zabbix

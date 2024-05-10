@@ -1,0 +1,24 @@
+id: springboot-whitelabel
+info:
+  name: SpringBoot WhiteLabel Error Page - Detect
+  author: Matt Miller
+  description: null
+  severity: info
+  reference:
+  - https://codingnconcepts.com/spring-boot/disable-whitelabel-error-page-spring-boot/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Whitelabel Error Page"
+  tags: tech,spring,springboot,errorpage
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>Whitelabel Error Page</h1>

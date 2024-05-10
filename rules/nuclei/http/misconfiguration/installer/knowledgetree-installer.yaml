@@ -1,0 +1,22 @@
+id: knowledgetree-installer
+info:
+  name: KnowledgeTree Installer Exposure
+  author: ritikchaddha
+  description: KnowledgeTree is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"KnowledgeTree Installer"
+  tags: misconfig,knowledgetree,install,exposure
+traps:
+- request:
+    method: GET
+    path: /setup/wizard/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>KnowledgeTree Installer

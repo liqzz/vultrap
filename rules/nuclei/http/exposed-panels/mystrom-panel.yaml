@@ -1,0 +1,24 @@
+id: mystrom-panel
+info:
+  name: MyStrom Panel - Detect
+  author: fabaff
+  description: Mystrom panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"myStrom"
+    verified: true
+  tags: panel,mystrom,iot
+traps:
+- request:
+    method: GET
+    path: /index.html#en
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>myStrom</title>

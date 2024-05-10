@@ -1,0 +1,37 @@
+id: apache-mesos-panel
+info:
+  name: Apache Mesos - Panel Detect
+  author: pikpikcu
+  description: Apache Mesos panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:mesos:*:*:*:*:jenkins:*:*:*
+  metadata:
+    fofa-query: app="APACHE-MESOS"
+    max-request: 2
+    product: mesos
+    shodan-query: http.title:"Mesos"
+    vendor: apache
+    verified: true
+  tags: panel,apache,mesos
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Mesos</title>Apache
+- request:
+    method: GET
+    path: :5050
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

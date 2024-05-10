@@ -1,0 +1,28 @@
+id: springboot-metrics
+info:
+  name: Detect Springboot metrics Actuator
+  author: pussycat0x
+  description: Additional routes may be displayed
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: memmem.freeprocessorsinstance.uptimesystemload.averagenonheap.initheap.committed
+- request:
+    method: GET
+    path: /actuator/metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

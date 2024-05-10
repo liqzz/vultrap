@@ -1,0 +1,23 @@
+id: aem-default-get-servlet
+info:
+  name: AEM DefaultGetServlet
+  author: DhiyaneshDk
+  description: Sensitive information might be exposed via AEM DefaultGetServlet.
+  severity: low
+  reference:
+  - https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=43
+  - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/dispatcher/GetServletExposed.java
+  metadata:
+    max-request: 64
+    shodan-query: http.component:"Adobe Experience Manager"
+  tags: aem,adobe,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: jcr:createdBy

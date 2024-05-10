@@ -1,0 +1,33 @@
+id: footprints-panel
+info:
+  name: FootPrints Service Core Login Panel - Detect
+  author: tess
+  description: FootPrints Service Core login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: title:"FootPrints Service Core Login"
+    verified: true
+  tags: tech,panel,footprints
+traps:
+- request:
+    method: GET
+    path: /MRcgi/MRlogin.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FootPrints Service Core Login
+- request:
+    method: GET
+    path: /MRcgi/MRentrancePage.pl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

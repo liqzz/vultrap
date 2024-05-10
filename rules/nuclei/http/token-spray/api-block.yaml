@@ -1,0 +1,22 @@
+id: api-block
+info:
+  name: block.io API Test
+  author: daffainfo
+  description: Bitcoin Payment, Wallet & Transaction Data
+  severity: info
+  reference:
+  - https://block.io/docs/basic
+  - https://github.com/daffainfo/all-about-apikey/tree/main/block
+  metadata:
+    max-request: 1
+  tags: token-spray,block
+traps:
+- request:
+    method: GET
+    path: https://block.io/api/v2/get_balance/?api_key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"network""available_balance""pending_received_balance"'

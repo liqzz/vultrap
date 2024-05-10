@@ -1,0 +1,23 @@
+id: unauth-etherpad
+info:
+  name: Unauthenticated Etherpad
+  author: philippedelteil
+  description: 'Finds Etherpad instances that allow adding new notes without authentication.
+
+    '
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"index.createOpenPad"
+  tags: etherpad,misconfig,unauth
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: index.createOpenPadindex.newPad

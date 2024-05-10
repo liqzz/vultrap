@@ -1,0 +1,32 @@
+id: apache-struts-showcase
+info:
+  name: Apache Struts - ShowCase Application Exposure
+  author: DhiyaneshDK
+  description: Apache Structs ShowCase Application is exposed.
+  severity: low
+  reference:
+  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Struts2 Showcase"
+  tags: apache,struts,showcase,misconfig,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Struts2 Showcase
+- request:
+    method: GET
+    path: /struts2-showcase/showcase.action
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

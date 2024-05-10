@@ -1,0 +1,25 @@
+id: monitorix-exposure
+info:
+  name: Monitorix Panel - Detect
+  author: geeknik
+  description: Monitorix panel was detected.
+  severity: info
+  reference:
+  - https://www.monitorix.org/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: monitorix,exposure,logs,panel
+traps:
+- request:
+    method: GET
+    path: /monitorix-cgi/monitorix.cgi?mode=localhost&graph=all&when=1day
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <!-- graph table begins -->Global kernel usage</b>Kernel usage per processor</b><!--
+      graph table ends -->1day.png'

@@ -1,0 +1,23 @@
+id: walmart-phish
+info:
+  name: walmart phishing Detection
+  author: rxerium
+  description: 'A walmart phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://walmart.com
+  metadata:
+    max-request: 1
+  tags: phishing,walmart,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Walmart | Save Money. Live better.

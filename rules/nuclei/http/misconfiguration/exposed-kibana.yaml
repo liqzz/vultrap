@@ -1,0 +1,37 @@
+id: exposed-kibana
+info:
+  name: Exposed Kibana
+  author: Shine
+  description: Kibana is exposed.
+  severity: medium
+  metadata:
+    max-request: 3
+  tags: kibana,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: kibanaWelcomeViewkibanaWelcomeLogokibanaWelcomeTitle
+- request:
+    method: GET
+    path: /app/kibana
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /app/kibana/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,19 @@
+id: xml-schema-detect
+info:
+  name: XML Schema Detection
+  author: alph4byt3
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: miscellaneous,misc,generic
+traps:
+- request:
+    method: GET
+    path: /schema
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .xsdSchemas

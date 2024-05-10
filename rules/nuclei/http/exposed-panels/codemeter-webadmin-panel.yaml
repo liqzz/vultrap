@@ -1,0 +1,25 @@
+id: codemeter-webadmin-panel
+info:
+  name: CodeMeter - WebAdmin Panel Access
+  author: Techryptic (@Tech)
+  description: CodeMeter WebAdmin panel was accessed.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-668
+    cpe: cpe:2.3:a:wibu:codemeter:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: codemeter
+    vendor: wibu
+  tags: codemeter,webadmin,panel,wibu
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

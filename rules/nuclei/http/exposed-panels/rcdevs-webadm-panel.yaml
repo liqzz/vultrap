@@ -1,0 +1,52 @@
+id: rcdevs-webadm-panel
+info:
+  name: RCDevs WebADM Panel - Detect
+  author: righettod
+  description: 'RCDevs WebADM Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.rcdevs.com/solutions/
+  metadata:
+    max-request: 4
+    shodan-query: http.html:"WebADM"
+    verified: true
+  tags: panel,rcdevs,webadm,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WebADMRCDevs Securitywww.rcdevs.com
+- request:
+    method: GET
+    path: /webapps/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /websrvs/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /admin/login_uid.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: wordpress-astra-widgets
+info:
+  name: Astra Widgets Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/astra-widgets/
+  metadata:
+    max-request: 1
+    plugin_namespace: astra-widgets
+    wpscan: https://wpscan.com/plugin/astra-widgets
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/astra-widgets/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

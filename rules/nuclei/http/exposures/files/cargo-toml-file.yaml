@@ -1,0 +1,23 @@
+id: cargo-toml-file
+info:
+  name: Cargo TOML File Disclosure
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  reference:
+  - https://doc.rust-lang.org/cargo/reference/manifest.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Cargo.toml"
+  tags: exposure,files,cargo
+traps:
+- request:
+    method: GET
+    path: /Cargo.toml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[package][dependencies]'

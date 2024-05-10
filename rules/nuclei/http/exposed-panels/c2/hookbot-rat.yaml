@@ -1,0 +1,23 @@
+id: hookbot-rat
+info:
+  name: Hookbot Rat Panel - Detect
+  author: pussycat0x
+  description: 'Hookbot panel were detected.
+
+    '
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"hookbot"
+    verified: true
+  tags: tech,rat,hookbot,c2,panel,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HOOKBOT PANEL

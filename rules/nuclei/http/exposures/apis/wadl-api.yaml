@@ -1,0 +1,89 @@
+id: wadl-api
+info:
+  name: WADL API - Detect
+  author: 0xrudra,manuelbua
+  description: WADL API was detected.
+  severity: info
+  reference:
+  - https://github.com/dwisiswant0/wadl-dumper
+  - https://www.nopsec.com/leveraging-exposed-wadl-xml-in-burp-suite/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 8
+  tags: exposure,api
+traps:
+- request:
+    method: GET
+    path: /application.wadl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This is simplified WADL with user and core resources onlyhttp://jersey.java.nethttp://wadl.dev.java.net/2009/02
+- request:
+    method: GET
+    path: /application.wadl?detail=true
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /api/application.wadl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /api/v1/application.wadl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /api/v2/application.wadl
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This is simplified WADL with user and core resources onlyhttp://jersey.java.nethttp://wadl.dev.java.net/2009/02
+- request:
+    method: OPTIONS
+    path: /api/v1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: OPTIONS
+    path: /api/v2
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

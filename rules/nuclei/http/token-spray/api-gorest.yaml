@@ -1,0 +1,28 @@
+id: api-gorest
+info:
+  name: Gorest API Test
+  author: daffainfo
+  description: Online REST API for Testing and Prototyping
+  severity: info
+  reference:
+  - https://gorest.co.in/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/gorest
+  metadata:
+    max-request: 1
+  tags: token-spray,gorest
+traps:
+- request:
+    method: GET
+    path: https://gorest.co.in/public/v2/users
+    headers:
+      Host: gorest.co.in
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+    body: '{"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.rdamakrishna@15ce.com",
+      "status":"active"}
+
+      '
+  response:
+    status_code: 201
+    headers: {}
+    body: '"name"'

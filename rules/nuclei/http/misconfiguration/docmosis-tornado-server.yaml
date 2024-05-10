@@ -1,0 +1,21 @@
+id: docmosis-tornado-server
+info:
+  name: Docmosis Tornado Server Exposure
+  author: tess
+  description: Docmosis Tornado Server is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Docmosis Tornado"
+  tags: misconfig,tornado,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Docmosis Tornadohref="WebServerDownload.css

@@ -1,0 +1,20 @@
+id: couchbase-sync-gateway
+info:
+  name: Couchbase Sync Gateway
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: html:"Couchbase Sync Gateway"
+  tags: tech,couchbase
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Couchbase Sync Gateway

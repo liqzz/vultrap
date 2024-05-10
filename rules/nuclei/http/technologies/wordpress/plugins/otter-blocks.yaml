@@ -1,0 +1,23 @@
+id: wordpress-otter-blocks
+info:
+  name: Otter Blocks – Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/otter-blocks/
+  metadata:
+    max-request: 1
+    plugin_namespace: otter-blocks
+    wpscan: https://wpscan.com/plugin/otter-blocks
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/otter-blocks/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

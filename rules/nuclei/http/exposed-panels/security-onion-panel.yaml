@@ -1,0 +1,41 @@
+id: security-onion-panel
+info:
+  name: Security Onion Panel - Detect
+  author: rxerium
+  description: 'Security Onion is a free and open source Linux distribution for intrusion
+    detection, security monitoring, and log management. It includes CyberChef, NetworkMiner,
+    and many other security tools.
+
+    '
+  severity: info
+  reference:
+  - https://securityonionsolutions.com/
+  - https://github.com/Security-Onion-Solutions/securityonion
+  classification:
+    cpe: cpe:2.3:a:securityonionsolutions:security_onion:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: security_onion
+    shodan-query: title:"Security Onion"
+    vendor: securityonionsolutions
+    verified: true
+  tags: panel,security,onion,detect,securityonionsolutions
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Security OnionLogin to Security OnionSecurity Onion Solutions
+- request:
+    method: GET
+    path: /login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,46 @@
+id: access-log-file
+info:
+  name: Publicly accessible access-log file
+  author: sheikhrishad
+  description: Log file was exposed.
+  severity: low
+  metadata:
+    max-request: 4
+  tags: logs,exposure
+traps:
+- request:
+    method: GET
+    path: /access.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"GET /'
+- request:
+    method: GET
+    path: /log/access.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /logs/access.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /application/logs/access.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

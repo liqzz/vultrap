@@ -1,0 +1,28 @@
+id: avigilon-panel
+info:
+  name: Avigilon Login Panel - Detect
+  author: robotshell
+  description: Avigilon login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:avigilon:avigilon_control_center:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: avigilon_control_center
+    shodan-query: http.title:"Login - Avigilon Control Center"
+    vendor: avigilon
+    verified: true
+  tags: panel,avigilon
+traps:
+- request:
+    method: GET
+    path: /cfg/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Avigilon Control Center Gateway</title><title>Iniciar sesión
+      - Puerta de enlace de Avigilon Control Center</title>

@@ -1,0 +1,25 @@
+id: tibco-businessconnect-detect
+info:
+  name: TIBCO BusinessConnect - Detect
+  author: righettod
+  description: 'TIBCO BusinessConnect technology was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.tibco.com/products/tibco-businessconnect
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"TIBCO BusinessConnect"
+  tags: tibco,detect,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

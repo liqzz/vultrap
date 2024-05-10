@@ -1,0 +1,22 @@
+id: ms-exchange-server
+info:
+  name: Microsoft Exchange Server Detect
+  author: pikpikcu,dhiyaneshDK
+  description: Check for presence of Exchange Server using Outlook Web App path data.
+  severity: info
+  reference:
+  - https://github.com/GossiTheDog/scanning/blob/main/http-vuln-exchange.nse
+  metadata:
+    max-request: 1
+  tags: microsoft,exchange,tech
+traps:
+- request:
+    method: GET
+    path: /owa/auth/logon.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /owa/auth/[0-9.]+/<title>Exchange Log In</title><title>Microsoft Exchange
+      - Outlook Web Access</title>

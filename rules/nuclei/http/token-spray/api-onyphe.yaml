@@ -1,0 +1,24 @@
+id: api-onyphe
+info:
+  name: Onyphe API Test
+  author: 0xpugazh
+  description: Cyber Defense Search Engine and Attack Surface Management
+  severity: info
+  reference:
+  - https://www.onyphe.io/docs
+  metadata:
+    verified: true
+    max-request: 1
+  tags: token-spray,onyphe
+traps:
+- request:
+    method: GET
+    path: https://www.onyphe.io/api/v2/user
+    headers:
+      Authorization: Bearer {{token}}
+      Content-Type: application/json
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"apikey":""apis":"@timestamp":"@category":'

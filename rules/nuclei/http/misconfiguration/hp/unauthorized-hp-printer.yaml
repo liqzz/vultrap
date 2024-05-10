@@ -1,0 +1,19 @@
+id: unauthorized-hp-printer
+info:
+  name: Unauthorized HP Printer
+  author: pussycat0x
+  description: HP Printer is exposed.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: hp,iot,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /SSI/Auth/ip_snmp.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HP<h1>SNMP</h1>

@@ -1,0 +1,34 @@
+id: outsystems-servicecenter-panel
+info:
+  name: OutSystems Service Center Login Panel - Detect
+  author: righettod
+  description: 'OutSystems Service Center login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.outsystems.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"outsystems"
+  tags: panel,outsystems,login,detect
+traps:
+- request:
+    method: GET
+    path: /Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Enter your OutSystems credentials
+- request:
+    method: GET
+    path: /ServiceCenter/Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

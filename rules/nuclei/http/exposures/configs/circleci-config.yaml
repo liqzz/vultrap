@@ -1,0 +1,25 @@
+id: circleci-config
+info:
+  name: CircleCI Configuration File - Detect
+  author: geeknik
+  description: CircleCI config.yml file was detected.
+  severity: medium
+  reference:
+  - https://circleci.com/docs/2.0/sample-config/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: config,exposure,circleci
+traps:
+- request:
+    method: GET
+    path: /.circleci/config.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'jobs:'

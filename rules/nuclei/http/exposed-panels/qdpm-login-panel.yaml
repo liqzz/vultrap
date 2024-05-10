@@ -1,0 +1,34 @@
+id: qdpm-login-panel
+info:
+  name: qdPM Login Panel
+  author: theamanrawat
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:qdpm:qdpm:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: qdpm
+    shodan-query: http.favicon.hash:762074255
+    vendor: qdpm
+    verified: 'true'
+  tags: panel,qdpm,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: qdPM/index.php/login/restorePassword
+- request:
+    method: GET
+    path: /index.php/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

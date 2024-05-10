@@ -1,0 +1,26 @@
+id: xvr-login
+info:
+  name: XVR Login Panel - Detect
+  author: dhiyaneshDK
+  description: XVR login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:h:dahuasecurity:xvr5xxx:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: xvr5xxx
+    shodan-query: http.title:"XVR LOGIN"
+    vendor: dahuasecurity
+  tags: panel,xvr,dahuasecurity
+traps:
+- request:
+    method: GET
+    path: /login.rsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>XVR LOGIN</title>

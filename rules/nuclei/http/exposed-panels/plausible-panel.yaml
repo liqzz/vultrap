@@ -1,0 +1,26 @@
+id: plausible-panel
+info:
+  name: Plausible Panel - Detect
+  author: rxerium
+  description: 'Plausible is intuitive, lightweight and open source web analytics.
+
+    '
+  severity: info
+  reference:
+  - https://plausible.io/
+  - https://github.com/plausible/analytics
+  metadata:
+    max-request: 1
+    shodan-query: html:"Plausible"
+    verified: true
+  tags: panel,plausible,detect
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: LoginPlausible · Web analytics

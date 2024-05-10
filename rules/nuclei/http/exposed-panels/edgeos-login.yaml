@@ -1,0 +1,25 @@
+id: edgeos-login
+info:
+  name: EdgeOS Login Panel - Detect
+  author: princechaddha
+  description: EdgeOS login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:o:ui:edgeos:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: edgeos
+    vendor: ui
+  tags: login,tech,edgeos,edgemax,panel,ui
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>EdgeOS</title>

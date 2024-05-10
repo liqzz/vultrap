@@ -1,0 +1,28 @@
+id: pyload-default-login
+info:
+  name: PyLoad Default Login
+  author: DhiyaneshDk
+  description: 'PyLoad Default Credentials were discovered.
+
+    '
+  severity: high
+  reference:
+  - https://pypi.org/project/pyload-ng/#:~:text=Default%20username%3A%20pyload%20.,Default%20password%3A%20pyload%20.
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"pyload"
+  tags: default-login,pyload
+traps:
+- request:
+    method: POST
+    path: /login
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'do=login&username={{username}}&password={{password}}&submit=Login
+
+      '
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

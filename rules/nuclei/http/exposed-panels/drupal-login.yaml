@@ -1,0 +1,35 @@
+id: drupal-login
+info:
+  name: Drupal Login Panel - Detect
+  author: pathtaga
+  description: Drupal login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: drupal
+    shodan-query: http.component:"drupal"
+    vendor: drupal
+  tags: panel,drupal
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <(?:link|style)[^>]+"/sites/(?:default|all)/(?:themes|modules)/<[^>]+(?:id="block[_-]commerce[_-]cart[_-]cart|class="commerce[_-]product[_-]field)
+- request:
+    method: GET
+    path: /user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

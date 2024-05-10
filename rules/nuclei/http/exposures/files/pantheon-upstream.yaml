@@ -1,0 +1,23 @@
+id: pantheon-upstream
+info:
+  name: Pantheon upstream.yml Disclosure
+  author: DhiyaneshDK
+  description: Public Pantheon YAML Configuration Files might include sensitive info
+  severity: low
+  reference:
+  - https://pantheon.io/docs/pantheon-yml
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intitle:"index of" "pantheon.upstream.yml"
+  tags: exposure,devops,patheon,config,files
+traps:
+- request:
+    method: GET
+    path: /pantheon.upstream.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'database:protected_web_paths:'

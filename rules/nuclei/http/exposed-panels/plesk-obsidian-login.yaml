@@ -1,0 +1,27 @@
+id: plesk-obsidian-login
+info:
+  name: Plesk Obsidian Login Panel - Detect
+  author: dhiyaneshDK,daffainfo
+  description: Plesk Obsidian login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:plesk:obsidian:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: obsidian
+    shodan-query: http.html:"Plesk Obsidian"
+    vendor: plesk
+    verified: true
+  tags: panel,plesk,login,edb
+traps:
+- request:
+    method: GET
+    path: /login_up.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Plesk Obsidian

@@ -1,0 +1,20 @@
+id: shiro-detect
+info:
+  name: Detect Shiro Framework
+  author: AresX
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,shiro
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      Cookie: JSESSIONID={{randstr}};rememberMe=123;
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: norton-phish
+info:
+  name: norton phishing Detection
+  author: rxerium
+  description: 'A norton phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://norton.com
+  metadata:
+    max-request: 1
+  tags: phishing,norton,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Official Site | Norton™ - Antivirus &amp; Anti-Malware Software

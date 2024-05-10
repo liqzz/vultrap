@@ -1,0 +1,73 @@
+id: apache-nifi-detect
+info:
+  name: Apache NiFi detect
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    max-request: 7
+  tags: tech,apache,nifi
+traps:
+- request:
+    method: GET
+    path: /access/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: supportsLogindisconnectedNodeAcknowledged(aggregate|node)Snapshots?
+- request:
+    method: GET
+    path: /controller/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /controller/registry-clients
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /counters
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /flow/registries
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /system-diagnostics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /nifi-api/access/config
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

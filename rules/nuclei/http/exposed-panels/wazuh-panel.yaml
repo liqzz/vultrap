@@ -1,0 +1,26 @@
+id: wazuh-panel
+info:
+  name: Wazuh Login Panel
+  author: cyllective,daffainfo
+  description: Wazuh - The Open Source Security Platform
+  severity: info
+  reference:
+  - https://github.com/wazuh/wazuh
+  classification:
+    cpe: cpe:2.3:a:wazuh:wazuh:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: wazuh
+    shodan-query: http.title:"Wazuh"
+    vendor: wazuh
+  tags: panel,wazuh,login
+traps:
+- request:
+    method: GET
+    path: /app/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '&quot;id&quot;:&quot;wazuh&quot;&quot;title&quot;:&quot;Wazuh&quot;&quot;icon&quot;:&quot;plugins/wazuh/img/icon_blue.png&quot;&quot;url&quot;:&quot;/app/wazuh&quot;'

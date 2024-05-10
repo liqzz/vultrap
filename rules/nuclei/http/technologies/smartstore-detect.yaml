@@ -1,0 +1,22 @@
+id: smartstore-detect
+info:
+  name: SmartStore Detect
+  author: princechaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/smartstore/SmartStoreNET
+  metadata:
+    max-request: 1
+    shodan-query: http.html:'content="Smartstore'
+  tags: tech,smartstore,oss
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta name="generator" content="Smartstore (.*)" />

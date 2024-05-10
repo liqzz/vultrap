@@ -1,0 +1,21 @@
+id: agilecrm-takeover
+info:
+  name: AgileCRM Takeover Detection
+  author: pdteam
+  description: agilecrm subdomain takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/145
+  metadata:
+    max-request: 1
+  tags: takeover,agilecrm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sorry, this page is no longer available.

@@ -1,0 +1,23 @@
+id: opera-phish
+info:
+  name: opera phishing Detection
+  author: rxerium
+  description: 'A opera phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://opera.com
+  metadata:
+    max-request: 1
+  tags: phishing,opera,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Opera Web Browser | Faster, Safer, Smarter | Oper

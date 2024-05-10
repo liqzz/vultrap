@@ -1,0 +1,54 @@
+id: roxy-fileman
+info:
+  name: Roxy File Manager - Panel Detect
+  author: liquidsec,DhiyaneshDk
+  description: Roxy File Manager panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:roxyfileman:roxy_fileman:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"Roxy file manager"
+    max-request: 4
+    product: roxy_fileman
+    vendor: roxyfileman
+    verified: true
+  tags: tech,roxy,fileman,panel,roxyfileman
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Roxy file manager[{"p":"
+- request:
+    method: GET
+    path: /fileman/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /fileman/php/fileslist.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /fileman/asp_net/main.ashx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

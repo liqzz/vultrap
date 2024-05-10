@@ -1,0 +1,21 @@
+id: smarterstats-setup
+info:
+  name: SmarterStats Setup Exposure
+  author: tess
+  description: SmarterStats Setup is exposed.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Welcome to SmarterStats!"
+  tags: misconfig,smarterstats,exposure
+traps:
+- request:
+    method: GET
+    path: /Admin/frmWelcome.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SmarterStats - SmarterStatsCreate System Administrator

@@ -1,0 +1,28 @@
+id: netsparker-panel
+info:
+  name: Netsparker Login Panel - Detect
+  author: pussycat0x
+  description: 'Netsparker login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.invicti.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Sign in to Netsparker Enterprise"
+    verified: true
+  tags: panel,netsparker
+traps:
+- request:
+    method: GET
+    path: /account/signin?ReturnUrl=%2f
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Netsparker LtdNetsparker Enterprise

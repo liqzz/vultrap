@@ -1,0 +1,21 @@
+id: sprintful-takeover
+info:
+  name: Sprintful Takeover
+  author: Mhdsamx
+  description: Sprintful takeover was detected.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: takeover,sprintful
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: The user account associated with this calendar has been deactivated.Please
+      contact the owner of this calendar directly in order to book a meeting.This
+      domain name does not have a default page configured.Sprintful

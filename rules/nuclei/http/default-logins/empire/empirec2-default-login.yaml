@@ -1,0 +1,48 @@
+id: empirec2-default-login
+info:
+  name: Empire C2 / Starkiller Interface - Default Login
+  author: clem9669,parzival
+  description: 'Empire C2 / Starkiller Default Administrator Credentials Discovered.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/BC-SECURITY/Empire
+  - https://github.com/BC-SECURITY/empire-docs/blob/main/restful-api/README.md
+  metadata:
+    verified: true
+    max-request: 2
+  tags: default-login,empire,c2,intrusive
+traps:
+- request:
+    method: POST
+    path: /token
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryoZwyedGcQU4FrcFV
+      Accept: application/json, text/plain, */*
+    body: |
+      ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+      Content-Disposition: form-data; name="username"
+
+      {{username}}
+      ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+      Content-Disposition: form-data; name="password"
+
+      {{password}}
+      ------WebKitFormBoundaryoZwyedGcQU4FrcFV--
+  response:
+    status_code: 200
+    headers: {}
+    body: access_token{"token":".*"}
+- request:
+    method: POST
+    path: /api/admin/login
+    headers:
+      Content-Type: application/json
+    body: '{"username":"{{user}}","password":"{{pass}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,22 @@
+id: geniusocean-installer
+info:
+  name: GeniusOcean Installer Exposure
+  author: DhiyaneshDk
+  description: GeniusOcean is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"GeniusOcean Installer"
+  tags: misconfig,geniusocean,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install/?step=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GeniusOcean - Script InstallerGeniusOcean Installer

@@ -1,0 +1,21 @@
+id: yellowfin-panel
+info:
+  name: Yellowfin Information Collaboration - Detect
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"Yellowfin Information Collaboration"
+    verified: true
+  tags: yellowfin,panel,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Yellowfin Information Collaboration</title>alt="Yellowfin"

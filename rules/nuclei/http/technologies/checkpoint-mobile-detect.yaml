@@ -1,0 +1,25 @@
+id: checkpoint-mobile-detect
+info:
+  name: Check Point Mobile SSL VPN - Detect
+  author: righettod
+  description: 'Check Point Mobile SSL VPN was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.checkpoint.com/quantum/remote-access-vpn/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"Check Point Mobile"
+  tags: panel,checkpoint,detect
+traps:
+- request:
+    method: GET
+    path: /sslvpn/Login
+    headers: null
+    body: null
+  response:
+    status_code: 403
+    headers: {}
+    body: Check Point MobileCheck Point Software Technologies

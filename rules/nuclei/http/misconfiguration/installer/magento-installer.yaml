@@ -1,0 +1,21 @@
+id: magento-installer
+info:
+  name: Magento Installation Wizard
+  author: DhiyaneshDk
+  description: Magento is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"Magento Installation"
+  tags: misconfig,magento,install,exposure
+traps:
+- request:
+    method: GET
+    path: /index.php/install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Magento Installation WizardWelcome to Magento's Installation Wizard!

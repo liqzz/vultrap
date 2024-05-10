@@ -1,0 +1,28 @@
+id: cisco-prime-infrastructure
+info:
+  name: Cisco Prime Infrastructure Panel - Detect
+  author: dhiyaneshDk
+  description: 'A Cisco Prime Infrastructure login panel was discovered.
+
+    '
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:cisco:prime_infrastructure:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: prime_infrastructure
+    shodan-query: http.title:"prime infrastructure"
+    vendor: cisco
+  tags: panel,cisco
+traps:
+- request:
+    method: GET
+    path: /webacs/pages/common/login.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: productName = "Prime Infrastructure"Cisco&nbsp;

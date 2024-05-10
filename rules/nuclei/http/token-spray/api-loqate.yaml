@@ -1,0 +1,21 @@
+id: api-loqate
+info:
+  name: Loqate API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://www.loqate.com/resources/support/apis/Capture/Interactive/Find/1.1/
+  metadata:
+    max-request: 1
+  tags: token-spray,loqate
+traps:
+- request:
+    method: GET
+    path: https://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=&Countries=US,CA&Language=en&Limit=5&Text=BHAR
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"Id":"Type":"Text":'

@@ -1,0 +1,26 @@
+id: waf-detect
+info:
+  name: WAF Detection
+  author: dwisiswant0,lu4nx
+  description: A web application firewall was detected.
+  severity: info
+  reference:
+  - https://github.com/Ekultek/WhatWaf
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: waf,tech,misc
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: '_=<script>alert(1)</script>
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)instartrequestid

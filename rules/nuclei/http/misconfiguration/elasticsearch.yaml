@@ -1,0 +1,48 @@
+id: elasticsearch
+info:
+  name: ElasticSearch Information Disclosure
+  author: Shine,c-sh0,geeknik
+  description: Internal information is exposed in elasticsearch to external users.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 4
+    shodan-query: ElasticSearch
+  tags: elastic,unauth,elasticsearch,misconfig
+traps:
+- request:
+    method: GET
+    path: /?pretty
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"took":"number" :"number_of_nodes"'
+- request:
+    method: GET
+    path: /_cat/indices?v
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /_all/_search
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /_cluster/health?pretty
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: hivequeue-agent
+info:
+  name: HiveQueue Agent
+  author: DhiyaneshDk
+  description: HiveQueue Agent is exposed.
+  severity: low
+  reference:
+  - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5555061814557647/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"HiveQueue"
+  tags: misconfig,hivequeue
+traps:
+- request:
+    method: GET
+    path: /monitoring
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>HiveQueue Agent</title>

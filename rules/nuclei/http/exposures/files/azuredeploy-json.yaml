@@ -1,0 +1,24 @@
+id: azuredeploy-json
+info:
+  name: Azure Resource Manager Template - File Exposure
+  author: DhiyaneshDk
+  description: Azure Resource Manager deploy file is disclosed.
+  severity: medium
+  reference:
+  - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameter-files
+  - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-use-template-reference?tabs=CLI
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: body="azuredeploy.json"
+  tags: azure,exposure,files
+traps:
+- request:
+    method: GET
+    path: /azuredeploy.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"$schema":"contentVersion":"parameters":'

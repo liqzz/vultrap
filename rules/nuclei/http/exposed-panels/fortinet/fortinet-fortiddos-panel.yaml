@@ -1,0 +1,29 @@
+id: fortinet-fortiddos-panel
+info:
+  name: Fortinet FortiDDoS Panel
+  author: johnk3r
+  description: 'Fortinet FortiDDoS panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.fortinet.com/products/ddos/fortiddos
+  classification:
+    cpe: cpe:2.3:a:fortinet:fortiddos:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: fortiddos
+    shodan-query: http.title:"FortiDDoS"
+    vendor: fortinet
+    verified: true
+  tags: panel,fortinet,fortiddos,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>FortiDDoS</title>

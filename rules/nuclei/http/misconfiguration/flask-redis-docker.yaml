@@ -1,0 +1,23 @@
+id: flask-redis-docker
+info:
+  name: Flask Redis Queue Docker - Exposure
+  author: DhiyaneshDk
+  description: Flask Redis Queue Docker is exposed.
+  severity: low
+  reference:
+  - https://www.facebook.com/photo/?fbid=623621413141715&set=a.467014098802448
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Flask + Redis Queue + Docker"
+  tags: misconfig,exposure,flask,redis,docker
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Flask + Redis Queue + Docker</title>

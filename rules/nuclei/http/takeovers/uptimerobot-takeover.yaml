@@ -1,0 +1,22 @@
+id: uptimerobot-takeover
+info:
+  name: uptimerobot takeover detection
+  author: pdteam
+  description: uptimerobot takeover was detected.
+  severity: low
+  reference:
+  - https://exploit.linuxsec.org/uptimerobot-com-custom-domain-subdomain-takeover/
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/45
+  metadata:
+    max-request: 1
+  tags: takeover
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: ^page not found$

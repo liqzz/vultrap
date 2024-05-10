@@ -1,0 +1,22 @@
+id: ampache-music-installer
+info:
+  name: Ampache Music Installer
+  author: tess
+  description: Ampache Music is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"For the Love of Music - Installation"
+  tags: misconfig,ampache,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Ampache :: For the Love of Music - InstallationChoose Installation Language'

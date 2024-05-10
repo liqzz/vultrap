@@ -1,0 +1,82 @@
+id: iceflow-vpn-disclosure
+info:
+  name: ICEFlow VPN Disclosure
+  author: pikpikcu
+  description: ICEFlow VPN internal log file is exposed.
+  severity: low
+  metadata:
+    max-request: 8
+  tags: exposure,files,iceflow,logs
+traps:
+- request:
+    method: GET
+    path: /log/system.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ICEFLOW VPN:ICEFLOW SYSTEMICEFLOW
+- request:
+    method: GET
+    path: /log/vpn.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/access.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/warn.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/error.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/debug.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/mobile.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /log/firewall.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

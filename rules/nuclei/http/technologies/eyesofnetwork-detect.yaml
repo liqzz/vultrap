@@ -1,0 +1,21 @@
+id: eyesofnetwork-detect
+info:
+  name: EyesOfNetwork Detect
+  author: praetorian-thendrickson
+  description: EyesOfNetwork detection
+  severity: info
+  reference:
+  - https://www.eyesofnetwork.com/en
+  metadata:
+    max-request: 1
+  tags: tech,cisa,eyesofnetwork
+traps:
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>EyesOfNetwork</title>

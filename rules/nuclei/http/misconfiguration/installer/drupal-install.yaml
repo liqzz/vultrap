@@ -1,0 +1,29 @@
+id: drupal-install
+info:
+  name: Drupal Install
+  author: NkxxkN
+  description: Drupal Install panel exposed.
+  severity: high
+  metadata:
+    max-request: 2
+    shodan-query: http.component:"drupal"
+  tags: misconfig,drupal,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php?profile=default
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Choose language | Drupal</title>
+- request:
+    method: GET
+    path: /core/install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

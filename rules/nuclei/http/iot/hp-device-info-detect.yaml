@@ -1,0 +1,20 @@
+id: hp-device-info-detect
+info:
+  name: HP Device Info Detection
+  author: pussycat0x
+  description: Internal info is disclosed to external users in HP Device.
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/6905
+  metadata:
+    max-request: 1
+  tags: iot,hp
+traps:
+- request:
+    method: GET
+    path: /hp/device/DeviceInformation/View
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Device Informationhp

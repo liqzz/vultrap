@@ -1,0 +1,22 @@
+id: api-calendarific
+info:
+  name: Calendarific API Test
+  author: daffainfo
+  description: Worldwide Holidays
+  severity: info
+  reference:
+  - https://calendarific.com/api-documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/calendarific
+  metadata:
+    max-request: 1
+  tags: token-spray,calendarific
+traps:
+- request:
+    method: GET
+    path: https://calendarific.com/api/v2/holidays?api_key=&country=US&year=2021
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"holidays""name""description"'

@@ -1,0 +1,29 @@
+id: mantisbt-panel
+info:
+  name: MantisBT Login Panel - Detect
+  author: makyotox,daffainfo
+  description: MantisBT login panel was detected.
+  severity: info
+  reference:
+  - https://www.mantisbt.org/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mantisbt:mantisbt:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: mantisbt
+    shodan-query: http.favicon.hash:662709064
+    vendor: mantisbt
+    verified: true
+  tags: panel,mantisbt
+traps:
+- request:
+    method: GET
+    path: /login_page.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'title="MantisBT: Text Search"title="MantisBT: Issue Id"'

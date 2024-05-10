@@ -1,0 +1,24 @@
+id: elemiz-network-manager
+info:
+  name: Elemiz Network Manager Login Panel - Detect
+  author: pussycat0x
+  description: Elemiz Network Manager login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Elemiz Network Manager"
+    verified: true
+  tags: elemiz,manager,login,panel
+traps:
+- request:
+    method: GET
+    path: /admin/login/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Elemiz Network Manager

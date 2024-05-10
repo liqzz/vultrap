@@ -1,0 +1,21 @@
+id: detect-drone-config
+info:
+  name: Drone - Configuration Detection
+  author: geeknik
+  description: Drone configuration was discovered.
+  severity: high
+  reference:
+  - https://github.com/drone/drone
+  metadata:
+    max-request: 1
+  tags: config,exposure,drone
+traps:
+- request:
+    method: GET
+    path: /.drone.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'kind:name:steps:'

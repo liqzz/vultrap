@@ -1,0 +1,33 @@
+id: scriptcase-prod-login
+info:
+  name: ScriptCase Production Environment Login
+  author: Ricardo Maia (Brainfork)
+  description: null
+  severity: info
+  reference:
+  - https://www.scriptcase.com.br
+  - https://www.scriptcase.net
+  metadata:
+    max-request: 2
+    shodan-query: title:"ScriptCase"
+    verified: true
+  tags: panel,scriptcase
+traps:
+- request:
+    method: GET
+    path: /prod/lib/php/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)(ScriptCase)(?i)(NetMake)(?i)(Login)
+- request:
+    method: GET
+    path: /scriptcase/prod/lib/php/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

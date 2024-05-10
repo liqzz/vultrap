@@ -1,0 +1,21 @@
+id: sucuri-firewall
+info:
+  name: Sucuri Website Firewall - Not Configured
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"sucuri firewall"
+    fofa-query: sucuri firewall
+  tags: tech,sucuri,firewall
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: <title>Sucuri WebSite Firewall - Not Configured</title>

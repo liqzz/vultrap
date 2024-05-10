@@ -1,0 +1,38 @@
+id: onlyoffice-login-panel
+info:
+  name: ONLYOFFICE Login Panel - Detect
+  author: eremit4
+  description: 'ONLYOFFICE Community Server is a free open-source collaborative system
+    developed to manage documents, projects, customer relationship and email correspondence.
+
+    '
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:onlyoffice:onlyoffice:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: app="ONLYOFFICE" && (icon_hash="1928933157" || icon_hash="826083956"
+      || icon_hash="-1380930248" || icon_hash="-285544629" || icon_hash="812741391")
+    max-request: 2
+    product: onlyoffice
+    vendor: onlyoffice
+    verified: true
+  tags: panel,onlyoffice,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ONLYOFFICEtitle="ONLYOFFICEcontent="ONLYOFFICE/images/onlyoffice_logo/alt="ONLYOFFICE
+- request:
+    method: GET
+    path: /auth.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

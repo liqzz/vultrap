@@ -1,0 +1,22 @@
+id: api-apiflash
+info:
+  name: ApiFlash API Test
+  author: daffainfo
+  description: Chrome based screenshot API for developers
+  severity: info
+  reference:
+  - https://apiflash.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/apiflash
+  metadata:
+    max-request: 1
+  tags: token-spray,apiflash
+traps:
+- request:
+    method: GET
+    path: https://api.apiflash.com/v1/urltoimage?access_key=&url=https://selfcontained.test
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: net::ERR_NAME_NOT_RESOLVED at https://selfcontained.test

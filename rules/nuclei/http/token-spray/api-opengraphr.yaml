@@ -1,0 +1,22 @@
+id: api-opengraphr
+info:
+  name: OpenGraphr API Test
+  author: daffainfo
+  description: Really simple API to retrieve Open Graph data from an URL
+  severity: info
+  reference:
+  - https://opengraphr.com/docs/1.0/overview
+  - https://github.com/daffainfo/all-about-apikey/tree/main/opengraphr
+  metadata:
+    max-request: 1
+  tags: token-spray,opengraphr
+traps:
+- request:
+    method: GET
+    path: https://api.opengraphr.com/v1/og?api_token=&url=https://google.com
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"title""image""url"'

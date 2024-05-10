@@ -1,0 +1,24 @@
+id: teslamate-unauth-access
+info:
+  name: TeslaMate - Unauthenticated Access
+  author: For3stCo1d
+  description: 'A misconfig in Teslamate allows unauthorized access to /settings endpoint.
+
+    '
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-1478287554
+    fofa-query: title="teslamate"
+  tags: misconfig,teslamate,unauth
+traps:
+- request:
+    method: GET
+    path: /settings
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Settings · TeslaMateURLs</h2>

@@ -1,0 +1,23 @@
+id: sophos-phish
+info:
+  name: sophos phishing Detection
+  author: rxerium
+  description: 'A sophos phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://sophos.com
+  metadata:
+    max-request: 1
+  tags: phishing,sophos,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Cybersecurity as a Service Delivered | Sophos

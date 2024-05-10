@@ -1,0 +1,20 @@
+id: default-iis7-page
+info:
+  name: IIS-7 Default Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"IIS7"
+  tags: tech,iis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>IIS7</title>

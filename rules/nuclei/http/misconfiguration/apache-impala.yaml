@@ -1,0 +1,23 @@
+id: apache-impala
+info:
+  name: Apache Impala - Exposure
+  author: DhiyaneshDk
+  description: Apache Impala is exposed.
+  severity: medium
+  reference:
+  - https://www.facebook.com/photo/?fbid=627585602745296&set=pcb.627585619411961
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:587330928
+  tags: misconfig,apache,impala
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Apache ImpalaProcess Info

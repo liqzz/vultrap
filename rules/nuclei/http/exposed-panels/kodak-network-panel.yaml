@@ -1,0 +1,23 @@
+id: kedacom-network-panel
+info:
+  name: Kedacom Network Keyboard Console Panel - Detect
+  author: DhiyaneshDk
+  description: 'A Kedacom network keyboard console panel was detected.
+
+    '
+  severity: info
+  metadata:
+    fofa-query: 网络键盘控制台
+    max-request: 1
+    verified: true
+  tags: panel,login,kedacom,network
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 网络键盘控制台

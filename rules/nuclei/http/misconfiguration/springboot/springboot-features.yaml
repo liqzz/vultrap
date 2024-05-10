@@ -1,0 +1,30 @@
+id: springboot-features
+info:
+  name: Detects Springboot Features Actuator
+  author: DhiyaneshDK
+  description: Springboot Features Actuator is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"Eureka"
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /features
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"enabled":["disabled":['
+- request:
+    method: GET
+    path: /actuator/features
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

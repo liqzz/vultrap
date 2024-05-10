@@ -1,0 +1,68 @@
+id: yii-debugger
+info:
+  name: View Yii Debugger Information
+  author: geeknik,rumble773
+  description: Detects potential exposure to Yii Debugger information.
+  severity: low
+  reference:
+  - https://yii2-framework.readthedocs.io/en/stable/guide/tool-debugger/
+  metadata:
+    verified: true
+    max-request: 6
+    shodan-query: title:"Yii Debugger"
+  tags: yii,debug,exposure
+traps:
+- request:
+    method: GET
+    path: /debug/default/view.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Yii Debugger</title>StatusRouteLogTimeMemoryDB
+- request:
+    method: GET
+    path: /debug/default/view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /frontend/web/debug/default/view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /web/debug/default/view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sapi/debug/default/view
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /debug/default
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

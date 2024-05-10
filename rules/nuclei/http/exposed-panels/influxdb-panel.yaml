@@ -1,0 +1,28 @@
+id: influxdb-panel
+info:
+  name: InfluxDB Admin Interface Panel - Detect
+  author: pikpikcu,idealphase
+  description: InfluxDB admin interface panel was detected.
+  severity: info
+  reference:
+  - https://www.influxdata.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:influxdata:influxdb:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: influxdb
+    shodan-query: http.title:"InfluxDB - Admin Interface"
+    vendor: influxdata
+  tags: panel,influxdb,influxdata
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>InfluxDB - Admin Interface</title>

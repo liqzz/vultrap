@@ -1,0 +1,23 @@
+id: perfsonar-toolkit
+info:
+  name: perfSONAR Toolkit - Exposure
+  author: DhiyaneshDk
+  description: perfSONAR Toolkit is exposed.
+  severity: medium
+  reference:
+  - https://www.facebook.com/photo?fbid=619180260252497&set=pcb.619180283585828
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"perfSONAR"
+  tags: misconfig,perfsonar,toolkit
+traps:
+- request:
+    method: GET
+    path: /toolkit/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>perfSONAR Toolkit</title>

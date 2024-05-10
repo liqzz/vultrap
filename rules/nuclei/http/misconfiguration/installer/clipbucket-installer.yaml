@@ -1,0 +1,23 @@
+id: clipbucket-installer
+info:
+  name: ClipBucket Installer - Exposure
+  author: DhiyaneshDk
+  description: ClipBucket is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:538583492
+    fofa-query: icon_hash="538583492"
+  tags: misconfig,clipbucket,install,exposure
+traps:
+- request:
+    method: GET
+    path: /cb_install/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ClipBucket ([a-z0-9.]+) STABLE Installer</title>

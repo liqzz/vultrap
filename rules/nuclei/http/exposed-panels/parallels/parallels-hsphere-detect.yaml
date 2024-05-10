@@ -1,0 +1,27 @@
+id: parallels-hsphere-detect
+info:
+  name: Parallels H-Sphere Login Panel - Detect
+  author: ritikchaddha
+  description: Parallels H-Sphere login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:parallels:h-sphere:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: h-sphere
+    shodan-query: title:"Parallels H-Sphere"
+    vendor: parallels
+    verified: true
+  tags: panel,parallels,hsphere
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Parallels H-Sphere</title><TITLE>H-SPHERE</TITLE>

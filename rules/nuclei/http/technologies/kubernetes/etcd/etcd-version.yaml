@@ -1,0 +1,23 @@
+id: etcd-version
+info:
+  name: Etcd Version - Detect
+  author: pussycat0x
+  description: Template detects Etcd version.
+  severity: info
+  reference:
+  - https://etcd.io/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: product:"etcd"
+  tags: tech,k8s,kubernetes,devops,etcd
+traps:
+- request:
+    method: GET
+    path: /version
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"etcdserver""etcdcluster"'

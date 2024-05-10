@@ -1,0 +1,20 @@
+id: intercom
+info:
+  name: Intercom widget detection
+  author: tess
+  description: null
+  severity: info
+  reference: https://www.intercom.com
+  metadata:
+    max-request: 1
+  tags: intercom,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: intercom

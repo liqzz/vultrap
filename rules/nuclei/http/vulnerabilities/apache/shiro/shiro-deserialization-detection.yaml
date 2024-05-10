@@ -1,0 +1,36 @@
+id: shiro-deserialization-detection
+info:
+  name: Shiro <= 1.2.4 Deserialization Detection
+  author: hotpot,j4vaovo
+  description: 'This template is designed to detect the Shiro framework''s default
+    key vulnerabilities. It leverages 51 built-in Shiro keys to probe for potential
+    vulnerabilities.
+
+    '
+  severity: unknown
+  reference:
+  - https://github.com/sv3nbeast/ShiroScan
+  metadata:
+    max-request: 102
+  tags: shiro,deserialization,rce,apache
+traps:
+- request:
+    method: GET
+    path: /
+    headers:
+      Cookie: JSESSIONID={{randstr}};rememberMe=123;
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /
+    headers:
+      Cookie: JSESSIONID={{randstr}};rememberMe={{key}};
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

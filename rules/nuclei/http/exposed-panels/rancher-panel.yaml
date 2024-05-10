@@ -1,0 +1,30 @@
+id: rancher-panel
+info:
+  name: Rancher Login Panel - Detect
+  author: princechaddha,idealphase,ritikchaddha
+  description: Rancher login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/rancher/rancher
+  - https://rancher.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:suse:rancher:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: rancher
+    shodan-query: http.favicon.hash:464587962
+    vendor: suse
+    verified: true
+  tags: panel,rancher,kubernetes,devops,cloud,login,suse
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Loadingember-basic-dropdown-wormhole

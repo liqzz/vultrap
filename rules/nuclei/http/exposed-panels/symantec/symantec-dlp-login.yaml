@@ -1,0 +1,26 @@
+id: symantec-dlp-login
+info:
+  name: Symantec Data Loss Prevention Login Panel - Detect
+  author: princechaddha
+  description: Symantec Data Loss Prevention login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:symantec:data_loss_prevention:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: data_loss_prevention
+    shodan-query: http.title:"Symantec Data Loss Prevention"
+    vendor: symantec
+  tags: symantec,panel,login
+traps:
+- request:
+    method: GET
+    path: /ProtectManager/Logon
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Symantec Data Loss Prevention</title>

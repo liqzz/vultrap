@@ -1,0 +1,42 @@
+id: laravel-horizon-unauth
+info:
+  name: Laravel Horizon Dashboard - Unauthenticated
+  author: vagnerd
+  description: 'Laravel Horizon Dashboard unauthenticated was detected.
+
+    '
+  severity: medium
+  remediation: '- Configure Authentication in Laravel Horizon.
+
+    '
+  reference:
+  - https://github.com/laravel/horizon
+  - https://laravel.com/docs/10.x/horizon#dashboard-authorization
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.favicon.hash:450899026
+  tags: laravel,unauth,dashboard,misconfig
+traps:
+- request:
+    method: GET
+    path: /api/stats
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: queueWithMaxRuntimerecentJobsstatus
+- request:
+    method: GET
+    path: /horizon/api/stats
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

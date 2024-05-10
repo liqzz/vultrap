@@ -1,0 +1,23 @@
+id: tailon-panel
+info:
+  name: Tailon Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: unknown
+  reference:
+  - https://github.com/gvalkov/tailon
+  metadata:
+    max-request: 1
+    shodan-query: title:"tailon"
+    verified: true
+  tags: panel,tailon,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tailonclass="tailon-dark

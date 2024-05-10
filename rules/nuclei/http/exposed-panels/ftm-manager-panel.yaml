@@ -1,0 +1,28 @@
+id: ftm-manager-panel
+info:
+  name: Financial Transaction Manager Login Panel - Detect
+  author: idealphase
+  description: Financial Transaction Manager login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ibm:financial_transaction_manager:*:*:*:*:digital_payments:*:*:*
+  metadata:
+    google-query: intitle:"FTM manager"
+    max-request: 1
+    product: financial_transaction_manager
+    shodan-query: http.html:"FTM manager"
+    vendor: ibm
+    verified: true
+  tags: panel,ftm,ibm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: FTM Managerlogin-panel

@@ -1,0 +1,32 @@
+id: jellyseerr-login-panel
+info:
+  name: Jellyseerr Login Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/Fallenbagel/jellyseerr
+  metadata:
+    max-request: 2
+    shodan-query: http.favicon.hash:-2017604252
+    verified: true
+  tags: panel,jellyseerr,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Jellyseerr</title>content="JellyseerrapplicationTitle":"Jellyseerr
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

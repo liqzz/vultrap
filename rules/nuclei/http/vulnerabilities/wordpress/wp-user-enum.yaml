@@ -1,0 +1,51 @@
+id: wp-user-enum
+info:
+  name: WordPress REST API User Enumeration
+  author: Manas_Harsh,daffainfo,geeknik,dr0pd34d
+  description: 'The REST API exposed user data for all users who had authored a post
+    of a public post type. WordPress 4.7.1 limits this to only post types which have
+    specified that they should be shown within the REST API.
+
+    '
+  severity: low
+  impact: 'An attacker can easily determine valid usernames, which can lead to targeted
+    attacks such as brute force attacks or social engineering.
+
+    '
+  remediation: 'Install a WordPress plugin such as Stop User Enumeration. Stop User
+    Enumeration is a security plugin designed to detect and prevent hackers scanning
+    your site for user names.
+
+    '
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/wordpress-rest-api-user-enumeration/
+  - https://wordpress.org/plugins/stop-user-enumeration/
+  - https://www.afteractive.com/wordpress-user-enumeration-vulnerability/
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: wordpress
+    product: wordpress
+    shodan-query: http.component:"WordPress"
+  tags: cve2017,cve,wordpress,wp,edb
+traps:
+- request:
+    method: GET
+    path: /wp-json/wp/v2/users/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"name":"avatar_urls":'
+- request:
+    method: GET
+    path: /?rest_route=/wp/v2/users/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

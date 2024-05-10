@@ -1,0 +1,21 @@
+id: default-tengine-page
+info:
+  name: Tengine Default Page
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Welcome to tengine"
+  tags: tech,tengine,default-page
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to tengineThank you for using tengine

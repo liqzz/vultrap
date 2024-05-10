@@ -1,0 +1,22 @@
+id: unifi-wizard-install
+info:
+  name: UniFi Wizard Installer
+  author: DhiyaneshDk
+  description: UniFi Wizard is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"UniFi Wizard"
+  tags: misconfig,install,unifi,exposure
+traps:
+- request:
+    method: GET
+    path: /manage/wizard/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: UniFi Wizardapp-unifi-wizard

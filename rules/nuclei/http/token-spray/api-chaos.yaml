@@ -1,0 +1,22 @@
+id: api-chaos
+info:
+  name: Chaos API Test
+  author: 0ri2N
+  description: null
+  severity: info
+  reference:
+  - https://chaos.projectdiscovery.io/#/docs
+  metadata:
+    max-request: 1
+  tags: recon,chaos,token-spray,projectdiscovery
+traps:
+- request:
+    method: GET
+    path: https://dns.projectdiscovery.io/dns/projectdiscovery.io
+    headers:
+      Authorization: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"domain":"subdomains":'

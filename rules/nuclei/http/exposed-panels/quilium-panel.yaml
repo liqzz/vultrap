@@ -1,0 +1,34 @@
+id: quilium-panel
+info:
+  name: Quilium Panel - Detect
+  author: righettod
+  description: 'Quilium CMS Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.quilium.io/
+  metadata:
+    max-request: 2
+    shodan-query: http.html:"CMS Quilium"
+    verified: true
+  tags: panel,quilium,login,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: content="CMS QuiliumQuilium</a>
+- request:
+    method: GET
+    path: /en/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

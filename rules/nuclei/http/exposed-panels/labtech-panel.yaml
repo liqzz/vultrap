@@ -1,0 +1,27 @@
+id: labtech-panel
+info:
+  name: LabTech Web Portal Login Panel - Detect
+  author: deFr0ggy
+  description: LabTech Web Portal login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:labtech_software:labtech:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: labtech
+    vendor: labtech_software
+  tags: panel,labtech,labtech_software
+traps:
+- request:
+    method: GET
+    path: /WCC2/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <li>LabTech</li><form action="/WCC2/Search/search" id="searchForm method="post"><h1>
+      Welcome to the LabTech Web Portal</h1>Universal Agent UninstallerTechnician
+      Login<form action="/WCC2/Home/Login" autocomplete="off" method="post">

@@ -1,0 +1,20 @@
+id: jira-unauthenticated-user-picker
+info:
+  name: Jira Unauthenticated User Picker
+  author: TechbrunchFR
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Atlassian Jira"
+  tags: atlassian,jira
+traps:
+- request:
+    method: GET
+    path: /secure/popups/UserPickerBrowser.jspa
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: user-picker

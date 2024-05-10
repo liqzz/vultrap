@@ -1,0 +1,19 @@
+id: api-googleelevation
+info:
+  name: Google Elevation API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: token-spray,google,elevation
+traps:
+- request:
+    method: GET
+    path: https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: error_message

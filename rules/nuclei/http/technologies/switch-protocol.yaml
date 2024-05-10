@@ -1,0 +1,21 @@
+id: switch-protocol
+info:
+  name: Switching Protocol Detection
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: '"connection: upgrade"'
+  tags: protocol,switching,tech,websocket,h2c
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 101
+    headers: {}
+    body: ''

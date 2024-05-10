@@ -1,0 +1,19 @@
+id: tor-socks-proxy
+info:
+  name: Detect tor SOCKS proxy
+  author: geeknik
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,tor,proxy
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 501
+    headers: {}
+    body: This is a SOCKS ProxyHTTPTunnelPortSOCKSPort

@@ -1,0 +1,21 @@
+id: surveysparrow-takeover
+info:
+  name: SurveySparrow takeover detection
+  author: philippedelteil
+  description: SurveySparrow takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/281
+  metadata:
+    max-request: 1
+  tags: takeover,surveysparrow
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Account not found.ouch!SurveySparrow

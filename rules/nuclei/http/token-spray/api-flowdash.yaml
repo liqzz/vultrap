@@ -1,0 +1,24 @@
+id: api-flowdash
+info:
+  name: Flowdash API Test
+  author: daffainfo
+  description: Automate business workflows
+  severity: info
+  reference:
+  - https://docs.flowdash.com/docs/api-introduction
+  - https://github.com/daffainfo/all-about-apikey/tree/main/flowdash
+  metadata:
+    max-request: 1
+  tags: token-spray,flowdash
+traps:
+- request:
+    method: GET
+    path: https://app.flowdash.com/api/v1/workflows
+    headers:
+      Host: app.flowdash.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"name":'

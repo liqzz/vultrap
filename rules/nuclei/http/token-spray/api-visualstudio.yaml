@@ -1,0 +1,23 @@
+id: api-visualstudio
+info:
+  name: Visual Studio API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://openapi.appcenter.ms/
+  metadata:
+    max-request: 1
+  tags: token-spray,visualstudio,microsoft
+traps:
+- request:
+    method: GET
+    path: https://api.appcenter.ms/v0.1/apps
+    headers:
+      Content-Type: application/json
+      X-Api-Token: '{{token}}'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"description":"owner":'

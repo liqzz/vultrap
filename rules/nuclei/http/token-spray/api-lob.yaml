@@ -1,0 +1,24 @@
+id: api-lob
+info:
+  name: Lob API Test
+  author: daffainfo
+  description: US Address Verification
+  severity: info
+  reference:
+  - https://docs.lob.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/lob
+  metadata:
+    max-request: 1
+  tags: token-spray,lob
+traps:
+- request:
+    method: GET
+    path: https://api.lob.com/v1/addresses
+    headers:
+      Authorization: Basic {{base64(token + ':')}}
+      Host: api.lob.com
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id""description""name"'

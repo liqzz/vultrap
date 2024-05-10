@@ -1,0 +1,20 @@
+id: default-apache2-page
+info:
+  name: Apache2 Default Test Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Apache2 Debian Default Page:"
+  tags: tech,apache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>Apache2 Debian Default Page: It works</title>'

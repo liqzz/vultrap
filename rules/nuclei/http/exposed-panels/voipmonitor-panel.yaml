@@ -1,0 +1,26 @@
+id: voipmonitor-panel
+info:
+  name: VoIPmonitor Login Panel - Detect
+  author: Yanyun
+  description: VoIPmonitor login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:voipmonitor:voipmonitor:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: voipmonitor
+    shodan-query: http.title:"VoIPmonitor"
+    vendor: voipmonitor
+  tags: panel,voipmonitor,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: appShareUrl = 'share.voipmonitor.org'VoIPmonitor

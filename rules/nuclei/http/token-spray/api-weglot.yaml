@@ -1,0 +1,23 @@
+id: api-weglot
+info:
+  name: WeGlot API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developers.weglot.com/api/reference
+  metadata:
+    max-request: 1
+  tags: token-spray,weglot
+traps:
+- request:
+    method: POST
+    path: https://api.weglot.com/translate?api_key=
+    headers:
+      Content-Type: application/json
+    body: '{"l_from":"en","l_to":"fr","request_url":"https://www.website.com/","words":[{"w":"This
+      is a blue car","t":1},{"w":"This is a black car","t":1}]}'
+  response:
+    status_code: 200
+    headers: {}
+    body: does not existInvalid authorization

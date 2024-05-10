@@ -1,0 +1,28 @@
+id: springboot-loggers
+info:
+  name: Detect Springboot Loggers
+  author: that_juan_,dwisiswant0,wdahlenb
+  description: Springboot Loggers is exposed.
+  severity: low
+  metadata:
+    max-request: 2
+  tags: springboot,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /loggers
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"loggers""levels"'
+- request:
+    method: GET
+    path: /actuator/loggers
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

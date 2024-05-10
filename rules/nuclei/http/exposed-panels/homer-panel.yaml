@@ -1,0 +1,26 @@
+id: homer-panel
+info:
+  name: Homer Panel - Detect
+  author: rxerium
+  description: 'A simple static homepage was discovered
+
+    '
+  severity: info
+  reference:
+  - https://github.com/bastienwirtz/homer
+  - https://homer-demo.netlify.app/
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-417785140
+    verified: true
+  tags: panel,homer,detect,login
+traps:
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Homer</title>

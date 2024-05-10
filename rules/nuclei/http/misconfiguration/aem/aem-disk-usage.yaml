@@ -1,0 +1,33 @@
+id: aem-disk-usage
+info:
+  name: Adobe AEM Disk Usage Information Disclosure
+  author: dhiyaneshDk
+  description: Adobe AEM Disk Usage Information is exposed.
+  severity: low
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  metadata:
+    max-request: 2
+    shodan-query:
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  tags: misconfig,aem,adobe,exposure
+traps:
+- request:
+    method: GET
+    path: /etc/reports/diskusage.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Disk Usage /<th>nodes</th>
+- request:
+    method: GET
+    path: /etc/reports/diskusage.html?path=/content/dam
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

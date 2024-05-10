@@ -1,0 +1,26 @@
+id: sitecore-default-page
+info:
+  name: Sitecore Default Page - Detect
+  author: DhiyaneshDK,RandomDhiraj
+  description: 'Detect Sitecore Content Management System (CMS).
+
+    '
+  severity: info
+  reference: 'https://www.sitecore.com/
+
+    '
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Welcome to Sitecore"
+  tags: tech,sitecore,cms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Sitecorealt="Sitecore"

@@ -1,0 +1,21 @@
+id: redis-enterprise-panel
+info:
+  name: Redis Enterprise - Detect
+  author: tess
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"Enterprise-Class Redis for Developers"
+    verified: true
+  tags: panel,redis,enterprise
+traps:
+- request:
+    method: GET
+    path: /#/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Enterprise-Class Redis for Developerscm/config/environment

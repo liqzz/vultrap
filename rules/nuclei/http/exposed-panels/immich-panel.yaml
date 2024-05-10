@@ -1,0 +1,26 @@
+id: immich-panel
+info:
+  name: Immich Panel - Detect
+  author: rxerium
+  description: 'Immich is a self-hosted photo and video backup solution
+
+    '
+  severity: info
+  reference:
+  - https://immich.app/
+  - https://github.com/immich-app/immich
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-43504595
+    verified: true
+  tags: panel,immich,detect
+traps:
+- request:
+    method: GET
+    path: /auth/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Immich"PUBLIC_IMMICH_alt="Immich LogoWelcome to Immich

@@ -1,0 +1,27 @@
+id: novus-ip-camera
+info:
+  name: NoVus IP Login Panel - Detect
+  author: DhiyaneshDk
+  description: NoVus IP login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/8002
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    google-query: intitle:"NoVus IP camera" -com
+  tags: camera,novus,edb,iot,panel
+traps:
+- request:
+    method: GET
+    path: /Pages/login.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>NoVus IP camera</title>

@@ -1,0 +1,20 @@
+id: git-exposure
+info:
+  name: Git Metadata Directory Exposure
+  author: tess
+  description: Git Metadata Directory exposed.
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 1
+  tags: logs,git,exposure
+traps:
+- request:
+    method: GET
+    path: /.git/
+    headers: null
+    body: null
+  response:
+    status_code: 403
+    headers: {}
+    body: 403 ForbiddenYou do not have permission to access /.git/

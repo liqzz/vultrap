@@ -1,0 +1,32 @@
+id: npm-anonymous-cli
+info:
+  name: NPM Anonymous CLI Metrics Exposure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"anonymous-cli-metrics.json"
+  tags: exposure,npm,config,files
+traps:
+- request:
+    method: GET
+    path: /.npm/anonymous-cli-metrics.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"metricId":"metrics":"successfulInstalls":'
+- request:
+    method: GET
+    path: /anonymous-cli-metrics.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

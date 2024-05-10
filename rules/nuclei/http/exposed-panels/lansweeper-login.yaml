@@ -1,0 +1,27 @@
+id: lansweeper-login
+info:
+  name: Lansweeper Login Panel - Detect
+  author: divya_mudgal
+  description: Lansweeper login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:lansweeper:lansweeper:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: lansweeper
+    shodan-query: title:"Lansweeper - Login"
+    vendor: lansweeper
+    verified: true
+  tags: lansweeper,tech,panel
+traps:
+- request:
+    method: GET
+    path: /login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Lansweeper - Login

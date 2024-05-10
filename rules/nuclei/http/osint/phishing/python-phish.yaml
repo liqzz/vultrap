@@ -1,0 +1,23 @@
+id: python-phish
+info:
+  name: python phishing Detection
+  author: rxerium
+  description: 'A python phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://python.org
+  metadata:
+    max-request: 1
+  tags: phishing,python,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Python.orgThe official home of the Python Programming Language

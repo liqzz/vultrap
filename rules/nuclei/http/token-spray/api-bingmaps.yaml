@@ -1,0 +1,21 @@
+id: api-bingmaps
+info:
+  name: Bing Maps API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-address
+  metadata:
+    max-request: 1
+  tags: token-spray,bing,maps,bingmaps
+traps:
+- request:
+    method: GET
+    path: https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=WA&locality=Somewhere&postalCode=98001&addressLine=100%20Main%20St.&key=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ValidCredentials

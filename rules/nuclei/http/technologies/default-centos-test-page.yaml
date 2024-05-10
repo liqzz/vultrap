@@ -1,0 +1,20 @@
+id: default-centos-test-page
+info:
+  name: CentOs-WebPanel Test Page
+  author: dhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"HTTP Server Test Page powered by CentOS-WebPanel.com"
+  tags: tech,centos
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>HTTP Server Test Page powered by CentOS-WebPanel.com</title>

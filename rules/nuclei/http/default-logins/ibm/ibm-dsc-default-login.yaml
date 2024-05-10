@@ -1,0 +1,26 @@
+id: ibm-dsc-default-login
+info:
+  name: IBM Decision Server Console - Default Login
+  author: DhiyaneshDK
+  description: null
+  severity: high
+  reference:
+  - https://www.ibm.com/docs/en/odm/8.8.0?topic=center-overview-decision
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Rule Execution Server"
+  tags: ibm,default-login,decision-server
+traps:
+- request:
+    method: POST
+    path: /res/j_security_check
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'j_username={{username}}&j_password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: odmAdminSign OutDiagnostics

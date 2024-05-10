@@ -1,0 +1,26 @@
+id: scribble-diffusion-panel
+info:
+  name: Scribble Diffusion Panel - Detect
+  author: rxerium
+  description: 'A tool to turn your rough sketch into a refined image using AI.
+
+    '
+  severity: info
+  reference:
+  - https://scribblediffusion.com/
+  - https://github.com/replicate/scribble-diffusion
+  metadata:
+    max-request: 1
+    shodan-query: title:"Scribble Diffusion"
+    verified: true
+  tags: panel,scribble,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Scribble Diffusioncontent="Scribble Diffusion

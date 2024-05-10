@@ -1,0 +1,32 @@
+id: springboot-startup
+info:
+  name: Springboot Actuator startup
+  author: ELSFA7110
+  description: The startup endpoint provides information about the application’s startup
+    sequence.
+  severity: low
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+  metadata:
+    verified: true
+    max-request: 2
+  tags: misconfig,springboot,exposure
+traps:
+- request:
+    method: GET
+    path: /startup
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: springBootVersionstartTime
+- request:
+    method: GET
+    path: /actuator/startup
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

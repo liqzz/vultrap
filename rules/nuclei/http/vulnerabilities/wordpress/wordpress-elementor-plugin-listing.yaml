@@ -1,0 +1,22 @@
+id: wordpress-elementor-plugin-listing
+info:
+  name: WordPress Elementor Plugin Directory Listing
+  author: dhiyaneshDK
+  description: Searches for sensitive directories present in the elementor wordpress
+    plugin.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/6297
+  metadata:
+    max-request: 1
+  tags: listing,plugin,edb,wordpress
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/elementor/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Index of/wp-content/plugins/elementor/

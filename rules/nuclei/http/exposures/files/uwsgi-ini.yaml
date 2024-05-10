@@ -1,0 +1,21 @@
+id: uwsgi-ini
+info:
+  name: uwsgi.ini File Exposure
+  author: DhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"uwsgi.ini"
+  tags: exposure,uwsgi,files
+traps:
+- request:
+    method: GET
+    path: /uwsgi.ini
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[uwsgi]'

@@ -1,0 +1,23 @@
+id: liferay-api
+info:
+  name: Liferay /api/liferay - API Exposed
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  reference: https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LiferayAPI.java
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Liferay"
+  tags: liferay,exposure,api,misconfig
+traps:
+- request:
+    method: GET
+    path: /api/liferay
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: .*Internal Server Error.*An error occurred while accessing the requested
+      resource\..*

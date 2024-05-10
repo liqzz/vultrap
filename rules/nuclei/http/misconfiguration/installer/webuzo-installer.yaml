@@ -1,0 +1,21 @@
+id: webuzo-installer
+info:
+  name: Webuzo Installer
+  author: DhiyaneshDk
+  description: Webuzo is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Webuzo Installer"
+  tags: misconfig,webuzo,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Webuzo InstallerWebuzo Initial Setup

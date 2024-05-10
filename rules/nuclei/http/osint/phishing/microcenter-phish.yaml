@@ -1,0 +1,23 @@
+id: microcenter-phish
+info:
+  name: microcenter phishing Detection
+  author: rxerium
+  description: 'A microcenter phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://microcenter.com
+  metadata:
+    max-request: 1
+  tags: phishing,microcenter,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Micro Center - Computer & Electronics Retailer - Shop Now

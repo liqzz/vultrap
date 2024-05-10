@@ -1,0 +1,23 @@
+id: default-amazon-cognito
+info:
+  name: Amazon Cognito Developer Authentication Sample - Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  reference:
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/developer-authenticated-identities.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Amazon Cognito Developer Authentication Sample"
+  tags: aws,cognito,default,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Amazon Cognito Developer Authentication SampleCongratulations!

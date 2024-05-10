@@ -1,0 +1,47 @@
+id: archibus-webcentral-panel
+info:
+  name: Archibus Web Central Login - Panel Detect
+  author: righettod,PJBorah,Hardik-Rathod
+  description: Archibus Web Central login panel was detected.
+  severity: info
+  reference:
+  - https://archibus.com/products/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:archibus:web_central:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: web_central
+    shodan-query: http.favicon.hash:889652940
+    vendor: archibus
+    verified: true
+  tags: panel,archibus
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ARCHIBUSContinue As a Guestlogin
+- request:
+    method: GET
+    path: /archibus/login.axvw
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /archibus/schema/ab-core/views/sign-in/ab-sign-in.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

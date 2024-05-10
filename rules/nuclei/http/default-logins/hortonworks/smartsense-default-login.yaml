@@ -1,0 +1,26 @@
+id: smartsense-default-login
+info:
+  name: HortonWorks SmartSense Default Login
+  author: Techryptic (@Tech)
+  description: HortonWorks SmartSense default admin login information was detected.
+  severity: high
+  reference:
+  - https://docs.cloudera.com/HDPDocuments/SS1/SmartSense-1.2.2/bk_smartsense_admin/content/manual_server_login.html
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: hortonworks,smartsense,default-login
+traps:
+- request:
+    method: GET
+    path: /apt/v1/context
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: smartsenseId

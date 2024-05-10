@@ -1,0 +1,23 @@
+id: api-abstract-website-scraping
+info:
+  name: Abstract Api Web Scraping Test
+  author: daffainfo
+  description: Scrape and extract data from any website, with powerful options like
+    proxy / browser customization, CAPTCHA handling, ad blocking, and more.
+  severity: info
+  reference:
+  - https://www.abstractapi.com/api/web-scraping-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-website-scraping
+  metadata:
+    max-request: 1
+  tags: token-spray,abstractapi
+traps:
+- request:
+    method: GET
+    path: https://scrape.abstractapi.com/v1/?api_key=&url=https://test.test
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"code":"validation_error"Reached error page'

@@ -1,0 +1,27 @@
+id: akamai-cache-detect
+info:
+  name: Akamai Cache Detection
+  author: nybble04
+  description: 'Sends a HEAD request with a Pragma header value of "akamai-x-cache-on"
+    and looks for an akamai-specific response header value.
+
+    '
+  severity: info
+  reference:
+  - https://community.akamai.com/customers/s/article/Using-Akamai-Pragma-headers-to-investigate-or-troubleshoot-Akamai-content-delivery?language=en_US
+  - https://spyclub.tech/2022/12/14/unusual-cache-poisoning-akamai-s3/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: cache,akamai,tech
+traps:
+- request:
+    method: HEAD
+    path: ''
+    headers:
+      Pragma: akamai-x-cache-on
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

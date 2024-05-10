@@ -1,0 +1,34 @@
+id: globalprotect-panel
+info:
+  name: Palo Alto Networks GlobalProtect Login Panel - Detect
+  author: organiccrap
+  description: Palo Alto Networks GlobalProtect login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:paloaltonetworks:globalprotect:*:*:*:*:chrome:*:*:*
+  metadata:
+    max-request: 2
+    product: globalprotect
+    vendor: paloaltonetworks
+  tags: panel,panos,globalprotect,paloaltonetworks
+traps:
+- request:
+    method: GET
+    path: /global-protect/login.esp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>GlobalProtect Portal</TITLE><msg>Invalid parameters</msg>
+- request:
+    method: GET
+    path: /sslmgr
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

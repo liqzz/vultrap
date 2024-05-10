@@ -1,0 +1,25 @@
+id: apache-apisix-panel
+info:
+  name: Apache APISIX Login Panel
+  author: pikpikcu
+  description: An Apache APISIX login panel was detected.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:apisix:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: title="Apache APISIX Dashboard"
+    max-request: 1
+    product: apisix
+    vendor: apache
+  tags: apache,apisix,panel
+traps:
+- request:
+    method: GET
+    path: /user/login?redirect=%2F
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Apache APISIX Dashboard</title>

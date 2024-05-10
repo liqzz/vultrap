@@ -1,0 +1,29 @@
+id: unauthorized-printer-hp
+info:
+  name: Unauthorized HP office pro printer
+  author: pussycat0x,r3naissance
+  description: HP office pro printer web access is exposed.
+  severity: high
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"Hp Officejet pro"
+  tags: hp,iot,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>(HP Officejet Pro([ 0-9A-Za-z]+)|HP Designjet([ 0-9A-Za-z]+).*)<\/title>
+- request:
+    method: GET
+    path: /hp/device/webAccess/index.htm?content=security
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,31 @@
+id: ojs-installer
+info:
+  name: Open Journal Systems Installer - Exposure
+  author: DhiyaneshDK
+  description: Open Journal Systems is susceptible to the Installation page exposure
+    due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: http.favicon.hash:2099342476
+  tags: misconfig,ojs,install,exposure
+traps:
+- request:
+    method: GET
+    path: /index/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OJS Installation
+- request:
+    method: GET
+    path: /index.php/index/install
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

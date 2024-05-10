@@ -1,0 +1,27 @@
+id: rethinkdb-admin-console
+info:
+  name: RethinkDB Administration Console - Detect
+  author: tess
+  description: RethinkDB Administration Console was detected.
+  severity: medium
+  reference:
+  - https://rethinkdb.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:969374472
+  tags: misconfig,rethinkdb,console,dashboard
+traps:
+- request:
+    method: GET
+    path: /#dashboard
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: RethinkDB Administration Console

@@ -1,0 +1,22 @@
+id: acunetix-360-installer
+info:
+  name: Acunetix 360 Installer
+  author: pussycat0x
+  description: Acunetix 360 is susceptible to the Installation page exposure due to
+    misconfiguration.
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-347188002
+  tags: misconfig,exposure,install,acunetix
+traps:
+- request:
+    method: GET
+    path: /wizard/database/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Acunetix 360 - Installation WizardLicense

@@ -1,0 +1,30 @@
+id: gogs-panel
+info:
+  name: Gogs Login Panel - Detect
+  author: DhiyaneshDk,daffainfo
+  description: Gogs login panel was detected.
+  severity: info
+  reference:
+  - https://gogs.io/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:gogs:gogs:*:*:*:*:*:*:*:*
+  metadata:
+    google-query: intitle:"Sign In - Gogs"
+    max-request: 1
+    product: gogs
+    shodan-query: title:"Sign In - Gogs"
+    vendor: gogs
+    verified: true
+  tags: panel,gogs
+traps:
+- request:
+    method: GET
+    path: /user/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <meta property="og:title" content="Gogsjs/gogs.js?v=

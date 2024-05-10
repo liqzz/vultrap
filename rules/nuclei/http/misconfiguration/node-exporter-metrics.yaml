@@ -1,0 +1,19 @@
+id: node-exporter-metrics
+info:
+  name: Detect Node Exporter Metrics
+  author: pussycat0x
+  description: Information Disclosure of Garbage Collection
+  severity: low
+  metadata:
+    max-request: 1
+  tags: node,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: node_cooling_devicenode_network

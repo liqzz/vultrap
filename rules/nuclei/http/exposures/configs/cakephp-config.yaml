@@ -1,0 +1,36 @@
+id: cakephp-config
+info:
+  name: CakePHP Configuration File - Detect
+  author: DhiyaneshDk
+  description: CakePHP configuration file was detected.
+  severity: medium
+  reference:
+  - https://book.cakephp.org/phinx/0/en/configuration.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"phinx.yml"
+  tags: files,exposure,config
+traps:
+- request:
+    method: GET
+    path: /phinx.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'host:name:pass:'
+- request:
+    method: GET
+    path: /phinx.yaml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

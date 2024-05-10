@@ -1,0 +1,21 @@
+id: sugarcrm-install
+info:
+  name: SugarCRM Exposed Installation
+  author: ritikchaddha
+  description: SugarCRM is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Sugar Setup Wizard"
+  tags: misconfig,sugar,sugarcrm,install
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Sugar Setup Wizard

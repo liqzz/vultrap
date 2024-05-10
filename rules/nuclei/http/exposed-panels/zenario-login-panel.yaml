@@ -1,0 +1,25 @@
+id: zenario-login-panel
+info:
+  name: Zenario Admin Login Panel - Detect
+  author: __Fazal
+  description: Zenario admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tribalsystems:zenario:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: zenario
+    vendor: tribalsystems
+  tags: panel,zenario,tribalsystems
+traps:
+- request:
+    method: GET
+    path: /zenario/admin/welcome.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to Zenario

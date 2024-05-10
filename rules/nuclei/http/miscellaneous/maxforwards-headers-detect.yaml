@@ -1,0 +1,26 @@
+id: maxforwards-headers-detect
+info:
+  name: Max-Forwards Header - Detect
+  author: righettod
+  description: Max-Forwards response header is specified.
+  severity: info
+  reference:
+  - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Max-Forwards
+  - https://http.dev/max-forwards
+  - https://twitter.com/irsdl/status/1337299267652825088
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: 'Max-Forwards:'
+    fofa-query: header="max-forwards"
+  tags: miscellaneous,misc,max-forwards
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,31 @@
+id: composer-auth-json
+info:
+  name: Composer-auth Json File Disclosure
+  author: DhiyaneshDK
+  description: Composer Auth Josn file is disclosed.
+  severity: low
+  reference: https://www.exploit-db.com/ghdb/5768
+  metadata:
+    verified: true
+    max-request: 2
+    google-query: intext:"index of /" ".composer-auth.json"
+  tags: exposure,devops,files
+traps:
+- request:
+    method: GET
+    path: /.composer-auth.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: github-oauthgithub.com
+- request:
+    method: GET
+    path: /vendor/webmozart/assert/.composer-auth.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

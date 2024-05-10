@@ -1,0 +1,33 @@
+id: lucee-login
+info:
+  name: Lucee Web and Lucee Server Admin Login Panel - Detect
+  author: dhiyaneshDK,unp4ck
+  description: Lucee admin login panels were detected in both Web and Server tabs.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"Lucee"
+  tags: panel,lucee
+traps:
+- request:
+    method: GET
+    path: /lucee/admin/web.cfm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Lucee Web Administrator</title><title>Login - Lucee Server
+      Administrator</title>lucee-admin-search-inputlucee-docs-search-inputserver-lucee-small.png.cfm
+- request:
+    method: GET
+    path: /lucee/admin/server.cfm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

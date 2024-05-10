@@ -1,0 +1,33 @@
+id: springboot-info
+info:
+  name: Spring Boot Information Panel - Detect
+  author: philippedelteil
+  description: Spring Boot information panel displaying app name, version information,
+    and other values was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: springboot,misconfig
+traps:
+- request:
+    method: GET
+    path: /info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"build""artifact"'
+- request:
+    method: GET
+    path: /actuator/info
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

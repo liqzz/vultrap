@@ -1,0 +1,27 @@
+id: api-stytch
+info:
+  name: Stytch API Test
+  author: daffainfo
+  description: User infrastructure for modern applications
+  severity: info
+  reference:
+  - https://stytch.com/docs/api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/stytch
+  metadata:
+    max-request: 1
+  tags: token-spray,stytch
+traps:
+- request:
+    method: POST
+    path: https://test.stytch.com/v1/users
+    headers:
+      Authorization: Basic {{base64(id + ':' + secret)}}
+      Host: test.stytch.com
+      Content-Type: application/json
+    body: '{"email": "test@stytch.com"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"status_code":"request_id":"user_id":'

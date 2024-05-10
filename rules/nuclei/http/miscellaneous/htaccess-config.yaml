@@ -1,0 +1,64 @@
+id: htaccess-config
+info:
+  name: HTaccess config file
+  author: Yash Anand @yashanand155
+  description: null
+  severity: info
+  metadata:
+    max-request: 6
+  tags: miscellaneous,misc,config
+traps:
+- request:
+    method: GET
+    path: /.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: RewriteRule</IfModule><IfModule
+- request:
+    method: GET
+    path: /example.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /_.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /sample.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /a.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /htaccess_for_page_not_found_redirects.htaccess
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

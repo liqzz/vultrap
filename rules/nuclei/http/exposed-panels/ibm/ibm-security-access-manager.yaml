@@ -1,0 +1,27 @@
+id: ibm-security-access-manager
+info:
+  name: IBM Security Access Manager Login Panel - Detect
+  author: geeknik
+  description: IBM Security Access Manager login panel was detected.
+  severity: info
+  reference:
+  - https://www.ibm.com/docs/en/sva/9.0.7?topic=overview-introduction-security-access-manager
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: security_access_manager
+    vendor: ibm
+  tags: panel,ibm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>IBM Security Access Manager</title>/mga/sps/authsvc/policy/forgot_username/mga/sps/authsvc/policy/forgot_password

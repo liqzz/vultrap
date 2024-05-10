@@ -1,0 +1,20 @@
+id: openresty-detect
+info:
+  name: OpenResty detection
+  author: jcockhren
+  description: Some deployments of OpenResty spill their version numbers.
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: product:"OpenResty"
+  tags: tech,openresty
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

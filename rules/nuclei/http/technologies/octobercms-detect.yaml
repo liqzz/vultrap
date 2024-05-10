@@ -1,0 +1,30 @@
+id: octobercms-detect
+info:
+  name: OctoberCMS detect
+  author: cyllective
+  description: Detects OctoberCMS
+  severity: info
+  reference:
+  - https://github.com/octobercms/october
+  metadata:
+    max-request: 2
+  tags: tech,octobercms
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OctoberCMS
+- request:
+    method: GET
+    path: /modules/system/assets/js/framework.combined-min.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,26 @@
+id: oracle-business-control
+info:
+  name: Oracle Commerce Business Control Center Login Panel - Detect
+  author: dhiyaneshDk
+  description: Oracle Commerce Business Control Center login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:oracle:commerce:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: commerce
+    shodan-query: http.title:"Oracle Commerce"
+    vendor: oracle
+  tags: oracle,login,panel
+traps:
+- request:
+    method: GET
+    path: /atg/bcc
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Oracle Commerce Business Control Center</title>

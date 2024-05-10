@@ -1,0 +1,22 @@
+id: moodle-changelog-file
+info:
+  name: Moodle Changelog File
+  author: oppsec
+  description: Moodle has a file which describes API changes in core libraries and
+    APIs, and can be used to discover Moodle version.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: miscellaneous,misc,moodle
+traps:
+- request:
+    method: GET
+    path: /lib/upgrade.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: This files describes API changes in core libraries and APIs,information
+      provided here is intended especially for developers.new my moodle and profiles
+      API

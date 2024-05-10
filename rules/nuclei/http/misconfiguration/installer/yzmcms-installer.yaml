@@ -1,0 +1,22 @@
+id: yzmcms-installer
+info:
+  name: YzmCMS - Installer
+  author: ritikchaddha
+  description: YzmCMS is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"YzmCMS"
+    fofa-query: title="YzmCMS"
+  tags: misconfig,yzmcms,install,exposure
+traps:
+- request:
+    method: GET
+    path: /application/install/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 安装程序 - YzmCMSYzmCMS/index.php?step=2/install.css

@@ -1,0 +1,22 @@
+id: wishpond-takeover
+info:
+  name: Wishpond Takeover Detection
+  author: pdteam
+  description: Wishpond takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover,wishpond
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: https://www.wishpond.com/404?campaign=trueOops! There isn’t a Wishpond Campaign
+      published to this page.

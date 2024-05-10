@@ -1,0 +1,23 @@
+id: amazon-phish
+info:
+  name: Amazon phishing Detection
+  author: rxerium
+  description: 'An amazon phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://amazon.com
+  metadata:
+    max-request: 1
+  tags: phishing,amazon,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Amazon Sign InAmazon Sign-In

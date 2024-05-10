@@ -1,0 +1,20 @@
+id: wp-mailchimp-log-exposure
+info:
+  name: WordPress Mailchimp 4 Debug Log Exposure
+  author: aashiq
+  description: Searches for Mailchimp log exposure by attempting to query the debug
+    log endpoint on wp-content
+  severity: medium
+  metadata:
+    max-request: 1
+  tags: logs,wordpress,exposure,mailchimp
+traps:
+- request:
+    method: GET
+    path: /wp-content/uploads/mc4wp-debug.log
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'WARNING: Form'

@@ -1,0 +1,24 @@
+id: tenda-web-master
+info:
+  name: Tenda Web Master Login Panel - Detect
+  author: DhiyaneshDK
+  description: Tenda Web Master login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Tenda Web Master"
+    verified: true
+  tags: panel,tenda,router
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Tenda Web Master</title>

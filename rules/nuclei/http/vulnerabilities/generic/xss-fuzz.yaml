@@ -1,0 +1,26 @@
+id: xss-fuzz
+info:
+  name: Fuzzing Parameters - Cross-Site Scripting
+  author: kazet
+  description: 'Cross-site scripting was discovered via a search for reflected parameter
+    values in the server response via GET-requests.
+
+    '
+  severity: medium
+  classification:
+    cwe-id: CWE-79
+  metadata:
+    max-request: 29
+    parameters: q,s,search,id,action,keyword,query,page,keywords,url,view,cat,name,key,p,month,page_id,password,terms,token,type,unsubscribe_token,api,api_key,begindate,callback,categoryid,csrf_token,email,emailto,enddate,immagine,item,jsonp,l,lang,list_type,year
+  tags: xss,generic
+traps:
+- request:
+    method: GET
+    path: /?
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '''>"<svg/onload=confirm(''xss-<title>Access Denied</title>You don''t have
+      permission to access'

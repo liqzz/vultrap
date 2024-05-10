@@ -1,0 +1,25 @@
+id: submitty-login
+info:
+  name: Submitty Login Panel - Detect
+  author: princechaddha
+  description: Submitty login panel was detected.
+  severity: info
+  reference:
+  - https://github.com/Submitty/Submitty
+  - https://rcos.io/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,submitty,oss
+traps:
+- request:
+    method: GET
+    path: /authentication/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: submitty-bannerhttps://submitty.org

@@ -1,0 +1,24 @@
+id: superadmin-ui-panel
+info:
+  name: SuperAdmin Login Panel - Detect
+  author: Hardik-Solanki
+  description: SuperAdmin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: title:"Superadmin UI - 4myhealth"
+    verified: true
+  tags: panel,superadmin
+traps:
+- request:
+    method: GET
+    path: /#/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Superadmin UI - 4myhealth

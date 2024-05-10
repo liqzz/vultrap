@@ -1,0 +1,47 @@
+id: drupal-user-enum-ajax
+info:
+  name: Drupal User Enumration [Ajax]
+  author: 0w4ys
+  description: null
+  severity: info
+  metadata:
+    max-request: 4
+    shodan-query: http.component:"drupal"
+  tags: drupal,misconfig
+traps:
+- request:
+    method: GET
+    path: /admin/views/ajax/autocomplete/user/a
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '":"a.":"A.'
+- request:
+    method: GET
+    path: /views/ajax/autocomplete/user/a
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /?q=admin/views/ajax/autocomplete/user/a
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /?q=views/ajax/autocomplete/user/a
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

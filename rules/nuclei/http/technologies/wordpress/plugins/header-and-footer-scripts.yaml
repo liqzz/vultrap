@@ -1,0 +1,23 @@
+id: wordpress-header-and-footer-scripts
+info:
+  name: Header and Footer Scripts Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/header-and-footer-scripts/
+  metadata:
+    max-request: 1
+    plugin_namespace: header-and-footer-scripts
+    wpscan: https://wpscan.com/plugin/header-and-footer-scripts
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/header-and-footer-scripts/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

@@ -1,0 +1,22 @@
+id: activemq-default-login
+info:
+  name: Apache ActiveMQ Default Login
+  author: pdteam
+  description: Apache ActiveMQ default login information was discovered.
+  severity: high
+  reference:
+  - https://knowledge.broadcom.com/external/article/142813/vulnerability-apache-activemq-admin-con.html
+  metadata:
+    max-request: 2
+  tags: apache,activemq,default-login
+traps:
+- request:
+    method: GET
+    path: /admin/
+    headers:
+      Authorization: Basic {{base64(username + ':' + password)}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: Welcome to the Apache ActiveMQ Console of <b><h2>Broker</h2>

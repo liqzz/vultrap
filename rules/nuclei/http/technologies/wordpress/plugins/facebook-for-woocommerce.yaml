@@ -1,0 +1,23 @@
+id: wordpress-facebook-for-woocommerce
+info:
+  name: Facebook for WooCommerce Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/facebook-for-woocommerce/
+  metadata:
+    max-request: 1
+    plugin_namespace: facebook-for-woocommerce
+    wpscan: https://wpscan.com/plugin/facebook-for-woocommerce
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/facebook-for-woocommerce/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

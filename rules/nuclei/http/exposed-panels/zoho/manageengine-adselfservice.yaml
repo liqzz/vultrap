@@ -1,0 +1,36 @@
+id: manageengine-adselfservice
+info:
+  name: ZOHO ManageEngine ADSelfService Plus - Detect
+  author: dhiyaneshDK,SaK1
+  description: ZOHO ManageEngine ADSelfService panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:zohocorp:manageengine_adselfservice_plus:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: manageengine_adselfservice_plus
+    shodan-query: http.title:"ADSelfService Plus"
+    vendor: zohocorp
+    verified: true
+  tags: panel,zoho,manageengine,zohocorp
+traps:
+- request:
+    method: GET
+    path: /authorization.do
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ADSelfService Plus</title>"PRODUCT_NAME":"ManageEngine ADSelfService
+- request:
+    method: GET
+    path: /servlet/GetProductVersion
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

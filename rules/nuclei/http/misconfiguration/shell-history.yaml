@@ -1,0 +1,46 @@
+id: shell-history
+info:
+  name: Shell History
+  author: pentest_swissky,geeknik
+  description: Discover history for bash, ksh, sh, and zsh
+  severity: low
+  metadata:
+    max-request: 4
+  tags: misconfig
+traps:
+- request:
+    method: GET
+    path: /.bash_history
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: mkdir chmod mv nano vim pico sudo cd cp ps auxls logout
+- request:
+    method: GET
+    path: /.ksh_history
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.sh_history
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /.zsh_history
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

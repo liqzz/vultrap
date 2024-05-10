@@ -1,0 +1,31 @@
+id: teampass-ldap
+info:
+  name: Teampass LDAP Debug Config - Detect
+  author: josecosta
+  description: 'Teampass ldap.debug.txt config was detected. This file is generated
+    on "/files/ldap.debug.txt" for versions earlier than 3.0.0.0 when utilizing the
+    "Test current configuration" in LDAP settings.
+
+    '
+  severity: medium
+  reference:
+  - https://github.com/nilsteampassnet/TeamPass/commit/ea9838481a58879cdf3def31046955efcff5a546#diff-61809be6a8fff101e3748a0c7dfad90bR16
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="TEAMPASS"
+  tags: exposure,teampass,ldap,logs
+traps:
+- request:
+    method: GET
+    path: /files/ldap.debug.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,45 @@
+id: keycloak-admin-panel
+info:
+  name: Keycloak Admin Login Panel - Detect
+  author: incogbyte,righettod,daffainfo
+  description: Keycloak admin login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: keycloak
+    shodan-query: http.favicon.hash:-1105083093
+    vendor: redhat
+    verified: true
+  tags: panel,keycloak,redhat
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <span>Keycloak</span>alt="Keycloakkc-form-buttons/keycloak/img/favicon.ico/admin/keycloak/
+- request:
+    method: GET
+    path: /auth/admin
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /auth/admin/master/console/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

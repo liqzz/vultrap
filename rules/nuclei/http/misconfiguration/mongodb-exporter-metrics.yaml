@@ -1,0 +1,27 @@
+id: mongodb-exporter-metrics
+info:
+  name: MongoDB Exporter - Detect
+  author: pussycat0x
+  description: MongoDB exporter was detected.
+  severity: medium
+  reference:
+  - https://github.com/percona/mongodb_exporter
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"MongoDB exporter"
+  tags: mongodb,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '# HELPmongodbmongodb_exporter_build_info'

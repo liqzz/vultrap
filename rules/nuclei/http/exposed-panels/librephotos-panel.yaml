@@ -1,0 +1,23 @@
+id: librephotos-panel
+info:
+  name: LibrePhotos Panel - Detect
+  author: ritikchaddha
+  description: null
+  severity: info
+  reference:
+  - https://github.com/LibrePhotos/librephotos
+  metadata:
+    max-request: 1
+    shodan-query: title:"LibrePhotos"
+    verified: true
+  tags: panel,librephotos,detect,login
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: <title>LibrePhotos

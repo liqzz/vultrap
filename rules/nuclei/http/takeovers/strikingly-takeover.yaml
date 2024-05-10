@@ -1,0 +1,23 @@
+id: strikingly-takeover
+info:
+  name: Strikingly Takeover Detection
+  author: pdteam
+  description: Strikingly takeover was detected.
+  severity: high
+  reference:
+  - https://medium.com/@sherif0x00/takeover-subdomains-pointing-to-strikingly-5e67df80cdfd
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/58
+  metadata:
+    max-request: 1
+  tags: takeover,strikingly
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: But if you're looking to build your own websiteyou've come to the right
+      place.

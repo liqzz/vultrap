@@ -1,0 +1,22 @@
+id: aqua-enterprise-detect
+info:
+  name: Aqua Enterprise Detect
+  author: daffainfo
+  description: null
+  severity: info
+  reference: https://www.aquasec.com/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.favicon.hash:-1261322577
+  tags: tech,aqua
+traps:
+- request:
+    method: GET
+    path: /api
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"version""enable_sso""num_protected_kube_nodes"'

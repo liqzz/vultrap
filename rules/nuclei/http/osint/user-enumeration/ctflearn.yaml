@@ -1,0 +1,23 @@
+id: ctflearn
+info:
+  name: CTFLearn User Name Information - Detect
+  author: olearycrew
+  description: CTFLearn user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-social,ctflearn
+traps:
+- request:
+    method: GET
+    path: https://ctflearn.com/user/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Profile -  CTFlearn

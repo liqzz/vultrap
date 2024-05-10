@@ -1,0 +1,19 @@
+id: firebase-urls
+info:
+  name: Google Firebase DB URL Finder
+  author: panch0r3d
+  description: Find firebaseio urls to check for security permissions
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,firebase,google
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .*?(f|F)(i|I)(r|R)(e|E)(b|B)(a|A)(s|S)(e|E)(i|I)(o|O)[.](c|C)(o|O)(m|M).*?

@@ -1,0 +1,59 @@
+id: pi-hole-panel
+info:
+  name: Pi-hole Login Panel - Detect
+  author: geeknik
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 5
+    shodan-query: title:"Pi-hole"
+  tags: tech,pihole,detect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Pi-holeWeb InterfaceFTL<title>Pi-holePi-hole: Your black hole for Internet
+      advertisementsPi-hole: A black hole for Internet advertisements<pre>sudo pihole
+      -a -p</pre>'
+- request:
+    method: GET
+    path: /admin/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /admin/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /admin/index.php?login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /index.php?login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

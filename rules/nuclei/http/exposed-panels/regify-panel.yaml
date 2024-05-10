@@ -1,0 +1,25 @@
+id: regify-panel
+info:
+  name: Regify Login Panel - Detect
+  author: righettod
+  description: 'Regify Login Panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.regify.com/
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:1817615343
+    verified: true
+  tags: panel,regify,login,detect
+traps:
+- request:
+    method: GET
+    path: /phpLogin.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: regifyregibillregify_default.css

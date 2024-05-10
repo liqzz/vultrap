@@ -1,0 +1,28 @@
+id: fanruanoa-detect
+info:
+  name: FanRuanOA-detect
+  author: YanYun
+  description: null
+  severity: info
+  metadata:
+    max-request: 2
+  tags: oa,tech,dotnet,fanruan
+traps:
+- request:
+    method: GET
+    path: /WebReport/ReportServer
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: DeploySuccess._init
+- request:
+    method: GET
+    path: /ReportServer
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

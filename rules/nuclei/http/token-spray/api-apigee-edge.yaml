@@ -1,0 +1,22 @@
+id: api-apigee-edge
+info:
+  name: Apigee Edge API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://apidocs.apigee.com/apis
+  metadata:
+    max-request: 1
+  tags: token-spray,apigee
+traps:
+- request:
+    method: GET
+    path: https://apimonitoring.enterprise.apigee.com/alerts
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"uuid":"name":'

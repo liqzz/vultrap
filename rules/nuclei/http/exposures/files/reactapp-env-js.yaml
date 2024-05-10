@@ -1,0 +1,48 @@
+id: reactapp-env-js
+info:
+  name: React App Environment Js
+  author: random-robbie,rinolock
+  description: null
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 4
+    github-query: REACT_APP_
+  tags: react,exposure,config,js,javascript
+traps:
+- request:
+    method: GET
+    path: /env.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: REACT_APP_
+- request:
+    method: GET
+    path: /config.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /config/env.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /config/runtime-env.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,19 @@
+id: werkzeug-debugger-detect
+info:
+  name: Werkzeug debugger console
+  author: pdteam
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,werkzeug
+traps:
+- request:
+    method: GET
+    path: /console
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <h1>Interactive Console</h1>

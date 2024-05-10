@@ -1,0 +1,25 @@
+id: syncserver-panel
+info:
+  name: Symmetricom SyncServer Panel - Detect
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:o:microchip:syncserver_s650_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: syncserver_s650_firmware
+    shodan-query: html:"Symmetricom SyncServer"
+    vendor: microchip
+    verified: true
+  tags: panel,login,syncserver,symmetricom,detect,microchip
+traps:
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Symmetricom SyncServerlogin

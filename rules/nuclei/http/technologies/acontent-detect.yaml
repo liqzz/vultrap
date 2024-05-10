@@ -1,0 +1,19 @@
+id: acontent-detect
+info:
+  name: AContent Detect
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,acontent
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>AContent : Home</title>AContent - Copyright 2010 by IDRC/IDI http://inclusivedesign.ca/'

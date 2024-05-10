@@ -1,0 +1,26 @@
+id: stridercd-panel
+info:
+  name: Strider CD Panel - Detect
+  author: Adam Crosser
+  description: Strider CD panel was detected.
+  severity: info
+  reference:
+  - https://github.com/Strider-CD/strider
+  - https://strider-cd.github.io
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:115295460
+  tags: panel,cicd,oss,stridercd,strider
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Strider: Brilliant Continuous Deployment'

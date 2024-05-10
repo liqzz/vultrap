@@ -1,0 +1,28 @@
+id: accueil-wampserver
+info:
+  name: Accueil WAMPSERVER Configuration Page - Detect
+  author: tess
+  description: Accueil WAMPSERVER configuration page was detected.
+  severity: medium
+  remediation: Restrict access to the WAMP server configuration page and sub-tools.
+  reference:
+  - https://www.wampserver.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Accueil WAMPSERVER"
+  tags: exposure,accueil,wampserver,config
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Accueil WAMPSERVERConfiguration Serveur

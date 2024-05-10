@@ -1,0 +1,29 @@
+id: adminer-panel-detect
+info:
+  name: Adminer Login Panel - Detect
+  author: random_robbie,meme-lord
+  description: Adminer login panel was detected.
+  severity: info
+  reference:
+  - https://blog.sorcery.ie/posts/adminer/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 741
+    product: adminer
+    vendor: adminer
+  tags: panel,fuzz,adminer,login,sqli
+traps:
+- request:
+    method: GET
+    path: ''
+    headers:
+      Accept: application/json, text/plain, */*
+      Referer: '{{BaseURL}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '- Adminer</title>partial(verifyVersion'

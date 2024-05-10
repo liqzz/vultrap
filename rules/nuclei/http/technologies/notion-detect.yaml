@@ -1,0 +1,21 @@
+id: notion-detect
+info:
+  name: Notion Detect
+  author: tess
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Notion – One workspace. Every team."
+  tags: notion,tech
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Notion – One workspace. Every team.Notion Labs, Inc.

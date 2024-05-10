@@ -1,0 +1,55 @@
+id: squirrelmail-login
+info:
+  name: SquirrelMail Login Panel - Detect
+  author: dhiyaneshDk,ritikchaddha
+  description: SquirrelMail login panel was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7407
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:squirrelmail:squirrelmail:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 4
+    product: squirrelmail
+    shodan-query: title:"SquirrelMail"
+    vendor: squirrelmail
+  tags: squirrelmail,edb,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SquirrelMail
+- request:
+    method: GET
+    path: /src/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /webmail/src/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /squirrelmail/src/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

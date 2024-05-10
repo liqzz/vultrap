@@ -1,0 +1,28 @@
+id: avantfax-panel
+info:
+  name: AvantFAX Login Panel
+  author: pikpikcu,daffainfo
+  description: An AvantFAX login panel was discovered.
+  severity: info
+  reference:
+  - http://www.avantfax.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-668
+    cpe: cpe:2.3:a:avantfax:avantfax:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: avantfax
+    shodan-query: http.title:"AvantFAX - Login"
+    vendor: avantfax
+  tags: panel,avantfax,login
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>- AvantFAX - Login</title>

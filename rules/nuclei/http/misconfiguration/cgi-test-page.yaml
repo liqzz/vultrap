@@ -1,0 +1,19 @@
+id: cgi-test-page
+info:
+  name: CGI Test page
+  author: YASH ANAND @yashanand155
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: cgi,misconfig
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/test/test.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: HTTP_ACCEPTHTTP_ACCEPT_ENCODING

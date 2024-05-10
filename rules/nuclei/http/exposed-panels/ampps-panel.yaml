@@ -1,0 +1,21 @@
+id: ampps-panel
+info:
+  name: AMPPS Login Panel
+  author: deFr0ggy
+  description: An AMPPS login panel was detected.
+  severity: info
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,ampps,login
+traps:
+- request:
+    method: GET
+    path: /ampps/index.php?act=login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <a href="http://www.ampps.com"><title>Login</title>themes/default/images/ampps/favicon.ico

@@ -1,0 +1,26 @@
+id: akamai-cloudtest
+info:
+  name: Akamai CloudTest Panel
+  author: emadshanab
+  description: An Akamai CloudTest panel was discovered.
+  severity: info
+  reference:
+  - https://techdocs.akamai.com/cloudtest/docs
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:akamai:cloudtest:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: cloudtest
+    vendor: akamai
+  tags: panel,akamai
+traps:
+- request:
+    method: GET
+    path: /concerto/Login?goto=Central
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Akamai Inc. All rights reservedAkamai CloudTest

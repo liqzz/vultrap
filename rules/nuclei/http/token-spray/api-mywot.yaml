@@ -1,0 +1,25 @@
+id: api-mywot
+info:
+  name: My Web of Trust API
+  author: daffainfo
+  description: IP/domain/URL reputation
+  severity: info
+  reference:
+  - https://support.mywot.com/hc/en-us/sections/360004477734-API-
+  - https://github.com/daffainfo/all-about-apikey/tree/main/web-of-trust
+  metadata:
+    max-request: 1
+  tags: token-spray,weboftrust
+traps:
+- request:
+    method: GET
+    path: https://scorecard.api.mywot.com/v3/targets?t=hbo.com&t=google.com
+    headers:
+      Host: scorecard.api.mywot.com
+      x-user-id: '{{id}}'
+      x-api-key: '{{token}}'
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"target":"safety":'

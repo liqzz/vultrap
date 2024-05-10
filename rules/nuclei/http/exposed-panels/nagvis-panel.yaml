@@ -1,0 +1,36 @@
+id: nagvis-panel
+info:
+  name: NagVis Login Panel - Detect
+  author: ritikchaddha
+  description: NagVis login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:nagvis:nagvis:*:*:*:*:nagios_xi:*:*:*
+  metadata:
+    max-request: 2
+    product: nagvis
+    shodan-query: http.html:"NagVis"
+    vendor: nagvis
+    verified: true
+  tags: panel,nagvis
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: /nagvis/userfiles<title>NagVis
+- request:
+    method: GET
+    path: /nagvis/frontend/nagvis-js/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

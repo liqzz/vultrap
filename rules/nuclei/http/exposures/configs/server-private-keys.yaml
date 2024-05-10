@@ -1,0 +1,25 @@
+id: server-private-keys
+info:
+  name: SSL/SSH/TLS/JWT Keys - Detect
+  author: geeknik,R12W4N,j4vaovo
+  description: Private SSL, SSH, TLS, and JWT keys were detected.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  metadata:
+    max-request: 45
+  tags: config,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: BEGIN OPENSSH PRIVATE KEYBEGIN PRIVATE KEYBEGIN RSA PRIVATE KEYBEGIN DSA
+      PRIVATE KEYBEGIN EC PRIVATE KEYBEGIN PGP PRIVATE KEY BLOCKBEGIN ENCRYPTED PRIVATE
+      KEY

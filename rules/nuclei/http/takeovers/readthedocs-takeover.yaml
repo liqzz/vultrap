@@ -1,0 +1,21 @@
+id: readthedocs-takeover
+info:
+  name: Read the Docs Takeover Detection
+  author: pdteam
+  description: Read the Docs takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/160
+  metadata:
+    max-request: 1
+  tags: takeover,readthedocs
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: unknown to Read the Docs

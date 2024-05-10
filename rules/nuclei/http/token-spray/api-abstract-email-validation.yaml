@@ -1,0 +1,23 @@
+id: api-abstract-email-validation
+info:
+  name: Abstract Api Email Validation Test
+  author: daffainfo
+  description: Improve your delivery rate and clean your email lists with Abstract's
+    industry-leading email verification API
+  severity: info
+  reference:
+  - https://www.abstractapi.com/api/email-verification-validation-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-email-validation
+  metadata:
+    max-request: 1
+  tags: token-spray,abstractapi
+traps:
+- request:
+    method: GET
+    path: https://emailvalidation.abstractapi.com/v1/?api_key=&email=johnsmith@gmail.com
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"email":"autocorrect":"is_valid_format":'

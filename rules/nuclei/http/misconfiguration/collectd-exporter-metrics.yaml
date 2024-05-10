@@ -1,0 +1,21 @@
+id: collectd-exporter-metrics
+info:
+  name: Collectd Exporter Metrics
+  author: DhiyaneshDk
+  description: Collectd Exporter Metrics is exposed.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Collectd Exporter"
+  tags: collectd,exposure,debug,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '# HELPcollectd_'

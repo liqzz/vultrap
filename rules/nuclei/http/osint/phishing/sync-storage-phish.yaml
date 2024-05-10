@@ -1,0 +1,23 @@
+id: sync-phish
+info:
+  name: sync storage phishing Detection
+  author: rxerium
+  description: 'A sync storage phishing website was detected
+
+    '
+  severity: info
+  reference:
+  - https://sync.com
+  metadata:
+    max-request: 1
+  tags: phishing,sync,osint
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Sync | Secure Cloud Storage, File Sharing and Document Collaboration

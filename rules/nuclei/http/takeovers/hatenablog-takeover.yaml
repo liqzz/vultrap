@@ -1,0 +1,22 @@
+id: hatenablog-takeover
+info:
+  name: Hatenablog Takeover Detection
+  author: pdteam
+  description: Hatenablog takeover was detected.
+  severity: high
+  reference:
+  - https://beaglesecurity.com/blog/vulnerability/hatenablog-takeover-detection.html
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover,hatenablog
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 404 Blog is not found

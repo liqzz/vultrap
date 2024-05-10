@@ -1,0 +1,20 @@
+id: microsoft-iis-8
+info:
+  name: Microsoft Internet Information Services 8
+  author: dhiyaneshDK
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Microsoft Internet Information Services 8"
+  tags: tech,iis,microsoft
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Microsoft Internet Information Services 8</title>

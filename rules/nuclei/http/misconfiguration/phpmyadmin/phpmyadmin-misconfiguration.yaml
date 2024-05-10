@@ -1,0 +1,35 @@
+id: phpmyadmin-misconfiguration
+info:
+  name: phpmyadmin Data Exposure
+  author: pussycat0x
+  description: An unauthenticated instance of phpmyadmin was discovered, which could
+    be leveraged to access sensitive information.
+  severity: medium
+  reference:
+  - https://www.exploit-db.com/ghdb/6997
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+  tags: phpmyadmin,misconfig,edb
+traps:
+- request:
+    method: GET
+    path: /phpmyadmin/index.php?db=information_schema
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: var db    = 'information_schema';var opendb_url = 'db_structure.php';
+- request:
+    method: GET
+    path: /phpMyAdmin/index.php?db=information_schema
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

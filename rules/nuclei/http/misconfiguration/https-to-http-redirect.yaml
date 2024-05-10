@@ -1,0 +1,22 @@
+id: https-to-http-redirect
+info:
+  name: HTTPS to HTTP redirect Misconfiguration
+  author: kazet
+  description: 'Detects whether there is a redirect from https:// to http://
+
+    '
+  severity: info
+  metadata:
+    max-request: 1
+    verified: true
+  tags: misconfig,http,https
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 307
+    headers: {}
+    body: ''

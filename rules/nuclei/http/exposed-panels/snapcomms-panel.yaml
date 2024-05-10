@@ -1,0 +1,24 @@
+id: snapcomms-panel
+info:
+  name: SnapComms Content Manager Panel - Detect
+  author: righettod
+  description: 'SnapComms Content Manager was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.snapcomms.com/
+  metadata:
+    max-request: 1
+    verified: true
+  tags: panel,snapcomms,login,detect
+traps:
+- request:
+    method: GET
+    path: /Manager/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>SnapComms Content Manager</title>

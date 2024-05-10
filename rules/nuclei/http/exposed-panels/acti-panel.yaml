@@ -1,0 +1,22 @@
+id: acti-panel
+info:
+  name: ACTi Video Monitoring Panel - Detection
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    fofa-query: app="ACTi-视频监控"
+    max-request: 1
+    shodan-query: title:"Web Configurator" html:"ACTi"
+    verified: true
+  tags: acti,panel,login,detect
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/videoconfiguration.cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Web ConfiguratorACTi

@@ -1,0 +1,36 @@
+id: jaspersoft-panel
+info:
+  name: TIBCO Jaspersoft Login Panel - Detect
+  author: koti2,daffainfo
+  description: TIBCO Jaspersoft login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:tibco:jaspersoft:*:*:*:*:aws_with_multi-tenancy:*:*:*
+  metadata:
+    max-request: 2
+    product: jaspersoft
+    shodan-query: http.title:"Jaspersoft"
+    vendor: tibco
+  tags: panel,jaspersoft,tibco
+traps:
+- request:
+    method: GET
+    path: /jasperserver/login.html?error=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'TIBCO Jaspersoft: LoginCould not login to JasperReports ServerAbout TIBCO
+      JasperReports Server'
+- request:
+    method: GET
+    path: /jasperserver-pro/login.html?error=1
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

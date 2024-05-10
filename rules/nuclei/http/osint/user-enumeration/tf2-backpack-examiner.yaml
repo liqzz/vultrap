@@ -1,0 +1,23 @@
+id: tf2-backpack-examiner
+info:
+  name: TF2 Backpack Examiner User Name Information - Detect
+  author: dwisiswant0
+  description: TF2 Backpack Examiner user name information check was conducted.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-gaming,tf2-backpack-examiner
+traps:
+- request:
+    method: GET
+    path: http://www.tf2items.com/id//
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>TF2 Backpack -

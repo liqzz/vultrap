@@ -1,0 +1,33 @@
+id: mitric-checker-panel
+info:
+  name: Mitric Checker Login Panel - Detect
+  author: righettod
+  description: 'Mitric Checker login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://www.mitric.com/en/audit-with-checker/
+  metadata:
+    max-request: 2
+    verified: true
+  tags: panel,mitric,login,detect
+traps:
+- request:
+    method: GET
+    path: /QSA/Login.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /API/External/GetPrivacy
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

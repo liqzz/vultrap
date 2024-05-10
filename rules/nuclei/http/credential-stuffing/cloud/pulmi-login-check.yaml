@@ -1,0 +1,27 @@
+id: pulmi-login-check
+info:
+  name: pulmi.com Login Check
+  author: parthmalhotra,pdresearch
+  description: Checks for a valid github account.
+  severity: critical
+  reference:
+  - https://owasp.org/www-community/attacks/Credential_stuffing
+  metadata:
+    max-request: 1
+  tags: cloud,creds-stuffing,login-check,pulmi
+traps:
+- request:
+    method: POST
+    path: https://api.pulumi.com/api/console/email/login
+    headers:
+      Host: api.pulumi.com
+      Content-Type: application/json
+      Origin: https://app.pulumi.com
+      Referer: https://app.pulumi.com/
+    body: '{"emailOrLogin":"{{username}}","password":"{{password}}"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: pulumiAccessTokenuserInfo

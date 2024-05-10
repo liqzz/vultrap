@@ -1,0 +1,39 @@
+id: memos-panel
+info:
+  name: Memos Panel - Detect
+  author: rxerium
+  description: 'Memos is a privacy-first, lightweight note-taking service
+
+    '
+  severity: info
+  reference:
+  - https://github.com/usememos/memos
+  - https://www.usememos.com/
+  classification:
+    cpe: cpe:2.3:a:usememos:memos:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: memos
+    shodan-query: title:"Memos"
+    vendor: usememos
+    verified: true
+  tags: panel,memos,detect,usememos
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Memos
+- request:
+    method: GET
+    path: /explore
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

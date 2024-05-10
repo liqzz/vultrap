@@ -1,0 +1,22 @@
+id: api-host-io
+info:
+  name: host.io API Test
+  author: daffainfo
+  description: Domains Data API for Developers
+  severity: info
+  reference:
+  - https://host.io/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/host-io
+  metadata:
+    max-request: 1
+  tags: token-spray,hostio
+traps:
+- request:
+    method: GET
+    path: https://host.io/api/full/facebook.com?token=$
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"domain""rank""url"'

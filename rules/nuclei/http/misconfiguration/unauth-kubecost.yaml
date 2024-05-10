@@ -1,0 +1,22 @@
+id: unauth-kubecost
+info:
+  name: KubeCost - Unauthenticated Dashboard Exposure
+  author: pussycat0x
+  description: KubeCost Dashboard is exposed to external users.
+  severity: medium
+  reference: https://www.facebook.com/photo?fbid=470414125129112&set=pcb.470413798462478
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:kubecost
+  tags: misconfig,exposure,unauth,kubecost
+traps:
+- request:
+    method: GET
+    path: /overview.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Cluster Overview | Kubecost</title><title>Kubecost</title>

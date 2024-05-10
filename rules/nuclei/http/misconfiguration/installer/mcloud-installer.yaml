@@ -1,0 +1,27 @@
+id: mcloud-installer
+info:
+  name: mCloud Panel - Installer
+  author: ritikchaddha
+  description: mCloud installer was detected.
+  severity: critical
+  reference:
+  - https://mcloudcorp.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"mcloud-installer-web"
+  tags: panel,mcloud,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: /clusterList
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>mcloud-installer-web

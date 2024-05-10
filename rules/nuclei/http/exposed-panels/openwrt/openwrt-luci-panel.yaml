@@ -1,0 +1,26 @@
+id: openwrt-luci-panel
+info:
+  name: Opentwrt luCI - Admin Login Page
+  author: For3stCo1d
+  description: An Opentwrt admin login page was discovered.
+  severity: info
+  reference:
+  - https://forum.archive.openwrt.org/viewtopic.php?id=16611
+  classification:
+    cpe: cpe:2.3:a:x-wrt:luci:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: luci
+    shodan-query: http.title:"OpenWrt - LuCI"
+    vendor: x-wrt
+  tags: panel,default-login,openwrt,x-wrt
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/luci
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: OpenWrtLuCIlogin

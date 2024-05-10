@@ -1,0 +1,23 @@
+id: airflow-configuration-exposure
+info:
+  name: Apache Airflow Configuration Page - Detect
+  author: pdteam
+  description: Apache Airflow configuration page was detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: exposure,config,airflow,apache
+traps:
+- request:
+    method: GET
+    path: /airflow.cfg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '[core][api]'

@@ -1,0 +1,24 @@
+id: vercel-takeover
+info:
+  name: Vercel Takeover Detection
+  author: brianlam38
+  description: Vercel takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/pull/375
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/183
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"The deployment could not be found on Vercel"
+  tags: takeover,vercel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: The deployment could not be found on Vercel

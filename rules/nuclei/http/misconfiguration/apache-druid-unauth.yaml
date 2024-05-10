@@ -1,0 +1,21 @@
+id: apache-druid-unauth
+info:
+  name: Apache Druid Unauth
+  author: DhiyaneshDk
+  description: Apache Druid is exposed to external users.
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Apache Druid"
+  tags: misconfig,druid,unauth,apache
+traps:
+- request:
+    method: GET
+    path: /unified-console.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Apache Druid</title>

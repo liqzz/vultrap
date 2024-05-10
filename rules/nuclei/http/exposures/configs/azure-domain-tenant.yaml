@@ -1,0 +1,26 @@
+id: azure-domain-tenant
+info:
+  name: Microsoft Azure Domain Tenant ID - Detect
+  author: V0idC0de
+  description: Microsoft Azure Domain Tenant ID was detected.
+  severity: info
+  reference:
+  - https://azure.microsoft.com
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: azure,microsoft,cloud,exposure
+traps:
+- request:
+    method: GET
+    path: //v2.0/.well-known/openid-configuration
+    headers:
+      Host: login.microsoftonline.com
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: token_endpoint

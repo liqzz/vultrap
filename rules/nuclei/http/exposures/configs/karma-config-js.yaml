@@ -1,0 +1,34 @@
+id: karma-config-js
+info:
+  name: Karma Configuration File - Detect
+  author: DhiyaneshDk
+  description: Karma configuration file was detected.
+  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: html:"karma.conf.js"
+  tags: config,exposure,devops
+traps:
+- request:
+    method: GET
+    path: /.config/karma.conf.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: // Karma configurationmodule.exports
+- request:
+    method: GET
+    path: /karma.conf.js
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

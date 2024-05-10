@@ -1,0 +1,22 @@
+id: python-metrics
+info:
+  name: Detect Python Exposed Metrics
+  author: dhiyaneshDK
+  description: Information Disclosure of Garbage Collection
+  severity: low
+  reference:
+  - https://gist.github.com/ruanbekker/e5b1e7895f62b020ff29b5f40767190c
+  metadata:
+    max-request: 1
+    shodan-query: html:"python_gc_objects_collected_total"
+  tags: exposure,devops,python,misconfig
+traps:
+- request:
+    method: GET
+    path: /metrics
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: python_gc_objects_collected_totalpython_info

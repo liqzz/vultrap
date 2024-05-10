@@ -1,0 +1,22 @@
+id: msmtp-config
+info:
+  name: Msmtp - Config Exposure
+  author: geeknik
+  description: Msmtp configuration was discovered.
+  severity: high
+  reference:
+  - https://wiki.archlinux.org/title/Msmtp
+  metadata:
+    verified: true
+    max-request: 1
+  tags: exposure,msmtp
+traps:
+- request:
+    method: GET
+    path: /.msmtprc
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: accounthostfromauthtls

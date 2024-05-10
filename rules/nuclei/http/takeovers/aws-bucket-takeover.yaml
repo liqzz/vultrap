@@ -1,0 +1,21 @@
+id: aws-bucket-takeover
+info:
+  name: AWS Bucket Takeover Detection
+  author: pdteam,pwnhxl,zy9ard3
+  description: AWS Bucket takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/36
+  metadata:
+    max-request: 1
+  tags: takeover,aws,bucket
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: The specified bucket does not existBucketName

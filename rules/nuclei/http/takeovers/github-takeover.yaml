@@ -1,0 +1,22 @@
+id: github-takeover
+info:
+  name: Github Takeover Detection
+  author: pdteam,th3r4id
+  description: Github takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz
+  metadata:
+    max-request: 1
+  tags: takeover,github
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: There isn't a GitHub Pages site here.For root URLs (like http://example.com/)
+      you must provide an index.html file

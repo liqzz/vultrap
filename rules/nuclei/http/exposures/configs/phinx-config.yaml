@@ -1,0 +1,26 @@
+id: phinx-config
+info:
+  name: Phinx Configuration Exposure
+  author: DhiyaneshDk
+  description: Phinx configuration file was exposed.
+  severity: medium
+  reference:
+  - https://book.cakephp.org/phinx/0/en/configuration.html
+  - https://github.com/cakephp/phinx
+  - https://www.tenable.com/plugins/was/113433
+  - https://phinx.org/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"phinx.yml"
+  tags: devops,exposure,files
+traps:
+- request:
+    method: GET
+    path: /phinx.yml
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'paths:environments:development:'

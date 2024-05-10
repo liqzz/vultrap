@@ -1,0 +1,59 @@
+id: jellyfin-detect
+info:
+  name: Jellyfin detected
+  author: dwisiswant0
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 5
+    shodan-query: http.html:"Jellyfin"
+  tags: tech,jellyfin
+traps:
+- request:
+    method: GET
+    path: /home.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: name="application-name" content="Jellyfin"class="page homePage libraryPage
+      allLibraryPage backdropPage pageWithAbsoluteTabs withTabs"The Free Software
+      Media System
+- request:
+    method: GET
+    path: /web/home.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /web/index.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /web/manifest.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

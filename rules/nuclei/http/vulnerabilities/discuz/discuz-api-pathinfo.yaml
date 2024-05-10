@@ -1,0 +1,25 @@
+id: discuz-api-pathinfo
+info:
+  name: Discuz! X2.5 - Path Disclosure
+  author: ritikchaddha
+  description: Discuz! X2.5 api.php path disclosure vulnerability
+  severity: low
+  reference:
+  - https://crx.xmspace.net/discuz_x25_api_php.html
+  - http://www.1314study.com/t/87417.html
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Discuz!"
+    fofa-query: title="Discuz!"
+  tags: discuz,info,disclosure
+traps:
+- request:
+    method: GET
+    path: /api.php?mod[]=auto
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: .php</b> on linefunction.array

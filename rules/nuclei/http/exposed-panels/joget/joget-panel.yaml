@@ -1,0 +1,23 @@
+id: joget-panel
+info:
+  name: Joget Panel - Detect
+  author: Podalirius
+  description: Joget panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-1343712810
+  tags: panel,joget
+traps:
+- request:
+    method: GET
+    path: /jw/web/;
+    headers: null
+    body: null
+  response:
+    status_code: 500
+    headers: {}
+    body: System Error

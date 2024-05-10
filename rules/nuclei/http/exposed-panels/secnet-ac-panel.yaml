@@ -1,0 +1,22 @@
+id: secnet-ac-panel
+info:
+  name: SecNet Login Panel - Detect
+  author: ritikchaddha
+  description: SecNet login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: secnet-ac,panel
+traps:
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>安网科技-智能路由系统</title>

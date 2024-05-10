@@ -1,0 +1,39 @@
+id: wordpress-readme-file
+info:
+  name: WordPress Readme File
+  author: tess
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.component:"wordpress"
+  tags: exposure,wordpress,wp,readme,files
+traps:
+- request:
+    method: GET
+    path: /readme.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: WordPress &#8250; ReadMe
+- request:
+    method: GET
+    path: /wp/readme.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /blog/wp/readme.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

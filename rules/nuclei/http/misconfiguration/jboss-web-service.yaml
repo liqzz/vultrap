@@ -1,0 +1,28 @@
+id: jboss-web-service
+info:
+  name: JBoss Web Service Console - Detect
+  author: DhiyaneshDK
+  description: 'The JBoss Web Service console discloses the details of the remote
+    system, The console displays all the web services and exposed by the system leading
+    to a potential information disclosure.
+
+    '
+  severity: low
+  remediation: Restrict access to the ws service
+  reference:
+  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossWS.java
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: html:"JBossWS"
+  tags: jboss,misconfig
+traps:
+- request:
+    method: GET
+    path: /jbossws/services
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: JBossWS/Services</div>no endpoints deployed

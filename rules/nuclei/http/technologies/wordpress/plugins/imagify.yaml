@@ -1,0 +1,23 @@
+id: wordpress-imagify
+info:
+  name: Imagify – Optimize Images & Convert WebP | Compress Images Easily Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/imagify/
+  metadata:
+    max-request: 1
+    plugin_namespace: imagify
+    wpscan: https://wpscan.com/plugin/imagify
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/imagify/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

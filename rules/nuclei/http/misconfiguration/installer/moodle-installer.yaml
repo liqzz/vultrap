@@ -1,0 +1,21 @@
+id: moodle-installer
+info:
+  name: Moodle Installation Exposure
+  author: tess
+  description: Moodle is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Installation Moodle"
+  tags: misconfig,moodle,install,exposure
+traps:
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Installation - Moodle

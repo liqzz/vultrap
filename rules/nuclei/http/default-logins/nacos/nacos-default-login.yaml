@@ -1,0 +1,40 @@
+id: nacos-default-login
+info:
+  name: Alibaba Nacos - Default Login
+  author: SleepingBag945
+  description: 'The default username and password for Nacos are both nacos.
+
+    '
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    fofa-query: title=="Nacos"
+  tags: nacos,default-login,alibaba
+traps:
+- request:
+    method: POST
+    path: /v1/auth/users/login
+    headers:
+      User-Agent: Nacos-Server
+      Content-Type: application/x-www-form-urlencoded
+    body: 'username={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: '"accessToken":"username":'
+- request:
+    method: POST
+    path: /nacos/v1/auth/users/login
+    headers:
+      User-Agent: Nacos-Server
+      Content-Type: application/x-www-form-urlencoded
+    body: 'username={{username}}&password={{password}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

@@ -1,0 +1,23 @@
+id: jamf-panel
+info:
+  name: Jamf MDM Login Panel - Detect
+  author: pdteam,idealphase
+  description: Jamf Mobile Device Management login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:1262005940
+  tags: jamf,panel,mdm
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

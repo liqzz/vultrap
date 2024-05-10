@@ -1,0 +1,29 @@
+id: mofi4500-default-login
+info:
+  name: MOFI4500-4GXeLTE-V2 Default Login
+  author: pikpikcu
+  description: Mofi Network MOFI4500-4GXELTE wireless router default admin credentials
+    were discovered.
+  severity: high
+  reference:
+  - https://www.cleancss.com/router-default/Mofi_Network/MOFI4500-4GXELTE
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    max-request: 1
+  tags: mofi,default-login
+traps:
+- request:
+    method: POST
+    path: /cgi-bin/luci/
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'username=root&password=admin
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: MOFI4500 - General - LuCI

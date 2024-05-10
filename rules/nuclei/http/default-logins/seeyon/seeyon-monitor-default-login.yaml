@@ -1,0 +1,33 @@
+id: seeyon-monitor-default-login
+info:
+  name: Seeyon A8 Management Monitor - Default Login
+  author: SleepingBag945
+  description: 'Seeyon OA A8-m has status monitoring page information leakage. Attackers
+    can obtain sensitive information such as website paths and user names for further
+    attacks. Attackers can use this vulnerability to directly enter the application
+    system or management system to conduct system, web page, data tampering and deletion,
+    illegally obtaining system and user data, and may even cause the server to collapse.
+
+    '
+  severity: high
+  reference:
+  - http://wiki.peiqi.tech/wiki/oa/%E8%87%B4%E8%BF%9COA/%E8%87%B4%E8%BF%9COA%20A8%20status.jsp%20%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E.html
+  - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/default-pwd/seeyon-a8-management-monitor-default-password.yaml
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: app="致远互联-OA"
+  tags: seeyon,oa,default-login
+traps:
+- request:
+    method: POST
+    path: /seeyon/management/index.jsp
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'password=WLCCYBD%40SEEYON
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>A8 Management Monitor</title>Connection Pooling

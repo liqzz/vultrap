@@ -1,0 +1,24 @@
+id: tomcat-exposed-docs
+info:
+  name: Tomcat exposed docs
+  author: Podalirius
+  description: null
+  severity: info
+  classification:
+    cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: tomcat
+    shodan-query: title:"Apache Tomcat"
+    vendor: apache
+  tags: version,tomcat,docs,panel,apache
+traps:
+- request:
+    method: GET
+    path: /docs/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Apache Tomcat

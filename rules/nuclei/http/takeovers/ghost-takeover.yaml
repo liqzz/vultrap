@@ -1,0 +1,21 @@
+id: ghost-takeover
+info:
+  name: ghost takeover detection
+  author: pdteam
+  description: ghost takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/89
+  metadata:
+    max-request: 1
+  tags: takeover,ghost
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

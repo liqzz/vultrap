@@ -1,0 +1,26 @@
+id: adobe-connect-central-login
+info:
+  name: Adobe Connect Central Login Panel
+  author: dhiyaneshDk
+  description: An Adobe Connect Central login panel was detected.
+  severity: info
+  reference:
+  - https://www.adobe.com/products/adobeconnect.html
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:adobe:connect:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: connect
+    vendor: adobe
+  tags: adobe,panel,connect-central
+traps:
+- request:
+    method: GET
+    path: /system/login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Adobe Connect Central Login</title>

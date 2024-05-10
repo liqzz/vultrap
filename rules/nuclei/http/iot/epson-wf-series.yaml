@@ -1,0 +1,19 @@
+id: epson-wf-series
+info:
+  name: Epson WF Series Detection
+  author: aashiq
+  description: Searches for Epson WF series printers on the domain
+  severity: info
+  metadata:
+    max-request: 1
+  tags: iot,printer
+traps:
+- request:
+    method: GET
+    path: /PRESENTATION/HTML/TOP/PRTINFO.HTML
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SEIKO EPSON

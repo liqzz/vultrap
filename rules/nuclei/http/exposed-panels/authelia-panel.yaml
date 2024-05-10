@@ -1,0 +1,28 @@
+id: authelia-panel
+info:
+  name: Authelia Panel - Detect
+  author: rxerium
+  description: 'Authelia is an open-source authentication and authorisation service
+    providing two-factor authentication and single sign-on (SSO) for applications
+    via a web portal.
+
+    '
+  severity: info
+  reference:
+  - https://github.com/authelia/authelia
+  - https://www.authelia.com/
+  metadata:
+    max-request: 1
+    shodan-query: title:"Login - Authelia"
+    verified: true
+  tags: login,panel,authelia
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Login - Authelia</title>

@@ -1,0 +1,48 @@
+id: servicenow-widget-misconfig
+info:
+  name: ServiceNow Widget-Simple-List - Misconfiguration
+  author: DhiyaneshDk
+  description: null
+  severity: unknown
+  reference:
+  - https://github.com/bsysop/servicenow
+  - https://twitter.com/ConspiracyProof/status/1713270026046685272
+  - https://www.enumerated.ie/servicenow-data-exposure
+  metadata:
+    verified: true
+    max-request: 54
+    shodan-query: title:"servicenow"
+  tags: servicenow,widget,misconfig
+traps:
+- request:
+    method: GET
+    path: /
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: '"isValid":true"count":"display_value":"(.*)",'
+- request:
+    method: GET
+    path: /login.do
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: POST
+    path: /api/now/sp/widget/widget-simple-list?
+    headers:
+      Accept: application/json
+      X-UserToken: '{{user-token}}'
+      Content-Type: application/json
+    body: '{}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

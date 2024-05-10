@@ -1,0 +1,28 @@
+id: dockercfg-config
+info:
+  name: Detect .dockercfg
+  author: geeknik
+  description: Docker registry authentication data
+  severity: high
+  metadata:
+    max-request: 2
+  tags: docker,exposure,config
+traps:
+- request:
+    method: GET
+    path: /.dockercfg
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"email":"auth":'
+- request:
+    method: GET
+    path: /.docker/config.json
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

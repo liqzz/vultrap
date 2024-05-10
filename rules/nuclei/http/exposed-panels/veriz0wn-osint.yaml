@@ -1,0 +1,21 @@
+id: veriz0wn-osint
+info:
+  name: Veriz0wn OSINT - Detect
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: title:"Veriz0wn"
+    verified: true
+  tags: veriz0wn,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Veriz0wn : OSINT'

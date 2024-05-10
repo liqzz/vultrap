@@ -1,0 +1,22 @@
+id: api-tinypng
+info:
+  name: TinyPNG API Test
+  author: zzeitlin
+  description: null
+  severity: info
+  reference:
+  - https://tinypng.com/developers
+  metadata:
+    max-request: 1
+  tags: token-spray,tinypng
+traps:
+- request:
+    method: POST
+    path: https://api.tinify.com/shrink
+    headers:
+      Authorization: Basic {{base64('api:' + token)}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

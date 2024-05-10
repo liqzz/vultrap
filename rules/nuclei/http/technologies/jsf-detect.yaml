@@ -1,0 +1,19 @@
+id: jsf-detect
+info:
+  name: JavaServer Faces Detection
+  author: brenocss,Moritz Nentwig
+  description: Searches for JavaServer Faces content on a URL.
+  severity: info
+  metadata:
+    max-request: 1
+  tags: jsf,tech,primefaces,richfaces
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: javax.faces.resourcejavax.faces.ViewStateprimefacesjavax.faces.resourcejavax.faces.ViewStaterichfacesjavax.faces.resourcejavax.faces.ViewState

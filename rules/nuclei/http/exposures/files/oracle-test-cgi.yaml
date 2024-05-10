@@ -1,0 +1,21 @@
+id: oracle-test-cgi
+info:
+  name: Oracle Application Server test-cgi Page
+  author: DhiyaneshDk
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Oracle Application Server"
+  tags: oracle,exposure
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/test-cgi
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SERVER_SOFTWARE =

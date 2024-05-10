@@ -1,0 +1,22 @@
+id: unauthenticated-nginx-dashboard
+info:
+  name: Nginx Dashboard
+  author: BibekSapkota (sar00n)
+  description: Nginx Dashboard is exposed.
+  severity: low
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/unrestricted-access-to-nginx-dashboard/
+  metadata:
+    max-request: 1
+    shodan-query: html:"NGINX+ Dashboard"
+  tags: misconfig,nginx
+traps:
+- request:
+    method: GET
+    path: /dashboard.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Nginx+ Dashboard

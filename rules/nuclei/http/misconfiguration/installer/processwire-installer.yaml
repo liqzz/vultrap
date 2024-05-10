@@ -1,0 +1,31 @@
+id: processwire-installer
+info:
+  name: ProcessWire 3.x Installer Exposure
+  author: pussycat0x
+  description: ProcessWire 3.x is susceptible to the Installation page exposure due
+    to misconfiguration.
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"ProcessWire 3.x Installer"
+  tags: misconfig,processwire,install,exposure
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ProcessWire 3.x Installer
+- request:
+    method: GET
+    path: /install.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

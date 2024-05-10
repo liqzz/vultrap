@@ -1,0 +1,21 @@
+id: sevone-nms-network-manager
+info:
+  name: SevOne NMS Network Manager
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"SevOne NMS - Network Manager"
+    verified: true
+  tags: sevone,manager,login,panel
+traps:
+- request:
+    method: GET
+    path: /#login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: SevOne NMS - Network Manager

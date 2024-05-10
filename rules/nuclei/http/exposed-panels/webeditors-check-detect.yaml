@@ -1,0 +1,27 @@
+id: webeditors-check-detect
+info:
+  name: Web Editor Check - Detect
+  author: princechaddha,bernardofsr,gy741
+  description: Multiple web editor checks were detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ckeditor:ckeditor:*:*:*:*:drupal:*:*:*
+  metadata:
+    max-request: 17
+    product: ckeditor
+    vendor: ckeditor
+  tags: panel,webeditors,ckeditor
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '<title>FCKeditor<title>CKEditor Samples</title>http://ckeditor.com</a>Custom
+      Uploader URL:init_spell()''tip'':'':: Smart Editor 2Replace Textareas by Class
+      NameCKEditor - The text editor for the Internet'

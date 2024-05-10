@@ -1,0 +1,39 @@
+id: incapptic-connect-panel
+info:
+  name: Ivanti Incapptic Connect Panel - Detect
+  author: righettod
+  description: Ivanti Incapptic Connect panel was detected.
+  severity: info
+  reference:
+  - https://www.ivanti.com/products/incapptic-connect
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ivanti:incapptic_connect:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: incapptic_connect
+    shodan-query:
+    - http.title:"incapptic"
+    - http.favicon.hash:-1067582922
+    vendor: ivanti
+  tags: panel,ivanti,incapptic-connect
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /static/img/custom_icons/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

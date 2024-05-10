@@ -1,0 +1,25 @@
+id: chemotargets-clarityvista-panel
+info:
+  name: Chemotargets Clarity Vista Login Panel - Detect
+  author: righettod
+  description: 'Chemotargets Clarity Vista login panel was detected.
+
+    '
+  severity: info
+  reference:
+  - https://chemotargets.com/clarityvista/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"ClarityVista"
+  tags: panel,chemotargets,login,detect
+traps:
+- request:
+    method: GET
+    path: /login
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

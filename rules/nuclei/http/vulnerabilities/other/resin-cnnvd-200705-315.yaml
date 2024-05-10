@@ -1,0 +1,21 @@
+id: resin-cnnvd-200705-315
+info:
+  name: Caucho Resin Information Disclosure
+  author: princechaddha
+  description: Sensitive info disclosed in Caucho Resin.
+  severity: high
+  reference:
+  - http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-200705-315
+  metadata:
+    max-request: 1
+  tags: resin,caucho,lfr
+traps:
+- request:
+    method: GET
+    path: /%20../web-inf/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: / ../web-inf/Directory of /

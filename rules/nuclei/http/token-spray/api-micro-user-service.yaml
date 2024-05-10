@@ -1,0 +1,29 @@
+id: api-micro-user-service
+info:
+  name: Micro User Service API Test
+  author: daffainfo
+  description: User management and authentication
+  severity: info
+  reference:
+  - https://m3o.com/user
+  - https://github.com/daffainfo/all-about-apikey/tree/main/micro-user-service
+  metadata:
+    max-request: 1
+  tags: token-spray,micro-user-service
+traps:
+- request:
+    method: POST
+    path: https://api.m3o.com/v1/user/Read
+    headers:
+      Host: api.m3o.com
+      Content-Type: application/json
+      Authorization: Bearer {{token}}
+      Content-Length: '21'
+    body: |
+      {
+        "id": "usrid-1"
+      }
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username":"email":"created":"updated":'

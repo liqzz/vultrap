@@ -1,0 +1,21 @@
+id: gloo-unauth
+info:
+  name: Unauthenticated Gloo UI
+  author: dhiyaneshDk
+  description: Gloo UI is exposed to external users.
+  severity: high
+  metadata:
+    max-request: 1
+  tags: unauth,gloo
+traps:
+- request:
+    method: GET
+    path: /fed.rpc.solo.io.GlooInstanceApi/ListClusterDetails
+    headers:
+      Content-type: application/grpc-web+proto
+      Referer: '{{BaseURL}}/admin/'
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: gke-remote

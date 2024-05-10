@@ -1,0 +1,22 @@
+id: api-netlify
+info:
+  name: Netlify API Test
+  author: dwisiswant0
+  description: null
+  severity: info
+  reference:
+  - https://docs.netlify.com/api/get-started/
+  metadata:
+    max-request: 1
+  tags: token-spray,netlify
+traps:
+- request:
+    method: GET
+    path: https://api.netlify.com/api/v1/sites
+    headers:
+      Authorization: Bearer {{token}}
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"id":"premium":"claimed":'

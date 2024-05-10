@@ -1,0 +1,40 @@
+id: config-properties
+info:
+  name: Config Properties Exposure
+  author: j4vaovo,DhiyaneshDK
+  description: Config Properties were exposed.
+  severity: high
+  reference:
+  - https://twitter.com/win3zz/status/1657624974851702784/photo/1
+  metadata:
+    verified: true
+    max-request: 3
+  tags: exposure,config,properties
+traps:
+- request:
+    method: GET
+    path: /config.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+((?i)password|pwd|pass|secretkey)=
+- request:
+    method: GET
+    path: /config.properties.bak
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /ui_config.properties
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

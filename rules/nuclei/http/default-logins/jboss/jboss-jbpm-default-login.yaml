@@ -1,0 +1,48 @@
+id: jboss-jbpm-default-login
+info:
+  name: JBoss jBPM Administration Console Default Login - Detect
+  author: DhiyaneshDk
+  description: JBoss jBPM Administration Console default login information was detected.
+  severity: high
+  reference:
+  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossjBPMAdminConsole.java
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 12
+    shodan-query: html:"JBossWS"
+  tags: jboss,jbpm,default-login
+traps:
+- request:
+    method: GET
+    path: /jbpm-console/app/tasks.jsf
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: JBoss jBPM Administration Console
+- request:
+    method: POST
+    path: /jbpm-console/app/j_security_check
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'j_username={{user}}&j_password={{pass}}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /jbpm-console/app/tasks.jsf
+    headers: {}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: </span>Tasks

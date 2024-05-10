@@ -1,0 +1,19 @@
+id: sql-server-reporting
+info:
+  name: Detect Microsoft SQL Server Reporting
+  author: puzzlepeaches
+  description: null
+  severity: info
+  metadata:
+    max-request: 1
+  tags: tech,microsoft
+traps:
+- request:
+    method: GET
+    path: /Reports/Pages/Folder.aspx
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Report Manager

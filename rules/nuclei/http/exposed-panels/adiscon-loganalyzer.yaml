@@ -1,0 +1,30 @@
+id: adiscon-loganalyzer
+info:
+  name: Adiscon LogAnalyzer - Information Disclosure
+  author: geeknik
+  description: Adiscon LogAnalyzer was discovered. Adiscon LogAnalyzer is a web interface
+    to syslog and other network event data. It provides easy browsing and analysis
+    of real-time network events and reporting services.
+  severity: high
+  reference:
+  - https://loganalyzer.adiscon.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:adiscon:loganalyzer:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: loganalyzer
+    vendor: adiscon
+  tags: adiscon,loganalyzer,syslog,exposure,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Adiscon LogAnalyzervalue="SYSLOG"value="EVTRPT"value="WEBLOG"

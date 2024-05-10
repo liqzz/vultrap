@@ -1,0 +1,30 @@
+id: geth-server-detect
+info:
+  name: Go Ethereum JSON-RPC HTTP Server - Detect
+  author: Nullfuzz
+  description: 'Go-ethereum (aka Geth) is an Ethereum client built in Go. Geth runs
+    a JSON-RPC HTTP server on port 8545/TCP
+
+    '
+  severity: info
+  reference:
+  - https://geth.ethereum.org/docs
+  - https://github.com/ethereum/go-ethereum
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: product:"Geth"
+  tags: tech,geth,ethereum,web3,blockchain
+traps:
+- request:
+    method: POST
+    path: /
+    headers:
+      Content-Type: application/json
+    body: '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}
+
+      '
+  response:
+    status_code: 200
+    headers: {}
+    body: Geth

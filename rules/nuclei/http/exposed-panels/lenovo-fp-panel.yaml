@@ -1,0 +1,36 @@
+id: lenovo-fp-panel
+info:
+  name: Lenovo Fan Power Controller Login Panel - Detect
+  author: megamansec
+  description: Lenovo Fan Power Controller login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:lenovo:fan_power_controller:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: fan_power_controller
+    shodan-query: http.html:"Fan and Power Controller"
+    vendor: lenovo
+    verified: true
+  tags: panel,lenovo
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Avocent Corporation and its affiliatesFPC LoginFan and Power Controller
+- request:
+    method: GET
+    path: /login.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

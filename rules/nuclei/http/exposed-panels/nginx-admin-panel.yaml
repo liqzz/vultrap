@@ -1,0 +1,26 @@
+id: nginx-admin-panel
+info:
+  name: Nginx Admin Manager Login Panel - Detect
+  author: ritikchaddha
+  description: Nginx Admin Manager login panel was detected.
+  severity: info
+  reference:
+  - https://ng-admin.jslsolucoes.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"nginx admin manager"
+    verified: true
+  tags: panel,nginx,admin
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>(.*)Nginx Admin Manager(.*)</title>

@@ -1,0 +1,21 @@
+id: github-debug
+info:
+  name: GitHub Debug Page
+  author: ritikchaddha
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"GitHub Debug"
+  tags: misconfig,github,debug
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: GitHub Debug

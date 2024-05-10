@@ -1,0 +1,21 @@
+id: google-frontend-httpserver
+info:
+  name: Google frontend HttpServer
+  author: pikpikcu
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: 'Server: Google Frontend'
+  tags: tech,google,httpserver
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

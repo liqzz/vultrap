@@ -1,0 +1,21 @@
+id: joomla-installer
+info:
+  name: Joomla! Installer Exposure
+  author: DhiyaneshDk
+  description: Joomla is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Joomla Web Installer"
+  tags: misconfig,joomla,install
+traps:
+- request:
+    method: GET
+    path: /installation/index.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Joomla! Web InstallerConfiguration

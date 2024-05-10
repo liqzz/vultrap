@@ -1,0 +1,21 @@
+id: smugmug-takeover
+info:
+  name: Smugmug Takeover Detection
+  author: pdteam
+  description: Smugmug takeover was detected.
+  severity: high
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/60
+  metadata:
+    max-request: 1
+  tags: takeover,smugmug
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '{"text":"Page Not Found"'

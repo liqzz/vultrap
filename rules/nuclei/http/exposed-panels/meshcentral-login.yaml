@@ -1,0 +1,26 @@
+id: meshcentral-login
+info:
+  name: MeshCentral Login Panel - Detect
+  author: dhiyaneshDk
+  description: MeshCentral login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:meshcentral:meshcentral:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: meshcentral
+    shodan-query: http.title:"MeshCentral - Login"
+    vendor: meshcentral
+  tags: panel,meshcentral
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>MeshCentral - Login</title>

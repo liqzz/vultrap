@@ -1,0 +1,30 @@
+id: carestream-vue-detect
+info:
+  name: CARESTREAM Vue Motion Detector
+  author: philippedelteil
+  description: This template will detect a running CARESTREAM Vue Motion instance
+  severity: info
+  reference:
+  - https://www.carestream.com/en/us/-/media/publicsite/resources/radiography-and-health-it/product-brochures/ris-pacs/pdfs/brochure-vue-motion-201601.pdf
+  metadata:
+    max-request: 2
+  tags: tech,myvuehelp
+traps:
+- request:
+    method: GET
+    path: /portal/favicon.ico
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /portal/images/MyVue/MyVueHelp.png
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

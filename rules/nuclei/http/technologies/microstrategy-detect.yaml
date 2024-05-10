@@ -1,0 +1,19 @@
+id: microstrategy-detect
+info:
+  name: MicroStrategy Instances Detection Template
+  author: philippedelteil,Retr02332
+  description: Detect if MicroStrategy instances exist in your URLS
+  severity: info
+  metadata:
+    max-request: 16
+  tags: microstrategy,panel,tech
+traps:
+- request:
+    method: GET
+    path: /
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: MicroStrategy, Incorporated.microstrategy.servletNamemstrHiddenInput

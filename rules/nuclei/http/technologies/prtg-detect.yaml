@@ -1,0 +1,38 @@
+id: prtg-detect
+info:
+  name: Detect PRTG
+  author: geeknik
+  description: Monitor all the systems, devices, traffic, and applications in your
+    IT infrastructure -- https://www.paessler.com/prtg
+  severity: info
+  metadata:
+    max-request: 3
+  tags: tech,prtg
+traps:
+- request:
+    method: GET
+    path: /index.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: PRTG Network Monitor
+- request:
+    method: GET
+    path: /prtg/index.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /PRTG/index.htm
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

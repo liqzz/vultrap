@@ -1,0 +1,20 @@
+id: gocd-unauth-dashboard
+info:
+  name: GoCd Unauth Dashboard
+  author: dhiyaneshDk
+  description: GoCd Dashboard is exposed.
+  severity: medium
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Create a pipeline - Go",html:"GoCD Version"
+  tags: go,gocd,unauth,misconfig
+traps:
+- request:
+    method: GET
+    path: /go/admin/pipelines/create?group=defaultGroup
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Create a pipeline - Go</title>

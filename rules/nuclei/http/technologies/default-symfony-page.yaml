@@ -1,0 +1,21 @@
+id: default-symfony-page
+info:
+  name: Symfony Default Page
+  author: pussycat0x
+  description: null
+  severity: info
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Welcome to Symfony"
+  tags: tech,symfony,default-page
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Welcome to Symfony!Documentation

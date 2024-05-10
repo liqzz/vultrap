@@ -1,0 +1,20 @@
+id: unauthenticated-glowroot
+info:
+  name: Glowroot Anonymous User
+  author: pussycat0x
+  description: Anonymous user access allows to understand the host internals
+  severity: high
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Glowroot"
+  tags: misconfig,unauth,glowroot
+traps:
+- request:
+    method: GET
+    path: /backend/admin/users?username=anonymous
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: '"username":"anonymous""Administrator""newPassword":""'

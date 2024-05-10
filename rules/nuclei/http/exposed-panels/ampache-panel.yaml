@@ -1,0 +1,45 @@
+id: ampache-panel
+info:
+  name: Ampache Login Panel - Detect
+  author: ritikchaddha
+  description: Ampache login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 3
+    product: ampache
+    shodan-query: http.title:"For the Love of Music"
+    vendor: ampache
+    verified: true
+  tags: panel,ampache
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'Ampache :: For the Love of MusicMusic - Installation'
+- request:
+    method: GET
+    path: /login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''
+- request:
+    method: GET
+    path: /public/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

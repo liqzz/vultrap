@@ -1,0 +1,22 @@
+id: api-etherscan
+info:
+  name: Etherscan API Test
+  author: daffainfo
+  description: Ethereum explorer API
+  severity: info
+  reference:
+  - https://docs.etherscan.io/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/etherscan
+  metadata:
+    max-request: 1
+  tags: token-spray,etherscan
+traps:
+- request:
+    method: GET
+    path: https://api.etherscan.io/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey=
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Invalid API Key"status":"message":"OK"

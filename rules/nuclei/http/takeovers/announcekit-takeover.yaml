@@ -1,0 +1,22 @@
+id: announcekit-takeover
+info:
+  name: Announcekit Takeover Detection
+  author: melbadry9
+  description: Announcekit takeover was detected.
+  severity: high
+  reference:
+  - https://blog.melbadry9.xyz/dangling-dns/xyz-services/dangling-dns-announcekit
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/228
+  metadata:
+    max-request: 1
+  tags: takeover,announcekit
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 404
+    headers: {}
+    body: Error 404 - AnnounceKit

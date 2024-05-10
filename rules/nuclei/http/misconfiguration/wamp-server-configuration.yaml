@@ -1,0 +1,20 @@
+id: wamp-server-configuration
+info:
+  name: default-wamp-server-page
+  author: pussycat0x
+  description: Wamp default page will expose sensitive configuration and vhosts.
+  severity: medium
+  reference: https://www.exploit-db.com/ghdb/6891.
+  metadata:
+    max-request: 1
+  tags: wamp,exposure,misconfig
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

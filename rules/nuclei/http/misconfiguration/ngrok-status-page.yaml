@@ -1,0 +1,26 @@
+id: ngrok-status-page
+info:
+  name: Ngrok Status Page
+  author: pussycat0x
+  description: 'Ngrok is a popular platform that provides secure tunnels to localhost,
+    allowing users to expose a local web server to the internet.The Ngrok status page
+    is a web page that provides real-time information about the health and performance
+    of the Ngrok service.
+
+    '
+  severity: low
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"ngrok"
+  tags: ngrok,misconfig,status
+traps:
+- request:
+    method: GET
+    path: /status
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>ngrok</title><title>ngrok - Status</title>

@@ -1,0 +1,23 @@
+id: wordpress-widget-importer-exporter
+info:
+  name: Widget Importer & Exporter Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/widget-importer-exporter/
+  metadata:
+    max-request: 1
+    plugin_namespace: widget-importer-exporter
+    wpscan: https://wpscan.com/plugin/widget-importer-exporter
+  tags: tech,wordpress,wp-plugin,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/widget-importer-exporter/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

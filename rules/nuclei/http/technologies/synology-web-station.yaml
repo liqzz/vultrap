@@ -1,0 +1,25 @@
+id: synology-web-station
+info:
+  name: Synology Web Station Page - Detect
+  author: dhiyaneshDK
+  description: Synology Web Station page was detected.
+  severity: info
+  reference:
+  - https://www.exploit-db.com/ghdb/7125
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: tech,synology,edb
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>Hello! Welcome to Synology Web Station!</title>

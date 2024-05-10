@@ -1,0 +1,23 @@
+id: wordpress-wp-file-manager
+info:
+  name: File Manager Detection
+  author: ricardomaia
+  description: null
+  severity: info
+  reference:
+  - https://wordpress.org/plugins/wp-file-manager/
+  metadata:
+    max-request: 1
+    plugin_namespace: wp-file-manager
+    wpscan: https://wpscan.com/plugin/wp-file-manager
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+traps:
+- request:
+    method: GET
+    path: /wp-content/plugins/wp-file-manager/readme.txt
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: (?i)Stable.tag:\s?([\w.]+)

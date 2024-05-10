@@ -1,0 +1,23 @@
+id: nh-c2
+info:
+  name: NH C2 Server - Detect
+  author: pussycat0
+  description: null
+  severity: info
+  reference:
+  - https://twitter.com/MichalKoczwara/status/1616179246216396806
+  metadata:
+    censys-query: 10baf5fcdde4563d3e145a1f553ae433fb1c3572
+    max-request: 1
+    verified: 'true'
+  tags: tech,nh,c2,panel
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 302
+    headers: {}
+    body: ''

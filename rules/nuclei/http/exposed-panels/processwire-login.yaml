@@ -1,0 +1,28 @@
+id: processwire-login
+info:
+  name: ProcessWire Login - Panel Detect
+  author: Ramkrishna Sawant
+  description: ProcessWire login panel was detected.
+  severity: info
+  reference: https://processwire.com/docs/security/admin/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:processwire:processwire:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: processwire
+    shodan-query: http.html:"processwire"
+    vendor: processwire
+    verified: true
+  tags: panel,processwire
+traps:
+- request:
+    method: GET
+    path: /processwire/
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ProcessWireAdminTheme.init();

@@ -1,0 +1,36 @@
+id: nagios-xi-panel
+info:
+  name: Nagios XI Login Panel - Detect
+  author: ritikchaddha
+  description: Nagios XI login panel was detected.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:nagios:nagios_xi:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: nagios_xi
+    shodan-query: http.title:"Nagios XI"
+    vendor: nagios
+    verified: true
+  tags: panel,nagios,nagios-xi
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: alt="Nagios XI/nagiosxi/includes
+- request:
+    method: GET
+    path: /nagiosxi/login.php
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

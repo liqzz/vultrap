@@ -1,0 +1,33 @@
+id: aem-external-link-checker
+info:
+  name: Adobe AEM External Link Checker Exposure
+  author: dhiyaneshDk
+  description: null
+  severity: unknown
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  metadata:
+    max-request: 2
+    shodan-query:
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  tags: misconfig,aem,adobe,exposure
+traps:
+- request:
+    method: GET
+    path: /etc/linkchecker.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: <title>External Link Checker</title>
+- request:
+    method: GET
+    path: /var/linkchecker.html
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

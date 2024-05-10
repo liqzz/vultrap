@@ -1,0 +1,22 @@
+id: telerik-dialoghandler-detect
+info:
+  name: Detect Telerik Web UI Dialog Handler
+  author: organiccrap,zhenwarx,nielsing
+  description: This template detects the Telerik Web UI Dialog Handler.
+  severity: info
+  reference:
+  - https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
+  - https://github.com/bao7uo/dp_crypto
+  metadata:
+    max-request: 17
+  tags: tech,telerik,asp
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: Invalid length for a Base-64 char array

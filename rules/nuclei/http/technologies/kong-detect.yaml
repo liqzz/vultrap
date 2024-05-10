@@ -1,0 +1,21 @@
+id: kong-detect
+info:
+  name: Detect Kong
+  author: geeknik,joshlarsen
+  description: The Cloud-Native API Gateway
+  severity: info
+  reference:
+  - https://github.com/Kong/kong
+  metadata:
+    max-request: 1
+  tags: tech,kong
+traps:
+- request:
+    method: GET
+    path: ''
+    headers: null
+    body: null
+  response:
+    status_code: 200
+    headers: {}
+    body: ''

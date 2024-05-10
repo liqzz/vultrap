@@ -1,0 +1,24 @@
+id: api-todoist
+info:
+  name: Todoist API Test
+  author: daffainfo
+  description: Todo Lists
+  severity: info
+  reference:
+  - https://developer.todoist.com/rest/v1/#overview
+  - https://github.com/daffainfo/all-about-apikey/tree/main/todoist
+  metadata:
+    max-request: 1
+  tags: token-spray,todoist
+traps:
+- request:
+    method: GET
+    path: https://api.todoist.com/rest/v1/projects
+    headers:
+      Host: api.todoist.com
+      Authorization: Bearer {{token}}
+    body: ''
+  response:
+    status_code: 200
+    headers: {}
+    body: idcolorname

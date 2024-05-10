@@ -44,4 +44,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{randstr}}'
+    body: 4f2e320497d24304bd79636020257e88

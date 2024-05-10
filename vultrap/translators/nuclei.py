@@ -275,7 +275,7 @@ class ExprVisitor(ast.NodeVisitor):
 
         if type(args[1]) == ast.Constant and indent:
             val = args[1].value #type: ignore
-            new_val = re.sub(r'\{\{(.*)}}', replace, val)
+            val = re.sub(r'\{\{(.*)}}', replace, val)
 
             if self.variables.get(indent):
                 self.variables[indent] = self.variables[indent] + val

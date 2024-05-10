@@ -29,7 +29,7 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{md5(num)}}'
+    body: c8c605999f3d8352d7bb792cf3fdb25b
 - request:
     method: GET
     path: /cms/author_posts.php?author=admin%27%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(md5(),1,1),NULL,NULL,NULL,NULL--%20-&p_id=1

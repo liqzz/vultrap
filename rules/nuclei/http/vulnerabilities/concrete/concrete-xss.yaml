@@ -25,4 +25,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: </iframe><svg/onload=alert("{{randstr}}")>
+    body: </iframe><svg/onload=alert("99194776f77d4dedbbe75ac81f86a2f9")>

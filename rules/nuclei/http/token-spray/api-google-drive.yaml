@@ -20,4 +20,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: 'File not found: {{randstr}}.txt.'
+    body: 'File not found: 221a4580f27e4fc798bd1eac3ed8f6f2.txt.'

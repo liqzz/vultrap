@@ -23,7 +23,7 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: <img src=a onerror=alert('{{randstr}}')>MissingIncludeExceptionlucee-err
+    body: <img src=a onerror=alert('f56d8d648eeb4d6ea52088d050482455')>MissingIncludeExceptionlucee-err
 - request:
     method: GET
     path: /lucee/lucees3ezf%3cimg%20src%3da%20onerror%3dalert('')%3elujb7/admin/imgProcess.cfm

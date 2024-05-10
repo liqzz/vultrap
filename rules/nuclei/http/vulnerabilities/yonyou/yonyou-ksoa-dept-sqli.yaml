@@ -28,4 +28,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: 0x{{md5({{num}})}}
+    body: '0xc8c605999f3d8352d7bb792cf3fdb25b'

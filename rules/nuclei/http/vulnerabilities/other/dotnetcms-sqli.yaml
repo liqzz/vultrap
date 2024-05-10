@@ -27,4 +27,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{md5("{{randstr}}")}}'
+    body: a88190164b8e78467473bb666a07883a

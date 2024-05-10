@@ -19,7 +19,7 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: <svg/onload=alert('{{randstr}}')>
+    body: <svg/onload=alert('b50e9d6290614d0a962d439a688ffecd')>
 - request:
     method: GET
     path: /OA_HTML/oksAutoRenewalHelp.jsp%3Fthanks%3D%27%22%3E%3Csvg%2Fonload%3Dalert('')%3E

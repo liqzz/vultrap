@@ -26,4 +26,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: Execute:{{randstr}}
+    body: Execute:d8a3564fb48547b59cdc2f164f3ff548

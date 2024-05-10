@@ -18,4 +18,4 @@ traps:
   response:
     status_code: 404
     headers: {}
-    body: '{{randstr}}'
+    body: 5522d4c494344fe886ade1c5b187223d

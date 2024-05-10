@@ -53,4 +53,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{md5(string)}}'
+    body: 6d8e921bd231e769ccc7dcccc6163a6c

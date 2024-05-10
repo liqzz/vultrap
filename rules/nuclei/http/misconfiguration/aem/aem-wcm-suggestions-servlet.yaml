@@ -19,4 +19,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{randstr}}"results":"suggestions":'
+    body: '319bb916f0b4499fab2f192b376d730b"results":"suggestions":'

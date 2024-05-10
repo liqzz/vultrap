@@ -24,4 +24,4 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: '{{randstr}}<form action="javascript:alert'
+    body: 5423ca385413411eae2830f968838cf9<form action="javascript:alert

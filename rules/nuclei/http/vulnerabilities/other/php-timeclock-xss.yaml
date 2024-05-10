@@ -23,4 +23,5 @@ traps:
   response:
     status_code: 200
     headers: {}
-    body: <svg/onload=alert`{{randstr}}`>PHP Timeclock Admin Login
+    body: <svg/onload=alert`288d17764e3c4c8391b40ff75fbccd80`>PHP Timeclock Admin
+      Login

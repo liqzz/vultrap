@@ -18,4 +18,5 @@ traps:
   response:
     status_code: 404
     headers: {}
-    body: <code.*>/{{randstr}}.php.* this server.404 Not Found<h1>Not Found</h1>
+    body: <code.*>/f18ea11f190943929bb6c4cc522c8a03.php.* this server.404 Not Found<h1>Not
+      Found</h1>

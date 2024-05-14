@@ -24,7 +24,7 @@ rules_loader = TrapRuleLoader(rule_dir=TRAP_RULE_DIR)
 class ReloadRuleHandler(FileSystemEventHandler):
     def on_modified(self, event):
         print(f"moitor file modify: {event.src_path}, reaload")
-        if not event.is_directory and event.src_path.endswith('.yml'):
+        if not event.is_directory and event.src_path.endswith('.yaml'):
             rules_loader.load_rules()
 
 def rule_modify_monitor(rule_dir: str):

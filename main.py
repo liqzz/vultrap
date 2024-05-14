@@ -85,7 +85,7 @@ def trapserver(trap_rule_dir: str = DEFAULT_TRAP_RULE_DIR,mitm_bin: str = DEFAUL
         except Exception as e: pass
 
     server_env = {"TRAP_RULE_DIR": trap_rule_dir}
-    server_command = [mitm_bin, "--mode", "reverse:http://127.0.0.1:8000", "--listen-port", f"{server_port}", "--listen-host", "0.0.0.0", "-s","trap.py"]
+    server_command = [mitm_bin, "--set","block_global=false","--mode", "reverse:http://127.0.0.1:8000", "--listen-port", f"{server_port}", "--listen-host", "0.0.0.0", "-s","trap.py"]
     mitm_process = subprocess.Popen(server_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=server_env, cwd=VULTRAP_HOME_PATH)
 
     typer.echo(typer.style(f"start trap server success.", fg=typer.colors.GREEN))

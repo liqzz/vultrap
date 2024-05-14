@@ -1,13 +1,6 @@
 __pycache__
 README.md
 CHANGELOG.md
-docker-compose.yml
-Dockerfile
 docker/Dockerfile
-builds
 .gitignore
-.dev.env
-data/gvd_rules
-data/rules
-tools
-*.log
+MIT-LICENSE.txt
